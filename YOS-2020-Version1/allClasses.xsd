@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="yosauthserverapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiuserdto" >
+      <xs:sequence>
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="postcode" type="xs:string" />
+        <xs:element name="roadaddr" type="xs:string" />
+        <xs:element name="jibunaddr" type="xs:string" />
+        <xs:element name="extraaddr" type="xs:string" />
+        <xs:element name="detailaddr" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiuserrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<yoggaebiuser,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiuserservice" >
+      <xs:complexContent>
+       <xs:extension base="grantedauthority>">
+         <xs:sequence>
+          <xs:element name="" type="yoggaebiuserrepository" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiuser" >
+      <xs:sequence>
+        <xs:element name="////@generatedvalue(strategy" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="postcode" type="xs:string" />
+        <xs:element name="roadaddr" type="xs:string" />
+        <xs:element name="jibunaddr" type="xs:string" />
+        <xs:element name="extraaddr" type="xs:string" />
+        <xs:element name="detailaddr" type="xs:string" />
+        <xs:element name="userrdate" type="xs:anyType" />
+        <xs:element name="userudate" type="xs:anyType" />
+        <xs:element name="roles" type="yoggaebiuserrole" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiuserrole" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinformation" >
+      <xs:sequence>
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="authorities" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiuserresource" >
+      <xs:complexContent>
+       <xs:extension base="entitymodel<yoggaebiuser>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiusercontroller" >
+      <xs:sequence>
+        <xs:element name="not_duplication_userid" type="xs:string" />
+        <xs:element name="duplication_userid" type="xs:string" />
+        <xs:element name="userservice" type="yoggaebiuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="authorizationserverconfigureradapter{">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="yoggaebiuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="appconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourceserverconfig" >
+      <xs:complexContent>
+       <xs:extension base="resourceserverconfigureradapter{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="redisrepositoryconfig" >
+      <xs:sequence>
+        <xs:element name="redishost" type="xs:string" />
+        <xs:element name="redisport" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+          <xs:element name="" type="yoggaebiuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="testdescription" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorsserializer" >
+      <xs:complexContent>
+       <xs:extension base="jsonserializer<errors>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="redisclientdetailsservice" >
+      <xs:complexContent>
+       <xs:extension base="clientdetails>">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="clientdetailsstore" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="redisclientdetailsservicebuilder" >
+      <xs:complexContent>
+       <xs:extension base="clientdetailsservicebuilder<redisclientdetailsservicebuilder>">
+         <xs:sequence>
+          <xs:element name="clientdetails" type="xs:anyType" />
+          <xs:element name="//forwritingclientsecrets" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="errorsresource" >
+      <xs:complexContent>
+       <xs:extension base="resource<errors>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiuserservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="yoggaebiuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="user" type="yoggaebiuser" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yoggaebiusercontrollertest" >
+      <xs:complexContent>
+       <xs:extension base="basecontrollertest">
+         <xs:sequence>
+          <xs:element name="" type="yoggaebiuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="user" type="yoggaebiuser" nillable="true" minOccurs="0" />
+          <xs:element name="userdto" type="yoggaebiuserdto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yosauthserverapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="restdocsconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basecontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="commontest" >
+      <xs:sequence>
+        <xs:element name="jwtkey" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authconfigurationtest" >
+      <xs:complexContent>
+       <xs:extension base="basecontrollertest">
+         <xs:sequence>
+          <xs:element name="" type="yoggaebiuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="user" type="yoggaebiuser" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

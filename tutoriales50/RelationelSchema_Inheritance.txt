@@ -1,0 +1,43 @@
+
+order(id:Long [PK], name:String, GeneratedName:Customer #FK to(Customer));
+
+customer(id:Long [PK]);
+
+items(id:long [PK], GeneratedName:Cart #FK to(Cart));
+
+cart(id:long [PK]);
+
+cartoio(id:long [PK]);
+
+itemsoio(id:long [PK], cart:CartOIO #FK to(Cart));
+
+course(id:int [PK], name:String);
+
+usergrouprelation(userid:Long [PK], groupid:Long [PK], role:UserGroupRole);
+
+user(id:Long [PK], name:String);
+
+r_user_group(user_id:User [PK] #FK to User,group_id:Group [PK] #FK to Group);r_user_group(user_id:User [PK] #FK to User,group_id:Group [PK] #FK to Group);
+
+group(id:Long [PK], name:String);
+
+order(id:int [PK], itempricemap:Map<String,Double>);
+
+order(id:int [PK]);
+
+seller(id:int [PK], sellername:String);
+
+item(id:int [PK], itemname:String, itemprice:double, GeneratedName:ItemType, createdon:Date, GeneratedName:Seller #FK to(seller));
+
+order(id:int [PK]);
+
+order(id:int [PK]);
+
+order(id:int [PK]);
+
+user(firstname:String [PK], middlename:String, lastname:String, city:String);
+
+item(id:int [PK], itemname:String, itemprice:double, GeneratedName:ItemType, createdon:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,17 @@
+ClassDiagram.Class>> Users =>=>=> RelationalSchema.Table>> users;
+ClassDiagram.Class>> BooksTransaction =>=>=> RelationalSchema.Table>> bookstransaction;
+ClassDiagram.Class>> BooksInventory =>=>=> RelationalSchema.Table>> booksinventory;
+ClassDiagram.Class>> BooksRegistration =>=>=> RelationalSchema.Table>> booksregistration;
+ClassDiagram.Attribut>> Users.id:int =>=>=> RelationalSchema.Column>> users.id PRIMARY KEY;
+ClassDiagram.Attribut>> Users.name:String =>=>=> RelationalSchema.Column>> users.name;
+ClassDiagram.Attribut>> Users.email:String =>=>=> RelationalSchema.Column>> users.email;
+ClassDiagram.Attribut>> Users.password:String =>=>=> RelationalSchema.Column>> users.password;
+ClassDiagram.Attribut>> Users.role:String =>=>=> RelationalSchema.Column>> users.role;
+ClassDiagram.Attribut>> BooksTransaction.transactionid:int =>=>=> RelationalSchema.Column>> bookstransaction.transactionid PRIMARY KEY;
+ClassDiagram.Attribut>> BooksTransaction.registrationid:int =>=>=> RelationalSchema.Column>> bookstransaction.registrationid;
+ClassDiagram.Attribut>> BooksInventory.bookid:int =>=>=> RelationalSchema.Column>> booksinventory.bookid PRIMARY KEY;
+ClassDiagram.Attribut>> BooksInventory.bookname:String =>=>=> RelationalSchema.Column>> booksinventory.bookname;
+ClassDiagram.Attribut>> BooksInventory.authorname:String =>=>=> RelationalSchema.Column>> booksinventory.authorname;
+ClassDiagram.Attribut>> BooksRegistration.registrationid:int =>=>=> RelationalSchema.Column>> booksregistration.registrationid PRIMARY KEY;
+ClassDiagram.Attribut>> BooksRegistration.bookid:int =>=>=> RelationalSchema.Column>> booksregistration.bookid;
+ClassDiagram.Attribut>> BooksRegistration.id:int =>=>=> RelationalSchema.Column>> booksregistration.id;

@@ -1,0 +1,2567 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="testsuite" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jpapropertymanager" >
+      <xs:complexContent>
+       <xs:extension base="abstractpropertymanager">
+         <xs:sequence>
+          <xs:element name="jtemgr" type="jpapropertymanager" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jpadeliverable" >
+      <xs:complexContent>
+       <xs:extension base="abstractdeliverable">
+         <xs:sequence>
+          <xs:element name="persistence_archive_file_ext" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractpropertymanager" >
+      <xs:sequence>
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="jte" type="xs:anyType" />
+        <xs:element name="tmp" type="xs:string" />
+        <xs:element name="breversed" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertynotsetexception" >
+      <xs:complexContent>
+       <xs:extension base="java.lang.exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="deliverableinterface" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractdeliverable" >
+      <xs:sequence>
+        <xs:element name="httsvalidvehicles" type="xs:anyType" />
+        <xs:element name="htvalidapps" type="xs:anyType" />
+        <xs:element name="htvalidrundirections" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deliverablefactory" >
+      <xs:sequence>
+        <xs:element name="di" type="deliverableinterface" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertymanagerinterface" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eetest" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="/**pleasedonotchangethisclassinanincompatiblemannerwithrespecttoserialization.*pleaseseetheserializationspecificationtodeterminewhatisacompatiblechange*versusincompatible.ifyoudoneedtochangethisclassinanincompatiblemanneryouwill*needtorebuildthecompattests.youshouldalsoincrementtheserialversionidfieldto*denotethatthisclassisincompatiblewitholderversions.*/serialversionid" type="xs:long" />
+          <xs:element name="transientlog" type="xs:anyType" />
+          <xs:element name="transienterr" type="xs:anyType" />
+          <xs:element name="stestcase" type="xs:string" />
+          <xs:element name="transientstest" type="xs:anyType" />
+          <xs:element name="test" type="xs:anyType" />
+          <xs:element name="testclinst" type="xs:anyType" />
+          <xs:element name="//nclistrueifthetestclassisdifferentfromtheclientclass.ncl" type="xs:anyType" />
+          <xs:element name="butilalreadyinitialized" type="xs:anyType" />
+          <xs:element name="vleftovertestargs" type="xs:anyType" />
+          <xs:element name="ilogdelayseconds" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jckserviceeetest" >
+      <xs:complexContent>
+       <xs:extension base="serviceeetest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="serviceeetest" >
+      <xs:complexContent>
+       <xs:extension base="eetest">
+         <xs:sequence>
+          <xs:element name="/**pleasedonotchangethisclassinanincompatiblemannerwithrespecttoserialization.*pleaseseetheserializationspecificationtodeterminewhatisacompatiblechange*versusincompatible.ifyoudoneedtochangethisclassinanincompatiblemanneryouwill*needtorebuildthecompattests.youshouldalsoincrementtheserialversionidfieldto*denotethatthisclassisincompatiblewitholderversions.*///longserialversionuid" type="xs:string" />
+          <xs:element name="theshared" type="xs:anyType" />
+          <xs:element name="thesharedarray" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sunriurl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sigtest" >
+      <xs:complexContent>
+       <xs:extension base="eetest">
+         <xs:sequence>
+          <xs:element name="driver" type="signaturetestdriver" nillable="true" minOccurs="0" />
+          <xs:element name="//endgetclasses//holdsthetshomepropertytestinfo" type="sigtestdata" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sigtestee" >
+      <xs:complexContent>
+       <xs:extension base="serviceeetest">
+         <xs:sequence>
+          <xs:element name="driver" type="signaturetestdriver" nillable="true" minOccurs="0" />
+          <xs:element name="//endgetclasses//holdsthetshomeandvehiclepropertiestestinfo" type="sigtestdata" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="packagelist" >
+      <xs:sequence>
+        <xs:element name="//anylineinthepackagefilestartingwiththisacterisacommentcomment_" type="xs:anyType" />
+        <xs:element name="backup_ext" type="xs:string" />
+        <xs:element name="//containingthelistofpackagesandsub-packagespackage" type="xs:anyType" />
+        <xs:element name="//signaturewherethepackagesignatureswererecordedsig" type="xs:anyType" />
+        <xs:element name="//nameofthepackagebeingrecordedadditionalpackagename" type="xs:string" />
+        <xs:element name="//nameofpackagesandsub-packagesinthepackagenames" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="signaturetestdriverfactory" >
+      <xs:sequence>
+        <xs:element name="*/api_check" type="xs:string" />
+        <xs:element name="*/sig_test" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sigtestdriver" >
+      <xs:complexContent>
+       <xs:extension base="signaturetestdriver">
+         <xs:sequence>
+          <xs:element name="classpath_flag" type="xs:string" />
+          <xs:element name="filename_flag" type="xs:string" />
+          <xs:element name="package_flag" type="xs:string" />
+          <xs:element name="api_version_flag" type="xs:string" />
+          <xs:element name="exclude_flag" type="xs:string" />
+          <xs:element name="_flag" type="xs:string" />
+          <xs:element name="//onlyvalidw/-checkvalue_flag" type="xs:string" />
+          <xs:element name="no_checkvalue_flag" type="xs:string" />
+          <xs:element name="//requiresargofbinorsrcsmode_flag" type="xs:string" />
+          <xs:element name="debug_flag" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jpasigtest" >
+      <xs:complexContent>
+       <xs:extension base="the">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sigtestdata" >
+      <xs:sequence>
+        <xs:element name="props" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="samplesigtest.java" >
+      <xs:complexContent>
+       <xs:extension base="the">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="signaturetestdriver" >
+      <xs:sequence>
+        <xs:element name="sig_file_ext" type="xs:string" />
+        <xs:element name="sig_file_ver_sep" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="samplesigtestee.java" >
+      <xs:complexContent>
+       <xs:extension base="the">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="apicheckdriver" >
+      <xs:complexContent>
+       <xs:extension base="signaturetestdriver">
+         <xs:sequence>
+          <xs:element name="/*flagsforthediffutilityargumentlist*/base_flag" type="xs:string" />
+          <xs:element name="test_flag" type="xs:string" />
+          <xs:element name="package_flag" type="xs:string" />
+          <xs:element name="expackage_flag" type="xs:string" />
+          <xs:element name="reflect_flag" type="xs:string" />
+          <xs:element name="const_flag" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sigtestresult" >
+      <xs:sequence>
+        <xs:element name="nl" type="xs:string" />
+        <xs:element name="failedpkgs" type="xs:anyType" />
+        <xs:element name="passedpkgs" type="xs:anyType" />
+        <xs:element name="failedclasses" type="xs:anyType" />
+        <xs:element name="passedclasses" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="build.xml" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="entitytransactionwrapper" >
+      <xs:sequence>
+        <xs:element name="delegate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useentitymanager" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="emptyvehiclerunner" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vehiclerunnable" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vehicleclient" >
+      <xs:complexContent>
+       <xs:extension base="serviceeetest">
+         <xs:sequence>
+          <xs:element name="svehicles" type="xs:string" />
+          <xs:element name="theshared" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vehiclerunnerfactory" >
+      <xs:sequence>
+        <xs:element name="ejbrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="servletrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="jsprunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="emptyrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="stateless3runner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="stateful3runner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="appmanagedrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="appmanagednotxrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="jbirunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="wsejbrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="wsservletrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="pmservletrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="puservletrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+        <xs:element name="webrunner" type="vehiclerunnable" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="helper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tlogger" >
+      <xs:sequence>
+        <xs:element name="nl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testfailedexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="servicelocator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="member" >
+      <xs:sequence>
+        <xs:element name="memberid" type="xs:long" />
+        <xs:element name="version" type="xs:anyType" />
+        <xs:element name="membername" type="xs:string" />
+        <xs:element name="duespaid" type="xs:anyType" />
+        <xs:element name="donation" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pmclientbase" >
+      <xs:complexContent>
+       <xs:extension base="serviceeetest">
+         <xs:sequence>
+          <xs:element name="props" type="xs:anyType" />
+          <xs:element name="transientem" type="xs:anyType" />
+          <xs:element name="transientet" type="xs:anyType" />
+          <xs:element name="transientincontainer" type="xs:anyType" />
+          <xs:element name="//thefollowingarepropertiesspecifictostandalonetck,//notusedwhenrunningtestsinjavaeeenvironmenttransientemf" type="xs:anyType" />
+          <xs:element name="transientprovider_prop" type="xs:string" />
+          <xs:element name="transienttransaction_type_prop" type="xs:string" />
+          <xs:element name="transientjta_datasource_prop" type="xs:string" />
+          <xs:element name="transientnon_jta_datasource_prop" type="xs:string" />
+          <xs:element name="transientresource_local" type="xs:string" />
+          <xs:element name="/***nameofapropertydefinedints.jte,todenotewhethertestsrunin*javaeeorjavasemode.thispropertymustnotbesetwhenrunningtests*injavaeemodeandmustbesetto"standalone"wheninjavasemode.*/transientmode_prop" type="xs:string" />
+          <xs:element name="/***denotesthattestsarerunninginjavasemode.thisistheonlyvalid*non-nullvalueforthisproperty.*/transientstandalone_mode" type="xs:string" />
+          <xs:element name="/***nameofapropertydefinedints.jte,tospecifythenameofthe*persistenceunitusedinthetestsuite.itmustbeconsistentwith*thevalueinpersistence.xml*/transientpersistence_unit_name_prop" type="xs:string" />
+          <xs:element name="/***nameofthepropertyints.jtethatspecifiesanabsolutepathtothe*propertiesfilethatcontainspropertiesforinitializingentitymanagerfactory,*includingbothstandardandprovider-specificproperties.*/transientpersistence_unit_properties_file_prop" type="xs:string" />
+          <xs:element name="/***thecurrenttestmode.theonlyvalidnon-nullvalueis"standalone".*/transientmode" type="xs:string" />
+          <xs:element name="/***persistenceunitname,asdefinedints.jte.*/persistenceunitname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistence-import" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fulltimeemployee" >
+      <xs:complexContent>
+       <xs:extension base="employee">
+         <xs:sequence>
+          <xs:element name="salary" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:complexContent>
+       <xs:extension base="abstractpersonnel">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="firstname" type="xs:string" />
+          <xs:element name="lastname" type="xs:string" />
+          <xs:element name="hire" type="xs:dateTime" />
+          <xs:element name="/***thethisemployeeleads*/" type="project" nillable="true" minOccurs="0" />
+          <xs:element name="/***thethisemployeebelongsto*/" type="department" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesprojid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="budget" type="xs:anyType" />
+        <xs:element name="projectlead" type="employee" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="parttimeemployee" >
+      <xs:complexContent>
+       <xs:extension base="employee">
+         <xs:sequence>
+          <xs:element name="wage" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="employees" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractpersonnel" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="ftref" type="fulltimeemployee" nillable="true" minOccurs="0" />
+          <xs:element name="ptref" type="parttimeemployee" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="xs:dateTime" />
+          <xs:element name="d2" type="xs:dateTime" />
+          <xs:element name="d3" type="xs:dateTime" />
+          <xs:element name="d4" type="xs:dateTime" />
+          <xs:element name="d5" type="xs:dateTime" />
+          <xs:element name="d6" type="xs:dateTime" />
+          <xs:element name="d7" type="xs:dateTime" />
+          <xs:element name="d8" type="xs:dateTime" />
+          <xs:element name="d9" type="xs:dateTime" />
+          <xs:element name="d10" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fulltimeemployee" >
+      <xs:complexContent>
+       <xs:extension base="employee">
+         <xs:sequence>
+          <xs:element name="salary" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesprojid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="budget" type="xs:anyType" />
+        <xs:element name="projectlead" type="employee" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personnel" >
+      <xs:sequence>
+        <xs:element name="/***non-persistencefield,anditshouldnotparticipateinanypersistence*operations.*/hiredate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:complexContent>
+       <xs:extension base="personnel">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="firstname" type="xs:string" />
+          <xs:element name="lastname" type="xs:string" />
+          <xs:element name="/***thethisemployeeleads*/" type="project" nillable="true" minOccurs="0" />
+          <xs:element name="/***thethisemployeebelongsto*/" type="department" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="ftref" type="fulltimeemployee" nillable="true" minOccurs="0" />
+          <xs:element name="ptref" type="parttimeemployee" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="xs:dateTime" />
+          <xs:element name="d2" type="xs:dateTime" />
+          <xs:element name="d3" type="xs:dateTime" />
+          <xs:element name="d4" type="xs:dateTime" />
+          <xs:element name="d5" type="xs:dateTime" />
+          <xs:element name="d6" type="xs:dateTime" />
+          <xs:element name="d7" type="xs:dateTime" />
+          <xs:element name="d8" type="xs:dateTime" />
+          <xs:element name="d9" type="xs:dateTime" />
+          <xs:element name="d10" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="parttimeemployee" >
+      <xs:complexContent>
+       <xs:extension base="employee">
+         <xs:sequence>
+          <xs:element name="wage" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="ftref" type="fulltimeemployee" nillable="true" minOccurs="0" />
+          <xs:element name="ptref" type="parttimeemployee" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="xs:dateTime" />
+          <xs:element name="d2" type="xs:dateTime" />
+          <xs:element name="d3" type="xs:dateTime" />
+          <xs:element name="d4" type="xs:dateTime" />
+          <xs:element name="d5" type="xs:dateTime" />
+          <xs:element name="d6" type="xs:dateTime" />
+          <xs:element name="d7" type="xs:dateTime" />
+          <xs:element name="d8" type="xs:dateTime" />
+          <xs:element name="d9" type="xs:dateTime" />
+          <xs:element name="d10" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fulltimeemployee" >
+      <xs:complexContent>
+       <xs:extension base="an">
+         <xs:sequence>
+          <xs:element name="salary" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="parttimeemployee" >
+      <xs:complexContent>
+       <xs:extension base="an">
+         <xs:sequence>
+          <xs:element name="wage" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractpersonnel" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesprojid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="budget" type="xs:anyType" />
+        <xs:element name="projectlead" type="fulltimeemployee" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:complexContent>
+       <xs:extension base="abstractpersonnel">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="firstname" type="xs:string" />
+          <xs:element name="lastname" type="xs:string" />
+          <xs:element name="hire" type="xs:dateTime" />
+          <xs:element name="/***thethisemployeeleads*/" type="project" nillable="true" minOccurs="0" />
+          <xs:element name="/***thethisemployeebelongsto*/" type="department" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fulltimeemployee" >
+      <xs:complexContent>
+       <xs:extension base="an">
+         <xs:sequence>
+          <xs:element name="salary" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="ftref" type="fulltimeemployee" nillable="true" minOccurs="0" />
+          <xs:element name="ptref" type="parttimeemployee" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="xs:dateTime" />
+          <xs:element name="d2" type="xs:dateTime" />
+          <xs:element name="d3" type="xs:dateTime" />
+          <xs:element name="d4" type="xs:dateTime" />
+          <xs:element name="d5" type="xs:dateTime" />
+          <xs:element name="d6" type="xs:dateTime" />
+          <xs:element name="d7" type="xs:dateTime" />
+          <xs:element name="d8" type="xs:dateTime" />
+          <xs:element name="d9" type="xs:dateTime" />
+          <xs:element name="d10" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesprojid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="budget" type="xs:anyType" />
+        <xs:element name="projectlead" type="fulltimeemployee" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:complexContent>
+       <xs:extension base="abstractpersonnel">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="firstname" type="xs:string" />
+          <xs:element name="lastname" type="xs:string" />
+          <xs:element name="hire" type="xs:dateTime" />
+          <xs:element name="/***thethisemployeeleads*/" type="project" nillable="true" minOccurs="0" />
+          <xs:element name="/***thethisemployeebelongsto*/" type="department" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractpersonnel" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="parttimeemployee" >
+      <xs:complexContent>
+       <xs:extension base="an">
+         <xs:sequence>
+          <xs:element name="wage" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="coffee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="brandname" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="team" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesteamid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="company" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="annualreview" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:anyType" />
+        <xs:element name="service" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="insurance" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesinsid" type="xs:long" />
+        <xs:element name="carrier" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="company" >
+      <xs:sequence>
+        <xs:element name="companyid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="address" nillable="true" minOccurs="0" />
+        <xs:element name="teams" type="team" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="personid" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="GeneratedName" type="project" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="team" nillable="true" minOccurs="0" />
+        <xs:element name="annualreviews" type="annualreview" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="carriers" type="insurance" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="projects" type="project" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="aref" type="address" nillable="true" minOccurs="0" />
+          <xs:element name="rref" type="annualreview" nillable="true" minOccurs="0" />
+          <xs:element name="cref" type="company" nillable="true" minOccurs="0" />
+          <xs:element name="insref" type="insurance" nillable="true" minOccurs="0" />
+          <xs:element name="pref" type="person" nillable="true" minOccurs="0" />
+          <xs:element name="projref" type="project" nillable="true" minOccurs="0" />
+          <xs:element name="tref" type="team" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesprojid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="budget" type="xs:anyType" />
+        <xs:element name="projectlead" type="person" nillable="true" minOccurs="0" />
+        <xs:element name="persons" type="person" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="address" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="street" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="zip" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="address" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="street" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="zip" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesprojid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="budget" type="xs:anyType" />
+        <xs:element name="projectlead" type="person" nillable="true" minOccurs="0" />
+        <xs:element name="persons" type="person" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="team" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesteamid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="company" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="personid" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="GeneratedName" type="project" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="team" nillable="true" minOccurs="0" />
+        <xs:element name="annualreviews" type="annualreview" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="carriers" type="insurance" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="projects" type="project" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="aref" type="address" nillable="true" minOccurs="0" />
+          <xs:element name="rref" type="annualreview" nillable="true" minOccurs="0" />
+          <xs:element name="cref" type="company" nillable="true" minOccurs="0" />
+          <xs:element name="insref" type="insurance" nillable="true" minOccurs="0" />
+          <xs:element name="pref" type="person" nillable="true" minOccurs="0" />
+          <xs:element name="projref" type="project" nillable="true" minOccurs="0" />
+          <xs:element name="tref" type="team" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="insurance" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesinsid" type="xs:long" />
+        <xs:element name="carrier" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="company" >
+      <xs:sequence>
+        <xs:element name="companyid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="address" nillable="true" minOccurs="0" />
+        <xs:element name="teams" type="team" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="annualreview" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:anyType" />
+        <xs:element name="service" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xannualreview" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesxaid" type="xs:anyType" />
+        <xs:element name="xservice" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xaddress" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesxid" type="xs:string" />
+        <xs:element name="xstreet" type="xs:string" />
+        <xs:element name="xcity" type="xs:string" />
+        <xs:element name="xstate" type="xs:string" />
+        <xs:element name="xzip" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xteam" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesxteamid" type="xs:long" />
+        <xs:element name="xname" type="xs:string" />
+        <xs:element name="GeneratedName" type="xcompany" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="aref" type="xaddress" nillable="true" minOccurs="0" />
+          <xs:element name="rref" type="xannualreview" nillable="true" minOccurs="0" />
+          <xs:element name="cref" type="xcompany" nillable="true" minOccurs="0" />
+          <xs:element name="insref" type="xinsurance" nillable="true" minOccurs="0" />
+          <xs:element name="pref" type="xperson" nillable="true" minOccurs="0" />
+          <xs:element name="projref" type="xproject" nillable="true" minOccurs="0" />
+          <xs:element name="tref" type="xteam" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="xperson" >
+      <xs:sequence>
+        <xs:element name="xpersonid" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="GeneratedName" type="xproject" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xteam" nillable="true" minOccurs="0" />
+        <xs:element name="xannualreviews" type="xannualreview" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="xcarriers" type="xinsurance" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="xprojects" type="xproject" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xinsurance" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesxinsid" type="xs:long" />
+        <xs:element name="xcarrier" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xproject" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesxprojid" type="xs:long" />
+        <xs:element name="xname" type="xs:string" />
+        <xs:element name="xbudget" type="xs:anyType" />
+        <xs:element name="xprojectlead" type="xperson" nillable="true" minOccurs="0" />
+        <xs:element name="xpersons" type="xperson" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xcompany" >
+      <xs:sequence>
+        <xs:element name="xcompanyid" type="xs:long" />
+        <xs:element name="xname" type="xs:string" />
+        <xs:element name="GeneratedName" type="xaddress" nillable="true" minOccurs="0" />
+        <xs:element name="xteams" type="xteam" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order1" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="totalprice" type="xs:double" />
+        <xs:element name="GeneratedName" type="item" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="item" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="itemname" type="xs:string" />
+        <xs:element name="GeneratedName" type="order1" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="coffee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="brandname" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="cref" type="coffee" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="empref" type="employee" nillable="true" minOccurs="0" />
+          <xs:element name="deptref" type="department" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="lastnameemployees" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="hire" type="xs:dateTime" />
+        <xs:element name="salary" type="xs:double" />
+        <xs:element name="GeneratedName" type="department" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="employees" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="hire" type="xs:dateTime" />
+        <xs:element name="salary" type="xs:double" />
+        <xs:element name="GeneratedName" type="department" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="insurance" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="insurance" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="carrier" type="xs:string" />
+        <xs:element name="employees" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="total" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="b" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="b" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="b" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="" type="a" nillable="true" minOccurs="0" />
+          <xs:element name="" type="b" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="b" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="" type="a" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="" type="a" nillable="true" minOccurs="0" />
+          <xs:element name="" type="b" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="b" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="a" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="//" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="cref" type="coffee" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="foo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bar" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="brandname" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="coffee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="brandname" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lineitem" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="quantity" type="xs:long" />
+          <xs:element name="" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="" type="product" nillable="true" minOccurs="0" />
+          <xs:element name="callbackimpl" type="generictlistenerimpl" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="price" type="xs:double" />
+          <xs:element name="quantity" type="xs:long" />
+          <xs:element name="partnumber" type="xs:long" />
+          <xs:element name="callbackimpl" type="generictlistenerimpl" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="totalprice" type="xs:double" />
+          <xs:element name="sample" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="lineitems" type="lineitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="callbackimpl" type="generictlistenerimpl" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="entitycallbackclientbase">
+         <xs:sequence>
+          <xs:element name="" type="product" nillable="true" minOccurs="0" />
+          <xs:element name="" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="price" type="xs:double" />
+          <xs:element name="quantity" type="xs:long" />
+          <xs:element name="partnumber" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="totalprice" type="xs:double" />
+          <xs:element name="sample" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="lineitems" type="lineitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lineitemsuper" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="quantity" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="entitycallbackclientbase">
+         <xs:sequence>
+          <xs:element name="" type="product" nillable="true" minOccurs="0" />
+          <xs:element name="" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lineitem" >
+      <xs:complexContent>
+       <xs:extension base="lineitemsuper">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="//movedtolineitemsuper//intquantity" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="" type="product" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listenerbase" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="listenerc" >
+      <xs:complexContent>
+       <xs:extension base="listenerbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="callbackstatusif" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="generictlistenerimpl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="listenerb" >
+      <xs:complexContent>
+       <xs:extension base="listenerbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="generictlistener" >
+      <xs:complexContent>
+       <xs:extension base="generictlistenerimpl">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="callbackstatusimpl" >
+      <xs:sequence>
+        <xs:element name="testname" type="xs:string" />
+        <xs:element name="prepersistcalled" type="xs:anyType" />
+        <xs:element name="postpersistcalled" type="xs:anyType" />
+        <xs:element name="preremovecalled" type="xs:anyType" />
+        <xs:element name="postremovecalled" type="xs:anyType" />
+        <xs:element name="preupdatecalled" type="xs:anyType" />
+        <xs:element name="postupdatecalled" type="xs:anyType" />
+        <xs:element name="postloadcalled" type="xs:anyType" />
+        <xs:element name="prepersistcalls" type="xs:anyType" />
+        <xs:element name="postpersistcalls" type="xs:anyType" />
+        <xs:element name="preremovecalls" type="xs:anyType" />
+        <xs:element name="postremovecalls" type="xs:anyType" />
+        <xs:element name="preupdatecalls" type="xs:anyType" />
+        <xs:element name="postupdatecalls" type="xs:anyType" />
+        <xs:element name="postloadcalls" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="entitycallbackclientbase" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listenera" >
+      <xs:complexContent>
+       <xs:extension base="listenerbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="constants" >
+      <xs:sequence>
+        <xs:element name="prepersistruntimeexceptiontest" type="xs:string" />
+        <xs:element name="prepersisttest" type="xs:string" />
+        <xs:element name="prepersistmultitest" type="xs:string" />
+        <xs:element name="preremovetest" type="xs:string" />
+        <xs:element name="preremovemultitest" type="xs:string" />
+        <xs:element name="preupdatetest" type="xs:string" />
+        <xs:element name="preupdatemultitest" type="xs:string" />
+        <xs:element name="postloadtest" type="xs:string" />
+        <xs:element name="postloadmultitest" type="xs:string" />
+        <xs:element name="prepersistcascadetest" type="xs:string" />
+        <xs:element name="prepersistmulticascadetest" type="xs:string" />
+        <xs:element name="preremovecascadetest" type="xs:string" />
+        <xs:element name="preremovemulticascadetest" type="xs:string" />
+        <xs:element name="prepersistruntimeexceptiontest2" type="xs:string" />
+        <xs:element name="prepersisttest2" type="xs:string" />
+        <xs:element name="preremovetest2" type="xs:string" />
+        <xs:element name="preupdatetest2" type="xs:string" />
+        <xs:element name="postloadtest2" type="xs:string" />
+        <xs:element name="prepersistcascadetest2" type="xs:string" />
+        <xs:element name="preremovecascadetest2" type="xs:string" />
+        <xs:element name="listener_a" type="xs:string" />
+        <xs:element name="listener_b" type="xs:string" />
+        <xs:element name="listener_c" type="xs:string" />
+        <xs:element name="listener_abc" type="xs:string" />
+        <xs:element name="listener_bc" type="xs:string" />
+        <xs:element name="generic_listener" type="xs:string" />
+        <xs:element name="product" type="xs:string" />
+        <xs:element name="order" type="xs:string" />
+        <xs:element name="line_item" type="xs:string" />
+        <xs:element name="part_product" type="xs:string" />
+        <xs:element name="priced_part_product" type="xs:string" />
+        <xs:element name="priced_part_product_2" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="totalprice" type="xs:double" />
+          <xs:element name="sample" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="lineitems" type="lineitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="callbackimpl" type="generictlistenerimpl" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lineitem" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="quantity" type="xs:long" />
+          <xs:element name="" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="" type="product" nillable="true" minOccurs="0" />
+          <xs:element name="callbackimpl" type="generictlistenerimpl" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="price" type="xs:double" />
+          <xs:element name="quantity" type="xs:long" />
+          <xs:element name="partnumber" type="xs:long" />
+          <xs:element name="callbackimpl" type="generictlistenerimpl" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="entitycallbackclientbase">
+         <xs:sequence>
+          <xs:element name="" type="product" nillable="true" minOccurs="0" />
+          <xs:element name="" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="partproductlistener" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pricedpartproduct_2" >
+      <xs:complexContent>
+       <xs:extension base="pricedpartproductcallback">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="price" type="xs:double" />
+          <xs:element name="quantity" type="xs:long" />
+          <xs:element name="partnumber" type="xs:long" />
+          <xs:element name="callbackstatus" type="callbackstatusimpl" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productlistener" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="entitycallbackclientbase">
+         <xs:sequence>
+          <xs:element name="p1" type="pricedpartproduct" nillable="true" minOccurs="0" />
+          <xs:element name="p2" type="pricedpartproduct_2" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pricedpartproductlistener" >
+      <xs:complexContent>
+       <xs:extension base="generictlistener">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="quantity" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pricedpartproduct" >
+      <xs:complexContent>
+       <xs:extension base="partproduct">
+         <xs:sequence>
+          <xs:element name="price" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="partproduct" >
+      <xs:complexContent>
+       <xs:extension base="product">
+         <xs:sequence>
+          <xs:element name="partnumber" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pricedpartproductcallback" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="entitycallbackclientbase">
+         <xs:sequence>
+          <xs:element name="" type="product" nillable="true" minOccurs="0" />
+          <xs:element name="" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="totalprice" type="xs:double" />
+          <xs:element name="sample" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="lineitems" type="lineitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="price" type="xs:double" />
+          <xs:element name="quantity" type="xs:long" />
+          <xs:element name="partnumber" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lineitemsuper" >
+      <xs:complexContent>
+       <xs:extension base="callbackstatusimpl">
+         <xs:sequence>
+          <xs:element name="quantity" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lineitem" >
+      <xs:complexContent>
+       <xs:extension base="lineitemsuper">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+          <xs:element name="//movedtolineitemsuper//intquantity" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="" type="product" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="customerref" type="xs:long" />
+          <xs:element name="orderref" type="xs:long" />
+          <xs:element name="aliasref" type="xs:long" />
+          <xs:element name="productref" type="xs:long" />
+          <xs:element name="numofcustomers" type="xs:long" />
+          <xs:element name="numoforders" type="xs:long" />
+          <xs:element name="numofaliases" type="xs:long" />
+          <xs:element name="numofallproducts" type="xs:long" />
+          <xs:element name="numofproducts" type="xs:long" />
+          <xs:element name="numofswproducts" type="xs:long" />
+          <xs:element name="numofhwproducts" type="xs:long" />
+          <xs:element name="numofaddresses" type="xs:long" />
+          <xs:element name="numofhomeaddresses" type="xs:long" />
+          <xs:element name="numofworkaddresses" type="xs:long" />
+          <xs:element name="numofphones" type="xs:long" />
+          <xs:element name="numofcreditcards" type="xs:long" />
+          <xs:element name="numoflineitems" type="xs:long" />
+          <xs:element name="numofspouses" type="xs:long" />
+          <xs:element name="numofinfodata" type="xs:long" />
+          <xs:element name="numofcountries" type="xs:long" />
+          <xs:element name="" type="phone" nillable="true" minOccurs="0" />
+          <xs:element name="" type="address" nillable="true" minOccurs="0" />
+          <xs:element name="" type="country" nillable="true" minOccurs="0" />
+          <xs:element name="" type="creditcard" nillable="true" minOccurs="0" />
+          <xs:element name="" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="" type="spouse" nillable="true" minOccurs="0" />
+          <xs:element name="" type="info" nillable="true" minOccurs="0" />
+          <xs:element name="ref" type="customer" nillable="true" minOccurs="0" />
+          <xs:element name="ref" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="ref" type="alias" nillable="true" minOccurs="0" />
+          <xs:element name="ref" type="product" nillable="true" minOccurs="0" />
+          <xs:element name="hardwareref" type="hardwareproduct" nillable="true" minOccurs="0" />
+          <xs:element name="softwareref" type="softwareproduct" nillable="true" minOccurs="0" />
+          <xs:element name="shelfref" type="shelflife" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="xs:dateTime" />
+          <xs:element name="d2" type="xs:dateTime" />
+          <xs:element name="d3" type="xs:dateTime" />
+          <xs:element name="d4" type="xs:dateTime" />
+          <xs:element name="d5" type="xs:dateTime" />
+          <xs:element name="d6" type="xs:dateTime" />
+          <xs:element name="d7" type="xs:dateTime" />
+          <xs:element name="d8" type="xs:dateTime" />
+          <xs:element name="d9" type="xs:dateTime" />
+          <xs:element name="d10" type="xs:dateTime" />
+          <xs:element name="props" type="xs:anyType" />
+          <xs:element name="aliascol" type="xs:anyType" />
+          <xs:element name="custcol" type="xs:anyType" />
+          <xs:element name="ordercol" type="xs:anyType" />
+          <xs:element name="prodcol" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="hire" type="xs:dateTime" />
+        <xs:element name="salary" type="xs:double" />
+        <xs:element name="GeneratedName" type="department" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="insurance" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="empref" type="employee" nillable="true" minOccurs="0" />
+          <xs:element name="deptref" type="department" nillable="true" minOccurs="0" />
+          <xs:element name="insref" type="insurance" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="xs:dateTime" />
+          <xs:element name="d2" type="xs:dateTime" />
+          <xs:element name="d3" type="xs:dateTime" />
+          <xs:element name="d4" type="xs:dateTime" />
+          <xs:element name="d5" type="xs:dateTime" />
+          <xs:element name="d6" type="xs:dateTime" />
+          <xs:element name="d7" type="xs:dateTime" />
+          <xs:element name="d8" type="xs:dateTime" />
+          <xs:element name="d9" type="xs:dateTime" />
+          <xs:element name="d10" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="employees" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="insurance" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:long" />
+        <xs:element name="carrier" type="xs:string" />
+        <xs:element name="employees" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="util" >
+      <xs:sequence>
+        <xs:element name="debug" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="phone" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="area" type="xs:string" />
+        <xs:element name="number" type="xs:string" />
+        <xs:element name="GeneratedName" type="address" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="spouse" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="first" type="xs:string" />
+        <xs:element name="maiden" type="xs:string" />
+        <xs:element name="last" type="xs:string" />
+        <xs:element name="snumber" type="xs:string" />
+        <xs:element name="GeneratedName" type="info" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customer" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creditcard" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="number" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="expires" type="xs:string" />
+        <xs:element name="approved" type="xs:anyType" />
+        <xs:element name="balance" type="xs:double" />
+        <xs:element name="GeneratedName" type="order" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customer" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="country" >
+      <xs:sequence>
+        <xs:element name="//instancevariablescountry" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creditcardexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="reason" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="hardwareproduct" >
+      <xs:complexContent>
+       <xs:extension base="product">
+         <xs:sequence>
+          <xs:element name="//instancevariablesmodelnumber" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customer" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="home" type="address" nillable="true" minOccurs="0" />
+        <xs:element name="work" type="address" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="country" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="spouse" nillable="true" minOccurs="0" />
+        <xs:element name="creditcards" type="creditcard" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="orders" type="order" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="aliases" type="alias" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="aliasesnoop" type="alias" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="alias" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="alias" type="xs:string" />
+        <xs:element name="noop" type="customer" nillable="true" minOccurs="0" />
+        <xs:element name="customersnoop" type="customer" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="customers" type="customer" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="address" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="street" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="zip" type="xs:string" />
+        <xs:element name="phones" type="phone" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="info" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="street" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="zip" type="xs:string" />
+        <xs:element name="GeneratedName" type="spouse" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="addressexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="reason" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="spouseexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="reason" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lineitem" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="GeneratedName" type="order" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="partnumber" type="xs:long" />
+        <xs:element name="warehouse" type="xs:string" />
+        <xs:element name="GeneratedName" type="shelflife" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shelflife" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesinception" type="xs:dateTime" />
+        <xs:element name="sold" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lineitemexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="reason" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="phoneexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="reason" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:sequence>
+        <xs:element name="//instancevariablesid" type="xs:string" />
+        <xs:element name="totalprice" type="xs:double" />
+        <xs:element name="GeneratedName" type="customer" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="creditcard" nillable="true" minOccurs="0" />
+        <xs:element name="sample" type="lineitem" nillable="true" minOccurs="0" />
+        <xs:element name="lineitems" type="lineitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infoexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="reason" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="softwareproduct" >
+      <xs:complexContent>
+       <xs:extension base="product">
+         <xs:sequence>
+          <xs:element name="//instancevariablesrevisionnumber" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="customerref" type="xs:long" />
+          <xs:element name="orderref" type="xs:long" />
+          <xs:element name="aliasref" type="xs:long" />
+          <xs:element name="productref" type="xs:long" />
+          <xs:element name="numofcustomers" type="xs:long" />
+          <xs:element name="numoforders" type="xs:long" />
+          <xs:element name="numofaliases" type="xs:long" />
+          <xs:element name="numofallproducts" type="xs:long" />
+          <xs:element name="numofproducts" type="xs:long" />
+          <xs:element name="numofswproducts" type="xs:long" />
+          <xs:element name="numofhwproducts" type="xs:long" />
+          <xs:element name="numofaddresses" type="xs:long" />
+          <xs:element name="numofhomeaddresses" type="xs:long" />
+          <xs:element name="numofworkaddresses" type="xs:long" />
+          <xs:element name="numofphones" type="xs:long" />
+          <xs:element name="numofcreditcards" type="xs:long" />
+          <xs:element name="numoflineitems" type="xs:long" />
+          <xs:element name="numofspouses" type="xs:long" />
+          <xs:element name="numofinfodata" type="xs:long" />
+          <xs:element name="numofcountries" type="xs:long" />
+          <xs:element name="" type="phone" nillable="true" minOccurs="0" />
+          <xs:element name="" type="address" nillable="true" minOccurs="0" />
+          <xs:element name="" type="country" nillable="true" minOccurs="0" />
+          <xs:element name="" type="creditcard" nillable="true" minOccurs="0" />
+          <xs:element name="" type="lineitem" nillable="true" minOccurs="0" />
+          <xs:element name="" type="spouse" nillable="true" minOccurs="0" />
+          <xs:element name="" type="info" nillable="true" minOccurs="0" />
+          <xs:element name="ref" type="customer" nillable="true" minOccurs="0" />
+          <xs:element name="ref" type="order" nillable="true" minOccurs="0" />
+          <xs:element name="ref" type="alias" nillable="true" minOccurs="0" />
+          <xs:element name="ref" type="product" nillable="true" minOccurs="0" />
+          <xs:element name="hardwareref" type="hardwareproduct" nillable="true" minOccurs="0" />
+          <xs:element name="softwareref" type="softwareproduct" nillable="true" minOccurs="0" />
+          <xs:element name="shelfref" type="shelflife" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="xs:dateTime" />
+          <xs:element name="d2" type="xs:dateTime" />
+          <xs:element name="d3" type="xs:dateTime" />
+          <xs:element name="d4" type="xs:dateTime" />
+          <xs:element name="d5" type="xs:dateTime" />
+          <xs:element name="d6" type="xs:dateTime" />
+          <xs:element name="d7" type="xs:dateTime" />
+          <xs:element name="d8" type="xs:dateTime" />
+          <xs:element name="d9" type="xs:dateTime" />
+          <xs:element name="d10" type="xs:dateTime" />
+          <xs:element name="props" type="xs:anyType" />
+          <xs:element name="aliascol" type="xs:anyType" />
+          <xs:element name="custcol" type="xs:anyType" />
+          <xs:element name="ordercol" type="xs:anyType" />
+          <xs:element name="prodcol" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="grade" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datatypes" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="data" type="xs:long" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="data" type="xs:long" />
+        <xs:element name="data" type="xs:double" />
+        <xs:element name="data" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="d0" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d2" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d3" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d4" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d5" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d6" type="datatypes" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datatypes" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="data" type="xs:long" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="data" type="xs:long" />
+        <xs:element name="data" type="xs:double" />
+        <xs:element name="data" type="xs:double" />
+        <xs:element name="enumdata" type="grade" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="d1" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d2" type="datatypes2" nillable="true" minOccurs="0" />
+          <xs:element name="dateid" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datatypes2" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="timedata" type="xs:anyType" />
+        <xs:element name="tsdata" type="xs:anyType" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="chardata" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="d0" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d1" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d2" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="newd1" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="newd2" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="newd3" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="newd4" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="newd5" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="newd6" type="datatypes" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datatypes" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="data" type="xs:long" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="data" type="xs:long" />
+        <xs:element name="data" type="xs:double" />
+        <xs:element name="data" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="build" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datatypes" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="acterdata" type="xs:anyType" />
+        <xs:element name="data" type="xs:long" />
+        <xs:element name="egerdata" type="xs:long" />
+        <xs:element name="data" type="xs:long" />
+        <xs:element name="data" type="xs:double" />
+        <xs:element name="data" type="xs:double" />
+        <xs:element name="enumdata" type="grade" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="d1" type="datatypes" nillable="true" minOccurs="0" />
+          <xs:element name="d2" type="datatypes2" nillable="true" minOccurs="0" />
+          <xs:element name="dateid" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datatypes2" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="timedata" type="xs:anyType" />
+        <xs:element name="tsdata" type="xs:anyType" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compoundpk" >
+      <xs:sequence>
+        <xs:element name="/*fields*/pmid" type="xs:anyType" />
+        <xs:element name="pmid" type="xs:string" />
+        <xs:element name="pmid" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compoundpk3" >
+      <xs:sequence>
+        <xs:element name="/*fields*/pmid" type="xs:anyType" />
+        <xs:element name="pmid" type="xs:string" />
+        <xs:element name="pmid" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compoundpk2" >
+      <xs:sequence>
+        <xs:element name="/*fields*/pmid" type="xs:anyType" />
+        <xs:element name="pmid" type="xs:string" />
+        <xs:element name="pmid" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testbean2" >
+      <xs:sequence>
+        <xs:element name="pmid" type="xs:anyType" />
+        <xs:element name="pmid" type="xs:string" />
+        <xs:element name="pmid" type="xs:double" />
+        <xs:element name="brandname" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testbean" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="compoundpk" nillable="true" minOccurs="0" />
+        <xs:element name="brandname" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:complexContent>
+       <xs:extension base="pmclientbase">
+         <xs:sequence>
+          <xs:element name="props" type="xs:anyType" />
+          <xs:element name="refpk1" type="compoundpk" nillable="true" minOccurs="0" />
+          <xs:element name="refpk2" type="compoundpk" nillable="true" minOccurs="0" />
+          <xs:element name="refpk3" type="compoundpk2" nillable="true" minOccurs="0" />
+          <xs:element name="refpk4" type="compoundpk2" nillable="true" minOccurs="0" />
+          <xs:element name="refpk5" type="compoundpk3" nillable="true" minOccurs="0" />
+          <xs:element name="refpk6" type="compoundpk3" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="testbean3" >
+      <xs:sequence>
+        <xs:element name="pmid" type="xs:anyType" />
+        <xs:element name="pmid" type="xs:string" />
+        <xs:element name="pmid" type="xs:double" />
+        <xs:element name="brandname" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

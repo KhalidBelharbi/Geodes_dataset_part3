@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="usercontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="usercontroller" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="homecontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="homecontroller" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testmessageservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="messageservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springconfigtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="homecontroller" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepotest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messageservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messageserviceimpl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="homecontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vehiclephoto" >
+      <xs:sequence>
+        <xs:element name="vehiclephotoid" type="xs:long" />
+        <xs:element name="vehiclephotothumbnailurl" type="xs:string" />
+        <xs:element name="vehiclephotourl" type="xs:string" />
+        <xs:element name="vehiclevehicleid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agencyuser" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="travelagencyid" type="xs:long" />
+        <xs:element name="isactiveuserflag" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkcountry" >
+      <xs:sequence>
+        <xs:element name="countrycode" type="xs:string" />
+        <xs:element name="countryname" type="xs:string" />
+        <xs:element name="countryflagurl" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="businesspriority" type="xs:anyType" />
+        <xs:element name="isdefaultchoice" type="xs:string" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agencyuserpk" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="travelagencyid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="travelagency" >
+      <xs:sequence>
+        <xs:element name="travelagencyid" type="xs:long" />
+        <xs:element name="agencyname" type="xs:string" />
+        <xs:element name="agencyphone" type="xs:string" />
+        <xs:element name="agencymobile" type="xs:string" />
+        <xs:element name="agencyaddressid" type="xs:long" />
+        <xs:element name="responsiblepersonid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkcitypk" >
+      <xs:sequence>
+        <xs:element name="citycode" type="xs:long" />
+        <xs:element name="statecode" type="xs:long" />
+        <xs:element name="countrycode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkreviewcategory" >
+      <xs:sequence>
+        <xs:element name="reviewcategorycode" type="xs:long" />
+        <xs:element name="reviewcategoryname" type="xs:string" />
+        <xs:element name="reviewcategorydescription" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="businesspriority" type="xs:anyType" />
+        <xs:element name="isdefaultchoice" type="xs:string" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quote" >
+      <xs:sequence>
+        <xs:element name="quoteid" type="xs:long" />
+        <xs:element name="journeyid" type="xs:long" />
+        <xs:element name="quoteprice" type="xs:anyType" />
+        <xs:element name="quotedescription" type="xs:string" />
+        <xs:element name="quotestatuscode" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="travelagencyid" type="xs:long" />
+        <xs:element name="driverdriverid" type="xs:long" />
+        <xs:element name="vehicleid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="address" >
+      <xs:sequence>
+        <xs:element name="addressid" type="xs:long" />
+        <xs:element name="addressline1" type="xs:string" />
+        <xs:element name="addressline2" type="xs:string" />
+        <xs:element name="addressline3" type="xs:string" />
+        <xs:element name="citycode" type="xs:long" />
+        <xs:element name="statecode" type="xs:long" />
+        <xs:element name="countrycode" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personaddresspk" >
+      <xs:sequence>
+        <xs:element name="addressid" type="xs:long" />
+        <xs:element name="personid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkquotestatus" >
+      <xs:sequence>
+        <xs:element name="quotestatuscode" type="xs:long" />
+        <xs:element name="quotestatusname" type="xs:string" />
+        <xs:element name="quotestatusdescription" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="businesspriority" type="xs:anyType" />
+        <xs:element name="isdefaultchoice" type="xs:string" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkjourneystatus" >
+      <xs:sequence>
+        <xs:element name="journeystatuscode" type="xs:long" />
+        <xs:element name="journeystatusname" type="xs:string" />
+        <xs:element name="journeystatusdescription" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="businesspriority" type="xs:anyType" />
+        <xs:element name="isdefaultchoice" type="xs:string" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reviewabouttravelagency" >
+      <xs:sequence>
+        <xs:element name="reviewabouttravelagencyid" type="xs:long" />
+        <xs:element name="travelagencyreviewtext" type="xs:string" />
+        <xs:element name="byuserid" type="xs:long" />
+        <xs:element name="fortravelagencyid" type="xs:long" />
+        <xs:element name="journeyid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vehiclefeature" >
+      <xs:sequence>
+        <xs:element name="vehiclefeatureid" type="xs:long" />
+        <xs:element name="vehicleid" type="xs:long" />
+        <xs:element name="featurecode" type="xs:long" />
+        <xs:element name="isfeatureverified" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagelog" >
+      <xs:sequence>
+        <xs:element name="messagelogid" type="xs:long" />
+        <xs:element name="messagetext" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="travelagencyid" type="xs:long" />
+        <xs:element name="journeyid" type="xs:long" />
+        <xs:element name="parentmessagelogid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reviewaboutuser" >
+      <xs:sequence>
+        <xs:element name="reviewaboutuserid" type="xs:long" />
+        <xs:element name="bytravelagencyid" type="xs:long" />
+        <xs:element name="foruserid" type="xs:long" />
+        <xs:element name="userreviewtext" type="xs:string" />
+        <xs:element name="userrating" type="xs:anyType" />
+        <xs:element name="journeyid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="personid" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="dateofbirth" type="xs:anyType" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="mobilenumber" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:long" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+        <xs:element name="bypersonid" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vehicle" >
+      <xs:sequence>
+        <xs:element name="vehicleid" type="xs:long" />
+        <xs:element name="numberplate" type="xs:string" />
+        <xs:element name="vehiclemake" type="xs:string" />
+        <xs:element name="vehiclemodel" type="xs:string" />
+        <xs:element name="vehicleregistrationyear" type="xs:string" />
+        <xs:element name="isvehicleverified" type="xs:string" />
+        <xs:element name="travelagencyid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="journey" >
+      <xs:sequence>
+        <xs:element name="journeyid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="fromcitycode" type="xs:long" />
+        <xs:element name="fromstatecode" type="xs:long" />
+        <xs:element name="fromcountrycode" type="xs:string" />
+        <xs:element name="tocitycode" type="xs:long" />
+        <xs:element name="tostatecode" type="xs:long" />
+        <xs:element name="tocountrycode" type="xs:string" />
+        <xs:element name="departuredatetime" type="xs:string" />
+        <xs:element name="returndatetime" type="xs:string" />
+        <xs:element name="specialrequest" type="xs:string" />
+        <xs:element name="noofpassengers" type="xs:long" />
+        <xs:element name="noofextralargeluggage" type="xs:long" />
+        <xs:element name="nooflargeluggage" type="xs:long" />
+        <xs:element name="noofmediumluggage" type="xs:long" />
+        <xs:element name="noofsmallluggage" type="xs:long" />
+        <xs:element name="acceptedquoteid" type="xs:long" />
+        <xs:element name="journeystatuscode" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:long" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkstate" >
+      <xs:sequence>
+        <xs:element name="statecode" type="xs:long" />
+        <xs:element name="countrycode" type="xs:string" />
+        <xs:element name="statename" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="businesspriority" type="xs:anyType" />
+        <xs:element name="isdefaultchoice" type="xs:string" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkstatepk" >
+      <xs:sequence>
+        <xs:element name="statecode" type="xs:long" />
+        <xs:element name="countrycode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="travelagencyrating" >
+      <xs:sequence>
+        <xs:element name="travelagencyratingid" type="xs:long" />
+        <xs:element name="travelagencyrating" type="xs:anyType" />
+        <xs:element name="reviewcategorycode" type="xs:long" />
+        <xs:element name="reviewabouttravelagencyid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="useremail" type="xs:string" />
+        <xs:element name="userpassword" type="xs:string" />
+        <xs:element name="isactiveflag" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:long" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+        <xs:element name="byuserid" type="person" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="driver" >
+      <xs:sequence>
+        <xs:element name="driverid" type="xs:long" />
+        <xs:element name="driverphotothumbnailurl" type="xs:string" />
+        <xs:element name="driverphotourl" type="xs:string" />
+        <xs:element name="driverlicencenumber" type="xs:string" />
+        <xs:element name="firstlicenceissuedate" type="xs:anyType" />
+        <xs:element name="islicenceverified" type="xs:string" />
+        <xs:element name="isaddressverified" type="xs:string" />
+        <xs:element name="travelagencyid" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkcity" >
+      <xs:sequence>
+        <xs:element name="citycode" type="xs:long" />
+        <xs:element name="statecode" type="xs:long" />
+        <xs:element name="countrycode" type="xs:string" />
+        <xs:element name="cityname" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="businesspriority" type="xs:anyType" />
+        <xs:element name="isdefaultchoice" type="xs:string" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personaddress" >
+      <xs:sequence>
+        <xs:element name="addressid" type="xs:long" />
+        <xs:element name="personid" type="xs:long" />
+        <xs:element name="isprimaryaddressflag" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lkfeature" >
+      <xs:sequence>
+        <xs:element name="featurecode" type="xs:long" />
+        <xs:element name="featurename" type="xs:string" />
+        <xs:element name="featuredescription" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:anyType" />
+        <xs:element name="businesspriority" type="xs:anyType" />
+        <xs:element name="isdefaultchoice" type="xs:string" />
+        <xs:element name="jpaversionnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepoimpl" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persondata" >
+      <xs:sequence>
+        <xs:element name="personid" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="dateofbirth" type="xs:anyType" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="mobilenumber" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:long" />
+        <xs:element name="bypersonid" type="userdata" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdata" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="useremail" type="xs:string" />
+        <xs:element name="userpassword" type="xs:string" />
+        <xs:element name="isactiveflag" type="xs:string" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:long" />
+        <xs:element name="byuserid" type="persondata" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="journeydata" >
+      <xs:sequence>
+        <xs:element name="journeyid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="fromcitycode" type="xs:long" />
+        <xs:element name="fromstatecode" type="xs:long" />
+        <xs:element name="fromcountrycode" type="xs:string" />
+        <xs:element name="tocitycode" type="xs:long" />
+        <xs:element name="tostatecode" type="xs:long" />
+        <xs:element name="tocountrycode" type="xs:string" />
+        <xs:element name="departuredatetime" type="xs:string" />
+        <xs:element name="returndatetime" type="xs:string" />
+        <xs:element name="specialrequest" type="xs:string" />
+        <xs:element name="noofpassengers" type="xs:long" />
+        <xs:element name="noofextralargeluggage" type="xs:long" />
+        <xs:element name="nooflargeluggage" type="xs:long" />
+        <xs:element name="noofmediumluggage" type="xs:long" />
+        <xs:element name="noofsmallluggage" type="xs:long" />
+        <xs:element name="acceptedquoteid" type="xs:long" />
+        <xs:element name="journeystatuscode" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:long" />
+        <xs:element name="lastupdatedate" type="xs:anyType" />
+        <xs:element name="lastupdatedby" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logging" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rebel" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="index" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

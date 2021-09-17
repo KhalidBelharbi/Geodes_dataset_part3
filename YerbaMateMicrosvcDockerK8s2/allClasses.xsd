@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="yerbamatemailerapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="streamingconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="auditconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutprocessedsink" >
+      <xs:sequence>
+        <xs:element name="input" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="mailrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="uuidutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yerbamatemailerapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutprocessedlistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="mailservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="checkoutcode" type="xs:string" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="updatedat" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<mailentity,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="uuidutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutprocessed" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

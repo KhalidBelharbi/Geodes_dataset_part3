@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="productdescription" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="productdescriptionrdate" type="xs:anyType" />
+        <xs:element name="productdescriptionudate" type="xs:anyType" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productimagefile" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productprofilefile" >
+      <xs:sequence>
+        <xs:element name="fileid" type="xs:string" />
+        <xs:element name="//@column(name" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="rdate" type="xs:anyType" />
+        <xs:element name="udate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="productid" type="xs:string" />
+        <xs:element name="productname" type="xs:string" />
+        <xs:element name="productsale" type="xs:long" />
+        <xs:element name="productprice" type="xs:long" />
+        <xs:element name="productquantity" type="xs:long" />
+        <xs:element name="productdetail" type="xs:string" />
+        <xs:element name="GeneratedName" type="producttype" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productdetailtype" nillable="true" minOccurs="0" />
+        <xs:element name="productrdate" type="xs:anyType" />
+        <xs:element name="productudate" type="xs:anyType" />
+        <xs:element name="productdescriptions" type="productdescription" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//@notfound(action" type="productprofilefile" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

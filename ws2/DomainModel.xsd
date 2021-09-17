@@ -1,0 +1,2564 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="orderrefundexception" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="/***编号**/id" type="xs:long" />
+        <xs:element name="/***订单id或者退款单id**/resourceid" type="xs:long" />
+        <xs:element name="/***支付方式：现金、商品币、积分、话费或者其他**/payment" type="xs:string" />
+        <xs:element name="/***修改原因0：清算系统反馈长款**/reason" type="xs:long" />
+        <xs:element name="/***修改人**/createuserid" type="xs:long" />
+        <xs:element name="/***用户名**/username" type="xs:string" />
+        <xs:element name="/***来源类型**/resoucetype" type="xs:long" />
+        <xs:element name="/***修改时间**/createtime" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="reasonmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:complexContent>
+       <xs:extension base="actorderinfo">
+         <xs:sequence>
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="/***用户手机号码**/terminalid" type="xs:string" />
+          <xs:element name="/***退款ids（多个用逗号,隔开）**/refundids" type="xs:string" />
+          <xs:element name="/***第一个退款单id**/orderrefundfirstid" type="xs:long" />
+          <xs:element name="/***第二个退款单id**/orderrefundsecondid" type="xs:long" />
+          <xs:element name="/***第一个退款单状态**/refundfirststatus" type="xs:long" />
+          <xs:element name="/***退款单计数**/refundcount" type="xs:long" />
+          <xs:element name="/***成功退款单数量，最多2个*/successrefundcount" type="xs:long" />
+          <xs:element name="payondeliverymap" type="xs:anyType" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="command" type="xs:string" />
+          <xs:element name="actid" type="xs:long" />
+          <xs:element name="/***商品信息**/spliteinfo" type="xs:string" />
+          <xs:element name="/***订单物流状态*/expressstatus" type="xs:long" />
+          <xs:element name="/***订单状态（组合状态）*/orderstatus" type="xs:string" />
+          <xs:element name="/***退款单集合*/orderrefunds" type="orderrefund" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***是否有退款权限，如果有页面上会有“增加退款单”按钮*/canrefund" type="xs:anyType" />
+          <xs:element name="itemmode" type="xs:long" />
+          <xs:element name="/***订单商品*/itemsales" type="itemsale" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="currency" type="xs:string" />
+          <xs:element name="actname" type="xs:string" />
+          <xs:element name="acttypemap" type="xs:anyType" />
+          <xs:element name="closestatusmap" type="xs:anyType" />
+          <xs:element name="paystatusmap" type="xs:anyType" />
+          <xs:element name="deletestatusmap" type="xs:anyType" />
+          <xs:element name="/***查询用创建开始时间**/begintime" type="xs:string" />
+          <xs:element name="/***查询用创建结束时间**/endtime" type="xs:string" />
+          <xs:element name="itemmodemap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="codeinfo" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="/***码编号，唯一标识*/orderid" type="xs:string" />
+        <xs:element name="/***订单商品id*/itemorderid" type="xs:long" />
+        <xs:element name="/***订单id*/actorderid" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="code2d" type="xs:string" />
+        <xs:element name="/***码状态，0：正常1：已撤销2：使用中3：已使用4：已过期*/codestatus" type="xs:long" />
+        <xs:element name="transdate" type="xs:string" />
+        <xs:element name="validdate" type="xs:string" />
+        <xs:element name="expiredate" type="xs:string" />
+        <xs:element name="validtimes" type="xs:long" />
+        <xs:element name="remaintimes" type="xs:long" />
+        <xs:element name="terminalid" type="xs:string" />
+        <xs:element name="itemid" type="xs:string" />
+        <xs:element name="itemname" type="xs:string" />
+        <xs:element name="itemquantity" type="xs:long" />
+        <xs:element name="totalprice" type="xs:long" />
+        <xs:element name="starttimebegin" type="xs:string" />
+        <xs:element name="starttimeend" type="xs:string" />
+        <xs:element name="pasttimebegin" type="xs:string" />
+        <xs:element name="pasttimeend" type="xs:string" />
+        <xs:element name="/***founder：方正store：商户cplatform：宽连*/platformid" type="xs:string" />
+        <xs:element name="storeid" type="xs:string" />
+        <xs:element name="smscontent" type="xs:string" />
+        <xs:element name="statusmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderrefundgoods" >
+      <xs:sequence>
+        <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+        <xs:element name="/***序列**/id" type="xs:long" />
+        <xs:element name="/***退货单编号**/refundid" type="xs:long" />
+        <xs:element name="/***订单商品id**/ordergoodsid" type="xs:long" />
+        <xs:element name="/***商品id**/goodsid" type="xs:long" />
+        <xs:element name="/***退货数量**/backnumber" type="xs:long" />
+        <xs:element name="/***现金**/cash" type="xs:double" />
+        <xs:element name="/***商城币**/coin" type="xs:double" />
+        <xs:element name="//********busmethod*************" type="itemsale" nillable="true" minOccurs="0" />
+        <xs:element name="//查看的时候绑定购买数量number" type="xs:long" />
+        <xs:element name="//查看的时候绑定已经购买数量hasbuynunber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderrefund" >
+      <xs:sequence>
+        <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="//状态/***状态－等待商户确认*/status_1" type="xs:long" />
+        <xs:element name="/***状态－等待审核*/status_2" type="xs:long" />
+        <xs:element name="/***状态－商户拒绝确认*/status_3" type="xs:long" />
+        <xs:element name="/***状态－等待系统退款*/status_4" type="xs:long" />
+        <xs:element name="/***状态－审核失败*/status_5" type="xs:long" />
+        <xs:element name="/***状态－退款成功*/status_6" type="xs:long" />
+        <xs:element name="/***状态－退款失败*/status_7" type="xs:long" />
+        <xs:element name="/***序列**/id" type="xs:long" />
+        <xs:element name="/***订单id**/orderid" type="xs:long" />
+        <xs:element name="/***商户id**/storeid" type="xs:long" />
+        <xs:element name="/***状态**/status" type="xs:long" />
+        <xs:element name="/***实际退款金额**/refundfee" type="xs:double" />
+        <xs:element name="/***实际退款现金*/cashfee" type="xs:double" />
+        <xs:element name="/***实际退款商城币*/coinfee" type="xs:double" />
+        <xs:element name="/***申请时间**/createtime" type="xs:string" />
+        <xs:element name="/***操作人**/userid" type="xs:long" />
+        <xs:element name="/***申请原因**/reason" type="xs:string" />
+        <xs:element name="/***商户操作人**/shopuserid" type="xs:long" />
+        <xs:element name="/***商户操作时间**/updatetime" type="xs:string" />
+        <xs:element name="/***商户说明**/shopremark" type="xs:string" />
+        <xs:element name="/***审核人**/audituserid" type="xs:long" />
+        <xs:element name="/***审核时间**/audittime" type="xs:string" />
+        <xs:element name="/***审核说明**/auditremark" type="xs:string" />
+        <xs:element name="/***处理时间**/dealtime" type="xs:string" />
+        <xs:element name="/***总共退码数量*/totalcode" type="xs:long" />
+        <xs:element name="/***成功退码数量*/successcode" type="xs:long" />
+        <xs:element name="/***失败退码数量*/failcode" type="xs:long" />
+        <xs:element name="/***用户手机号码**/terminalid" type="xs:string" />
+        <xs:element name="orderrecordcashid" type="xs:long" />
+        <xs:element name="orderrecordcoinid" type="xs:long" />
+        <xs:element name="orderrecordscoreid" type="xs:long" />
+        <xs:element name="scorefee" type="xs:double" />
+        <xs:element name="phonefee" type="xs:double" />
+        <xs:element name="orderrecordphoneid" type="xs:long" />
+        <xs:element name="/***退款单类型，1平台自己，2拉手*/refundtype" type="xs:long" />
+        <xs:element name="refundtypemap" type="xs:anyType" />
+        <xs:element name="//**********busmethod***********createtimebegin" type="xs:string" />
+        <xs:element name="createtimeend" type="xs:string" />
+        <xs:element name="refundverifycode" type="xs:string" />
+        <xs:element name="itemmode" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemlogisticsfee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***发布商品id**/saleid" type="xs:long" />
+        <xs:element name="/***物流渠道名称**/qdname" type="xs:string" />
+        <xs:element name="/***运费**/feenum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemsalepayment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="itemid" type="xs:long" />
+        <xs:element name="paytype" type="xs:long" />
+        <xs:element name="cashpayratio" type="xs:long" />
+        <xs:element name="otherpayratio" type="xs:long" />
+        <xs:element name="billpay" type="xs:long" />
+        <xs:element name="deliverypay" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemsaleuserlevelalink" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***发布商品id**/saleid" type="xs:long" />
+        <xs:element name="/***允许购买会员级别**/userlevel" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemproperty" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="itemid" type="xs:long" />
+        <xs:element name="propertyid" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="fileid" type="xs:long" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="imgpath" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="thirdcodename" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***名称*/name" type="xs:string" />
+        <xs:element name="/***备注（备用）*/remark" type="xs:string" />
+        <xs:element name="/***创建时间*/createtime" type="xs:string" />
+        <xs:element name="/***操作用户id*/userid" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="storename" type="xs:string" />
+        <xs:element name="/***码类型，2非卡密，3卡密*/codetype" type="xs:long" />
+        <xs:element name="/***码总数量*/num" type="xs:long" />
+        <xs:element name="/***查询用创建开始时间**/begintime" type="xs:string" />
+        <xs:element name="/***查询用创建结束时间**/endtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemverifyshoplink" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***发布商品id**/saleid" type="xs:long" />
+        <xs:element name="/***商户id**/storeid" type="xs:long" />
+        <xs:element name="/***业务门店id如果是全商户门店都可以验证，则只存商户id，该业务门店id可以允许为空*/shopid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hisunproductionlink" >
+      <xs:sequence>
+        <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+        <xs:element name="/***序列**/id" type="xs:long" />
+        <xs:element name="/***商品结算资料表id**/settleid" type="xs:long" />
+        <xs:element name="/***高阳商品id**/productionid" type="xs:string" />
+        <xs:element name="/***销售商品id**/itemid" type="xs:long" />
+        <xs:element name="/***商品分类**/productiontype" type="xs:string" />
+        <xs:element name="/***结算价单位分**/settleprice" type="xs:double" />
+        <xs:element name="/***创建时间**/createtime" type="xs:string" />
+        <xs:element name="/***高阳商品id(现金)**/productionidcash" type="xs:string" />
+        <xs:element name="/***高阳商品id（商城币）**/productionidcoin" type="xs:string" />
+        <xs:element name="/***高阳商品id（积分）**/productionidscore" type="xs:string" />
+        <xs:element name="//***********busmethod*********itemname" type="xs:string" />
+        <xs:element name="itemgystatus" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hisunproductionsettle" >
+      <xs:sequence>
+        <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+        <xs:element name="capitaltype4map" type="xs:anyType" />
+        <xs:element name="capitaltype3map" type="xs:anyType" />
+        <xs:element name="capitaltype2map" type="xs:anyType" />
+        <xs:element name="capitaltype1map" type="xs:anyType" />
+        <xs:element name="verifyflagmap" type="xs:anyType" />
+        <xs:element name="verifysettleflagmap" type="xs:anyType" />
+        <xs:element name="settleperiodtypemap" type="xs:anyType" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="syncgystatusmap" type="xs:anyType" />
+        <xs:element name="typemap" type="xs:anyType" />
+        <xs:element name="//资金种类4-话费/***支持*/capitaltype4_1" type="xs:long" />
+        <xs:element name="/***no*/capitaltype4_0" type="xs:long" />
+        <xs:element name="//资金种类3-积分/***支持*/capitaltype3_1" type="xs:long" />
+        <xs:element name="/***no*/capitaltype3_0" type="xs:long" />
+        <xs:element name="//资金种类2-商城币/***支持*/capitaltype2_1" type="xs:long" />
+        <xs:element name="/***no*/capitaltype2_0" type="xs:long" />
+        <xs:element name="//资金种类-现金/***支持*/capitaltype1_1" type="xs:long" />
+        <xs:element name="/***no*/capitaltype1_0" type="xs:long" />
+        <xs:element name="//验证标识/***验证*/verifyflag_y" type="xs:string" />
+        <xs:element name="/***不验证*/verifyflag_n" type="xs:string" />
+        <xs:element name="//验证结算/***支付后结算*/verifysettleflag_s1" type="xs:string" />
+        <xs:element name="/***验证后结算*/verifysettleflag_s2" type="xs:string" />
+        <xs:element name="//结算分期类型/***一期支付二期支付*/settleperiodtype_1p2p" type="xs:string" />
+        <xs:element name="/***一期支付二期验证*/settleperiodtype_1p2v" type="xs:string" />
+        <xs:element name="/***一期验证二期验证*/settleperiodtype_1v2v" type="xs:string" />
+        <xs:element name="//状态/***状态－未审核*/status_0" type="xs:long" />
+        <xs:element name="/***状态－审核通过*/status_1" type="xs:long" />
+        <xs:element name="//高阳状态/***状态－未同步*/sync_gy_status_0" type="xs:long" />
+        <xs:element name="/***状态－同步成功*/sync_gy_status_1" type="xs:long" />
+        <xs:element name="/***状态－同步失败*/sync_gy_status_2" type="xs:long" />
+        <xs:element name="/***状态－审核通过*/sync_gy_status_3" type="xs:long" />
+        <xs:element name="/***状态－审核驳回*/sync_gy_status_4" type="xs:long" />
+        <xs:element name="//协议类型/***商品协议*/type_0" type="xs:long" />
+        <xs:element name="/***商品资料*/type_1" type="xs:long" />
+        <xs:element name="/***序列**/id" type="xs:long" />
+        <xs:element name="/***结算商户编号商户在统一清算平台中的编号**/merchid" type="xs:string" />
+        <xs:element name="/***商户编号在业务平台中的商户编号**/storeid" type="xs:string" />
+        <xs:element name="/***业务编号**/serviceid" type="xs:string" />
+        <xs:element name="/***合同编号(商盟必输)**/contractid" type="xs:string" />
+        <xs:element name="/***合同生效日期(yyyymmdd，商盟必输)**/contracteffdate" type="xs:string" />
+        <xs:element name="/***合同失效日期**/contractexpdate" type="xs:string" />
+        <xs:element name="/***商品编号**/productionid" type="xs:string" />
+        <xs:element name="/***商品名称**/productionname" type="xs:string" />
+        <xs:element name="/***商品类别**/productiontype" type="xs:string" />
+        <xs:element name="/***资金种类3-积分1-支持0-no**/capitaltype4" type="xs:long" />
+        <xs:element name="/***资金种类3-积分1-支持0-no**/capitaltype3" type="xs:long" />
+        <xs:element name="/***资金种类2-商城币1-支持0-no**/capitaltype2" type="xs:long" />
+        <xs:element name="/***资金种类-现金1-支持0-no**/capitaltype1" type="xs:long" />
+        <xs:element name="/***验证标识y-验证；n-不验证（默认）**/verifyflag" type="xs:string" />
+        <xs:element name="/***验证结算对于需要验证的商品，一种是支付验证都成功后才能做清结算，另一种是支付成功，但是没有验证的就要做清结算，通过此字段来区分，*这个字段当veriflag" type="xs:string" />
+        <xs:element name="/***产品上线时间yyyymmddhhmiss**/productionefftime" type="xs:string" />
+        <xs:element name="/***产品下线时间yyyymmddhhmiss**/productionexptime" type="xs:string" />
+        <xs:element name="/***验证截止日期(yyyymmdd，商盟必输)**/verifyexpdate" type="xs:string" />
+        <xs:element name="/***地市编码(商盟必输)**/cityid" type="xs:string" />
+        <xs:element name="/***地市名称(商盟必输)**/cityname" type="xs:string" />
+        <xs:element name="/***地市分成比例(商盟必输)**/cityprofitrate" type="xs:string" />
+        <xs:element name="/***代理商编码(商盟必输)**/agentid" type="xs:string" />
+        <xs:element name="/***代理商名称(商盟必输)**/agentname" type="xs:string" />
+        <xs:element name="/***代理商分成比例(商盟必输)**/agentprofitrate" type="xs:string" />
+        <xs:element name="/***商品单价以分为单位**/price" type="xs:double" />
+        <xs:element name="/***结算单价以分为单位**/settlementprice" type="xs:double" />
+        <xs:element name="/***结算分期数商盟必输**/settleperiod" type="xs:long" />
+        <xs:element name="/***结算分期类型1p2p：一期支付二期支付1p2v：一期支付二期验证1v2v：一期验证二期验证**/settleperiodtype" type="xs:string" />
+        <xs:element name="/***结算时间yyyymmdd**/settledate1" type="xs:string" />
+        <xs:element name="/***结算比例**/settlerate1" type="xs:string" />
+        <xs:element name="/***结算时间2yyyymmdd**/settledate2" type="xs:string" />
+        <xs:element name="/***结算比例2**/settlerate2" type="xs:string" />
+        <xs:element name="/***结算时间3yyyymmdd**/settledate3" type="xs:string" />
+        <xs:element name="/***结算比例3**/settlerate3" type="xs:string" />
+        <xs:element name="/***状态0-未审核1-审核通过**/status" type="xs:long" />
+        <xs:element name="/***高阳状态:现金（capitaltype1）0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus1" type="xs:long" />
+        <xs:element name="/***高阳状态:商城币（capitaltype2）0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus2" type="xs:long" />
+        <xs:element name="/***高阳状态:积分（capitaltype3）0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus3" type="xs:long" />
+        <xs:element name="/***高阳状态:积分（capitaltype4）0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus4" type="xs:long" />
+        <xs:element name="/***创建时间**/createtime" type="xs:string" />
+        <xs:element name="/***创建人**/createuser" type="xs:long" />
+        <xs:element name="/***协议类型0-商品协议1-商品资料**/type" type="xs:long" />
+        <xs:element name="/***协议文件路径**/filepath" type="xs:string" />
+        <xs:element name="//**************busmethod***********productiontypename" type="xs:string" />
+        <xs:element name="capitaltype" type="xs:long" />
+        <xs:element name="/***高阳状态0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus" type="xs:long" />
+        <xs:element name="//是否关联商品标识0-未关联1-关联islink" type="xs:long" />
+        <xs:element name="storename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lsitem" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="itemid" type="xs:long" />
+        <xs:element name="venderitemid" type="xs:string" />
+        <xs:element name="smstitle" type="xs:string" />
+        <xs:element name="firstcatalog" type="xs:long" />
+        <xs:element name="secondcatalog" type="xs:long" />
+        <xs:element name="thirdcatalog" type="xs:long" />
+        <xs:element name="provinceid" type="xs:long" />
+        <xs:element name="cityid" type="xs:long" />
+        <xs:element name="brand" type="xs:string" />
+        <xs:element name="stockmode" type="xs:long" />
+        <xs:element name="refundstrategy" type="xs:long" />
+        <xs:element name="maxsale" type="xs:long" />
+        <xs:element name="createtime" type="xs:string" />
+        <xs:element name="updatetime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemgrouplink" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***套餐id*/itemorgid" type="xs:long" />
+        <xs:element name="/***已发布商品id*/itemsaleid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itempostarealink" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***发布商品id**/saleid" type="xs:long" />
+        <xs:element name="/***省**/provincecode" type="xs:string" />
+        <xs:element name="/***市*/citycode" type="xs:string" />
+        <xs:element name="/***县/区*/regioncode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemsalearealink" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***发布商品id**/saleid" type="xs:long" />
+        <xs:element name="/***省**/provincecode" type="xs:string" />
+        <xs:element name="/***市*/citycode" type="xs:string" />
+        <xs:element name="/***县/区*/regioncode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="brand" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***品牌名称**/name" type="xs:string" />
+        <xs:element name="/***品牌描述**/remark" type="xs:string" />
+        <xs:element name="/***品牌网站**/website" type="xs:string" />
+        <xs:element name="/***品牌图片**/brandimg" type="xs:string" />
+        <xs:element name="/***创建时间**/createtime" type="xs:string" />
+        <xs:element name="/***是否有效0-无效1-有效*/isvalid" type="xs:string" />
+        <xs:element name="isreupload" type="xs:string" />
+        <xs:element name="querystarttime" type="xs:string" />
+        <xs:element name="queryendtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemparam" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="typeid" type="xs:long" />
+        <xs:element name="itemid" type="xs:long" />
+        <xs:element name="paramid" type="xs:long" />
+        <xs:element name="paramkey" type="xs:string" />
+        <xs:element name="paramvalue" type="xs:string" />
+        <xs:element name="rank" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemprice" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***省份**/province" type="xs:string" />
+        <xs:element name="/***地市**/areacode" type="xs:string" />
+        <xs:element name="/***商户id**/storeid" type="xs:long" />
+        <xs:element name="/***商品id**/itemid" type="xs:long" />
+        <xs:element name="/***来源:t_item_price_type**/pricetypecode" type="xs:string" />
+        <xs:element name="/***商品价格**/price" type="xs:double" />
+        <xs:element name="/***备注**/remark" type="xs:string" />
+        <xs:element name="/***发布商品id**/saleid" type="xs:long" />
+        <xs:element name="pricetype" type="xs:string" />
+        <xs:element name="/***@add_bymacl@c-platform.com*/regionname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="thirdcodeimport" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***第三方码名称id*/codenameid" type="xs:long" />
+        <xs:element name="/***上传文件路径*/filepath" type="xs:string" />
+        <xs:element name="/***导入文件时间*/createtime" type="xs:string" />
+        <xs:element name="/***操作用户*/userid" type="xs:long" />
+        <xs:element name="/***导入记录数量*/totalcount" type="xs:long" />
+        <xs:element name="/***导入类型,0-方正码平台1-平台自己2-第三方应用3-卡密*/codetype" type="xs:long" />
+        <xs:element name="/***导入用户名*/username" type="xs:string" />
+        <xs:element name="/***第三方码名称*/codename" type="xs:string" />
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="storename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itempricetype" >
+      <xs:sequence>
+        <xs:element name="pricetypemap" type="xs:anyType" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***省份**/province" type="xs:string" />
+        <xs:element name="/***地市**/areacode" type="xs:string" />
+        <xs:element name="/***价格类型名称,市场价,商城价,红钻价**/pricetype" type="xs:string" />
+        <xs:element name="/***来源:t_item_price_type**/pricetypecode" type="xs:string" />
+        <xs:element name="/***备注**/remark" type="xs:string" />
+        <xs:element name="/***@add_bymacl@c-platform.com**/price" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemsaleuserarealink" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***发布商品id**/saleid" type="xs:long" />
+        <xs:element name="/***省**/provincecode" type="xs:string" />
+        <xs:element name="/***市*/citycode" type="xs:string" />
+        <xs:element name="/***县/区*/regioncode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verifystorecode" >
+      <xs:sequence>
+        <xs:element name="codemd5" type="xs:string" />
+        <xs:element name="codersa" type="xs:string" />
+        <xs:element name="cardid" type="xs:string" />
+        <xs:element name="cardkey" type="xs:string" />
+        <xs:element name="/***商品编号*/itemid" type="xs:string" />
+        <xs:element name="/***创建日期*/createdate" type="xs:string" />
+        <xs:element name="/***制码日期*/generatedate" type="xs:string" />
+        <xs:element name="/***验码日期*/verifydate" type="xs:string" />
+        <xs:element name="/***码状态0：已制码,未验证1：已撤销2：使用中3：已使用4：已过期100:初始化，未使用*/status" type="xs:string" />
+        <xs:element name="statusname" type="xs:string" />
+        <xs:element name="storeid" type="xs:string" />
+        <xs:element name="cardpassword" type="xs:string" />
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="importid" type="xs:long" />
+        <xs:element name="codenameid" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemsale" >
+      <xs:sequence>
+        <xs:element name="/***不限库存，库存初始值**/init_stock_num" type="xs:long" />
+        <xs:element name="/***逻辑删除标记*/status_delete" type="xs:long" />
+        <xs:element name="/***草稿*/status_base_saved" type="xs:long" />
+        <xs:element name="/***待审核*/status_base_no_audit" type="xs:long" />
+        <xs:element name="/***审核中*/status_base_auditing" type="xs:long" />
+        <xs:element name="/***基本资料审核通过*/status_base_audit_pass" type="xs:long" />
+        <xs:element name="/***基本资料审核驳回*/status_base_audit_retject" type="xs:long" />
+        <xs:element name="///**发布商品草稿*///longstatus_sale_saved" type="xs:anyType" />
+        <xs:element name="iseckillmap" type="xs:anyType" />
+        <xs:element name="sourcemap" type="xs:anyType" />
+        <xs:element name="//商品来源itemsource" type="xs:long" />
+        <xs:element name="verifycodetypemap" type="xs:anyType" />
+        <xs:element name="sendcodemodemap" type="xs:anyType" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="syncgyflagmap" type="xs:anyType" />
+        <xs:element name="isvalidmap" type="xs:anyType" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***商品id和t_item_org匹配**/orgid" type="xs:long" />
+        <xs:element name="/***支付体系价格id**/salepriceid" type="xs:long" />
+        <xs:element name="/***码类型1--维码2--二维码**/verifycodetype" type="xs:long" />
+        <xs:element name="/***发码方式0--不发码1--按照订单发码2--按照商品个数发码**/sendcodemode" type="xs:long" />
+        <xs:element name="/***制码方0--平台自己1--方正码平台2--第三方应用**/sendcodechannel" type="xs:long" />
+        <xs:element name="/***制码渠道如果制码方选择第三方应用，则该字段有用10--85度c11--鲜芋仙...**/sendcodesrc" type="xs:long" />
+        <xs:element name="/***是否需要物流配送0-不需要物流配送1-需要物流配送**/postflag" type="xs:long" />
+        <xs:element name="/***销售有效开始时间**/salestarttime" type="xs:string" />
+        <xs:element name="/***销售有效结束时间**/salestoptime" type="xs:string" />
+        <xs:element name="/***验证有效开始时间**/verifystarttime" type="xs:string" />
+        <xs:element name="/***验证有效结束时间**/verifystoptime" type="xs:string" />
+        <xs:element name="/***商品库存数量**/stocknum" type="xs:long" />
+        <xs:element name="/***单个用户购买数量0不限制**/userperbuynum" type="xs:long" />
+        <xs:element name="/***商品状态0--草稿1--待审核2--审核中3--审核通过4--审核驳回**/status" type="xs:long" />
+        <xs:element name="/***商品是否有效0--无效1--有效**/isvalid" type="xs:long" />
+        <xs:element name="/***是否同步高阳0--未成功同步1--成功同步**/syncgyflag" type="xs:long" />
+        <xs:element name="/***"1--业务门店2--商户3--渠道商"**/shopclass" type="xs:long" />
+        <xs:element name="/***结算商户id匹配表t_store**/storeid" type="xs:long" />
+        <xs:element name="/***市场价**/marketprice" type="xs:double" />
+        <xs:element name="/***商品类型0--实物1--虚拟物**/itemmode" type="xs:long" />
+        <xs:element name="/***商品分类**/typeid" type="xs:long" />
+        <xs:element name="/***"是否是优惠套餐，如果是则是n多商品的组合0-普通商品1-优惠套餐"**/groupflag" type="xs:long" />
+        <xs:element name="/***是否虚拟商品0-否1-是*/virtualflag" type="xs:long" />
+        <xs:element name="/***虚拟商品类型1-卡密2-直充*/virtualtype" type="xs:long" />
+        <xs:element name="/***商品名称*/name" type="xs:string" />
+        <xs:element name="/***商品简称*/shortname" type="xs:string" />
+        <xs:element name="/***温馨提示*/warmprompt" type="xs:string" />
+        <xs:element name="/***商品介绍*/remark" type="xs:string" />
+        <xs:element name="/***商户用户id*/shopuserid" type="xs:long" />
+        <xs:element name="/***更新时间*/updatetime" type="xs:string" />
+        <xs:element name="/***品牌*/brand" type="xs:string" />
+        <xs:element name="/***重量*/weight" type="xs:double" />
+        <xs:element name="/***是否秒杀**/iseckill" type="xs:long" />
+        <xs:element name="/***秒杀价格**/iseckillprice" type="xs:double" />
+        <xs:element name="/***物流运费**/logisticsfee" type="xs:double" />
+        <xs:element name="/***物流计算方式0-不累计1-按数量**/logisticsfeetype" type="xs:long" />
+        <xs:element name="/***商品支付方式现金**/cashidgoods" type="xs:long" />
+        <xs:element name="/***商品支付方式商城币**/coinidgoods" type="xs:long" />
+        <xs:element name="/***商品支付方式积分**/scoreidgoods" type="xs:long" />
+        <xs:element name="/***商品支付方式话费，0不支持，1支持**/billidgoods" type="xs:long" />
+        <xs:element name="/***组合支付方式：0非组合支付方式1现金+商城币2现金+积分**/grouppaytype" type="xs:long" />
+        <xs:element name="/***现金支付比例**/cashpayratio" type="xs:long" />
+        <xs:element name="/***商城币或积分支付比例**/otherpayratio" type="xs:long" />
+        <xs:element name="/***支付方式:0单一支付类型1组合支付类型**/paytype" type="xs:long" />
+        <xs:element name="/***方正码平台验证短信附加内容*/verifycodedesc" type="xs:string" />
+        <xs:element name="cashidgoodsmap" type="xs:anyType" />
+        <xs:element name="coinidgoodsmap" type="xs:anyType" />
+        <xs:element name="scoreidgoodsmap" type="xs:anyType" />
+        <xs:element name="/***更新时间*/createtime" type="xs:string" />
+        <xs:element name="/***创建人*/createuserid" type="xs:long" />
+        <xs:element name="/***更新人*/updateuserid" type="xs:long" />
+        <xs:element name="/***营销语*/marketcontent" type="xs:string" />
+        <xs:element name="/***商城价*/shopprice" type="xs:double" />
+        <xs:element name="/***封面图路径*/imgpath" type="xs:string" />
+        <xs:element name="/***结算价*/settleprice" type="xs:double" />
+        <xs:element name="/***验证天数**/verifyday" type="xs:long" />
+        <xs:element name="/***商品是否显示0，不现实；1显示**/isview" type="xs:long" />
+        <xs:element name="isviewname" type="xs:string" />
+        <xs:element name="//上架时间groundingtime" type="xs:string" />
+        <xs:element name="//审核时间audittime" type="xs:string" />
+        <xs:element name="/***配送区域*/postarea" type="xs:string" />
+        <xs:element name="/***配送区域编码*/postareacode" type="xs:string" />
+        <xs:element name="/***物流渠道*/qdname" type="xs:string" />
+        <xs:element name="/***销售门店*/saleshopname" type="xs:string" />
+        <xs:element name="/***销售门店id*/saleshopids" type="xs:string" />
+        <xs:element name="/***购买限制*/buylimit" type="xs:string" />
+        <xs:element name="/***会员限制*/userlimitname" type="xs:string" />
+        <xs:element name="userlimitcode" type="xs:string" />
+        <xs:element name="/***销售地市*/saleareaname" type="xs:string" />
+        <xs:element name="saleareacode" type="xs:string" />
+        <xs:element name="/***验证门店*/verifyshopname" type="xs:string" />
+        <xs:element name="/***验证门店id*/verifyshopids" type="xs:string" />
+        <xs:element name="/***商户名称**/storename" type="xs:string" />
+        <xs:element name="/***门店名称**/shopname" type="xs:string" />
+        <xs:element name="/***商品名称**/itemname" type="xs:string" />
+        <xs:element name="/***购买用户地市限制*/arealimitname" type="xs:string" />
+        <xs:element name="arealimitcode" type="xs:string" />
+        <xs:element name="pricetypecode" type="xs:string" />
+        <xs:element name="price" type="xs:string" />
+        <xs:element name="typename" type="xs:string" />
+        <xs:element name="tag" type="xs:string" />
+        <xs:element name="itemids" type="xs:string" />
+        <xs:element name="feetype" type="xs:long" />
+        <xs:element name="GeneratedName" type="sysfee" nillable="true" minOccurs="0" />
+        <xs:element name="//货架分类名称goodtypename" type="xs:string" />
+        <xs:element name="//货架分类idgoodtypeid" type="xs:string" />
+        <xs:element name="//套餐商品过滤库存stocknumfilter" type="xs:long" />
+        <xs:element name="//是否支持货到付款deliverypay" type="xs:long" />
+        <xs:element name="itemmodemap" type="xs:anyType" />
+        <xs:element name="groupflagmap" type="xs:anyType" />
+        <xs:element name="isviewmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemsaleshoplink" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***发布商品id**/saleid" type="xs:long" />
+        <xs:element name="/***商户id**/storeid" type="xs:long" />
+        <xs:element name="/***业务门店id如果是全商户门店都可以使用，则只存商户id，该业务门店id可以允许为空*/shopid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="thirdcode" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="itemid" type="xs:long" />
+        <xs:element name="/***码状态。0：正常1：已撤销2：使用中3：已使用4：已过期*/status" type="xs:long" />
+        <xs:element name="createtime" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="orderid" type="xs:long" />
+        <xs:element name="importid" type="xs:long" />
+        <xs:element name="/***商户id*/storeid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemtag" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="itemid" type="xs:long" />
+        <xs:element name="tag" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemorg" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="shopname" type="xs:string" />
+        <xs:element name="typename" type="xs:string" />
+        <xs:element name="itemmode" type="xs:anyType" />
+        <xs:element name="itemmodemap" type="xs:anyType" />
+        <xs:element name="typeid" type="xs:long" />
+        <xs:element name="/***0--普通商品1--优惠套餐*/groupflag" type="xs:anyType" />
+        <xs:element name="groupflagmap" type="xs:anyType" />
+        <xs:element name="/***是否虚拟商品0-否1-是*/virtualflag" type="xs:anyType" />
+        <xs:element name="/***虚拟商品类型1-卡密2-直充*/virtualtype" type="xs:anyType" />
+        <xs:element name="shopidshopclass" type="xs:string" />
+        <xs:element name="virtualtypemap" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="shortname" type="xs:string" />
+        <xs:element name="warmprompt" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="itemids" type="xs:string" />
+        <xs:element name="/***0--草稿1--待审核2--审核中3--审核通过4--审核驳回*/status" type="xs:anyType" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="shopuserid" type="xs:long" />
+        <xs:element name="/***1--业务门店2--商户3--渠道商*/shopclass" type="xs:anyType" />
+        <xs:element name="shopid" type="xs:long" />
+        <xs:element name="updatetime" type="xs:string" />
+        <xs:element name="brand" type="xs:string" />
+        <xs:element name="weight" type="xs:double" />
+        <xs:element name="createtime" type="xs:string" />
+        <xs:element name="createuserid" type="xs:long" />
+        <xs:element name="updateuserid" type="xs:long" />
+        <xs:element name="/***营销语*/marketcontent" type="xs:string" />
+        <xs:element name="querystarttime" type="xs:string" />
+        <xs:element name="queryendtime" type="xs:string" />
+        <xs:element name="tag" type="xs:string" />
+        <xs:element name="itemname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemsaleext" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***和t_item_sale匹配**/saleid" type="xs:long" />
+        <xs:element name="/***销售数量**/salenum" type="xs:long" />
+        <xs:element name="/***人气数**/clicknum" type="xs:long" />
+        <xs:element name="/***评论量**/commentnum" type="xs:long" />
+        <xs:element name="/***购买人数**/usernum" type="xs:long" />
+        <xs:element name="/***收藏数量**/collectnum" type="xs:long" />
+        <xs:element name="/***商品评分**/rank" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verifycardcode" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="cardid" type="xs:string" />
+        <xs:element name="cardkey" type="xs:string" />
+        <xs:element name="/***商户编号*/storeid" type="xs:string" />
+        <xs:element name="/***商品编号*/itemid" type="xs:string" />
+        <xs:element name="/***创建日期*/createdate" type="xs:string" />
+        <xs:element name="generatedate" type="xs:string" />
+        <xs:element name="/***码状态0：已制码,未验证1：已撤销2：使用中3：已使用4：已过期100:初始化，未使用*/status" type="xs:anyType" />
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="importid" type="xs:long" />
+        <xs:element name="codenameid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storelogisticsfee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="qdid" type="xs:long" />
+        <xs:element name="feenum" type="xs:double" />
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shoptag" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***序列**/id" type="xs:long" />
+          <xs:element name="/***类型**/shopclass" type="xs:long" />
+          <xs:element name="/***门店id**/shopid" type="xs:long" />
+          <xs:element name="/***标签属性内容**/tag" type="xs:string" />
+          <xs:element name="//-------------busmethod---------------------shopname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="storesettle" >
+      <xs:sequence>
+        <xs:element name="/***审核通过*/status_audit_pass" type="xs:long" />
+        <xs:element name="/***审核驳回*/status_audit_reject" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***商户id*/storeid" type="xs:long" />
+        <xs:element name="/***高阳结算id*/merchid" type="xs:string" />
+        <xs:element name="/***结算类型0：系统结算1：手工结算*/settletype" type="xs:long" />
+        <xs:element name="/***佣金结算0：收支两条线1：作扣*/feesettle" type="xs:long" />
+        <xs:element name="/***结算周期0：日1：周2：旬3：月4：季5：半年6：年7：指定日*/settleperiod" type="xs:long" />
+        <xs:element name="/***结算日标识结算间隔的数量*/settleday" type="xs:long" />
+        <xs:element name="/***结算日标志位指定结算日时设置一个月31天的具体日期*/settledaybit" type="xs:long" />
+        <xs:element name="/***结算划款天数*/settletrfdays" type="xs:long" />
+        <xs:element name="/***结算起始金额*/settlebeginamt" type="xs:long" />
+        <xs:element name="/***最低留存金额*/minretainedamt" type="xs:long" />
+        <xs:element name="/***结算银行的名称*/withdrawbankid" type="xs:string" />
+        <xs:element name="/***开户行详细信息*/openbankdesc" type="xs:string" />
+        <xs:element name="/***结算账户*/settleac" type="xs:string" />
+        <xs:element name="/***开户人*/bankacname" type="xs:string" />
+        <xs:element name="/***生效日期*/effortdate" type="xs:string" />
+        <xs:element name="/***失效日期*/expirydate" type="xs:string" />
+        <xs:element name="/***否成功同步高阳*/syncgyflag" type="xs:long" />
+        <xs:element name="/***状态*/status" type="xs:long" />
+        <xs:element name="/***创建时间*/createtime" type="xs:string" />
+        <xs:element name="/***创建人*/createuser" type="xs:long" />
+        <xs:element name="/***是否企业账户*/isbsaccount" type="xs:long" />
+        <xs:element name="/***同步时间*/synctime" type="xs:string" />
+        <xs:element name="//商户名称name" type="xs:string" />
+        <xs:element name="//商户类别shopclass" type="xs:long" />
+        <xs:element name="//区域名称areaname" type="xs:string" />
+        <xs:element name="begintime" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+        <xs:element name="settletypemap" type="xs:anyType" />
+        <xs:element name="feesettlemap" type="xs:anyType" />
+        <xs:element name="settleperiodmap" type="xs:anyType" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="syncgyflagmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="goodsshelf" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//货架分类名称title" type="xs:string" />
+          <xs:element name="//父货架idpid" type="xs:long" />
+          <xs:element name="//商户编号shopid" type="xs:long" />
+          <xs:element name="//排序orderindex" type="xs:anyType" />
+          <xs:element name="isparent" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shop" >
+      <xs:sequence>
+        <xs:element name="sortmap" type="xs:anyType" />
+        <xs:element name="ischainmap" type="xs:anyType" />
+        <xs:element name="isbaseshopmap" type="xs:anyType" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="isvalidmap" type="xs:anyType" />
+        <xs:element name="shopclassmap" type="xs:anyType" />
+        <xs:element name="//表名table_name" type="xs:string" />
+        <xs:element name="//门店状态/***门店状态－草稿*/status_0" type="xs:long" />
+        <xs:element name="/***门店状态－待审核*/status_1" type="xs:long" />
+        <xs:element name="/***门店状态－审核中*/status_2" type="xs:long" />
+        <xs:element name="/***门店状态－审核通过*/status_3" type="xs:long" />
+        <xs:element name="/***门店状态－审核驳回*/status_4" type="xs:long" />
+        <xs:element name="//门店分类/***门店分类－业务门店*/shop_class_1" type="xs:long" />
+        <xs:element name="/***门店分类－结算商户*/shop_class_2" type="xs:long" />
+        <xs:element name="/***门店分类－渠道商*/shop_class_3" type="xs:long" />
+        <xs:element name="//门店签约状态/***非签约*/sort_0" type="xs:long" />
+        <xs:element name="/***签约*/sort_1" type="xs:long" />
+        <xs:element name="//是否连锁/***否*/is_chain_0" type="xs:long" />
+        <xs:element name="/***是*/is_chain_1" type="xs:long" />
+        <xs:element name="//是否总店/***否*/is_base_shop_0" type="xs:long" />
+        <xs:element name="/***是*/is_base_shop_1" type="xs:long" />
+        <xs:element name="//是否有效/***否*/is_valid_0" type="xs:long" />
+        <xs:element name="/***是*/is_valid_1" type="xs:long" />
+        <xs:element name="/***序列**/id" type="xs:long" />
+        <xs:element name="/***结算商户编号**/acshopid" type="xs:long" />
+        <xs:element name="/***商户名称**/name" type="xs:string" />
+        <xs:element name="/***商户简称**/shortname" type="xs:string" />
+        <xs:element name="/***归属地市**/areacode" type="xs:string" />
+        <xs:element name="/***是否签约商户**/sort" type="xs:long" />
+        <xs:element name="/***折扣内容**/discountdetail" type="xs:string" />
+        <xs:element name="/***是否连锁**/ischain" type="xs:long" />
+        <xs:element name="/***是否总店**/isbaseshop" type="xs:long" />
+        <xs:element name="/***总店名称**/baseshopname" type="xs:string" />
+        <xs:element name="/***创建时间**/createtime" type="xs:string" />
+        <xs:element name="/***更新时间**/updatetime" type="xs:string" />
+        <xs:element name="/***有效开始时间**/starttime" type="xs:string" />
+        <xs:element name="/***有效结束时间**/stoptime" type="xs:string" />
+        <xs:element name="/***商户地址**/address" type="xs:string" />
+        <xs:element name="/***联系电话**/phone" type="xs:string" />
+        <xs:element name="/***营业时间**/opentime" type="xs:string" />
+        <xs:element name="/***公交线路**/busline" type="xs:string" />
+        <xs:element name="/***面积**/area" type="xs:string" />
+        <xs:element name="/***停车位**/parkplace" type="xs:string" />
+        <xs:element name="/***人均消费**/avgspend" type="xs:long" />
+        <xs:element name="/***包间数**/roomnum" type="xs:string" />
+        <xs:element name="/***详细介绍**/remark" type="xs:string" />
+        <xs:element name="/***地图坐标经度**/maplong" type="xs:string" />
+        <xs:element name="/***地图坐标纬度**/mapdim" type="xs:string" />
+        <xs:element name="/***创建商户账号编号**/shopuserid" type="xs:long" />
+        <xs:element name="/***商户状态**/status" type="xs:long" />
+        <xs:element name="/***商户是否有效**/isvalid" type="xs:long" />
+        <xs:element name="/***商户分类**/shopclass" type="xs:long" />
+        <xs:element name="/***业务门店logo图**/logo" type="xs:string" />
+        <xs:element name="starttimebegin" type="xs:string" />
+        <xs:element name="starttimeend" type="xs:string" />
+        <xs:element name="stoptimebegin" type="xs:string" />
+        <xs:element name="stoptimeend" type="xs:string" />
+        <xs:element name="regionname" type="xs:string" />
+        <xs:element name="storename" type="xs:string" />
+        <xs:element name="createusername" type="xs:string" />
+        <xs:element name="typename" type="xs:string" />
+        <xs:element name="fzshopid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shopsettings" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***首页文字介绍**/homepageword" type="xs:string" />
+          <xs:element name="/***1--业务门店2--商户3--渠道商**/shopclass" type="xs:long" />
+          <xs:element name="/***商户招牌图片路径**/shopid" type="xs:long" />
+          <xs:element name="/***图片名称**/picname" type="xs:string" />
+          <xs:element name="//审核意见auditadvice" type="xs:string" />
+          <xs:element name="/***发布状态。0未发布1已发布修改任意网店设置后此字段为0审核后为1**/pubtag" type="xs:long" />
+          <xs:element name="operateendtime" type="xs:string" />
+          <xs:element name="/***商户招牌图片路径**/shoppicurl" type="xs:string" />
+          <xs:element name="/***商户名称**/name" type="xs:string" />
+          <xs:element name="shopclassmap" type="xs:anyType" />
+          <xs:element name="pubtagmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="store" >
+      <xs:sequence>
+        <xs:element name="store" type="xs:long" />
+        <xs:element name="channel" type="xs:long" />
+        <xs:element name="/***草稿*/status_save" type="xs:long" />
+        <xs:element name="/***待审核*/status_no_audit" type="xs:long" />
+        <xs:element name="/***审核中*/status_auditing" type="xs:long" />
+        <xs:element name="/***审核通过*/status_audit_pass" type="xs:long" />
+        <xs:element name="/***审核驳回*/status_audit_reject" type="xs:long" />
+        <xs:element name="sortmap" type="xs:anyType" />
+        <xs:element name="isbsaccountmap" type="xs:anyType" />
+        <xs:element name="shopclassmap" type="xs:anyType" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="syncgyflagmap" type="xs:anyType" />
+        <xs:element name="itemeditauditflagmap" type="xs:anyType" />
+        <xs:element name="itempublishauditflagmap" type="xs:anyType" />
+        <xs:element name="shopeditauditflagmap" type="xs:anyType" />
+        <xs:element name="shopagentflagmap" type="xs:anyType" />
+        <xs:element name="goodsagentflagmap" type="xs:anyType" />
+        <xs:element name="isvalidmap" type="xs:anyType" />
+        <xs:element name="syncgyflagmsg" type="xs:anyType" />
+        <xs:element name="accounttypemap" type="xs:anyType" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***商户名称**/name" type="xs:string" />
+        <xs:element name="/***商户简称**/shortname" type="xs:string" />
+        <xs:element name="/***归属地市**/areacode" type="xs:string" />
+        <xs:element name="/***归属地市**/areaname" type="xs:string" />
+        <xs:element name="/***是否移动签约0--非签约1--签约**/sort" type="xs:long" />
+        <xs:element name="/***总店名称**/baseshopname" type="xs:string" />
+        <xs:element name="/***创建时间**/createtime" type="xs:string" />
+        <xs:element name="/***更新时间**/updatetime" type="xs:string" />
+        <xs:element name="/***商户地址**/address" type="xs:string" />
+        <xs:element name="/***创建后台用户**/sysuserid" type="xs:long" />
+        <xs:element name="/***是否企业帐户0--不是1--是**/isbsaccount" type="xs:long" />
+        <xs:element name="/***业务主管**/bsmanagername" type="xs:string" />
+        <xs:element name="/***业务主管电话**/bsmanagerphone" type="xs:string" />
+        <xs:element name="/***财务主管**/fcmanagername" type="xs:string" />
+        <xs:element name="/***财务主管电话**/fcmanagerphone" type="xs:string" />
+        <xs:element name="/***联系人**/linkname" type="xs:string" />
+        <xs:element name="/***联系电话**/linkphone" type="xs:string" />
+        <xs:element name="/***联系传真**/linkfax" type="xs:string" />
+        <xs:element name="/***高阳结算id*/merchid" type="xs:string" />
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="//账号来源accounttype" type="xs:long" />
+        <xs:element name="stoptime" type="xs:string" />
+        <xs:element name="/***商户分类1--业务门店2--结算商户3--渠道商**/shopclass" type="xs:long" />
+        <xs:element name="/***商户状态0--草稿1--待审核2--审核中3--审核通过4--审核驳回**/status" type="xs:long" />
+        <xs:element name="/***商户是否有效0--下架1--上架**/isvalid" type="xs:long" />
+        <xs:element name="/***商品编辑免审0--需要审核1--免审**/itemeditauditflag" type="xs:long" />
+        <xs:element name="/***商品发布免审0--需要审核1--免审**/itempublishauditflag" type="xs:long" />
+        <xs:element name="/***门店编辑免审0--需要审核1--免审**/shopeditauditflag" type="xs:long" />
+        <xs:element name="/***更新用户**/updateuserid" type="xs:long" />
+        <xs:element name="/***是否折扣商户代理0否1是****该属性已经不使用*/shopagentflag" type="xs:long" />
+        <xs:element name="/***是否商品销售代理0否1是****该属性已经不使用*/goodsagentflag" type="xs:long" />
+        <xs:element name="settlestatus" type="xs:long" />
+        <xs:element name="/***是否成功同步高阳0--未成功同步1--成功同步*/syncgyflag" type="xs:long" />
+        <xs:element name="/***营业范围**/bsscope" type="xs:string" />
+        <xs:element name="/***客服电话**/servicephone" type="xs:string" />
+        <xs:element name="/***行政编码**/areaid" type="xs:string" />
+        <xs:element name="/***查询用创建开始时间**/begintime" type="xs:string" />
+        <xs:element name="/***查询用创建结束时间**/endtime" type="xs:string" />
+        <xs:element name="/***选择渠道商和商户返回的id**/storeids" type="xs:string" />
+        <xs:element name="/***选择渠道商和商户返回的名称**/storenames" type="xs:string" />
+        <xs:element name="/***协议文件地址**/isreupload" type="xs:string" />
+        <xs:element name="/***审核时间*/audittime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shopposlink" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***序列**/id" type="xs:long" />
+          <xs:element name="/***门店id**/shopid" type="xs:long" />
+          <xs:element name="/***终端id**/posid" type="xs:long" />
+          <xs:element name="/***终端设备号**/posno" type="xs:string" />
+          <xs:element name="/***终端标识**/terminalid" type="xs:string" />
+          <xs:element name="//-------------busmethod---------------------shopname" type="xs:string" />
+          <xs:element name="posname" type="xs:string" />
+          <xs:element name="" type="syspos" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="storecode" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="sendchannelid" type="xs:long" />
+        <xs:element name="sendtypeid" type="xs:long" />
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="stoptime" type="xs:string" />
+        <xs:element name="operuser" type="xs:string" />
+        <xs:element name="opertime" type="xs:string" />
+        <xs:element name="storename" type="xs:string" />
+        <xs:element name="areaname" type="xs:string" />
+        <xs:element name="errormsg" type="xs:string" />
+        <xs:element name="fzflag" type="xs:string" />
+        <xs:element name="sendchannelidmap" type="xs:anyType" />
+        <xs:element name="sendtypeidmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storefee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="merchid" type="xs:string" />
+        <xs:element name="/***现金*/capitaltype1" type="xs:long" />
+        <xs:element name="/***商城币*/capitaltype2" type="xs:long" />
+        <xs:element name="/***商城币*/capitaltype3" type="xs:long" />
+        <xs:element name="/***话费*/capitaltype4" type="xs:long" />
+        <xs:element name="trademode" type="xs:long" />
+        <xs:element name="feetype" type="xs:string" />
+        <xs:element name="productiontype" type="xs:string" />
+        <xs:element name="cleartype" type="xs:string" />
+        <xs:element name="effortdate" type="xs:string" />
+        <xs:element name="expirydate" type="xs:string" />
+        <xs:element name="feedrtflag" type="xs:string" />
+        <xs:element name="feeperiodunit" type="xs:string" />
+        <xs:element name="fcname" type="xs:string" />
+        <xs:element name="feemode" type="xs:long" />
+        <xs:element name="feemothod" type="xs:long" />
+        <xs:element name="beganamount" type="xs:string" />
+        <xs:element name="minfeeamount" type="xs:string" />
+        <xs:element name="maxfeeamount" type="xs:string" />
+        <xs:element name="feebasicflag" type="xs:long" />
+        <xs:element name="feelevelflag" type="xs:string" />
+        <xs:element name="feelvlbasicflag" type="xs:string" />
+        <xs:element name="upreference1" type="xs:string" />
+        <xs:element name="fixfeeamount1" type="xs:string" />
+        <xs:element name="feerate1" type="xs:string" />
+        <xs:element name="upreference2" type="xs:string" />
+        <xs:element name="fixfeeamount2" type="xs:string" />
+        <xs:element name="feerate2" type="xs:string" />
+        <xs:element name="upreference3" type="xs:string" />
+        <xs:element name="fixfeeamount3" type="xs:string" />
+        <xs:element name="feerate3" type="xs:string" />
+        <xs:element name="upreference4" type="xs:string" />
+        <xs:element name="fixfeeamount4" type="xs:string" />
+        <xs:element name="feerate4" type="xs:string" />
+        <xs:element name="upreference5" type="xs:string" />
+        <xs:element name="fixfeeamount5" type="xs:string" />
+        <xs:element name="feerate5" type="xs:string" />
+        <xs:element name="createtime" type="xs:string" />
+        <xs:element name="synctime" type="xs:string" />
+        <xs:element name="createuser" type="xs:long" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="syncgyflag" type="xs:long" />
+        <xs:element name="phoneeffortdate" type="xs:string" />
+        <xs:element name="tempdate" type="xs:string" />
+        <xs:element name="syncgyflag1" type="xs:long" />
+        <xs:element name="syncgyflag2" type="xs:long" />
+        <xs:element name="syncgyflag3" type="xs:long" />
+        <xs:element name="syncgyflag4" type="xs:long" />
+        <xs:element name="//商户名称name" type="xs:string" />
+        <xs:element name="//商户类别shopclass" type="xs:long" />
+        <xs:element name="//区域名称areaname" type="xs:string" />
+        <xs:element name="begintime" type="xs:string" />
+        <xs:element name="productiontypename" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+        <xs:element name="capitaltypemap" type="xs:anyType" />
+        <xs:element name="feetypemap" type="xs:anyType" />
+        <xs:element name="cleartypemap" type="xs:anyType" />
+        <xs:element name="feedrtflagmap" type="xs:anyType" />
+        <xs:element name="feemodemap" type="xs:anyType" />
+        <xs:element name="feemothodmap" type="xs:anyType" />
+        <xs:element name="feelevelflagmap" type="xs:anyType" />
+        <xs:element name="feelvlbasicflagmap" type="xs:anyType" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="syncgyflagmap" type="xs:anyType" />
+        <xs:element name="feeperiodunitmap" type="xs:anyType" />
+        <xs:element name="capitaltype" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shopext" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***序列**/id" type="xs:long" />
+          <xs:element name="/***门店id**/shopid" type="xs:long" />
+          <xs:element name="/***评论量**/commentnum" type="xs:long" />
+          <xs:element name="/***级别**/slevel" type="xs:long" />
+          <xs:element name="/***商户方正同步id**/fzstoreid" type="xs:long" />
+          <xs:element name="/***门店方正同步id**/fzshopid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="goodsshelfrel" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//父货架idshelfid" type="xs:long" />
+        <xs:element name="//商户编号goodid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storeagent" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***草稿*/status_save" type="xs:long" />
+          <xs:element name="/***待审核*/status_no_audit" type="xs:long" />
+          <xs:element name="/***审核中*/status_auditing" type="xs:long" />
+          <xs:element name="/***审核通过*/status_audit_pass" type="xs:long" />
+          <xs:element name="/***审核驳回*/status_audit_reject" type="xs:long" />
+          <xs:element name="/***渠道商编号**/qdstoreid" type="xs:long" />
+          <xs:element name="/***商户编号**/jsstoreid" type="xs:long" />
+          <xs:element name="/***代理有效开始时间**/starttime" type="xs:string" />
+          <xs:element name="/***代理有效结束时间**/stoptime" type="xs:string" />
+          <xs:element name="/***创建后台用户**/sysuserid" type="xs:long" />
+          <xs:element name="/***商户或渠道商名称**/storename" type="xs:string" />
+          <xs:element name="/***是否折扣商户代理0否1是**/shopagentflag" type="xs:long" />
+          <xs:element name="/***是否商品销售代理0否1是**/goodsagentflag" type="xs:long" />
+          <xs:element name="/***状态0--草稿1--待审核2--审核中3--审核通过4--审核驳回*/status" type="xs:long" />
+          <xs:element name="shopagentflagmap" type="xs:anyType" />
+          <xs:element name="goodsagentflagmap" type="xs:anyType" />
+          <xs:element name="statusmap" type="xs:anyType" />
+          <xs:element name="channelname" type="xs:string" />
+          <xs:element name="jsstoreids" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shoptypelink" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+          <xs:element name="/***序列**/id" type="xs:long" />
+          <xs:element name="/***门店id**/shopid" type="xs:long" />
+          <xs:element name="/***分类id**/typeid" type="xs:long" />
+          <xs:element name="//-------------busmethod---------------------" type="systype" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shopuser" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***初始密码**/init_pwd" type="xs:string" />
+          <xs:element name="prefixmap" type="xs:anyType" />
+          <xs:element name="confirmpass" type="xs:string" />
+          <xs:element name="statusmap" type="xs:anyType" />
+          <xs:element name="typemap" type="xs:anyType" />
+          <xs:element name="shopclassmap" type="xs:anyType" />
+          <xs:element name="/***账号名称**/code" type="xs:string" />
+          <xs:element name="/***登录密码**/pwd" type="xs:string" />
+          <xs:element name="/***状态0--失效1--有效2--暂停**/status" type="xs:long" />
+          <xs:element name="/***用户类型1--管理员2--普通用户3--操作员**/type" type="xs:long" />
+          <xs:element name="/***邮箱地址**/email" type="xs:string" />
+          <xs:element name="/***更新时间**/updatetime" type="xs:string" />
+          <xs:element name="storeid" type="xs:long" />
+          <xs:element name="/***手机号码**/mobile" type="xs:string" />
+          <xs:element name="/***昵称**/nickname" type="xs:string" />
+          <xs:element name="/***商户类型1--业务门店2--商户3--渠道商**/shopclass" type="xs:long" />
+          <xs:element name="/***商户id**/shopid" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="member" >
+      <xs:sequence>
+        <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="sexmap" type="xs:anyType" />
+        <xs:element name="openedmap" type="xs:anyType" />
+        <xs:element name="userlevelmap" type="xs:anyType" />
+        <xs:element name="//会员状态/***会员状态－正常*/status_1" type="xs:string" />
+        <xs:element name="/***会员状态－暂停*/status_2" type="xs:string" />
+        <xs:element name="//性别/***性别-女*/sex_1" type="xs:long" />
+        <xs:element name="/***性别-男*/sex_2" type="xs:long" />
+        <xs:element name="//信息是否公开/***信息是否公开-不公开*/opened_0" type="xs:long" />
+        <xs:element name="/***信息是否公开-公开*/opened_1" type="xs:long" />
+        <xs:element name="//会员级别/***会员级别-普通会员*/user_level_0" type="xs:string" />
+        <xs:element name="/***会员级别-定制会员*/user_level_1" type="xs:string" />
+        <xs:element name="/***会员级别-vip会员*/user_level_2" type="xs:string" />
+        <xs:element name="/***序列**/id" type="xs:long" />
+        <xs:element name="/***用户登录名**/username" type="xs:string" />
+        <xs:element name="/***用户密码**/userpass" type="xs:string" />
+        <xs:element name="/***用户邮箱**/email" type="xs:string" />
+        <xs:element name="/***真实姓名**/realname" type="xs:string" />
+        <xs:element name="/***手机号码**/terminalid" type="xs:string" />
+        <xs:element name="/***注册时间**/regtime" type="xs:string" />
+        <xs:element name="/***状态1正常2暂停**/status" type="xs:string" />
+        <xs:element name="/***更新时间**/updatetime" type="xs:string" />
+        <xs:element name="/***jsssovid**/vid" type="xs:string" />
+        <xs:element name="/***昵称**/nickname" type="xs:string" />
+        <xs:element name="/***归属地区代码**/areacode" type="xs:string" />
+        <xs:element name="/***性别1女2男**/sex" type="xs:long" />
+        <xs:element name="/***生日**/birthday" type="xs:string" />
+        <xs:element name="/***信息是否公开0不公开1公开**/opened" type="xs:long" />
+        <xs:element name="/***qq**/qq" type="xs:string" />
+        <xs:element name="/***个人信息描述**/remark" type="xs:string" />
+        <xs:element name="/***个性签名**/signature" type="xs:string" />
+        <xs:element name="/***注册来源1websso**/regsource" type="xs:long" />
+        <xs:element name="/***会员级别0普通会员1定制会员2vip会员**/userlevel" type="xs:string" />
+        <xs:element name="/***购物车标识**/cartuuid" type="xs:string" />
+        <xs:element name="//----bus-method---regtimebegin" type="xs:string" />
+        <xs:element name="regtimeend" type="xs:string" />
+        <xs:element name="confirmpass" type="xs:string" />
+        <xs:element name="GeneratedName" type="sysregion" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="batchtask" >
+      <xs:sequence>
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="actid" type="xs:long" />
+        <xs:element name="advice" type="xs:string" />
+        <xs:element name="areacode" type="xs:string" />
+        <xs:element name="auditorid" type="xs:long" />
+        <xs:element name="audittime" type="xs:string" />
+        <xs:element name="blackcnt" type="xs:long" />
+        <xs:element name="blacklistfile" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="createtime" type="xs:string" />
+        <xs:element name="creatorid" type="xs:long" />
+        <xs:element name="customtag" type="xs:long" />
+        <xs:element name="execstarttime" type="xs:string" />
+        <xs:element name="execstoptime" type="xs:string" />
+        <xs:element name="failcnt" type="xs:long" />
+        <xs:element name="fee" type="xs:long" />
+        <xs:element name="feetype" type="xs:long" />
+        <xs:element name="infoid" type="xs:long" />
+        <xs:element name="isreport" type="xs:long" />
+        <xs:element name="mobilelistfile" type="xs:string" />
+        <xs:element name="noticeterminalid" type="xs:string" />
+        <xs:element name="priority" type="xs:long" />
+        <xs:element name="respondtimeout" type="xs:string" />
+        <xs:element name="servicedoc" type="xs:string" />
+        <xs:element name="serviceid" type="xs:string" />
+        <xs:element name="sleeptime" type="xs:string" />
+        <xs:element name="smil" type="xs:string" />
+        <xs:element name="spcode" type="xs:string" />
+        <xs:element name="speed" type="xs:long" />
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="stoptime" type="xs:string" />
+        <xs:element name="submitcnt" type="xs:long" />
+        <xs:element name="submitlocalflag" type="xs:long" />
+        <xs:element name="successcnt" type="xs:long" />
+        <xs:element name="taskname" type="xs:string" />
+        <xs:element name="tasktype" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="tracerespond" type="xs:long" />
+        <xs:element name="unitid" type="xs:string" />
+        <xs:element name="whitelistfile" type="xs:string" />
+        <xs:element name="itemid" type="xs:string" />
+        <xs:element name="itemname" type="xs:string" />
+        <xs:element name="batchtype" type="xs:long" />
+        <xs:element name="routerid" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="service" type="xs:string" />
+        <xs:element name="terminalid" type="xs:string" />
+        <xs:element name="blackid" type="xs:string" />
+        <xs:element name="whiteid" type="xs:string" />
+        <xs:element name="srcfrom" type="xs:string" />
+        <xs:element name="isnewterminalid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lotterytarget" >
+      <xs:sequence>
+        <xs:element name="/***主键id*/id" type="xs:long" />
+        <xs:element name="/***活动id*/activeid" type="xs:long" />
+        <xs:element name="/***手机号码*/phone" type="xs:string" />
+        <xs:element name="/***已中奖次数*/numhad" type="xs:long" />
+        <xs:element name="/***可中奖次数*/numcould" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logger" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="activeid" type="xs:long" />
+        <xs:element name="targetid" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="hittime" type="xs:string" />
+        <xs:element name="prizeid" type="xs:long" />
+        <xs:element name="hitlevel" type="xs:long" />
+        <xs:element name="//@transient//publicgetphone(){//returnphone//}//@transient//publicvoidsetphone(phone){//this.phone" type="xs:string" />
+        <xs:element name="/***查询用创建结束时间**/endtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="prize" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="activeid" type="xs:long" />
+        <xs:element name="hitlevel" type="xs:long" />
+        <xs:element name="hitprobability" type="xs:string" />
+        <xs:element name="hitlimit" type="xs:long" />
+        <xs:element name="hitmsg" type="xs:string" />
+        <xs:element name="numbers" type="xs:long" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="position" type="xs:string" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="/***查询用创建开始时间**/begintime" type="xs:string" />
+        <xs:element name="/***查询用创建结束时间**/endtime" type="xs:string" />
+        <xs:element name="//@transient//publicgetstarttime(){//returnstarttime//}//@transient//publicvoidsetstarttime(starttime){//this.starttime" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lotteryactive" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="typemap" type="xs:anyType" />
+        <xs:element name="/***活动id*/id" type="xs:long" />
+        <xs:element name="/***活动名称*/name" type="xs:string" />
+        <xs:element name="/***活动开始时间*/starttime" type="xs:string" />
+        <xs:element name="/***活动结束时间*/stoptime" type="xs:string" />
+        <xs:element name="/***活动类型,0不设置参与条件*/activetype" type="xs:long" />
+        <xs:element name="/***活动介绍*/activedesc" type="xs:string" />
+        <xs:element name="/***未中奖设置（预留）*/unhit" type="xs:long" />
+        <xs:element name="/***未中奖提示语*/unhitmsg" type="xs:string" />
+        <xs:element name="/***创建时间*/createtime" type="xs:string" />
+        <xs:element name="/***创建人id*/creatememberid" type="xs:long" />
+        <xs:element name="/***活动状态，0草稿，1审核中，2审核通过，3审核驳回*/status" type="xs:long" />
+        <xs:element name="/***中奖次数，-1表示不限制次数*/hitlimit" type="xs:long" />
+        <xs:element name="//活动奖区数量prizenumvalue" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lotteryactiveconf" >
+      <xs:sequence>
+        <xs:element name="/***主键id*/id" type="xs:long" />
+        <xs:element name="/***活动id*/activeid" type="xs:long" />
+        <xs:element name="/***活动抽奖key*/key" type="xs:string" />
+        <xs:element name="/***活动抽奖value*/value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsactonline" >
+      <xs:sequence>
+        <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="//活动状态/***活动状态－待审核*/status_0" type="xs:string" />
+        <xs:element name="/***活动状态－待发布*/status_1" type="xs:string" />
+        <xs:element name="/***活动状态－商用*/status_2" type="xs:string" />
+        <xs:element name="/***活动状态－暂停*/status_3" type="xs:string" />
+        <xs:element name="/***活动状态－下线*/status_4" type="xs:string" />
+        <xs:element name="/***活动编号**/actid" type="xs:long" />
+        <xs:element name="/***活动名称**/actname" type="xs:string" />
+        <xs:element name="/***活动描述**/actdesc" type="xs:string" />
+        <xs:element name="/***活动分类**/groupid" type="xs:string" />
+        <xs:element name="/***活动开始时间**/starttime" type="xs:string" />
+        <xs:element name="/***活动结束时间**/endtime" type="xs:string" />
+        <xs:element name="/***活动状态**/status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsactrouter" >
+      <xs:sequence>
+        <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+        <xs:element name="cmdopttypemap" type="xs:anyType" />
+        <xs:element name="paytypemap" type="xs:anyType" />
+        <xs:element name="issessionmap" type="xs:anyType" />
+        <xs:element name="//是否需要会话/***是否需要会话－不需要*/is_session_0" type="xs:long" />
+        <xs:element name="/***是否需要会话－需要*/is_session_1" type="xs:long" />
+        <xs:element name="/***序号**/id" type="xs:long" />
+        <xs:element name="/***活动编号**/actid" type="xs:long" />
+        <xs:element name="/***特服号**/spcode" type="xs:string" />
+        <xs:element name="/***指令类型**/cmdopttype" type="xs:long" />
+        <xs:element name="/***指令内容**/command" type="xs:string" />
+        <xs:element name="/***支付方式**/paytype" type="xs:long" />
+        <xs:element name="/***购买价格**/itemprice" type="xs:long" />
+        <xs:element name="/***是否需要会话**/issession" type="xs:long" />
+        <xs:element name="//***************busmethod***************//根特服号rspcode" type="xs:string" />
+        <xs:element name="//尾特服号cspcode" type="xs:string" />
+        <xs:element name="GeneratedName" type="smsactonline" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="syschannelpicconf" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="picpath" type="xs:string" />
+        <xs:element name="picalt" type="xs:string" />
+        <xs:element name="picindex" type="xs:anyType" />
+        <xs:element name="linkurl" type="xs:string" />
+        <xs:element name="postion" type="xs:anyType" />
+        <xs:element name="channel" type="xs:anyType" />
+        <xs:element name="updatetime" type="xs:string" />
+        <xs:element name="postionname" type="xs:string" />
+        <xs:element name="channelname" type="xs:string" />
+        <xs:element name="regioncode" type="xs:string" />
+        <xs:element name="regionname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelcatalogrcmdconfig" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="groupid" type="xs:anyType" />
+        <xs:element name="orderindex" type="xs:anyType" />
+        <xs:element name="channel" type="xs:anyType" />
+        <xs:element name="groupname" type="xs:string" />
+        <xs:element name="channelname" type="xs:string" />
+        <xs:element name="displayname" type="xs:string" />
+        <xs:element name="linkurl" type="xs:string" />
+        <xs:element name="type" type="xs:anyType" />
+        <xs:element name="imagepath" type="xs:string" />
+        <xs:element name="regioncode" type="xs:string" />
+        <xs:element name="regionname" type="xs:string" />
+        <xs:element name="groupmap" type="xs:anyType" />
+        <xs:element name="channelmap" type="xs:anyType" />
+        <xs:element name="typemap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelfloor" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsid" type="xs:long" />
+          <xs:element name="floortitle" type="xs:string" />
+          <xs:element name="floorid" type="xs:anyType" />
+          <xs:element name="typeid" type="xs:long" />
+          <xs:element name="orderindex" type="xs:anyType" />
+          <xs:element name="channel" type="xs:anyType" />
+          <xs:element name="regioncode" type="xs:string" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="floorname" type="xs:string" />
+          <xs:element name="channelname" type="xs:string" />
+          <xs:element name="regionname" type="xs:string" />
+          <xs:element name="typename" type="xs:string" />
+          <xs:element name="groupmap" type="xs:anyType" />
+          <xs:element name="channelmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysfileimg" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***文件类型*/filetype" type="xs:string" />
+          <xs:element name="/***说明*/remark" type="xs:string" />
+          <xs:element name="/***更新时间*/updatetime" type="xs:string" />
+          <xs:element name="/***文件物理路径*/fileabspath" type="xs:string" />
+          <xs:element name="/***web路径*/filewebpath" type="xs:string" />
+          <xs:element name="/***创建人*/createuser" type="xs:long" />
+          <xs:element name="/***文件名*/filename" type="xs:string" />
+          <xs:element name="/***业务key*/bskey" type="xs:string" />
+          <xs:element name="/***业务id*/bsid" type="xs:long" />
+          <xs:element name="/***表明*/tablename" type="xs:string" />
+          <xs:element name="/***排序*/sort" type="xs:anyType" />
+          <xs:element name="//******busmethod****path" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysannouncement" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="dest_back" type="xs:string" />
+          <xs:element name="dest_shop" type="xs:string" />
+          <xs:element name="dest_uc" type="xs:string" />
+          <xs:element name="dest_portal" type="xs:string" />
+          <xs:element name="status_new" type="xs:string" />
+          <xs:element name="status_reject" type="xs:string" />
+          <xs:element name="status_pub" type="xs:string" />
+          <xs:element name="status_del" type="xs:string" />
+          <xs:element name="dest_map" type="xs:anyType" />
+          <xs:element name="status_map" type="xs:anyType" />
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="title" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="pubstatus" type="xs:string" />
+          <xs:element name="pubuser" type="xs:long" />
+          <xs:element name="pubtime" type="xs:string" />
+          <xs:element name="pubdest" type="xs:string" />
+          <xs:element name="audituser" type="xs:long" />
+          <xs:element name="audittime" type="xs:string" />
+          <xs:element name="endtime" type="xs:string" />
+          <xs:element name="advisepic" type="xs:string" />
+          <xs:element name="adviseextendpic" type="xs:string" />
+          <xs:element name="querytimebegin" type="xs:string" />
+          <xs:element name="querytimeend" type="xs:string" />
+          <xs:element name="queryusercode" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysfilelink" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***业务key*/bskey" type="xs:string" />
+          <xs:element name="/***业务id*/bsid" type="xs:long" />
+          <xs:element name="/***文件id*/fileid" type="xs:long" />
+          <xs:element name="/***表明*/tablename" type="xs:string" />
+          <xs:element name="/***原始文件表*/" type="sysfile" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pagestaticinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***类型,0是商品，1是商户**/type" type="xs:anyType" />
+        <xs:element name="/***资源id，可以是商品id，或者商户id**/resourceid" type="xs:long" />
+        <xs:element name="/***静态化状态：0失败，1成功**/status" type="xs:anyType" />
+        <xs:element name="/***创建日期**/createtime" type="xs:string" />
+        <xs:element name="/***商户名称**/storename" type="xs:string" />
+        <xs:element name="/***商品名称**/itemname" type="xs:string" />
+        <xs:element name="/***开始时间**/starttime" type="xs:string" />
+        <xs:element name="/***结束时间**/stoptime" type="xs:string" />
+        <xs:element name="/***商品类型**/type_item" type="xs:anyType" />
+        <xs:element name="/***商户类型**/type_shop" type="xs:anyType" />
+        <xs:element name="/***状态：静态化失败**/status_fail" type="xs:anyType" />
+        <xs:element name="/***状态：静态化成功**/status_success" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="systemplateinfo" >
+      <xs:sequence>
+        <xs:element name="//模版组建id" type="xs:anyType" />
+        <xs:element name="//模版名称tname" type="xs:string" />
+        <xs:element name="/*	*type" type="xs:long" />
+        <xs:element name="/*	*type" type="xs:string" />
+        <xs:element name="/***模板上传保存全路径*/filepath" type="xs:string" />
+        <xs:element name="/***输出文件编码类型*/outputchartset" type="xs:string" />
+        <xs:element name="/***支持的输入文件编码*/charlist" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sysad" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***广告图片文件**/ad_type_img_key" type="xs:string" />
+          <xs:element name="adflagmap" type="xs:anyType" />
+          <xs:element name="adtypemap" type="xs:anyType" />
+          <xs:element name="statusmap" type="xs:anyType" />
+          <xs:element name="//广告状态/***广告状态－未审核*/status_0" type="xs:long" />
+          <xs:element name="/***广告状态－审核通过*/status_1" type="xs:long" />
+          <xs:element name="/***广告状态－审核驳回*/status_2" type="xs:long" />
+          <xs:element name="//fieldsid" type="xs:long" />
+          <xs:element name="adname" type="xs:string" />
+          <xs:element name="adtype" type="xs:long" />
+          <xs:element name="adflag" type="xs:long" />
+          <xs:element name="link" type="xs:string" />
+          <xs:element name="linkman" type="xs:string" />
+          <xs:element name="content" type="xs:string" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="starttime" type="xs:string" />
+          <xs:element name="validtime" type="xs:string" />
+          <xs:element name="clickcnt" type="xs:long" />
+          <xs:element name="viewcnt" type="xs:long" />
+          <xs:element name="createtime" type="xs:string" />
+          <xs:element name="createuser" type="xs:long" />
+          <xs:element name="positionid" type="xs:long" />
+          <xs:element name="//-------------busmethod---------------------starttimebegin" type="xs:string" />
+          <xs:element name="starttimeend" type="xs:string" />
+          <xs:element name="validtimebegin" type="xs:string" />
+          <xs:element name="validtimeend" type="xs:string" />
+          <xs:element name="regioncode" type="xs:long" />
+          <xs:element name="regionname" type="xs:string" />
+          <xs:element name="isregion" type="xs:string" />
+          <xs:element name="positionname" type="xs:string" />
+          <xs:element name="position" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysadposition" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***广告位置模板文件**/ad_position_template_key" type="xs:string" />
+          <xs:element name="typemap" type="xs:anyType" />
+          <xs:element name="//fieldsid" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="width" type="xs:long" />
+          <xs:element name="height" type="xs:long" />
+          <xs:element name="position" type="xs:string" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="type" type="xs:long" />
+          <xs:element name="num" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysproperty" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="typemap" type="xs:anyType" />
+          <xs:element name="//fieldsid" type="xs:long" />
+          <xs:element name="content" type="xs:string" />
+          <xs:element name="type" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysfileimgthumb" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="fileid" type="xs:long" />
+          <xs:element name="/***图片大小50*50*/imgsize" type="xs:string" />
+          <xs:element name="/***更新时间*/updatetime" type="xs:string" />
+          <xs:element name="/***文件物理路径*/imgabspath" type="xs:string" />
+          <xs:element name="/***web路径*/imgwebpath" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="channelnavipage" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldscode" type="xs:string" />
+          <xs:element name="title" type="xs:string" />
+          <xs:element name="des" type="xs:string" />
+          <xs:element name="createuser" type="xs:long" />
+          <xs:element name="createtime" type="xs:string" />
+          <xs:element name="updateuser" type="xs:long" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="channelmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="channelcatalogconfig" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="itemid" type="xs:long" />
+        <xs:element name="groupid" type="xs:anyType" />
+        <xs:element name="updatetime" type="xs:string" />
+        <xs:element name="orderindex" type="xs:anyType" />
+        <xs:element name="status" type="xs:anyType" />
+        <xs:element name="channel" type="xs:anyType" />
+        <xs:element name="itemorgname" type="xs:string" />
+        <xs:element name="regioncode" type="xs:string" />
+        <xs:element name="regionname" type="xs:string" />
+        <xs:element name="isvalid" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sysadregion" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsid" type="xs:long" />
+          <xs:element name="regioncode" type="xs:string" />
+          <xs:element name="adid" type="xs:long" />
+          <xs:element name="//-------------busmethod---------------------regionname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="syspos" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="typemap" type="xs:anyType" />
+          <xs:element name="//fieldsid" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="src" type="xs:string" />
+          <xs:element name="type" type="xs:string" />
+          <xs:element name="factory" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysfileimglink" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***业务key*/bskey" type="xs:string" />
+          <xs:element name="/***业务id*/bsid" type="xs:long" />
+          <xs:element name="/***文件id*/fileid" type="xs:long" />
+          <xs:element name="/***表明*/tablename" type="xs:string" />
+          <xs:element name="/***文件名*/filename" type="xs:string" />
+          <xs:element name="/***排序*/sort" type="xs:anyType" />
+          <xs:element name="" type="sysfileimg" nillable="true" minOccurs="0" />
+          <xs:element name="//-------------busmethod---------------------path" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="syslogistics" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="isvalid" type="xs:long" />
+          <xs:element name="interface" type="xs:string" />
+          <xs:element name="ename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="channeltype" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldstypeid" type="xs:long" />
+          <xs:element name="regioncode" type="xs:string" />
+          <xs:element name="regionname" type="xs:string" />
+          <xs:element name="channel" type="xs:anyType" />
+          <xs:element name="displayname" type="xs:string" />
+          <xs:element name="typename" type="xs:string" />
+          <xs:element name="channelname" type="xs:string" />
+          <xs:element name="channelmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysfile" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***文件类型*/filetype" type="xs:string" />
+          <xs:element name="/***说明*/remark" type="xs:string" />
+          <xs:element name="/***更新时间*/updatetime" type="xs:string" />
+          <xs:element name="/***文件物理路径*/fileabspath" type="xs:string" />
+          <xs:element name="/***web路径*/filewebpath" type="xs:string" />
+          <xs:element name="/***创建人*/createuser" type="xs:long" />
+          <xs:element name="/***业务key*/bskey" type="xs:string" />
+          <xs:element name="/***业务id*/bsid" type="xs:long" />
+          <xs:element name="/***表明*/tablename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="systypeitemparam" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="paramtypemap" type="xs:anyType" />
+          <xs:element name="requiredflagmap" type="xs:anyType" />
+          <xs:element name="searchflagmap" type="xs:anyType" />
+          <xs:element name="//fieldsid" type="xs:long" />
+          <xs:element name="typeid" type="xs:long" />
+          <xs:element name="paramkey" type="xs:string" />
+          <xs:element name="paramvalue" type="xs:string" />
+          <xs:element name="rank" type="xs:long" />
+          <xs:element name="paramtype" type="xs:long" />
+          <xs:element name="requiredflag" type="xs:long" />
+          <xs:element name="searchflag" type="xs:long" />
+          <xs:element name="shopid" type="xs:long" />
+          <xs:element name="shopclass" type="xs:long" />
+          <xs:element name="userparamvalue" type="xs:string" />
+          <xs:element name="typename" type="xs:string" />
+          <xs:element name="storename" type="xs:string" />
+          <xs:element name="" type="systype" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="systemplateevent" >
+      <xs:sequence>
+        <xs:element name="//数据表字段id" type="xs:anyType" />
+        <xs:element name="code" type="xs:long" />
+        <xs:element name="/*	*1：单一模板	*2：模板组	*/type" type="xs:anyType" />
+        <xs:element name="/***模版主键*/tgid" type="xs:anyType" />
+        <xs:element name="/***模版名称*/tgname" type="xs:string" />
+        <xs:element name="/***模版事件名称*/name" type="xs:string" />
+        <xs:element name="/***备注*/memo" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelnavioper" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="pageid" type="xs:long" />
+          <xs:element name="pagecode" type="xs:string" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="title" type="xs:string" />
+          <xs:element name="regioncode" type="xs:string" />
+          <xs:element name="href" type="xs:string" />
+          <xs:element name="sortno" type="xs:long" />
+          <xs:element name="createuser" type="xs:long" />
+          <xs:element name="createtime" type="xs:string" />
+          <xs:element name="updateuser" type="xs:long" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="regionname" type="xs:string" />
+          <xs:element name="pagecodetitle" type="xs:string" />
+          <xs:element name="channelmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pagemoduledata" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="//模块idmoduleid" type="xs:long" />
+          <xs:element name="//内容content" type="xs:string" />
+          <xs:element name="//状态0：未审核1：审核通过2：审核驳回status" type="xs:long" />
+          <xs:element name="//排序sortno" type="xs:long" />
+          <xs:element name="//省地市编码regioncode" type="xs:string" />
+          <xs:element name="//开始时间starttime" type="xs:string" />
+          <xs:element name="//结束时间endtime" type="xs:string" />
+          <xs:element name="//关联数据模板templetid" type="xs:long" />
+          <xs:element name="//创建人createuser" type="xs:long" />
+          <xs:element name="//创建时间createtime" type="xs:string" />
+          <xs:element name="//修改人updateuser" type="xs:long" />
+          <xs:element name="//修改时间updatetime" type="xs:string" />
+          <xs:element name="//审核人audituser" type="xs:long" />
+          <xs:element name="//审核时间audittime" type="xs:string" />
+          <xs:element name="//审核意见auditadvice" type="xs:string" />
+          <xs:element name="modulecode" type="xs:string" />
+          <xs:element name="contenttitle" type="xs:string" />
+          <xs:element name="auditusername" type="xs:string" />
+          <xs:element name="createusername" type="xs:string" />
+          <xs:element name="updateusername" type="xs:string" />
+          <xs:element name="regionname" type="xs:string" />
+          <xs:element name="tempname" type="xs:string" />
+          <xs:element name="modulename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="moduledatatemplet" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="//模板名称title" type="xs:string" />
+          <xs:element name="//模板配置路径confpath" type="xs:string" />
+          <xs:element name="//模板类型1:通用模板type" type="xs:long" />
+          <xs:element name="//创建人createuser" type="xs:long" />
+          <xs:element name="//创建时间createtime" type="xs:string" />
+          <xs:element name="//修改人updateuser" type="xs:long" />
+          <xs:element name="//修改时间updatetime" type="xs:string" />
+          <xs:element name="//描述remark" type="xs:string" />
+          <xs:element name="createusername" type="xs:string" />
+          <xs:element name="updateusername" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pagemodule" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="//模块编码code" type="xs:string" />
+          <xs:element name="//模块标题title" type="xs:string" />
+          <xs:element name="//关联数据模板tempid" type="xs:long" />
+          <xs:element name="//省地市编码regioncode" type="xs:string" />
+          <xs:element name="//创建人createuser" type="xs:long" />
+          <xs:element name="//创建时间createtime" type="xs:string" />
+          <xs:element name="//修改人updateuser" type="xs:long" />
+          <xs:element name="//修改时间updatetime" type="xs:string" />
+          <xs:element name="//描述remark" type="xs:string" />
+          <xs:element name="createusername" type="xs:string" />
+          <xs:element name="updateusername" type="xs:string" />
+          <xs:element name="regionname" type="xs:string" />
+          <xs:element name="tempname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsbuyitemrouter" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="actid" type="xs:long" />
+        <xs:element name="actname" type="xs:string" />
+        <xs:element name="itemid" type="xs:string" />
+        <xs:element name="itemname" type="xs:string" />
+        <xs:element name="rootspcode" type="xs:string" />
+        <xs:element name="spcode" type="xs:string" />
+        <xs:element name="cmdopttype" type="xs:anyType" />
+        <xs:element name="command" type="xs:string" />
+        <xs:element name="paytype" type="xs:anyType" />
+        <xs:element name="itemprice" type="xs:double" />
+        <xs:element name="issession" type="xs:anyType" />
+        <xs:element name="priority" type="xs:long" />
+        <xs:element name="marketmsg" type="xs:string" />
+        <xs:element name="taskid" type="xs:long" />
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="stoptime" type="xs:string" />
+        <xs:element name="submitcnt" type="xs:long" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="successcnt" type="xs:long" />
+        <xs:element name="failcnt" type="xs:long" />
+        <xs:element name="taskcount" type="xs:long" />
+        <xs:element name="itemstatus" type="xs:string" />
+        <xs:element name="itemstatusmap" type="xs:anyType" />
+        <xs:element name="cmdopttypemap" type="xs:anyType" />
+        <xs:element name="paytypemap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsbuyactonline" >
+      <xs:sequence>
+        <xs:element name="actid" type="xs:long" />
+        <xs:element name="actname" type="xs:string" />
+        <xs:element name="actdesc" type="xs:string" />
+        <xs:element name="actarea" type="xs:string" />
+        <xs:element name="areaname" type="xs:string" />
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="storename" type="xs:string" />
+        <xs:element name="spcode" type="xs:string" />
+        <xs:element name="taskcount" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsbuyhelp" >
+      <xs:sequence>
+        <xs:element name="helpspcode" type="xs:string" />
+        <xs:element name="rootspcode" type="xs:string" />
+        <xs:element name="helparea" type="xs:string" />
+        <xs:element name="helpareaname" type="xs:string" />
+        <xs:element name="recommendtype" type="xs:string" />
+        <xs:element name="recommendspcode" type="xs:string" />
+        <xs:element name="recommendsms" type="xs:string" />
+        <xs:element name="recommendtypemap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sysrole" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsrolename" type="xs:string" />
+          <xs:element name="updateuserid" type="xs:long" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="menuprivilege" type="xs:string" />
+          <xs:element name="unitid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysareainfo" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsid" type="xs:anyType" />
+          <xs:element name="areacode" type="xs:string" />
+          <xs:element name="areaname" type="xs:string" />
+          <xs:element name="provincename" type="xs:string" />
+          <xs:element name="//地市全拼areaspell" type="xs:string" />
+          <xs:element name="//所属省idprovid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysregion" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="regioncode" type="xs:string" />
+          <xs:element name="regionname" type="xs:string" />
+          <xs:element name="regionlevel" type="xs:long" />
+          <xs:element name="parentregion" type="xs:string" />
+          <xs:element name="shortname" type="xs:string" />
+          <xs:element name="regionspell" type="xs:string" />
+          <xs:element name="isshow" type="xs:long" />
+          <xs:element name="sortnum" type="xs:long" />
+          <xs:element name="areacode" type="xs:string" />
+          <xs:element name="//全国区域china_region" type="sysregion" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysuserregion" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="regioncode" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysblackuser" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsid" type="xs:anyType" />
+          <xs:element name="terminalid" type="xs:string" />
+          <xs:element name="levtag" type="xs:anyType" />
+          <xs:element name="intag" type="xs:anyType" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="unitid" type="xs:long" />
+          <xs:element name="updateuserid" type="xs:long" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="starttime" type="xs:string" />
+          <xs:element name="endtime" type="xs:string" />
+          <xs:element name="levtagmap" type="xs:anyType" />
+          <xs:element name="intagmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysunit" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***电商基地*/unit_type_base" type="xs:long" />
+          <xs:element name="/***省*/unit_type_province" type="xs:long" />
+          <xs:element name="/***市*/unit_type_city" type="xs:long" />
+          <xs:element name="/***单位名称**/name" type="xs:string" />
+          <xs:element name="/***单位归属地市，匹配t_sys_region表中area_code**/areacode" type="xs:string" />
+          <xs:element name="/***单位分类，1电商基地,2省移动,3市单位**/unittype" type="xs:long" />
+          <xs:element name="/***备注**/remark" type="xs:string" />
+          <xs:element name="/***单位标识，0表示正常，9表示注销**/flag" type="xs:long" />
+          <xs:element name="/***单位变更用户id，匹配t_sys_user_v2表中id**/updateuserid" type="xs:long" />
+          <xs:element name="/***单位更新时间**/updatetime" type="xs:string" />
+          <xs:element name="/***单位所属省id**/provid" type="xs:long" />
+          <xs:element name="parentunitid" type="xs:long" />
+          <xs:element name="unittypemap" type="xs:anyType" />
+          <xs:element name="regionname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysspcode" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="spcode" type="xs:string" />
+          <xs:element name="valid" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysroleprivilege" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="roleid" type="xs:long" />
+          <xs:element name="menucode" type="xs:string" />
+          <xs:element name="menubtn" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysuserrole" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="roleid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="systestterminalid" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsid" type="xs:anyType" />
+          <xs:element name="terminalid" type="xs:string" />
+          <xs:element name="ownername" type="xs:string" />
+          <xs:element name="testtype" type="xs:long" />
+          <xs:element name="actid" type="xs:anyType" />
+          <xs:element name="unitid" type="xs:string" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="updateuserid" type="xs:anyType" />
+          <xs:element name="updatetime" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysuser" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/*用户状态*//***用户状态－有效*/status_valid" type="xs:long" />
+          <xs:element name="/***用户状态－无效*/status_invalid" type="xs:long" />
+          <xs:element name="/***用户状态－删除*/status_deleted" type="xs:long" />
+          <xs:element name="/*用户类型*//***用户类型－超级管理员*/user_type_master" type="xs:long" />
+          <xs:element name="usercode" type="xs:string" />
+          <xs:element name="userpwd" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="terminalid" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="validtime" type="xs:string" />
+          <xs:element name="createtime" type="xs:string" />
+          <xs:element name="changepwdtime" type="xs:string" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="updateuserid" type="xs:long" />
+          <xs:element name="lockstatus" type="xs:long" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="flag" type="xs:anyType" />
+          <xs:element name="unitid" type="xs:long" />
+          <xs:element name="//-------------busmethod---------------------starttime" type="xs:string" />
+          <xs:element name="endtime" type="xs:string" />
+          <xs:element name="confirmpass" type="xs:string" />
+          <xs:element name="usertypemap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="opencustomer" >
+      <xs:sequence>
+        <xs:element name="appid" type="xs:long" />
+        <xs:element name="appkey" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="ips" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="paynotify" type="xs:string" />
+        <xs:element name="apptype" type="xs:string" />
+        <xs:element name="shopclass" type="xs:long" />
+        <xs:element name="shopid" type="xs:long" />
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="shopname" type="xs:string" />
+        <xs:element name="storename" type="xs:string" />
+        <xs:element name="apptypename" type="xs:string" />
+        <xs:element name="shopclassname" type="xs:string" />
+        <xs:element name="statusname" type="xs:string" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="apptypemap" type="xs:anyType" />
+        <xs:element name="shopclassmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="openroleitem" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="path" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="systype" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="typemap" type="xs:anyType" />
+          <xs:element name="isvalidmap" type="xs:anyType" />
+          <xs:element name="pid" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="isvalid" type="xs:long" />
+          <xs:element name="type" type="xs:long" />
+          <xs:element name="syncgyflag" type="xs:long" />
+          <xs:element name="isparent" type="xs:anyType" />
+          <xs:element name="syncgyflagmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysfilterword" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsword" type="xs:string" />
+          <xs:element name="intag" type="xs:long" />
+          <xs:element name="unitid" type="xs:string" />
+          <xs:element name="updateuserid" type="xs:long" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysfee" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="fee" type="xs:double" />
+          <xs:element name="valid" type="xs:long" />
+          <xs:element name="syncgyflag" type="xs:long" />
+          <xs:element name="syncgytime" type="xs:string" />
+          <xs:element name="decrfee" type="xs:string" />
+          <xs:element name="storename" type="xs:string" />
+          <xs:element name="storeid" type="xs:long" />
+          <xs:element name="//清算类别cleartype" type="xs:string" />
+          <xs:element name="validmap" type="xs:anyType" />
+          <xs:element name="syncgyflagmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="syssegment" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsid" type="xs:anyType" />
+          <xs:element name="segmentcode" type="xs:string" />
+          <xs:element name="operatorcode" type="xs:string" />
+          <xs:element name="areacode" type="xs:string" />
+          <xs:element name="mmscid" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="syslogininfo" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="ip" type="xs:string" />
+          <xs:element name="logintime" type="xs:string" />
+          <xs:element name="successflag" type="xs:anyType" />
+          <xs:element name="usertype" type="xs:anyType" />
+          <xs:element name="//-----busmethod-----/***业务使用属性，不参与数据库存储*/starttime" type="xs:string" />
+          <xs:element name="endtime" type="xs:string" />
+          <xs:element name="flagmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysloginfo" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="userid" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="opertime" type="xs:string" />
+          <xs:element name="opertype" type="xs:string" />
+          <xs:element name="module" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="ip" type="xs:string" />
+          <xs:element name="resultcode" type="xs:string" />
+          <xs:element name="usertype" type="xs:string" />
+          <xs:element name="opid" type="xs:long" />
+          <xs:element name="//------------------busmethod----------/***业务使用属性，不参与数据库存储*/starttime" type="xs:string" />
+          <xs:element name="endtime" type="xs:string" />
+          <xs:element name="opertypemap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="syssearchidx" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="typename" type="xs:string" />
+        <xs:element name="updatetime" type="xs:string" />
+        <xs:element name="actor" type="xs:long" />
+        <xs:element name="usercode" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="giftrequired" >
+      <xs:sequence>
+        <xs:element name="batchno" type="xs:long" />
+        <xs:element name="modelno" type="xs:string" />
+        <xs:element name="cardnum" type="xs:long" />
+        <xs:element name="issuingtime" type="xs:string" />
+        <xs:element name="effortdate" type="xs:string" />
+        <xs:element name="expirydate" type="xs:string" />
+        <xs:element name="exchangemode" type="xs:long" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="cardfacemsg" type="xs:string" />
+        <xs:element name="printfacestatus" type="xs:long" />
+        <xs:element name="binditemstatus" type="xs:long" />
+        <xs:element name="makecardstatus" type="xs:long" />
+        <xs:element name="parvalue" type="xs:long" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="audittime" type="xs:string" />
+        <xs:element name="auditmsg" type="xs:string" />
+        <xs:element name="audituserid" type="xs:long" />
+        <xs:element name="createdtime" type="xs:string" />
+        <xs:element name="createuserid" type="xs:long" />
+        <xs:element name="requireduser" type="xs:string" />
+        <xs:element name="stocks" type="xs:string" />
+        <xs:element name="sremark" type="xs:string" />
+        <xs:element name="stocksin" type="xs:long" />
+        <xs:element name="stocksout" type="xs:long" />
+        <xs:element name="faceimg" type="xs:string" />
+        <xs:element name="regioncode" type="xs:string" />
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="storename" type="xs:string" />
+        <xs:element name="saleid" type="xs:long" />
+        <xs:element name="cutoffday" type="xs:string" />
+        <xs:element name="/***绑定商品状态*/bindstatus" type="xs:anyType" />
+        <xs:element name="/***卡兑换数量*/exchangenum" type="xs:anyType" />
+        <xs:element name="dimcodestatus" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="printfacestatusmap" type="xs:anyType" />
+        <xs:element name="binditemstatusmap" type="xs:anyType" />
+        <xs:element name="makecardstatusmap" type="xs:anyType" />
+        <xs:element name="exchangemodemap" type="xs:anyType" />
+        <xs:element name="bindstatusmap" type="xs:anyType" />
+        <xs:element name="/***查询用创建开始时间**/begintime" type="xs:string" />
+        <xs:element name="/***查询用创建结束时间**/endtime" type="xs:string" />
+        <xs:element name="dimcodestatusmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="giftapplyout" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="typemap" type="xs:anyType" />
+          <xs:element name="paystatusmap" type="xs:anyType" />
+          <xs:element name="statusmap" type="xs:anyType" />
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="//申请类型,0：线上申请，1：线下申请type" type="xs:long" />
+          <xs:element name="//申请人applyuser" type="xs:long" />
+          <xs:element name="//申请人applyusername" type="xs:string" />
+          <xs:element name="//申请时间applytime" type="xs:string" />
+          <xs:element name="//支付订单orderid" type="xs:long" />
+          <xs:element name="//支付状态，0未支付，1已支付paystatus" type="xs:anyType" />
+          <xs:element name="//金额,分payment" type="xs:double" />
+          <xs:element name="//付款单位全称payunit" type="xs:string" />
+          <xs:element name="//付款行名称paybank" type="xs:string" />
+          <xs:element name="//联系人contactname" type="xs:string" />
+          <xs:element name="//担保人guarantorname" type="xs:string" />
+          <xs:element name="//收货地址address" type="xs:string" />
+          <xs:element name="//联系电话cellphonenumber" type="xs:string" />
+          <xs:element name="//邮政编码zipcode" type="xs:string" />
+          <xs:element name="//入账人accountedname" type="xs:string" />
+          <xs:element name="//入账单号accountedcode" type="xs:string" />
+          <xs:element name="//入账日期accountedtime" type="xs:string" />
+          <xs:element name="//状态0：未审核1：审核通过2：审核驳回3:已删除4：已出库5：已激活6:已发卡status" type="xs:long" />
+          <xs:element name="//审核人audituser" type="xs:long" />
+          <xs:element name="//审核时间audittime" type="xs:string" />
+          <xs:element name="//审核意见auditadvice" type="xs:string" />
+          <xs:element name="//出库状态outstatus" type="xs:long" />
+          <xs:element name="//激活状态activestatus" type="xs:long" />
+          <xs:element name="//备注remark" type="xs:string" />
+          <xs:element name="//出库领用人receivename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="giftcard" >
+      <xs:sequence>
+        <xs:element name="serialno" type="xs:string" />
+        <xs:element name="batchno" type="xs:long" />
+        <xs:element name="memberid" type="xs:long" />
+        <xs:element name="exchangestatus" type="xs:long" />
+        <xs:element name="exchangetime" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="receivetime" type="xs:string" />
+        <xs:element name="createdtime" type="xs:string" />
+        <xs:element name="storagestatus" type="xs:long" />
+        <xs:element name="paymentday" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="giftcardtask" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="resources" type="xs:long" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="batchno" type="xs:long" />
+          <xs:element name="filepath" type="xs:string" />
+          <xs:element name="serialstartno" type="xs:string" />
+          <xs:element name="serialendno" type="xs:string" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="createtime" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="giftcardstorage" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="batchno" type="xs:long" />
+          <xs:element name="stocks" type="xs:long" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="stocksin" type="xs:long" />
+          <xs:element name="stocksout" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="giftcardtaskext" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="taskid" type="xs:long" />
+          <xs:element name="serialno" type="xs:string" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="createtime" type="xs:string" />
+          <xs:element name="acttime" type="xs:string" />
+          <xs:element name="applyid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="giftrequireditem" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="/***主键id*/id" type="xs:long" />
+        <xs:element name="/***卡批次号*/batchno" type="xs:long" />
+        <xs:element name="/***商品id*/itemid" type="xs:long" />
+        <xs:element name="/***状态，-1：删除，0：草稿，1：待审核，2：审核通过,3:审核失败*/status" type="xs:anyType" />
+        <xs:element name="/***审核时间*/audittime" type="xs:string" />
+        <xs:element name="/***审核意见*/auditmsg" type="xs:string" />
+        <xs:element name="/***审核用户id*/audituserid" type="xs:long" />
+        <xs:element name="/***商户编号*/storeid" type="xs:long" />
+        <xs:element name="/***创建时间*/createdtime" type="xs:string" />
+        <xs:element name="/***创建者用户id*/createduserid" type="xs:long" />
+        <xs:element name="/***备注*/remark" type="xs:string" />
+        <xs:element name="/***状态名称*/statusname" type="xs:string" />
+        <xs:element name="/***商品名称*/itemname" type="xs:string" />
+        <xs:element name="/***商户名称*/storename" type="xs:string" />
+        <xs:element name="dimcodeimg" type="xs:string" />
+        <xs:element name="dimcodewapurl" type="xs:string" />
+        <xs:element name="dimcodestatus" type="xs:long" />
+        <xs:element name="dimcdetime" type="xs:string" />
+        <xs:element name="//二维码路径filewebpath" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="giftapplyoutext" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***/serialversionuid" type="xs:long" />
+          <xs:element name="//出库申请编号applyid" type="xs:long" />
+          <xs:element name="//批次号batchno" type="xs:long" />
+          <xs:element name="//卡数量num" type="xs:long" />
+          <xs:element name="//卡型号modelno" type="xs:string" />
+          <xs:element name="//支付单价，分payprice" type="xs:long" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="stocks" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="giftcardcbhandle" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***用户id*/userid" type="xs:long" />
+        <xs:element name="/***卡号*/serialno" type="xs:string" />
+        <xs:element name="/***礼品卡请求流水号*/usid" type="xs:long" />
+        <xs:element name="/***回调事件id*/cbid" type="xs:long" />
+        <xs:element name="/***状态，1：正常2：重复的回调，不予处理，3:创建订单异常*/status" type="xs:long" />
+        <xs:element name="/***订单id*/orderid" type="xs:long" />
+        <xs:element name="orderresult" type="xs:string" />
+        <xs:element name="createtime" type="xs:string" />
+        <xs:element name="/***卡需求批次号*/batchno" type="xs:long" />
+        <xs:element name="/***卡型号*/modelno" type="xs:string" />
+        <xs:element name="/***礼品卡状态，0：未兑换，1：已兑换*/cardstatus" type="xs:long" />
+        <xs:element name="/***用户昵称*/username" type="xs:string" />
+        <xs:element name="/***用户手机号*/terminalid" type="xs:string" />
+        <xs:element name="/***用户邮箱*/email" type="xs:string" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="cardstatusmap" type="xs:anyType" />
+        <xs:element name="/***查询用创建开始时间**/begintime" type="xs:string" />
+        <xs:element name="/***查询用创建结束时间**/endtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="giftcardstorageext" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="serialno" type="xs:string" />
+          <xs:element name="batchno" type="xs:long" />
+          <xs:element name="storagestatus" type="xs:long" />
+          <xs:element name="operatedtime" type="xs:string" />
+          <xs:element name="operateduserid" type="xs:long" />
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="applyid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="itemcommentreply" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="updatetime" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="commentid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shopcomment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="updatetime" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="shopclass" type="xs:long" />
+        <xs:element name="shopid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemcomment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="type" type="xs:anyType" />
+        <xs:element name="questiontype" type="xs:anyType" />
+        <xs:element name="updatetime" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="status" type="xs:anyType" />
+        <xs:element name="saleid" type="xs:long" />
+        <xs:element name="audituser" type="xs:long" />
+        <xs:element name="audittime" type="xs:string" />
+        <xs:element name="rank" type="xs:anyType" />
+        <xs:element name="usefulnum" type="xs:long" />
+        <xs:element name="uselessnum" type="xs:long" />
+        <xs:element name="replynickname" type="xs:string" />
+        <xs:element name="replyupdatetime" type="xs:string" />
+        <xs:element name="replycontent" type="xs:string" />
+        <xs:element name="statusmap" type="xs:anyType" />
+        <xs:element name="commenttypemap" type="xs:anyType" />
+        <xs:element name="questiontypemap" type="xs:anyType" />
+        <xs:element name="/***查询使用*/starttime" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+        <xs:element name="/***商品名称*/name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contmms" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+          <xs:element name="astatus_wait" type="xs:long" />
+          <xs:element name="astatus_ok" type="xs:long" />
+          <xs:element name="astatus_reject" type="xs:long" />
+          <xs:element name="astatus_map" type="xs:anyType" />
+          <xs:element name="contentsrc" type="xs:string" />
+          <xs:element name="content" type="xs:string" />
+          <xs:element name="starttime" type="xs:string" />
+          <xs:element name="endtime" type="xs:string" />
+          <xs:element name="keyword" type="xs:string" />
+          <xs:element name="areacode" type="xs:string" />
+          <xs:element name="unitid" type="xs:string" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="prodid" type="xs:long" />
+          <xs:element name="periodid" type="xs:long" />
+          <xs:element name="status" type="xs:anyType" />
+          <xs:element name="auditorid" type="xs:long" />
+          <xs:element name="advice" type="xs:string" />
+          <xs:element name="updateuserid" type="xs:long" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="title" type="xs:string" />
+          <xs:element name="contentpath" type="xs:string" />
+          <xs:element name="picsize" type="xs:string" />
+          <xs:element name="smilname" type="xs:string" />
+          <xs:element name="param1" type="xs:string" />
+          <xs:element name="param2" type="xs:string" />
+          <xs:element name="contentsize" type="xs:anyType" />
+          <xs:element name="attachmenttype" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="contsms" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+          <xs:element name="statusmap" type="xs:anyType" />
+          <xs:element name="//状态/***状态－未审核*/status_0" type="xs:long" />
+          <xs:element name="/***状态－审核通过*/status_1" type="xs:long" />
+          <xs:element name="/***状态－审核驳回*/status_2" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="contentsrc" type="xs:string" />
+          <xs:element name="content" type="xs:string" />
+          <xs:element name="starttime" type="xs:string" />
+          <xs:element name="endtime" type="xs:string" />
+          <xs:element name="keyword" type="xs:string" />
+          <xs:element name="areacode" type="xs:string" />
+          <xs:element name="unitid" type="xs:string" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="auditorid" type="xs:long" />
+          <xs:element name="advice" type="xs:string" />
+          <xs:element name="updateuserid" type="xs:long" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="//****************busmethod*******************/***单位名称**/unitname" type="xs:string" />
+          <xs:element name="/***内容源名称**/srcname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="contentcode" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="codetypemap" type="xs:anyType" />
+          <xs:element name="conttypemap" type="xs:anyType" />
+          <xs:element name="/***内容源id，使用序列seq_cont_code*/id" type="xs:long" />
+          <xs:element name="/***内容源英文标识，唯一*/code" type="xs:string" />
+          <xs:element name="/***内容源名称*/name" type="xs:string" />
+          <xs:element name="/***内容源归属地市,例如025*/areacode" type="xs:string" />
+          <xs:element name="/***内容源信息类型，0表示短信，1表示彩信*/conttype" type="xs:anyType" />
+          <xs:element name="codetype" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="batchtaskschedule" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//删除status_deleted" type="xs:long" />
+          <xs:element name="//有效(待处理)status_valid" type="xs:long" />
+          <xs:element name="//无效(取消)status_invalid" type="xs:long" />
+          <xs:element name="//处理中status_processing" type="xs:long" />
+          <xs:element name="//处理完成status_process_sucessed" type="xs:long" />
+          <xs:element name="//处理失败status_process_failure" type="xs:long" />
+          <xs:element name="//默认收到多少条短信的用户被过滤default_limit" type="xs:long" />
+          <xs:element name="statusmap" type="xs:anyType" />
+          <xs:element name="//创建帐号usercode" type="xs:string" />
+          <xs:element name="//状态0-删除1-有效(未处理)2-无效(不处理)3-处理中4-处理完成5-处理失败status" type="xs:anyType" />
+          <xs:element name="//上传号码数(由后台进程维护)uploadterminalcount" type="xs:anyType" />
+          <xs:element name="//处理结果实际过滤号码数(由后台进程维护)resultterminalcount" type="xs:anyType" />
+          <xs:element name="//开始时间(录入系统时间)createtime" type="xs:string" />
+          <xs:element name="//结束时间(后台进程处理完时间)endtime" type="xs:string" />
+          <xs:element name="//上传文件路径uploadfilepath" type="xs:string" />
+          <xs:element name="//进程处理结果文件路径resultfilepath" type="xs:string" />
+          <xs:element name="//处理日期datetime" type="xs:string" />
+          <xs:element name="//0-全过滤(不限类型)1-普通短信2-短信购filtertype" type="xs:anyType" />
+          <xs:element name="//定义收到多少条短信的用户被过滤limit" type="xs:anyType" />
+          <xs:element name="//进程处理失败原因failurereason" type="xs:string" />
+          <xs:element name="//备注remark" type="xs:string" />
+          <xs:element name="tasktype" type="xs:anyType" />
+          <xs:element name="smscontent" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="auditstep" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="//fieldsbsid" type="xs:long" />
+          <xs:element name="bstype" type="xs:long" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="remark" type="xs:string" />
+          <xs:element name="audituserid" type="xs:long" />
+          <xs:element name="updatetime" type="xs:string" />
+          <xs:element name="bstabel" type="xs:string" />
+          <xs:element name="remarkl" type="xs:string" />
+          <xs:element name="statusmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sysmenu" >
+      <xs:sequence>
+        <xs:element name="menucode" type="xs:string" />
+        <xs:element name="menuname" type="xs:string" />
+        <xs:element name="menupcode" type="xs:string" />
+        <xs:element name="menuurl" type="xs:string" />
+        <xs:element name="leafyn" type="xs:anyType" />
+        <xs:element name="modelcode" type="xs:string" />
+        <xs:element name="urlbtns" type="xs:string" />
+        <xs:element name="systype" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

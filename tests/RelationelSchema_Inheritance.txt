@@ -1,0 +1,241 @@
+member(memberid:int [PK], version:Integer, membername:String, duespaid:boolean, donation:BigInteger);
+
+employee(id:int [PK], firstname:String, lastname:String, hire:Date, /***thethisemployeeleads*/:Project, /***thethisemployeebelongsto*/:Department);
+
+project(//instancevariablesprojid:long, name:String, budget:BigDecimal, projectlead:Employee #FK to());
+
+parttimeemployee(wage:float);
+
+department(//instancevariablesid:int, name:String);
+
+fulltimeemployee(salary:float);
+
+project(//instancevariablesprojid:long, name:String, budget:BigDecimal, projectlead:Employee #FK to());
+
+employee(id:int [PK], firstname:String, lastname:String, /***thethisemployeeleads*/:Project, /***thethisemployeebelongsto*/:Department);
+
+department(//instancevariablesid:int, name:String);
+
+parttimeemployee(wage:float);
+
+fulltimeemployee(salary:float);
+
+project(//instancevariablesprojid:long, name:String, budget:BigDecimal, projectlead:FullTimeEmployee #FK to());
+
+department(//instancevariablesid:int, name:String);
+
+parttimeemployee(wage:float);
+
+coffee(id:Integer [PK], brandname:String, price:float);
+
+team(//instancevariablesteamid:int, name:String, GeneratedName:Company);
+
+annualreview(//instancevariablesid:Integer, service:Integer);
+
+insurance(//instancevariablesinsid:int, carrier:String);
+
+company(companyid:long [PK], name:String, GeneratedName:Address);
+
+person(personid:int [PK], firstname:String, lastname:String, GeneratedName:Project, GeneratedName:Team, carriers:Collection<Insurance>);
+
+project(//instancevariablesprojid:long, name:String, budget:BigDecimal, projectlead:Person #FK to());
+
+project_person(projects_projid:Project [PK] #FK to Project,persons_personid: [PK] #FK to );
+
+address(//instancevariablesid:String, street:String, city:String, state:String, zip:String);
+
+address(//instancevariablesid:String, street:String, city:String, state:String, zip:String);
+
+project(//instancevariablesprojid:long, name:String, budget:BigDecimal, projectlead:Person #FK to());
+
+project_(projectID:project [PK] #FK to project,ID: [PK] #FK to );
+
+team(//instancevariablesteamid:int, name:String, GeneratedName:Company);
+
+person(personid:int [PK], firstname:String, lastname:String, GeneratedName:Project, GeneratedName:Team, carriers:Collection<Insurance>);
+
+insurance(//instancevariablesinsid:int, carrier:String);
+
+company(companyid:long [PK], name:String, GeneratedName:Address);
+
+annualreview(//instancevariablesid:Integer, service:Integer);
+
+order1(//instancevariablesid:String, totalprice:double, GeneratedName:Item);
+
+item(//instancevariablesid:String, itemname:String, GeneratedName:Order1);
+
+coffee(id:Integer [PK], brandname:String, price:float);
+
+department(//instancevariablesid:int, name:String);
+
+employee(id:int [PK], firstname:String, lastname:String, hire:Date, salary:float, GeneratedName:Department);
+
+department(//instancevariablesid:int, name:String);
+
+employee(id:int [PK], firstname:String, lastname:String, hire:Date, salary:float, GeneratedName:Department, GeneratedName:Insurance);
+
+insurance(//instancevariablesid:int, carrier:String);
+
+order(id:int [PK], total:int);
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int, //:B #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+fkeys_mxm_bi_btob(fk_for_aejb_mxm_bi_btob:A [PK] #FK to A,fk_for_bejb_mxm_bi_btob: [PK] #FK to );
+
+b(//:String [PK], name:String, value:int);
+
+a(//:String [PK], name:String, value:int);
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+a(//:String [PK], name:String, value:int, //:B #FK to());
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+a(//:String [PK], name:String, value:int);
+
+fkeys_mxm_bi_btob(fk_for_aejb_mxm_bi_btob:A [PK] #FK to A,fk_for_bejb_mxm_bi_btob: [PK] #FK to );
+
+b(//:String [PK], name:String, value:int);
+
+a(//:String [PK], name:String, value:int);
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+fkeys_mxm_bi_btob(fk_for_aejb_mxm_bi_btob:A [PK] #FK to A,fk_for_bejb_mxm_bi_btob: [PK] #FK to );
+
+b(//:String [PK], name:String, value:int);
+
+a(//:String [PK], name:String, value:int, //:B #FK to());
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int, //:B #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+b(//:String [PK], name:String, value:int, //:A #FK to());
+
+a(//:String [PK], name:String, value:int);
+
+coffee(id:Integer [PK], brandname:String, price:float);
+
+lineitem(id:String [PK], quantity:int, GeneratedName:Order, GeneratedName:Product);
+
+order(id:String [PK], totalprice:double, sample:LineItem);
+
+order(id:String [PK], totalprice:double, sample:LineItem);
+
+lineitemsuper(quantity:int);
+
+lineitem(id:String [PK], //movedtolineitemsuper//intquantity:Order, GeneratedName:Product);
+
+order(id:String [PK], totalprice:double, sample:LineItem);
+
+lineitem(id:String [PK], quantity:int, GeneratedName:Order, GeneratedName:Product);
+
+product(id:String [PK], name:String, price:double, quantity:int, partnumber:long);
+
+pricedpartproduct_2(id:String [PK], name:String, price:double, quantity:int, partnumber:long);
+
+product(id:String [PK], name:String, quantity:int);
+
+pricedpartproduct(price:double);
+
+partproduct(partnumber:long);
+
+order(id:String [PK], totalprice:double, sample:LineItem);
+
+product(id:String [PK], name:String, price:double, quantity:int, partnumber:long);
+
+lineitemsuper(quantity:int);
+
+lineitem(id:String [PK], //movedtolineitemsuper//intquantity:Order, GeneratedName:Product);
+
+employee(id:int [PK], firstname:String, lastname:String, hire:Date, salary:float, GeneratedName:Department, GeneratedName:Insurance);
+
+department(//instancevariablesid:int, name:String);
+
+insurance(//instancevariablesid:int, carrier:String);
+
+phone(//instancevariablesid:String, area:String, number:String, GeneratedName:Address);
+
+spouse(//instancevariablesid:String, first:String, maiden:String, last:String, snumber:String, GeneratedName:Info, GeneratedName:Customer);
+
+creditcard(//instancevariablesid:String, number:String, type:String, expires:String, approved:boolean, balance:double, GeneratedName:Order, GeneratedName:Customer);
+
+hardwareproduct(//instancevariablesmodelnumber:int);
+
+customer(//instancevariablesid:String, name:String, home:Address #FK to(), work:Address #FK to(), GeneratedName:Country, GeneratedName:Spouse);
+
+alias(//instancevariablesid:String, alias:String, noop:Customer);
+
+fks_anoop_cnoop(fk2_for_alias_table:Alias [PK] #FK to Alias,fk8_for_customer_table: [PK] #FK to );fks_alias_customer(fk_for_alias_table:Alias [PK] #FK to Alias,fk_for_customer_table: [PK] #FK to );
+
+address(//instancevariablesid:String, street:String, city:String, state:String, zip:String);
+
+info(//instancevariablesid:String, street:String, city:String, state:String, zip:String, GeneratedName:Spouse);
+
+lineitem(//instancevariablesid:String, quantity:int, GeneratedName:Order, GeneratedName:Product);
+
+product(//instancevariablesid:String, name:String, price:double, quantity:int, partnumber:long, warehouse:String, GeneratedName:ShelfLife);
+
+order(//instancevariablesid:String, totalprice:double, GeneratedName:Customer, GeneratedName:CreditCard, sample:LineItem);
+
+softwareproduct(//instancevariablesrevisionnumber:double);
+
+datatypes(id:int [PK], data:Character, data:Short, data:Integer, data:Long, data:Double, data:Float);
+
+datatypes(id:Integer [PK], data:Character, data:Short, data:Integer, data:Long, data:Double, data:Float, enumdata:Grade);
+
+datatypes2(id:java.util.Date [PK], timedata:java.sql.Time, tsdata:java.sql.Timestamp, data:Byte, chardata:Character);
+
+datatypes(id:Integer [PK], data:Character, data:Short, data:Integer, data:Long, data:Double, data:Float);
+
+datatypes(id:int [PK], data:boolean, data:byte, acterdata:char, data:short, egerdata:int, data:long, data:double, data:float, enumdata:Grade);
+
+datatypes2(id:java.util.Date [PK], timedata:java.sql.Time, tsdata:java.sql.Timestamp, data:byte, data:char);
+
+testbean2(pmid:Integer, pmid:String, pmid:Float, brandname:String, price:float);
+
+testbean(GeneratedName:CompoundPK, brandname:String, price:float);
+
+testbean3(pmid:Integer [PK], pmid:String [PK], pmid:Float [PK], brandname:String, price:float);
+
+employee(salary:float, STATUS: String);
+
+product(id:String [PK], name:String, price:double, quantity:int, partnumber:long, PRODUCT_TYPE: String);
+
+product(id:String [PK], name:String, price:double, quantity:int, partnumber:long, PRODUCT_TYPE: String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

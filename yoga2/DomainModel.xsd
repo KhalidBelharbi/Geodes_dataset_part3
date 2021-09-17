@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="wxmpsendmessage" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="templateid" type="xs:string" />
+        <xs:element name="page" type="xs:string" />
+        <xs:element name="data" type="xs:string" />
+        <xs:element name="addtime" type="xs:anyType" />
+        <xs:element name="send" type="xs:anyType" />
+        <xs:element name="sendtime" type="xs:anyType" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wxmpbinduser" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="openid" type="xs:string" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

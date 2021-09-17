@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="users" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="funciones" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roles" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="perfildelaempresa" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="template" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configurarpuerto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="footertemplate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="headertemplate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nuevaentrada" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="movimientos" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reportemovimientos" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="salidamovimiento" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exporter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ayuda" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="noconnection" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="main" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarfunciones" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarperfil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarusuarios" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="administrarperfiles" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="administrarfuncionesperfil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contenedor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="administrarusuarios" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="registrodeclientesyproveedores" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarproductos" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarclienteproveedor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="registroproductosclientesproveedores" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="master" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsprodcteprov" >
+      <xs:complexContent>
+       <xs:extension base="abstractsmsprodcteprov">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractsmscteprov" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="bycreatedby" type="segusuario" nillable="true" minOccurs="0" />
+        <xs:element name="byupdatedby" type="segusuario" nillable="true" minOccurs="0" />
+        <xs:element name="esproveedor" type="xs:long" />
+        <xs:element name="clave" type="xs:string" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="razonsocial" type="xs:string" />
+        <xs:element name="idsap" type="xs:string" />
+        <xs:element name="estatus" type="xs:long" />
+        <xs:element name="salidacontingencia" type="xs:long" />
+        <xs:element name="createdon" type="xs:anyType" />
+        <xs:element name="updatedon" type="xs:anyType" />
+        <xs:element name="smsmovimientos" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="smsprodcteprovs" type="smsprodcteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="catparametroid" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="idapp" type="xs:long" />
+        <xs:element name="idadmin" type="xs:long" />
+        <xs:element name="keyvalue" type="xs:string" />
+        <xs:element name="valor" type="xs:string" />
+        <xs:element name="descripcion" type="xs:string" />
+        <xs:element name="activo" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="catpuertoid" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="idapp" type="xs:long" />
+        <xs:element name="idadmin" type="xs:long" />
+        <xs:element name="keyvalue" type="xs:string" />
+        <xs:element name="valor" type="xs:string" />
+        <xs:element name="descripcion" type="xs:string" />
+        <xs:element name="activo" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractcatparametro" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="catparametroid" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsprodcteprovid" >
+      <xs:sequence>
+        <xs:element name="//fieldsidcteprov" type="xs:long" />
+        <xs:element name="idproducto" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractcatpropempresa" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="catpropempresaid" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsmovimiento" >
+      <xs:complexContent>
+       <xs:extension base="abstractsmsmovimiento">
+         <xs:sequence>
+          <xs:element name="producto" type="smsproducto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="catpuerto" >
+      <xs:complexContent>
+       <xs:extension base="abstractcatpuerto">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractsmsprodcteprov" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="smsprodcteprovid" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="smscteprov" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="smsproducto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractsmsproducto" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="bycreatedby" type="segusuario" nillable="true" minOccurs="0" />
+        <xs:element name="byupdatedby" type="segusuario" nillable="true" minOccurs="0" />
+        <xs:element name="clave" type="xs:string" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="idsap" type="xs:string" />
+        <xs:element name="estatus" type="xs:long" />
+        <xs:element name="createdon" type="xs:anyType" />
+        <xs:element name="updatedon" type="xs:anyType" />
+        <xs:element name="smsprodcteprovs" type="smsprodcteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="catparametro" >
+      <xs:complexContent>
+       <xs:extension base="abstractcatparametro">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="isegusuariodao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractcatpuerto" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="catpuertoid" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsproducto" >
+      <xs:complexContent>
+       <xs:extension base="abstractsmsproducto">
+         <xs:sequence>
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="selected" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="catpropempresaid" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="idapp" type="xs:long" />
+        <xs:element name="idadmin" type="xs:long" />
+        <xs:element name="keyvalue" type="xs:string" />
+        <xs:element name="valor" type="xs:string" />
+        <xs:element name="descripcion" type="xs:string" />
+        <xs:element name="activo" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="catpropempresa" >
+      <xs:complexContent>
+       <xs:extension base="abstractcatpropempresa">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smscteprov" >
+      <xs:complexContent>
+       <xs:extension base="abstractsmscteprov">
+         <xs:sequence>
+          <xs:element name="esclienteproveedor" type="xs:string" />
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="essalidacontingencia" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractsmsmovimiento" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="byidusrcancela" type="segusuario" nillable="true" minOccurs="0" />
+        <xs:element name="byidusrenviosap" type="segusuario" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="smscteprov" nillable="true" minOccurs="0" />
+        <xs:element name="byidusrpesosalida" type="segusuario" nillable="true" minOccurs="0" />
+        <xs:element name="byidusrpesoentrada" type="segusuario" nillable="true" minOccurs="0" />
+        <xs:element name="esmovcliente" type="xs:long" />
+        <xs:element name="idproducto" type="xs:long" />
+        <xs:element name="idcteprovsap" type="xs:string" />
+        <xs:element name="idproductosap" type="xs:string" />
+        <xs:element name="placavehiculo" type="xs:string" />
+        <xs:element name="destino" type="xs:string" />
+        <xs:element name="factura" type="xs:string" />
+        <xs:element name="fechaentrada" type="xs:anyType" />
+        <xs:element name="pesoentrada" type="xs:double" />
+        <xs:element name="fechasalida" type="xs:anyType" />
+        <xs:element name="pesosalida" type="xs:double" />
+        <xs:element name="basculacontingentrada" type="xs:long" />
+        <xs:element name="guardiacontingentrada" type="xs:string" />
+        <xs:element name="basculacontingsalida" type="xs:long" />
+        <xs:element name="guardiacontingsalida" type="xs:string" />
+        <xs:element name="pesoneto" type="xs:double" />
+        <xs:element name="pesotara" type="xs:double" />
+        <xs:element name="enviarsap" type="xs:long" />
+        <xs:element name="enviadosap" type="xs:long" />
+        <xs:element name="fechaenviadosap" type="xs:anyType" />
+        <xs:element name="cancelado" type="xs:long" />
+        <xs:element name="motivocancela" type="xs:string" />
+        <xs:element name="nombreconductor" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smscteprovdao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantses_proveedor" type="xs:string" />
+        <xs:element name="clave" type="xs:string" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="razon_social" type="xs:string" />
+        <xs:element name="id_sap" type="xs:string" />
+        <xs:element name="estatus" type="xs:string" />
+        <xs:element name="salida_contingencia" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsmovimientodao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantses_mov_cliente" type="xs:string" />
+        <xs:element name="id_producto" type="xs:string" />
+        <xs:element name="id_cte_prov_sap" type="xs:string" />
+        <xs:element name="id_producto_sap" type="xs:string" />
+        <xs:element name="placa_vehiculo" type="xs:string" />
+        <xs:element name="destino" type="xs:string" />
+        <xs:element name="factura" type="xs:string" />
+        <xs:element name="peso_entrada" type="xs:string" />
+        <xs:element name="peso_salida" type="xs:string" />
+        <xs:element name="bascula_contingencia" type="xs:string" />
+        <xs:element name="guardia_contingencia" type="xs:string" />
+        <xs:element name="peso_neto" type="xs:string" />
+        <xs:element name="peso_tara" type="xs:string" />
+        <xs:element name="enviar_sap" type="xs:string" />
+        <xs:element name="enviado_sap" type="xs:string" />
+        <xs:element name="cancelado" type="xs:string" />
+        <xs:element name="motivo_cancela" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ismsprodcteprovdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ismsmovimientodao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ismscteprovdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsprodcteprovdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsproductodao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsclave" type="xs:string" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="id_sap" type="xs:string" />
+        <xs:element name="estatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ismsproductodao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsmovimientoservice" >
+      <xs:sequence>
+        <xs:element name="smdao" type="smsmovimientodao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarproductoservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="smsproductodao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsprodcteprovservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="smsprodcteprovdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="actualizardatospuertoservice" >
+      <xs:sequence>
+        <xs:element name="contentdao" type="fwkcatcontentdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarclienteproveedorservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="smscteprovdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validaciones" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dialogbuilder" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="utilerias" >
+      <xs:complexContent>
+       <xs:extension base="string>">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pantallas" >
+      <xs:sequence>
+        <xs:element name="fxml_login" type="xs:string" />
+        <xs:element name="fxml_admin_usuarios" type="xs:string" />
+        <xs:element name="fxml_admin_perfiles" type="xs:string" />
+        <xs:element name="fxml_admin_funciones_perfil" type="xs:string" />
+        <xs:element name="fxml_crear_editar_usuarios" type="xs:string" />
+        <xs:element name="fxml_crear_editar_perfiles" type="xs:string" />
+        <xs:element name="fxml_crear_editar_permisos" type="xs:string" />
+        <xs:element name="fxml_crear_editar_clientes_proveedores" type="xs:string" />
+        <xs:element name="fxml_crear_editar_productos" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="comboboxvalidatior" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkboxtablecell" >
+      <xs:complexContent>
+       <xs:extension base="tablecell<s,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="seleccionar" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lengthvalidator" >
+      <xs:complexContent>
+       <xs:extension base="v>">
+         <xs:sequence>
+          <xs:element name="max" type="xs:long" />
+          <xs:element name="min" type="xs:long" />
+          <xs:element name="message" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lengthnoemptyvalidator" >
+      <xs:complexContent>
+       <xs:extension base="v>">
+         <xs:sequence>
+          <xs:element name="max" type="xs:long" />
+          <xs:element name="min" type="xs:long" />
+          <xs:element name="message" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="archivopropiedades" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validatorhandler" >
+      <xs:sequence>
+        <xs:element name="errordisplay" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="numerosvalidator" >
+      <xs:sequence>
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaultvalidatorresultlistener" >
+      <xs:complexContent>
+       <xs:extension base="validationresult>">
+         <xs:sequence>
+          <xs:element name="messages" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="emailvalidator" >
+      <xs:complexContent>
+       <xs:extension base="v>">
+         <xs:sequence>
+          <xs:element name="message" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="alfanumericovalidator" >
+      <xs:sequence>
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cachedtimelinetransition" >
+      <xs:complexContent>
+       <xs:extension base="transition">
+         <xs:sequence>
+          <xs:element name="web_ease" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="oldcache" type="xs:anyType" />
+          <xs:element name="old" type="xs:anyType" />
+          <xs:element name="usecache" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="permisos" >
+      <xs:sequence>
+        <xs:element name="//administraciondeusuariosadmin_usr_nuevo" type="xs:string" />
+        <xs:element name="admin_usr_editar" type="xs:string" />
+        <xs:element name="admin_usr_activar_desactivar" type="xs:string" />
+        <xs:element name="admin_usr_asignar_perfiles" type="xs:string" />
+        <xs:element name="//administraciondeperfilesadmin_perfil_nuevo" type="xs:string" />
+        <xs:element name="admin_perfil_editar" type="xs:string" />
+        <xs:element name="admin_perfil_activar_desactivar" type="xs:string" />
+        <xs:element name="admin_perfil_asignar_permisos" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="letrasvalidator" >
+      <xs:sequence>
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orvalidator" >
+      <xs:sequence>
+        <xs:element name="list" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fadeinrighttransition" >
+      <xs:complexContent>
+       <xs:extension base="cachedtimelinetransition">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="maxlengthvalidator" >
+      <xs:sequence>
+        <xs:element name="max" type="xs:long" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nuevaentradacontroller" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="nuevaentrada_lblplaca" type="xs:anyType" />
+          <xs:element name="nuevaentrada_lblnumcontrato" type="xs:anyType" />
+          <xs:element name="nuevaentrada_lbldestino" type="xs:anyType" />
+          <xs:element name="nuevaentrada_lblpeso" type="xs:anyType" />
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="nuevaentrada_btncancelar" type="xs:anyType" />
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="nuevaentrada_txtnombrechofer" type="xs:anyType" />
+          <xs:element name="nuevaentrada_txtnumplaca" type="xs:anyType" />
+          <xs:element name="nuevaentrada_txtnumcontrato" type="xs:anyType" />
+          <xs:element name="nuevaentrada_txtdestino" type="xs:anyType" />
+          <xs:element name="nuevaentrada_txtpeso" type="xs:anyType" />
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="smscteprov" nillable="true" minOccurs="0" />
+          <xs:element name="" type="smsproducto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="segusuario" nillable="true" minOccurs="0" />
+          <xs:element name="pesobascula" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="movimientoscontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="entity_lblclave" type="xs:anyType" />
+          <xs:element name="entity_lblnombre" type="xs:anyType" />
+          <xs:element name="productos_lblheader" type="xs:anyType" />
+          <xs:element name="productos_lblclave" type="xs:anyType" />
+          <xs:element name="productos_lblnombre" type="xs:anyType" />
+          <xs:element name="entradas_lblentrada" type="xs:anyType" />
+          <xs:element name="entradas_lblfolio" type="xs:anyType" />
+          <xs:element name="entradas_lblplacas" type="xs:anyType" />
+          <xs:element name="entradas_lblempresa" type="xs:anyType" />
+          <xs:element name="entradas_lblpesobruto" type="xs:anyType" />
+          <xs:element name="entradas_lblpesotara" type="xs:anyType" />
+          <xs:element name="entradas_lblpesoneto" type="xs:anyType" />
+          <xs:element name="lblpesobrutovalue" type="xs:anyType" />
+          <xs:element name="lblpesotaravalue" type="xs:anyType" />
+          <xs:element name="lblpesonetovalue" type="xs:anyType" />
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="btnsalida" type="xs:anyType" />
+          <xs:element name="btnreimpresion" type="xs:anyType" />
+          <xs:element name="btncancelarticket" type="xs:anyType" />
+          <xs:element name="btnentradacustodia" type="xs:anyType" />
+          <xs:element name="btnsalidacustodia" type="xs:anyType" />
+          <xs:element name="//<editor-folddefaultstate" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="colentityid" type="xs:anyType" />
+          <xs:element name="colentityclave" type="xs:anyType" />
+          <xs:element name="colentitynombre" type="xs:anyType" />
+          <xs:element name="tablaproducto" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="colproductoid" type="xs:anyType" />
+          <xs:element name="colproductoclave" type="xs:anyType" />
+          <xs:element name="colproductonombre" type="xs:anyType" />
+          <xs:element name="tablaentradaspendientes" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="colfolioentradas" type="xs:anyType" />
+          <xs:element name="colentidadentradas" type="xs:anyType" />
+          <xs:element name="colproductoentradas" type="xs:anyType" />
+          <xs:element name="colplacasentradas" type="xs:anyType" />
+          <xs:element name="colcontratoventaentradas" type="xs:anyType" />
+          <xs:element name="coldestinoentradas" type="xs:anyType" />
+          <xs:element name="colfechaentradaentradas" type="xs:anyType" />
+          <xs:element name="colcontingenciaentradas" type="xs:anyType" />
+          <xs:element name="colenviadosapentradas" type="xs:anyType" />
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="txtidentitynombre" type="xs:anyType" />
+          <xs:element name="txtproductoclave" type="xs:anyType" />
+          <xs:element name="txtproductonombre" type="xs:anyType" />
+          <xs:element name="txtentradasfolio" type="xs:anyType" />
+          <xs:element name="txtentradasplacas" type="xs:anyType" />
+          <xs:element name="txtentradasempresa" type="xs:anyType" />
+          <xs:element name="//<editor-folddefaultstate" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filtereddataidentidad" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="masterdataproductos" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filtereddataproductos" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="masterdatamovimientos" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filtereddatamovimientos" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="entidadactual" type="xs:anyType" />
+          <xs:element name="combopaginacion" type="xs:anyType" />
+          <xs:element name="paginador" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="salidamovimientocontroller" >
+      <xs:sequence>
+        <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+        <xs:element name="lblfechaentrada_salida" type="xs:anyType" />
+        <xs:element name="lblidentidad_salida" type="xs:anyType" />
+        <xs:element name="lblproducto_salida" type="xs:anyType" />
+        <xs:element name="lblplacas_salida" type="xs:anyType" />
+        <xs:element name="lbldestino_salida" type="xs:anyType" />
+        <xs:element name="lblpesobruto_salida" type="xs:anyType" />
+        <xs:element name="lblpesotara_salida" type="xs:anyType" />
+        <xs:element name="lblpesoneto_salida" type="xs:anyType" />
+        <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+        <xs:element name="btncancelar" type="xs:anyType" />
+        <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+        <xs:element name="txtfecha" type="xs:anyType" />
+        <xs:element name="txtnombreidentidad" type="xs:anyType" />
+        <xs:element name="txtnombreproducto" type="xs:anyType" />
+        <xs:element name="txtplaca" type="xs:anyType" />
+        <xs:element name="txtdestino" type="xs:anyType" />
+        <xs:element name="txtpesobruto" type="xs:anyType" />
+        <xs:element name="txtpesotara" type="xs:anyType" />
+        <xs:element name="txtpesoneto" type="xs:anyType" />
+        <xs:element name="txtpesobascula" type="xs:anyType" />
+        <xs:element name="movimientoactual" type="smsmovimiento" nillable="true" minOccurs="0" />
+        <xs:element name="entidadactual" type="xs:anyType" />
+        <xs:element name="pesobascula" type="xs:double" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="segusuario" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="headertemplatecontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="registrodeclientesyproveedorescontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="tabladatos" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="btnnuevo" type="xs:anyType" />
+          <xs:element name="lblclave,lblempresa,lbpaginacion,filtrar" type="xs:anyType" />
+          <xs:element name="colacciones" type="xs:anyType" />
+          <xs:element name="flclave,flempresa" type="xs:anyType" />
+          <xs:element name="combopaginacion" type="xs:anyType" />
+          <xs:element name="paginador" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="actionhandlerperfil" type="xs:anyType" />
+          <xs:element name="listaclientesproveedores" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filtereddata" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="sorteddata" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="renglonesmostrar" type="xs:long" />
+          <xs:element name="" type="segusuario" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="reportemovimientoscontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="combopaginacion" type="xs:anyType" />
+          <xs:element name="lbpaginacion,lbfechade,lbfechahasta,lbfolio,lbidsap,lbclave,lbnombre,lbmaterial,filtrar" type="xs:anyType" />
+          <xs:element name="tabladatos" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="paginador" type="xs:anyType" />
+          <xs:element name="flfolio" type="xs:anyType" />
+          <xs:element name="rdtodos,rdclientes,rdproveedores" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clienteproveedorcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="helpcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="footertemplatecontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="generarticketentradacontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarclienteproveedorcontroller" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="//slbltipo" type="xs:anyType" />
+          <xs:element name="lblid" type="xs:anyType" />
+          <xs:element name="lblidsap" type="xs:anyType" />
+          <xs:element name="lblrazonsocial" type="xs:anyType" />
+          <xs:element name="lblnombreempresa" type="xs:anyType" />
+          <xs:element name="lblclave" type="xs:anyType" />
+          <xs:element name="lblstatus" type="xs:anyType" />
+          <xs:element name="lblpermisocontingencia" type="xs:anyType" />
+          <xs:element name="//componenteslblvalorid" type="xs:anyType" />
+          <xs:element name="txtidsap" type="xs:anyType" />
+          <xs:element name="txtrazonsocial" type="xs:anyType" />
+          <xs:element name="txtnombreempresa" type="xs:anyType" />
+          <xs:element name="txtclave" type="xs:anyType" />
+          <xs:element name="chxpermisocontingencia" type="xs:anyType" />
+          <xs:element name="chxestatuseentidad" type="xs:anyType" />
+          <xs:element name="rbtncliente" type="xs:anyType" />
+          <xs:element name="rbtnproveedor" type="xs:anyType" />
+          <xs:element name="btnguardar" type="xs:anyType" />
+          <xs:element name="btncancelar" type="xs:anyType" />
+          <xs:element name="entidadactual" type="smscteprov" nillable="true" minOccurs="0" />
+          <xs:element name="" type="segusuario" nillable="true" minOccurs="0" />
+          <xs:element name="regcliprov" type="registrodeclientesyproveedorescontroller" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="movimientosclientescontroller" >
+      <xs:complexContent>
+       <xs:extension base="movimientoscontroller{">
+         <xs:sequence>
+          <xs:element name="actionhandler" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="creareditarproductos" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="//slblid" type="xs:anyType" />
+          <xs:element name="lblidsap" type="xs:anyType" />
+          <xs:element name="lblnombreproducto" type="xs:anyType" />
+          <xs:element name="lblclave" type="xs:anyType" />
+          <xs:element name="lblstatus" type="xs:anyType" />
+          <xs:element name="//componenteslblvalorid" type="xs:anyType" />
+          <xs:element name="txtidsap,txtnombreproducto" type="xs:anyType" />
+          <xs:element name="txtclave" type="xs:anyType" />
+          <xs:element name="btnguardar" type="xs:anyType" />
+          <xs:element name="btncancelar" type="xs:anyType" />
+          <xs:element name="chxestatuseentidad" type="xs:anyType" />
+          <xs:element name="entidadactual" type="smsproducto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="segusuario" nillable="true" minOccurs="0" />
+          <xs:element name="adminproductos" type="administrarproductoscontroller" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="configurarpuertocontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="/***initializesthecontrollerclass.*/cbbbaudaje" type="xs:anyType" />
+          <xs:element name="cbbpuerto" type="xs:anyType" />
+          <xs:element name="cbbparidad" type="xs:anyType" />
+          <xs:element name="cbbbistdedatos" type="xs:anyType" />
+          <xs:element name="cbbparidaddelpuerto" type="xs:anyType" />
+          <xs:element name="puerto" type="xs:anyType" />
+          <xs:element name="baudaje" type="xs:anyType" />
+          <xs:element name="bitsdedatos" type="xs:anyType" />
+          <xs:element name="bitsdeparada" type="xs:anyType" />
+          <xs:element name="paridaddepuerto" type="xs:anyType" />
+          <xs:element name="btnaceptar" type="xs:anyType" />
+          <xs:element name="btncancelar" type="xs:anyType" />
+          <xs:element name="actionhandler" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="administrarproductoscontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="tabladatos" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="btnnuevo,btnasignarproductos,btnregresaratras" type="xs:anyType" />
+          <xs:element name="lblclave,lblproducto,lbpaginacion,lbcteprov,lbnombrecteprov,filtrar" type="xs:anyType" />
+          <xs:element name="colacciones,colseleccione" type="xs:anyType" />
+          <xs:element name="flclave,flproducto" type="xs:anyType" />
+          <xs:element name="combopaginacion" type="xs:anyType" />
+          <xs:element name="paginador" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="actionhandler" type="xs:anyType" />
+          <xs:element name="listaproductos" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filtereddata" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="sorteddata" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="renglonesmostrar" type="xs:long" />
+          <xs:element name="" type="segusuario" nillable="true" minOccurs="0" />
+          <xs:element name="" type="smscteprov" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="perfildeempresacontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="//<editor-folddefaultstate" type="xs:anyType" />
+          <xs:element name="perfilempresa_lblnombreempresavalue" type="xs:anyType" />
+          <xs:element name="perfilempresa_lbldireccion" type="xs:anyType" />
+          <xs:element name="perfilempresa_lbldireccionvalue" type="xs:anyType" />
+          <xs:element name="perfilempresa_lblestadomunicipio" type="xs:anyType" />
+          <xs:element name="perfilempresa_lblestadomunicipiovalue" type="xs:anyType" />
+          <xs:element name="perfilempresa_lblcp" type="xs:anyType" />
+          <xs:element name="perfilempresa_lblcpvalue" type="xs:anyType" />
+          <xs:element name="perfilempresa_lblrfc" type="xs:anyType" />
+          <xs:element name="perfilempresa_lblrfcvalue" type="xs:anyType" />
+          <xs:element name="perfilempresa_lbltelefono" type="xs:anyType" />
+          <xs:element name="perfilempresa_lbltelefonovalue" type="xs:anyType" />
+          <xs:element name="perfilempresa_btnaceptar" type="xs:anyType" />
+          <xs:element name="perfilempresa_imgempesa" type="xs:anyType" />
+          <xs:element name="actionhandler" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="movimientosproveedorescontroller" >
+      <xs:complexContent>
+       <xs:extension base="movimientoscontroller">
+         <xs:sequence>
+          <xs:element name="actionhandler" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exportercontroller" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="exporter" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractfwkcatapps" >
+      <xs:sequence>
+        <xs:element name="//fieldsidapp" type="xs:long" />
+        <xs:element name="applicationname" type="xs:string" />
+        <xs:element name="createdon" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedon" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="fwkloggers" type="fwklogger" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="fwkcorreopends" type="fwkcorreopend" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="fwkcorreotemplates" type="fwkcorreotemplate" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractfwklogger" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="GeneratedName" type="fwkcatapps" nillable="true" minOccurs="0" />
+        <xs:element name="tsevento" type="xs:anyType" />
+        <xs:element name="tsbasedatos" type="xs:anyType" />
+        <xs:element name="nivel" type="xs:string" />
+        <xs:element name="clase" type="xs:string" />
+        <xs:element name="metodo" type="xs:string" />
+        <xs:element name="linea" type="xs:long" />
+        <xs:element name="mensaje" type="xs:string" />
+        <xs:element name="stacktrace" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcatadmin" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcatadmin">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fwkcorreotemplate" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcorreotemplate">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractfwkactionitem" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:anyType" />
+        <xs:element name="enabled" type="xs:long" />
+        <xs:element name="iconurl" type="xs:string" />
+        <xs:element name="label" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="parentid" type="xs:anyType" />
+        <xs:element name="orderhint" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkactionitem" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkactionitem">
+         <xs:sequence>
+          <xs:element name="children" type="fwkactionitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="parent" type="fwkactionitem" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entitymanagerhelper" >
+      <xs:sequence>
+        <xs:element name="emf" type="xs:anyType" />
+        <xs:element name="threadlocal" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractfwkcorreopend" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="GeneratedName" type="fwkcatapps" nillable="true" minOccurs="0" />
+        <xs:element name="tsmensaje" type="xs:anyType" />
+        <xs:element name="lenviado" type="xs:long" />
+        <xs:element name="bmensaje" type="xs:anyType" />
+        <xs:element name="tsenviado" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcorreopend" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcorreopend">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractfwkcatadmin" >
+      <xs:sequence>
+        <xs:element name="//fieldsidadmin" type="xs:long" />
+        <xs:element name="idapp" type="xs:long" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="createdon" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedon" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcatcontent" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcatcontent">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractfwkcatcontent" >
+      <xs:sequence>
+        <xs:element name="//fieldsidcontent" type="xs:long" />
+        <xs:element name="idapp" type="xs:long" />
+        <xs:element name="idadmin" type="xs:long" />
+        <xs:element name="keyvalue" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="createdon" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedon" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcatapps" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcatapps">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractfwkcorreotemplate" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:string" />
+        <xs:element name="GeneratedName" type="fwkcatapps" nillable="true" minOccurs="0" />
+        <xs:element name="mailto" type="xs:string" />
+        <xs:element name="mailcc" type="xs:string" />
+        <xs:element name="mailbcc" type="xs:string" />
+        <xs:element name="mailsubject" type="xs:string" />
+        <xs:element name="mailbody" type="xs:string" />
+        <xs:element name="mailattach" type="xs:string" />
+        <xs:element name="mailimages" type="xs:string" />
+        <xs:element name="fechacreacion" type="xs:anyType" />
+        <xs:element name="usuariocreacion" type="xs:string" />
+        <xs:element name="fechaactualiza" type="xs:anyType" />
+        <xs:element name="usuarioactualiza" type="xs:string" />
+        <xs:element name="estatus" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwklogger" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwklogger">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="serialportreader" >
+      <xs:sequence>
+        <xs:element name="portin" type="xs:anyType" />
+        <xs:element name="fulldata" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fileutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifwkactionitemdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcorreopenddao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantslenviado" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcatadmindao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsid_app" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="created_by" type="xs:string" />
+        <xs:element name="updated_by" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkloggerdao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsnivel" type="xs:string" />
+        <xs:element name="clase" type="xs:string" />
+        <xs:element name="metodo" type="xs:string" />
+        <xs:element name="linea" type="xs:string" />
+        <xs:element name="mensaje" type="xs:string" />
+        <xs:element name="stacktrace" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcatcontentdao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsid_app" type="xs:string" />
+        <xs:element name="id_admin" type="xs:string" />
+        <xs:element name="key_value" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="created_by" type="xs:string" />
+        <xs:element name="updated_by" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifwkcorreotemplatedao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifwkcatappsdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcorreotemplatedao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsmailto" type="xs:string" />
+        <xs:element name="mailcc" type="xs:string" />
+        <xs:element name="mailbcc" type="xs:string" />
+        <xs:element name="mailsubject" type="xs:string" />
+        <xs:element name="mailbody" type="xs:string" />
+        <xs:element name="mailattach" type="xs:string" />
+        <xs:element name="mailimages" type="xs:string" />
+        <xs:element name="usuariocreacion" type="xs:string" />
+        <xs:element name="usuarioactualiza" type="xs:string" />
+        <xs:element name="estatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifwkloggerdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkcatappsdao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsapplication_name" type="xs:string" />
+        <xs:element name="created_by" type="xs:string" />
+        <xs:element name="updated_by" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifwkcatadmindao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fwkactionitemdao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsenabled" type="xs:string" />
+        <xs:element name="iconurl" type="xs:string" />
+        <xs:element name="label" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="parent_id" type="xs:string" />
+        <xs:element name="orderhint" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifwkcorreopenddao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifwkcatcontentdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="utilerias" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jasperutil" >
+      <xs:sequence>
+        <xs:element name="rutareportes" type="xs:string" />
+        <xs:element name="rutaimg" type="xs:string" />
+        <xs:element name="nombresistema" type="xs:string" />
+        <xs:element name="imprimeportada" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testjasperutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jasperparameters" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="serialportwriter" >
+      <xs:sequence>
+        <xs:element name="portout" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="serialportutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="isegpermisoperfildao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segpermisoperfildao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="isegperfildao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="isegperfilusrdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segpermisodao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantspermiso" type="xs:string" />
+        <xs:element name="estatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segperfildao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsperfil" type="xs:string" />
+        <xs:element name="estatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segperfilusrdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="isegpermisodao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="isegusuariodao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segusuariodao" >
+      <xs:sequence>
+        <xs:element name="//propertyconstantsuser_id" type="xs:string" />
+        <xs:element name="nombre_usuario" type="xs:string" />
+        <xs:element name="ap_paterno" type="xs:string" />
+        <xs:element name="ap_materno" type="xs:string" />
+        <xs:element name="correo_e" type="xs:string" />
+        <xs:element name="estatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="administrarusuarioscontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="tablausuarios" type="segusuario" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="colacciones" type="xs:anyType" />
+          <xs:element name="flusuario,flnombre" type="xs:anyType" />
+          <xs:element name="btnnuevousuario" type="xs:anyType" />
+          <xs:element name="lbetiquetausuario,lbetiquetanombre,lbpaginacion,filtrar" type="xs:anyType" />
+          <xs:element name="paginador" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="actionhandlerperfil" type="xs:anyType" />
+          <xs:element name="combopaginacion" type="xs:anyType" />
+          <xs:element name="listausuarios" type="segusuario" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filtereddata" type="segusuario" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="sorteddata" type="segusuario" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="renglonesmostrar" type="xs:long" />
+          <xs:element name="permisos" type="segusuario" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="creareditarusuarioscontroller" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="txtusuario,txtnombreusuario,txtapellidopat,txtapellidomat,txtcorreo" type="xs:anyType" />
+          <xs:element name="chxestatususuario" type="xs:anyType" />
+          <xs:element name="id,idetiqueta,lbusuario,lbnombre,lbappaterno,lbapmaterno,lbcorreo,lbestatus,lbusuarioedicion" type="xs:anyType" />
+          <xs:element name="btnguardar,btncancelar" type="xs:anyType" />
+          <xs:element name="status" type="xs:long" />
+          <xs:element name="usuario" type="segusuario" nillable="true" minOccurs="0" />
+          <xs:element name="administrarusuarios" type="administrarusuarioscontroller" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="creareditarperfilcontroller" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="perfil" type="segperfil" nillable="true" minOccurs="0" />
+          <xs:element name="" type="administrarperfilescontroller" nillable="true" minOccurs="0" />
+          <xs:element name="txtdesperfil" type="xs:anyType" />
+          <xs:element name="chxestatusperfil" type="xs:anyType" />
+          <xs:element name="id,idetiqueta,lbdesperfil,lbestatus" type="xs:anyType" />
+          <xs:element name="btnguardar,btncerrar" type="xs:anyType" />
+          <xs:element name="status" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mycontrol" >
+      <xs:complexContent>
+       <xs:extension base="control{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="administrarperfilescontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="tabladatos" type="segperfil" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="colsecleccione" type="xs:anyType" />
+          <xs:element name="colacciones" type="xs:anyType" />
+          <xs:element name="flperfil" type="xs:anyType" />
+          <xs:element name="lbusuario,lbperfil,lbclavenombreusuario,lbpaginacion,filtrar" type="xs:anyType" />
+          <xs:element name="btnnuevo,btnasignarperfiles,btnregresaratras" type="xs:anyType" />
+          <xs:element name="gridinformacion" type="xs:anyType" />
+          <xs:element name="combopaginacion" type="xs:anyType" />
+          <xs:element name="paginador" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="actionhandler" type="xs:anyType" />
+          <xs:element name="" type="segusuario" nillable="true" minOccurs="0" />
+          <xs:element name="listaperfiles" type="segperfil" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filtereddata" type="segperfil" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="sorteddata" type="segperfil" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="clavenombreusuario" type="xs:string" />
+          <xs:element name="desactivacheck" type="xs:anyType" />
+          <xs:element name="renglonesmostrar" type="xs:long" />
+          <xs:element name="permisos" type="segusuario" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="administrarfuncionesperfilcontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="tabladatos" type="segpermiso" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="colselccione" type="xs:anyType" />
+          <xs:element name="colacciones" type="xs:anyType" />
+          <xs:element name="flfuncion" type="xs:anyType" />
+          <xs:element name="lbperfil,lbfuncion,lbclavenombreperfil,lbpaginacion,filtrar" type="xs:anyType" />
+          <xs:element name="btnnuevopermiso,btnasignarfuncionesperfil,btnregresaratras" type="xs:anyType" />
+          <xs:element name="combopaginacion" type="xs:anyType" />
+          <xs:element name="paginador" type="xs:anyType" />
+          <xs:element name="actionhandlerpermiso" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="listapermisos" type="segpermiso" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filtereddata" type="segpermiso" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="sorteddata" type="segpermiso" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="clavedescripcionpermiso" type="xs:string" />
+          <xs:element name="renglonesmostrar" type="xs:long" />
+          <xs:element name="" type="segperfil" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="controller" >
+      <xs:complexContent>
+       <xs:extension base="application">
+         <xs:sequence>
+          <xs:element name="fxml_base_path" type="xs:string" />
+          <xs:element name="fxml_file_extension" type="xs:string" />
+          <xs:element name="doc_view_extension" type="xs:string" />
+          <xs:element name="errormessage" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="validatorhandler" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="menucontroller" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="general_exporter_info_title" type="xs:string" />
+          <xs:element name="//@linkaction(helpcontroller.class)buttonbtnayudalinkvolkswagen1" type="xs:anyType" />
+          <xs:element name="welcome" type="xs:anyType" />
+          <xs:element name="linkmanualusuario" type="xs:anyType" />
+          <xs:element name="movimientoactual" type="xs:anyType" />
+          <xs:element name="identificadorusuario" type="xs:anyType" />
+          <xs:element name="encabezadoprincipal" type="xs:anyType" />
+          <xs:element name="imagensalida" type="xs:anyType" />
+          <xs:element name="imgayuda" type="xs:anyType" />
+          <xs:element name="labelayuda" type="xs:anyType" />
+          <xs:element name="labelsalida" type="xs:anyType" />
+          <xs:element name="lblsoftwarefactory" type="xs:anyType" />
+          <xs:element name="lbversion" type="xs:anyType" />
+          <xs:element name="actionhandler" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="exporter" type="xs:anyType" />
+          <xs:element name="exporterpath" type="xs:anyType" />
+          <xs:element name="exporterpathtext" type="xs:anyType" />
+          <xs:element name="reportname" type="xs:string" />
+          <xs:element name="reportoutputpath" type="xs:string" />
+          <xs:element name="reportfilename" type="xs:string" />
+          <xs:element name="reporttitle" type="xs:string" />
+          <xs:element name="reports" type="jasperutil" nillable="true" minOccurs="0" />
+          <xs:element name="repparams" type="xs:anyType" />
+          <xs:element name="reportdata" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="profileadmincontroller" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="helpcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logincontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="txtusuario" type="xs:anyType" />
+          <xs:element name="txtpassword" type="xs:anyType" />
+          <xs:element name="lblusuario" type="xs:anyType" />
+          <xs:element name="lblpassword" type="xs:anyType" />
+          <xs:element name="btniniciousuario" type="xs:anyType" />
+          <xs:element name="btnlimpiar" type="xs:anyType" />
+          <xs:element name="actionhandler" type="xs:anyType" />
+          <xs:element name="" type="loginservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="welcomecontroller" >
+      <xs:complexContent>
+       <xs:extension base="menucontroller">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="creareditarfuncionescontroller" >
+      <xs:complexContent>
+       <xs:extension base="controller">
+         <xs:sequence>
+          <xs:element name="permiso" type="segpermiso" nillable="true" minOccurs="0" />
+          <xs:element name="" type="administrarfuncionesperfilcontroller" nillable="true" minOccurs="0" />
+          <xs:element name="txtdespermiso" type="xs:anyType" />
+          <xs:element name="chxestatuspermiso" type="xs:anyType" />
+          <xs:element name="id,idetiqueta,lbdespermiso,lbestatus" type="xs:anyType" />
+          <xs:element name="btnguardar,btncerrar" type="xs:anyType" />
+          <xs:element name="status" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsmenuitemeventhandler" >
+      <xs:sequence>
+        <xs:element name="actionhandler" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityaccessutil" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegperfilusr>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="menuservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="swfstandaloneservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarfuncionesservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="segpermisodao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segperfilusrservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="segperfilusrdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarusuariosservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="segusuariodao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="segperfilusrdao" nillable="true" minOccurs="0" />
+        <xs:element name="segperfil" type="segperfildao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segpermisoperfilservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="segpermisoperfildao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creareditarperfilservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="segperfildao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginservice" >
+      <xs:complexContent>
+       <xs:extension base="swfstandaloneservice">
+         <xs:sequence>
+          <xs:element name="ldapdomain" type="xs:string" />
+          <xs:element name="" type="segusuariodao" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractsegpermisoperfil" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="segpermisoperfilid" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="segpermiso" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="segperfil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segperfil" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegperfil">
+         <xs:sequence>
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="selected" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="segperfilusrid" >
+      <xs:sequence>
+        <xs:element name="//fieldsidusuario" type="xs:long" />
+        <xs:element name="idperfil" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segpermisoperfil" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegpermisoperfil">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractsegperfil" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:anyType" />
+        <xs:element name="perfil" type="xs:string" />
+        <xs:element name="estatus" type="xs:long" />
+        <xs:element name="segperfilusrs" type="segperfilusr" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="segpermisoperfils" type="segpermisoperfil" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segpermisoperfilid" >
+      <xs:sequence>
+        <xs:element name="//fieldsidperfil" type="xs:anyType" />
+        <xs:element name="idpermiso" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractsegperfilusr" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="segperfilusrid" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="segperfil" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="segusuario" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segpermiso" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegpermiso">
+         <xs:sequence>
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="selected" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="segperfilusr" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegperfilusr">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractsegusuario" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:long" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="nombreusuario" type="xs:string" />
+        <xs:element name="appaterno" type="xs:string" />
+        <xs:element name="apmaterno" type="xs:string" />
+        <xs:element name="correoe" type="xs:string" />
+        <xs:element name="estatus" type="xs:long" />
+        <xs:element name="smsproductosforupdatedby" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="smscteprovsforcreatedby" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="smsmovimientosforidusrpesoentrada" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="smsmovimientosforidusrenviosap" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="segperfilusrs" type="segperfilusr" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="smsproductosforcreatedby" type="smsproducto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="smsmovimientosforidusrpesosalida" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="smsmovimientosforidusrcancela" type="smsmovimiento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="smscteprovsforupdatedby" type="smscteprov" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractsegpermiso" >
+      <xs:sequence>
+        <xs:element name="//fieldsid" type="xs:anyType" />
+        <xs:element name="permiso" type="xs:string" />
+        <xs:element name="estatus" type="xs:long" />
+        <xs:element name="segpermisoperfils" type="segpermisoperfil" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segusuario" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegusuario">
+         <xs:sequence>
+          <xs:element name="nombrecompleto" type="xs:string" />
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="actionitems" type="fwkactionitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="itemactionsset" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="noconnection" >
+      <xs:sequence>
+        <xs:element name="info" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datafxlauncher" >
+      <xs:complexContent>
+       <xs:extension base="application">
+         <xs:sequence>
+          <xs:element name="main" type="xs:anyType" />
+          <xs:element name="emf" type="xs:anyType" />
+          <xs:element name="primary" type="xs:anyType" />
+          <xs:element name="mensajes" type="xs:anyType" />
+          <xs:element name="mensajesseg" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsviewconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="viewconfiguration">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="swfflowhandler" >
+      <xs:complexContent>
+       <xs:extension base="flowhandler">
+         <xs:sequence>
+          <xs:element name="2" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="testportwrite" >
+      <xs:complexContent>
+       <xs:extension base="thread">
+         <xs:sequence>
+          <xs:element name="/***nombredelpuertodelectura*/port_in_name" type="xs:string" />
+          <xs:element name="/***nombredelpuertodeescritura*/port_out_name" type="xs:string" />
+          <xs:element name="/***variableparaelpuertodeentrada*/port_in" type="xs:anyType" />
+          <xs:element name="/***variableparaelpuertodesalida*/port_out" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="swfflow" >
+      <xs:complexContent>
+       <xs:extension base="flow">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

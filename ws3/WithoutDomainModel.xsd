@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="start" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="synceventcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="eventregisterservice" nillable="true" minOccurs="0" />
+        <xs:element name="threadpool" type="xs:anyType" />
+        <xs:element name="templateservice" type="webtemplateservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="grouptemplateservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="syncstaticizetask" nillable="true" minOccurs="0" />
+        <xs:element name="/***cache_size*/cache_size" type="xs:long" />
+        <xs:element name="cache" type="xs:anyType" />
+        <xs:element name="/***日志记录器*/" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maincontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="templatecontroller" >
+      <xs:sequence>
+        <xs:element name="templateservice" type="webtemplateservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="cx" type="xs:anyType" />
+        <xs:element name="threadpool" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="eventregisterservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="webtemplateservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="tempgroupservice" nillable="true" minOccurs="0" />
+        <xs:element name="cx" type="xs:anyType" />
+        <xs:element name="threadpool" type="xs:anyType" />
+        <xs:element name="templateservice" type="webtemplateservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="grouptemplateservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tempgroupcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="tempgroupservice" nillable="true" minOccurs="0" />
+        <xs:element name="templateservice" type="webtemplateservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="grouptemplateservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="syncstaticizetask" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="freemakerservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="/***日志记录器*/" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="staticizetask" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="webtemplate" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="freemakerservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="componentservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webtemplateservice" >
+      <xs:sequence>
+        <xs:element name="templaterepository" type="webtemplaterepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="freemakerservice" >
+      <xs:sequence>
+        <xs:element name="cfg" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="componentservice" nillable="true" minOccurs="0" />
+        <xs:element name="/***日志记录器*/" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grouptemplateservice" >
+      <xs:sequence>
+        <xs:element name="templaterepository" type="grouptemplaterepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tempgroupservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="tempgrouprepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventregisterservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="eventregisterrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webtemplaterepository" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventregisterrepository" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grouptemplaterepository" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tempgrouprepository" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appconfig" >
+      <xs:sequence>
+        <xs:element name="template_upload_path" type="xs:string" />
+        <xs:element name="template_config_encoding" type="xs:string" />
+        <xs:element name="template_ftl_encoding" type="xs:string" />
+        <xs:element name="template_component_url" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="httputil" >
+      <xs:sequence>
+        <xs:element name="/***默认超时时间(毫秒)*/default_timeout" type="xs:long" />
+        <xs:element name="/***默认重试次数*/default_retry_times" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

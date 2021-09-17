@@ -1,0 +1,523 @@
+monitortask(task_status_enable:int, task_status_unable:int, task_type_productsale:int, id:Long [PK], creator:Employee #FK to(employee), name:String, description:String, //任务类型type:int, //监控频率,分钟为单位frequency:int, next:Date, start:Date, end:Date, status:int, //监控任务执行的sql.返回0为正常非0则不正常由定制监控服务设置monitorsql:String, //监控任务返回非0执行该sql由定制监控服务设置eventerrorsql:String, //监控任务被删除执行的sql由定制监控服务设置eventdeletesql:String, //监控异常后,提示消息message:String, //手机号，可设置多个.以""分隔mobiles:String, //email,可设置多个.以分隔emails:String, createtime:Date, lastoperator:Employee #FK to(employee), lastoperatortime:Date);
+
+productmergetask(id:Long [PK], GeneratedName:Product #FK to(product), GeneratedName:ProductSale #FK to(productsale), isbn:String, create:Date, lasttime:Date, status:Code #FK to(code), user:Employee #FK to(employee), count:Integer, salestatus:Code #FK to(code));
+
+productsale(/***套装商品初始库存数量*/complex_base_stock:int, /***商品销售分级-a+*/product_sale_grade_a_plus:String, /***商品销售分级-a*/product_sale_grade_a:String, /***商品销售分级-b+*/product_sale_grade_b_plus:String, /***商品销售分级-b*/product_sale_grade_b:String, /***商品销售分级-b-*/product_sale_grade_b_minus:String, /***商品销售分级-c+*/product_sale_grade_c_plus:String, /***商品销售分级-c*/product_sale_grade_c:String, /***商品销售分级-c-*/product_sale_grade_c_minus:String, /***商品销售分级-d*/product_sale_grade_d:String, /***商品销售分级-n*/product_sale_grade_n:String, /***商品上架的最低折扣*/min_discount:BigDecimal, serialversionuid:long, //电子书标识，用于99click统计e_book:String, //纸书标识，用于99click统计printed_book:String, //非图书标识，用于99click统计not_book:String, id:Long [PK], GeneratedName:Product #FK to(product), GeneratedName:Shop #FK to(shop), saleprice:BigDecimal, sellname:String, subheading:String, basicprice:BigDecimal, salestatus:Code #FK to(code), auditstatus:Code #FK to(code), supplytype:Code #FK to(code), storagetype:Code #FK to(code), stockquantity:int, salequantity:int, outerid:String, location:Area #FK to(area), promotionprice:BigDecimal, /***供应商*/vendor:String, /***促销中单个用户可购买量*/restrictquantity:int, /***促销总量*/promotionstotal:int, promotionstarttime:Date, promotionendtime:Date, hasshopcategory:int, uptime:Date, promvalue:String, GeneratedName:Promotion #FK to(promotion), //有没有搭配销售的商品hasbundle:boolean, performance:ProductSalePerformance #FK to(productsaleperformance), booking:ProductBooking #FK to(productbooking));
+
+productdescription(serialversionuid:long, id:Long [PK], GeneratedName:Product #FK to(product), GeneratedName:ProductMeta #FK to(productmeta), name:String, content:String, index:int, digest:String);
+
+productjiuyue(id:Long [PK], jiuyuebookid:Long, jiuyueproductid:Long, isbn:String, GeneratedName:Product #FK to(product), GeneratedName:ProductSale #FK to(productsale), hasfangzheng:boolean);
+
+productrecommendation(mode_buy:short, mode_view:short, serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), recommendation:ProductSale #FK to(productsale), preference:float, mode:short);
+
+productsaleincorrectwarehouse(id:Long [PK], GeneratedName:ProductSale #FK to(productsale), createtime:Date, change:boolean, stock:Integer);
+
+stockrulelog(id:Long [PK], GeneratedName:StockRule #FK to(Rule), opreator:Employee #FK to(employee), uptime:Date);
+
+productsalebundle(id:Long [PK], //主商品master:ProductSale #FK to(productsale), //商品:ProductSale #FK to(productsale), //优惠价savemoney:BigDecimal, //状态status:Boolean);
+
+productsaledisableitem(/***/serialversionuid:long, id:Long [PK], GeneratedName:ProductSaleDisableRecord #FK to(productsaledisablerecord), GeneratedName:ProductSale #FK to(productsale), status:Code #FK to(code), synced:boolean);
+
+productsalerapid(id:Long [PK], GeneratedName:ProductSale #FK to(productsale), /***采购量*/amount:int, createtime:Date, /***戳，以标识最后记录时间*/timestamp:Calendar, creator:Employee #FK to(employee));
+
+productbookinglog(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), stockquantity:int, start:Date, end:Date, dc:Code #FK to(code), description:String, GeneratedName:Employee #FK to(employee), create:Date);
+
+productsaleincorrectstock(serialversionuid:long, id:Long [PK], dc:Code #FK to(code), GeneratedName:ProductSale #FK to(productsale), changed:boolean, stock:int, createtime:Date);
+
+productsaleperformance(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), totalsale:int, monthsale:int, weeksale:int, totalvisit:int, monthvisit:int, weekvisit:int, totalcomment:int, monthcomment:int, weekcomment:int, totalfavorite:int, monthfavorite:int, weekfavorite:int, totaldigging:int, monthdigging:int, weekdigging:int, rank:int, firstonshelftime:Date, lastonshelftime:Date, firststock:int, ct1:String, ct2:String, ct3:String, ct4:String, ct5:String, discount:BigDecimal, salestatus:Code #FK to(code));
+
+product(serialversionuid:long, log:Logger, //实物套装physical:short, //虚拟套装virtual:short, id:Long [PK], name:String, barcode:String, merchid:Long, sort:Code #FK to(code), manufacturer:String, production:Date, author:String, //@manytoone(fetch:BigDecimal, managecategory:String, workcategory:String, mccategory:String, vendor:String, lock:boolean, createtime:Date, uptime:Date, complex:short, virtual:boolean, hasimage:boolean, status:boolean, categorystatus:ProductCategoryStatus #FK to(productcategorystatus));
+
+product_category(product:Product [PK] #FK to Product,category:list<category> [PK] #FK to list<category>);
+
+productauthor(id:Long [PK], id:Product #FK to(product), responsibilityid:Long, identity:String, fullname:String, sequencenum:int, createtime:Date, uptime:Date);
+
+productsaledisablerecord(/***/serialversionuid:long, id:Long [PK], createtime:Date, uptime:Date, uploader:Employee #FK to(employee), status:Code #FK to(code), comment:String);
+
+dcidata(bookid:Long [PK], url:String, partb:String, parta:String, worktype:String);
+
+productversion(serialversionuid:long, id:Long [PK], name:String);
+
+stockruledc(id:Long [PK], GeneratedName:StockRule #FK to(Rule), dc:Code #FK to(code));
+
+stocklockrulelog(id:Long [PK], GeneratedName:StockLockRule #FK to(Rule), /***锁定库存*/lockstock:Integer, /***锁系数*/lockfactor:Integer, /***真实锁定*/reallock:Integer, /***销量*/sales:Integer, begintime:Date, endtime:Date, operator:Employee #FK to(employee), createtime:Date);
+
+productsalerank(star_no:short, star_one:short, star_two:short, star_three:short, star_four:short, star_five:short, serialversionuid:long, id:long [PK], rank:int, ranktime:Date, GeneratedName:ProductSale #FK to(productsale));
+
+productmanagegrade(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), grade:Code #FK to(code), purchasediscount:Integer, hotsellingstart:Date, hotsellingend:Date, remark:String, operatetime:Date, operator:User #FK to(user));
+
+productimage(/***原图*/type_original:short, /***小图*/type_small:short, /***中图*/type_medium:short, /***大图*/type_large:short, /***插图*/type_illustration:short, type_size_600:short, type_size_200:short, type_size_160:short, type_size_130:short, type_size_110:short, type_size_55:short, type_size_350:short, /***封底图片*/type_back_cover:short, /***版权页图片*/type_colophon:short, /***条形码图片*/type_barcode:short, /***默认图片*/default_image_url:String, serialversionuid:long, id:Long [PK], GeneratedName:Product #FK to(product), url:String, type:short, index:int, digest:String);
+
+stockchannel(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), GeneratedName:Channel #FK to(channel), dc:Code #FK to(code), stock:int, uptime:Date);
+
+productextend(serialversionuid:long, id:Long [PK], GeneratedName:Product #FK to(product), GeneratedName:ProductMeta #FK to(productmeta), name:String, value:String, index:int, show:boolean);
+
+productmeta(/***商品重量metaid*/meta_weight:Long, meta_editor_recommendation:Long, introduction:Long, /***书的作者相关信息*/meta_book_translator:int, meta_book_chief_editor:int, meta_book_other_editor:int, meta_book_editor:int, meta_book_country:int, meta_book_dynasty:int, /***电子书页数id*/meta_ebook_page_count:Long, serialversionuid:long, id:Long [PK], name:String, description:String, type:Code #FK to(code), allownull:boolean, length:int, defaultvalue:String, available:boolean, show:boolean, category:Integer, open:Code #FK to(code));
+
+productsalect(/***/serialversionuid:long, GeneratedName:ProductSalePerformanceOnShelf [PK] #FK to(productsaleperformanceonshelf), ct1:Integer, ct2:Integer, ct3:Integer, ct4:Integer, ct5:Integer, ct6:Integer, ct7:Integer, ct8:Integer);
+
+stockrule(/***实物库存*/stock_type_actual:int, /***虚拟库存*/stock_type_virtual:int, /***/serialversionuid:long, id:Long [PK], GeneratedName:Channel #FK to(channel), supplytype:Code #FK to(code), stocktype:int, /***系数*/percent:int);
+
+productseptember(/***/serialversionuid:long, id:Long [PK], septemberbookid:Long, septemberproductid:Long, isbn:String, GeneratedName:ProductSale #FK to(productsale), hasfangzheng:Long);
+
+dcilog(src_onclick:int, src_move:int, id:Long [PK], bookid:Long, time:Date, faketime:Date, //1:点击；2：移动src:int);
+
+productsalebundlelog(id:Long [PK], //主商品master:ProductSale #FK to(productsale), //捆绑商品:ProductSale #FK to(productsale), //操作类型operate:Code #FK to(code), //优惠价格savemoney:BigDecimal, //操作用户operate:User #FK to(user), //操作时间operate:Date);
+
+productebookmapping(/***/serialversionuid:long, id:Long [PK], septemberbookid:Long, septemberproductid:Long, isbn:String, GeneratedName:ProductSale #FK to(productsale), hasfangzheng:Long);
+
+productchannelapply(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), GeneratedName:Channel #FK to(channel), state:Code #FK to(code), type:Code #FK to(code), create:Date, audit:Date);
+
+productsaleperformanceonshelf(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), totalsale:int, monthsale:int, weeksale:int, totalvisit:int, monthvisit:int, weekvisit:int, totalcomment:int, monthcomment:int, weekcomment:int, totalfavorite:int, monthfavorite:int, weekfavorite:int, totaldigging:int, monthdigging:int, weekdigging:int, rank:int, firstonshelftime:Date, lastonshelftime:Date, firststock:int, discount:BigDecimal, salestatus:Code #FK to(code));
+
+productimagezoomtask(id:Long [PK], GeneratedName:Product #FK to(product), src:String, status:Code #FK to(code));
+
+productsalestock(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), dc:Code #FK to(code), stock:int, virtual:int, sales:int, incorrect:int);
+
+productcategorystatus(status_hand:int, serialversionuid:long, id:Long [PK], GeneratedName:Product #FK to(product), status:int, max:Date, newcategory:boolean);
+
+productmetaenum(serialversionuid:long, id:Long [PK], GeneratedName:ProductMeta #FK to(productmeta), value:String, index:int, defaultvalue:boolean);
+
+productversionitem(serialversionuid:long, id:Long [PK], version:ProductVersion #FK to(productversion), value:String, GeneratedName:Product #FK to(product), index:int);
+
+productbooking(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), stockquantity:int, start:Date, end:Date, ignore:Integer, description:String, GeneratedName:Employee #FK to(employee), create:Date, dc:Code #FK to(code), arrival:Date);
+
+stocksales(/***/serialversionuid:long, id:Long [PK], productsaleid:Long, GeneratedName:ProductSaleStock #FK to(productsalestock), dc:Code #FK to(code), type:Code #FK to(code), status:Code #FK to(code), sales:int, createtime:Date, orderid:String);
+
+productsalelog(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), originalprice:BigDecimal, newprice:BigDecimal, originalstatus:Code #FK to(code), newstatus:Code #FK to(code), operator:User #FK to(user), uptime:Date, remark:String);
+
+stocklockrule(/***/serialversionuid:long, //固定数量锁定lock_type_quantity:short, //系数锁定lock_type_factor:short, id:Long [PK], GeneratedName:Channel #FK to(channel), productsale:Long, /***下单用户*/:Customer #FK to(customer), /***锁定库存*/lockstock:Integer, /***锁定系数*/lockfactor:Integer, /***真实锁定*/reallock:int, /***销量*/sales:int, createtime:Date, begintime:Date, endtime:Date, uptime:Date, status:Boolean);
+
+productsalestocklog(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), dc:Code #FK to(code), originalstock:int, stock:int, sales:int, uptime:Date);
+
+productwarehouse(serialversionuid:long, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), location:String, place:String, stock:int);
+
+ecerporderitem(/***/serialversionuid:long, id:Long [PK], order:String, /***主商品id*/merchid:Integer, /***发货数量*/deliveryquantity:Integer, /***报缺数量*/outofstockquantity:Integer);
+
+ecerporder(/***/serialversionuid:long, /***未处理*/not_deal:Integer, /***已处理*/al_deal:Integer, order:String [PK], /***erp状态*/state:String, /***运输单号*/orderdelivery:String, /***承运商编号*/deliverycompany:Integer, ddlxid:String, /***发货时间*/deliverytime:Date, /***退货方式*/gkthfsid:String, /***dc信息*/dc:String, status:Integer);
+
+ecerporderdelivery(/***/serialversionuid:long, id:Long [PK], order:String, /***erp状态*/state:String, /***运输单号*/orderdelivery:String, /***承运商编号*/deliverycompany:Integer, ddlxid:String, /***发货时间*/deliverytime:Date, /***dc信息*/dc:String);
+
+searchhistoryop(/***/serialversionuid:long, id:Long [PK], cookieid:String, sessioncookieid:String, keyword:String, docnum:int, optype:int, productsale:long);
+
+searchlistrules(id:int [PK], ct:int, name:String, available:Short, boost:BigDecimal, parent:SearchListRules #FK to(Rule), description:String);
+
+searchrecommendation(mode_search:short, /***/serialversionuid:long, id:Long [PK], recommendid:String, recommendation:String, preference:float, mode:short);
+
+searchhistoryhot(keyword:String [PK], qty:int, mustshow:boolean, index:Integer, href:String);
+
+searchqueryextend(/***/serialversionuid:long, id:Long [PK], keyword:String, query:String, queryextend:String, satisfy:Long, unsatisfy:Long);
+
+searchdictionary(/***/serialversionuid:long, id:Long [PK], word:String, isaudit:boolean, isdelete:boolean, source:Code #FK to(code), auditby:Employee #FK to(employee), audittime:Date, createtime:Date, parent:SearchDictionary #FK to(searchdictionary));
+
+search_synonym_relation(synonym1:SearchDictionary [PK] #FK to SearchDictionary,synonym2:set<searchdictionary> [PK] #FK to set<searchdictionary>);
+
+searchtaskconfig(/***/serialversionuid:long, id:Long [PK], url:String, script:String, source:Code #FK to(code), charsetname:String);
+
+searchopfreqstatistics(/***/serialversionuid:long, id:Long [PK], keyword:String, optype:Long, 1:ProductSale #FK to(productsale), freq1:Long, 2:ProductSale #FK to(productsale), freq2:Long, 3:ProductSale #FK to(productsale), freq3:Long, 4:ProductSale #FK to(productsale), freq4:Long, 5:ProductSale #FK to(productsale), freq5:Long);
+
+area(/***所有区域*/root:Long, /***中国*/china:Long, /***成都*/chendu:Long, /***成都-金牛区*/chendu_jinniu:Long, /***香港*/_hongkong:Area, /***澳门*/_macao:Area, /***台湾*/_taiwan:Area, _china:Area, serialversionuid:long, id:Long [PK], name:String, available:boolean, supportcod:boolean, index:int, parent:Area #FK to(area), level:int);
+
+areadefault(id:Long [PK], GeneratedName:Area #FK to(area), parent:Long);
+
+unioncommission(/***/serialversionuid:long, id:Long [PK], GeneratedName:Union #FK to(union), time:String, effivemoney:BigDecimal, commission:BigDecimal, ispay:boolean);
+
+unioncommissionlog(/***修改佣金*/log_commission_type:short, /***修改支付*/log_pay_type:short, /***/serialversionuid:long, id:Long [PK], create:Date, GeneratedName:UnionCommission #FK to(unioncommission), operator:User #FK to(user), type:short, oldcommission:BigDecimal, newcommission:BigDecimal, oldpay:boolean, newpay:boolean);
+
+union(/***/serialversionuid:long, id:long [PK], name:String, url:String, rate:BigDecimal, createtime:Date, username:String, phone:String, email:String, available:boolean, show:boolean);
+
+manufacturer(/***/serialversionuid:long, id:Integer [PK], name:String);
+
+manufactureritem(id:Integer [PK], name:String, GeneratedName:Manufacturer #FK to(manufacturer));
+
+userstatuslog(serialversionuid:long, id:Long [PK], GeneratedName:User #FK to(user), GeneratedName:Channel #FK to(channel), discount:BigDecimal, operator:User #FK to(user), uptime:Date);
+
+seller(/***/serialversionuid:long, storagetype:Code #FK to(code), location:Area #FK to(area), GeneratedName:Shop #FK to(shop), shopmanager:boolean);
+
+customer(/***普通会员*/grade_type_bronze:short, /***银卡会员*/grade_type_silver:short, /***金卡会员*/grade_type_gold:short, direct_:Customer, /***一般登录*/normal_login_type:short, /***联合登录*/union_login_type:short, /***返利登录*/fanli_login_type:short, all_grade_type:Map<Short,String>, grade_type_es:Map<Short,String>, serialversionuid:long, /***用户等级*/grade:short, GeneratedName:Channel #FK to(channel), account:CustomerAccount #FK to(customeraccount), country:Area #FK to(area), province:Area #FK to(area), city:Area #FK to(area), avatar:String, firstorder:Short, lasttradetime:Date, discount:BigDecimal, extension:CustomerExtension #FK to(customerextension), GeneratedName:CustomerExtend #FK to(customerextend), payee:CustomerPayee #FK to(customerpayee), nickname:String, lastlogintype:short);
+
+userlockstate(/***/serialversionuid:long, id:Long [PK], islock:boolean, GeneratedName:User #FK to(user), lastuptime:Date, operator:User #FK to(user), errortimes:int);
+
+userloginlog(/***/serialversionuid:long, id:Long [PK], name:String, ipaddress:String, islogin:boolean, useragent:String, logintime:Date, address:String, logintype:Code #FK to(code), GeneratedName:User #FK to(user));
+
+employee(system:long, serialversionuid:long, creator:Long, updater:Long, uptime:Date);
+
+employee_resourcegroup_relation(employee:Employee [PK] #FK to Employee,resourcegroup:set<resourcegroup> [PK] #FK to set<resourcegroup>);
+
+user(enable:boolean, disable:boolean, /***/serialversionuid:long, id:Long [PK], name:String, password:String, realname:String, email:String, phone:String, mobile:String, birthday:Date, gender:Short, registertime:Date, lastlogintime:Date, available:boolean, source:Code #FK to(code), emailactive:short, GeneratedName:UserLockState #FK to(userlockstate));
+
+roadmap(id:Long [PK], createtime:Date, content:String, GeneratedName:Employee #FK to(employee));
+
+link(serialversionuid:long, id:Long [PK], name:String, title:String, src:String, href:String, description:String, img:boolean);
+
+element(serialversionuid:long, id:Long [PK], sort:int, GeneratedName:Content, GeneratedName:Fragment #FK to(fragment));
+
+text(serialversionuid:long, id:Long [PK], name:String, content:String);
+
+news(serialversionuid:long, news_url:String, id:Long [PK], title:String, content:String, createtime:Date, uptime:Date, creator:Employee #FK to(employee), type:short);
+
+cmsconfig(id:Long [PK], GeneratedName:Fragment #FK to(fragment), key:String, value:String, valuetype:String, description:String, format:String, available:boolean);
+
+fragment(type_product:short, type_news:short, type_link:short, type_text:short, type_random:short, rule_manual:short, rule_auto_promotion:short, rule_auto_promotion_wait:short, id:Long [PK], /***/name:String, /***/type:short, rule:short, GeneratedName:Category #FK to(category), /***/description:String, jspfile:String, /***/page:String, /***/index:Long, quantity:int, imagetype:int);
+
+activityshow(id:Long [PK], title:String, url:String, index:int, focus:boolean, available:boolean);
+
+presentcardmodifypasswordlog(/***/serialversionuid:long, id:Integer [PK], operator:User #FK to(user), oldpassword:byte, newpassword:byte, create:Date, verifycode:String, GeneratedName:PresentCard #FK to(presentcard));
+
+presentcard(/***/serialversionuid:long, /***礼品卡编号*/id:String [PK], password:byte, /***状态*/status:Code #FK to(code), /***类型*/type:Code #FK to(code), /***创建日期*/create:Date, /***有效日期*/end:Date, /***面额*/denomination:BigDecimal, /***余额*/balance:BigDecimal, /***校验码*/verifycode:String, /***是否失效*0未失效*1失效*/expired:boolean, /***最近修改密码时间*/latestmodifypasswordtime:Date, /***最近使用时间*/latestusedtime:Date, /***最近登录时间*/latestlogintime:Date, /***用户id*/:Customer #FK to(customer), /***订单id*/:Order #FK to(order), bindtime:Date, version:int);
+
+presentcardstatuslog(/***/serialversionuid:long, id:Long [PK], create:Date, status:Code #FK to(code), operator:User #FK to(user), GeneratedName:PresentCard #FK to(presentcard), verifycode:String);
+
+presentcarddeallog(/***/serialversionuid:long, id:Long [PK], create:Date, operator:User #FK to(user), GeneratedName:Order #FK to(order), GeneratedName:PresentCard #FK to(presentcard), /***交易金额(正为使用，负为退还)*/dealmoney:BigDecimal, /***礼品卡当前余额*/currentbalance:BigDecimal, /***当前礼品卡的校验码*/verifycode:String, /***交易类型*/type:Long);
+
+customernotify(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), GeneratedName:ProductSale #FK to(productsale), addstatus:Code #FK to(code), addsellprice:BigDecimal, addlistprice:BigDecimal, expectedprice:BigDecimal, phone:String, email:String, addtime:Date, sort:Code #FK to(code), type:Code #FK to(code), isnotified:boolean);
+
+customerpoints(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), pos:int, type:Code #FK to(code), GeneratedName:Order #FK to(order), time:Date, comment:String);
+
+customercomplainreply(serialversionuid:long, id:Long [PK], complain:CustomerComplain #FK to(customercomplain), replier:User #FK to(user), content:String, replytime:Date);
+
+customerquestion(id:Long [PK], GeneratedName:Customer #FK to(customer), GeneratedName:ProductSale #FK to(productsale), title:String, content:String, asktime:Date, GeneratedName:Shop #FK to(shop), reply:boolean);
+
+customercommentrank(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), comment:CustomerComment #FK to(customercomment), ranktime:Date, useful:boolean);
+
+customercomplain(id:Long [PK], GeneratedName:Order #FK to(order), email:String, phone:String, title:String, content:String, state:Code #FK to(code), createtime:Date, GeneratedName:Customer #FK to(customer), uptime:Date, user:Employee #FK to(employee));
+
+customerpayee(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), alipay:String, alipayname:String, tenpay:String, bankaccount:CustomerBankAccount, postaccount:CustomerPostAccount);
+
+customercashapply(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), money:BigDecimal, customerpayfee:BigDecimal, companypayfee:BigDecimal, type:Code #FK to(code), alipay:String, alipayname:String, tenpay:String, bankaccount:CustomerBankAccount, postaccount:CustomerPostAccount, createtime:Date, processtime:Date, status:Code #FK to(code), operator:User #FK to(user), version:int);
+
+customerip(id:Long [PK], customercookie:String, ip:String, country:Area #FK to(area), GeneratedName:Area #FK to(area), province:Area #FK to(area), city:Area #FK to(area), county:Area #FK to(area), town:Area #FK to(area), isp:String, region:String, GeneratedName:Customer #FK to(customer), createtime:Date, countryname:String, provincename:String, cityname:String);
+
+customerfavorite(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), GeneratedName:ProductSale #FK to(productsale), addstatus:Code #FK to(code), addprice:BigDecimal, addtime:Date, purchased:boolean, sort:Code #FK to(code));
+
+customeraddress(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), consignee:String, country:Area #FK to(area), city:Area #FK to(area), province:Area #FK to(area), district:Area #FK to(area), town:Area #FK to(area), address:String, zipcode:String, phone:String, mobile:String, GeneratedName:Payment #FK to(payment), GeneratedName:DeliveryType #FK to(deliverytype), deliveryoption:Code #FK to(code), email:String, usual:boolean, index:int);
+
+cashapplyupdatelog(id:Long [PK], GeneratedName:CustomerCashApply #FK to(customercashapply), tradeno:String, remark:String, operator:User #FK to(user), status:Code #FK to(code), operatetime:Date);
+
+customerextend(/***/serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), paymobile:String, paypassword:String, payemail:String);
+
+complaininfo(id:Long [PK], GeneratedName:Order #FK to(order), email:String, phone:String, title:String, content:String, state:Code #FK to(code), createtime:Date, GeneratedName:Customer #FK to(customer), uptime:Date, user:Employee #FK to(employee));
+
+customerdigging(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), client:String, session:String, GeneratedName:ProductSale #FK to(productsale), diggingtime:Date);
+
+customerextension(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), livingstatus:String, careertype:Code #FK to(code), career:Code #FK to(code), salary:Code #FK to(code), interest:String, favorite:String);
+
+customerthirdparty(id:Long [PK], thirdparty:Customer #FK to(customer), winxuan:Customer #FK to(customer));
+
+customervisited(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), client:String, session:String, GeneratedName:ProductSale #FK to(productsale), visittime:Date, deleted:boolean);
+
+customerquestionreply(serialversionuid:long, id:Long [PK], question:CustomerQuestion #FK to(customerquestion), replier:User #FK to(user), content:String, replytime:Date);
+
+customercommentreply(serialversionuid:long, id:Long [PK], comment:CustomerComment #FK to(customercomment), replier:User #FK to(user), content:String, replytime:Date);
+
+customerfavoritetag(favorite_tag_recommend_quantity:int, default_tag_name:String, serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), tagname:String, createtime:Date);
+
+customer_favorite_tag_relation(tag:CustomerFavoriteTag [PK] #FK to CustomerFavoriteTag,favorite:set<customerfavorite> [PK] #FK to set<customerfavorite>);
+
+customeraccount(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), balance:BigDecimal, frozen:BigDecimal, pos:int, lastusetime:Date, version:int);
+
+customerbought(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), GeneratedName:ProductSale #FK to(productsale), GeneratedName:Order #FK to(order), quantity:int, buytime:Date, buyprice:BigDecimal, sort:Code #FK to(code));
+
+customeraccountdetail(serialversionuid:long, id:Long [PK], account:CustomerAccount #FK to(customeraccount), usetime:Date, type:Code #FK to(code), amount:BigDecimal, balance:BigDecimal, operator:User #FK to(user), GeneratedName:Order #FK to(order));
+
+customercomment(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), GeneratedName:ProductSale #FK to(productsale), title:String, content:String, commenttime:Date, rank:ProductSaleRank #FK to(productsalerank), GeneratedName:Channel #FK to(channel), nickname:String, channelcommentid:Long, usefulcount:int, uselesscount:int, quotecomment:CustomerComment #FK to(customercomment));
+
+systemgroup(id:Long [PK], name:String);
+
+systemconfig(id:Long [PK], key:String, value:String, description:String, GeneratedName:SystemGroup #FK to(systemgroup));
+
+systemswitchconfig(/***/serialversionuid:long, //批量开关类型-库存锁定开关type_stock_type:short, id:Long [PK], /***描述*/description:String, type:short, /***是否有效*/isopen:boolean, createtime:Date, uptime:Date, /***修改人*/updateoperator:Employee #FK to(employee));
+
+subject(deploy_yes:boolean, deploy_no:boolean, /***/serialversionuid:long, id:Long [PK], name:String, title:String, deploy:boolean, sort:Code #FK to(code), tagurl:String, uptime:Date);
+
+returnordertag(serialversionuid:long, id:Long [PK], GeneratedName:ReturnOrder #FK to(returnorder), tag:Code #FK to(code));
+
+returnorderitem(id:Long [PK], GeneratedName:ReturnOrder #FK to(returnorder), GeneratedName:OrderItem #FK to(orderitem), appquantity:int, reason:Code #FK to(code), realquantity:int, remark:String, urlpath:String);
+
+returnorder(/***/serialversionuid:long, id:Long [PK], status:Code #FK to(code), original:Order #FK to(order), GeneratedName:Customer #FK to(customer), new:Order #FK to(order), type:Code #FK to(code), transfertype:Code #FK to(code), responsible:Code #FK to(code), holder:Code #FK to(code), pickup:Code #FK to(code), reason:Code #FK to(code), refunddeliveryfee:BigDecimal, refundcompensating:BigDecimal, refundcouponvalue:BigDecimal, refundgoodsvalue:BigDecimal, remark:String, creator:User #FK to(user), createtime:Date, auditor:User #FK to(user), audittime:Date, refunder:User #FK to(user), refundtime:Date, version:int, GeneratedName:ReturnOrderDc #FK to(returnorderdc), transferred:boolean, needtransfers:boolean, cause:String, /***是否应该退款*/shouldrefund:Code #FK to(code), /***是否已退款*/refunded:boolean, /***退货运单号*/expressid:String);
+
+returnorderlog(id:Long [PK], GeneratedName:ReturnOrder #FK to(returnorder), status:Code #FK to(code), logtime:Date, operator:User #FK to(user));
+
+returnordertrack(id:Long [PK], GeneratedName:ReturnOrder #FK to(returnorder), type:Code #FK to(code), createtime:Date, operator:Employee #FK to(employee), content:String);
+
+returnorderdc(/***/serialversionuid:long, id:Long [PK], GeneratedName:ReturnOrder #FK to(returnorder), targetdc:Code #FK to(code), targetrealdc:Code #FK to(code));
+
+returnorderpackagerelate(id:Long [PK], GeneratedName:ReturnOrderPackage #FK to(returnorderpackage), relateid:String, relateship:Code #FK to(code), status:Boolean);
+
+returnorderpackageitem(id:Long [PK], GeneratedName:ReturnOrderPackage #FK to(returnorderpackage), isbn:String, quantity:int, name:String, listprice:BigDecimal, eccode:String, outerid:String, manufacturer:String, batch:String, sisbn:String);
+
+returnorderrefund(serialversionuid:long, id:Long [PK], GeneratedName:ReturnOrder #FK to(returnorder), GeneratedName:Payment #FK to(payment), refundvalue:BigDecimal, refundobjectid:String);
+
+returnorderpackage(id:Long [PK], type:String, returntype:Code #FK to(code), carrier:String, expressid:String, address:String, customer:String, phone:String, expressfee:BigDecimal, expresstime:Date, ssigntime:Date, ssignname:String, squantity:int, svendor:Channel #FK to(channel), sreturnreason:String, remark:String, status:Code #FK to(code));
+
+ordertransportinfo(serialversionuid:long, orderid:String [PK], /***货运公司id*/transportid:Long, /***货运公司名称*/transportname:String, /***运输单号*/transportcode:String, /***大包号*/parcel:String, /***小包信息（用逗号分隔存储）*/packets:String);
+
+orderpromotion(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), GeneratedName:Promotion #FK to(promotion), type:Code #FK to(code), savemoney:BigDecimal, GeneratedName:PresentBatch #FK to(presentbatch), presentnum:Integer);
+
+orderitemcomplexlog(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), GeneratedName:ProductSale #FK to(productsale), listprice:BigDecimal, saleprice:BigDecimal, purchasequantity:int, createtime:Date);
+
+orderreceive(serialversionuid:long, id:String [PK], GeneratedName:Order #FK to(order), receivetime:Date, createtime:Date, assess:Code #FK to(code), expressspeed:Code #FK to(code), expressmanner:Code #FK to(code), description:String, source:Code #FK to(code));
+
+orderconsignee(serialversionuid:long, id:String [PK], GeneratedName:Order #FK to(order), consignee:String, phone:String, mobile:String, email:String, country:Area #FK to(area), province:Area #FK to(area), city:Area #FK to(area), district:Area #FK to(area), town:Area #FK to(area), address:String, zipcode:String, needinvoice:boolean, invoicetitle:String, invoicetitletype:Code #FK to(code), invoicetype:Code #FK to(code), outofstockoption:Code #FK to(code), deliveryoption:Code #FK to(code), remark:String, unauditreason:Code #FK to(code));
+
+ordercollection(/***/serialversionuid:long, id:String [PK], GeneratedName:Order #FK to(order), collect:boolean, strategy:Code #FK to(code));
+
+orderitemstock(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), GeneratedName:ProductSale #FK to(productsale), stock:int, stockinfo:String);
+
+orderinit(/***/serialversionuid:long, id:String [PK], GeneratedName:Order #FK to(order), status:Code #FK to(code), createtime:Date);
+
+orderitem(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), GeneratedName:ProductSale #FK to(productsale), GeneratedName:Shop #FK to(shop), listprice:BigDecimal, saleprice:BigDecimal, balanceprice:BigDecimal, purchasequantity:int, deliveryquantity:int, returnquantity:int, stockquantity:int, salequantity:int, outofstockquantity:int, pos:int, GeneratedName:BillItemStatistics #FK to(billitemstatistics), GeneratedName:OrderItemStock #FK to(orderitemstock), virtual:boolean);
+
+order(delivery_processstatus:Long, /***购买数量*/purchase_quantity:Integer, /***发货数量*/delivery_quantity:Integer, /***查询物流信息的时间范围*/max_start_mouth:Integer, max_end_day:Integer, max_hour:Integer, max_minute:Integer, max_second:Integer, serialversionuid:long, id:String [PK], paytype:Code #FK to(code), GeneratedName:DeliveryType #FK to(deliverytype), supplytype:Code #FK to(code), storagetype:Code #FK to(code), GeneratedName:DeliveryCompany #FK to(deliverycompany), deliverycode:String, GeneratedName:Customer #FK to(customer), creator:User #FK to(user), GeneratedName:Shop #FK to(shop), GeneratedName:Channel #FK to(channel), outerid:String, listprice:BigDecimal, saleprice:BigDecimal, savemoney:BigDecimal, deliveryfee:BigDecimal, advancemoney:BigDecimal, processstatus:Code #FK to(code), erpstatus:Code #FK to(code), paymentstatus:Code #FK to(code), createtime:Date, deliverytime:Date, lastprocesstime:Date, maxpaytime:Date, deliverylistprice:BigDecimal, deliverysaleprice:BigDecimal, virtual:boolean, unite:boolean, consignee:OrderConsignee #FK to(orderconsignee), distributioncenter:OrderDistributionCenter #FK to(orderdistributioncenter), note:OrderNote #FK to(ordernote), receive:OrderReceive #FK to(orderreceive), GeneratedName:OrderCollection #FK to(ordercollection), GeneratedName:OrderInit #FK to(orderinit), purchasequantity:int, purchasekind:int, deliveryquantity:int, deliverykind:int, transferresult:Code #FK to(code), GeneratedName:ParentOrder #FK to(parentorder), version:int);
+
+orderpackges(serialversionuid:long, id:Long [PK], order:String, channel:Long, //@column(insertable:String, createtime:Date);
+
+orderlogistics(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), createtime:Date, eventcontent:String, event:Code #FK to(code), eventtime:Date);
+
+orderbatchpay(batchpayid:String [PK], orderid:String);
+
+orderpayment(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), GeneratedName:Payment #FK to(payment), paymoney:BigDecimal, pay:boolean, deliverymoney:BigDecimal, returnmoney:BigDecimal, createtime:Date, paytime:Date, credential:PaymentCredential #FK to(paymentcredential));
+
+ordershipperinfo(/***人工审核：不满足自动审核的条件需要人工审核*/default_status:Short, /***自动审核：即dms自动匹配承运商*/maching_status:Short, /***异常审核：调用dms自动匹配有异常错误信息，需要人工审核*/error_status:Short, /***默认作业类型：当需要人工审核时，使用这个默认值填补数据(当状态为0或2时)*/default_job_type:String, /***默认运输类型：当需要人工审核时，使用这个默认值填补数据(当状态为0或2时)*/default_carriage_type:long, serialversionuid:long, orderid:String [PK], //运输类型carriagetype:long, //作业类型jobtype:String, //交货地deliveryplace:Long, //干线dryline:Long, //客户clientid:Long, createtime:Date, /***0-人工审核，1-自动审核(dms自动匹配)，2-异常审核(dms匹配异常)*/status:short, errormessage:String);
+
+ordertrack(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), content:String, createtime:Date, GeneratedName:Employee #FK to(employee), type:Code #FK to(code));
+
+unionorder(/***linktech联盟*/union_linktech:Long, /***eqifa联盟*/union_eqifa:Long, /***lianmark联盟*/union_lianmark:Long, /***唯一传媒联盟*/union_weiyi:Long, /***达闻联盟*/union_dawen:Long, /***智购联盟*/union_zhigou:Long, /***成果联盟*/union_chanet:Long, /***	aleadpay联盟*/union_aleadpay:Long, /***威购*/union_vgou:Long, /***广告联盟*/union_ad:Long, /***太平洋联盟*/union_tpy:Long, union_tpy_key:String, union_tpy_id:String, /***黄金联盟*/union_hjlm:Long, /***p.cn*/union_pcn:Long, /***中视联盟*/union_ctvwm:Long, serialversionuid:long, /***编号*/id:Long [PK], /***订单*/:Order #FK to(order), /***订单创建时间*/create:Date, /***联盟的cookie信息*/cookieinfo:String, */:Union #FK to(union));
+
+orderupdatelog(consignee:String, phone:String, mobile:String, email:String, province:String, city:String, town:String, district:String, address:String, delivery_type:String, delivery_info:String, delivery_option:String, need_invoice:String, need_invoice_true:String, need_invoice_false:String, invoice_type:String, invoice_title:String, remark:String, zipcode:String, payment:String, original_dc:String, order_state:String, serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), fieldname:String, originalvalue:String, changedvalue:String, uptime:Date, operator:User #FK to(user));
+
+orderinvoice(serialversionuid:long, id:String [PK], GeneratedName:Order #FK to(order), money:BigDecimal, operator:User #FK to(user), createtime:Date, mode:Code #FK to(code), type:Code #FK to(code), titletype:Code #FK to(code), title:String, content:String, consignee:String, phone:String, mobile:String, email:String, zipcode:String, country:Area #FK to(area), province:Area #FK to(area), city:Area #FK to(area), district:Area #FK to(area), town:Area #FK to(area), address:String, deliveryoption:Code #FK to(code), deliverycode:String, GeneratedName:DeliveryCompany #FK to(deliverycompany), deliverytime:Date, remark:String, quantity:int, status:Code #FK to(code), transferred:boolean, dc:Code #FK to(code));
+
+parentorder(/***/serialversionuid:long, id:String [PK], GeneratedName:Channel #FK to(channel), outerid:String, createtime:Date, processstatus:Code #FK to(code), listprice:BigDecimal, saleprice:BigDecimal, savemoney:BigDecimal, deliverylistprice:BigDecimal, deliverysaleprice:BigDecimal, deliveryfee:BigDecimal, purchasequantity:int, purchasekind:int, deliveryquantity:int, deliverykind:int, lastprocesstime:Date, split:boolean);
+
+orderstatuslog(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), status:Code #FK to(code), operatetime:Date, operator:User #FK to(user));
+
+ordernote(serialversionuid:long, id:String [PK], GeneratedName:Order #FK to(order), cookie:String, useragent:String, address:String);
+
+orderexpress(serialversionuid:long, id:Long [PK], order:String, deliverycode:String, deliveryquantity:int, deliverylistprice:BigDecimal, province:String, city:String, processstatus:Code #FK to(code), weight:int, createtime:Date);
+
+orderextend(/***订单包件数*/order_packages:Integer, /***apiid,记录api用户下单*/app_id:Integer, /***订单发货下传sap*/syn_sap_delivery:Integer, /***订单发货拒收下传sap*/syn_sap_reject:Integer, /***退货订单下传sap,由于有多个退订单..,value为退货单号.*/syn_sap_return:Integer, /***订单发货,记入历史统计*/statistics_delivery:Integer, /***订单发货拒收记计历史统计*/statistics_reject:Integer, /***退货订单记录历史统计,由于有多个退订单..,value为退货单号.*/statistics_return:Integer, /***标记渠道订单是否可以重新下传*/channel_flag:Integer, /***渠道订单包裹号*/channel_package_number:Integer, /***当当cod收货仓库*/dangdang_cod_warehouse_key:Integer, dangdang_cod_warehouse_beijing:String, dangdang_cod_warehouse_chengdu:String, /***当当cod电子面单*/dangdang_cod_elec_bill:Integer, /***cod成都目标仓库*/cod_target_warehouse:Integer, /***京东cod收货仓库*/jingdong_cod_warehouse_key:Integer, /***京东cod电子面单*/jingdong_cod_elec_bill:Integer, jingdong_cod_warehouse_chengdu:String, order_extend_map:Map<Integer,OrderExtend>, id:String [PK], GeneratedName:Order #FK to(order), meta:Integer, value:String);
+
+orderclonelog(serialversionuid:long, id:Long [PK], source:Order #FK to(order), dest:Order #FK to(order), clonetime:Date, operator:User #FK to(user), remark:String);
+
+orderdistributioncenter(serialversionuid:long, id:String [PK], GeneratedName:Order #FK to(order), remark:String, dcoriginal:Code #FK to(code), dcdest:Code #FK to(code), strategy:Code #FK to(code));
+
+orderdeliverysplit(serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), company:DeliveryCompany #FK to(deliverycompany), code:String, deliverytime:Date);
+
+batchpay(id:String [PK], createtime:Date, success:boolean, totalmoney:BigDecimal, digest:String, params:String);
+
+order_batchpay(batchpay:BatchPay [PK] #FK to BatchPay,_order:set<order> [PK] #FK to set<order>);
+
+collectionitem(serialversionuid:long, id:Long [PK], orderid:String, GeneratedName:OrderItem #FK to(orderitem), GeneratedName:ProductSale #FK to(productsale), /***集货仓*/fromdc:Code #FK to(code), /***目的仓*/todc:Code #FK to(code), status:Code #FK to(code), collectquantity:int, sendquantity:int, receivequantity:int);
+
+ordercancelapp(/***/serialversionuid:long, id:Long [PK], GeneratedName:Order #FK to(order), remark:String, status:Code #FK to(code), createuser:Seller #FK to(seller), createtime:Date, audituser:Employee #FK to(employee), audittime:Date);
+
+mccategory(serialversionuid:long, id:String [PK], name:String, parent:McCategory #FK to(mccategory), index:int);
+
+category_mccategory(mccategory:McCategory [PK] #FK to McCategory,category:list<category> [PK] #FK to list<category>);
+
+category(book:Long, media:Long, mall:Long, all_category:Long, serialversionuid:long, id:Long [PK], name:String, alias:String, code:String, index:int, available:boolean, hasproduct:boolean, parent:Category #FK to(category), GeneratedName:ProShop #FK to(proshop));
+
+category_mccategory(category:Category [PK] #FK to Category,mccategory:set<mccategory> [PK] #FK to set<mccategory>);
+
+mrsupply(//新品权重默认值设为0.2weightsnewproduct:BigDecimal, /***/serialversionuid:long, id:Long [PK], dc:Code #FK to(code), /***销售分级*/grade:String, /***权重指数*/weights:BigDecimal);
+
+mrproductfreeze(flag_freezed:int, flag_unfreezed:int, flag_send_sap:int, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), /***冻结起始时间*/starttime:Date, /***冻结结束时间*/endtime:Date, availablequantity:int, quantity:int, /***冻结状态，0：冻结生效，商品不可再进入补货系统；1：冻结结束，商品可进入补货系统；2：已下传sap*/flag:int, createtime:Date, /***发货仓库*/dc:Code #FK to(code), /***冻结类型：人工冻结、系统冻结等*/type:Code #FK to(code), /***冻结原因描述*/reason:String);
+
+mrproductitem(serialversionuid:long, log_map:Map<String,Class<?>>, id:Long [PK], GeneratedName:ProductSale #FK to(productsale), /***销售分级*/grade:String, /***补货模型*/model:Code #FK to(code), /***批次号*/num:String, /***补货周期*/replenishmentcycle:int, /***安全库存*/safequantity:int, /***预测销售*/forecastquantity:int, /***可用量*/availablequantity:int, /***补货数量*/replenishmentquantity:int, /***发货仓库*/dc:Code #FK to(code), /***创建时间*/createtime:Date, /***审核状态*/check:boolean, /***审核时间*/audittime:Date, /***补货类型：系统补货、人工补货*/type:Code #FK to(code));
+
+mrmodelchoose(/***/serialversionuid:long, id:Long [PK], /***销售分级*/grade:String, /***模型*/model:Code #FK to(code));
+
+mrcumulativereceive(id:Long [PK], GeneratedName:ProductSale #FK to(productsale), dc:Code #FK to(code), receive:int, uptime:Date);
+
+mrcycle(id:Long [PK], dc:Code #FK to(code), GeneratedName:McCategory #FK to(mccategory), //销售周期salecycle:Integer, //补货周期replenishmentcycle:Integer, //在途周期transitcycle:Integer, createtime:Date);
+
+mrmctype(/***/serialversionuid:long, id:Long [PK], /***mc分类*/:McCategory #FK to(mccategory), /***类型*/type:Code #FK to(code), /***数量*/quantity:Integer, /***边界值上界--定位表*/boundtop:BigDecimal, /***边界值下界--定位表*/boundbottom:BigDecimal, /***边界值范围内的比率*/ratio:BigDecimal, /***超出边界值的默认册数--定位表*/defaultquantity:Integer);
+
+mrupdatelog(serialversionuid:long, id:Long [PK], fieldname:String, originalvalue:String, changedvalue:String, uptime:Date, targetid:String, GeneratedName:User #FK to(user));
+
+mrexaminer(id:Long [PK], GeneratedName:User #FK to(user), //最低数量bottomquantity:Integer, //最高数量topquantity:Integer, //最低总码洋bottomamount:BigDecimal, //最高总码洋topamount:BigDecimal);
+
+mrsubmccategory(id:Integer [PK], //mc分类mccategory:String, //mc二次分类submccategory:String);
+
+mrdeliveryrecord(id:Long [PK], GeneratedName:ProductSale #FK to(productsale), delivery:Date, GeneratedName:Channel #FK to(channel), deliveryquantity:int, deliverytype:Code #FK to(code), dc:Code #FK to(code));
+
+dcrulearea(id:Long [PK], dc:DcRule #FK to(Rule), GeneratedName:Area #FK to(area), type:Code #FK to(code), priority:Long);
+
+dcrule(cheng_du:Long, bei_jing:Long, serialversionuid:long, id:Long [PK], location:Code #FK to(code), priority:Long, countrywide:Boolean, address:String, description:String, available:Boolean);
+
+groupshoppinginfo(id:Long [PK], name:String, phone:String, content:String, state:Code #FK to(code), companyname:String, createtime:Date, uptime:Date, user:Employee #FK to(employee));
+
+code(/***订单跟踪状态*/order_tracking_status:Long, /***很好*/order_receive_very_good:Long, /***基本满意*/order_receive_good:Long, /***一般*/order_receive_general:Long, /***很差*/order_receive_bad:Long, /***订单送货时间选项*/delivery_option:Long, /***工作日*/delivery_option_work_day:Long, /***周末及节假日*/delivery_option_weekend:Long, /***不限*/delivery_option_anytime:Long, /***缺货处理方式*/out_of_stock_option:Long, /***缺货取消*/out_of_stock_option_cancel:Long, /***发送有的商品*/out_of_stock_option_send:Long, /***渠道类型*/channel_type:Long, /***综合有购物功能*/channel_type_normal_sale:Long, /***综合无购物功能*/channel_type_normal:Long, /***专业有购物功能*/channel_type_profession_sale:Long, /***专业无购物功能*/channel_type_profession:Long, /***联盟*/channel_type_union:Long, /***其它*/channel_type_other:Long, /***订单未自动审核通过的原因*/un_audit_reason:Long, /***发票类型*/invoice_type:Long, /***发票类型-普通发票*/invoice_type_general:Long, /***发票抬头类型*/invoice_title_type:Long, /***发票类型-个人*/invoice_title_type_personal:Long, /***发票类型-公司*/invoice_title_type_company:Long, /***发票状态-正常*/invoice_status_normal:Long, /***发票状态-作废*/invoice_status_due:Long, /***订单支付状态*/order_pay_status:Long, /***订单支付状态-完全支付*/order_pay_status_completed:Long, /***订单支付状态-部分支付*/order_pay_status_part:Long, /***订单支付状态-未支付*/order_pay_status_none:Long, /***订单支付类型*/order_pay_type:Long, /***订单支付类型-先款后货*/order_pay_type_first_pay:Long, /***订单支付类型-先货后款*/order_pay_type_first_delivery:Long, /***储配方式*/storage_and_delivery_type:Long, /***储配方式-代储代发*/storage_and_delivery_type_storage_platform_delivery_platform:Long, /***储配方式-自储代发*/storage_and_delivery_type_storage_seller_delivery_platform:Long, /***储配方式-自储自发*/storage_and_delivery_type_storage_seller_delivery_seller:Long, /***电子书*/storage_and_delivery_type_ebook:Long, /***订单销售方式*/order_sale_type:Long, /***订单销售方式-普通*/order_sale_type_normal:Long, /***订单销售方式-预售*/order_sale_type_booking:Long, /***订单销售方式-快速分拨*/order_sale_type_rapid:Long, /***订单处理状态*/order_process_status:Long, /***订单处理状态-已提交*/order_process_status_new:Long, /***订单处理状态-等待配货*/order_process_status_waiting_picking:Long, /***订单处理状态-正在配货*/order_process_status_picking:Long, /***订单处理状态-已发货*/order_process_status_deliveried:Long, /***订单处理状态-交易完成*/order_process_status_completed:Long, /***订单处理状态-客户取消*/order_process_status_customer_cancel:Long, /***订单处理状态-缺货取消*/order_process_status_out_of_stock_cancel:Long, /***订单处理状态-系统取消*/order_process_status_system_cancel:Long, /***订单处理状态-退货取消*/order_process_status_rejection_cancel:Long, /***订单处理状态-拦截取消(即infor系统没有上线前的中启取消)*/order_process_status_erp_cancel:Long, /***订单处理状态-部分发货*/order_process_status_deliveried_seg:Long, /***订单处理状态-归档*/order_process_status_archive:Long, /***订单处理状态-等待拦截*/order_process_status_wait_erp_intercept:Long, /***订单处理状态-父订单取消*/parent_order_process_status_cancel:Long, /***erp订单状态*/erp_process_status:Long, /***erp订单状态-未下传*/erp_process_status_init:Long, /***erp订单状态-集货*/erp_process_status_wait:Long, /***erp订单状态-质检包装*/erp_process_status_packing:Long, /***erp订单状态-等待发运*/erp_process_status_wait_delivery:Long, /***erp订单状态-全部已发*/erp_process_status_delivery_all:Long, /***erp订单状态-妥投*/erp_process_status_confirm:Long, /***erp订单状态-缺货取消*/erp_process_status_out_of_stock:Long, /***erp订单状态-拒收取消*/erp_process_status_reject:Long, /***erp订单状态-客户取消*/erp_process_status_cancel:Long, /***erp订单状态-逾期支付取消*/erp_process_status_overdue:Long, /***erp订单状态-无法确认取消*/erp_process_status_unrecive:Long, /***erp订单状态-拦截订单*/erp_process_status_catch:Long, /***暂存款使用类型*/customer_account_use_type:Long, /***暂存款使用类型-充值*/customer_account_use_type_charge:Long, /***暂存款使用类型-支付*/customer_account_use_type_pay:Long, /***暂存款使用类型-退回暂存款*/customer_account_use_type_refund:Long, /***暂存款使用类型-申请提现*/customer_account_use_type_apply_to_cash:Long, /***暂存款使用类型-取消申请提现*/customer_account_use_type_cancel_to_cash:Long, /***暂存款使用类型-提现*/customer_account_use_type_cash:Long, /***用户登陆类型*/user_login_type:Long, /***网站登陆*/user_login_website:Long, /***物流中心*/delivery_center:Long, /***sap系统管理的北京物流中心*/dc_d803:Long, /***sap系统管理的成都五块石物流中心*/dc_d801:Long, /***成都青白江物流中心*/dc_8a17:Long, /***北京物流中心*/dc_d818:Long, /***北京分拨*/dc_8a19:Long, /***百货仓位.*/dc_mall:Long, /***	华东仓**/dc_d819:Long, /***支付方式类型*/payment_type:Long, /***支付方式类型-线下支付*/payment_type_offline:Long, /***支付方式类型-线上支付*/payment_type_online:Long, /***支付方式类型-暂存款*/payment_type_account:Long, /***支付方式类型-礼券礼品卡*/payment_type_other:Long, /***支付方式类型-渠道*/payment_type_channel:Long, /***支付方式类型-先货后款*/payment_type_cod:Long, /***商品种类*/product_sort:Long, /***商品种类-图书*/product_sort_book:Long, /***商品种类-音像*/product_sort_video:Long, /***商品种类-百货*/product_sort_merchandise:Long, /***字段类型*/field_type:Long, /***字段类型-数字*/field_type_number:Long, /***字段类型-字符*/field_type_string:Long, /***字段类型-日期*/field_type_date:Long, /***字段类型-枚举*/field_type_enum:Long, /***字段类型-文本*/field_type_text:Long, /***商品销售状态*/product_sale_status:Long, /***商品销售状态-下架*/product_sale_status_offshelf:Long, /***商品销售状态-上架*/product_sale_status_onshelf:Long, /***商品销售状态-ec停用*/product_sale_status_ec_stop:Long, /***商品销售状态-sap停用*/product_sale_status_sap_stop:Long, /***商品销售状态-已删除*/product_sale_status_deleted:Long, /***商品供应类型*/product_sale_supply_type:Long, /***商品供应类型-正常销售*/product_sale_supply_type_usual:Long, /***商品供应类型-新品预售*/product_sale_supply_type_booking:Long, /***商品供应类型-订购*/product_sale_supply_type_order:Long, /***商品库存类型*/product_stock_type:Long, /***商品库存类型-实物库存*/product_stock_type_actual:Long, /***商品库存类型-虚拟库存*/product_stock_type_virtual:Long, /***运费收取方式*/delivery_fee_type:Long, /***运费收取方式-固定*/delivery_fee_fixed:Long, /***运费收取方式-比例*/delivery_fee_percent:Long, /***发票开票方式*/order_invoice_mode:Long, /***发票开票方式-正常*/order_invoice_mode_normal:Long, /***礼券批次状态*/present_batch_status:Long, /***礼券批次状态-待审核*/present_batch_status_verify:Long, /***礼券批次状态-审核通过*/present_batch_status_pass:Long, /***礼券批次状态-审核不通过*/present_batch_status_fail:Long, /***礼劵状态*/present_status:Long, /***礼劵状态：已生成*/present_status_generate:Long, /***礼劵状态：已分发*/present_status_export:Long, /***礼劵状态：已激活*/present_status_active:Long, /***礼劵状态：已使用*/present_status_used:Long, /***礼劵状态：已支付*/present_status_pay:Long, /***礼劵状态：已作废*/present_status_cancel:Long, /***礼券来源*/present_origin:Long, /***礼券来源-文轩网赠送*/present_origin_wxsend:Long, /***礼券来源-积分兑换*/present_origin_points:Long, /***礼券来源-满赠活动*/present_origin_promotion:Long, /***礼品卡状态*/present_card_status:Long, /***礼品卡状态-新建*/present_card_status_new:Long, /***礼品卡状态-印刷*/present_card_status_print:Long, /***礼品卡状态-入库*/present_card_status_storage:Long, /***礼品卡状态-发送*/present_card_status_sent:Long, /***礼品卡状态-激活*/present_card_status_activate:Long, /***礼品卡状态-使用*/present_card_status_use:Long, /***礼品卡状态-注销*/present_card_status_off:Long, /***礼品卡类型*/present_card_type:Long, /***礼品卡类型-电子卡*/present_card_type_electronic:Long, /***礼品卡类型-实物卡*/present_card_type_physical:Long, /***促销类型*/promotion_type:Long, /***单品价格优惠活动*/promotion_type_product_amount:Long, /***类别价格优惠活动*/promotion_type_category_amount:Long, /***买商品赠商品活动*/promotion_type_product_send_product:Long, /***订单满省活动*/promotion_type_order_save_amount:Long, /***订单满送券活动*/promotion_type_order_send_present:Long, /***订单减运费活动*/promotion_type_order_save_deliveryfee:Long, /***买商品免运费*/promotion_type_product_save_deliveryfee:Long, /***买部分商品满省*/promotion_type_product_save_amount:Long, /***注册送礼券*/promotion_type_register_send_present:Long, /***促销-订单满省、满赠促销方式*/promotion_order_saveorsend_type:Long, /***促销-订单满省、满赠促销方式-普通优惠*/promotion_order_saveorsend_type_normal:Long, /***促销-订单满省、满赠促销方式-梯度优惠*/promotion_order_saveorsend_type_gradient:Long, /***促销-商品类型*/promotion_product_type:Long, /***促销-商品类型-主商品*/promotion_product_type_main:Long, /***促销-商品类型-赠品*/promotion_product_type_gift:Long, /***订单退换货类型*/return_order_type:Long, /***订单退换货类型-退货*/return_order_type_return:Long, /***订单退换货类型-换货*/return_order_type_replace:Long, /***订单退换货类型-补偿*/return_order_type_compensate:Long, /***订单退换货类型-书款补偿*/return_order_type_compensate_book:Long, /***订单退换货状态*/return_order_status:Long, /***订单退换货状态-提交*/return_order_status_new:Long, /***订单退换货状态-已审核*/return_order_status_audited:Long, /***订单退换货状态-正在退货*/return_order_status_returning:Long, /***订单退换货状态-实物入库*/return_order_status_received:Long, /***订单退换货状态-已退款*/return_order_status_refunded:Long, /***订单退换货状态-审核未通过*/return_order_status_cancel:Long, /***订单退换货状态-已换货*/return_order_status_changed:Long, /***促销-分类折扣调整方式*/promotion_category_dis_type:Long, /***促销-分类折扣调整方式-统一折扣*/promotion_category_dis_type_unified:Long, /***促销-分类折扣调整方式-只下调折扣*/promotion_category_dis_type_down:Long, /***促销-分类折扣调整方式-只上调折扣*/promotion_category_dis_type_up:Long, /***促销-促销活动状态*/promotion_status:Long, /***ec到erp订单传输状态*/ec2erp_status:Long, /***ec到erp订单传输状态-未下传*/ec2erp_status_none:Long, /***ec到erp订单传输状态-新建订单下传*/ec2erp_status_new:Long, /***ec到erp订单传输状态-取消订单下传*/ec2erp_status_cancel:Long, /***ec到sap订单传输状态-未下传sap*/ec2sap_status_none:Long, /***ec到sap订单传输状态-新建订单已下传sap*/ec2sap_status_new:Long, /***促销-促销活动状态-已生成*/promotion_status_create:Long, /***促销-促销活动状态-审核通过*/promotion_status_pass:Long, /***促销-促销活动状态-审核未通过*/promotion_status_fail:Long, /***促销-促销活动状态-已停用*/promotion_status_stop:Long, /***促销-促销活动状态-已过期*/promotion_status_over:Long, /***退换货方式*/return_order_style:Long, /***退换货方式-个人邮寄*/return_order_style_person:Long, /***退换货方式-上门取货*/return_order_style_door:Long, /***退换货承担方*/return_order_holder:Long, /***退换货承担方-客户*/return_order_holder_customer:Long, /***退换货承担方-文轩*/return_order_holder_winxuan:Long, /***退换货原因*/return_order_reason:Long, /***退换货原因-个人喜好*/return_order_reason_personal:Long, /***退换货跟踪类型*/return_order_track_type:Long, /***用户-居住状态*/customer_living_status:Long, /***用户-职业/身份*/customer_career:Long, /***用户-收入水平*/customer_salary:Long, /***卖家店铺状态*/shop_state:Long, /***卖家店铺状态-已生成*/shop_state_create:Long, /***卖家店铺状态-已激活*/shop_state_pass:Long, /***卖家店铺状态-搜索引擎屏蔽*/shop_state_search_fail:Long, /***卖家店铺状态-完全屏蔽*/shop_state_fail:Long, /***卖家店铺状态-已注销*/shop_state_cancel:Long, /***卖家商品审核状态*/product_audit_status:Long, /***卖家商品审核状态-未审核*/product_audit_status_create:Long, /***卖家商品审核状态-审核通过*/product_audit_status_pass:Long, /***卖家商品审核状态-审核不通过*/product_audit_status_fail:Long, /***卖家商品渠道销售申请类型*/product_channel_app_status:Long, /***卖家商品渠道销售申请类型-加入渠道*/product_channel_app_status_add:Long, /***卖家商品渠道销售申请类型-退出渠道*/product_channel_app_status_out:Long, /***用户-已购商品排序*/customer_bought_compositor:Long, /***用户-按购买时间排序（从新到旧）*/customer_bought_buy_time_desc:Long, /***用户-按购买时间排序（从旧到新）*/customer_bought_buy_time_asc:Long, /***用户-按价格排序（从高到底）*/customer_bought_price_desc:Long, /***用户-按价格排序（从底到高）*/customer_bought_price_asc:Long, /***用户-按折扣排序（从多到少）*/customer_bought_discount_desc:Long, /***用户-按折扣排序（从少到多）*/customer_bought_discount_asc:Long, /***订单取消申请状态*/order_cancel_applay_state:Long, /***订单取消申请状态-提交*/order_cancel_applay_state_new:Long, /***订单取消申请状态-审核通过*/order_cancel_applay_state_pass:Long, /***订单取消申请状态-审核不通过*/order_cancel_applay_state_fall:Long, /***订单取消申请状态-已删除*/order_cancel_applay_state_delete:Long, /***用户来源*/user_source:Long, /***用户来源-ec前台*/user_source_ec_front:Long, /***用户来源-9月网前台*/user_source_9yue_front:Long, /***用户来源-ec后台*/user_source_ec_console:Long, /***用户来源-ec卖家*/user_source_ec_seller:Long, /***用户来源-支付宝*/user_source_alipay:Long, /***用户来源-新浪*/user_source_sina:Long, /***用户来源-qq*/user_source_qq:Long, /***用户来源-163*/user_source_163:Long, /***用户来源-开心网*/user_source_kaixin:Long, /***用户来源-人人网*/user_source_renren:Long, /***用户来源-淘宝*/user_source_taobao:Long, /***用户来源-拍拍*/user_source_paipai:Long, /***用户来源-红孩子*/user_source_redbaby:Long, /***用户来源-豆瓣*/user_source_douban:Long, /***用户来源-qq彩贝*/user_source_qq_caibei:Long, /***用户来源-卓越供货*/user_source_zhuoyue:Long, /***用户来源-移动端*/user_source_mobile:Long, /***用户来源-卓越*/user_source_amazon:Long, /***用户来源-匿名用户*/user_source_anonymity:Long, /***用户来源—1号店*/user_source_yihaodian:Long, /***用户来源—苏宁*/user_source_suning:Long, /***用户来源－国美库巴*/user_source_coo8:Long, /***用户来源－京东店铺*/user_source_360buy:Long, /***用户来源－当当店铺*/user_source_dangdang:Long, /***用户来源－易讯*/user_source_yixun:Long, user_source_dangdang_jit:Long, //用户来源－孔夫子user_source_kongfuzi:Long, //用户来源-微购user_source_weigou:Long, //用户来源-苏宁易购user_source_suning_yigou:Long, //用户来源-微信小店user_source_weixin:Long, /***用户来源-京东供货*/user_source_jingddong:Long, //用户来源-专业渠道-当当教育店user_source_dangdang_jyz:Long, /***用户来源-彰伟科技*/user_source_zhangwei:Long, /***店铺等级*/shop_grade:Long, /***普通店铺*/shop_grade_usual:Long, /***高级店铺*/shop_grade_super:Long, /***银行*/bank:Long, /***客户暂存款提现类型*/customer_cash_type:Long, /***客户暂存款提现类型-支付宝*/customer_cash_type_alipay:Long, /***客户暂存款提现类型-财付通*/customer_cash_type_tenpay:Long, /***客户暂存款提现类型-银行转账*/customer_cash_type_bank:Long, /***客户暂存款提现类型-邮局汇款*/customer_cash_type_post:Long, /***客户暂存款提现状态*/customer_cash_status:Long, /***客户暂存款提现状态-待处理*/customer_cash_status_new:Long, /***客户暂存款提现状态-处理中*/customer_cash_status_processing:Long, /***客户暂存款提现状态-已退款*/customer_cash_status_success:Long, /***客户暂存款提现状态-已撤销*/customer_cash_status_cancel:Long, /***客户积分类型*/customer_points_type:Long, /***客户积分类型-订单奖励*/customer_points_type_order_award:Long, /***客户积分类型-兑换礼券*/customer_points_type_present_exchange:Long, /***客户积分类型-活动奖励*/customer_points_type_activity_award:Long, /***客户积分类型-确认收货奖励*/customer_points_type_confirm_order_award:Long, /***客户积分类型-提交评论奖励*/customer_points_type_comment_award:Long, /***客户积分类型-添加喜欢奖励*/customer_points_type_favorite_award:Long, /***客户积分类型-添加收藏奖励*/customer_points_type_collect_award:Long, /***客户积分类型-退货扣减积分*/customer_points_type_return_order:Long, /***商品到货通知*/arrival:Long, /***商品降价通知*/price_reduce:Long, /***店铺栏目类型*/shop_column_type:Long, /***店铺栏目类型-热销商品栏目*/shop_column_type_hotsale:Long, /***店铺栏目类型-促销商品栏目*/shop_column_type_promotion:Long, /***店铺栏目类型-类别商品展示栏目*/shop_column_type_category:Long, /***店铺栏目类型-专题展示栏目*/shop_column_type_img:Long, /***店铺首页-广告切换*/shop_top_advert:Long, /***店铺客服类型*/shop_service_type:Long, /***店铺客服类型-qq*/shop_service_type_qq:Long, /***店铺客服类型-msn*/shop_service_type_msn:Long, /***店铺客服类型-旺旺号*/shop_service_type_wangwang:Long, /***店铺客服类型-电话*/shop_service_type_phone:Long, /***店铺客服类型-手机*/shop_service_type_mobile_phone:Long, /***订单确认类型*/order_confirm_type:Long, /***订单确认类型-系统自动确定*/order_confirm_type_system_auto:Long, /***订单确认类型-手工确定*/order_confirm_type_person:Long, /***操作类型*/operate_type:Long, /***操作类型-添加*/operate_save:Long, /***操作类型-修改*/operate_update:Long, /***操作类型-删除*/operate_delete:Long, /***团购申请状态*/group_shopping_status:Long, /***团购申请状态-审核中*/group_shopping_status_examine:Long, /***团购申请状态-通过*/group_shopping_status_pass:Long, /***团购申请状态-作废*/group_shopping_status_nullify:Long, /***投诉与咨询处理状态*/complain_info_status:Long, /***投诉与咨询处理状态-处理中*/complain_info_status_dispose:Long, /***投诉与咨询处理状态-处理完成*/complain_info_status_finish:Long, /***商品管理分级*/product_sale_managegrade:Long, /***商品管理分级-z重点商品*/product_sale_managegrade_z:Long, /***商品管理分级-r热点商品*/product_sale_managegrade_r:Long, /***商品管理分级-j分时段热销商品*/product_sale_managegrade_j:Long, /***渠道排行榜*/channel_category_top:Long, /***渠道新品榜*/channel_category_top_new:Long, /***渠道热销榜*/channel_category_top_hotsale:Long, /***订单短信类型*/sms_order_type:Long, /***订单短信整单缺货*/sms_order_stockout:Long, /***订单发货*/sms_order_delivery:Long, /***订单退货*/sms_order_return:Long, /***订单换货*/sms_order_replace:Long, /***改派快递公司*/sms_order_change_deliverycompany:Long, /***订单部分发货*/sms_order_part_delivery:Long, /***订单是否分包发货*/sms_order_split_delivery:Long, /***订单是否分仓发货*/sms_order_multi_bin:Long, /***订单拆分通知短信*/sms_split_order_message:Long, /***帐单处理状态*/bill_status:Long, /***未确认状态*/bill_unconfirmed:Long, /***已确认*/bill_confirmed:Long, /***已处理,下传sap或其他*/bill_processed:Long, /***帐单未分配完成,该状态只用bill*/bill_alloc_unfinished:Long, /***分配帐单锁定,该状态只用bill*/bill_lock:Long, /***不下传sap,起初数据*/bill_ord_data:Long, /***渠道销售*/channelsales_status:Long, /***渠道销售-已上传*/channelsales_uploaded:Long, /***渠道销售-校验成功*/channelsales_sucessful:Long, /***渠道销售-校验失败*/channelsales_faild:Long, /***渠道销售-准备下传到sap-商品销售记录*/channelsales_sap_prepare:Long, /***渠道上传销售部分下传sap*/channelsales_upload_sap_sub_done:Long, /***渠道上传销售完全下传sap*/channelsales_upload_sap_done:Long, /***渠道销售-删除*/channelsales_deleteed:Long, /***渠道销售-准备冲销*/channelsales_rollback_prepare:Long, /***渠道销售-冲销完成,未下传sap的冲销*/channelsales_rollback_dowe:Long, /***渠道销售-冲销完成,下传到sap的冲销*/channelsales_rollback_dowe_sap:Long, /***渠道商品关系导入方式*/channelproduct_rel_type:Long, /***渠道商品关系导入方式-系统导入*/channelproduct_rel_system:Long, /***渠道商品关系导入方式-人工导入*/channelproduct_rel_hand:Long, /***词典来源*/dictionary_source:Long, /***词典来源_人工录入*/dictionary_source_person:Long, /***词典来源_sina抓取*/dictionary_source_sina:Long, /***词典来源_baidu抓取*/dictionary_source_baidu:Long, /***词典来源_当当抓取*/dictionary_source_dangdang:Long, /***词典来源_文轩网抓取*/dictionary_source_winxuan:Long, /***退货数据未上架*/return_onshelf_no:Long, /***退货数据已上架*/return_onshelf_yes:Long, /***meta信息开放性*/product_meta_open:Long, /***通用meta*/product_meta_open_general:Long, /***电子书私有*/product_meta_open_ebook:Long, /***商品合并任务状态*/product_merte_status:Long, /***未合并*/product_merte_status_none:Long, /***已处理未合并*/product_merte_status_not_merge:Long, /***已合并*/product_merte_status_merge:Long, /***商品合并任务状态*/product_image_zoom:Long, /***未合并*/product_image_zoom_none:Long, /***已合并*/product_image_zoom_ok:Long, /***出错了*/product_image_zoom_err:Long, /***订单广播项*/order_broadcast:Long, /***广播项-ec状态修改*/order_broadcast_process:Long, /***广播项-收货地址修改*/order_broadcast_address:Long, /***广播项-未知的修改*/order_broadcast_unknow:Long, /***发货类型（补货模型）*/mr_delivery:Long, /***发货类型（补货模型）-团购*/mr_tuangou:Long, /***发货类型（补货模型）-零售*/mr_lingshow:Long, /***补货模型算法*/mr_mode:Long, /***定位表*/mr_fix:Long, /***老模型*/mr_mode_old:Long, /***新模型*/mr_mode_new:Long, /***mc类型*/mr_mc_type:Long, /***非特定mc类型*/mr_mc_non_specific:Long, /***特定mc类1*/mr_mc_specific_1:Long, /***特定mc类2*/mr_mc_specific_2:Long, /***冻结类型*/mr_freeze_type:Long, /***冻结类型--系统冻结510001*/mr_freeze_system:Long, /***冻结类型--人工限制510002*/mr_freeze_restrict:Long, /***冻结类型--人工冻结510003*/mr_freeze_manual:Long, /***冻结类型--人工申请补货造成冻结510004*/mr_freeze_artificial:Long, /***具有特定配送方式的权限（自提）*/delivery_demand_privilege:Long, /***商品批量停用状态*/product_stop_status_type:Long, //已上传product_stop_status_upload:Long, //已停用product_stop_status_stop:Long, /***部分释放*/product_stop_status_part_release:Long, /***完全释放*/product_stop_status_all_release:Long, /***库存占用明细状态*/stock_sales_ststus:Long, /***库存占用明细状态-占用*/stock_sales_ststus_take_up:Long, /***库存占用明细状态-释放*/stock_sales_ststus_release:Long, /***库存占用类型*/stock_sales_type:Long, /***库存占用类型-集货占用*/stock_sales_type_collect:Long, /***库存占用类型-订单占用*/stock_sales_type_order:Long, //补货类型mr_replenish_type:Long, //补货类型--系统自动补货531001mr_replenish_type_system:Long, //补货类型--人工申请补货531002mr_replenish_type_manual:Long, //退货类型return_order_transfer_type:Long, //退货类型--正常退货return_order_transfer_normal:Long, //退货类型--退货不下传（如：苏宁批量退货2014-5）return_order_transfer_none:Long, //订单集货类型order_collect_type:Long, //订单等待集货order_collect_waiting:Long, //订单正在集货order_collect_processing:Long, //订单集货发货order_collect_send:Long, //订单集货收货order_collect_receive:Long, //订单初始化状态类型order_init_type:Long, //订单等待初始化order_init_waiting:Long, //订单初始化完成order_init_complete:Long, //订单集货、dc策略类型order_strategy_type:Long, //订单集货、dc外部指定order_strategy_outer_appoint:Long, //订单集货、dc系统计算order_strategy_system_compute:Long, //订单集货、dc系统配置order_strategy_system_configure:Long, //退货订单、标签、普通退货单return_order_tag_570001:Long, //退货订单、标签、原包原退return_order_tag_570002:Long, /***根节点*/root:Long, serialversionuid:long, id:Long [PK], name:String, description:String, parent:Code #FK to(code), available:boolean, index:int, editable:boolean);
+
+employeeattach(serialversionuid:long, id:Long [PK], GeneratedName:Employee #FK to(employee), sort:Code #FK to(code), name:String, path:String, type:String, createtime:Date, down:boolean);
+
+employeebusinesscontrol(serialversionuid:long, id:Long [PK], GeneratedName:Employee #FK to(employee), createtime:Date, status:int, business:Code #FK to(code));
+
+smsmessagelog(id:Long [PK], phone:String, createtime:Date, message:String, business:Long, operator:String, status:boolean, error:String, master:String);
+
+smsordermessage(id:Long [PK], //备注remark:String, //短信类型type:Code #FK to(code), //渠道id,以分隔,如:123235channels:String, //支付类型id,以分隔,如:123235paytype:String, kindgreat:int, kindless:int, //发货类型id,以分隔,如:123235deliverytype:String, //消息内容message:String, GeneratedName:Employee #FK to(employee), enable:boolean);
+
+tag(id:Long [PK], name:String);
+
+tagitem(id:Long [PK], GeneratedName:Tag #FK to(tag), value:String, index:int);
+
+shoppingcartitem(id:Long [PK], GeneratedName:Shoppingcart #FK to(shoppingcart), GeneratedName:ProductSale #FK to(productsale), quantity:int);
+
+ebookshoppingcartitem(/***/serialversionuid:long, id:Long [PK], GeneratedName:EbookShoppingcart #FK to(ebookshoppingcart), GeneratedName:ProductSale #FK to(productsale), quantity:int);
+
+shoppingcart(id:String [PK], GeneratedName:Customer #FK to(customer), createtime:Date, usetime:Date);
+
+ebookshoppingcart(/***/serialversionuid:long, id:String [PK], GeneratedName:Customer #FK to(customer), createtime:Date, usetime:Date);
+
+channelsalessaprecord(id:Long [PK], operator:Employee #FK to(employee), uptime:Date, //输入的下传金额listprice:BigDecimal, //实际下传销售金额sales:BigDecimal, //实际下传退货金额refund:BigDecimal);
+
+channelsalesrecordstatuslog(id:Long [PK], uploadrecord:ChannelSalesUploadRecord #FK to(channelsalesuploadrecord), status:Code #FK to(code), updater:Employee #FK to(employee), uptime:Date);
+
+channeluploadhistory(serialversionuid:long, id:Long [PK], GeneratedName:Employee #FK to(employee), uploadtime:Date, total:long, filename:String);
+
+channelsalesuploadrecord(id:Long [PK], GeneratedName:Channel #FK to(channel), uploader:Employee #FK to(employee), uploadtime:Date, status:Code #FK to(code), remark:String, sysmsg:String, //上传销售码洋deliverylistprice:BigDecimal, //退货码洋refundlistprice:BigDecimal, //下传到sap销售码洋sapdeliverylistprice:BigDecimal, //上传到sap退货码洋saprefundlistprice:BigDecimal);
+
+channelsalesproduct(id:Long [PK], channelproduct:String, GeneratedName:Channel #FK to(channel), GeneratedName:ProductSale #FK to(productsale), type:Code #FK to(code), operator:Employee #FK to(employee), uptime:Date);
+
+channel(/***渠道根节点*/root:Long, /***直销-普通用户*/channel_ec:Long, channel_mobile:Long, /***供货渠道—传统团购*/channel_group_buy:Long, /***供货渠道—电商合作*/channel_group_buy_ec:Long, /***联盟*/channel_union:Long, /***自建广告联盟*/channel_union_ad:Long, /***好事者广告联盟*/channel_union_dot:Long, /***代理*/channel_agent:Long, /***好事者*/channel_rebate:Long, /***淘宝-综合*/taobao_winshare:Long, /***淘宝-管理*/taobao_manager:Long, /***淘宝-医学*/taobao_medicine:Long, /***qq网购*/qq_channel:Long, /***卓越-综合*/amazon_winshare:Long, /***拍拍-综合*/paipai_winshare:Long, /***专业渠道*/channel_professional:Long, /***综合渠道*/channel_synthetical:Long, /***一号店综合*/yihaodian_winshare:Long, /***用户来源－国美库巴*/coo8_winshare:Long, /***卓越edi*/zhuoyue_edi:Long, /***京东edi*/jingdong_edi:Long, /***苏宁edi*/suning_edi:Long, /***加盟店*/franchisee:Long, /***唐宁dc直达*/channel_tangning_dc:Long, /***供货渠道*/channel_order_settle:Long, direct_:Channel, union_:Channel, /***移动端*/mobile_:Channel, /***易迅-综合*/yixun_winshare:Long, /***综合渠道当当*/channel_id_dangdang:Long, /***综合渠道京东*/channel_id_360buy:Long, /***专业渠道-当当教育专营店*/channel_dangdang_jyz:Long, channel_map:Map<Long,String>, channel_taobao_name:String, channel_paipai_name:String, channel_amazon_name:String, channel_yihaodian_name:String, channel_qq_name:String, /***渠道cod订单*/channel_cod:String, /***当当jit*/channel_id_dangdang_jit:Long, /***京东（华东）jit*/channel_id_jingdong_jit:Long, /***亚马逊dropship*/channel_id_zhuoyue_ds:Long, /***/serialversionuid:long, id:Long [PK], name:String, type:Code #FK to(code), parent:Channel #FK to(channel), createtime:Date, usingapi:boolean, available:boolean, index:int, outofstockcancel:boolean, path:String, /***是否结算*/issettle:boolean, alias:String);
+
+channelsalesrecord(id:Long [PK], uploadrecord:ChannelSalesUploadRecord #FK to(channelsalesuploadrecord), start:Date, end:Date, channelproduct:String, GeneratedName:ProductSale #FK to(productsale), sales:int, refund:int, status:Code #FK to(code));
+
+release(/***/serialversionuid:long, id:Long [PK], url:String, GeneratedName:Survey #FK to(survey));
+
+answer(/***/serialversionuid:long, id:Long [PK], GeneratedName:Client #FK to(client), GeneratedName:Survey #FK to(survey), GeneratedName:Item #FK to(item), value:SelectValue #FK to(selectvalue), submit:String);
+
+survey(/***/serialversionuid:long, id:Long [PK], description:String, title:String);
+
+item(type_separator:String, type_text:String, type_select:String, /***/serialversionuid:long, id:Long [PK], GeneratedName:Content, GeneratedName:Survey #FK to(survey), index:int);
+
+select(/***/serialversionuid:long, //竖向direction_vertical:int, //橫向direction_horizontal:int, id:Long [PK], title:String, type:String, maxselect:int, minselect:int, direction:int);
+
+selectvalue(type_input:int, type_no_input:int, /***/serialversionuid:long, id:Long [PK], GeneratedName:Select #FK to(select), value:String, type:int, maxinput:int, mininput:int, index:int);
+
+client(/***/serialversionuid:long, id:Long [PK], start:Date, end:Date, ip:String);
+
+surveytext(type_input:String, type_textarea:String, /***/serialversionuid:long, id:Long [PK], title:String, type:String, maxlength:int, minlength:int);
+
+separator(/***/serialversionuid:long, id:Long [PK], title:String, type:int);
+
+versioninfo(/***/serialversionuid:long, id:Long [PK], version:String, system:int, updateaddress:String, updateinfo:String, creator:Employee #FK to(employee), updator:Employee #FK to(employee), createtime:Date, uptime:Date, latest:boolean);
+
+clientinfo(id:long [PK], sign:String, name:String, size:String, appversion:String, system:int, systemversion:String, network:String, operators:String, createtime:Date, needupdate:boolean);
+
+refundlog(error:Integer, info:Integer, warn:Integer, id:Long [PK], refundid:String, createtime:Date, message:String, type:Integer, payment:String, host:String);
+
+refundmessage(id:Long [PK], name:String, message:String, GeneratedName:Payment #FK to(payment), available:boolean, createtime:Date, GeneratedName:Employee #FK to(employee));
+
+refundcredential(/***退款状态-等待系统退款*/status_sys_wait:Long, /***退款状态-等待第三方退款*/status_other_wait:Long, /***退款状态-退款成功*/status_success:Long, /***退款状态-退款失败*/status_failed:Long, /***退款状态-作废*/status_disuse:Long, /***退款状态*/status:Long, id:String [PK], GeneratedName:Payment #FK to(payment), GeneratedName:Customer #FK to(customer), outerid:String, GeneratedName:Order #FK to(order), money:BigDecimal, refundtime:Date, createtime:Date, status:Code #FK to(code), message:String, operator:User #FK to(user), version:int, refundfreemoney:BigDecimal, processstatus:Code #FK to(code), parent:RefundCredential #FK to(refundcredential));
+
+refundfailed(error:Integer, info:Integer, warn:Integer, id:Long [PK], refundid:String, createtime:Date, message:String, type:Integer, payment:String, host:String);
+
+payment(/***货到付款*/cod:Long, /***现金支付*/cash:Long, /***暂存款*/account:Long, /***邮局汇款*/post:Long, /***银行转账*/bank:Long, /***礼品卡*/gift_card:Long, /***礼券*/coupon:Long, /***渠道支付*/channel:Long, /***帐期支付*/off_period:Long, /***支付宝*/alipay:Long, /***中国银联*/china_pay:Long, /***财付通*/ten_pay:Long, /***手机平台支付*/ali_wap_pay:Long, /***银联手机app应用支付*/china_pay_mobile:Long, serialversionuid:long, id:Long [PK], name:String, description:String, logo:String, available:boolean, sort:int, show:boolean, allowrefund:boolean, refundterm:int, refundfee:BigDecimal, refundfeetype:Code #FK to(code), refundfeemin:BigDecimal, payterm:int, payfee:BigDecimal, payfeetype:Code #FK to(code), payfeemin:BigDecimal, type:Code #FK to(code));
+
+paymentcredential(serialversionuid:long, id:Long [PK], GeneratedName:Customer #FK to(customer), GeneratedName:Payment #FK to(payment), paytime:Date, money:BigDecimal, outerid:String, payer:String, operator:User #FK to(user), remark:String);
+
+presentbatch(/***补差额礼券批次id*/reussue_present_id:long, /***礼券兑换批次id*/exchange_present_id:long, serialversionuid:long, GeneratedName:Log, id:Long [PK], /***礼券可分发礼券数量*/num:Integer, creatednum:Integer, activenum:Integer, usednum:Integer, paynum:Integer, value:BigDecimal, general:boolean, generalcode:String, orderbaseamount:BigDecimal, producttype:String, rebate:boolean, ploy:boolean, presentstart:Date, presentend:Date, presenteffectiveday:Integer, maxquantity:Integer, state:Code #FK to(code), batchtitle:String, description:String, createuser:Employee #FK to(employee), createtime:Date, assessor:Employee #FK to(employee), assesstime:Date);
+
+presentexchange(serialversionuid:long, id:Long [PK], value:BigDecimal, pos:int, image:String);
+
+presentlog(serialversionuid:long, id:Long [PK], GeneratedName:Present #FK to(present), uptime:Date, state:Code #FK to(code), GeneratedName:Order #FK to(order), operator:User #FK to(user));
+
+present(serialversionuid:long, id:Long [PK], batch:PresentBatch #FK to(presentbatch), code:String, value:BigDecimal, start:Date, end:Date, GeneratedName:Customer #FK to(customer), state:Code #FK to(code), origin:Code #FK to(code), origin:Order #FK to(order), GeneratedName:Order #FK to(order), paytime:Date, realpay:BigDecimal, version:int);
+
+keenness(id:Long [PK], sensitive:String, placid:String, available:boolean, GeneratedName:Content);
+
+billitemlog(id:Long [PK], GeneratedName:Bill #FK to(bill), settlementquantity:int, refoundquantity:int, GeneratedName:OrderItem #FK to(orderitem), log:String, uptime:Date, GeneratedName:Employee #FK to(employee));
+
+billitem(id:Long [PK], GeneratedName:Bill #FK to(bill), GeneratedName:OrderItem #FK to(orderitem), GeneratedName:BillItemStatistics #FK to(billitemstatistics), //结算数量settlementquantity:Integer, //退货数量(退款)refoundquantity:Integer, //当前历史结算数量historysettlement:Integer, //当前历史退货数量historyrefound:Integer, status:Code #FK to(code));
+
+billaccount(id:Long [PK], name:String, //余额balance:BigDecimal, //容差tolerance:BigDecimal, //上次修改人last:Employee #FK to(employee));
+
+bill(id:Long [PK], GeneratedName:BillAccount #FK to(billaccount), list:String, invoice:String, allotment:BigDecimal, settlement:BigDecimal, refound:BigDecimal, balance:BigDecimal, lastbalance:BigDecimal, uptime:Date, GeneratedName:Employee #FK to(employee), status:Code #FK to(code), createtime:Date, endtime:Date, last:Employee #FK to(employee));
+
+billreturnorderitem(id:Long [PK], GeneratedName:ReturnOrderItem #FK to(returnorderitem), GeneratedName:ReturnOrder #FK to(returnorder), GeneratedName:OrderItem #FK to(orderitem), status:Code #FK to(code), realquantity:int);
+
+billitemstatistics(orderitem:Long [PK], //发货数量deliveryquantity:Integer, //结算数量//退货数量(退款)settlementquantity:Integer, refoundquantity:Integer, GeneratedName:Channel #FK to(channel));
+
+billreceiptrecord(id:Long [PK], GeneratedName:Bill #FK to(bill), money:BigDecimal, uptime:Date);
+
+exceptionlog(/***/serialversionuid:long, id:Long [PK], source:String, object:byte, message:String, host:String, useragent:String, accept:String, language:String, charset:String, cookie:String, modified:String, method:String, requesturl:String, ip:String, time:Date);
+
+promotionorderrule(serialversionuid:long, id:Long [PK], GeneratedName:Promotion #FK to(promotion), minamount:BigDecimal, maxamount:BigDecimal, amount:BigDecimal, GeneratedName:Area #FK to(area), deliveryfee:BigDecimal, remitdeliveryfee:Boolean, GeneratedName:PresentBatch #FK to(presentbatch), presentnum:Integer);
+
+promotionregisterrule(serialversionuid:long, id:Long [PK], GeneratedName:Promotion #FK to(promotion), GeneratedName:PresentBatch #FK to(presentbatch), presentnum:Integer);
+
+promotiondata(id:Long [PK], outerid:String, ecid:Long, productname:String, listprice:BigDecimal, saleprice:BigDecimal, discount:BigDecimal, producturl:String, buylink:String, favoritelink:String, weeksales:Integer, monthsales:Integer, totalsales:Integer, imgurl:String, introduction:String, index:Integer, inventory:Integer, createtime:Date, operation:Long, venuetree:PromotionDataTree #FK to(Data));
+
+promotiontag(id:Long [PK], url:String, rank:int, type:Code #FK to(code), available:boolean, createtime:Date, GeneratedName:Employee #FK to(employee));
+
+promotionlog(serialversionuid:long, id:Long [PK], GeneratedName:Promotion #FK to(promotion), status:Code #FK to(code), updateuser:Employee #FK to(employee), uptime:Date);
+
+promotionproductrule(serialversionuid:long, id:Long [PK], GeneratedName:Promotion #FK to(promotion), GeneratedName:ProductSale #FK to(productsale), saleprice:BigDecimal, producttype:Code #FK to(code), productnum:Integer, GeneratedName:Category #FK to(category), categorydistype:Code #FK to(code), categorydiscount:Integer, productnums:Integer);
+
+promotion(/***商品类型活动*/overtype_product:Integer, /***订单类型活动*/overtype_order:Integer, /***注册送券活动*/overtype_register:Integer, /***商品和订单类型活动*/overtype_product_order:Integer, comma:String, order_types:Long, priority_map:Map<Long,Integer>, /***/serialversionuid:long, id:Long [PK], title:String, advert:String, advertimage:String, adverturl:String, effectivetime:Integer, type:Code #FK to(code), description:String, status:Code #FK to(code), start:Date, end:Date, shops:String, replication:boolean, manner:Code #FK to(code), effectivestate:Code #FK to(code), createuser:Employee #FK to(employee), createtime:Date, assessor:Employee #FK to(employee), assesstime:Date);
+
+promotiondatatree(id:Long [PK], name:String, index:int, parent:PromotionDataTree #FK to(Data));
+
+stockdocuments(serialversionuid:long, id:long [PK], /***凭证号,标示外部单据唯一的外部单据号,销售订单为订单号.credence+dc+productsale+type唯一约束*/credence:String, /***仓储地址*/dc:long, /***商品编码*/productsale:long, type:EnumStockDocumentsType, /***库存量,包括实物和虚拟.只传大于等于0的整数*/stock:int, /***占用数量*/occupancy:int, createtime:Date, remark:String, verify:short, verifytime:Date);
+
+enumeration(id:Long [PK], name:String, sql:String, available:boolean, GeneratedName:DataSource #FK to(Data));
+
+employeegridlog(serialversionuid:long, id:Long [PK], GeneratedName:Grid #FK to(grid), GeneratedName:Employee #FK to(employee), createtime:Date);
+
+grid(id:Long [PK], name:String, letter:String, title:String, GeneratedName:DataSource #FK to(Data), paged:boolean, pagesize:int, exported:boolean, exportsize:int, mainsql:String, ordersql:String, aggregatesql:String);
+
+condition(/***文本框*/control_text:short, /***文本区域*/control_text_area:short, /***下拉列表*/control_select:short, /***单选按钮*/control_radio:short, /***复选框*/control_check_box:short, /***日期选择器*/control_date_picker:short, /***日期时间选择器*/control_date_time_picker:short, id:Long [PK], GeneratedName:Grid #FK to(grid), name:String, parametername:String, type:short, control:short, GeneratedName:Enumeration #FK to(enumeration), allownull:boolean, defaultvalue:String, index:int);
+
+reportlog(serialversionuid:long, id:Long [PK], GeneratedName:Grid #FK to(grid), GeneratedName:Employee #FK to(employee), createtime:Date, path:String, errormessage:String);
+
+column(id:Long [PK], GeneratedName:Grid #FK to(grid), name:String, value:String, width:String, order:boolean, ascsql:String, descsql:String, index:int, aggregated:boolean);
+
+datasource(id:Long [PK], name:String, classname:String, url:String, username:String, password:String, available:boolean);
+
+mygrid(/***/serialversionuid:long, id:Long [PK], employee:Long, gridlist:Long);
+
+reportlogcolumn(serialversionuid:long, id:Long [PK], GeneratedName:ReportLog #FK to(reportlog), columnname:String, columnvalue:String);
+
+beat(serialversionuid:long, id:Long [PK], /***应用名称*/app:String, /***应用键*/appkey:String, /***应用所在的主机名称*/hostname:String, /***发送短消息的次数*/threshold:int, /***超时时间*/timeout:int, /***更新时间*/uptime:Date, /***电话号码*/phone:String, /***启用或禁用*@return*/available:boolean);
+
+shopcolumnitem(id:long [PK], GeneratedName:ShopColumn #FK to(shopcolumn), GeneratedName:ProductSale #FK to(productsale), img:String, href:String, index:Integer, available:boolean);
+
+shop(/***文轩网shop编号*/winxuan_shop:Long, scope_book:String, scope_vedio:String, scope_goods:String, serialversionuid:long, logo_url:String, blank_logo:String, zero:long, id:Long [PK], shopname:String, businessscope:String, companyname:String, servicetel:String, address:String, zipcode:String, bank:String, storage:String, bankacount:String, buyarea:String, deliveryfee:BigDecimal, state:Code #FK to(code), grade:Code #FK to(code), logo:String, end:Date, create:Date, createuser:Employee #FK to(employee), active:Date, activeuser:Employee #FK to(employee));
+
+proshop(id:Long [PK], url:String, description:String, name:String, template:String, available:boolean, index:int);
+
+shopcategory(/***/serialversionuid:long, /***用户独立节点,店铺类别树初始化用*/independent_node:String, id:Long [PK], maintainid:Long, name:String, imgurl:String, available:boolean, productnum:Long, parent:ShopCategory #FK to(shopcategory), index:int, GeneratedName:Shop #FK to(shop));
+
+product_sale_shopcategory(shopcategory:ShopCategory [PK] #FK to ShopCategory,productsale:set<productsale> [PK] #FK to set<productsale>);
+
+shopusualcategory(/***/serialversionuid:long, id:Long [PK], GeneratedName:Shop #FK to(shop), GeneratedName:Category #FK to(category));
+
+shopservicetime(/***/serialversionuid:long, id:Long [PK], GeneratedName:Shop #FK to(shop), weekday:int, weekdaystarthour:int, weekdayendhour:int);
+
+shopcolumn(/***/serialversionuid:long, id:long [PK], GeneratedName:Shop #FK to(shop), type:Code #FK to(code), name:String, GeneratedName:ShopCategory #FK to(shopcategory), productnum:long, index:int);
+
+shoplog(/***/serialversionuid:long, id:Long [PK], GeneratedName:Shop #FK to(shop), state:Code #FK to(code), up:Date, update:User #FK to(user));
+
+shopserviceno(/***/serialversionuid:long, id:Long [PK], GeneratedName:Shop #FK to(shop), type:Code #FK to(code), serviceno:String);
+
+resourcegroup(/***/serialversionuid:long, id:Long [PK], code:String, value:String, description:String, createtime:Date);
+
+resource(/***/serialversionuid:long, id:Long [PK], code:String, value:String, description:String, createtime:Date);
+
+resource_group_relation(resource:Resource [PK] #FK to Resource,resourcegroup:set<resourcegroup> [PK] #FK to set<resourcegroup>);
+
+deliveryinfo(serialversionuid:long, id:Long [PK], GeneratedName:DeliveryType #FK to(deliverytype), GeneratedName:Area #FK to(area), deliveryfeetype:Code #FK to(code), deliveryfeerule:String, description:String, dc:Code #FK to(code), available:boolean);
+
+deliverycompany(/***成都物流中心*/chengdu_center:Long, /***/serialversionuid:long, id:Long [PK], company:String, description:String, available:boolean, sort:int, code:String);
+
+deliverytype(/***快递*/express:Long, /***自提*/diy:Long, /***平邮*/flat_post:Long, /***ems*/ems:Long, /***平邮小包*/flat_post_small:Long, serialversionuid:long, id:Long [PK], name:String, available:boolean, sort:int);
+
+booktopcategory(//销售榜单top_type_sale:int, //新书榜单top_type_new:int, //图书分类category_book:Long, /***/serialversionuid:long, id:Long [PK], /***分类*/:Category #FK to(category), /***父分类*/parent:BookTopCategory #FK to(booktopcategory), /***该分类下一周动销数*/num:int, /***榜单url地址*/url:String, /***榜单类型*/toptype:int);
+
+booktopproductsale(//近一周time_type_week:int, //近一月top_type_one_month:int, //近三月top_type_three_month:int, //头一年top_type_one_year:int, //今年top_type_this_year:int, /***/serialversionuid:long, id:Long [PK], /***榜单分类*/:BookTopCategory #FK to(booktopcategory), /***商品*/:ProductSale #FK to(productsale), /***销量*/sale:int, /***时间类型*/timetype:int);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

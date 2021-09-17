@@ -1,0 +1,11 @@
+
+admin(email:String [PK], adminname:String, password:String);
+
+studentstat(id:int [PK], javamarks:int, sqlmarks:int, jquerymarks:int, student:StudentDetail #FK to(studentdetail));
+
+studentdetail(userid:int [PK], fname:String, lname:String, email:String, password:String, dob:String, state:String, city:String, qualification:String, mobile:String, stats:StudentStat #FK to(studentstat));
+
+quiz(qid:int [PK], topic:String, question:String, optiona:String, optionb:String, optionc:String, optiond:String, correctans:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

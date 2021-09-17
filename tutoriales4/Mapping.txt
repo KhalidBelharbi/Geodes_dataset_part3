@@ -1,0 +1,5 @@
+ClassDiagram.Class>> JpaOrder =>=>=> RelationalSchema.Table>> jpaorder;
+ClassDiagram.Attribut>> JpaOrder.currencyunit:String =>=>=> RelationalSchema.Column>> jpaorder.currencyunit;
+ClassDiagram.Attribut>> JpaOrder.id:Long =>=>=> RelationalSchema.Column>> jpaorder.id PRIMARY KEY;
+ClassDiagram.Attribut>> JpaOrder.orderlines:List<JpaOrderLine> =>=>=> RelationalSchema.Column>> jpaorder.orderlines;
+ClassDiagram.Attribut>> JpaOrder.totalcost:BigDecimal =>=>=> RelationalSchema.Column>> jpaorder.totalcost;

@@ -1,0 +1,13 @@
+
+employeespeciality(employeeid:int [PK], specialityid:int [PK]);
+
+address(id:int [PK], street:String, city:String, state:String, country:String, zipcode:String, GeneratedName:Employee #FK to(employee));
+
+speciality(id:int [PK], name:String);
+
+employee(id:int [PK], firstname:String, lastname:String, email:String, phonenumber:long, salary:long, GeneratedName:Department #FK to(department), GeneratedName:Address #FK to(address));
+
+department(id:int [PK], name:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

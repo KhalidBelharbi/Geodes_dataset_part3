@@ -1,0 +1,23 @@
+
+person(id:Long [PK], name:String);
+
+bar(GeneratedName:Logger, id:int [PK], name:String, operation:String, timestamp:long, createddate:long, modifieddate:long, createdby:String, modifiedby:String);
+
+foo(id:long [PK], name:String, GeneratedName:Bar #FK to(bar));
+
+parent(id:long [PK], GeneratedName:Child #FK to(child));
+
+child(id:long [PK], GeneratedName:Parent #FK to(parent));
+
+orderdetail(serialversionuid:long, orderid:Long [PK]);
+
+usereager(serialversionuid:long, userid:Long [PK]);
+
+userlazy(serialversionuid:long, userid:Long [PK]);
+
+items(id:long [PK], GeneratedName:Cart #FK to(cart));
+
+cart(id:long [PK]);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

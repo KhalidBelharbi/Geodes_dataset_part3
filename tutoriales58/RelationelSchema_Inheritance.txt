@@ -1,0 +1,29 @@
+
+comment(id:Long [PK], reply:String, GeneratedName:Post #FK to(post), GeneratedName:User #FK to(user));
+
+post(id:Long [PK], subject:String, GeneratedName:User #FK to(user));
+
+user(id:Long [PK], name:String, email:String);
+
+student(id:Long [PK], name:String, birth:Date, GeneratedName:Gender);
+
+course(id:int [PK], name:String);
+
+jpa22datetimeentity(id:Long [PK], //java.sqltypessql:Time, sql:Date, sql:Timestamp, //java.utiltypesutiltime:java.util.Date, utildate:java.util.Date, utiltimestamp:java.util.Date, //time:Calendar, date:Calendar, timestamp:Calendar, //java.timetypes:LocalTime, GeneratedName:LocalDate, GeneratedName:LocalDateTime, GeneratedName:OffsetTime, GeneratedName:OffsetDateTime);
+
+scheduledday(id:Long [PK], employeeid:Long, dayofweek:String);
+
+employee(id:Long [PK], name:String);
+
+message(id:Long [PK], text:String);
+
+car(id:long [PK], model:String, year:Integer);
+
+article(id:int [PK], title:String, GeneratedName:Status, GeneratedName:Type, priorityvalue:int, GeneratedName:Category);
+
+account(accountnumber:String [PK], accounttype:String [PK], description:String);
+
+book(GeneratedName:BookId, description:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

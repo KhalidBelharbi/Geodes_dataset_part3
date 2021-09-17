@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="tasktrigger" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="status" type="xs:anyType" />
+        <xs:element name="triggername" type="xs:string" />
+        <xs:element name="triggergroup" type="xs:string" />
+        <xs:element name="jobname" type="xs:string" />
+        <xs:element name="jobgroup" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="nextfiretime" type="xs:long" />
+        <xs:element name="prevfiretime" type="xs:long" />
+        <xs:element name="state" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mdmattachment" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="attachmentid" type="xs:long" />
+        <xs:element name="merchid" type="xs:long" />
+        <xs:element name="attachmenttype" type="xs:string" />
+        <xs:element name="filename" type="xs:string" />
+        <xs:element name="fileexttype" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="content" type="xs:anyType" />
+        <xs:element name="creator" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookchapter" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***章节标题*/chaptertitle" type="xs:string" />
+        <xs:element name="/***书*/bookid" type="xs:long" />
+        <xs:element name="/***开始页号*/beginpage" type="xs:anyType" />
+        <xs:element name="/***结束页号*/endpage" type="xs:anyType" />
+        <xs:element name="/***级别*/level" type="xs:anyType" />
+        <xs:element name="/***章节顺序*/chaptersequence" type="xs:anyType" />
+        <xs:element name="/***父章节id*/parentchapterid" type="xs:long" />
+        <xs:element name="/***章节索引*/chapterindex" type="xs:string" />
+        <xs:element name="/***锚点*/anchor" type="xs:anyType" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="/***0未删除,1已删除*/deleteflag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendor" >
+      <xs:sequence>
+        <xs:element name="vendorid" type="xs:long" />
+        <xs:element name="/***供应商名称*/vendorname" type="xs:string" />
+        <xs:element name="vendorcode" type="xs:string" />
+        <xs:element name="vendorintroduction" type="xs:string" />
+        <xs:element name="vendoraddress1" type="xs:string" />
+        <xs:element name="vendorcontact1" type="xs:string" />
+        <xs:element name="vendortelephone1" type="xs:string" />
+        <xs:element name="vendoremail1" type="xs:string" />
+        <xs:element name="vendorcontact2" type="xs:string" />
+        <xs:element name="vendortelephone2" type="xs:string" />
+        <xs:element name="vendoremail2" type="xs:string" />
+        <xs:element name="vendorbank" type="xs:string" />
+        <xs:element name="vendorbankaccount" type="xs:string" />
+        <xs:element name="vendorpublictype" type="xs:long" />
+        <xs:element name="assignpercent" type="xs:anyType" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="deleteflag" type="xs:long" />
+        <xs:element name="//vendor_simple_namesimplename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productprocessitem" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="adminuserid" type="xs:long" />
+        <xs:element name="//用户类型,1后台管理用户,2供应商后台管理用户usertype" type="xs:anyType" />
+        <xs:element name="productid" type="xs:long" />
+        <xs:element name="bookid" type="xs:long" />
+        <xs:element name="/***操作标志,0上传文件,1编辑信息,2已提交申请审核,3审核未通过,4审核通过,5上架,6下架,7冻结,8解除冻结,9删除,10恢复删除*/flag" type="xs:anyType" />
+        <xs:element name="//操作标志描述flagdescription" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="//0未删除,1已删除deleteflag" type="xs:anyType" />
+        <xs:element name="//系统码表systemcodeid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infrancebookcategory" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***0:有效；1：无效*/isactive" type="xs:anyType" />
+        <xs:element name="/***图书分类*/categoryid" type="xs:long" />
+        <xs:element name="/***中图法分类*/infrancecategoryid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eproduct" >
+      <xs:sequence>
+        <xs:element name="/***商品id*/productid" type="xs:long" />
+        <xs:element name="/***商品名称*/productname" type="xs:string" />
+        <xs:element name="/***商品描述*/productdescription" type="xs:string" />
+        <xs:element name="/***实体类型1:书2:包月5:方正*/producttype" type="xs:anyType" />
+        <xs:element name="/***是否可用:1:上架；0下架。*/isvalid" type="xs:anyType" />
+        <xs:element name="/***商品链接,如果有商品链接跳转到商品链接,没有则跳转到商品详细页面*/productlink" type="xs:string" />
+        <xs:element name="/***供应商商品分成比例*/assignpercent" type="xs:double" />
+        <xs:element name="/***商品封面*/productcover" type="xs:string" />
+        <xs:element name="/***数据创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/***数据创建人*/createby" type="xs:string" />
+        <xs:element name="/***数据更改时间*/uptime" type="xs:dateTime" />
+        <xs:element name="/***数据更改人*/updateby" type="xs:string" />
+        <xs:element name="/***0:未删除1:已删除*/deleteflag" type="xs:anyType" />
+        <xs:element name="/***0:未冻结1:已冻结*/isfrozen" type="xs:anyType" />
+        <xs:element name="/***上架时间*/validtime" type="xs:dateTime" />
+        <xs:element name="/***上架人*/validadminuserid" type="xs:long" />
+        <xs:element name="/***下架时间*/invalidtime" type="xs:dateTime" />
+        <xs:element name="/***下架人*/invalidadminuserid" type="xs:long" />
+        <xs:element name="/***下架原因*/invalidreason" type="xs:long" />
+        <xs:element name="/***下架原因描述*/invalidreasondescription" type="xs:string" />
+        <xs:element name="/***解冻时间*/unfrozentime" type="xs:dateTime" />
+        <xs:element name="/***解冻人*/unfrozenadminuserid" type="xs:long" />
+        <xs:element name="/***冻结时间*/frozentime" type="xs:dateTime" />
+        <xs:element name="/***冻结人*/frozenadminuserid" type="xs:long" />
+        <xs:element name="/***冻结原因*/frozenreason" type="xs:long" />
+        <xs:element name="/***冻结原因描述*/frozenreasondescription" type="xs:string" />
+        <xs:element name="/***恢复删除时间*/undeletetime" type="xs:dateTime" />
+        <xs:element name="/***恢复删除人*/undeleteadminuserid" type="xs:long" />
+        <xs:element name="/***删除时间*/deletetime" type="xs:dateTime" />
+        <xs:element name="/***删除人*/deleteadminuserid" type="xs:long" />
+        <xs:element name="/***删除原因*/deletereason" type="xs:long" />
+        <xs:element name="/***删除原因描述*/deletereasondescription" type="xs:string" />
+        <xs:element name="/***书的数量*/bookcount" type="xs:anyType" />
+        <xs:element name="/***销售数据*/sellcount" type="xs:long" />
+        <xs:element name="/***供应商产品原价*/price" type="xs:anyType" />
+        <xs:element name="/***九月网定价*/saleprice" type="xs:anyType" />
+        <xs:element name="/***支付给供应商的价格*/payforprice" type="xs:anyType" />
+        <xs:element name="/***定价时间*/create" type="xs:dateTime" />
+        <xs:element name="/***百分比，定价人员录入,自动生成销售价" type="xs:anyType" />
+        <xs:element name="/***包分比*/packagepercent" type="xs:anyType" />
+        <xs:element name="/***定价人*/salesman" type="xs:long" />
+        <xs:element name="/***原价(最基础原价，不会修改)*/costprice" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businesslog" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***操作类型：1：入库2:图书入库*/programtype" type="xs:anyType" />
+        <xs:element name="/***图书id*/businessid" type="xs:string" />
+        <xs:element name="/***操作类型标识：2:图书入库*/programtag" type="xs:anyType" />
+        <xs:element name="/***相关关键字:如文件名*/keyword" type="xs:string" />
+        <xs:element name="/***描述*/discription" type="xs:string" />
+        <xs:element name="/***错误码*/errorcode" type="xs:string" />
+        <xs:element name="/***步骤码*/stepcode" type="xs:anyType" />
+        <xs:element name="/***结果状态:1:成功；2：失败*/resultstatus" type="xs:anyType" />
+        <xs:element name="/***进库时间*/create" type="xs:dateTime" />
+        <xs:element name="statuscode" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infrancecategory" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***代码*/code" type="xs:string" />
+        <xs:element name="/***中文名*/name" type="xs:string" />
+        <xs:element name="/***0:未删除；1：删除*/deleteflag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookpreface" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***图书扩展信息类型:1前言2序3后记*/reftype" type="xs:anyType" />
+        <xs:element name="/***参照id(图书id)*/refbookid" type="xs:long" />
+        <xs:element name="/***标题*/refname" type="xs:string" />
+        <xs:element name="/***内容*/content" type="xs:string" />
+        <xs:element name="/***序作者*/author" type="xs:string" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="up" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="/***0:未删除；1：删除*/deleteflag" type="xs:anyType" />
+        <xs:element name="/***序备注*/remark" type="xs:string" />
+        <xs:element name="/***图书id*/bookid" type="xs:long" />
+        <xs:element name="/***序号*/quence" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookchange" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="bookid" type="xs:long" />
+        <xs:element name="productid" type="xs:long" />
+        <xs:element name="author" type="xs:string" />
+        <xs:element name="bookname" type="xs:string" />
+        <xs:element name="isbn" type="xs:string" />
+        <xs:element name="publishername" type="xs:string" />
+        <xs:element name="publish" type="xs:dateTime" />
+        <xs:element name="publishversion" type="xs:string" />
+        <xs:element name="printedcount" type="xs:anyType" />
+        <xs:element name="printed" type="xs:dateTime" />
+        <xs:element name="wordcount" type="xs:string" />
+        <xs:element name="pagecount" type="xs:anyType" />
+        <xs:element name="printedquantity" type="xs:anyType" />
+        <xs:element name="folio" type="xs:string" />
+        <xs:element name="papermaterial" type="xs:string" />
+        <xs:element name="introduction" type="xs:string" />
+        <xs:element name="authorintroduction" type="xs:string" />
+        <xs:element name="editorcomment" type="xs:string" />
+        <xs:element name="tableofcontents" type="xs:string" />
+        <xs:element name="paperprice" type="xs:anyType" />
+        <xs:element name="previewpagerange" type="xs:string" />
+        <xs:element name="hasepub" type="xs:anyType" />
+        <xs:element name="isfree" type="xs:anyType" />
+        <xs:element name="vendorid" type="xs:long" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="filesize" type="xs:long" />
+        <xs:element name="librarycategorycode" type="xs:string" />
+        <xs:element name="publishercode" type="xs:string" />
+        <xs:element name="hascover" type="xs:anyType" />
+        <xs:element name="storeflag" type="xs:anyType" />
+        <xs:element name="bambookencflag" type="xs:anyType" />
+        <xs:element name="ebookencflag" type="xs:anyType" />
+        <xs:element name="winflag" type="xs:anyType" />
+        <xs:element name="elibflag" type="xs:anyType" />
+        <xs:element name="saleprice" type="xs:anyType" />
+        <xs:element name="category" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="publisher" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//出版社名称publishername" type="xs:string" />
+        <xs:element name="//出版社代码publishercode" type="xs:string" />
+        <xs:element name="//出版社全称publisherfullname" type="xs:string" />
+        <xs:element name="//出版社简介publisherintroduction" type="xs:string" />
+        <xs:element name="//出版社地址publisheraddress" type="xs:string" />
+        <xs:element name="//出版社邮编publisherzipcode" type="xs:string" />
+        <xs:element name="//出版社电话publishertelephone" type="xs:string" />
+        <xs:element name="//出版社传真publisherfax" type="xs:string" />
+        <xs:element name="//出版社邮箱publisheremail" type="xs:string" />
+        <xs:element name="//出版社网址publisherwebsite" type="xs:string" />
+        <xs:element name="//出版社类型,1出版社,2个人publishertype" type="xs:anyType" />
+        <xs:element name="//createby" type="xs:string" />
+        <xs:element name="//createtime" type="xs:dateTime" />
+        <xs:element name="//updateby" type="xs:string" />
+        <xs:element name="//uptime" type="xs:dateTime" />
+        <xs:element name="//deleteflag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="book" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="/***图书id*///book_idid" type="xs:long" />
+        <xs:element name="/***书名*///book_namebookname" type="xs:string" />
+        <xs:element name="/***作者*///authorauthor" type="xs:string" />
+        <xs:element name="/***出版社id*///publisher_idpublisherid" type="xs:long" />
+        <xs:element name="/***出版社名称*///publisher_namepublishername" type="xs:string" />
+        <xs:element name="/***出版日期*///publish_publish" type="xs:dateTime" />
+        <xs:element name="/***版次*///publish_versionpublishversion" type="xs:string" />
+        <xs:element name="/***印次*///printed_countprintedcount" type="xs:anyType" />
+        <xs:element name="/***印刷时间*///printed_printed" type="xs:dateTime" />
+        <xs:element name="/***isbn*///isbn" type="xs:string" />
+        <xs:element name="/***字数*///word_countwordcount" type="xs:string" />
+        <xs:element name="/***实际页数*///fact_page_countfactpagecount" type="xs:anyType" />
+        <xs:element name="/***电子书页数*///page_countpagecount" type="xs:anyType" />
+        <xs:element name="/***章节数量*///chapter_countchaptercount" type="xs:anyType" />
+        <xs:element name="/***印刷数量*///printed_quantityprintedquantity" type="xs:anyType" />
+        <xs:element name="/***开本*///foliofolio" type="xs:string" />
+        <xs:element name="/***纸张*///paper_materialpapermaterial" type="xs:string" />
+        <xs:element name="/***包装*///packpack" type="xs:string" />
+        <xs:element name="/***简介*///introductionintroduction" type="xs:string" />
+        <xs:element name="/***作者简介*///author_introductionauthorintroduction" type="xs:string" />
+        <xs:element name="/***编辑评论*///editor_commenteditorcomment" type="xs:string" />
+        <xs:element name="/***目录*///table_of_contentstableofcontents" type="xs:string" />
+        <xs:element name="/***标签*///tagstags" type="xs:string" />
+        <xs:element name="/***纸质书价格*///paper_pricepaperprice" type="xs:anyType" />
+        <xs:element name="/***申请与审核,1未提交申请,2已提交申请,3审核未通过,4审核通过*///flagflag" type="xs:anyType" />
+        <xs:element name="/***未通过审核原因*///unpass_reasonunpassreason" type="xs:string" />
+        <xs:element name="/***转换文件*///convert_fileconvertfile" type="xs:string" />
+        <xs:element name="/***试读页范围*///preview_page_rangepreviewpagerange" type="xs:string" />
+        <xs:element name="/***是否可以包月*///is_can_pay_monthlyiscanpaymonthly" type="xs:anyType" />
+        <xs:element name="/***是否免费1:免费；0付费*///is_freeisfree" type="xs:anyType" />
+        <xs:element name="/***是否受最高限价限制*///is_limit_highest_priceislimithighestprice" type="xs:anyType" />
+        <xs:element name="/***纸质书id*///paper_book_idpaperbookid" type="xs:string" />
+        <xs:element name="/***授权开始日期*///licence_start_licencestart" type="xs:dateTime" />
+        <xs:element name="/***授权结束日期*///licence_end_licenceend" type="xs:dateTime" />
+        <xs:element name="/***是否专有授权*///is_special_licenceisspeciallicence" type="xs:anyType" />
+        <xs:element name="/***预计提交日期*///expect_submit_expectsubmit" type="xs:dateTime" />
+        <xs:element name="/***供应商id*///vendor_idvendorid" type="xs:long" />
+        <xs:element name="//create_timecreatetime" type="xs:dateTime" />
+        <xs:element name="//create_bycreateby" type="xs:string" />
+        <xs:element name="//up_timeuptime" type="xs:dateTime" />
+        <xs:element name="//update_byupdateby" type="xs:string" />
+        <xs:element name="/***0未删除,1已删除*///delete_flagdeleteflag" type="xs:anyType" />
+        <xs:element name="/***主数据mc分类*///mccodemccode" type="xs:string" />
+        <xs:element name="/***丛书名*///book_seriesbookseries" type="xs:string" />
+        <xs:element name="/***文件大小,单位：字节*///file_sizefilesize" type="xs:long" />
+        <xs:element name="/***书籍来源,0上传,1单本书部分章节合并,2多本书部分章节合并*///book_sourcebooksource" type="xs:anyType" />
+        <xs:element name="/***针对于来源为单本书部分章节合并记录的book_id*///original_book_idoriginalbookid" type="xs:long" />
+        <xs:element name="/***针对于来源为上传记录是否有章节合并书*///is_has_chapter_bookishaschapterbook" type="xs:anyType" />
+        <xs:element name="/***商品表id*/productid" type="xs:long" />
+        <xs:element name="/***顶*/upcount" type="xs:long" />
+        <xs:element name="/***踩*/downcount" type="xs:long" />
+        <xs:element name="/***评论条数*/commentcount" type="xs:long" />
+        <xs:element name="/***供应商图书id号*/vendorbookid" type="xs:string" />
+        <xs:element name="/***中图法类别,目前方正图书采用这此类别,20111214y新增*/librarybookcateogry" type="xs:string" />
+        <xs:element name="/***是否有epub的书：0：没有；1：有*/hasepub" type="xs:anyType" />
+        <xs:element name="/***版别代码*/publishercode" type="xs:string" />
+        <xs:element name="/***想看次数*/collectionnum" type="xs:anyType" />
+        <xs:element name="/***想看次数调整值*/adjustvalue" type="xs:anyType" />
+        <xs:element name="/***评分*/score" type="xs:double" />
+        <xs:element name="/***图书分类*/categoryid" type="xs:long" />
+        <xs:element name="/***浏览次数*/browsecount" type="xs:anyType" />
+        <xs:element name="/***评分次数*/scorecount" type="xs:anyType" />
+        <xs:element name="/***分享次数*/sharecount" type="xs:anyType" />
+        <xs:element name="/***权重值*/heightscore" type="xs:anyType" />
+        <xs:element name="/***显示标记:名人,名书,独家,推荐,经典,绝版,推广,新书排名,首发*/showmark" type="xs:string" />
+        <xs:element name="/***封面显示标记*/covershowmark" type="xs:string" />
+        <xs:element name="/***腰封推荐*/girdlerecommend" type="xs:string" />
+        <xs:element name="/***阅读对象*/readobject" type="xs:string" />
+        <xs:element name="/***媒体推荐*/mediarecommend" type="xs:string" />
+        <xs:element name="/***推荐人*/recommender" type="xs:string" />
+        <xs:element name="/***人工权重值(1-200)*/thirdheightscore" type="xs:anyType" />
+        <xs:element name="/***已读次数*/hasreadcount" type="xs:anyType" />
+        <xs:element name="/***是否有封面1为有0为没有*/hascover" type="xs:anyType" />
+        <xs:element name="isoriginal" type="xs:anyType" />
+        <xs:element name="/***是否为扫描书0：非1：是2013-5-13hakenyadd*/isscan" type="xs:anyType" />
+        <xs:element name="picturepath" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

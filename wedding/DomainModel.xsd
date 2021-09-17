@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="multicodevalue" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***child_num*/childnum" type="xs:anyType" />
+          <xs:element name="/***代码id*/codeid" type="xs:string" />
+          <xs:element name="/***代码项值*/itemvalue" type="xs:string" />
+          <xs:element name="/***代码项显示值*/codename" type="xs:string" />
+          <xs:element name="/***上层代码id*/parentitemid" type="xs:string" />
+          <xs:element name="/***代码编号*/itemcode" type="xs:string" />
+          <xs:element name="/***排序*/sortsq" type="xs:anyType" />
+          <xs:element name="/***评论*/comments" type="xs:string" />
+          <xs:element name="parentdict" type="multicodevalue" nillable="true" minOccurs="0" />
+          <xs:element name="childlist" type="multicodevalue" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="udppointpermission" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***功能点名称*/pointname" type="xs:string" />
+          <xs:element name="/***功能点表达式*/pointexpression" type="xs:string" />
+          <xs:element name="rolelist" type="role" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="weddingphoto" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***照片分类*/photosort" type="xs:string" />
+          <xs:element name="/***相册分类*/albumsort" type="xs:string" />
+          <xs:element name="/***照片*/photo" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***密码*/password" type="xs:string" />
+          <xs:element name="/***出生日期*/birthday" type="xs:dateTime" />
+          <xs:element name="/***电子邮箱*/email" type="xs:string" />
+          <xs:element name="/***部门*/deptid" type="xs:string" />
+          <xs:element name="/***姓名*/name" type="xs:string" />
+          <xs:element name="/***性别*/gender" type="xs:string" />
+          <xs:element name="/***用户名*/userid" type="xs:string" />
+          <xs:element name="/***手机*/mobile" type="xs:string" />
+          <xs:element name="sort" type="xs:anyType" />
+          <xs:element name="enable" type="xs:anyType" />
+          <xs:element name="" type="role" nillable="true" minOccurs="0" />
+          <xs:element name="admin" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="department" nillable="true" minOccurs="0" />
+          <xs:element name="/***用户所有角色*/rolelist" type="role" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***用户关联部门*/deptlist" type="department" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="passworderrortimes" type="xs:anyType" />
+          <xs:element name="lastpassworderrortime" type="xs:dateTime" />
+          <xs:element name="lastchangepwdtime" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="code" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***上层编码*/parentcode" type="xs:string" />
+          <xs:element name="/***下层最大编码*/maxchildcode" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="informationcontent" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***作者*/author" type="xs:string" />
+          <xs:element name="/***发布日期*/released" type="xs:dateTime" />
+          <xs:element name="/***标题*/title" type="xs:string" />
+          <xs:element name="/***内容*/content" type="xs:string" />
+          <xs:element name="/***信息类别*/infotype" type="xs:string" />
+          <xs:element name="/***附件*/attachment" type="xs:string" />
+          <xs:element name="" type="user" nillable="true" minOccurs="0" />
+          <xs:element name="name" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sensitivewords" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***敏感词*/words" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***排序*/sort" type="xs:anyType" />
+          <xs:element name="/***上层角色*/parentroleid" type="xs:string" />
+          <xs:element name="/***备注*/backup" type="xs:string" />
+          <xs:element name="/***角色名称*/rolename" type="xs:string" />
+          <xs:element name="/***是否管理员角色*/admin" type="xs:anyType" />
+          <xs:element name="parent" type="role" nillable="true" minOccurs="0" />
+          <xs:element name="modulelist" type="module" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="userlist" type="user" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="module" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***模块地址*/moduleaddr" type="xs:string" />
+          <xs:element name="/***模块序号*/sortsq" type="xs:anyType" />
+          <xs:element name="/***是否可见*/isvisible" type="xs:anyType" />
+          <xs:element name="/***父模块id*/parentmoduleid" type="xs:string" />
+          <xs:element name="/***是否公开*/ispublic" type="xs:anyType" />
+          <xs:element name="/***目标*/target" type="xs:string" />
+          <xs:element name="/***模块code*/modulecode" type="xs:string" />
+          <xs:element name="/***模块名称*/modulename" type="xs:string" />
+          <xs:element name="/***小图标地址*/iconaddr" type="xs:string" />
+          <xs:element name="/***权限判断是否严格过滤url*/stick" type="xs:anyType" />
+          <xs:element name="parent" type="module" nillable="true" minOccurs="0" />
+          <xs:element name="/***模块所有角色*/rolelist" type="role" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***是否含有子模块*/haschild" type="xs:anyType" />
+          <xs:element name="/***模块所有子模块*/childlist" type="module" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***部门编码*/deptcode" type="xs:string" />
+          <xs:element name="/***部门名称*/deptname" type="xs:string" />
+          <xs:element name="/***排序*/sort" type="xs:anyType" />
+          <xs:element name="/***上层部门*/parentdeptid" type="xs:string" />
+          <xs:element name="enable" type="xs:anyType" />
+          <xs:element name="/***部门所有角色*/deptrolelist" type="role" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="parentdept" type="department" nillable="true" minOccurs="0" />
+          <xs:element name="/***所有子部门*/childlist" type="department" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="multicode" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***code名*/codename" type="xs:string" />
+          <xs:element name="/***排序*/sortsq" type="xs:anyType" />
+          <xs:element name="/***评论*/comments" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datadictionary" >
+      <xs:complexContent>
+       <xs:extension base="baseentity<string>">
+         <xs:sequence>
+          <xs:element name="/***dictionary_code*/dictionarycode" type="xs:string" />
+          <xs:element name="/***content*/content" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

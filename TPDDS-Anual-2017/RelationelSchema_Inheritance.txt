@@ -1,0 +1,37 @@
+usuario(id:Long [PK], usuario:String, pass:String);
+
+indicador(id:int [PK], nombre:String, operacion:String);
+
+ordenaaplicandocriterioordenamiento(//mayoramenoromenoramayor,sonpalabrasnosimbolos,ingresadainterfaz//graficacriterioordenamiento:String);
+
+promedio();
+
+creciente(log:Logger);
+
+longevidad();
+
+sumatoria();
+
+periodo(/***/serialversionuid:long, id:int [PK], fechainicio:LocalDate, fechafin:LocalDate);
+
+cuenta(id:int [PK], nombre:String, valor:double, GeneratedName:Periodo #FK to(periodo));
+
+filtrosegunecuacion(/*ladodersiemprevaaserunnumeropuede*/ladoder:int, comparador:String);
+
+empresa(id:int [PK], nombre:String, fechainscripcion:LocalDate);
+
+decreciente(log:Logger);
+
+mediana();
+
+metodologia(id:int [PK], nombre:String);
+
+filtro();
+
+condicion(id:int [PK], ladoizq:ValorCalculable #FK to(valorcalculable), s:Periodo #FK to(periodo), anios:int, type: String);
+
+valorcalculable(id:int [PK], GeneratedName:Indicador #FK to(indicador), type: String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

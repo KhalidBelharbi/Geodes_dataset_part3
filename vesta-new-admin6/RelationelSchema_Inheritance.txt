@@ -1,0 +1,29 @@
+
+announcemententity(//主键id:String, //标题title:String, //内容content:String, //公告内容简介_2016-06-17-wydcontentsynopsis:String, //发布状态releasestatus:Integer, //发布人releaseperson:String, //发布日期release:Date, //创建日期create:Date, //创建人createperson:String, //操作日期operat:Date, //操作人operatperson:String, //投票数votenum:Long, //是否进行投票0,不进行1，进行isvote:Integer, //点赞数likenum:Long, //回复数replynum:Long, //状态status:Integer);
+
+collectionentity(//收藏idid:String, //收藏内容idmessageid:String, //收藏类型1_公告,2_活动,3_电子杂志messagetype:String, //用户iduserid:String, //收藏时间create:Date);
+
+voterecordentity(//主键id:String, //投票用户iduserid:String, //项目idprojectid:String, //项目名称projectname:String, //公告idannouncementid:String, //投票idvoteid:String, //投票项idvoteoptionid:String, //integervotenumber//投票数量//integerstatus//0,启用1，不启用//创建日期create:Date, //创建人createperson:String, //操作日期operate:Date, //操作人operateperson:String);
+
+announcementvoteentity(//主键id:String, //公告idannouncementid:String, //项目idprojectid:String, //项目名称projectname:String, //投票idvoteid:String, //投票选项idvoteoptionid:String, //投票数量votenumber:Integer, //0,启用1，不启用status:Integer, //创建日期create:Date, //创建人createperson:String, //操作日期operate:Date, //操作人operateperson:String);
+
+electronicmagazinelikelogentity(//主键idid:String, //资源id(电子杂志id)resourceid:String, //用户iduserid:String, //创建时间createon:Date);
+
+announcementreplyentity(/*回复状态*///有效status_valid:String, //无效status_invalid:String, //删除status_deleted:String, /*回复类型*///用户type_user:String, //管理员type_admin:String, //idid:String, //主贴id_annocumentidtopicid:String, //用户id_回帖人的iduserid:String, //回帖人昵称usernickname:String, replyid:String, //回复用户id_回帖人的id，指向上一个回复人replyuserid:String, //被回复人的昵称replyusernickname:String, //内容content:String, //2016-06-17-wyd//管理员回复内容replycontent:String, //类型//2:管理员回复,1:用户回复type:String, //状态status:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //楼层floor:Integer);
+
+announcementscopeentity(//主键id:String, //announcementdetailid:String, //全部0,不是全部1,全部isall:Integer, //所属城市city:String, //所属城市idcityid:String, //项目名称projectname:String, //项目idprojectid:String, //范围等级设定城市为二级菜单，设定项目为三级菜单scope:String, //0,启用1，不启用status:Integer, //创建日期create:Date, //创建人createperson:String, //操作日期operate:Date, //操作人operateperson:String);
+
+videohqentity(//主键idid:String, //视频名称videoname:String, //视频导图videomapimgurl:String, //视频idvideoid:String, //视频链接videolinksrc:String, //视频简介videosynopsis:String, //发布状态(0,未发布/1,已发布)releasestatus:Integer, //发布日期release:Date, //发布人releaseperson:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+electronicmagazineentity(//主键idid:String, //微信appidclientid:Integer, //客户端名称clientname:String, //杂志名称magazinename:String, //杂志导图mapimgurl:String, //封面coverimgurl:String, //目录catalogimgurl:String, //封底backcoverimgurl:String, //栏目内容(json)columncontentjson:String, //是否外链(0,否/1,是)islink:Integer, //外链地址linksrc:String, //点赞数likenum:Long, //发布状态(0,未发布/1,已发布)releasestatus:Integer, //发布日期release:Date, //发布人releaseperson:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+voteoptionentity(//主键id:String, //投票详情idvoteid:String, //投票图片url:String, //投票描述description:String, //0,启用1，不启用status:Integer, //选项排序optionorder:Integer, //创建日期create:Date, //创建人createperson:String, //操作日期operate:Date, //操作人operateperson:String);
+
+announcementlogentity(//主键id:String, //用户iduserid:String, //公告idannouncementid:String, //创建时间create:Date);
+
+businessbulletinentity(//主键idid:String, //公告标题title:String, //公告内容content:String, //公告信息标识图infosignimgurl:String, //是否作为banner展示(0,否/1,是)isbanner:Integer, //是否外链islink:Integer, //外链地址linksrc:String, //发布状态(0,未发布/1,已发布)releasestatus:Integer, //发布日期release:Date, //发布人releaseperson:String, //城市idcityid:String, //城市名称cityname:String, //工程项目编码projectcode:String, //工程项目名称projectname:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+voteentity(//主键id:String, //截至日期end:Date, //标题title:String, //投票类型(0:单选,1:多选)votetype:Integer, //0,启用1，不启用status:Integer, //创建日期create:Date, //创建人createperson:String, //操作日期operate:Date, //操作人operateperson:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

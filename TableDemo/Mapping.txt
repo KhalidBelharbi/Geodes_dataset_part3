@@ -1,0 +1,13 @@
+ClassDiagram.Class>> Address =>=>=> RelationalSchema.Table>> address;
+ClassDiagram.Class>> Employee =>=>=> RelationalSchema.Table>> employee;
+ClassDiagram.Attribut>> Address.//@column(name:Integer =>=>=> RelationalSchema.Column>> address.//@column(name PRIMARY KEY;
+ClassDiagram.Attribut>> Address.street_name:String =>=>=> RelationalSchema.Column>> address.street_name;
+ClassDiagram.Attribut>> Address.city_name:String =>=>=> RelationalSchema.Column>> address.city_name;
+ClassDiagram.Attribut>> Address.state_name:String =>=>=> RelationalSchema.Column>> address.state_name;
+ClassDiagram.Attribut>> Address.zipcode:String =>=>=> RelationalSchema.Column>> address.zipcode;
+ClassDiagram.Attribut>> Employee.//@column(name:Integer =>=>=> RelationalSchema.Column>> employee.//@column(name PRIMARY KEY;
+ClassDiagram.Attribut>> Employee.fname:String =>=>=> RelationalSchema.Column>> employee.fname;
+ClassDiagram.Attribut>> Employee.lname:String =>=>=> RelationalSchema.Column>> employee.lname;
+ClassDiagram.Attribut>> Employee.salary:Integer =>=>=> RelationalSchema.Column>> employee.salary;
+One-To-One relationship between ClassDiagram.Class>>Address  to ClassDiagram.Class>>employee represented by ClassDiagram.Atrribute>>//mappedbyindicatestheinverseoftherelationship.;
+One-To-One relationship between ClassDiagram.Class>>Employee  to ClassDiagram.Class>>address represented by ClassDiagram.Atrribute>>//@joincolumndefinesforeignkeycolumnandindicatestheowneroftherelationship.;

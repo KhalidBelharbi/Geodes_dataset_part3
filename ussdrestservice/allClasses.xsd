@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ussdrequest" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="userentry" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loaddatabase" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="countryrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<countrymodel,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sessionanswersrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<sessionanswersmodel,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversionrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<conversionmodel,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sessionstepsrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<sessionstepsmodel,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sessionrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<sessionmodel,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ussdrestserviceapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ussdcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="sessionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sessionstepsrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sessionanswersrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="countryrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="conversionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="last_step_number" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stepfour" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="GeneratedName" type="sessionanswersrepository" nillable="true" minOccurs="0" />
+        <xs:element name="steprepository" type="sessionstepsrepository" nillable="true" minOccurs="0" />
+        <xs:element name="step_number" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stepthree" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="step_number" type="xs:long" />
+        <xs:element name="steprepository" type="sessionstepsrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="conversionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sessionanswersrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="stepone" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="steptwo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="step" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stepone" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="steprepository" type="sessionstepsrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="countryrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sessionanswersrepository" nillable="true" minOccurs="0" />
+        <xs:element name="step_number" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="steptwo" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="step_number" type="xs:long" />
+        <xs:element name="steprepository" type="sessionstepsrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sessionanswersrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="stepone" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionmodelid" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionstepsmodel" >
+      <xs:sequence>
+        <xs:element name="stepnumber" type="xs:anyType" />
+        <xs:element name="question" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionmodel" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="currentstep" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversionmodel" >
+      <xs:sequence>
+        <xs:element name="to" type="xs:string" />
+        <xs:element name="from" type="xs:string" />
+        <xs:element name="conversionrate" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversionmodelid" >
+      <xs:sequence>
+        <xs:element name="to" type="xs:string" />
+        <xs:element name="from" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="countrymodel" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="countrycode" type="xs:string" />
+        <xs:element name="countryname" type="xs:string" />
+        <xs:element name="foreigncurrencycode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionanswersmodelid" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="stepnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionanswersmodel" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="stepnumber" type="xs:long" />
+        <xs:element name="value" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ussdresponse" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="badrequestresponse" >
+      <xs:sequence>
+        <xs:element name="statuscode" type="xs:long" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ussdcontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

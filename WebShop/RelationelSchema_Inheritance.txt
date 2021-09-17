@@ -1,0 +1,19 @@
+
+sizequantity(size:String [PK], quantity:Integer, GeneratedName:ClothingItem [PK] #FK to(ClothingItem));
+
+clothingitem(id:long [PK], label:String, price:Double, description:String, image:String, colour:String, GeneratedName:Category #FK to(Category));
+
+category(category_id:Long [PK], name:String);
+
+customerorder(customerorder_id:long [PK], date:LocalDateTime, GeneratedName:Payment #FK to(Payment), GeneratedName:Customer #FK to(customer));
+
+payment(payment_id:Long [PK], paymenttype:String, GeneratedName:CustomerOrder #FK to(CustomerOrder));
+
+messagecontactus(message_id:Long [PK], name:String, email:String, subject:String, message:String);
+
+customerorderclothingitem(GeneratedName:CustomerOrder [PK] #FK to(CustomerOrder), GeneratedName:ClothingItem [PK] #FK to(ClothingItem), quantity:int, size:String);
+
+customer(customer_id:Long [PK], email:String, password:String, shippingadress:String, homeadress:String, firstname:String, lastname:String, GeneratedName:CustomerOrder #FK to(CustomerOrder));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

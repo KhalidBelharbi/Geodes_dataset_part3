@@ -1,0 +1,114 @@
+
+rentalcar(company:RentalCompany, hired:CURRENTLY_HIRED, chassisnumber:Character, GeneratedName:Insurance);
+
+location(id:long [PK], description:String, //implicitlyembedded:Coordinates, GeneratedName:ZeroCoordinates);
+
+vehicle(//defaultaccesstypeforclassesinthishierarchyisfieldid:long [PK]);
+
+person(id:long [PK], name:String);
+
+rentalcompany(id:long [PK], name:String);
+
+foo(id:long [PK]);
+
+house(id:long [PK], GeneratedName:Address);
+
+shop(id:long [PK], name:String);
+
+concreteproduct(id:long [PK]);
+
+attachmentgroupintopic();
+
+userrole();
+
+attachmentgrouppostintopic();
+
+testentity(id:long [PK]);
+
+testentity(GeneratedName:Ref, name:String);
+
+person(id:PersonId, address:String);
+
+blobentity(id:String [PK], GeneratedName:Blob);
+
+dummy(id:long [PK]);
+
+dummy(id:long [PK]);
+
+user(id:Long [PK], name:String);
+
+shop(id:long [PK], name:String);
+
+product(transientnonpersistent:String, nonpersistent2:String, id:long [PK], test:int, description:String, price:BigDecimal, GeneratedName:Shop #FK to(Shop));
+
+item(id:long [PK], quantity:int, GeneratedName:Product, GeneratedName:Order, GeneratedName:Detail);
+
+customer(orders:Set<Order>, nonpersistent:String, goodpayer:boolean);
+
+hotelroom(GeneratedName:Hotel);
+
+mammals(id:String [PK], nbrofmammals:String);
+
+house(id:Long [PK]);
+
+hominidae(elligence:int);
+
+human(nonpersistent:int, name:String);
+
+room(id:Integer [PK]);
+
+temperaturesamples(samples:Integer);
+
+image(name:String, data:byte);
+
+printjob(id:long [PK], data:byte);
+
+printer(id:long [PK]);
+
+superhero(id:long [PK], name:String, superpower:String);
+
+parent(id:Integer [PK], name:String, siblings:Relatives<Child>);
+
+child(id:Integer [PK], name:String);
+
+employeewithrawtype(id:String [PK], name:String);
+
+deskwithrawtype(id:String [PK], name:String);
+
+desk_empl(desk_fk:DeskWithRawType [PK] #FK to DeskWithRawType,emplo_fk:collection [PK] #FK to collection);
+
+house(roomsbyname:Map<String,Room>);
+
+hotel(id:int [PK], roomsbyname:Map);
+
+cleaner(id:int [PK], name:String);
+
+person(name:String);
+
+house(id:Long [PK]);
+
+customer();
+
+user(id:Long [PK], name:String);
+
+suba(street:String);
+
+subb(street:String);
+
+baseentity(id:Integer [PK], name:String);
+
+plane(id:Long [PK]);
+
+jetplane(jets:Integer);
+
+hashentity(id:long [PK]);
+
+contactdetails(id:long [PK], GeneratedName:PhoneNumber);
+
+myentity(emb:EmbeddableEntity);
+
+stuff();
+
+testentity(id:long [PK]);
+
+defaultpackageentity(id:long [PK]);

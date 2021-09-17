@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="securityprojectrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityprojectentity" >
+      <xs:sequence>
+        <xs:element name="//自增长数id" type="xs:long" />
+        <xs:element name="//主键projectid" type="xs:string" />
+        <xs:element name="//名称projectname" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//集团idgroupid" type="xs:string" />
+        <xs:element name="//集团名称groupname" type="xs:string" />
+        <xs:element name="//区域idareaid" type="xs:string" />
+        <xs:element name="//区域名称areaname" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securitygroupentity" >
+      <xs:sequence>
+        <xs:element name="//自增长数id" type="xs:long" />
+        <xs:element name="//主键groupid" type="xs:string" />
+        <xs:element name="//名称groupname" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityareaentity" >
+      <xs:sequence>
+        <xs:element name="//自增长数id" type="xs:long" />
+        <xs:element name="//主键areaid" type="xs:string" />
+        <xs:element name="//名称areaname" type="xs:string" />
+        <xs:element name="//集团idgroupid" type="xs:string" />
+        <xs:element name="//集团名称groupname" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityroleentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:long" />
+        <xs:element name="//集团、区域、项目typeid" type="xs:string" />
+        <xs:element name="/***集团：1：hse部门*区域：2：项目安全员*项目：3：项目全体成员*4：甲方全全员*5：甲方工程师*6：总包*7：监理*/typerole" type="xs:string" />
+        <xs:element name="/***1：责任单位*2：人员*/datatype" type="xs:string" />
+        <xs:element name="//人或责任单位iddataid" type="xs:string" />
+        <xs:element name="//1:正常0:删除status" type="xs:string" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contestrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="readilyrecordentity" >
+      <xs:sequence>
+        <xs:element name="//uuidid" type="xs:string" />
+        <xs:element name="//业务idbusinessid" type="xs:string" />
+        <xs:element name="//整改描述rectificationdescription" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityimageentity" >
+      <xs:sequence>
+        <xs:element name="//uuidid" type="xs:string" />
+        <xs:element name="//业务idbusinessid" type="xs:string" />
+        <xs:element name="//图片链接url" type="xs:string" />
+        <xs:element name="//类型1.随手拍问题图片2.随手拍整改图片3.检查计划签字图片4.检查单位签字图片5.检查详情的问题图片type" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="readilytakeentity" >
+      <xs:sequence>
+        <xs:element name="//appid唯一性appid" type="xs:string" />
+        <xs:element name="//返回查询数据使用自增idid" type="xs:long" />
+        <xs:element name="//返回查询数据使用修改时间modify" type="xs:dateTime" />
+        <xs:element name="//随手拍iduuidpatid" type="xs:string" />
+        <xs:element name="//检查部位examinationparts" type="xs:string" />
+        <xs:element name="//严重等级severitylevel" type="xs:string" />
+        <xs:element name="//创建人idcreateid" type="xs:string" />
+        <xs:element name="//创建人姓名createname" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//创建人所属单位idcreateunitid" type="xs:string" />
+        <xs:element name="//创建人所属单位名称createunitname" type="xs:string" />
+        <xs:element name="//问题描述description" type="xs:string" />
+        <xs:element name="总包负责人idinternalpeopleid" type="xs:string" />
+        <xs:element name="总包负责人internalpeople" type="xs:string" />
+        <xs:element name="监理负责人idexternalpeopleid" type="xs:string" />
+        <xs:element name="监理负责人externalpeople" type="xs:string" />
+        <xs:element name="//状态waiting:待确认finshed处理中reform已完成twicereform二次整改state" type="xs:string" />
+        <xs:element name="//整改描述rectificationdescription" type="xs:string" />
+        <xs:element name="//整改时间rectification" type="xs:dateTime" />
+        <xs:element name="//整改负责人rectificationpeople" type="xs:string" />
+        <xs:element name="//补充描述//废弃用supplementarydescription" type="xs:string" />
+        <xs:element name="//安全管理员idsecurityadministratorid" type="xs:string" />
+        <xs:element name="项目安全员securityadministrator" type="xs:string" />
+        <xs:element name="//地址address" type="xs:string" />
+        <xs:element name="//项目公司idprojectid" type="xs:string" />
+        <xs:element name="//项目公司名称projectname" type="xs:string" />
+        <xs:element name="//追加字段大比武additional" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="readilytakerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="inspectionplanentity" >
+      <xs:sequence>
+        <xs:element name="//自增idid" type="xs:long" />
+        <xs:element name="//唯一校验手机端生成idappid" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//检查计划idplanid" type="xs:string" />
+        <xs:element name="//检查计划名称planname" type="xs:string" />
+        <xs:element name="//创建人idcreateid" type="xs:string" />
+        <xs:element name="//创建人姓名createname" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//创建人所属单位idcreateunitid" type="xs:string" />
+        <xs:element name="//创建人所属单位createunitname" type="xs:string" />
+        <xs:element name="//创建时间state" type="xs:string" />
+        <xs:element name="//检查计划开始时间planstart" type="xs:dateTime" />
+        <xs:element name="//检查计划结束时间planend" type="xs:dateTime" />
+        <xs:element name="//参加人员participant" type="xs:string" />
+        <xs:element name="//得分score" type="xs:string" />
+        <xs:element name="//所属模块1：区域；2：项目公司；3：监理；4：施工单位domain" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectscoringentity" >
+      <xs:sequence>
+        <xs:element name="//id" type="xs:long" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//检查计划idplanid" type="xs:string" />
+        <xs:element name="//检查计划名planname" type="xs:string" />
+        <xs:element name="//项目公司idprojectid" type="xs:string" />
+        <xs:element name="//项目公司名称projectname" type="xs:string" />
+        <xs:element name="//一级检查项idcheckclassoneid" type="xs:string" />
+        <xs:element name="//一级检查项checkclassone" type="xs:string" />
+        <xs:element name="//二级检查项idcheckclasstwoid" type="xs:string" />
+        <xs:element name="//二级检查项checkclasstwo" type="xs:string" />
+        <xs:element name="//三级检查项idcheckclassthreeid" type="xs:string" />
+        <xs:element name="//三级检查项checkclassthree" type="xs:string" />
+        <xs:element name="//stringcheckitemid//检查项id//stringcheckitemname//检查项//分数fraction" type="xs:long" />
+        <xs:element name="//得分score" type="xs:long" />
+        <xs:element name="//扣分pos" type="xs:long" />
+        <xs:element name="//所属模块1：区域；2：项目公司；3：监理；4：施工单位domain" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="inspectionunitentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//检查计划idplanid" type="xs:string" />
+        <xs:element name="//检查计划名字planname" type="xs:string" />
+        <xs:element name="//类型1.检验单位2.参加单位3.被检单位type" type="xs:string" />
+        <xs:element name="//项目公司idprojectid" type="xs:string" />
+        <xs:element name="//项目公司名称projectname" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="inspectionplanrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newsentity" >
+      <xs:sequence>
+        <xs:element name="//新闻idnewsid" type="xs:string" />
+        <xs:element name="//新闻标题newstitle" type="xs:string" />
+        <xs:element name="//新闻插图newsimgurl" type="xs:string" />
+        <xs:element name="//新闻内容newscontent" type="xs:string" />
+        <xs:element name="//来源newssource" type="xs:string" />
+        <xs:element name="//"1"设置为轮播图slideshow" type="xs:string" />
+        <xs:element name="//创建人createname" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//修改人modifyname" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newsrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="knowledgeentity" >
+      <xs:sequence>
+        <xs:element name="//主键id自增长id" type="xs:long" />
+        <xs:element name="//时间戳增加和修改时候均修改当前字段modify" type="xs:dateTime" />
+        <xs:element name="//当前级别iduuidcurrentid" type="xs:string" />
+        <xs:element name="//创建时间增加时候写入当前字段create" type="xs:dateTime" />
+        <xs:element name="//父级idparentid" type="xs:string" />
+        <xs:element name="//状态1启用0.关闭state" type="xs:string" />
+        <xs:element name="//目录or文件名filename" type="xs:string" />
+        <xs:element name="//级别1.知识库2.文档名3.文件graded" type="xs:string" />
+        <xs:element name="//路径绝对路径path" type="xs:string" />
+        <xs:element name="//文件大小size" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="knowledgerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basicrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityassessmenttempentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//考核idassessmentid" type="xs:string" />
+        <xs:element name="//考核项目名称assessmentname" type="xs:string" />
+        <xs:element name="//考核分数assessmentscore" type="xs:string" />
+        <xs:element name="//考核内容assessmentcontent" type="xs:string" />
+        <xs:element name="//内容编号contentnumber" type="xs:string" />
+        <xs:element name="//等级grade" type="xs:string" />
+        <xs:element name="//扣分原则deductionprinciple" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//所属模块1：区域；2：项目公司；3：监理；4：施工单位domain" type="xs:string" />
+        <xs:element name="//父级idparentid" type="xs:string" />
+        <xs:element name="//级别level" type="xs:string" />
+        <xs:element name="//是否红线0：否；1：是isredline" type="xs:string" />
+        <xs:element name="//是否加分0：否；1：是isbonuspoints" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basicprojectentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//当前数据idcurrentid" type="xs:string" />
+        <xs:element name="//名称name" type="xs:string" />
+        <xs:element name="//父级idparentid" type="xs:string" />
+        <xs:element name="//状态1：在线；0：离线state" type="xs:string" />
+        <xs:element name="//级别1：集团；2：区域；3：项目level" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basicstaffdataentity" >
+      <xs:sequence>
+        <xs:element name="//自增idid" type="xs:long" />
+        <xs:element name="//集团id、区域id、项目iddataid" type="xs:string" />
+        <xs:element name="//1:部门；2：人员datatype" type="xs:string" />
+        <xs:element name="//dataname//名称/***集团：1：hse部门*区域：2：项目安全员*项目：3：项目全体成员*4：甲方全全员*5：甲方工程师*6：总包*7：监理*/datarole" type="xs:string" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//staffname//人员名称//状态0删除1正常state" type="xs:string" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nurseryentity" >
+      <xs:sequence>
+        <xs:element name="//uuidid" type="xs:string" />
+        <xs:element name="//苗木名称nurseryname" type="xs:string" />
+        <xs:element name="//数量num" type="xs:string" />
+        <xs:element name="//高度height" type="xs:string" />
+        <xs:element name="//备注remark" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//图片路径imageurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nurseryrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

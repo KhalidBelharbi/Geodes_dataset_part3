@@ -1,0 +1,13 @@
+
+recipeingredient(id:Long [PK], quantity:double, unit:String, GeneratedName:Ingredient #FK to(ingredient), GeneratedName:Recipe #FK to(recipe));
+
+recipe(id:Long [PK], yumid:String, name:String, description:String, numberofservings:int, iconimageurl:String, resizableimageurl:String, totalreviewcount:long, averagerating:double, difficultylevel:String, nutritionlist:List<String>, techniquelist:List<String>, preparationsteps:List<String>);
+
+useringredient(userid:Long [PK], ingredientid:Long [PK], quantity:double);
+
+user(id:Long [PK], username:String, password:String, firstname:String, lastname:String, email:String);
+
+ingredient(id:Long [PK], name:String, unit:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

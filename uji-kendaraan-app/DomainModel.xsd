@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="refbahanbakar" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="bahanbakar" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="skrd" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nouji" type="xs:string" />
+        <xs:element name="jnspengujian" type="xs:string" />
+        <xs:element name="biayapemeriksaan" type="xs:anyType" />
+        <xs:element name="biayabukuuji" type="xs:anyType" />
+        <xs:element name="biayatandauji" type="xs:anyType" />
+        <xs:element name="biayatandasamping" type="xs:anyType" />
+        <xs:element name="dendaadm" type="xs:anyType" />
+        <xs:element name="tglpemeriksaan" type="xs:dateTime" />
+        <xs:element name="tglhabisujilalu" type="xs:dateTime" />
+        <xs:element name="nippejabat" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refbahankaroseri" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="bahan" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refbiayabukuuji" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tarif" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refjnsrumah" >
+      <xs:sequence>
+        <xs:element name="idjnskendaraan" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="jnsrumah" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admkendaraan" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nouji" type="xs:string" />
+        <xs:element name="namapemilik" type="xs:string" />
+        <xs:element name="alamat" type="xs:string" />
+        <xs:element name="merk" type="xs:string" />
+        <xs:element name="tipe" type="xs:string" />
+        <xs:element name="thnpembuatan" type="xs:string" />
+        <xs:element name="idjnskendaraan" type="xs:long" />
+        <xs:element name="idjnsbahanbakar" type="xs:long" />
+        <xs:element name="idjnsrumah" type="xs:long" />
+        <xs:element name="nomorkendaraan" type="xs:string" />
+        <xs:element name="norangka" type="xs:string" />
+        <xs:element name="nomesin" type="xs:string" />
+        <xs:element name="idbahankeroseri" type="xs:long" />
+        <xs:element name="tglrekam" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refjnskendaraan" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="jnskendaraan" type="xs:string" />
+        <xs:element name="trfpemeriksaan" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refpejabat" >
+      <xs:sequence>
+        <xs:element name="nip" type="xs:string" />
+        <xs:element name="nama" type="xs:string" />
+        <xs:element name="jabatan" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datuser" >
+      <xs:sequence>
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

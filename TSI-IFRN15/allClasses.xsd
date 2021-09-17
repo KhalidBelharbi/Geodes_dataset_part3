@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="snmpcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="valormib" type="xs:string" />
+        <xs:element name="/***objetolistenerresponsavelporreceberoretornodoagente*/listener" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitorcontroller" >
+      <xs:sequence>
+        <xs:element name="//...system.sysdescr(.1.3.6.1.2.1.1.1)read-onlyro-displaysysdesc" type="xs:string" />
+        <xs:element name="//...system.sysobjectid(.1.3.6.1.2.1.1.2)ro-objectidentifiersysobjectid" type="xs:string" />
+        <xs:element name="//...system.sysuptime(.1.3.6.1.2.1.1.3)ro-timetickssysuptime" type="xs:string" />
+        <xs:element name="//...system.syscontact(.1.3.6.1.2.1.1.4)rw-displaysyscontact" type="xs:string" />
+        <xs:element name="//...system.sysname(.1.3.6.1.2.1.1.5)rw-displaysysname" type="xs:string" />
+        <xs:element name="//...system.syslocation(.1.3.6.1.2.1.1.6)rw-displaysyslocation" type="xs:string" />
+        <xs:element name="//...system.sysservices(.1.3.6.1.2.1.1.7)ro-integersysservices" type="xs:string" />
+        <xs:element name="tempoid" type="xs:string" />
+        <xs:element name="umidoid" type="xs:string" />
+        <xs:element name="locdescr" type="xs:string" />
+        <xs:element name="locobjectid" type="xs:string" />
+        <xs:element name="locuptime" type="xs:anyType" />
+        <xs:element name="loccontact" type="xs:string" />
+        <xs:element name="locname" type="xs:string" />
+        <xs:element name="loclocation" type="xs:string" />
+        <xs:element name="locservices" type="xs:anyType" />
+        <xs:element name="mib" type="xs:string" />
+        <xs:element name="GeneratedName" type="monitorrepository" nillable="true" minOccurs="0" />
+        <xs:element name="snmp" type="snmpcontroller" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mib" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitor" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="temperatura" type="xs:anyType" />
+        <xs:element name="umidade" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:dateTime" />
+        <xs:element name="updat" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourcenotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="resourcename" type="xs:string" />
+          <xs:element name="fieldname" type="xs:string" />
+          <xs:element name="fieldvalue" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="snmpmanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="address" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitorrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<monitor,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="monitorapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,27 @@
+
+user(id:Long [PK], username:String, password:String, id:Organization #FK to(organization));
+
+users_privileges(user_id:User [PK] #FK to User,privilege_id:set<privilege> [PK] #FK to set<privilege>);
+
+foo(id:Long [PK], name:String);
+
+privilege(id:Long [PK], name:String);
+
+organization(id:Long [PK], name:String);
+
+privilege(id:Long [PK], name:String);
+
+user(id:Long [PK], firstname:String, lastname:String, email:String, password:String, enabled:boolean, isusing2fa:boolean);
+
+users_roles(user_id:User [PK] #FK to User,role_id:collection<role> [PK] #FK to collection<role>);
+
+role(id:Long [PK], name:String);
+
+roles_privileges(role_id:Role [PK] #FK to Role,privilege_id:collection<privilege> [PK] #FK to collection<privilege>);
+
+tweet(id:long [PK], tweet:String, owner:String, likes:Set<String>);
+
+appuser(id:long [PK], name:String, username:String, password:String, enabled:boolean, lastlogin:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

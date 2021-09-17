@@ -1,0 +1,23 @@
+
+skills(sno:int [PK], name:String);
+
+keywords(keywordid:int [PK], articleid:int, sno:int);
+
+comment(commentid:int [PK], email:String, articleid:int, content:String, img:String, nickname:String, score:int, updatedat:LocalDateTime, createdat:LocalDateTime);
+
+pin(/***/serialversionuid:long, email:String [PK], articleid:int [PK], pinid:int);
+
+likes(/***/serialversionuid:long, email:String [PK], articleid:int [PK], likesid:int);
+
+follow(/***/serialversionuid:long, email:String [PK], followemail:String [PK], followid:int);
+
+notification(notificationid:int [PK], nickname:String, email:String, content:String, type:String, other:String, othernickname:String, readn:int, articleid:int, ready:int, createtime:LocalDateTime);
+
+article(articleid:int [PK], email:String, nickname:String, title:String, content:String, imgurl:String, ispublic:int, preview:String, //@column(insertable:LocalDateTime, //@column(updatable:LocalDateTime, hits:int);
+
+interest(email:String [PK], sno:int [PK], erestid:int);
+
+user(no:int [PK], email:String, password:String, nickname:String, type:String, info:String, img:String, github:String, score:int, createdate:LocalDateTime);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

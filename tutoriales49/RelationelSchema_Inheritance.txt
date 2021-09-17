@@ -1,0 +1,37 @@
+
+comment(id:Integer [PK], year:Integer, approved:boolean, content:String, GeneratedName:Post #FK to(Post));
+
+post(id:Integer [PK], title:String, content:String);
+
+address(id:Long [PK], GeneratedName:Person #FK to(Person), state:String, city:String, street:String, zipcode:String);
+
+person(id:Long [PK], firstname:String, lastname:String, GeneratedName:Address #FK to(Address));
+
+category(id:Long [PK], name:String);
+
+book(id:Long [PK], title:String, GeneratedName:Category #FK to(category));
+
+company(id:Integer [PK], name:String, address:String, phone:String, GeneratedName:ContactPerson);
+
+fruit(id:long [PK], name:String, color:String);
+
+passenger(id:Long [PK], firstname:String, lastname:String);
+
+song(id:long [PK], name:String, lengthinseconds:int, compositor:String, singer:String, released:LocalDateTime, genre:String);
+
+customer(id:long [PK], name:String, email:String);
+
+car(id:int [PK], power:Integer, model:String);
+
+employee(id:long [PK], name:String, age:int, GeneratedName:Department #FK to(department));
+
+phone(id:long [PK], number:String, GeneratedName:Employee #FK to(employee));
+
+department(id:long [PK], name:String);
+
+characteristic(id:Long [PK], type:String, GeneratedName:Item #FK to(item));
+
+item(id:Long [PK], name:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

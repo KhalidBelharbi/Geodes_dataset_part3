@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="departmentrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<department,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employeespecialityrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<employeespeciality,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="addressrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<address,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="specialityrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<speciality,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employeerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<employee,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employeedao" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="employeerepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="addressrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="departmentrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="specialityrepository" nillable="true" minOccurs="0" />
+        <xs:element name="empspecialityrepository" type="employeespecialityrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="departmentdao" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="employeerepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="departmentrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="responsegeneratorutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeespeciality" >
+      <xs:sequence>
+        <xs:element name="employeeid" type="xs:long" />
+        <xs:element name="specialityid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorresponse" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="errorcode" type="xs:string" />
+        <xs:element name="errormessage" type="xs:string" />
+        <xs:element name="errordata" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="responseasarray" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="issuccess" type="xs:anyType" />
+        <xs:element name="responsebody" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="address" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="street" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="country" type="xs:string" />
+        <xs:element name="zipcode" type="xs:string" />
+        <xs:element name="GeneratedName" type="employee" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="speciality" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="responsemessage" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phonenumber" type="xs:long" />
+        <xs:element name="salary" type="xs:long" />
+        <xs:element name="GeneratedName" type="department" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="address" nillable="true" minOccurs="0" />
+        <xs:element name="specialitylist" type="employeespeciality" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="speciality" type="speciality" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeesplkey" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="employeeid" type="xs:long" />
+        <xs:element name="specialityid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="employees" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="responseasobject" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="issuccess" type="xs:anyType" />
+        <xs:element name="responsebody" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mainclass" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="departmentcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="departmentdelegate" nillable="true" minOccurs="0" />
+        <xs:element name="reponsegeneratorutil" type="responsegeneratorutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="employeedelegate" nillable="true" minOccurs="0" />
+        <xs:element name="reponsegeneratorutil" type="responsegeneratorutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeedelegate" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="employeedao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="departmentdelegate" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="departmentdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeenotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="applicationexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="errorcode" type="xs:string" />
+          <xs:element name="errormessage" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="departmentnotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="applicationexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="errorcode" type="xs:string" />
+          <xs:element name="errormessage" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="emailalreadyexistsexception" >
+      <xs:complexContent>
+       <xs:extension base="applicationexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="errorcode" type="xs:string" />
+          <xs:element name="errormessage" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="applicationexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="errorcode" type="xs:string" />
+          <xs:element name="errormessage" type="xs:string" />
+          <xs:element name="errordata" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="specialitynotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="applicationexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="errorcode" type="xs:string" />
+          <xs:element name="errormessage" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entrynotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="applicationexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="errorcode" type="xs:string" />
+          <xs:element name="errormessage" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

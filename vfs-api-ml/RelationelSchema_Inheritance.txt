@@ -1,0 +1,15 @@
+
+payment(id:Long [PK], createat:LocalDateTime, GeneratedName:Purchase #FK to(purchase), code:String, status:PaymentStatus);
+
+user(id:Long [PK], login:String, password:String, createat:LocalDateTime);
+
+category(id:Long [PK], name:String, GeneratedName:Category #FK to(category));
+
+product(id:Long [PK], createat:LocalDateTime, name:String, description:String, features:List<Feature>, price:BigDecimal, quantity:Integer, GeneratedName:Category #FK to(category), GeneratedName:User #FK to(user), images:Set<String>, questions:List<Question>);
+
+purchase(id:Long [PK], GeneratedName:Product #FK to(product), quantity:Integer, gateway:PaymentGateway, buyer:User #FK to(user));
+
+opinion(id:Long [PK], title:String, description:String, evaluation:Integer, GeneratedName:Product #FK to(product), GeneratedName:User #FK to(user));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

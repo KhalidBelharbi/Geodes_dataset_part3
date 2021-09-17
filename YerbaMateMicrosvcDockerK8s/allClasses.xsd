@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="checkoutcreatedsource" >
+      <xs:sequence>
+        <xs:element name="output" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutprocessedsource" >
+      <xs:sequence>
+        <xs:element name="output" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentpaidsink" >
+      <xs:sequence>
+        <xs:element name="input" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<checkoutentity,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yerbamatecheckoutapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="checkoutrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="checkoutcreatedsource" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="uuidutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="streamingconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="auditconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentverifiedlistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="checkoutservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="checkoutprocessedsource" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uuidutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutresource" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="checkoutservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutresponse" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutrequest" >
+      <xs:sequence>
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="complement" type="xs:string" />
+        <xs:element name="country" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="cep" type="xs:string" />
+        <xs:element name="saveaddress" type="xs:anyType" />
+        <xs:element name="saveinfo" type="xs:anyType" />
+        <xs:element name="paymentmethod" type="xs:string" />
+        <xs:element name="cardname" type="xs:string" />
+        <xs:element name="cardnumber" type="xs:string" />
+        <xs:element name="carddate" type="xs:string" />
+        <xs:element name="cardcvv" type="xs:string" />
+        <xs:element name="products" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutitementity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="product" type="xs:string" />
+        <xs:element name="checkout" type="checkoutentity" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="saveaddress" type="xs:anyType" />
+        <xs:element name="saveinformation" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="shipping" type="shippingentity" nillable="true" minOccurs="0" />
+        <xs:element name="items" type="checkoutitementity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shippingentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="complement" type="xs:string" />
+        <xs:element name="country" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="cep" type="xs:string" />
+        <xs:element name="checkout" type="checkoutentity" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentcreated" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutprocessed" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutcreated" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yerbamatecheckoutapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,29 @@
+aeroport(id:long [PK], code:Integer, nom:String);
+
+ville_aeroport(aeroport_id:Aeroport [PK] #FK to Aeroport,ville_id:list<ville> [PK] #FK to list<ville>);
+
+compagnieaerienne(id:long [PK], code:String, nom:String);
+
+billet(id:Long [PK], version:int, numeroplace:String, classe:String, prix:float, GeneratedName:Reservation #FK to(reservation), GeneratedName:Vol #FK to(vol));
+
+adresse(id:Long [PK], version:int, rue:String, complement:String, codepostal:String, ville:String, pays:String, GeneratedName:Client #FK to(client));
+
+ville(id:long [PK], nom:String);
+
+particulier(prenom:String);
+
+passager(id:Long [PK], version:int, nom:String, prenom:String, numeroidentite:String, GeneratedName:TypeIdentite, GeneratedName:Reservation #FK to(reservation));
+
+vol(id:Long [PK], dtdepart:Date, dtarrivee:Date, statut:StatutVol, nbplacedispo:int, depart:Aeroport #FK to(aeroport), arrivee:Aeroport #FK to(aeroport));
+
+entreprise(siret:String, numerotva:String, GeneratedName:StatutJuridique);
+
+compagnieaeriennevol(id:long [PK], numerovol:String, GeneratedName:CompagnieAerienne #FK to(compagnieaerienne), GeneratedName:Vol #FK to(vol));
+
+reservation(numero:Integer [PK], version:int, dtreservtion:Date, GeneratedName:StatutReservation, GeneratedName:Passager #FK to(passager), GeneratedName:Client #FK to(client));
+
+client(id:Long [PK], version:int, nom:String, type: String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

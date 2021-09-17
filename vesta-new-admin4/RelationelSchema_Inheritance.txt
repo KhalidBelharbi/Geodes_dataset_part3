@@ -1,0 +1,35 @@
+
+securityprojectentity(//自增长数id:int, //主键projectid:String, //名称projectname:String, //状态state:String, //集团idgroupid:String, //集团名称groupname:String, //区域idareaid:String, //区域名称areaname:String, //创建时间createon:Date, //修改时间modifyon:Date);
+
+securitygroupentity(//自增长数id:int, //主键groupid:String, //名称groupname:String, //状态state:String, //创建时间createon:Date, //修改时间modifyon:Date);
+
+securityareaentity(//自增长数id:int, //主键areaid:String, //名称areaname:String, //集团idgroupid:String, //集团名称groupname:String, //状态state:String, //创建时间createon:Date, //修改时间modifyon:Date);
+
+securityroleentity(//主键id:int, //集团、区域、项目typeid:String, /***集团：1：hse部门*区域：2：项目安全员*项目：3：项目全体成员*4：甲方全全员*5：甲方工程师*6：总包*7：监理*/typerole:String, /***1：责任单位*2：人员*/datatype:String, //人或责任单位iddataid:String, //1:正常0:删除status:String, //修改时间modifytime:Date);
+
+readilyrecordentity(//uuidid:String, //业务idbusinessid:String, //整改描述rectificationdescription:String, //创建时间createon:Date, //修改时间modifyon:Date);
+
+securityimageentity(//uuidid:String, //业务idbusinessid:String, //图片链接url:String, //类型1.随手拍问题图片2.随手拍整改图片3.检查计划签字图片4.检查单位签字图片5.检查详情的问题图片type:String, //状态state:String, //创建时间createon:Date, //修改时间modifyon:Date);
+
+readilytakeentity(//appid唯一性appid:String, //返回查询数据使用自增idid:Long, //返回查询数据使用修改时间modify:Date, //随手拍iduuidpatid:String, //检查部位examinationparts:String, //严重等级severitylevel:String, //创建人idcreateid:String, //创建人姓名createname:String, //创建时间create:Date, //创建人所属单位idcreateunitid:String, //创建人所属单位名称createunitname:String, //问题描述description:String, 总包负责人idinternalpeopleid:String, 总包负责人internalpeople:String, 监理负责人idexternalpeopleid:String, 监理负责人externalpeople:String, //状态waiting:待确认finshed处理中reform已完成twicereform二次整改state:String, //整改描述rectificationdescription:String, //整改时间rectification:Date, //整改负责人rectificationpeople:String, //补充描述//废弃用supplementarydescription:String, //安全管理员idsecurityadministratorid:String, 项目安全员securityadministrator:String, //地址address:String, //项目公司idprojectid:String, //项目公司名称projectname:String, //追加字段大比武additional:String);
+
+inspectionplanentity(//自增idid:Long, //唯一校验手机端生成idappid:String, //修改时间modify:Date, //检查计划idplanid:String, //检查计划名称planname:String, //创建人idcreateid:String, //创建人姓名createname:String, //创建时间create:Date, //创建人所属单位idcreateunitid:String, //创建人所属单位createunitname:String, //创建时间state:String, //检查计划开始时间planstart:Date, //检查计划结束时间planend:Date, //参加人员participant:String, //得分score:String, //所属模块1：区域；2：项目公司；3：监理；4：施工单位domain:String);
+
+projectscoringentity(//id:Long, //修改时间modify:Date, //检查计划idplanid:String, //检查计划名planname:String, //项目公司idprojectid:String, //项目公司名称projectname:String, //一级检查项idcheckclassoneid:String, //一级检查项checkclassone:String, //二级检查项idcheckclasstwoid:String, //二级检查项checkclasstwo:String, //三级检查项idcheckclassthreeid:String, //三级检查项checkclassthree:String, //stringcheckitemid//检查项id//stringcheckitemname//检查项//分数fraction:int, //得分score:int, //扣分pos:int, //所属模块1：区域；2：项目公司；3：监理；4：施工单位domain:String);
+
+inspectionunitentity(id:Long [PK], //修改时间modify:Date, //检查计划idplanid:String, //检查计划名字planname:String, //类型1.检验单位2.参加单位3.被检单位type:String, //项目公司idprojectid:String, //项目公司名称projectname:String, //状态state:String);
+
+newsentity(//新闻idnewsid:String, //新闻标题newstitle:String, //新闻插图newsimgurl:String, //新闻内容newscontent:String, //来源newssource:String, //"1"设置为轮播图slideshow:String, //创建人createname:String, //创建时间create:Date, //修改人modifyname:String, //修改时间modify:Date);
+
+knowledgeentity(//主键id自增长id:int, //时间戳增加和修改时候均修改当前字段modify:Date, //当前级别iduuidcurrentid:String, //创建时间增加时候写入当前字段create:Date, //父级idparentid:String, //状态1启用0.关闭state:String, //目录or文件名filename:String, //级别1.知识库2.文档名3.文件graded:String, //路径绝对路径path:String, //文件大小size:String);
+
+securityassessmenttempentity(//自增长idid:int, //考核idassessmentid:String, //考核项目名称assessmentname:String, //考核分数assessmentscore:String, //考核内容assessmentcontent:String, //内容编号contentnumber:String, //等级grade:String, //扣分原则deductionprinciple:String, //创建人createby:String, //创建时间create:Date, //修改人modifyby:String, //修改时间modify:Date, //状态state:String, //所属模块1：区域；2：项目公司；3：监理；4：施工单位domain:String, //父级idparentid:String, //级别level:String, //是否红线0：否；1：是isredline:String, //是否加分0：否；1：是isbonuspoints:String);
+
+basicprojectentity(//自增长idid:int, //当前数据idcurrentid:String, //名称name:String, //父级idparentid:String, //状态1：在线；0：离线state:String, //级别1：集团；2：区域；3：项目level:String, //修改时间modify:Date);
+
+basicstaffdataentity(//自增idid:int, //集团id、区域id、项目iddataid:String, //1:部门；2：人员datatype:String, //dataname//名称/***集团：1：hse部门*区域：2：项目安全员*项目：3：项目全体成员*4：甲方全全员*5：甲方工程师*6：总包*7：监理*/datarole:String, //人员idstaffid:String, //staffname//人员名称//状态0删除1正常state:String, //修改时间modifytime:Date);
+
+nurseryentity(//uuidid:String, //苗木名称nurseryname:String, //数量num:String, //高度height:String, //备注remark:String, //修改时间modify:Date, //图片路径imageurl:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

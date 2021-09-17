@@ -1,0 +1,47 @@
+
+metafield(serialversionuid:long, id:int [PK], entityid:Integer, name:String, GeneratedName:EntityType, GeneratedName:DataType, disabled:boolean, mandatory:boolean, displayorder:Integer, defaultvalue:MetaFieldValue #FK to(MetaField), datatableid:Integer, helpdescription:String, helpcontenturl:String, GeneratedName:ValidationRule, //indicatewhetherthemetafieldisaprimaryfieldandcanbeusedforcreationofmetafieldgroupsandforproviding//ameta-fieldstobepopulatedfortheentitytypetheybelongto//metafieldscreatedfromtheconfiguration-metafieldmenuwillbeconsideredasprimarymetafieldsbydefault.//allotherdynamicmetafieldscreatedontheflyinthesystem(example:accountinformationtype,productcategory)willnotbeconsideredasprimaryprimary:Boolean, fieldusage:MetaFieldType, versionnum:Integer, filename:String);
+
+metafieldgroup(serialversionuid:long, id:int [PK], created:Date, upd:Date, entityid:Integer, displayorder:Integer, GeneratedName:EntityType, versionnum:Integer);
+
+metafield_group_meta_field_map(metafield_group_id:MetaFieldGroup [PK] #FK to MetaFieldGroup,meta_field_value_id:MetaField [PK] #FK to MetaField);
+
+validationrule(error_msg_label:String, id:int [PK], ruletype:ValidationRuleType, ruleattributes:SortedMap<String,String>, enabled:boolean, versionnum:Integer);
+
+metafieldvalue(id:Integer [PK], field:MetaField #FK to(MetaField));
+
+jsonmetafieldvalue(log:FormatLogger, json:String);
+
+listmetafieldvalue(value:List<String>);
+
+datemetafieldvalue(value:Date);
+
+integermetafieldvalue(value:Integer);
+
+decimalmetafieldvalue(value:BigDecimal);
+
+booleanmetafieldvalue(value:Boolean);
+
+stringmetafieldvalue(value:String);
+
+languagedto(english_language_id:int, id:int [PK], code:String, description:String);
+
+currencydto(id:int [PK], symbol:String, code:String, countrycode:String, entities_1:Set<Integer>, versionnum:Integer, //fromexname:String, //willbeconvertedtofloatrate:String);
+
+jbillingtable(id:int [PK], name:String);
+
+internationaldescriptiondto(id:InternationalDescriptionId, content:String);
+
+abstractgenericstatus(id:int, statusvalue:Integer, order:Integer);
+
+countrydto(id:int [PK], code:String);
+
+enumerationdto(id:int [PK], name:String, entityid:Integer, versionnum:int);
+
+internationaldescription(id:InternationalDescriptionId, content:String);
+
+currencyexchangedto(id:int [PK], GeneratedName:CurrencyDTO, entityid:Integer, rate:BigDecimal, validsince:Date, createtime:Date, versionnum:int);
+
+enumerationvaluedto(id:int [PK], value:String, enumeration:EnumerationDTO #FK to(enumerationdto), versionnum:int);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

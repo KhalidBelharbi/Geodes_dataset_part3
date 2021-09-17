@@ -1,0 +1,15 @@
+
+order(id:Long [PK], address:String, create:Date, GeneratedName:Account #FK to(account));
+
+product(id:Integer [PK], name:String, image:String, price:Double, create:Date, available:Boolean, GeneratedName:Category #FK to(category));
+
+category(id:String [PK], name:String);
+
+account(username:String [PK], password:String, fullname:String, email:String, photo:String, activated:boolean, admin:boolean);
+
+orderdetail(id:Long [PK], price:Double, quantity:Integer, GeneratedName:Product #FK to(product), GeneratedName:Order #FK to(order));
+
+report(group:Serializable [PK], sum:Double, count:Long);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

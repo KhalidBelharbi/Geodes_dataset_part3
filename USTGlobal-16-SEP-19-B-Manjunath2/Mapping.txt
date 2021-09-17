@@ -1,0 +1,16 @@
+ClassDiagram.Class>> OrderProduct =>=>=> RelationalSchema.Table>> orderproduct;
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Class>> Product =>=>=> RelationalSchema.Table>> product;
+ClassDiagram.Attribut>> OrderProduct.oid:int =>=>=> RelationalSchema.Column>> orderproduct.oid PRIMARY KEY;
+ClassDiagram.Attribut>> OrderProduct.pname:String =>=>=> RelationalSchema.Column>> orderproduct.pname;
+ClassDiagram.Attribut>> OrderProduct.quantity:int =>=>=> RelationalSchema.Column>> orderproduct.quantity;
+ClassDiagram.Attribut>> OrderProduct.price:int =>=>=> RelationalSchema.Column>> orderproduct.price;
+ClassDiagram.Attribut>> OrderProduct.total:int =>=>=> RelationalSchema.Column>> orderproduct.total;
+ClassDiagram.Attribut>> OrderProduct.email:String =>=>=> RelationalSchema.Column>> orderproduct.email;
+ClassDiagram.Attribut>> User.id:int =>=>=> RelationalSchema.Column>> user.id;
+ClassDiagram.Attribut>> User.name:String =>=>=> RelationalSchema.Column>> user.name;
+ClassDiagram.Attribut>> User.email:String =>=>=> RelationalSchema.Column>> user.email PRIMARY KEY;
+ClassDiagram.Attribut>> User.password:String =>=>=> RelationalSchema.Column>> user.password;
+ClassDiagram.Attribut>> Product.pid:int =>=>=> RelationalSchema.Column>> product.pid;
+ClassDiagram.Attribut>> Product.price:int =>=>=> RelationalSchema.Column>> product.price;
+ClassDiagram.Attribut>> Product.pname:String =>=>=> RelationalSchema.Column>> product.pname PRIMARY KEY;

@@ -1,0 +1,2929 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="feed" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validationmessages_zh_cn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shipper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logcontroller" >
+      <xs:sequence>
+        <xs:element name="select_sql_limit" type="xs:string" />
+        <xs:element name="size" type="xs:long" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="triggercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="triggerservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="taskcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="taskdetails" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="triggerservice" nillable="true" minOccurs="0" />
+        <xs:element name="hour" type="xs:long" />
+        <xs:element name="minute" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="addtriggerform" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="taskname" type="xs:string" />
+        <xs:element name="taskgroup" type="xs:string" />
+        <xs:element name="/***选择类型*/type" type="xs:long" />
+        <xs:element name="/***指定的时间*/usedatetime" type="xs:anyType" />
+        <xs:element name="/***指定的间隔*/useinterval" type="xs:anyType" />
+        <xs:element name="/***自定义的时间*/useappointtime" type="xs:anyType" />
+        <xs:element name="/***指定的时间*/datetime" type="xs:string" />
+        <xs:element name="/***指定时间类型*/datetimetype" type="xs:long" />
+        <xs:element name="/***使用cron字符串*/usecron" type="xs:anyType" />
+        <xs:element name="/***cron*/cron" type="xs:string" />
+        <xs:element name="/***间隔的类型*/ervaltype" type="xs:long" />
+        <xs:element name="/***自定义字符串*/appointstr" type="xs:string" />
+        <xs:element name="/***自定义字符串的类型*/appotype" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uniondao" >
+      <xs:sequence>
+        <xs:element name="update_union_deliveryorder" type="xs:string" />
+        <xs:element name="update_union_cancelorder" type="xs:string" />
+        <xs:element name="select_union_order" type="xs:string" />
+        <xs:element name="select_union_refundorder" type="xs:string" />
+        <xs:element name="insert_union_refundorder" type="xs:string" />
+        <xs:element name="select_new_union_order" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mergecommentdaoimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="query_sql" type="xs:string" />
+        <xs:element name="channel" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mergecommentdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uniondaoimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="union" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpdao" >
+      <xs:sequence>
+        <xs:element name="//////////////////////////////////////////////////sql/////////////////////////////////////***查询订单是否在erp做过销退*/find_erp_cancel_order" type="xs:string" />
+        <xs:element name="/***查询订单是否在erp是否销退成功*/find_erp_cancel_success" type="xs:string" />
+        <xs:element name="/***通过erp退货单号查询ec退换货订单编号*/find_ec_returnorder" type="xs:string" />
+        <xs:element name="/***更新erp接口处理状态*/update_erp_flag" type="xs:string" />
+        <xs:element name="/***更新erp明细接口处理状态*/update_erp_mx_flag" type="xs:string" />
+        <xs:element name="/***更新erp明细接口处理状态*/update_erp_ysdh_flag" type="xs:string" />
+        <xs:element name="/***得到erp订单项*/find_order_state_item" type="xs:string" />
+        <xs:element name="/***销售订单-接口主表-jkxx_ddgl_khdd*/insert_order" type="xs:string" />
+        <xs:element name="/***销售订单明细-接口主表-jkxx_ddgl_khddmxmall:2802*/insert_order_intem" type="xs:string" />
+        <xs:element name="/***销售订单-发票信息表-jkxx_fp*/insert_invoice" type="xs:string" />
+        <xs:element name="/***cod电子面单-jkxx_khdd_dzmd*/insert_dangdang_cod" type="xs:string" />
+        <xs:element name="/***插入退换货单*/insert_returnorder" type="xs:string" />
+        <xs:element name="/***插入退换货订单项*/insert_returnorder_item" type="xs:string" />
+        <xs:element name="insert_chargeoff_order" type="xs:string" />
+        <xs:element name="insert_chargeoff_order_item" type="xs:string" />
+        <xs:element name="/***需要回传ec状态的订单*/find_order_state" type="xs:string" />
+        <xs:element name="find_order_state_one" type="xs:string" />
+        <xs:element name="/***根据订单号查询运单信息*/find_order_delivery" type="xs:string" />
+        <xs:element name="find_order_delivery_list" type="xs:string" />
+        <xs:element name="/***查询中启中该订单是否已经重量回填*/find_erp_zt_order" type="xs:string" />
+        <xs:element name="/***查询中启12小时内的拦截订单*/find_erp_order_reject" type="xs:string" />
+        <xs:element name="/***统计需要进行增量更新的库存数据*/count_erp_product_stock" type="xs:string" />
+        <xs:element name="/***更新商品库存抓取状态*/update_erp_product_state" type="xs:string" />
+        <xs:element name="need_eproduct_stock" type="xs:string" />
+        <xs:element name="find_order_invoice_sql" type="xs:string" />
+        <xs:element name="update_order_invoice_state_sql" type="xs:string" />
+        <xs:element name="find_area_sql" type="xs:string" />
+        <xs:element name="find_delivery_area_sql" type="xs:string" />
+        <xs:element name="find_delivery_company_sql" type="xs:string" />
+        <xs:element name="update_area_state_sql" type="xs:string" />
+        <xs:element name="update_delivery_area_state_sql" type="xs:string" />
+        <xs:element name="update_delivery_company_state_sql" type="xs:string" />
+        <xs:element name="delete_area_sql" type="xs:string" />
+        <xs:element name="delete_delivery_area_sql" type="xs:string" />
+        <xs:element name="delete_delivery_company_sql" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpdaoimpl" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="pagination_default" type="xs:long" />
+        <xs:element name="pagination_coefficient" type="xs:long" />
+        <xs:element name="pagination_size_default" type="xs:long" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="erp" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robotcategorydaoimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="robotcategoryrowmapper" nillable="true" minOccurs="0" />
+        <xs:element name="dateformat" type="xs:anyType" />
+        <xs:element name="分类的sql,不会有太多*/sql_new_categories" type="xs:string" />
+        <xs:element name="robot" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robotcategorydao" >
+      <xs:complexContent>
+       <xs:extension base="serializable{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="robotproductdaoimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="robot" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robotproductdao" >
+      <xs:complexContent>
+       <xs:extension base="serializable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="robotcategoryrowmapper" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robottaskdaoimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="robot" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robottaskdao" >
+      <xs:complexContent>
+       <xs:extension base="serializable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="booktopdaoimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="tag_productsale" type="xs:string" />
+        <xs:element name="delete_product_sql" type="xs:string" />
+        <xs:element name="delete_category_sql" type="xs:string" />
+        <xs:element name="insert_sale_category_sql" type="xs:string" />
+        <xs:element name="insert_sale_product_sql" type="xs:string" />
+        <xs:element name="query_sale_first_category_sql" type="xs:string" />
+        <xs:element name="query_category_sql" type="xs:string" />
+        <xs:element name="query_all_category_sql" type="xs:string" />
+        <xs:element name="query_sale_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_first_category_sql" type="xs:string" />
+        <xs:element name="select_new_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_second_category_sql" type="xs:string" />
+        <xs:element name="select_new_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_a_week_product_sale_of_book_sql" type="xs:string" />
+        <xs:element name="select_sale_a_week_product_new_of_book_sql" type="xs:string" />
+        <xs:element name="select_sale_a_month_product_sale_of_book_sql" type="xs:string" />
+        <xs:element name="select_sale_a_month_product_new_of_book_sql" type="xs:string" />
+        <xs:element name="select_sale_three_month_product_sale_of_book_sql" type="xs:string" />
+        <xs:element name="select_sale_three_month_product_new_of_book_sql" type="xs:string" />
+        <xs:element name="select_sale_last_year_product_sale_of_book_sql" type="xs:string" />
+        <xs:element name="select_sale_last_year_product_new_of_book_sql" type="xs:string" />
+        <xs:element name="select_sale_a_week_product_sale_of_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_a_week_product_new_of_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_a_month_product_sale_of_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_a_month_product_new_of_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_three_month_product_sale_of_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_three_month_product_new_of_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_last_year_product_sale_of_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_last_year_product_new_of_first_category_sql" type="xs:string" />
+        <xs:element name="select_sale_a_week_product_sale_of_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_a_week_product_new_of_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_a_month_product_sale_of_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_a_month_product_new_of_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_three_month_product_sale_of_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_three_month_product_new_of_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_last_year_product_sale_of_second_category_sql" type="xs:string" />
+        <xs:element name="select_sale_last_year_product_new_of_second_category_sql" type="xs:string" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="booktopdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="franchiseeproductdao" >
+      <xs:complexContent>
+       <xs:extension base="serializable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="franchiseeproductdaoimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="select_franchisee_sql" type="xs:string" />
+        <xs:element name="select_onshelf_quantity_sql" type="xs:string" />
+        <xs:element name="update_franchisee_sql" type="xs:string" />
+        <xs:element name="select_promotionproduct_sql" type="xs:string" />
+        <xs:element name="updateeffectiveexpired" type="xs:string" />
+        <xs:element name="select_singleprice_sql" type="xs:string" />
+        <xs:element name="select_categoryprice_sql" type="xs:string" />
+        <xs:element name="franchisee" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookdaoimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//根据图书id查询bookquery_sql" type="xs:string" />
+        <xs:element name="//新增bookinsert_book_sql" type="xs:string" />
+        <xs:element name="update_book_sql" type="xs:string" />
+        <xs:element name="//新增bookprefaceinsert_preface_sql" type="xs:string" />
+        <xs:element name="//新增bookchapterinsert_chapter_sql" type="xs:string" />
+        <xs:element name="ebook" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infrancecategorydaoimpl" >
+      <xs:sequence>
+        <xs:element name="get_infrance_category" type="xs:string" />
+        <xs:element name="find_infrance_category_by_code" type="xs:string" />
+        <xs:element name="find_infrance_book_category_by_code" type="xs:string" />
+        <xs:element name="ebook" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendordaoimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="get" type="xs:string" />
+        <xs:element name="ebook" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businesslogdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookchangedao" >
+      <xs:complexContent>
+       <xs:extension base="serializable{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="publisherdaoimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="find_by_code" type="xs:string" />
+        <xs:element name="find_by_name" type="xs:string" />
+        <xs:element name="ebook" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productdaoimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="get_product_by_bookid" type="xs:string" />
+        <xs:element name="insert_processsitem_sql" type="xs:string" />
+        <xs:element name="insert_productitem_sql" type="xs:string" />
+        <xs:element name="update_product_sql" type="xs:string" />
+        <xs:element name="insert_product_sql" type="xs:string" />
+        <xs:element name="update_product_price_sql" type="xs:string" />
+        <xs:element name="ebook" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookchangedaoimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="/***查询所有书*/find_ebookchange_list" type="xs:string" />
+        <xs:element name="get_ebookchange_bybookid" type="xs:string" />
+        <xs:element name="/***修改已经处理标识*/save_ebookchange" type="xs:string" />
+        <xs:element name="insert_ebook_change_sql" type="xs:string" />
+        <xs:element name="ebook" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendordao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="publisherdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businesslogdaoimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="select_sql" type="xs:string" />
+        <xs:element name="select_sql2" type="xs:string" />
+        <xs:element name="update_sql" type="xs:string" />
+        <xs:element name="insert_businesslog_sql" type="xs:string" />
+        <xs:element name="ebook" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infrancecategorydao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="triggerdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchdaoimpl" >
+      <xs:sequence>
+        <xs:element name="error" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="search_index_count" type="xs:string" />
+        <xs:element name="search_index_status" type="xs:string" />
+        <xs:element name="select_author__is_null" type="xs:string" />
+        <xs:element name="update_author_" type="xs:string" />
+        <xs:element name="search_index_sql" type="xs:string" />
+        <xs:element name="search_update_sql" type="xs:string" />
+        <xs:element name="change_promotionprice" type="xs:string" />
+        <xs:element name="change_ebook" type="xs:string" />
+        <xs:element name="change_hasbook_0" type="xs:string" />
+        <xs:element name="change_hasbook_1" type="xs:string" />
+        <xs:element name="search_update_count_sql" type="xs:string" />
+        <xs:element name="search_update_clear_sql" type="xs:string" />
+        <xs:element name="search_index_clear_sql" type="xs:string" />
+        <xs:element name="clean_search_update" type="xs:string" />
+        <xs:element name="available" type="xs:string" />
+        <xs:element name="producturl" type="xs:string" />
+        <xs:element name="//需要转换时间字段sql_date" type="xs:anyType" />
+        <xs:element name="//不需要字段sql_filed" type="xs:anyType" />
+        <xs:element name="increment_product" type="xs:string" />
+        <xs:element name="last_time" type="xs:string" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recommenddao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recommenddaoimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="save_buy_base_data_by_date" type="xs:string" />
+        <xs:element name="save_visit_base_data_by_date" type="xs:string" />
+        <xs:element name="save_search_base_data_by_date" type="xs:string" />
+        <xs:element name="delete_only_one_userid" type="xs:string" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sapdaoimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="findcomplex_sql" type="xs:string" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sapdao" >
+      <xs:sequence>
+        <xs:element name="insert_sap_order" type="xs:string" />
+        <xs:element name="/***写入interface_replenishment接口表里面的记录标志位设置为t*/insert_interface_replenishment" type="xs:string" />
+        <xs:element name="/***接口表写入完成后，将标志位更新为c*/update_interface_replenishment" type="xs:string" />
+        <xs:element name="insert_bill_settle" type="xs:string" />
+        <xs:element name="find_sap_delivery" type="xs:string" />
+        <xs:element name="find_sap_order" type="xs:string" />
+        <xs:element name="find_sap_stock" type="xs:string" />
+        <xs:element name="update_orderitem_deliveryquantity" type="xs:string" />
+        <xs:element name="update_sap_delivery_iflag" type="xs:string" />
+        <xs:element name="update_mr_freeze_flag" type="xs:string" />
+        <xs:element name="new_insert_interface_replenishment" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductdaoimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="descriptionmetamap" type="xs:anyType" />
+        <xs:element name="tags" type="xs:string" />
+        <xs:element name="sapce4" type="xs:string" />
+        <xs:element name="sapce1" type="xs:string" />
+        <xs:element name="eccore" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductwarehousedaoimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductwarehousedao" >
+      <xs:complexContent>
+       <xs:extension base="serializable{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ecdao" >
+      <xs:sequence>
+        <xs:element name="/***检查渠道订单是否已经存在*/check_ec2channel" type="xs:string" />
+        <xs:element name="/***erp回传的发货订单如果是渠道订单则插入到渠道状态回传表*size:5*/insert_ec2channel" type="xs:string" />
+        <xs:element name="insert_returnorder_ec2channel" type="xs:string" />
+        <xs:element name="get_notrans_num" type="xs:string" />
+        <xs:element name="select_order_notransfer" type="xs:string" />
+        <xs:element name="/***erp拦截订单保存*/insert_erp_block" type="xs:string" />
+        <xs:element name="check_erp_block" type="xs:string" />
+        <xs:element name="/***更新erp拦截订单的状态*/block_init" type="xs:anyType" />
+        <xs:element name="block_success" type="xs:anyType" />
+        <xs:element name="block_delivery" type="xs:anyType" />
+        <xs:element name="update_erp_block" type="xs:string" />
+        <xs:element name="get_erp_block" type="xs:string" />
+        <xs:element name="/***查询需要二次处理的erp拦截订单*/select_erp_block" type="xs:string" />
+        <xs:element name="/***插入发货信息*/select_split" type="xs:string" />
+        <xs:element name="insert_delivery_split" type="xs:string" />
+        <xs:element name="select_return_delay" type="xs:string" />
+        <xs:element name="update_order_return_monitor" type="xs:string" />
+        <xs:element name="update_order_invoice_sql" type="xs:string" />
+        <xs:element name="insert_area" type="xs:string" />
+        <xs:element name="insert_delivery_area" type="xs:string" />
+        <xs:element name="insert_delivery_company" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecorderdao" >
+      <xs:sequence>
+        <xs:element name="select_productsale_totel" type="xs:string" />
+        <xs:element name="select_product_stock" type="xs:string" />
+        <xs:element name="update_product_stock" type="xs:string" />
+        <xs:element name="select_rapid_order_sales_count" type="xs:string" />
+        <xs:element name="select_etl_order_item_stock" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecorderdaoimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductdao" >
+      <xs:complexContent>
+       <xs:extension base="serializable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="eccategorydaoimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="ec_key_code" type="xs:string" />
+        <xs:element name="ec_key_id" type="xs:string" />
+        <xs:element name="//robot_id是robot采集系统的分类id,需要根据映射关系来同步商品以及codeec_sql_code" type="xs:string" />
+        <xs:element name="//robot_id在ec_core里的分类id映射关系ec_sql_id" type="xs:string" />
+        <xs:element name="//同步sql,更新code,以及parentidec_sql_sync" type="xs:string" />
+        <xs:element name="//获取product所有idec_sql_product_meta" type="xs:string" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eccategorydao" >
+      <xs:complexContent>
+       <xs:extension base="serializable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ecdaoimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//loglog" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compressimagedao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoiceitemidgenerator" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="generator" type="xs:anyType" />
+        <xs:element name="implementor" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductwarehouseservice" >
+      <xs:complexContent>
+       <xs:extension base="serializable{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="testservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductserviceimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="default_priority" type="xs:long" />
+        <xs:element name="findcomplex_sql" type="xs:string" />
+        <xs:element name="savesql" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecproductdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="robottaskdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="robotproductdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductwarehouseserviceimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="productsaleservice" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecproductwarehousedao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stocksyncserviceimpl" >
+      <xs:sequence>
+        <xs:element name="selectproducts" type="xs:string" />
+        <xs:element name="updateprocess" type="xs:string" />
+        <xs:element name="updateingore" type="xs:string" />
+        <xs:element name="changecount" type="xs:string" />
+        <xs:element name="updateischange" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eccategoryserviceimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="eccategorydao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="robotcategorydao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecorderserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="createtime_asc" type="xs:long" />
+        <xs:element name="page_size" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecorderdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="topicserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="meta_name_key" type="xs:string" />
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="htmlhead" type="xs:anyType" />
+        <xs:element name="htmltitle" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="dest" type="xs:string" />
+        <xs:element name="regx" type="xs:string" />
+        <xs:element name="year" type="xs:long" />
+        <xs:element name="month" type="xs:long" />
+        <xs:element name="page" type="xs:string" />
+        <xs:element name="metanameset" type="xs:string" />
+        <xs:element name="metaregex" type="xs:string" />
+        <xs:element name="metaregexcontent" type="xs:string" />
+        <xs:element name="topicname" type="xs:string" />
+        <xs:element name="topicimage" type="xs:string" />
+        <xs:element name="linksource" type="xs:string" />
+        <xs:element name="linkhref" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="triggerdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="quartz" type="triggerdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="2" type="customerservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eccategoryservice" >
+      <xs:complexContent>
+       <xs:extension base="serializable{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ecproductservice" >
+      <xs:complexContent>
+       <xs:extension base="serializable{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ecorderservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stocksyncservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="topicservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compressimageserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="magic_3" type="xs:long" />
+        <xs:element name="magic_2" type="xs:long" />
+        <xs:element name="magic_1" type="xs:long" />
+        <xs:element name="page_size" type="xs:long" />
+        <xs:element name="parameters" type="xs:string" />
+        <xs:element name="big_mid_sml_sql" type="xs:string" />
+        <xs:element name="other_sql" type="xs:string" />
+        <xs:element name="GeneratedName" type="compressimagedao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productdao" nillable="true" minOccurs="0" />
+        <xs:element name="eccore" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="path" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productimageconvertserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+        <xs:element name="imageservice" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productimageconvertservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compressimageservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notifyserviceimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="noticemail" type="xs:string" />
+        <xs:element name="noticemaitlemplate" type="xs:string" />
+        <xs:element name="noticemessage" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="triggerserviceimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="triggerdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="taskdetails" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="simpleprocesstriggerlistener" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="triggerservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notifyservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sapbillserviceimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="sapdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sapreplenishmentserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="sapdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="saporderrowmapper" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="saporderserviceimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="sapdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="ecdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sapbillservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sapreplenishmentservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="saporderservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recommendservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recommendserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="buffersize" type="xs:long" />
+        <xs:element name="basedatepath" type="xs:string" />
+        <xs:element name="resultpath" type="xs:string" />
+        <xs:element name="recommendcount" type="xs:long" />
+        <xs:element name="tab" type="xs:string" />
+        <xs:element name="recommender" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="recommenddao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecmonitorservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecmonitorserviceimpl" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookchangeserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productserviceimpl" >
+      <xs:sequence>
+        <xs:element name="e" type="productdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="ebookchangedao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="businesslogdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="bookdao" nillable="true" minOccurs="0" />
+        <xs:element name="e" type="productdao" nillable="true" minOccurs="0" />
+        <xs:element name="e" type="productservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="infrancecategoryservice" nillable="true" minOccurs="0" />
+        <xs:element name="e" type="publisherservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infrancecategoryserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="infrancecategorydao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookchangerowmapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="publisherserviceimpl" >
+      <xs:sequence>
+        <xs:element name="e" type="publisherdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="winxuanebookserviceimpl" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ebookchangedao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="operatebookservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="operatebookserviceimpl" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="bookpath" type="xs:string" />
+        <xs:element name="index" type="xs:long" />
+        <xs:element name="GeneratedName" type="ebookchangedao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookuploadserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***图书上传的源文件目录*///source_path" type="xs:string" />
+        <xs:element name="/***图书补的源文件目录*/repair_path" type="xs:string" />
+        <xs:element name="/***图书上传成功备份文件目录67和本机*/book_bakpath" type="xs:string" />
+        <xs:element name="/***图书上传的目的服务器目录*/dest_path" type="xs:string" />
+        <xs:element name="instoredate" type="xs:string" />
+        <xs:element name="GeneratedName" type="bookservice" nillable="true" minOccurs="0" />
+        <xs:element name="e" type="productservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="vendorservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="businesslogservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+        <xs:element name="vendorid" type="xs:long" />
+        <xs:element name="vendorname" type="xs:string" />
+        <xs:element name="errorpath" type="xs:string" />
+        <xs:element name="successpath" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eproductrowmapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendorserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="vendordao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businesslogserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="businesslogdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businesslogservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookchangeservice" >
+      <xs:complexContent>
+       <xs:extension base="serializable{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="vendorservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infrancecategoryservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookuploadservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="publisherservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="operatebookservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="winxuanebookservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="booktopservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="booktopserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="booktopdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mdmproductrowmapper" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mdmserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+        <xs:element name="mdm" type="xs:anyType" />
+        <xs:element name="/***库位*/locations" type="xs:anyType" />
+        <xs:element name="product_extend_name" type="xs:anyType" />
+        <xs:element name="product_desc_name" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mdmservice" >
+      <xs:sequence>
+        <xs:element name="book" type="xs:string" />
+        <xs:element name="big_img" type="xs:string" />
+        <xs:element name="small_img" type="xs:string" />
+        <xs:element name="illustration_img" type="xs:string" />
+        <xs:element name="big" type="xs:anyType" />
+        <xs:element name="small" type="xs:anyType" />
+        <xs:element name="illustration" type="xs:anyType" />
+        <xs:element name="select_add_product_count" type="xs:string" />
+        <xs:element name="select_update_product_count" type="xs:string" />
+        <xs:element name="select_update_product" type="xs:string" />
+        <xs:element name="select_add_product" type="xs:string" />
+        <xs:element name="select_desc_product" type="xs:string" />
+        <xs:element name="find_mdm_commodity_macotory" type="xs:string" />
+        <xs:element name="find_mdm_commodity_cd" type="xs:string" />
+        <xs:element name="insert_ec_commodity" type="xs:string" />
+        <xs:element name="update_ec_commodity" type="xs:string" />
+        <xs:element name="find_max_id" type="xs:string" />
+        <xs:element name="get_ec_category" type="xs:string" />
+        <xs:element name="get_ec_commodity_discount" type="xs:string" />
+        <xs:element name="insert_ec_commodity_sale" type="xs:string" />
+        <xs:element name="insert_ec_commodity_notmatch_price" type="xs:string" />
+        <xs:element name="insert_ec_commodity_notmatch_category" type="xs:string" />
+        <xs:element name="insert_ec_commodity_extend" type="xs:string" />
+        <xs:element name="insert_ec_commodity_desc" type="xs:string" />
+        <xs:element name="select_ec_product_id" type="xs:string" />
+        <xs:element name="select_ec_product_lock" type="xs:string" />
+        <xs:element name="update_ec_commodity_extend" type="xs:string" />
+        <xs:element name="select_mdm_commodity_img" type="xs:string" />
+        <xs:element name="select_ec_commodity_desc" type="xs:string" />
+        <xs:element name="update_ec_commodity_desc" type="xs:string" />
+        <xs:element name="insert_ec_commodity_img" type="xs:string" />
+        <xs:element name="update_ec_commodity_sale" type="xs:string" />
+        <xs:element name="select_ec_commodity_img" type="xs:string" />
+        <xs:element name="update_ec_commodity_img" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="franchiseesingleproductpricerowmapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="franchiseeproductservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robotcategoryserviceimpl" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="robotcategorydao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robotcategoryservice" >
+      <xs:complexContent>
+       <xs:extension base="serializable{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="erpproductstockservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erporderservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erporderserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="erp_system_operator" type="xs:string" />
+        <xs:element name="erp" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="erpdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="ecdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="invoiceitemidgenerator" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erporderitemrowmapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpproductstockrowmapper" >
+      <xs:sequence>
+        <xs:element name="formatter" type="xs:anyType" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erporderrowmapper" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erporderdeliveryrowmapper" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="date_format" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpproductstockserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="erpdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpparseutils" >
+      <xs:sequence>
+        <xs:element name="delivery_type_map" type="xs:anyType" />
+        <xs:element name="channel_type" type="xs:anyType" />
+        <xs:element name="product_sort" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adunionorderserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="short_date_format" type="xs:anyType" />
+        <xs:element name="long_date_format" type="xs:anyType" />
+        <xs:element name="early_time" type="xs:string" />
+        <xs:element name="late_time" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="uniondao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mergecommentserviceimpl" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="mergecommentdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adunionorderservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mergecommentservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sapordertransferexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="solrrequestexception" >
+      <xs:complexContent>
+       <xs:extension base="exception{">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="quartzexception" >
+      <xs:complexContent>
+       <xs:extension base="exception{">
+         <xs:sequence>
+          <xs:element name="/***/serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="erpordertransferexception" >
+      <xs:complexContent>
+       <xs:extension base="exception{">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fileprocessexception" >
+      <xs:complexContent>
+       <xs:extension base="exception{">
+         <xs:sequence>
+          <xs:element name="/***/serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shipperkeywordutils" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***详细地址关键字*/address_keyword" type="xs:string" />
+        <xs:element name="/***备注关键字*/remark_keyword" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="createincrementindex" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="createfullindex" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="createfullindex" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="createincrementindex" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="createinventoryindex" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="createfullindexfordoubanjob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compressimage" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="compressimageservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productimageconvertjob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="productimageconvertservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jtatasktest" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="i" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flushlog" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="delete_sql" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="taskdeamon" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="topicdecompressjob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="topicservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="booktopjob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="//最少一级分类数first_category_num" type="xs:long" />
+        <xs:element name="//新书最少一级分类数first_category_new_num" type="xs:long" />
+        <xs:element name="//一级分类最小动销商品数first_category_sale_num" type="xs:long" />
+        <xs:element name="GeneratedName" type="booktopservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferordersap" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="page_size" type="xs:anyType" />
+        <xs:element name="parameters" type="xs:anyType" />
+        <xs:element name="errororder" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="saporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updateunionorder" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="adunionorderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="calculateunioncommission" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="batchupdateunionorder" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="adunionorderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mergecomment" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="max_merge_size" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="mergecommentservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpallstocksync" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="stocksyncservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productresponsibilitysyncjob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecproductservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productdescriptionsyncjob" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="ecproductservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productrelationtoamazonjob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecproductservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productwarehousejob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecproductwarehouseservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productsalesstatisticsjob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="ecproductservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitortaskjob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecmonitorservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notifyarrival" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="page_size" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="customerservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notifypricereduce" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="page_size" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="customerservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferarea" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="erporderservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="innersertlejobtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="salessettlejobtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="salessettlejob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//一次处理多少limit" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="innersettlejob" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="innersettlequeryjob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferorderdelivery" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="errortimes" type="xs:long" />
+        <xs:element name="GeneratedName" type="erporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferreplenishment" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="sapreplenishmentservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="completeorder" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="page_size" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="parseorderstock" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecorderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="canceloverduepayorder" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="select_sql" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferorderinvoice" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="page_size" type="xs:anyType" />
+        <xs:element name="errororder" type="xs:anyType" />
+        <xs:element name="parameters" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="erporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferneworder" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="page_size" type="xs:anyType" />
+        <xs:element name="parameters" type="xs:anyType" />
+        <xs:element name="errororder" type="xs:anyType" />
+        <xs:element name="notransferorder" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="erporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="ecdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mrdeliveryrecordjob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferorderstatus" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="errortimes" type="xs:long" />
+        <xs:element name="GeneratedName" type="erporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferreplenishmentnew" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***2014.04.04之前，新的定时任务一次性向接口表写入1000条补货记录*调整之后，修改为每次写入100条补货记录*/number_per_transfer" type="xs:long" />
+        <xs:element name="dd" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="sapreplenishmentservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="auditingorder" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="diery_key" type="xs:anyType" />
+        <xs:element name="remark_invoice" type="xs:string" />
+        <xs:element name="channel_dangdang" type="xs:string" />
+        <xs:element name="/***最近2个月没有退货码洋小于1000需要审核的订单*/need_auditing_order_sql" type="xs:string" />
+        <xs:element name="need_auditing_order_dangdang_cod" type="xs:string" />
+        <xs:element name="check_history_done_order" type="xs:string" />
+        <xs:element name="check_normal_order_sql" type="xs:string" />
+        <xs:element name="/***最近2个月需要匹配承运商的出货dc为成都青白江仓的订单(8a17)*/need_match_shipper_order" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="eccore" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processfreeorder" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="erporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferreturnorder" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="page_size" type="xs:anyType" />
+        <xs:element name="parameters" type="xs:anyType" />
+        <xs:element name="errorreturnorder" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="erporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="convertrapidorder2usualorder" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="ecorderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="convertbookingorder2usualorder" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ecorderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="initorder" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="orderinit" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkorderreturnback" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="erporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordersettlejob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="sapbillservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transfersaporderdelivery" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="errortimes" type="xs:long" />
+        <xs:element name="GeneratedName" type="saporderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferreplenishmentnewtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cloneorder" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="reason" type="xs:string" />
+        <xs:element name="log_file" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refundrequest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***手动退款的支付类型*/not_refund" type="xs:anyType" />
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="/***日志长度*/size" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="exceptionservice" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newebookinstorejob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ebookuploadservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebooktaskjob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="winxuanebookservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpproductstocksynchro" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="default_pagesize" type="xs:long" />
+        <xs:element name="default_pagination" type="xs:long" />
+        <xs:element name="GeneratedName" type="erpproductstockservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="notifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="erpdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="franchiseeproductquantityjob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="franchiseeproductservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="franchiseeproductupdatejob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="franchiseeproductservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categorysyncjob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="eccategoryservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="robotcategoryservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productsynctaskjob" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="ecproductservice" nillable="true" minOccurs="0" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recommend" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="recommendservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchincrement" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="searchurl" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***0-8点不进行增量*/freetime" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="searchdao" nillable="true" minOccurs="0" />
+        <xs:element name="solrserverurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updateindex" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="search_index_count" type="xs:long" />
+        <xs:element name="//solrserverurl" type="xs:string" />
+        <xs:element name="searchforcleanurl" type="xs:string" />
+        <xs:element name="spellcheckurl" type="xs:string" />
+        <xs:element name="spellcheckforcleanurl" type="xs:string" />
+        <xs:element name="solrserverurl" type="xs:string" />
+        <xs:element name="GeneratedName" type="searchdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchupdate" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="spellcheckforcleanurl" type="xs:string" />
+        <xs:element name="searchforcleanurl" type="xs:string" />
+        <xs:element name="solrserverurl" type="xs:string" />
+        <xs:element name="GeneratedName" type="searchdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderprocess" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applicationcontext" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apptest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applicationcontext" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelsalestosapjobtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelsalestosapjob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="ecproductservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tasktrigger" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="status" type="xs:anyType" />
+        <xs:element name="triggername" type="xs:string" />
+        <xs:element name="triggergroup" type="xs:string" />
+        <xs:element name="jobname" type="xs:string" />
+        <xs:element name="jobgroup" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="nextfiretime" type="xs:long" />
+        <xs:element name="prevfiretime" type="xs:long" />
+        <xs:element name="state" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="saporder" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="interfaceid" type="xs:long" />
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="orderitemid" type="xs:string" />
+        <xs:element name="deliveryquantity" type="xs:long" />
+        <xs:element name="deliverytime" type="xs:dateTime" />
+        <xs:element name="deliverycode" type="xs:string" />
+        <xs:element name="iflag" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mdmattachment" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="attachmentid" type="xs:long" />
+        <xs:element name="merchid" type="xs:long" />
+        <xs:element name="attachmenttype" type="xs:string" />
+        <xs:element name="filename" type="xs:string" />
+        <xs:element name="fileexttype" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="content" type="xs:anyType" />
+        <xs:element name="creator" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mdmimage" >
+      <xs:sequence>
+        <xs:element name="attachmentid" type="xs:long" />
+        <xs:element name="merchid" type="xs:long" />
+        <xs:element name="attachmenttype" type="xs:string" />
+        <xs:element name="content" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mdmproduct" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="/***商品id*/id" type="xs:anyType" />
+        <xs:element name="/***主数据商品id*/merchid" type="xs:anyType" />
+        <xs:element name="/***sap自编码*/sapcode" type="xs:string" />
+        <xs:element name="/***商品类型*/merchtype" type="xs:string" />
+        <xs:element name="/***经营分类*/workcategory" type="xs:string" />
+        <xs:element name="/***管理分类*/managecategory" type="xs:string" />
+        <xs:element name="/***mc分类*/mccategory" type="xs:string" />
+        <xs:element name="/***ec销售分类*/category" type="xs:anyType" />
+        <xs:element name="/***商品名称*/bookname" type="xs:string" />
+        <xs:element name="/***条形码*/isbn" type="xs:string" />
+        <xs:element name="/***制造商*/publisher" type="xs:string" />
+        <xs:element name="/***作者*/author" type="xs:string" />
+        <xs:element name="/***商品定价*/price" type="xs:anyType" />
+        <xs:element name="/***供应商编号*/normalvendorid" type="xs:string" />
+        <xs:element name="/***创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/***折扣*/discount" type="xs:anyType" />
+        <xs:element name="/***最后修改时间*/lastmodifytime" type="xs:dateTime" />
+        <xs:element name="/***开本*/sizeformat" type="xs:string" />
+        <xs:element name="/***页数*/pagenum" type="xs:anyType" />
+        <xs:element name="/***字数*/wordnumber" type="xs:anyType" />
+        <xs:element name="/***装帧*/bindingformat" type="xs:string" />
+        <xs:element name="/***本版版次*/thisedition" type="xs:string" />
+        <xs:element name="/***印次*/printingtimes" type="xs:string" />
+        <xs:element name="/***本版年月*/thiseditionyearmonth" type="xs:string" />
+        <xs:element name="/***本次印刷年月*/thisprintingyearmonth" type="xs:string" />
+        <xs:element name="/***碟片数*/discquantity" type="xs:anyType" />
+        <xs:element name="/***片长*/playtime" type="xs:string" />
+        <xs:element name="/***语种*/language" type="xs:string" />
+        <xs:element name="/***主演*/starring" type="xs:string" />
+        <xs:element name="/***译者*/translator" type="xs:string" />
+        <xs:element name="/***副标题*/subheading" type="xs:string" />
+        <xs:element name="/***丛书名*/seriesname" type="xs:string" />
+        <xs:element name="/***停用标识*/unusable" type="xs:string" />
+        <xs:element name="/***商品目录*/catalog" type="xs:string" />
+        <xs:element name="/***编辑推荐*/editorrecommend" type="xs:string" />
+        <xs:element name="/***内容简介*/contentsabstract" type="xs:string" />
+        <xs:element name="/***作者介绍*/authorintroduction" type="xs:string" />
+        <xs:element name="/***书摘*/delicacycontents" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebook" >
+      <xs:sequence>
+        <xs:element name="/***书名*/bookname" type="xs:string" />
+        <xs:element name="/***/seriesname" type="xs:string" />
+        <xs:element name="/***/isbn" type="xs:string" />
+        <xs:element name="/***/sizeformat" type="xs:string" />
+        <xs:element name="/***/edition" type="xs:string" />
+        <xs:element name="/***/printingtimes" type="xs:string" />
+        <xs:element name="/***/pagecount" type="xs:string" />
+        <xs:element name="/***/wordcount" type="xs:string" />
+        <xs:element name="/***/copycount" type="xs:string" />
+        <xs:element name="/***/publisher" type="xs:string" />
+        <xs:element name="/***/copyrightowner" type="xs:string" />
+        <xs:element name="/***/thiseditionpublishingdate" type="xs:string" />
+        <xs:element name="/***作者*/author" type="xs:string" />
+        <xs:element name="/***作者简介*/authorintroduction" type="xs:string" />
+        <xs:element name="/***翻译者*/translator" type="xs:string" />
+        <xs:element name="/***语言*/language" type="xs:string" />
+        <xs:element name="/***纸书价格*/listprice" type="xs:string" />
+        <xs:element name="/***电子书价格*/ebooklistprice" type="xs:string" />
+        <xs:element name="/***纸张*/papermaterial" type="xs:string" />
+        <xs:element name="/***包装*/pack" type="xs:string" />
+        <xs:element name="/***关键字*/keyword" type="xs:string" />
+        <xs:element name="/***编辑推荐*/bookmakerrecommend" type="xs:string" />
+        <xs:element name="/***媒体推荐*/mediarecommend" type="xs:string" />
+        <xs:element name="/***全文摘要*/contentsabstract" type="xs:string" />
+        <xs:element name="/***是不是未出版的原创图书*/isoriginal" type="xs:string" />
+        <xs:element name="/***图书类型普通图书填0；当图书为期刊杂志的时候填1。*/type" type="xs:string" />
+        <xs:element name="/***图书源文件*/files" type="originalfile" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***章节信息*/chapters" type="chapter" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***分类信息*/categorys" type="category" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***是否为扫描书0：非1：是2013-5-13hakenyadd*/isscan" type="xs:string" />
+        <xs:element name="extendinfos" type="extendinfo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookchapter" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***章节标题*/chaptertitle" type="xs:string" />
+        <xs:element name="/***书*/bookid" type="xs:long" />
+        <xs:element name="/***开始页号*/beginpage" type="xs:anyType" />
+        <xs:element name="/***结束页号*/endpage" type="xs:anyType" />
+        <xs:element name="/***级别*/level" type="xs:anyType" />
+        <xs:element name="/***章节顺序*/chaptersequence" type="xs:anyType" />
+        <xs:element name="/***父章节id*/parentchapterid" type="xs:long" />
+        <xs:element name="/***章节索引*/chapterindex" type="xs:string" />
+        <xs:element name="/***锚点*/anchor" type="xs:anyType" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="/***0未删除,1已删除*/deleteflag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendor" >
+      <xs:sequence>
+        <xs:element name="vendorid" type="xs:long" />
+        <xs:element name="/***供应商名称*/vendorname" type="xs:string" />
+        <xs:element name="vendorcode" type="xs:string" />
+        <xs:element name="vendorintroduction" type="xs:string" />
+        <xs:element name="vendoraddress1" type="xs:string" />
+        <xs:element name="vendorcontact1" type="xs:string" />
+        <xs:element name="vendortelephone1" type="xs:string" />
+        <xs:element name="vendoremail1" type="xs:string" />
+        <xs:element name="vendorcontact2" type="xs:string" />
+        <xs:element name="vendortelephone2" type="xs:string" />
+        <xs:element name="vendoremail2" type="xs:string" />
+        <xs:element name="vendorbank" type="xs:string" />
+        <xs:element name="vendorbankaccount" type="xs:string" />
+        <xs:element name="vendorpublictype" type="xs:long" />
+        <xs:element name="assignpercent" type="xs:anyType" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="deleteflag" type="xs:long" />
+        <xs:element name="//vendor_simple_namesimplename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="extendinfo" >
+      <xs:sequence>
+        <xs:element name="/***序跋类型*/type" type="xs:string" />
+        <xs:element name="/***序跋标题*/title" type="xs:string" />
+        <xs:element name="/***作者*/author" type="xs:string" />
+        <xs:element name="/***内容*/content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="category" >
+      <xs:sequence>
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="textvlaue" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productprocessitem" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="adminuserid" type="xs:long" />
+        <xs:element name="//用户类型,1后台管理用户,2供应商后台管理用户usertype" type="xs:anyType" />
+        <xs:element name="productid" type="xs:long" />
+        <xs:element name="bookid" type="xs:long" />
+        <xs:element name="/***操作标志,0上传文件,1编辑信息,2已提交申请审核,3审核未通过,4审核通过,5上架,6下架,7冻结,8解除冻结,9删除,10恢复删除*/flag" type="xs:anyType" />
+        <xs:element name="//操作标志描述flagdescription" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="//0未删除,1已删除deleteflag" type="xs:anyType" />
+        <xs:element name="//系统码表systemcodeid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infrancebookcategory" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***0:有效；1：无效*/isactive" type="xs:anyType" />
+        <xs:element name="/***图书分类*/categoryid" type="xs:long" />
+        <xs:element name="/***中图法分类*/infrancecategoryid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="originalfile" >
+      <xs:sequence>
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="filename" type="xs:string" />
+        <xs:element name="pagecount" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chapter" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="page" type="xs:string" />
+        <xs:element name="textvalue" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eproduct" >
+      <xs:sequence>
+        <xs:element name="/***商品id*/productid" type="xs:long" />
+        <xs:element name="/***商品名称*/productname" type="xs:string" />
+        <xs:element name="/***商品描述*/productdescription" type="xs:string" />
+        <xs:element name="/***实体类型1:书2:包月5:方正*/producttype" type="xs:anyType" />
+        <xs:element name="/***是否可用:1:上架；0下架。*/isvalid" type="xs:anyType" />
+        <xs:element name="/***商品链接,如果有商品链接跳转到商品链接,没有则跳转到商品详细页面*/productlink" type="xs:string" />
+        <xs:element name="/***供应商商品分成比例*/assignpercent" type="xs:double" />
+        <xs:element name="/***商品封面*/productcover" type="xs:string" />
+        <xs:element name="/***数据创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/***数据创建人*/createby" type="xs:string" />
+        <xs:element name="/***数据更改时间*/uptime" type="xs:dateTime" />
+        <xs:element name="/***数据更改人*/updateby" type="xs:string" />
+        <xs:element name="/***0:未删除1:已删除*/deleteflag" type="xs:anyType" />
+        <xs:element name="/***0:未冻结1:已冻结*/isfrozen" type="xs:anyType" />
+        <xs:element name="/***上架时间*/validtime" type="xs:dateTime" />
+        <xs:element name="/***上架人*/validadminuserid" type="xs:long" />
+        <xs:element name="/***下架时间*/invalidtime" type="xs:dateTime" />
+        <xs:element name="/***下架人*/invalidadminuserid" type="xs:long" />
+        <xs:element name="/***下架原因*/invalidreason" type="xs:long" />
+        <xs:element name="/***下架原因描述*/invalidreasondescription" type="xs:string" />
+        <xs:element name="/***解冻时间*/unfrozentime" type="xs:dateTime" />
+        <xs:element name="/***解冻人*/unfrozenadminuserid" type="xs:long" />
+        <xs:element name="/***冻结时间*/frozentime" type="xs:dateTime" />
+        <xs:element name="/***冻结人*/frozenadminuserid" type="xs:long" />
+        <xs:element name="/***冻结原因*/frozenreason" type="xs:long" />
+        <xs:element name="/***冻结原因描述*/frozenreasondescription" type="xs:string" />
+        <xs:element name="/***恢复删除时间*/undeletetime" type="xs:dateTime" />
+        <xs:element name="/***恢复删除人*/undeleteadminuserid" type="xs:long" />
+        <xs:element name="/***删除时间*/deletetime" type="xs:dateTime" />
+        <xs:element name="/***删除人*/deleteadminuserid" type="xs:long" />
+        <xs:element name="/***删除原因*/deletereason" type="xs:long" />
+        <xs:element name="/***删除原因描述*/deletereasondescription" type="xs:string" />
+        <xs:element name="/***书的数量*/bookcount" type="xs:anyType" />
+        <xs:element name="/***销售数据*/sellcount" type="xs:long" />
+        <xs:element name="/***供应商产品原价*/price" type="xs:anyType" />
+        <xs:element name="/***九月网定价*/saleprice" type="xs:anyType" />
+        <xs:element name="/***支付给供应商的价格*/payforprice" type="xs:anyType" />
+        <xs:element name="/***定价时间*/create" type="xs:dateTime" />
+        <xs:element name="/***百分比，定价人员录入,自动生成销售价" type="xs:anyType" />
+        <xs:element name="/***包分比*/packagepercent" type="xs:anyType" />
+        <xs:element name="/***定价人*/salesman" type="xs:long" />
+        <xs:element name="/***原价(最基础原价，不会修改)*/costprice" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businesslog" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***操作类型：1：入库2:图书入库*/programtype" type="xs:anyType" />
+        <xs:element name="/***图书id*/businessid" type="xs:string" />
+        <xs:element name="/***操作类型标识：2:图书入库*/programtag" type="xs:anyType" />
+        <xs:element name="/***相关关键字:如文件名*/keyword" type="xs:string" />
+        <xs:element name="/***描述*/discription" type="xs:string" />
+        <xs:element name="/***错误码*/errorcode" type="xs:string" />
+        <xs:element name="/***步骤码*/stepcode" type="xs:anyType" />
+        <xs:element name="/***结果状态:1:成功；2：失败*/resultstatus" type="xs:anyType" />
+        <xs:element name="/***进库时间*/create" type="xs:dateTime" />
+        <xs:element name="statuscode" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infrancecategory" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***代码*/code" type="xs:string" />
+        <xs:element name="/***中文名*/name" type="xs:string" />
+        <xs:element name="/***0:未删除；1：删除*/deleteflag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookpreface" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***图书扩展信息类型:1前言2序3后记*/reftype" type="xs:anyType" />
+        <xs:element name="/***参照id(图书id)*/refbookid" type="xs:long" />
+        <xs:element name="/***标题*/refname" type="xs:string" />
+        <xs:element name="/***内容*/content" type="xs:string" />
+        <xs:element name="/***序作者*/author" type="xs:string" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="up" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="/***0:未删除；1：删除*/deleteflag" type="xs:anyType" />
+        <xs:element name="/***序备注*/remark" type="xs:string" />
+        <xs:element name="/***图书id*/bookid" type="xs:long" />
+        <xs:element name="/***序号*/quence" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookchange" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="bookid" type="xs:long" />
+        <xs:element name="productid" type="xs:long" />
+        <xs:element name="author" type="xs:string" />
+        <xs:element name="bookname" type="xs:string" />
+        <xs:element name="isbn" type="xs:string" />
+        <xs:element name="publishername" type="xs:string" />
+        <xs:element name="publish" type="xs:dateTime" />
+        <xs:element name="publishversion" type="xs:string" />
+        <xs:element name="printedcount" type="xs:anyType" />
+        <xs:element name="printed" type="xs:dateTime" />
+        <xs:element name="wordcount" type="xs:string" />
+        <xs:element name="pagecount" type="xs:anyType" />
+        <xs:element name="printedquantity" type="xs:anyType" />
+        <xs:element name="folio" type="xs:string" />
+        <xs:element name="papermaterial" type="xs:string" />
+        <xs:element name="introduction" type="xs:string" />
+        <xs:element name="authorintroduction" type="xs:string" />
+        <xs:element name="editorcomment" type="xs:string" />
+        <xs:element name="tableofcontents" type="xs:string" />
+        <xs:element name="paperprice" type="xs:anyType" />
+        <xs:element name="previewpagerange" type="xs:string" />
+        <xs:element name="hasepub" type="xs:anyType" />
+        <xs:element name="isfree" type="xs:anyType" />
+        <xs:element name="vendorid" type="xs:long" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="filesize" type="xs:long" />
+        <xs:element name="librarycategorycode" type="xs:string" />
+        <xs:element name="publishercode" type="xs:string" />
+        <xs:element name="hascover" type="xs:anyType" />
+        <xs:element name="storeflag" type="xs:anyType" />
+        <xs:element name="bambookencflag" type="xs:anyType" />
+        <xs:element name="ebookencflag" type="xs:anyType" />
+        <xs:element name="winflag" type="xs:anyType" />
+        <xs:element name="elibflag" type="xs:anyType" />
+        <xs:element name="saleprice" type="xs:anyType" />
+        <xs:element name="category" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="publisher" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//出版社名称publishername" type="xs:string" />
+        <xs:element name="//出版社代码publishercode" type="xs:string" />
+        <xs:element name="//出版社全称publisherfullname" type="xs:string" />
+        <xs:element name="//出版社简介publisherintroduction" type="xs:string" />
+        <xs:element name="//出版社地址publisheraddress" type="xs:string" />
+        <xs:element name="//出版社邮编publisherzipcode" type="xs:string" />
+        <xs:element name="//出版社电话publishertelephone" type="xs:string" />
+        <xs:element name="//出版社传真publisherfax" type="xs:string" />
+        <xs:element name="//出版社邮箱publisheremail" type="xs:string" />
+        <xs:element name="//出版社网址publisherwebsite" type="xs:string" />
+        <xs:element name="//出版社类型,1出版社,2个人publishertype" type="xs:anyType" />
+        <xs:element name="//createby" type="xs:string" />
+        <xs:element name="//createtime" type="xs:dateTime" />
+        <xs:element name="//updateby" type="xs:string" />
+        <xs:element name="//uptime" type="xs:dateTime" />
+        <xs:element name="//deleteflag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="book" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="/***图书id*///book_idid" type="xs:long" />
+        <xs:element name="/***书名*///book_namebookname" type="xs:string" />
+        <xs:element name="/***作者*///authorauthor" type="xs:string" />
+        <xs:element name="/***出版社id*///publisher_idpublisherid" type="xs:long" />
+        <xs:element name="/***出版社名称*///publisher_namepublishername" type="xs:string" />
+        <xs:element name="/***出版日期*///publish_publish" type="xs:dateTime" />
+        <xs:element name="/***版次*///publish_versionpublishversion" type="xs:string" />
+        <xs:element name="/***印次*///printed_countprintedcount" type="xs:anyType" />
+        <xs:element name="/***印刷时间*///printed_printed" type="xs:dateTime" />
+        <xs:element name="/***isbn*///isbn" type="xs:string" />
+        <xs:element name="/***字数*///word_countwordcount" type="xs:string" />
+        <xs:element name="/***实际页数*///fact_page_countfactpagecount" type="xs:anyType" />
+        <xs:element name="/***电子书页数*///page_countpagecount" type="xs:anyType" />
+        <xs:element name="/***章节数量*///chapter_countchaptercount" type="xs:anyType" />
+        <xs:element name="/***印刷数量*///printed_quantityprintedquantity" type="xs:anyType" />
+        <xs:element name="/***开本*///foliofolio" type="xs:string" />
+        <xs:element name="/***纸张*///paper_materialpapermaterial" type="xs:string" />
+        <xs:element name="/***包装*///packpack" type="xs:string" />
+        <xs:element name="/***简介*///introductionintroduction" type="xs:string" />
+        <xs:element name="/***作者简介*///author_introductionauthorintroduction" type="xs:string" />
+        <xs:element name="/***编辑评论*///editor_commenteditorcomment" type="xs:string" />
+        <xs:element name="/***目录*///table_of_contentstableofcontents" type="xs:string" />
+        <xs:element name="/***标签*///tagstags" type="xs:string" />
+        <xs:element name="/***纸质书价格*///paper_pricepaperprice" type="xs:anyType" />
+        <xs:element name="/***申请与审核,1未提交申请,2已提交申请,3审核未通过,4审核通过*///flagflag" type="xs:anyType" />
+        <xs:element name="/***未通过审核原因*///unpass_reasonunpassreason" type="xs:string" />
+        <xs:element name="/***转换文件*///convert_fileconvertfile" type="xs:string" />
+        <xs:element name="/***试读页范围*///preview_page_rangepreviewpagerange" type="xs:string" />
+        <xs:element name="/***是否可以包月*///is_can_pay_monthlyiscanpaymonthly" type="xs:anyType" />
+        <xs:element name="/***是否免费1:免费；0付费*///is_freeisfree" type="xs:anyType" />
+        <xs:element name="/***是否受最高限价限制*///is_limit_highest_priceislimithighestprice" type="xs:anyType" />
+        <xs:element name="/***纸质书id*///paper_book_idpaperbookid" type="xs:string" />
+        <xs:element name="/***授权开始日期*///licence_start_licencestart" type="xs:dateTime" />
+        <xs:element name="/***授权结束日期*///licence_end_licenceend" type="xs:dateTime" />
+        <xs:element name="/***是否专有授权*///is_special_licenceisspeciallicence" type="xs:anyType" />
+        <xs:element name="/***预计提交日期*///expect_submit_expectsubmit" type="xs:dateTime" />
+        <xs:element name="/***供应商id*///vendor_idvendorid" type="xs:long" />
+        <xs:element name="//create_timecreatetime" type="xs:dateTime" />
+        <xs:element name="//create_bycreateby" type="xs:string" />
+        <xs:element name="//up_timeuptime" type="xs:dateTime" />
+        <xs:element name="//update_byupdateby" type="xs:string" />
+        <xs:element name="/***0未删除,1已删除*///delete_flagdeleteflag" type="xs:anyType" />
+        <xs:element name="/***主数据mc分类*///mccodemccode" type="xs:string" />
+        <xs:element name="/***丛书名*///book_seriesbookseries" type="xs:string" />
+        <xs:element name="/***文件大小,单位：字节*///file_sizefilesize" type="xs:long" />
+        <xs:element name="/***书籍来源,0上传,1单本书部分章节合并,2多本书部分章节合并*///book_sourcebooksource" type="xs:anyType" />
+        <xs:element name="/***针对于来源为单本书部分章节合并记录的book_id*///original_book_idoriginalbookid" type="xs:long" />
+        <xs:element name="/***针对于来源为上传记录是否有章节合并书*///is_has_chapter_bookishaschapterbook" type="xs:anyType" />
+        <xs:element name="/***商品表id*/productid" type="xs:long" />
+        <xs:element name="/***顶*/upcount" type="xs:long" />
+        <xs:element name="/***踩*/downcount" type="xs:long" />
+        <xs:element name="/***评论条数*/commentcount" type="xs:long" />
+        <xs:element name="/***供应商图书id号*/vendorbookid" type="xs:string" />
+        <xs:element name="/***中图法类别,目前方正图书采用这此类别,20111214y新增*/librarybookcateogry" type="xs:string" />
+        <xs:element name="/***是否有epub的书：0：没有；1：有*/hasepub" type="xs:anyType" />
+        <xs:element name="/***版别代码*/publishercode" type="xs:string" />
+        <xs:element name="/***想看次数*/collectionnum" type="xs:anyType" />
+        <xs:element name="/***想看次数调整值*/adjustvalue" type="xs:anyType" />
+        <xs:element name="/***评分*/score" type="xs:double" />
+        <xs:element name="/***图书分类*/categoryid" type="xs:long" />
+        <xs:element name="/***浏览次数*/browsecount" type="xs:anyType" />
+        <xs:element name="/***评分次数*/scorecount" type="xs:anyType" />
+        <xs:element name="/***分享次数*/sharecount" type="xs:anyType" />
+        <xs:element name="/***权重值*/heightscore" type="xs:anyType" />
+        <xs:element name="/***显示标记:名人,名书,独家,推荐,经典,绝版,推广,新书排名,首发*/showmark" type="xs:string" />
+        <xs:element name="/***封面显示标记*/covershowmark" type="xs:string" />
+        <xs:element name="/***腰封推荐*/girdlerecommend" type="xs:string" />
+        <xs:element name="/***阅读对象*/readobject" type="xs:string" />
+        <xs:element name="/***媒体推荐*/mediarecommend" type="xs:string" />
+        <xs:element name="/***推荐人*/recommender" type="xs:string" />
+        <xs:element name="/***人工权重值(1-200)*/thirdheightscore" type="xs:anyType" />
+        <xs:element name="/***已读次数*/hasreadcount" type="xs:anyType" />
+        <xs:element name="/***是否有封面1为有0为没有*/hascover" type="xs:anyType" />
+        <xs:element name="isoriginal" type="xs:anyType" />
+        <xs:element name="/***是否为扫描书0：非1：是2013-5-13hakenyadd*/isscan" type="xs:anyType" />
+        <xs:element name="picturepath" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productitem" >
+      <xs:sequence>
+        <xs:element name="productitemid" type="xs:long" />
+        <xs:element name="productid" type="xs:long" />
+        <xs:element name="entityid" type="xs:long" />
+        <xs:element name="entitytype" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="createby" type="xs:string" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:string" />
+        <xs:element name="deleteflag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robotproduct" >
+      <xs:sequence>
+        <xs:element name="/***barcode*/barcode" type="xs:string" />
+        <xs:element name="/***robot分类id*/robots" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robotproductcategorylog" >
+      <xs:sequence>
+        <xs:element name="/***已处理*/status_processed" type="xs:long" />
+        <xs:element name="/***未处理*/status_unprocessed" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="productid" type="xs:long" />
+        <xs:element name="barcode" type="xs:string" />
+        <xs:element name="categories" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robotcategory" >
+      <xs:sequence>
+        <xs:element name="/***最新分类code状态标识.*/code_new" type="xs:string" />
+        <xs:element name="/***robotid,自增..与ec系统的newshop.robot_category.robot_id是对应的*/id" type="xs:anyType" />
+        <xs:element name="/***卓越id路径*/label" type="xs:string" />
+        <xs:element name="/***名字*/title" type="xs:string" />
+        <xs:element name="/***父id*/parent" type="xs:anyType" />
+        <xs:element name="/***code*/code" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="robottask" >
+      <xs:sequence>
+        <xs:element name="/***抓取卓越图书*/target_type_amazon_book" type="xs:long" />
+        <xs:element name="/***新任务*/task_status_new" type="xs:long" />
+        <xs:element name="/***抓取完成*/task_status_finish" type="xs:long" />
+        <xs:element name="/***未找到*/task_status_notfound" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stocksyncinfo" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="outerid" type="xs:string" />
+        <xs:element name="productsale" type="xs:long" />
+        <xs:element name="location" type="xs:string" />
+        <xs:element name="stock" type="xs:long" />
+        <xs:element name="ischanged" type="xs:anyType" />
+        <xs:element name="changeqty" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="topicmeta" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stocksyncinfomapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelsalesinfo" >
+      <xs:sequence>
+        <xs:element name="outerorder" type="xs:string" />
+        <xs:element name="outeritem" type="xs:long" />
+        <xs:element name="order" type="xs:string" />
+        <xs:element name="orderitem" type="xs:long" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="returnflag" type="xs:string" />
+        <xs:element name="bill" type="xs:string" />
+        <xs:element name="operator" type="xs:string" />
+        <xs:element name="sapid" type="xs:string" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="channel" type="xs:string" />
+        <xs:element name="enddate" type="xs:string" />
+        <xs:element name="deliveryquantity" type="xs:long" />
+        <xs:element name="settle" type="xs:string" />
+        <xs:element name="historysettle" type="xs:string" />
+        <xs:element name="listprice" type="xs:string" />
+        <xs:element name="complex" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductcategorystatus" >
+      <xs:sequence>
+        <xs:element name="/***直接匹配卓越分类*/category_status_amazon" type="xs:long" />
+        <xs:element name="/***mc关联卓越分类*/category_status_mc" type="xs:long" />
+        <xs:element name="/***未匹配的分类*/category_status_unidentified" type="xs:long" />
+        <xs:element name="new_true" type="xs:long" />
+        <xs:element name="new_false" type="xs:long" />
+        <xs:element name="//商品idproduct" type="xs:long" />
+        <xs:element name="//状态status" type="xs:long" />
+        <xs:element name="//同步最大限期max" type="xs:dateTime" />
+        <xs:element name="//是否为新品isnew" type="xs:long" />
+        <xs:element name="//isbn-关联.isbn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="topicfragment" >
+      <xs:sequence>
+        <xs:element name="year" type="xs:string" />
+        <xs:element name="month" type="xs:string" />
+        <xs:element name="topic" type="xs:string" />
+        <xs:element name="/*需要从html抓取*/title" type="xs:string" />
+        <xs:element name="metas" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ecproductwarehouse" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="outerid" type="xs:string" />
+        <xs:element name="location" type="xs:string" />
+        <xs:element name="stock" type="xs:long" />
+        <xs:element name="ischanged" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="booktopcategory" >
+      <xs:sequence>
+        <xs:element name="//销售榜单top_type_sale" type="xs:long" />
+        <xs:element name="//新书榜单top_type_new" type="xs:long" />
+        <xs:element name="category_book" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***分类id*/category" type="xs:long" />
+        <xs:element name="/***父分类id*/parent" type="xs:long" />
+        <xs:element name="/***该分类下一周动销数*/num" type="xs:long" />
+        <xs:element name="/***榜单url地址*/url" type="xs:string" />
+        <xs:element name="/***榜单类型*/toptype" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="booktopproductsale" >
+      <xs:sequence>
+        <xs:element name="//近一周time_type_week" type="xs:long" />
+        <xs:element name="//近一月time_type_one_month" type="xs:long" />
+        <xs:element name="//近三月time_type_three_month" type="xs:long" />
+        <xs:element name="//头一年time_type_one_year" type="xs:long" />
+        <xs:element name="//头二年time_type_two_year" type="xs:long" />
+        <xs:element name="/***分类id*/category" type="xs:long" />
+        <xs:element name="/***商品*/productsale" type="xs:long" />
+        <xs:element name="/***销量*/sale" type="xs:long" />
+        <xs:element name="/***时间类型*/timetype" type="xs:long" />
+        <xs:element name="/***榜单类型*/toptype" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpreturnorder" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="returnorderid" type="xs:string" />
+        <xs:element name="erpreturnorderid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erporderitem" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="orderid" type="xs:long" />
+        <xs:element name="commodity" type="xs:long" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="outofstockquantity" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpdeliveryarea" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="pqid" type="xs:string" />
+        <xs:element name="psfs" type="xs:string" />
+        <xs:element name="cysid" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="psfw" type="xs:string" />
+        <xs:element name="dc" type="xs:string" />
+        <xs:element name="mark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpproductstock" >
+      <xs:sequence>
+        <xs:element name="merchid" type="xs:long" />
+        <xs:element name="stock" type="xs:long" />
+        <xs:element name="dc" type="xs:string" />
+        <xs:element name="cratetime" type="xs:dateTime" />
+        <xs:element name="uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erporder" >
+      <xs:sequence>
+        <xs:element name="/***销售订单*/ddlxid_sale_order" type="xs:string" />
+        <xs:element name="/***退换货订单*/ddlxid_charge_off_order" type="xs:string" />
+        <xs:element name="/***退货入库(只有订单类型为3退货订单时才有可能返回)*/reject_goods_confirm" type="xs:string" />
+        <xs:element name="/***退换货方式-销售退货*/return_type_sale_return" type="xs:string" />
+        <xs:element name="/***审核*/status_auditing" type="xs:string" />
+        <xs:element name="/***导入*/status_import" type="xs:string" />
+        <xs:element name="/***集货*/status_picking" type="xs:string" />
+        <xs:element name="/***质检包装*/status_testing" type="xs:string" />
+        <xs:element name="/***等待发运*/status_waiting_delivery" type="xs:string" />
+        <xs:element name="/***已发出*/status_delivery" type="xs:string" />
+        <xs:element name="/***妥投*/status_confirm" type="xs:string" />
+        <xs:element name="/***缺货取消*/status_cancelled_for_out_of_stock" type="xs:string" />
+        <xs:element name="/***拒收取消*/status_cancelled_for_reject" type="xs:string" />
+        <xs:element name="/***客户取消*/status_cancelled_by_customer" type="xs:string" />
+        <xs:element name="/***逾期支付取消*/status_pay_overdue" type="xs:string" />
+        <xs:element name="/***无法确认取消*/status_cancelled_by_unrecive" type="xs:string" />
+        <xs:element name="/***退货上架*/status_return_onshelf" type="xs:string" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="deliverycompany" type="xs:string" />
+        <xs:element name="ddlxid" type="xs:string" />
+        <xs:element name="returntypeid" type="xs:string" />
+        <xs:element name="fhrq" type="xs:dateTime" />
+        <xs:element name="dc" type="xs:string" />
+        <xs:element name="/***中启订单操作人*/cuser" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erpdeliverycompany" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="zt" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erparea" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="parent" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="zt" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erporderinvoice" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="deliverycode" type="xs:string" />
+        <xs:element name="deliverycompany" type="xs:string" />
+        <xs:element name="deliverytime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adunionorder" >
+      <xs:sequence>
+        <xs:element name="/***订单编号*/orderid" type="xs:long" />
+        <xs:element name="/***联盟id*/merchantid" type="xs:long" />
+        <xs:element name="/***下单时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/***修改时间*/uptime" type="xs:dateTime" />
+        <xs:element name="/***创建者*/creator" type="xs:string" />
+        <xs:element name="/***更新者*/updator" type="xs:string" />
+        <xs:element name="/***订单状态*/status" type="xs:long" />
+        <xs:element name="/***订单号*/number" type="xs:string" />
+        <xs:element name="/***订单金额*/amount" type="xs:anyType" />
+        <xs:element name="/***订单码洋*/bookprice" type="xs:anyType" />
+        <xs:element name="/***订单实洋*/realprice" type="xs:anyType" />
+        <xs:element name="/***发货码洋*/salebookprice" type="xs:anyType" />
+        <xs:element name="/***发货实洋*/salerealprice" type="xs:anyType" />
+        <xs:element name="/***退货码洋*/refundbookprice" type="xs:anyType" />
+        <xs:element name="/***退货实洋*/refundrealprice" type="xs:anyType" />
+        <xs:element name="/***访问唯一标识码*/stan" type="xs:string" />
+        <xs:element name="/***订单结算状态*/ispay" type="xs:long" />
+        <xs:element name="/***所对应的佣金外键*/commissionid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelcomment" >
+      <xs:sequence>
+        <xs:element name="/***渠道评论主键id*/channelcommentid" type="xs:long" />
+        <xs:element name="/***商品id*/productsaleid" type="xs:long" />
+        <xs:element name="/***渠道id*/channel" type="xs:long" />
+        <xs:element name="/***评分*/rank" type="xs:long" />
+        <xs:element name="/***评论*/content" type="xs:string" />
+        <xs:element name="/***别名*/nickname" type="xs:string" />
+        <xs:element name="/***回复*/reply" type="xs:string" />
+        <xs:element name="/***评论时间*/commenttime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="taskdetails" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="jobdetails" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quartzcommondobj" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="taskaware" >
+      <xs:sequence>
+        <xs:element name="group_default" type="xs:string" />
+        <xs:element name="group_ec_core" type="xs:string" />
+        <xs:element name="group_ec_front" type="xs:string" />
+        <xs:element name="group_ec_search" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="autotaskprocessor" >
+      <xs:complexContent>
+       <xs:extension base="methodinvokingjob">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="taskcache" type="xs:anyType" />
+          <xs:element name="" type="taskdetails" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="applicationcontext" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="taskconfigure" >
+      <xs:sequence>
+        <xs:element name="level_mail" type="xs:long" />
+        <xs:element name="level_message" type="xs:long" />
+        <xs:element name="level_all" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tasktemplate" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="/***系统的任务标示*/jobkey" type="xs:string" />
+        <xs:element name="/***任务触发器*/" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="simpleprocessjoblistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quartzshutdownlistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="simpleprocesstriggerlistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="executingtriggers" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="methodinvokingdatamap" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="context_local" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eccore" type="xs:anyType" />
+        <xs:element name="mdm" type="xs:anyType" />
+        <xs:element name="erp" type="xs:anyType" />
+        <xs:element name="fz" type="xs:anyType" />
+        <xs:element name="union" type="xs:anyType" />
+        <xs:element name="robot" type="xs:anyType" />
+        <xs:element name="channel" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="methodinvokingjobdetailfactorybean" >
+      <xs:complexContent>
+       <xs:extension base="methodinvokingjob">
+         <xs:sequence>
+          <xs:element name="ger" type="xs:anyType" />
+          <xs:element name="methodofthisclasswillbeassignedtothegroupspecifiedbythisproperty.default:scheduler.default_group*@see#afterpropertiesset()*@seescheduler#default_group*/group" type="xs:string" />
+          <xs:element name="/***描述*/desc" type="xs:string" />
+          <xs:element name="tosetthejobdetail.jobclasstomethodinvokingjob.classorstatefulmethodinvokingjob.classwhentrueorfalse,respectively.default:true*@see#afterpropertiesset()*/concurrent" type="xs:anyType" />
+          <xs:element name="durability-ifajobisnon-durable,itisautomaticallydeletedfromthescheduleroncetherearenolongeranyactivetriggersassociatedwithit.*@see<ahref" type="xs:anyType" />
+          <xs:element name="isetthedefaulttofalsetobethesameasthedefaultforaquartztrigger.anexceptionisthrown*whenthetriggerisnon-volatileandthejobisvolatile.ifyouwantvolatility,thenyoumustsetthisproperty,andthetrigger'svolatilityproperty,totrue.*@see<ahref" type="xs:anyType" />
+          <xs:element name="requestsrecovery-ifajob"requestsrecovery",anditisexecutingduringthetimeofa'hardshutdown'ofthescheduler(i.e.theprocessitisrunningwithincrashes,orthemachineisshutoff),thenitisre-executedwhentheschedulerisstartedagain.inthiscase,thejobexecutioncontext.isrecovering()methodwillreturntrue.*@see<ahref" type="xs:anyType" />
+          <xs:element name="joblistenernames" type="xs:string" />
+          <xs:element name="tosetthejobdetail.nameproperty.*@seeafterpropertiesset()*@seejobdetail#setname()*/beanname" type="xs:string" />
+          <xs:element name="methodofthespringfactorybeaninterface.*@see#afterpropertiesset()*@see#getobject()*@seefactorybean*/" type="xs:anyType" />
+          <xs:element name="/***thenameoftheclasstoinvoke.*/targetclass" type="xs:string" />
+          <xs:element name="*thismustbeserializablewhen{@link#concurrent}issettofalse.*/target" type="xs:anyType" />
+          <xs:element name="*targetmethodor{@link#method}shouldbeset,butnotboth.*/targetmethod" type="xs:string" />
+          <xs:element name="*{@link#targetmethod}ormethodshouldbeset,butnotboth.*/method" type="xs:string" />
+          <xs:element name="*istronglyurgeyounottoprovideargumentsuntilquartz1.6.1hasbeenreleasedifyouareusingajdbcjobstorewith*microsoftsqlserver.thereisabuginversion1.6.0thatpreventsquartzfromserializingthesinthejobdatamap*tothedatabase.theworkaroundistosettheproperty"org.opensymphony.quaryz.useproperties" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="beaninvokingjobdetailfactorybean" >
+      <xs:complexContent>
+       <xs:extension base="beaninvokingjob">
+         <xs:sequence>
+          <xs:element name="methodofthebeaninvokingjobandstatefulbeaninvokingjobclasses.*@see#set()*@seebeaninvokingjob#execute(jobexecutioncontext)*/" type="applicationcontext" nillable="true" minOccurs="0" />
+          <xs:element name="ger" type="xs:anyType" />
+          <xs:element name="methodofthisclasswillbeassignedtothegroupspecifiedbythisproperty.default:scheduler.default_group*@see#afterpropertiesset()*@seescheduler#default_group*/group" type="xs:string" />
+          <xs:element name="tosetthejobdetail.jobclasstobeaninvokingjob.classorstatefulbeaninvokingjob.classwhentrueorfalse,respectively.default:true*@see#afterpropertiesset()*/concurrent" type="xs:anyType" />
+          <xs:element name="durability-ifajobisnon-durable,itisautomaticallydeletedfromthescheduleroncetherearenolongeranyactivetriggersassociatedwithit.*@see<ahref" type="xs:anyType" />
+          <xs:element name="isetthedefaulttofalsetobethesameasthedefaultforaquartztrigger.anexceptionisthrown*whenthetriggerisnon-volatileandthejobisvolatile.ifyouwantvolatility,thenyoumustsetthisproperty,andthetrigger'svolatilityproperty,totrue.*@see<ahref" type="xs:anyType" />
+          <xs:element name="requestsrecovery-ifajob"requestsrecovery",anditisexecutingduringthetimeofa'hardshutdown'ofthescheduler(i.e.theprocessitisrunningwithincrashes,orthemachineisshutoff),thenitisre-executedwhentheschedulerisstartedagain.inthiscase,thejobexecutioncontext.isrecovering()methodwillreturntrue.*@see<ahref" type="xs:anyType" />
+          <xs:element name="joblistenernames" type="xs:string" />
+          <xs:element name="tosetthejobdetail.nameproperty.*@seeafterpropertiesset()*@seejobdetail#setname()*/beanname" type="xs:string" />
+          <xs:element name="methodofthespringfactorybeaninterface.*@see#afterpropertiesset()*@see#getobject()*@seefactorybean*/" type="xs:anyType" />
+          <xs:element name="/***thenameoridofthebeantoinvoke,asitisdeclaredinthespringapplicationcontext.*/targetbean" type="xs:string" />
+          <xs:element name="/***themethodtoinvokeonthebeanidentifiedbythetargetbeanproperty.*/targetmethod" type="xs:string" />
+          <xs:element name="/***theargumentstoprovidetothemethodidentifiedbythetargetmethodproperty.*thesesmustbeserializablewhenconcurrent" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="webcontext" >
+      <xs:sequence>
+        <xs:element name="webcontext_local" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fileutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ebookconstants" >
+      <xs:sequence>
+        <xs:element name="program_type_one" type="xs:anyType" />
+        <xs:element name="program_type_two" type="xs:anyType" />
+        <xs:element name="program_tag_one" type="xs:anyType" />
+        <xs:element name="program_tag_two" type="xs:anyType" />
+        <xs:element name="//入库步骤step_code_one" type="xs:anyType" />
+        <xs:element name="step_code_two" type="xs:anyType" />
+        <xs:element name="step_code_three" type="xs:anyType" />
+        <xs:element name="step_code_four" type="xs:anyType" />
+        <xs:element name="step_code_five" type="xs:anyType" />
+        <xs:element name="step_code_fix" type="xs:anyType" />
+        <xs:element name="//日志记录结果状态result_status_one" type="xs:anyType" />
+        <xs:element name="result_status_two" type="xs:anyType" />
+        <xs:element name="//日志记录状态/***供应商不存在、供应商已经删除、解析供应商id失败:1*/status_error_vendor" type="xs:anyType" />
+        <xs:element name="/***info.xml文件不存在:2*/status_error_not_info" type="xs:anyType" />
+        <xs:element name="/***没有正确解析info.xml:3*/status_error_info" type="xs:anyType" />
+        <xs:element name="/***isbn号码有误:4*/status_error_isbn" type="xs:anyType" />
+        <xs:element name="/***入库出错:5*/status_error_instore" type="xs:anyType" />
+        <xs:element name="/***无封面:6*/status_error_nocover" type="xs:anyType" />
+        <xs:element name="/***封面不能超过2m:7*/status_error_exceed_cover" type="xs:anyType" />
+        <xs:element name="/***无pdf:8*/status_error_nopdf" type="xs:anyType" />
+        <xs:element name="/***无pdf和epub:9*/status_error_nopdfepub" type="xs:anyType" />
+        <xs:element name="/***文件不能超过500m:10*/status_error_exceed_file" type="xs:anyType" />
+        <xs:element name="/***源文件与服务器文件不一致:11*/status_error_deffer_file" type="xs:anyType" />
+        <xs:element name="/***文件上传失败:12*/status_error_uploadfile" type="xs:anyType" />
+        <xs:element name="/******不能为空:13*/status_error_notempty" type="xs:anyType" />
+        <xs:element name="/***该图书已经上传一次:14*/status_error_double" type="xs:anyType" />
+        <xs:element name="/***信息上传成功，下架重复图书bookid:***:15*/status_success_down" type="xs:anyType" />
+        <xs:element name="//日志记录codecode_suceess" type="xs:string" />
+        <xs:element name="code_parsevendorid" type="xs:string" />
+        <xs:element name="code_xmlerror" type="xs:string" />
+        <xs:element name="code_dbinsert" type="xs:string" />
+        <xs:element name="code_covererror" type="xs:string" />
+        <xs:element name="code_checkesfiles" type="xs:string" />
+        <xs:element name="code_uploadfileerror" type="xs:string" />
+        <xs:element name="code_checkbookinfo" type="xs:string" />
+        <xs:element name="error_path" type="xs:string" />
+        <xs:element name="success_path" type="xs:string" />
+        <xs:element name="split" type="xs:string" />
+        <xs:element name="//入库标识store_flag_drmfinish" type="xs:anyType" />
+        <xs:element name="store_flag_alterimage" type="xs:anyType" />
+        <xs:element name="store_flag_onshelf" type="xs:anyType" />
+        <xs:element name="store_flag_offshelf" type="xs:anyType" />
+        <xs:element name="store_flag_base_info_change" type="xs:anyType" />
+        <xs:element name="/***下架原因*/invalid_code_id" type="xs:long" />
+        <xs:element name="/***不重复:0*/repeat_not" type="xs:long" />
+        <xs:element name="/***新书上架:1*/repeat_newbook" type="xs:long" />
+        <xs:element name="/***必填字段重复:2*/repeat_other" type="xs:long" />
+        <xs:element name="/***重复图书:3*/repeat_double" type="xs:long" />
+        <xs:element name="/***老书上架，新书重复:4*/repeat_newdouble" type="xs:long" />
+        <xs:element name="//meta属性编号publishversion" type="xs:long" />
+        <xs:element name="printedcount" type="xs:long" />
+        <xs:element name="printeddate" type="xs:long" />
+        <xs:element name="wordcount" type="xs:long" />
+        <xs:element name="folio" type="xs:long" />
+        <xs:element name="isbn" type="xs:long" />
+        <xs:element name="hasepub" type="xs:long" />
+        <xs:element name="isfree" type="xs:long" />
+        <xs:element name="previewpagerange" type="xs:long" />
+        <xs:element name="pagecount" type="xs:long" />
+        <xs:element name="introduction" type="xs:long" />
+        <xs:element name="authorintroduction" type="xs:long" />
+        <xs:element name="editorcomment" type="xs:long" />
+        <xs:element name="tableofcontents" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xmlparser" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="streamutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="md5utils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="isbntool" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="threadlocalmode" >
+      <xs:sequence>
+        <xs:element name="tl" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="myhandler" >
+      <xs:complexContent>
+       <xs:extension base="defaulthandler{">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="currentvalue" type="xs:anyType" />
+          <xs:element name="endnodepath" type="xs:anyType" />
+          <xs:element name="startnodepath" type="xs:anyType" />
+          <xs:element name="addnodepath" type="xs:anyType" />
+          <xs:element name="stack" type="xs:anyType" />
+          <xs:element name="attmap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="toolsutil" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="convertimage" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="path_dir" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="classmethodutil" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="method_map" type="xs:anyType" />
+        <xs:element name="classpath" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jotmfactorybean" >
+      <xs:sequence>
+        <xs:element name="jotm" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="daoprocessor" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.core" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.dialog" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.datepicker" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.progressbar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.selectable" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.button" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.resizable" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.slider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.all" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.autocomplete" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.accordion" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.base" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.tabs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.progressbar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.slider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.autocomplete" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.core" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.accordion" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.base" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.tabs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.dialog" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.selectable" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.all" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.datepicker" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.button" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.resizable" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery-ui-timepicker-addon" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="trigger_success" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="trigger_failure" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="addtrigger_failure" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="addtrigger" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="web" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="404" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="meta" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scripts" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="error" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="trigger_run" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="task_list" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="trigger_list" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

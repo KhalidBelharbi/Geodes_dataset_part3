@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="checkoutitementity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="product" type="xs:string" />
+        <xs:element name="checkout" type="checkoutentity" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkoutentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="saveaddress" type="xs:anyType" />
+        <xs:element name="saveinformation" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="shipping" type="shippingentity" nillable="true" minOccurs="0" />
+        <xs:element name="items" type="checkoutitementity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shippingentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="complement" type="xs:string" />
+        <xs:element name="country" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="cep" type="xs:string" />
+        <xs:element name="checkout" type="checkoutentity" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

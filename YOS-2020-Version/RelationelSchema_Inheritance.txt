@@ -1,0 +1,11 @@
+
+productdescription(id:String [PK], GeneratedName:Product #FK to(), productdescriptionrdate:LocalDateTime, productdescriptionudate:LocalDateTime, description:String);
+
+productimagefile();
+
+productprofilefile(fileid:String [PK], //@column(name:Product #FK to(), url:String, rdate:LocalDateTime, udate:LocalDateTime);
+
+product(productid:String [PK], productname:String, productsale:int, productprice:int, productquantity:int, productdetail:String, GeneratedName:ProductType, GeneratedName:ProductDetailType, productrdate:LocalDateTime, productudate:LocalDateTime);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

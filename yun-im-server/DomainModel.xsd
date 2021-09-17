@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="user" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddatecreator">
+         <xs:sequence>
+          <xs:element name="//region--field" type="useracct" nillable="true" minOccurs="0" />
+          <xs:element name="token" type="xs:string" />
+          <xs:element name="wspath" type="xs:string" />
+          <xs:element name="" type="userinfo" nillable="true" minOccurs="0" />
+          <xs:element name="/***最后一次登录时间*/lastloadtime" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usertokenrl" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithautoiddate">
+         <xs:sequence>
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="token" type="xs:string" />
+          <xs:element name="platform" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationcouple" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddate">
+         <xs:sequence>
+          <xs:element name="info" type="conversationcoupleinfo" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationmessage" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddate">
+         <xs:sequence>
+          <xs:element name="info" type="conversationmessageinfo" nillable="true" minOccurs="0" />
+          <xs:element name="senduserid" type="xs:long" />
+          <xs:element name="platformtype" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationgroupuserrl" >
+      <xs:sequence>
+        <xs:element name="pkid" type="conversationgroupuserpk" nillable="true" minOccurs="0" />
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="updatetime" type="xs:long" />
+        <xs:element name="remarkname" type="xs:string" />
+        <xs:element name="role" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationgroup" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddate">
+         <xs:sequence>
+          <xs:element name="info" type="conversationgroupinfo" nillable="true" minOccurs="0" />
+          <xs:element name="maxmeb" type="xs:anyType" />
+          <xs:element name="adminuserid" type="xs:long" />
+          <xs:element name="createuserid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usermessage" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithautoiddate">
+         <xs:sequence>
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="senduserid" type="xs:long" />
+          <xs:element name="platformtype" type="xs:anyType" />
+          <xs:element name="messageid" type="xs:long" />
+          <xs:element name="messagecreatetime" type="xs:long" />
+          <xs:element name="info" type="conversationmessageinfo" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="newfriend" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="updatetime" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="userstatus" type="xs:anyType" />
+        <xs:element name="friendid" type="xs:long" />
+        <xs:element name="friendstatus" type="xs:anyType" />
+        <xs:element name="userfriendid" type="xs:string" />
+        <xs:element name="addremark" type="xs:string" />
+        <xs:element name="checkremark" type="xs:string" />
+        <xs:element name="conversationid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithdate" >
+      <xs:sequence>
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="updatetime" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

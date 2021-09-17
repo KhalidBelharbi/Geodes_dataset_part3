@@ -1,0 +1,19 @@
+
+course(cid:int [PK], cname:String);
+
+student(sid:int [PK], sname:String);
+
+student_course(sid:Student [PK] #FK to Student,cid:Course [PK] #FK to Course);
+
+person(id:int [PK], name:String, GeneratedName:Votercard #FK to(Votercard));
+
+votercard(vid:int [PK], name:String, GeneratedName:Person #FK to(Person));
+
+pencil(pid:int [PK], color:String, GeneratedName:PencilBox #FK to(pencilbox));
+
+pencilbox(bid:int [PK], bname:String);
+
+productinfo(pid:int [PK], pname:String, quantity:int);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,18 @@
+ClassDiagram.Class>> Department =>=>=> RelationalSchema.Table>> department;
+ClassDiagram.Class>> Product =>=>=> RelationalSchema.Table>> product;
+ClassDiagram.Class>> Employee =>=>=> RelationalSchema.Table>> employee;
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Attribut>> Department.did:Long =>=>=> RelationalSchema.Column>> department.did PRIMARY KEY;
+ClassDiagram.Attribut>> Department.dname:String =>=>=> RelationalSchema.Column>> department.dname;
+ClassDiagram.Attribut>> Department.daddress:String =>=>=> RelationalSchema.Column>> department.daddress;
+ClassDiagram.Attribut>> Product.id:Integer =>=>=> RelationalSchema.Column>> product.id PRIMARY KEY;
+ClassDiagram.Attribut>> Product.name:String =>=>=> RelationalSchema.Column>> product.name;
+ClassDiagram.Attribut>> Employee.eid:long =>=>=> RelationalSchema.Column>> employee.eid PRIMARY KEY;
+ClassDiagram.Attribut>> Employee.fname:String =>=>=> RelationalSchema.Column>> employee.fname;
+ClassDiagram.Attribut>> Employee.lname:String =>=>=> RelationalSchema.Column>> employee.lname;
+ClassDiagram.Attribut>> Employee.email:String =>=>=> RelationalSchema.Column>> employee.email;
+ClassDiagram.Attribut>> Employee.phone:String =>=>=> RelationalSchema.Column>> employee.phone;
+ClassDiagram.Attribut>> User.id:Integer =>=>=> RelationalSchema.Column>> user.id PRIMARY KEY;
+ClassDiagram.Attribut>> User.//@notempty@emailemail:String =>=>=> RelationalSchema.Column>> user.//@notempty@emailemail;
+ClassDiagram.Attribut>> User.name:String =>=>=> RelationalSchema.Column>> user.name;
+Many-To-One relationship from ClassDiagram.Class>>Employee  to ClassDiagram.Class>>Department represented by ClassDiagram.Atrribute>>GeneratedName;

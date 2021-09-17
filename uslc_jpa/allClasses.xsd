@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="actions" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="form" type="forms" nillable="true" minOccurs="0" />
+        <xs:element name="action" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepo" >
+      <xs:sequence>
+        <xs:element name="jpa" type="uslcjpa" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="upcrepo" >
+      <xs:sequence>
+        <xs:element name="jpa" type="uslcjpa" nillable="true" minOccurs="0" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="packingdetailrepo" >
+      <xs:sequence>
+        <xs:element name="jpa" type="uslcjpa" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemrepo" >
+      <xs:sequence>
+        <xs:element name="jpa" type="uslcjpa" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchaseorderdetailrepo" >
+      <xs:sequence>
+        <xs:element name="jpa" type="uslcjpa" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="forms" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usertype" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="colorrepo" >
+      <xs:sequence>
+        <xs:element name="jpa" type="uslcjpa" nillable="true" minOccurs="0" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchaseorderrepo" >
+      <xs:sequence>
+        <xs:element name="jpa" type="uslcjpa" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sizerepo" >
+      <xs:sequence>
+        <xs:element name="jpa" type="uslcjpa" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchaseorder" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="departmentnumber" type="xs:string" />
+        <xs:element name="referencenumber" type="xs:string" />
+        <xs:element name="shipfrom" type="xs:string" />
+        <xs:element name="shipto" type="xs:string" />
+        <xs:element name="timestamp" type="xs:dateTime" />
+        <xs:element name="totalcartons" type="xs:long" />
+        <xs:element name="totalitems" type="xs:long" />
+        <xs:element name="purchaseorderdetails" type="purchaseorderdetail" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="purchaseorders" type="purchaseorderbyuser" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="packingdetail" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="sku" type="xs:long" />
+        <xs:element name="GeneratedName" type="purchaseorderdetail" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="carton" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="size" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="hip" type="xs:long" />
+        <xs:element name="inseam" type="xs:long" />
+        <xs:element name="waist" type="xs:long" />
+        <xs:element name="upcs" type="upc" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchaseorderdetail" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="preticketed" type="xs:anyType" />
+        <xs:element name="timestamp" type="xs:dateTime" />
+        <xs:element name="total" type="xs:long" />
+        <xs:element name="packingdetails" type="packingdetail" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="purchaseorder" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="upc" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scandetail" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="timestamp" type="xs:dateTime" />
+        <xs:element name="GeneratedName" type="upc" nillable="true" minOccurs="0" />
+        <xs:element name="upcreferencenumber" type="xs:string" />
+        <xs:element name="GeneratedName" type="carton" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="enabled" type="xs:anyType" />
+        <xs:element name="active" type="xs:anyType" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="timestamp" type="xs:dateTime" />
+        <xs:element name="usertype" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="logs" type="log" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="purchaseorders" type="purchaseorderbyuser" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="color" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="number" type="xs:string" />
+        <xs:element name="upcs" type="upc" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="carton" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="completed" type="xs:anyType" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="items" type="xs:long" />
+        <xs:element name="referencenumber" type="xs:string" />
+        <xs:element name="upccode" type="xs:string" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="packingdetail" nillable="true" minOccurs="0" />
+        <xs:element name="scandetails" type="scandetail" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchaseorderbyuser" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="purchaseorder" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="upc" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="coloritemcode" type="xs:string" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="timestamp" type="xs:dateTime" />
+        <xs:element name="upccode" type="xs:string" />
+        <xs:element name="purchaseorderdetails" type="purchaseorderdetail" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="color" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="item" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="size" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="log" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="actionid" type="xs:long" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="formid" type="xs:long" />
+        <xs:element name="timestamp" type="xs:dateTime" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="item" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="upcs" type="upc" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scandetailcomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchaseorderdetailcomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sizecomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="packagedetailcomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jpatester" >
+      <xs:sequence>
+        <xs:element name="persistence_unit_name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="networkping" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="encryptor" >
+      <xs:sequence>
+        <xs:element name="d" type="xs:anyType" />
+        <xs:element name="e" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="constants" >
+      <xs:sequence>
+        <xs:element name="msg" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uslcjpa" >
+      <xs:sequence>
+        <xs:element name="persistence_unit_name" type="xs:string" />
+        <xs:element name="factory" type="xs:anyType" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

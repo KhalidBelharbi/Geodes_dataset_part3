@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="userwandastaffentity" >
+      <xs:sequence>
+        <xs:element name="//1-有效，0-无效state_on" type="xs:string" />
+        <xs:element name="state_off" type="xs:string" />
+        <xs:element name="//已加入type_yes" type="xs:string" />
+        <xs:element name="//未加入type_no" type="xs:string" />
+        <xs:element name="//员工idstaffid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//密码password" type="xs:string" />
+        <xs:element name="//名称staffname" type="xs:string" />
+        <xs:element name="//状态staffstate" type="xs:string" />
+        <xs:element name="//手机mobile" type="xs:string" />
+        <xs:element name="//公司idcompanyid" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//部门iddepartmentid" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//头像logo" type="xs:string" />
+        <xs:element name="//员工状态yes-已加入no-未加入type" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roleroleanthorityentity" >
+      <xs:sequence>
+        <xs:element name="//主键不知道谁弄的叫userid混淆视听userid" type="xs:string" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//后台角色idsetid" type="xs:string" />
+        <xs:element name="//app角色idappsetid" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="staffcrmentity" >
+      <xs:sequence>
+        <xs:element name="//用户iduserid" type="xs:anyType" />
+        <xs:element name="//分部subcompanyid1" type="xs:string" />
+        <xs:element name="//部门departmentid" type="xs:string" />
+        <xs:element name="//编号workcode" type="xs:string" />
+        <xs:element name="//姓名lastname" type="xs:string" />
+        <xs:element name="//系统账号loginid" type="xs:string" />
+        <xs:element name="//密码password" type="xs:string" />
+        <xs:element name="//安全级别seclevel" type="xs:string" />
+        <xs:element name="//性别sex" type="xs:string" />
+        <xs:element name="//岗位jobtitle" type="xs:string" />
+        <xs:element name="//职务jobactivityid" type="xs:string" />
+        <xs:element name="//职务类型jobgroupid" type="xs:string" />
+        <xs:element name="//职称jobcall" type="xs:string" />
+        <xs:element name="//职级joblevel" type="xs:string" />
+        <xs:element name="//职责描述jobactivitydesc" type="xs:string" />
+        <xs:element name="//直接上级managerid" type="xs:string" />
+        <xs:element name="//助理assistantid" type="xs:string" />
+        <xs:element name="//状态eg:正式、试用等status" type="xs:string" />
+        <xs:element name="//办公地点locationid" type="xs:string" />
+        <xs:element name="//办公室workroom" type="xs:string" />
+        <xs:element name="//办公电话telephone" type="xs:string" />
+        <xs:element name="//移动电话mobile" type="xs:string" />
+        <xs:element name="//其他电话mobilecall" type="xs:string" />
+        <xs:element name="//传真fax" type="xs:string" />
+        <xs:element name="//电子邮件email" type="xs:string" />
+        <xs:element name="//系统语言默认7systemlanguage" type="xs:string" />
+        <xs:element name="//生日birthday" type="xs:string" />
+        <xs:element name="//民族folk" type="xs:string" />
+        <xs:element name="//籍贯nativeplace" type="xs:string" />
+        <xs:element name="//户口regresidentplace" type="xs:string" />
+        <xs:element name="//身份证号certificatenum" type="xs:string" />
+        <xs:element name="//婚姻状况maritalstatus" type="xs:string" />
+        <xs:element name="//政治面貌policy" type="xs:string" />
+        <xs:element name="//入团日期bememberdate" type="xs:string" />
+        <xs:element name="//入党日期bepartydate" type="xs:string" />
+        <xs:element name="//是否是工会会员islabouunion" type="xs:string" />
+        <xs:element name="//学历educationlevel" type="xs:string" />
+        <xs:element name="//学位degree" type="xs:string" />
+        <xs:element name="//健康状况healthinfo" type="xs:string" />
+        <xs:element name="//身高height" type="xs:string" />
+        <xs:element name="//体重weight" type="xs:string" />
+        <xs:element name="//居住地residentplace" type="xs:string" />
+        <xs:element name="//家庭住址homeaddress" type="xs:string" />
+        <xs:element name="//暂住证号码tempresidentnumber" type="xs:string" />
+        <xs:element name="//合同开始日期startdate" type="xs:string" />
+        <xs:element name="//合同结束日期enddate" type="xs:string" />
+        <xs:element name="//创建日期createdate" type="xs:string" />
+        <xs:element name="//最后修改日期lastchangdate" type="xs:string" />
+        <xs:element name="//账号类型accounttype" type="xs:anyType" />
+        <xs:element name="//显示顺序dsporder" type="xs:anyType" />
+        <xs:element name="//个人信息自定义personfields" type="xs:string" />
+        <xs:element name="//个人信息自定义值personfieldsvalue" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usertypeprojectconfigentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//城市idcityid" type="xs:string" />
+        <xs:element name="//城市编码citynum" type="xs:string" />
+        <xs:element name="//城市名称cityname" type="xs:string" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//用户类型(1,2,3,4,5,6,)usertypes" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appfunctionconfigentity" >
+      <xs:sequence>
+        <xs:element name="//社区公告function_module_sqgg" type="xs:string" />
+        <xs:element name="//新闻资讯function_module_xwzx" type="xs:string" />
+        <xs:element name="//金茂楼盘function_module_jmlp" type="xs:string" />
+        <xs:element name="//意见反馈function_module_yjfk" type="xs:string" />
+        <xs:element name="//物业报修function_module_wybx" type="xs:string" />
+        <xs:element name="//活动报名function_module_hdbm" type="xs:string" />
+        <xs:element name="//便民信息function_module_bmxx" type="xs:string" />
+        <xs:element name="//交付预约function_module_jfyy" type="xs:string" />
+        <xs:element name="//智能门禁function_module_znmj" type="xs:string" />
+        <xs:element name="//物业缴费function_module_wyjf" type="xs:string" />
+        <xs:element name="//访客通行function_module_fktx" type="xs:string" />
+        <xs:element name="//管家信息function_module_gjxx" type="xs:string" />
+        <xs:element name="//线上活动function_module_xshd" type="xs:string" />
+        <xs:element name="functionmodulemap" type="xs:anyType" />
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//城市idcityid" type="xs:string" />
+        <xs:element name="//城市编码citynum" type="xs:string" />
+        <xs:element name="//城市名称cityname" type="xs:string" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//功能模块(sqgg,xwzx,)functionmodules" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userprojectentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gradecrmentity" >
+      <xs:sequence>
+        <xs:element name="//会员编号memberid" type="xs:string" />
+        <xs:element name="//会员等级memberlevel" type="xs:string" />
+        <xs:element name="//所属业态formats" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="familycrmentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//会员编号memberid" type="xs:string" />
+        <xs:element name="//出生日期birth" type="xs:dateTime" />
+        <xs:element name="//与会员关系membership" type="xs:string" />
+        <xs:element name="//手机联系方式phonenumber" type="xs:string" />
+        <xs:element name="//名称name" type="xs:string" />
+        <xs:element name="//关联会员idassociatememberid" type="xs:string" />
+        <xs:element name="//删除标记1:删除，0：正常statecode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userimageentity" >
+      <xs:sequence>
+        <xs:element name="/*图片类型*///意见反馈type_feedback" type="xs:string" />
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//名称name" type="xs:string" />
+        <xs:element name="//地址url" type="xs:string" />
+        <xs:element name="//跳转地址jumpurl" type="xs:string" />
+        <xs:element name="//业务idbusinessid" type="xs:string" />
+        <xs:element name="//类型type" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="departmentcrmentity" >
+      <xs:sequence>
+        <xs:element name="//部门iddepartmentid" type="xs:string" />
+        <xs:element name="//简称shortname" type="xs:string" />
+        <xs:element name="//全称fullname" type="xs:string" />
+        <xs:element name="//所属分部idsubcompanyid" type="xs:string" />
+        <xs:element name="//上级部门idsupdepartmentid" type="xs:string" />
+        <xs:element name="//显示顺序showorder" type="xs:string" />
+        <xs:element name="//部门编码code" type="xs:string" />
+        <xs:element name="//是否封存canceled" type="xs:string" />
+        <xs:element name="//最后更新日期lastchangdate" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userselectentity" >
+      <xs:sequence>
+        <xs:element name="//iduserselectid" type="xs:string" />
+        <xs:element name="//问卷idquestid" type="xs:string" />
+        <xs:element name="//题目idquestiontitleid" type="xs:string" />
+        <xs:element name="//选项idquestiontitleselectid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//创建日期createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ehrorganizationentity" >
+      <xs:sequence>
+        <xs:element name="mdpguid" type="xs:string" />
+        <xs:element name="orgid" type="xs:string" />
+        <xs:element name="orgname" type="xs:string" />
+        <xs:element name="orgcode" type="xs:string" />
+        <xs:element name="orgcategory" type="xs:string" />
+        <xs:element name="isroot" type="xs:string" />
+        <xs:element name="officetel" type="xs:string" />
+        <xs:element name="fax" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="postcode" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="web" type="xs:string" />
+        <xs:element name="introduction" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="operatetime" type="xs:string" />
+        <xs:element name="orgoperator" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="validdate" type="xs:string" />
+        <xs:element name="begindate" type="xs:string" />
+        <xs:element name="businessarea" type="xs:string" />
+        <xs:element name="shortname" type="xs:string" />
+        <xs:element name="bustype" type="xs:string" />
+        <xs:element name="orgsort" type="xs:string" />
+        <xs:element name="orgunitstatus" type="xs:string" />
+        <xs:element name="cadorgtype" type="xs:string" />
+        <xs:element name="opendate" type="xs:string" />
+        <xs:element name="parentunitid" type="xs:string" />
+        <xs:element name="parentunitcode" type="xs:string" />
+        <xs:element name="parentstatus" type="xs:string" />
+        <xs:element name="orgorder" type="xs:string" />
+        <xs:element name="fullpath" type="xs:string" />
+        <xs:element name="companycategoryid" type="xs:string" />
+        <xs:element name="mdpbatchtime" type="xs:string" />
+        <xs:element name="mdpoperationtype" type="xs:string" />
+        <xs:element name="mdpresult" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinformationentity" >
+      <xs:sequence>
+        <xs:element name="//员工idstaffid" type="xs:string" />
+        <xs:element name="//用户名oa同步过来的账号username" type="xs:string" />
+        <xs:element name="//系统账号系统登录账号sysname" type="xs:string" />
+        <xs:element name="//密码password" type="xs:string" />
+        <xs:element name="//名称staffname" type="xs:string" />
+        <xs:element name="//状态0停用1启用staffstate" type="xs:string" />
+        <xs:element name="//类型type" type="xs:string" />
+        <xs:element name="//手机mobile" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//头像logo" type="xs:string" />
+        <xs:element name="//性别sex" type="xs:string" />
+        <xs:element name="//生日birthday" type="xs:anyType" />
+        <xs:element name="//邮件email" type="xs:string" />
+        <xs:element name="//工作电话officephone" type="xs:string" />
+        <xs:element name="//金茂内部员工0：外部合作单位1：oa同步jinmaois" type="xs:string" />
+        <xs:element name="//排序ordernum" type="xs:anyType" />
+        <xs:element name="//备注memo" type="xs:string" />
+        <xs:element name="//oa同步使用，用户iduserid" type="xs:string" />
+        <xs:element name="//是否为临时账号temporary" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usersubjectentity" >
+      <xs:sequence>
+        <xs:element name="//idusersubjectid" type="xs:string" />
+        <xs:element name="//问卷idquestid" type="xs:string" />
+        <xs:element name="//问答idsubjectid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//创建日期createon" type="xs:dateTime" />
+        <xs:element name="//内容message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ehrtreeentity" >
+      <xs:sequence>
+        <xs:element name="mdpguid" type="xs:string" />
+        <xs:element name="employeeid" type="xs:string" />
+        <xs:element name="employeecode" type="xs:string" />
+        <xs:element name="unitid" type="xs:string" />
+        <xs:element name="unitcode" type="xs:string" />
+        <xs:element name="ismainorg" type="xs:string" />
+        <xs:element name="mdpbatchtime" type="xs:string" />
+        <xs:element name="mdpoperationtype" type="xs:string" />
+        <xs:element name="mdpresult" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questiontitleentity" >
+      <xs:sequence>
+        <xs:element name="//idquestiontitleid" type="xs:string" />
+        <xs:element name="//调查问卷idquestid" type="xs:string" />
+        <xs:element name="//标题questiontitlename" type="xs:string" />
+        <xs:element name="//1单选2多选questionopt" type="xs:anyType" />
+        <xs:element name="//创建日期createon" type="xs:dateTime" />
+        <xs:element name="//countnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userloginbookentity" >
+      <xs:sequence>
+        <xs:element name="/*登录状态*///正常登录state_normal" type="xs:string" />
+        <xs:element name="//正常退出state_exit" type="xs:string" />
+        <xs:element name="//踢出（在其他设备登录）state_out" type="xs:string" />
+        <xs:element name="/*登录类型*///ui测试登录login_type_ui" type="xs:string" />
+        <xs:element name="//登录idloginid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//登录类型logintype" type="xs:string" />
+        <xs:element name="//手机唯一标识phoneuuid" type="xs:string" />
+        <xs:element name="//微信唯一标识unionid" type="xs:string" />
+        <xs:element name="//登录状态state" type="xs:string" />
+        <xs:element name="//业务idbusinessid" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userauthinfoentity" >
+      <xs:sequence>
+        <xs:element name="/*状态*///自动通过state_auto_succeed" type="xs:string" />
+        <xs:element name="//自动失败state_auto_fail" type="xs:string" />
+        <xs:element name="//待审核state_audit_wait" type="xs:string" />
+        <xs:element name="//审核通过state_audit_succeed" type="xs:string" />
+        <xs:element name="//审核失败state_audit_fail" type="xs:string" />
+        <xs:element name="//租户注册state_audit_tenant" type="xs:string" />
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//content" type="xs:string" />
+        <xs:element name="//项目idprojectname" type="xs:string" />
+        <xs:element name="//业态idformatname" type="xs:string" />
+        <xs:element name="//楼idbuildingname" type="xs:string" />
+        <xs:element name="//单元idunitname" type="xs:string" />
+        <xs:element name="//房间号idroomname" type="xs:string" />
+        <xs:element name="//真实姓名name" type="xs:string" />
+        <xs:element name="//证件号码idnumber" type="xs:string" />
+        <xs:element name="//手机号码mobile" type="xs:string" />
+        <xs:element name="//来源form" type="xs:string" />
+        <xs:element name="//手机唯一标识phoneuuid" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="visitorpasslogentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//访客通行idvisitorpassid" type="xs:string" />
+        <xs:element name="//扫码人姓名guardname" type="xs:string" />
+        <xs:element name="//是否放行ispass" type="xs:anyType" />
+        <xs:element name="//放行时间pass" type="xs:dateTime" />
+        <xs:element name="//创建人(用户id)createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questionnaireentity" >
+      <xs:sequence>
+        <xs:element name="//idquestid" type="xs:string" />
+        <xs:element name="//区域cityid" type="xs:string" />
+        <xs:element name="//项目projectname" type="xs:string" />
+        <xs:element name="//标题questname" type="xs:string" />
+        <xs:element name="//积分rulenum" type="xs:string" />
+        <xs:element name="//开始日期begin" type="xs:dateTime" />
+        <xs:element name="//结束日期end" type="xs:dateTime" />
+        <xs:element name="//状态1未开始2开始3结束queststatus" type="xs:string" />
+        <xs:element name="//创建日期createon" type="xs:dateTime" />
+        <xs:element name="//人数num" type="xs:string" />
+        <xs:element name="//状态0,未删除1,已删除deletestatus" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercrmentity" >
+      <xs:sequence>
+        <xs:element name="/*用户类型*///游客user_type_visitor" type="xs:string" />
+        <xs:element name="//普通user_type_normal" type="xs:string" />
+        <xs:element name="//业主user_type_owner" type="xs:string" />
+        <xs:element name="//家属user_type_family" type="xs:string" />
+        <xs:element name="//租户user_type_tenant" type="xs:string" />
+        <xs:element name="/*用户状态*///正常user_state_normal" type="xs:long" />
+        <xs:element name="//主键iduserid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//会员编号memberid" type="xs:string" />
+        <xs:element name="//登录密码password" type="xs:string" />
+        <xs:element name="//手机mobile" type="xs:string" />
+        <xs:element name="//昵称nickname" type="xs:string" />
+        <xs:element name="//真实姓名realname" type="xs:string" />
+        <xs:element name="//性别sex" type="xs:string" />
+        <xs:element name="//生日birthday" type="xs:dateTime" />
+        <xs:element name="//证件号码idcard" type="xs:string" />
+        <xs:element name="//证件类型idtype" type="xs:string" />
+        <xs:element name="//头像logo" type="xs:string" />
+        <xs:element name="//婚姻状况marriage" type="xs:string" />
+        <xs:element name="//用户状态userstate" type="xs:anyType" />
+        <xs:element name="//用户类型usertype" type="xs:string" />
+        <xs:element name="//注册时间register" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//金茂项目：业主idid" type="xs:string" />
+        <xs:element name="//国籍nationality" type="xs:string" />
+        <xs:element name="//籍贯nativesplace" type="xs:string" />
+        <xs:element name="//教育程度education" type="xs:string" />
+        <xs:element name="//酒店会员标识：0为会员，1为非会员state" type="xs:string" />
+        <xs:element name="//兴趣爱好hobby" type="xs:string" />
+        <xs:element name="//英文名字englishname" type="xs:string" />
+        <xs:element name="//职业occupation" type="xs:string" />
+        <xs:element name="//工作单位jobunit" type="xs:string" />
+        <xs:element name="//会员收入incomelevel" type="xs:string" />
+        <xs:element name="//单位类别companytype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfoentity" >
+      <xs:sequence>
+        <xs:element name="/*用户类型*///游客user_type_visitor" type="xs:string" />
+        <xs:element name="//会员user_type_normal" type="xs:string" />
+        <xs:element name="//业主user_type_owner" type="xs:string" />
+        <xs:element name="//同住人user_type_family" type="xs:string" />
+        <xs:element name="//废弃user_type_tenant" type="xs:string" />
+        <xs:element name="//app注册user_type_source_app" type="xs:string" />
+        <xs:element name="//微信注册user_type_source_weixin" type="xs:string" />
+        <xs:element name="/*用户状态*///正常user_state_normal" type="xs:long" />
+        <xs:element name="//主键iduserid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//登录密码password" type="xs:string" />
+        <xs:element name="//手机mobile" type="xs:string" />
+        <xs:element name="//昵称nickname" type="xs:string" />
+        <xs:element name="//真实姓名realname" type="xs:string" />
+        <xs:element name="//性别：1男2女sex" type="xs:anyType" />
+        <xs:element name="//生日birthday" type="xs:dateTime" />
+        <xs:element name="//证件号码idcard" type="xs:string" />
+        <xs:element name="//证件类型idtype" type="xs:string" />
+        <xs:element name="//头像logo" type="xs:string" />
+        <xs:element name="//婚姻状况marriage" type="xs:string" />
+        <xs:element name="//用户状态userstate" type="xs:anyType" />
+        <xs:element name="//用户类型usertype" type="xs:string" />
+        <xs:element name="//注册时间register" type="xs:dateTime" />
+        <xs:element name="//物业业主idviewappownerid" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//金茂项目：业主idid" type="xs:string" />
+        <xs:element name="//金茂跳转页面专用字段1未填写身份证2填写了身份证3填了身份证认证失败4认证成功jump" type="xs:string" />
+        <xs:element name="//数据来源1-app2-微信sourcetype" type="xs:string" />
+        <xs:element name="//操作系统：android/iosoperatingsystem" type="xs:string" />
+        <xs:element name="//微信用户昵称wc_nickname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userpropertystaffentity" >
+      <xs:sequence>
+        <xs:element name="/*员工类型*///编外（不在万达系统内）自建type_off_staff" type="xs:string" />
+        <xs:element name="//编内（万达系统内）引入type_in_staff" type="xs:string" />
+        <xs:element name="//1-有效，0-无效state_on" type="xs:string" />
+        <xs:element name="state_off" type="xs:string" />
+        <xs:element name="//员工idstaffid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//密码password" type="xs:string" />
+        <xs:element name="//名称staffname" type="xs:string" />
+        <xs:element name="//状态staffstate" type="xs:string" />
+        <xs:element name="//类型in-引入，off-自建type" type="xs:string" />
+        <xs:element name="//手机mobile" type="xs:string" />
+        <xs:element name="//是否公开手机号0不公开1公开openmobile" type="xs:string" />
+        <xs:element name="//公司idcompanyid" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//部门iddepartmentid" type="xs:string" />
+        <xs:element name="//权限idrolesetid" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//头像logo" type="xs:string" />
+        <xs:element name="//性别sex" type="xs:string" />
+        <xs:element name="//生日birthday" type="xs:anyType" />
+        <xs:element name="//生日类型birthdaytype" type="xs:string" />
+        <xs:element name="//邮件email" type="xs:string" />
+        <xs:element name="//工作电话officephone" type="xs:string" />
+        <xs:element name="//查询负责范围(模块条件)queryscope" type="xs:string" />
+        <xs:element name="//金茂内部员工0不是1是jinmaois" type="xs:string" />
+        <xs:element name="//排序ordernum" type="xs:anyType" />
+        <xs:element name="//备注memo" type="xs:string" />
+        <xs:element name="/*新增字段_2016-08-16_wyd-会员数据权限开发*///员工负责区域scope" type="xs:string" />
+        <xs:element name="//员工负责项目project" type="xs:string" />
+        <xs:element name="//员工所在公司company" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountcrmentity" >
+      <xs:sequence>
+        <xs:element name="accountid" type="xs:string" />
+        <xs:element name="//会员账号idid" type="xs:string" />
+        <xs:element name="//会员编号memberid" type="xs:string" />
+        <xs:element name="//注册手机号mobile" type="xs:string" />
+        <xs:element name="//注册账号registerid" type="xs:string" />
+        <xs:element name="//昵称nickname" type="xs:string" />
+        <xs:element name="//密码password" type="xs:string" />
+        <xs:element name="//注册电子邮箱mailbox" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="visitorpassentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//项目编码projectcode" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//房产idhouseroomid" type="xs:string" />
+        <xs:element name="//房产地址houseaddress" type="xs:string" />
+        <xs:element name="//业主姓名ownername" type="xs:string" />
+        <xs:element name="//业主电话ownerphone" type="xs:string" />
+        <xs:element name="//访客姓名visitorname" type="xs:string" />
+        <xs:element name="//访客电话visitorphone" type="xs:string" />
+        <xs:element name="//拜访日期visit" type="xs:dateTime" />
+        <xs:element name="//二维码图片路径pathqrcode" type="xs:string" />
+        <xs:element name="//二维码扫描次数numqrcode" type="xs:anyType" />
+        <xs:element name="//创建人(用户id)createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useractivityscopeentity" >
+      <xs:sequence>
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//活动idactivityid" type="xs:string" />
+        <xs:element name="//标识1:已读readed" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userintegralruleentity" >
+      <xs:sequence>
+        <xs:element name="//idid" type="xs:string" />
+        <xs:element name="//useriduserid" type="xs:string" />
+        <xs:element name="//微信appidwechatappid" type="xs:string" />
+        <xs:element name="//积分数量integralnumber" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uplusmembershipcardentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:anyType" />
+        <xs:element name="//会员卡编码cardnum" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//卡状态(0,已刪除1,已启用)cardstate" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userstaffloginbookentity" >
+      <xs:sequence>
+        <xs:element name="/*登录状态*///正常登录state_normal" type="xs:string" />
+        <xs:element name="//正常退出state_exit" type="xs:string" />
+        <xs:element name="//踢出（在其他设备登录）state_out" type="xs:string" />
+        <xs:element name="/*登录类型*///ui测试登录login_type_ui" type="xs:string" />
+        <xs:element name="//登录idloginid" type="xs:string" />
+        <xs:element name="//员工idstaffid" type="xs:string" />
+        <xs:element name="//登录类型logintype" type="xs:string" />
+        <xs:element name="//手机唯一标识phoneuuid" type="xs:string" />
+        <xs:element name="//登录状态state" type="xs:string" />
+        <xs:element name="//业务idbusinessid" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="loginout" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userfeedbackentity" >
+      <xs:sequence>
+        <xs:element name="/*状态*/state_new" type="xs:string" />
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//状态:1为未处理2为已处理state" type="xs:string" />
+        <xs:element name="//内容content" type="xs:string" />
+        <xs:element name="//手机mobile" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//类型1金茂会员2金茂质检3微信feedbacktype" type="xs:string" />
+        <xs:element name="//类别：1为身份申诉、2为意见反馈memo" type="xs:string" />
+        <xs:element name="//反馈开始时间start" type="xs:dateTime" />
+        <xs:element name="//反馈结束时间end" type="xs:dateTime" />
+        <xs:element name="//用户类型:2为普通会员3为业主4为同住人usertype" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//地址address" type="xs:string" />
+        <xs:element name="//意见反馈来源分类1便民信息纠错2:意见反馈fbclassification" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ownerappealentity" >
+      <xs:sequence>
+        <xs:element name="//申诉未处理state_untreat" type="xs:long" />
+        <xs:element name="//申诉通过state_pass" type="xs:long" />
+        <xs:element name="//申诉失败state_fail" type="xs:long" />
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//客户端idappid" type="xs:string" />
+        <xs:element name="//城市idcityid" type="xs:string" />
+        <xs:element name="//城市名称cityname" type="xs:string" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//手机号mobile" type="xs:string" />
+        <xs:element name="//证件类型(ownerauthenticationentity,参照常量)idtype" type="xs:string" />
+        <xs:element name="//证件号idcard" type="xs:string" />
+        <xs:element name="//业主姓名ownername" type="xs:string" />
+        <xs:element name="roomnum)housenum" type="xs:string" />
+        <xs:element name="//房产地址houseaddress" type="xs:string" />
+        <xs:element name="//合同封面contractcoverurl" type="xs:string" />
+        <xs:element name="//证件照片(正面)idphotofronturl" type="xs:string" />
+        <xs:element name="//证件照片(背面)idphotobackurl" type="xs:string" />
+        <xs:element name="//0,普通申诉1,特殊申诉,身份证被使用//申诉类型appealtype" type="xs:anyType" />
+        <xs:element name="//100,申诉未处理101,申诉通过102,申诉失败//处理状态handlestate" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qualitylogentity" >
+      <xs:sequence>
+        <xs:element name="//日志idlogid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//名称staffname" type="xs:string" />
+        <xs:element name="//手机号usermobile" type="xs:string" />
+        <xs:element name="//来源sourcefrom" type="xs:string" />
+        <xs:element name="//项目名projectname" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//时间systime" type="xs:dateTime" />
+        <xs:element name="//内容syscontent" type="xs:string" />
+        <xs:element name="//单据类型sysdoctype" type="xs:string" />
+        <xs:element name="//单据编号sysdocnum" type="xs:string" />
+        <xs:element name="//状态一类sysstatus" type="xs:string" />
+        <xs:element name="//版块syssection" type="xs:string" />
+        <xs:element name="//功能sysfunction" type="xs:string" />
+        <xs:element name="//ip地址ipaddress" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questiontitleselectentity" >
+      <xs:sequence>
+        <xs:element name="//idquestiontitleselectid" type="xs:string" />
+        <xs:element name="//题目idquestiontitleid" type="xs:string" />
+        <xs:element name="//选项名称selectname" type="xs:string" />
+        <xs:element name="//图片地址pictureurl" type="xs:string" />
+        <xs:element name="//选项数量number" type="xs:anyType" />
+        <xs:element name="//创建日期createon" type="xs:dateTime" />
+        <xs:element name="//countnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contactcrmentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//会员编号memberid" type="xs:string" />
+        <xs:element name="//电子邮箱email" type="xs:string" />
+        <xs:element name="//微博idweibo" type="xs:string" />
+        <xs:element name="//微信号weixin" type="xs:string" />
+        <xs:element name="//qqqq" type="xs:string" />
+        <xs:element name="//通讯地址address" type="xs:string" />
+        <xs:element name="//备用联系方式1backupphoneone" type="xs:string" />
+        <xs:element name="//备用联系方式2backupphonetwo" type="xs:string" />
+        <xs:element name="//备用联系方式3backupphonethree" type="xs:string" />
+        <xs:element name="//备用联系方式4backupphonefour" type="xs:string" />
+        <xs:element name="//备用联系方式5backupphonefive" type="xs:string" />
+        <xs:element name="//手机号码phonenumber" type="xs:string" />
+        <xs:element name="//删除标记1:删除，0：正常statecode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="carcrmentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//会员编号memberid" type="xs:string" />
+        <xs:element name="//车牌号licenseid" type="xs:string" />
+        <xs:element name="//车辆类型cartype" type="xs:string" />
+        <xs:element name="//车辆动力carpower" type="xs:string" />
+        <xs:element name="//记录更新日期modify" type="xs:dateTime" />
+        <xs:element name="//删除标记1:删除，0：正常statecode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usertokenentity" >
+      <xs:sequence>
+        <xs:element name="//tokenidtokenid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//openidopenid" type="xs:string" />
+        <xs:element name="//本token是否有效标记1有效2无效isactive" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建日期create" type="xs:dateTime" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usersettingentity" >
+      <xs:sequence>
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//小区idpinyincode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientprojectconfigentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//城市idcityid" type="xs:string" />
+        <xs:element name="//城市编码citynum" type="xs:string" />
+        <xs:element name="//城市名称cityname" type="xs:string" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//客户端id(0,1,2,3,)clientids" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="subcompanycrmentity" >
+      <xs:sequence>
+        <xs:element name="//分部idsubcompanyid" type="xs:string" />
+        <xs:element name="//简称shortname" type="xs:string" />
+        <xs:element name="//全称fullname" type="xs:string" />
+        <xs:element name="//上级分部idsupsubcompanyid" type="xs:string" />
+        <xs:element name="//网站website" type="xs:string" />
+        <xs:element name="//显示顺序showorder" type="xs:string" />
+        <xs:element name="//公司编码code" type="xs:string" />
+        <xs:element name="//是否封存canceled" type="xs:string" />
+        <xs:element name="//最后更新日期lastchangdate" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="subjectentity" >
+      <xs:sequence>
+        <xs:element name="//idsubjectid" type="xs:string" />
+        <xs:element name="//问卷idquestid" type="xs:string" />
+        <xs:element name="//标题subjectname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaultconfigentity" >
+      <xs:sequence>
+        <xs:element name="/**********modifybytom2016-7-1514:00:39begin**********//*配置类型*///用户默认头像config_type_default_user_logo" type="xs:string" />
+        <xs:element name="//功能介绍config_type_function_introduction" type="xs:string" />
+        <xs:element name="/**********modifybytom2016-7-1514:00:39end**********///主键id" type="xs:string" />
+        <xs:element name="//配置类型(1_用户默认头像,2_功能介绍页)configtype" type="xs:string" />
+        <xs:element name="//配置值configvalue" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ownerauthenticationentity" >
+      <xs:sequence>
+        <xs:element name="//身份证id_type_sf" type="xs:string" />
+        <xs:element name="//军官证id_type_jung" type="xs:string" />
+        <xs:element name="//警官证id_type_jingg" type="xs:string" />
+        <xs:element name="//护照id_type_hz" type="xs:string" />
+        <xs:element name="//营业执照id_type_yyzz" type="xs:string" />
+        <xs:element name="//认证未处理state_untreat" type="xs:long" />
+        <xs:element name="//认证通过state_pass" type="xs:long" />
+        <xs:element name="//认证失败state_fail" type="xs:long" />
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//客户端idappid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//手机号mobile" type="xs:string" />
+        <xs:element name="//证件类型idtype" type="xs:string" />
+        <xs:element name="//证件号idcard" type="xs:string" />
+        <xs:element name="//证件照片(正面)idphotofronturl" type="xs:string" />
+        <xs:element name="//证件照片(背面)idphotobackurl" type="xs:string" />
+        <xs:element name="//100,认证未处理101,认证通过102,认证失败//处理状态handlestate" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientconfigentity" >
+      <xs:sequence>
+        <xs:element name="//主鍵id_客户端编码id" type="xs:long" />
+        <xs:element name="//客戶端名称clientname" type="xs:string" />
+        <xs:element name="//微信appidwechatappid" type="xs:string" />
+        <xs:element name="//微信appsecretwechatappsecret" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="visitorrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="subjectrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userimagerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usersubjectrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountcrmrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaultconfigrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contactcrmrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="carcrmrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usertokenrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usersettingrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userfeedbackrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userintegralrulerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useractivityscoperepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="familycrmrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userpropertystaffrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userwandastaffrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userstaffloginbookrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qualitylogrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questiontitleselectrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userauthinforepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercrmrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinforepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questiontitlerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userloginbookrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermessagecrmrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roleanthorityrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questionnairerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uplusmembershipcardrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

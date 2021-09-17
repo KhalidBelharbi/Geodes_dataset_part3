@@ -1,0 +1,35 @@
+
+plancaserepairentity(//主键id:String, //复查次数times:int, //问题idcaseid:String, //整改人repairby:String, //整改人名称repairname:String, //整改人联系电话repairphone:String, //整改时间repair:Date, //整改描述repairdesc:String, //复查人reviewby:String, //复查人联系电话reviewphone:String, //复查时间review:Date, //复查意见，是否通过reviewopinion:String, //复查描述reviewdesc:String, //第三方监理supervisor:String, //第三方监理电话supervisorphone:String, //第三方监理复查时间supervisor:Date, //第三方复查意见，是否通过supervisoropinion:String, //第三方监理复查描述supervisordesc:String);
+
+materialplanentity(//材料id主键materialid:String, //批次名称batchname:String, //所属项目projectid:String, //负责人idpersonid:String, //负责人personname:String, //进场时间paradetime:Date, //验收时间checktime:Date, //验收人idcheckuserid:String, //验收人checkperson:String, //材料类型materialtype:String, //进场批量paradenum:String, //使用部位useplace:String, //供应商supplier:String, //材料规格materialspec:String, //是否有合格证0、没有1、有eligibility:String);
+
+plancheckplaceentity(//主键placeid:String, //计划idplanid:String, //项目idprojectid:String, //检查项idcheckid:String, //位置类型placetype:String, //位置名称placename:String);
+
+plancaseinfoentity(//问题id主键caseid:String, //批次idsetid:String, //问题标题casetitle:String, //问题部位caseplace:String, //问题类型casetype:String, //一级分类onetype:String, //二级分类twotype:String, //三级分类threetype:String, //问题描述casedesc:String, //问题状态,------待定：1待接单2待整改3已整改4已通过5一次通过6二次通过7三次通过0作废casestate:String, //房间id,或者公共区域idroomid:String, //项目名称projectid:String, //计划（模块）类型plantype:String, //创建时间create:Date, //创建人createby:String, //整改时限limittime:int, //批注留言comments:String, //承建商（整改单位）contractor:String, //责任单位responsibleunit:String, //责任单位2responsibleunit2:String, //责任单位3responsibleunit3:String, //派遣对象dispatchunit:String, //修改人modifyby:String, //修改时间modify:Date, //x坐标xcoordinates:BigDecimal, //y坐标ycoordinates:BigDecimal);
+
+planinfoentity(//主键planid:String, //名称planname:String, //类型plantype:String, //阶段1工程建设2验房交房3物业运营stage:String, //项目idprojectid:String, //开始时间begin:Date, //结束时间end:Date, //创建时间createtime:Date, //创建人createby:String, //执行人executeby:String, //执行部门executedepart:String);
+
+materialimageentity(id:String [PK], bussinessid:String, url:String, crttime:Date);
+
+plancaseimageentity(//主键imageid:String, //类型:1问题检查项2整改单types:String, //检查项id或者整改单idcheckid:String, //图片地址imageurl:String, //排序sort:int, //创建时间create:Date, //创建人createby:String);
+
+plancheckstandardentity(//主键standid:String, //标准说明standdesc:String, //检查项idcheckid:String, //创建人createby:String, //创建时间create:Date);
+
+clientrelationsslideshowentity(//轮播图idslideshowid:String, //轮播图标题slideshowtitle:String, //轮播图插图slideshowimgurl:String, //轮播图内容slideshowcontent:String, //来源slideshowsource:String, //type值1：图文2：视频slideshowtype:String, //视频链接videourl:String, //h5外部链接outurl:String, //状态0删除1正常state:String, //是否轮播0不轮播1轮播isslideshow:String, //创建人createname:String, //创建人idcreateby:String, //创建时间create:Date, //修改人modifyname:String, //修改人idmodifyby:String, //修改时间modify:Date, //发布时间release:Date);
+
+materialquotaentity(//主键id:String, //指标说明quotadesc:String, //是否合格0不合格1合格qualified:String, //材料验收idmaterialid:String);
+
+plancasesetentity(//主键批次idsetid:String, //计划类型plantype:String, //批次名称setname:String, //项目idprojectid:String, //区域idareaid:String, //楼栋idbuildingid:String, //单元idunitid:String, //楼层floor:String, //方位position:String, //创建人createby:String, //批次验收范围scope:String, //创建时间create:Date, //进场时间approach:Date, //进场批量approachnum:String, //验收人员inspectby:String, //验收时间inspect:Date, //批次状态0关闭1打开2删除status:String, //类型：批次、活动settype:String);
+
+electronizationguideentity(//自增长idid:Long, //时间戳增加和修改时候均修改当前字段modifytime:Date, //当前级别iduuidcurrentid:String, //创建时间增加时候写入当前字段createtime:Date, //状态1启用0.关闭state:String, //文件名filename:String, //路径path:String, //文件大小size:String);
+
+materialexitentity(//主键exitid:String, //图片附件地址imgurl:String, //问题描述problem:String, //材料idmaterialid:String, //材料类型materialtype:String, //项目idprojectid:String, //验收人checkperson:String, //验收时间checktime:Date, //供应商supplier:String, //责任单位dutyunit:String);
+
+plansetinitentity(//主键id:String, //名称initname:String, //计划类型plantype:String, //项目idprojectid:String, //区域idareaid:String, //楼栋idbuildingid:String, //单元idunitid:String, //楼层floor:String, //方位position:String, //是否生效iseffective:String);
+
+plancheckentity(//主键checkid:String, //项目idprojectid:String, //计划idplanid:String, //检查项层级itemlevel:String, //父级检查项parentitem:String, //排序itemorder:int, //检查项名称itemname:String, //创建时间create:Date, //创建人createby:String, //使用部位useplace:String, //供应商vender:String, //材料负责人checkpersion:String);
+
+clientrelationsnewsentity(//新闻idnewsid:String, //新闻标题newstitle:String, //新闻插图newsimgurl:String, //新闻内容newscontent:String, //所属区域newssource:String, //所属区域idprojectid:String, //type值1：图文2：视频3:外链newstype:String, //状态0删除1正常state:String, //视频链接videourl:String, //h5外链outurl:String, //创建人createname:String, //创建人idcreateby:String, //创建时间create:Date, //修改人modifyname:String, //修改人idmodifyby:String, //修改时间modify:Date, //发布时间release:Date, //访问量amountaccess:Long);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,18 @@
+ClassDiagram.Class>> AuthorizationCode =>=>=> RelationalSchema.Table>> authorizationcode;
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Class>> Client =>=>=> RelationalSchema.Table>> client;
+ClassDiagram.Attribut>> AuthorizationCode.code:String =>=>=> RelationalSchema.Column>> authorizationcode.code PRIMARY KEY;
+ClassDiagram.Attribut>> AuthorizationCode.clientid:String =>=>=> RelationalSchema.Column>> authorizationcode.clientid;
+ClassDiagram.Attribut>> AuthorizationCode.userid:String =>=>=> RelationalSchema.Column>> authorizationcode.userid;
+ClassDiagram.Attribut>> AuthorizationCode.approvedscopes:String =>=>=> RelationalSchema.Column>> authorizationcode.approvedscopes;
+ClassDiagram.Attribut>> AuthorizationCode.redirecturi:String =>=>=> RelationalSchema.Column>> authorizationcode.redirecturi;
+ClassDiagram.Attribut>> AuthorizationCode.expirationdate:LocalDateTime =>=>=> RelationalSchema.Column>> authorizationcode.expirationdate;
+ClassDiagram.Attribut>> User.userid:String =>=>=> RelationalSchema.Column>> user.userid PRIMARY KEY;
+ClassDiagram.Attribut>> User.password:String =>=>=> RelationalSchema.Column>> user.password;
+ClassDiagram.Attribut>> User.roles:String =>=>=> RelationalSchema.Column>> user.roles;
+ClassDiagram.Attribut>> User.scopes:String =>=>=> RelationalSchema.Column>> user.scopes;
+ClassDiagram.Attribut>> Client.clientid:String =>=>=> RelationalSchema.Column>> client.clientid PRIMARY KEY;
+ClassDiagram.Attribut>> Client.clientsecret:String =>=>=> RelationalSchema.Column>> client.clientsecret;
+ClassDiagram.Attribut>> Client.redirecturi:String =>=>=> RelationalSchema.Column>> client.redirecturi;
+ClassDiagram.Attribut>> Client.scope:String =>=>=> RelationalSchema.Column>> client.scope;
+ClassDiagram.Attribut>> Client.authorizedgranttypes:String =>=>=> RelationalSchema.Column>> client.authorizedgranttypes;

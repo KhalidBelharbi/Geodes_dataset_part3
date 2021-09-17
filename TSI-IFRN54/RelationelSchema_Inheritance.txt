@@ -1,0 +1,9 @@
+
+dealer(serialversionuid:long, id:Long [PK], name:String, address:String);
+
+persistentauditevent(id:Long [PK], principal:String, auditeventdate:LocalDateTime, auditeventtype:String, data:Map<String,String>);
+
+abstractauditingentity(serialversionuid:long, createdby:String, createddate:ZonedDateTime, lastmodifiedby:String, lastmodifieddate:ZonedDateTime);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

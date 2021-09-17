@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="transdata" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bmapset" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattrace2boattracedtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatpredict2boatpredictdtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensor2sensordtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boat2boatdtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegment2routesegmentdto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searoute2searoutedto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipeline2pipedtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegment2pipesegmentdtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensortype2sensortypedtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipeform2pipedtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensorform2sensordtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegmentform2routesegmentdto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipesegmentform2pipesegmentdtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatform2boatdtoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searouteform2searoutedto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="serverencoder" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searouteserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="searouterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="routesegmentservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattypeserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="boattyperepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegmentserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="pipelinesegmentrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pipelinesensorservice" nillable="true" minOccurs="0" />
+        <xs:element name="statusservice" type="sensorstatusservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelineserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="pipelinerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensortypeserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="sensortyperepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensorserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="pipelinesensorrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sensortypeservice" nillable="true" minOccurs="0" />
+        <xs:element name="statusservice" type="sensorstatusservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="boatrepository" nillable="true" minOccurs="0" />
+        <xs:element name="traceservice" type="boattraceservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="crossservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensorstatusserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="sensorstatusrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegmentserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="routesegmentrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatpredictserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="boatpredictrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crossserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="pipelinesegmentservice" nillable="true" minOccurs="0" />
+        <xs:element name="traceservice" type="boattraceservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="routesegmentservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattraceserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="boattracerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="faulthistory" >
+      <xs:sequence>
+        <xs:element name="exceptiontime" type="xs:dateTime" />
+        <xs:element name="exceptionsensorid" type="xs:string" />
+        <xs:element name="/*这里错误原因指的是传感器的类型，例如：原因为温度传感器，代表温度异常造成的管道故障*/exceptioncause" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="websocket" >
+      <xs:sequence>
+        <xs:element name="//静态变量，用来记录当前在线连接数。onlinecount" type="xs:long" />
+        <xs:element name="//与某个客户端的连接会话，需要通过它来给客户端发送数据" type="xs:anyType" />
+        <xs:element name="//concurrent包的线程安全set，用来存放每个客户端对应的mywebsocket对象。websocketset" type="websocket" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattraceservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelineservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegmentservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensortypeservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegmentservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensorstatusservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searouteservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensorservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatpredictservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crossservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattypeservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updateaspect" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="websocket" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="boatservice" nillable="true" minOccurs="0" />
+        <xs:element name="segmentservice" type="pipelinesegmentservice" nillable="true" minOccurs="0" />
+        <xs:element name="sensorservice" type="pipelinesensorservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="routesegmentservice" nillable="true" minOccurs="0" />
+        <xs:element name="createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatexception" >
+      <xs:complexContent>
+       <xs:extension base="tracerootexception{">
+         <xs:sequence>
+          <xs:element name="code" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="routeexception" >
+      <xs:complexContent>
+       <xs:extension base="tracerootexception">
+         <xs:sequence>
+          <xs:element name="code" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tracerootexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="code" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pipeexception" >
+      <xs:complexContent>
+       <xs:extension base="tracerootexception">
+         <xs:sequence>
+          <xs:element name="code" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensorform" >
+      <xs:sequence>
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="/*对应的管道段id*/segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*传感器类型*/typeid" type="xs:string" />
+        <xs:element name="/*传感器坐标*/location" type="xs:string" />
+        <xs:element name="/*传感器当前状态*/presentstatus" type="xs:string" />
+        <xs:element name="/*传感器当前值可以为空*/presentvalue" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searouteform" >
+      <xs:sequence>
+        <xs:element name="routeid" type="xs:string" />
+        <xs:element name="//航线状态，默认为启用110status" type="xs:string" />
+        <xs:element name="//航线起点source" type="xs:string" />
+        <xs:element name="//航线终点destination" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipeform" >
+      <xs:sequence>
+        <xs:element name="pipeid" type="xs:string" />
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegmentform" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应航线id*/routeid" type="xs:string" />
+        <xs:element name="/*这一段的起点坐标*/start" type="xs:string" />
+        <xs:element name="/*这一段的终点坐标*/end" type="xs:string" />
+        <xs:element name="/*航道限速*/limitingspeed" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatform" >
+      <xs:sequence>
+        <xs:element name="boatid" type="xs:string" />
+        <xs:element name="/*船只类型*/type" type="xs:string" />
+        <xs:element name="/*当前位置*/presentlocation" type="xs:string" />
+        <xs:element name="/*当前船速*//*speed*//*超速判断，正常为0，超速为1*//*integeroverspeedjudging*//*当前船的方向*//*direction*//*船只状态*/status" type="xs:string" />
+        <xs:element name="/*船只航线id号*/routeid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipesegmentform" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*管道段的序列号，可以不传*/segmentserialnumber" type="xs:anyType" />
+        <xs:element name="/*管道起点*/start" type="xs:string" />
+        <xs:element name="/*管道终点*/end" type="xs:string" />
+        <xs:element name="/*管道段对应的传感器状态，可以不传*/statuslist" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatpredictform" >
+      <xs:sequence>
+        <xs:element name="predictid" type="xs:string" />
+        <xs:element name="/*船只编号*/boatid" type="xs:string" />
+        <xs:element name="/*预测到达地点*/predictlocation" type="xs:string" />
+        <xs:element name="/*预测到达时间*/arrivetime" type="xs:string" />
+        <xs:element name="/*预测到达该地点的概率*/probability" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tracerootapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipemanagercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="pipelineservice" nillable="true" minOccurs="0" />
+        <xs:element name="segmentservice" type="pipelinesegmentservice" nillable="true" minOccurs="0" />
+        <xs:element name="sensorservice" type="pipelinesensorservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sensortypeservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatmanagecontroller" >
+      <xs:sequence>
+        <xs:element name="traceservice" type="boattraceservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="crossservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="boatservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="searouteservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="indexcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="displayofpipeandboatcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="pipelineservice" nillable="true" minOccurs="0" />
+        <xs:element name="segmentservice" type="pipelinesegmentservice" nillable="true" minOccurs="0" />
+        <xs:element name="sensorservice" type="pipelinesensorservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="boatservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="searouteservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="routesegmentservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searoutecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="searouteservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="routesegmentservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boat" >
+      <xs:sequence>
+        <xs:element name="boatid" type="xs:string" />
+        <xs:element name="/*船只类型*/type" type="xs:string" />
+        <xs:element name="/*当前位置*/presentlocation" type="xs:string" />
+        <xs:element name="/*当前船速*/speed" type="xs:string" />
+        <xs:element name="/*超速判断，正常为0，超速为1*/overspeedjudging" type="xs:anyType" />
+        <xs:element name="/*当前船的方向*/direction" type="xs:string" />
+        <xs:element name="/*船只状态*/status" type="xs:string" />
+        <xs:element name="/*船只航线id号*/routeid" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatpredict" >
+      <xs:sequence>
+        <xs:element name="predictid" type="xs:string" />
+        <xs:element name="/*船只编号*/boatid" type="xs:string" />
+        <xs:element name="/*预测到达地点*/predictlocation" type="xs:string" />
+        <xs:element name="/*预测到达时间*/arrivetime" type="xs:string" />
+        <xs:element name="/*预测到达该地点的概率*/probability" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensorstatus" >
+      <xs:sequence>
+        <xs:element name="statusid" type="xs:string" />
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="//@column(name" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="/*记录时间*/recordtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensortype" >
+      <xs:sequence>
+        <xs:element name="typeid" type="xs:string" />
+        <xs:element name="typename" type="xs:string" />
+        <xs:element name="lowestvalue" type="xs:string" />
+        <xs:element name="highestvalue" type="xs:string" />
+        <xs:element name="/*创建时间*/create_time" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/up_time" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegmentpredict" >
+      <xs:sequence>
+        <xs:element name="predictid" type="xs:string" />
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="predictlife" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegmentmultikeys" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="segmentserialnumber" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattype" >
+      <xs:sequence>
+        <xs:element name="/*船只种类id*/typeid" type="xs:string" />
+        <xs:element name="/*船只种类名称*/typename" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattrace" >
+      <xs:sequence>
+        <xs:element name="/*轨迹编号*/traceid" type="xs:string" />
+        <xs:element name="/*船只编号*/boatid" type="xs:string" />
+        <xs:element name="/*轨迹序列号*/traceserialnumber" type="xs:string" />
+        <xs:element name="/*记录位置*/recordlocation" type="xs:string" />
+        <xs:element name="/*记录船速*/speed" type="xs:string" />
+        <xs:element name="/*超速判断，正常为0，超速为1*/overspeedjudging" type="xs:anyType" />
+        <xs:element name="/*记录船方向*/direction" type="xs:string" />
+        <xs:element name="/*船只状态*/status" type="xs:string" />
+        <xs:element name="/*记录时间*/recordtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipeline" >
+      <xs:sequence>
+        <xs:element name="pipeid" type="xs:string" />
+        <xs:element name="/*管道起点*/source" type="xs:string" />
+        <xs:element name="/*管道终点*/destination" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searoute" >
+      <xs:sequence>
+        <xs:element name="//航线idrouteid" type="xs:string" />
+        <xs:element name="//航线状态，默认为启用110status" type="xs:string" />
+        <xs:element name="//航线起点source" type="xs:string" />
+        <xs:element name="//航线终点destination" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegment" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应航线id*/routeid" type="xs:string" />
+        <xs:element name="/*航线段的序列号*/segmentserialnumber" type="xs:anyType" />
+        <xs:element name="/*这一段的起点坐标*/start" type="xs:string" />
+        <xs:element name="/*这一段的终点坐标*/end" type="xs:string" />
+        <xs:element name="/*航道限速*/limitingspeed" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensor" >
+      <xs:sequence>
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="/*对应的管道段id*/segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*传感器类型*/typeid" type="xs:string" />
+        <xs:element name="/*传感器坐标*/location" type="xs:string" />
+        <xs:element name="/*传感器当前状态，默认状态正常*/presentstatus" type="xs:string" />
+        <xs:element name="/*传感器当前值*/presentvalue" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegment" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*管道段的序列号*/segmentserialnumber" type="xs:anyType" />
+        <xs:element name="/*这一段的起点坐标*/start" type="xs:string" />
+        <xs:element name="/*这一段的终点坐标*/end" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensorvo" >
+      <xs:sequence>
+        <xs:element name="/*传感器种类*/type" type="xs:string" />
+        <xs:element name="/*传感器的值*/value" type="xs:string" />
+        <xs:element name="/*传感器种类名*/name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updateboatvo" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//区分是新船(1)还是旧船(0)code" type="xs:string" />
+        <xs:element name="boatid" type="xs:string" />
+        <xs:element name="/*船只类型*/type" type="xs:string" />
+        <xs:element name="/*当前位置*/presentlocation" type="xs:string" />
+        <xs:element name="/*之前的位置*/lastlocation" type="xs:string" />
+        <xs:element name="/*当前船速*/speed" type="xs:string" />
+        <xs:element name="/*超速判断，正常为0，超速为1*/overspeedjudging" type="xs:anyType" />
+        <xs:element name="/*当前船的方向*/direction" type="xs:string" />
+        <xs:element name="/*船只状态*/status" type="xs:string" />
+        <xs:element name="/*船只航线id号*/routeid" type="xs:string" />
+        <xs:element name="/*@jsonserialize(using" type="xs:dateTime" />
+        <xs:element name="/*@jsonserialize(using" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routevo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updatesensorvo" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="/*对应的管道段id*/segmentid" type="xs:string" />
+        <xs:element name="/*管道状态*///0变好，1变坏，3不变，2处于未知状态flag" type="xs:string" />
+        <xs:element name="/*管道起点坐标*/segmentstart" type="xs:string" />
+        <xs:element name="/*管道终点坐标*/segmentend" type="xs:string" />
+        <xs:element name="/*传感器类型*/typeid" type="xs:string" />
+        <xs:element name="/*传感器坐标*/sensorlocation" type="xs:string" />
+        <xs:element name="/*传感器当前状态*/presentstatus" type="xs:string" />
+        <xs:element name="/*传感器当前值*/presentvalue" type="xs:string" />
+        <xs:element name="//@jsonserialize(using" type="xs:dateTime" />
+        <xs:element name="//@jsonserialize(using" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updatepipesegmentvo" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*管道段的序列号*/segmentserialnumber" type="xs:anyType" />
+        <xs:element name="/*管道起点*/start" type="xs:string" />
+        <xs:element name="/*管道终点*/end" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultvo" >
+      <xs:sequence>
+        <xs:element name="//错误码codecode" type="xs:anyType" />
+        <xs:element name="msg" type="xs:string" />
+        <xs:element name="//返回的具体内容daa" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatvo" >
+      <xs:sequence>
+        <xs:element name="tracedtolist" type="boattracedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="searoutedto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="threateningboatvo" >
+      <xs:sequence>
+        <xs:element name="boatid" type="xs:string" />
+        <xs:element name="traversetime" type="xs:anyType" />
+        <xs:element name="presentlocation" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datetolongserializer" >
+      <xs:complexContent>
+       <xs:extension base="jsonserializer<date>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="randomutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultvoutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mathutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="geographyutil" >
+      <xs:sequence>
+        <xs:element name="//赤道半径(单位m)earth_radius" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timeutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="doublelocation" >
+      <xs:sequence>
+        <xs:element name="//经度longitude" type="xs:double" />
+        <xs:element name="//纬度latitude" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipesegmentdto" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*管道段的序列号*/segmentserialnumber" type="xs:anyType" />
+        <xs:element name="/*管道起点*/start" type="xs:string" />
+        <xs:element name="/*管道终点*/end" type="xs:string" />
+        <xs:element name="/*管道段对应的传感器状态，可以不传*/statuslist" type="sensorstatus" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searoutedto" >
+      <xs:sequence>
+        <xs:element name="routeid" type="xs:string" />
+        <xs:element name="//航线状态，默认为启用110status" type="xs:string" />
+        <xs:element name="//航线起点source" type="xs:string" />
+        <xs:element name="//航线终点destination" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+        <xs:element name="/*此航线所包含的航线段*/routesegments" type="routesegmentdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipedto" >
+      <xs:sequence>
+        <xs:element name="pipeid" type="xs:string" />
+        <xs:element name="/*管道起点*/source" type="xs:string" />
+        <xs:element name="/*管道终点*/destination" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatdto" >
+      <xs:sequence>
+        <xs:element name="boatid" type="xs:string" />
+        <xs:element name="/*船只类型*/type" type="xs:string" />
+        <xs:element name="/*当前位置*/presentlocation" type="xs:string" />
+        <xs:element name="/*当前船速*/speed" type="xs:string" />
+        <xs:element name="/*超速判断，（code）正常为0，超速为1*//*code" type="xs:anyType" />
+        <xs:element name="/*当前船的方向*/direction" type="xs:string" />
+        <xs:element name="/*船只状态*/status" type="xs:string" />
+        <xs:element name="/*船只航线id号*/routeid" type="xs:string" />
+        <xs:element name="/*@jsonserialize(using" type="xs:dateTime" />
+        <xs:element name="/*@jsonserialize(using" type="xs:dateTime" />
+        <xs:element name="/*该船对应的船只航线*/boattraces" type="boattracedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensordto" >
+      <xs:sequence>
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="/*对应的管道段id*/segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*传感器类型*/typeid" type="xs:string" />
+        <xs:element name="/*传感器坐标*/location" type="xs:string" />
+        <xs:element name="/*传感器当前状态*/presentstatus" type="xs:string" />
+        <xs:element name="/*传感器当前值*/presentvalue" type="xs:string" />
+        <xs:element name="//@jsonserialize(using" type="xs:dateTime" />
+        <xs:element name="//@jsonserialize(using" type="xs:dateTime" />
+        <xs:element name="/*每个传感器有自己的历史状态记录表*/statuslist" type="sensorstatus" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensortypedto" >
+      <xs:sequence>
+        <xs:element name="typeid" type="xs:string" />
+        <xs:element name="typename" type="xs:string" />
+        <xs:element name="lowestvalue" type="xs:string" />
+        <xs:element name="highestvalue" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatpredictdto" >
+      <xs:sequence>
+        <xs:element name="predict_id" type="xs:string" />
+        <xs:element name="/*船只编号*/boat_id" type="xs:string" />
+        <xs:element name="/*预测到达地点*/predict_location" type="xs:string" />
+        <xs:element name="/*预测到达时间*/arrive_time" type="xs:string" />
+        <xs:element name="/*预测到达该地点的概率*/probability" type="xs:string" />
+        <xs:element name="/*创建时间*/create_time" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattracedto" >
+      <xs:sequence>
+        <xs:element name="/*轨迹编号*/traceid" type="xs:string" />
+        <xs:element name="/*船只编号*/boatid" type="xs:string" />
+        <xs:element name="/*轨迹序列号*/traceserialnumber" type="xs:string" />
+        <xs:element name="/*记录位置*/recordlocation" type="xs:string" />
+        <xs:element name="/*记录船速*/speed" type="xs:string" />
+        <xs:element name="/*超速判断，正常为0，超速为1*/overspeedjudging" type="xs:anyType" />
+        <xs:element name="/*记录船方向*/direction" type="xs:string" />
+        <xs:element name="/*船只状态*/status" type="xs:string" />
+        <xs:element name="/*记录时间*/recordtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegmentdto" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应航线id*/routeid" type="xs:string" />
+        <xs:element name="/*航线段的序列号*/segmentserialnumber" type="xs:anyType" />
+        <xs:element name="/*这一段的起点坐标*/start" type="xs:string" />
+        <xs:element name="/*这一段的终点坐标*/end" type="xs:string" />
+        <xs:element name="/*航道限速*/limitingspeed" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatstatusenum" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:anyType" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensorstatusenum" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searoutestatusenum" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultenum" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:anyType" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattyperepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<boattype,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pipelinerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<pipeline,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="boattracerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<boattrace,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sensortyperepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<sensortype,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="searouterepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<searoute,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sensorstatusrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<sensorstatus,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensorrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<pipelinesensor,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="boatpredictrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<boatpredict,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="routesegmentrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<routesegment,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegmentrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<pipelinesegment,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="boatrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<boat,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="websocketconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tracerootapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="randomutiltest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="geographyutiltest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="sensorstatusservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="boattraceservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mathutiltest" >
+      <xs:sequence>
+        <xs:element name="segmentservice" type="pipelinesegmentserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="traceservice" type="boattraceserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timeutiltest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegmentrepositorytest" >
+      <xs:sequence>
+        <xs:element name="repository" type="pipelinesegmentrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crossserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="service" type="crossservice" nillable="true" minOccurs="0" />
+        <xs:element name="starttime" type="xs:dateTime" />
+        <xs:element name="endtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensorserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="service" type="pipelinesensorservice" nillable="true" minOccurs="0" />
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="pipeid" type="xs:string" />
+        <xs:element name="sensortype" type="xs:string" />
+        <xs:element name="status" type="sensorstatusenum" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegmentserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="segmentservice" type="routesegmentservice" nillable="true" minOccurs="0" />
+        <xs:element name="routeid" type="xs:string" />
+        <xs:element name="segmentid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="boatservice" type="boatserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="boattraceservice" type="boattraceserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="boatid" type="xs:string" />
+        <xs:element name="ruteid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegmentserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="segmentservice" type="pipelinesegmentserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="pipeid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searouteserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="searouteservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattraceserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="traceservice" type="boattraceserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="boatid" type="xs:string" />
+        <xs:element name="traceid" type="xs:string" />
+        <xs:element name="starttime" type="xs:anyType" />
+        <xs:element name="endtime" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattypeserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="boattypeservice" nillable="true" minOccurs="0" />
+        <xs:element name="typeid" type="xs:string" />
+        <xs:element name="typename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensorstatusserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="statusservice" type="sensorstatusservice" nillable="true" minOccurs="0" />
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="statusid" type="xs:string" />
+        <xs:element name="starttime" type="xs:anyType" />
+        <xs:element name="endtime" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelineserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="pipelineservice" nillable="true" minOccurs="0" />
+        <xs:element name="pipeid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensortypeserviceimpltest" >
+      <xs:sequence>
+        <xs:element name="typeservice" type="sensortypeservice" nillable="true" minOccurs="0" />
+        <xs:element name="typename" type="xs:string" />
+        <xs:element name="typeid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

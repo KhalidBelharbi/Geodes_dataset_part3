@@ -1,0 +1,11 @@
+
+technology(id:Integer [PK], technologyname:String, //@manytoone//@joincolumn(name:Integer);
+
+salary(id:Integer [PK], //@notemptysalary:Integer);
+
+department(id:Integer [PK], departmentname:String);
+
+employee(id:Long [PK], name:String, designation:String, expertise:String, createdat:Date, GeneratedName:Salary #FK to(salary), department_id:Department #FK to(department));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,9 @@
+
+checkoutitementity(id:Long [PK], product:String, checkout:CheckoutEntity #FK to(checkoutentity));
+
+checkoutentity(id:Long [PK], code:String, GeneratedName:Status, saveaddress:Boolean, saveinformation:Boolean, createdat:LocalDateTime, updatedat:LocalDateTime, shipping:ShippingEntity #FK to(shippingentity));
+
+shippingentity(id:Long [PK], address:String, complement:String, country:String, state:String, cep:String, checkout:CheckoutEntity #FK to(checkoutentity));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

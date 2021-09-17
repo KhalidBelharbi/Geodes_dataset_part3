@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="momentfollow" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="messageid" type="xs:long" />
+        <xs:element name="creatorid" type="xs:long" />
+        <xs:element name="replierid" type="xs:long" />
+        <xs:element name="replytime" type="xs:dateTime" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="receiverid" type="xs:long" />
+        <xs:element name="replier" type="xs:string" />
+        <xs:element name="replieravatar" type="xs:string" />
+        <xs:element name="receiver" type="xs:string" />
+        <xs:element name="receiveravatar" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentupvote" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="messageid" type="xs:long" />
+        <xs:element name="upvoterid" type="xs:long" />
+        <xs:element name="issuetime" type="xs:dateTime" />
+        <xs:element name="upvoter" type="xs:string" />
+        <xs:element name="avater" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentmessage" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="groupid" type="xs:long" />
+        <xs:element name="creatorid" type="xs:long" />
+        <xs:element name="issuetime" type="xs:dateTime" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="imageids" type="xs:string" />
+        <xs:element name="imageurls" type="xs:string" />
+        <xs:element name="fileids" type="xs:string" />
+        <xs:element name="filenames" type="xs:string" />
+        <xs:element name="linkurl" type="xs:string" />
+        <xs:element name="linktitle" type="xs:string" />
+        <xs:element name="linkposter" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="longitude" type="xs:double" />
+        <xs:element name="latitude" type="xs:double" />
+        <xs:element name="poiid" type="xs:string" />
+        <xs:element name="poititle" type="xs:string" />
+        <xs:element name="adurl" type="xs:string" />
+        <xs:element name="updtime" type="xs:dateTime" />
+        <xs:element name="creator" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+        <xs:element name="upvotes" type="momentupvote" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="follows" type="momentfollow" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentgroup" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="usercount" type="xs:anyType" />
+        <xs:element name="lastmessage" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentgroupuser" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="groupid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

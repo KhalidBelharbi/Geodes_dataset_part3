@@ -1,0 +1,8 @@
+ClassDiagram.Class>> UserEntity =>=>=> RelationalSchema.Table>> userentity;
+ClassDiagram.Class>> TokenManagerEntity =>=>=> RelationalSchema.Table>> tokenmanagerentity;
+ClassDiagram.Attribut>> UserEntity.userid:String =>=>=> RelationalSchema.Column>> userentity.userid PRIMARY KEY;
+ClassDiagram.Attribut>> UserEntity.password:String =>=>=> RelationalSchema.Column>> userentity.password;
+ClassDiagram.Attribut>> TokenManagerEntity.userid:String =>=>=> RelationalSchema.Column>> tokenmanagerentity.userid PRIMARY KEY;
+ClassDiagram.Attribut>> TokenManagerEntity.tokenname:String =>=>=> RelationalSchema.Column>> tokenmanagerentity.tokenname PRIMARY KEY;
+ClassDiagram.Attribut>> TokenManagerEntity.token:String =>=>=> RelationalSchema.Column>> tokenmanagerentity.token;
+ClassDiagram.Attribut>> TokenManagerEntity.accesscount:int =>=>=> RelationalSchema.Column>> tokenmanagerentity.accesscount;

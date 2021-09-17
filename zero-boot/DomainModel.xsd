@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="account" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="delflag" type="xs:anyType" />
+        <xs:element name="roles" type="role" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountrole" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="roleid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolepermission" >
+      <xs:sequence>
+        <xs:element name="roleid" type="xs:string" />
+        <xs:element name="permissionid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="permission" >
+      <xs:sequence>
+        <xs:element name="permissionid" type="xs:string" />
+        <xs:element name="permission" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="delflag" type="xs:anyType" />
+        <xs:element name="roles" type="role" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:sequence>
+        <xs:element name="roleid" type="xs:string" />
+        <xs:element name="role" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="delflag" type="xs:anyType" />
+        <xs:element name="permissions" type="permission" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="accounts" type="account" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

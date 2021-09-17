@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="vavrtryunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vavrexceptionhandlingunittest" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="integers" type="xs:anyType" />
+        <xs:element name="validintegersonly" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="futuretest" >
+      <xs:sequence>
+        <xs:element name="error" type="xs:string" />
+        <xs:element name="hello" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="patternmatchingunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertybasedlongrunningunittest" >
+      <xs:sequence>
+        <xs:element name="divisiblebytwo" type="xs:anyType" />
+        <xs:element name="divisiblebyfive" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vavrunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eitherunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="collectionapiunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="collectionfactorymethodsunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vavrrepositoryintegrationtest" >
+      <xs:sequence>
+        <xs:element name="userrepository" type="vavruserrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vavruserrepository" >
+      <xs:complexContent>
+       <xs:extension base="repository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vavrsampler" >
+      <xs:sequence>
+        <xs:element name="array" type="xs:long" />
+        <xs:element name="intlist" type="xs:anyType" />
+        <xs:element name="ofs" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personvalidator" >
+      <xs:sequence>
+        <xs:element name="name_err" type="xs:string" />
+        <xs:element name="age_err" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="age" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eitherdemo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="javatrycatch" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="httpclient" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vavrtry" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="httpclient" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="response" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="httpclient" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

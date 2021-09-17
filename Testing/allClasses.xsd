@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="metafieldhelper" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafield" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="entityid" type="xs:anyType" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="disabled" type="xs:anyType" />
+          <xs:element name="mandatory" type="xs:anyType" />
+          <xs:element name="displayorder" type="xs:anyType" />
+          <xs:element name="defaultvalue" type="metafieldvalue" nillable="true" minOccurs="0" />
+          <xs:element name="datatableid" type="xs:anyType" />
+          <xs:element name="dependentmetafields" type="metafield" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="helpdescription" type="xs:string" />
+          <xs:element name="helpcontenturl" type="xs:string" />
+          <xs:element name="" type="validationrule" nillable="true" minOccurs="0" />
+          <xs:element name="//indicatewhetherthemetafieldisaprimaryfieldandcanbeusedforcreationofmetafieldgroupsandforproviding//ameta-fieldstobepopulatedfortheentitytypetheybelongto//metafieldscreatedfromtheconfiguration-metafieldmenuwillbeconsideredasprimarymetafieldsbydefault.//allotherdynamicmetafieldscreatedontheflyinthesystem(example:accountinformationtype,productcategory)willnotbeconsideredasprimaryprimary" type="xs:anyType" />
+          <xs:element name="fieldusage" type="xs:anyType" />
+          <xs:element name="metafieldgroups" type="metafieldgroup" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="filename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customizedentity" >
+      <xs:sequence>
+        <xs:element name="metafields" type="metafieldvalue" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metafieldgroup" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="created" type="xs:dateTime" />
+          <xs:element name="upd" type="xs:dateTime" />
+          <xs:element name="entityid" type="xs:anyType" />
+          <xs:element name="displayorder" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="metafields" type="metafield" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafielddas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<metafield>">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="findcountbydtypename" type="xs:string" />
+          <xs:element name="findallidsbydatatypenamesql" type="xs:string" />
+          <xs:element name="findcustomervaluessql" type="xs:string" />
+          <xs:element name="findcustomervaluesbygroupsql" type="xs:string" />
+          <xs:element name="getbyfieldtypes" type="xs:string" />
+          <xs:element name="getvaluesbycustomerfields" type="xs:string" />
+          <xs:element name="getplansbymetafieldquery" type="xs:string" />
+          <xs:element name="finduseidbycustomeraccountnumbersql" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="validationrule" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="error_msg_label" type="xs:string" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="ruletype" type="validationruletype" nillable="true" minOccurs="0" />
+          <xs:element name="ruleattributes" type="xs:anyType" />
+          <xs:element name="enabled" type="xs:anyType" />
+          <xs:element name="errors" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafieldvalue" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="field" type="metafield" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupcustomizedentity" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafielddbhelper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validationruledas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<validationrule>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafieldgroupdas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<metafieldgroup>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jsonmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<string>">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="json" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<list<string>>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datemetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<date>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="integermetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<integer>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="decimalmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<bigdecimal>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="booleanmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<boolean>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="stringmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<string>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafieldvaluedas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<metafieldvalue>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafieldgroupbl" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="group" type="metafieldgroup" nillable="true" minOccurs="0" />
+        <xs:element name="mfgroupdas" type="metafieldgroupdas" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metafieldgroupws" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="created" type="xs:dateTime" />
+        <xs:element name="upd" type="xs:dateTime" />
+        <xs:element name="entityid" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="displayorder" type="xs:anyType" />
+        <xs:element name="metafields" type="xs:anyType" />
+        <xs:element name="descriptions" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractvalidationrulemodel" >
+      <xs:sequence>
+        <xs:element name="attributedefinitions" type="metafieldattributedefinition" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sourcedependantvalidationrulemodel" >
+      <xs:complexContent>
+       <xs:extension base="abstractvalidationrulemodel">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="emailvalidationrulemodel" >
+      <xs:complexContent>
+       <xs:extension base="abstractvalidationrulemodel">
+         <xs:sequence>
+          <xs:element name="comma" type="xs:string" />
+          <xs:element name="semi_colon" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="email_pattern" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paymentcardvalidationrulemodel" >
+      <xs:complexContent>
+       <xs:extension base="abstractvalidationrulemodel{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="scriptvalidationrulemodel" >
+      <xs:complexContent>
+       <xs:extension base="abstractvalidationrulemodel">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="validation_script_field" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="regexvalidationrulemodel" >
+      <xs:complexContent>
+       <xs:extension base="abstractvalidationrulemodel">
+         <xs:sequence>
+          <xs:element name="validation_reg_ex_field" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafieldattributedefinition" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="required" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validationruletype" >
+      <xs:sequence>
+        <xs:element name="//custom(newcustom())" type="validationrulemodel" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validationrulemodel" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rangevalidationrulemodel" >
+      <xs:complexContent>
+       <xs:extension base="abstractvalidationrulemodel<object>">
+         <xs:sequence>
+          <xs:element name="validation_min_range_field" type="xs:string" />
+          <xs:element name="validation_max_range_field" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metacontent" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metafieldbl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="context" >
+      <xs:sequence>
+        <xs:element name="//springapplicationcontext,injectedbycontextawareclientsspring" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="languagedto" >
+      <xs:sequence>
+        <xs:element name="english_language_id" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="currencydto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="symbol" type="xs:string" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="countrycode" type="xs:string" />
+          <xs:element name="currencyexchanges" type="currencyexchangedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="entities_1" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="//fromexname" type="xs:string" />
+          <xs:element name="inuse" type="xs:anyType" />
+          <xs:element name="//willbeconvertedtofloatrate" type="xs:string" />
+          <xs:element name="sysrate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jbillingtable" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistentenumusertype" >
+      <xs:complexContent>
+       <xs:extension base="persistentenum>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jbillingtabledas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<jbillingtable>">
+         <xs:sequence>
+          <xs:element name="cache" type="xs:anyType" />
+          <xs:element name="cachemodel" type="xs:anyType" />
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="internationaldescriptiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="internationaldescriptionid" nillable="true" minOccurs="0" />
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="countrydas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<countrydto>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ideletable" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="internationaldescriptionid" >
+      <xs:sequence>
+        <xs:element name="tableid" type="xs:long" />
+        <xs:element name="foreignid" type="xs:long" />
+        <xs:element name="psudocolumn" type="xs:string" />
+        <xs:element name="languageid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractgenericstatus" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="statusvalue" type="xs:anyType" />
+          <xs:element name="order" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="currencydas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<currencydto>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="languagedas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<languagedto>">
+         <xs:sequence>
+          <xs:element name="findbycodesql" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistentenum" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="countrydto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="code" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractdas" >
+      <xs:complexContent>
+       <xs:extension base="hibernatedaosupport">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="persistentclass" type="xs:anyType" />
+          <xs:element name="//ifqueryswillberuncachedornotqueriescached" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="internationaldescriptiondas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<internationaldescriptiondto>">
+         <xs:sequence>
+          <xs:element name="//injectedbyspringjtdas" type="jbillingtabledas" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="stringlist" >
+      <xs:sequence>
+        <xs:element name="value" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enumerationdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="values" type="enumerationvaluedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="entityid" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="idas" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enumerationvaluedas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<enumerationvaluedto>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="descriptiondas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<internationaldescriptiondto>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="currencyexchangedas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<currencyexchangedto>">
+         <xs:sequence>
+          <xs:element name="findexchangefordatesql" type="xs:string" />
+          <xs:element name="findexchangeinrangesql" type="xs:string" />
+          <xs:element name="findbyentitysql" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="internationaldescription" >
+      <xs:sequence>
+        <xs:element name="id" type="internationaldescriptionid" nillable="true" minOccurs="0" />
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enumerationdas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<enumerationdto>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractgenericstatusdas" >
+      <xs:complexContent>
+       <xs:extension base="abstractdas<t>">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="cache" type="xs:anyType" />
+          <xs:element name="cachemodel" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="currencyexchangedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="currencydto" nillable="true" minOccurs="0" />
+        <xs:element name="entityid" type="xs:anyType" />
+        <xs:element name="rate" type="xs:anyType" />
+        <xs:element name="validsince" type="xs:dateTime" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractdescription" >
+      <xs:sequence>
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enumerationvaluedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="enumeration" type="enumerationdto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basicusertype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="descriptionbl" >
+      <xs:sequence>
+        <xs:element name="descriptiondas" type="internationaldescriptiondas" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="parsehelper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

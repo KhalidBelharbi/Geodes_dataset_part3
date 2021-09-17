@@ -1,0 +1,21 @@
+
+candidate(id:Long [PK], sequencenumber:int, name:String, description:String, value:int, selectedvalue:int, elected:int, image:String, //조인됨m:1:Vote #FK to(vote));
+
+vote(id:Long [PK], name:String, //투표순서sequencenumber:int, //선택갯수selectednumber:int, //당선갯수electedcount:int, voteinfo:VoteInfomation #FK to(voteinfomation));
+
+result(voterid:Long [PK], candidateid:Long [PK], value:int, createdat:LocalDateTime, createdby:String);
+
+voteinfomation(id:Long [PK], name:String, description:String, count:int, status:VoteInfoStatusType, createdat:LocalDateTime, createdby:String, updatedat:LocalDateTime, updatedby:String, current:int, GeneratedName:Apply #FK to(apply));
+
+black(id:Long [PK], user:Member #FK to(member), phone:String, createdat:LocalDateTime, end:LocalDateTime);
+
+userrole(id:String [PK], user:Member #FK to(member), role:UserRoleType);
+
+member(userid:String [PK], password:String, name:String, phone:String, email:String, createdat:LocalDateTime, createdby:String, updatedat:LocalDateTime, updatedby:String, status:UserStatusType);
+
+voter(id:Long [PK], name:String, phone:String, ssn:String, //@enumerated(enumtype.string)status:VoterStatusType, createdat:LocalDateTime, createdby:String, updatedat:LocalDateTime, updatedby:String, voteddate:LocalDateTime, GeneratedName:Apply #FK to(apply));
+
+apply(id:Long [PK], name:String, email:String, phone:String, title:String, expectedcount:int, start:LocalDateTime, end:LocalDateTime, createdat:LocalDateTime, createdby:String, updatedat:LocalDateTime, updatedby:String, status:ApplyStatusType, approval:int, hasvote:boolean, hasvoter:boolean, hasresult:boolean, //배치를통해들어감voted:boolean, user:Member #FK to(member), deleted:boolean);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

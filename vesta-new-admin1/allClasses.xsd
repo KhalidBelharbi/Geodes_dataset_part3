@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="viewappbilldetailinfo" >
+      <xs:sequence>
+        <xs:element name="//session中的标记位pay_detail_flag" type="xs:string" />
+        <xs:element name="pay_bill_info_flag" type="xs:string" />
+        <xs:element name="//支付过期时间pay_post_time" type="xs:long" />
+        <xs:element name="call_back_status_success" type="xs:long" />
+        <xs:element name="//是否同意agress" type="xs:long" />
+        <xs:element name="mdpguid" type="xs:string" />
+        <xs:element name="paymentid" type="xs:string" />
+        <xs:element name="paystartdate" type="xs:string" />
+        <xs:element name="payenddate" type="xs:string" />
+        <xs:element name="paymoney" type="xs:string" />
+        <xs:element name="projectid" type="xs:string" />
+        <xs:element name="price" type="xs:string" />
+        <xs:element name="paytype" type="xs:string" />
+        <xs:element name="hourseid" type="xs:string" />
+        <xs:element name="paydesc" type="xs:string" />
+        <xs:element name="mdpbatchtime" type="xs:string" />
+        <xs:element name="mdpoperationtype" type="xs:string" />
+        <xs:element name="mdp_result" type="xs:string" />
+        <xs:element name="ownerid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="viewpaymentidownerid" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="paymentid" type="xs:string" />
+        <xs:element name="ownerid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="arbillitem" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="billitemid" type="xs:string" />
+        <xs:element name="itemname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="viewapphadbilldetialinfoentity" >
+      <xs:sequence>
+        <xs:element name="mdpguid" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="houseid" type="xs:anyType" />
+        <xs:element name="havebill" type="xs:string" />
+        <xs:element name="paysource" type="xs:string" />
+        <xs:element name="housedesc" type="xs:string" />
+        <xs:element name="payementid" type="xs:string" />
+        <xs:element name="paystartdate" type="xs:anyType" />
+        <xs:element name="payenddate" type="xs:anyType" />
+        <xs:element name="paymoney" type="xs:string" />
+        <xs:element name="paytype" type="xs:string" />
+        <xs:element name="price" type="xs:anyType" />
+        <xs:element name="paymonths" type="xs:anyType" />
+        <xs:element name="companyid" type="xs:anyType" />
+        <xs:element name="receiptid" type="xs:anyType" />
+        <xs:element name="paytime" type="xs:anyType" />
+        <xs:element name="mdp_batchtime" type="xs:anyType" />
+        <xs:element name="mdp_operationtype" type="xs:string" />
+        <xs:element name="mdp_result" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="payingcallbacklog" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="callbacktime" type="xs:string" />
+        <xs:element name="callpayingid" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="//系统保存的支付详情idbillinfoid" type="xs:string" />
+        <xs:element name="failreanson" type="xs:string" />
+        <xs:element name="requrl" type="xs:string" />
+        <xs:element name="reqbody" type="xs:string" />
+        <xs:element name="md5value" type="xs:string" />
+        <xs:element name="callbackresult" type="xs:string" />
+        <xs:element name="//系统app生成的订单流水号apporderno" type="xs:string" />
+        <xs:element name="//支付流水号微信以及支付宝端生成thirdorderno" type="xs:string" />
+        <xs:element name="//收款方银行账号信息bankaccountno" type="xs:string" />
+        <xs:element name="//收款方支付宝/微信账号paymentreceiveaccount" type="xs:string" />
+        <xs:element name="//类型区分//记录日志发生的阶段logproccess" type="xs:string" />
+        <xs:element name="logstatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billinfoentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="paymentid" type="xs:string" />
+        <xs:element name="//发票信息billinfo" type="xs:string" />
+        <xs:element name="//付款方式paytype" type="xs:string" />
+        <xs:element name="//配送方式sendway" type="xs:string" />
+        <xs:element name="//生成时间createtime" type="xs:string" />
+        <xs:element name="//支付开始时间payingstarttime" type="xs:string" />
+        <xs:element name="//支付结果payresult" type="xs:string" />
+        <xs:element name="//支付回调时间callbacktime" type="xs:string" />
+        <xs:element name="//支付人类型payertype" type="xs:string" />
+        <xs:element name="//支付人联系方式payerphone" type="xs:string" />
+        <xs:element name="sendparamstr" type="xs:string" />
+        <xs:element name="payeruserid" type="xs:string" />
+        <xs:element name="payerusername" type="xs:string" />
+        <xs:element name="//缴费人的角色类型，用来区分是待缴还是业主缴费payusertype" type="xs:string" />
+        <xs:element name="//支付人所在项目id现在是存储的是业务系统的projectidprojectid" type="xs:string" />
+        <xs:element name="//公司名称companyname" type="xs:string" />
+        <xs:element name="//楼栋号blockno" type="xs:string" />
+        <xs:element name="//房间号unitno" type="xs:string" />
+        <xs:element name="//业主名称ownername" type="xs:string" />
+        <xs:element name="//费项编号billitemid" type="xs:string" />
+        <xs:element name="//费项名称billitemname" type="xs:string" />
+        <xs:element name="//代缴时需要传缴费人名字paybywho" type="xs:string" />
+        <xs:element name="//系统生成的订单号apporderno" type="xs:string" />
+        <xs:element name="//支付流水号，微信端/支付宝端生成thirdorderno" type="xs:string" />
+        <xs:element name="//收款人银行账号bankacountno" type="xs:string" />
+        <xs:element name="//***********************用于缴费历史查询的冗余字段paystartdate" type="xs:anyType" />
+        <xs:element name="payenddate" type="xs:anyType" />
+        <xs:element name="paymoney" type="xs:string" />
+        <xs:element name="houseid" type="xs:string" />
+        <xs:element name="paymenttypename" type="xs:string" />
+        <xs:element name="//**********************发票的处理信息//处理状态processstatus" type="xs:string" />
+        <xs:element name="//处理人processusername" type="xs:string" />
+        <xs:element name="//处理人idprocessuserid" type="xs:string" />
+        <xs:element name="//处理时间processtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="viewapphouseinfoentityforpayment" >
+      <xs:sequence>
+        <xs:element name="//房屋idhouseid" type="xs:long" />
+        <xs:element name="//项目idprojectid" type="xs:long" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//业态类型idformatid" type="xs:long" />
+        <xs:element name="//业态名称formatname" type="xs:string" />
+        <xs:element name="//楼blockname" type="xs:string" />
+        <xs:element name="//单元cellno" type="xs:string" />
+        <xs:element name="//房间号houseno" type="xs:string" />
+        <xs:element name="//地址address" type="xs:string" />
+        <xs:element name="//房屋类型housetype" type="xs:string" />
+        <xs:element name="//建筑面积billingarea" type="xs:anyType" />
+        <xs:element name="//公司idcompanyid" type="xs:long" />
+        <xs:element name="//公司名称companyname" type="xs:string" />
+        <xs:element name="//时间mdpbatchtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="viewapphouseinforepositoryforpayment" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentedrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billinforepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

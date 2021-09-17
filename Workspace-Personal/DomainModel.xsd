@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="smsprodcteprov" >
+      <xs:complexContent>
+       <xs:extension base="abstractsmsprodcteprov">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsmovimiento" >
+      <xs:complexContent>
+       <xs:extension base="abstractsmsmovimiento">
+         <xs:sequence>
+          <xs:element name="producto" type="smsproducto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="catpuerto" >
+      <xs:complexContent>
+       <xs:extension base="abstractcatpuerto">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="catparametro" >
+      <xs:complexContent>
+       <xs:extension base="abstractcatparametro">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsproducto" >
+      <xs:complexContent>
+       <xs:extension base="abstractsmsproducto">
+         <xs:sequence>
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="selected" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="catpropempresa" >
+      <xs:complexContent>
+       <xs:extension base="abstractcatpropempresa">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smscteprov" >
+      <xs:complexContent>
+       <xs:extension base="abstractsmscteprov">
+         <xs:sequence>
+          <xs:element name="esclienteproveedor" type="xs:string" />
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="essalidacontingencia" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fwkcatadmin" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcatadmin">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fwkcorreotemplate" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcorreotemplate">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fwkactionitem" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkactionitem">
+         <xs:sequence>
+          <xs:element name="children" type="fwkactionitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="parent" type="fwkactionitem" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fwkcorreopend" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcorreopend">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fwkcatcontent" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcatcontent">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fwkcatapps" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwkcatapps">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fwklogger" >
+      <xs:complexContent>
+       <xs:extension base="abstractfwklogger">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="segperfil" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegperfil">
+         <xs:sequence>
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="selected" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="segpermisoperfil" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegpermisoperfil">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="segpermiso" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegpermiso">
+         <xs:sequence>
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="selected" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="segperfilusr" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegperfilusr">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="segusuario" >
+      <xs:complexContent>
+       <xs:extension base="abstractsegusuario">
+         <xs:sequence>
+          <xs:element name="nombrecompleto" type="xs:string" />
+          <xs:element name="etiquetaestatus" type="xs:string" />
+          <xs:element name="actionitems" type="fwkactionitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="itemactionsset" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

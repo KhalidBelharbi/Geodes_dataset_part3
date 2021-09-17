@@ -1,0 +1,2157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="notificationmessagelinedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="notificationmessagesection" type="notificationmessagesectiondto" nillable="true" minOccurs="0" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationmessagedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="notificationmessagetype" type="notificationmessagetypedto" nillable="true" minOccurs="0" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="language" type="xs:anyType" />
+        <xs:element name="useflag" type="xs:long" />
+        <xs:element name="notificationmessagesections" type="notificationmessagesectiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="includeattachment" type="xs:anyType" />
+        <xs:element name="attachmentdesign" type="xs:string" />
+        <xs:element name="attachmenttype" type="xs:string" />
+        <xs:element name="notifyadmin" type="xs:anyType" />
+        <xs:element name="notifypartner" type="xs:anyType" />
+        <xs:element name="notifyparent" type="xs:anyType" />
+        <xs:element name="notifyallparents" type="xs:anyType" />
+        <xs:element name="mediumtypes" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationmessagearchlinedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="notificationmessagearch" type="notificationmessagearchdto" nillable="true" minOccurs="0" />
+        <xs:element name="section" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationmessagearchdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="baseuser" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="typeid" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="resultmessage" type="xs:string" />
+        <xs:element name="notificationmessagearchlines" type="notificationmessagearchlinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationmessagetypedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="category" type="notificationcategorydto" nillable="true" minOccurs="0" />
+          <xs:element name="notificationmessages" type="notificationmessagedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="notificationmessagesectiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="notificationmessage" type="notificationmessagedto" nillable="true" minOccurs="0" />
+        <xs:element name="section" type="xs:anyType" />
+        <xs:element name="notificationmessagelines" type="notificationmessagelinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="editypedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="global" type="xs:anyType" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="entities" type="companydto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="statuses" type="edifilestatusdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="edisuffix" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="edifilefielddto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="edifilefieldkey" type="xs:string" />
+        <xs:element name="edifilefieldvalue" type="xs:string" />
+        <xs:element name="edifilefieldorder" type="xs:anyType" />
+        <xs:element name="edifilerecord" type="edifilerecorddto" nillable="true" minOccurs="0" />
+        <xs:element name="comment" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="edifiledto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="editype" type="editypedto" nillable="true" minOccurs="0" />
+        <xs:element name="type" type="transactiontype" nillable="true" minOccurs="0" />
+        <xs:element name="edifilerecords" type="edifilerecorddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="filestatus" type="edifilestatusdto" nillable="true" minOccurs="0" />
+        <xs:element name="exceptioncode" type="edifileexceptioncodedto" nillable="true" minOccurs="0" />
+        <xs:element name="comment" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="edifileexceptioncodedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="exceptioncode" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="status" type="edifilestatusdto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="edifilestatusdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="iserror" type="xs:anyType" />
+        <xs:element name="exceptioncodes" type="edifileexceptioncodedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="associatededistatuses" type="edifilestatusdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="edifilerecorddto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="edifile" type="edifiledto" nillable="true" minOccurs="0" />
+        <xs:element name="edifilerecordheader" type="xs:string" />
+        <xs:element name="recordorder" type="xs:anyType" />
+        <xs:element name="filefields" type="edifilefielddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="creationtime" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="totalfilefield" type="xs:anyType" />
+        <xs:element name="comment" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reporttypedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="reports" type="reportdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="integerreportparameterdto" >
+      <xs:complexContent>
+       <xs:extension base="reportparameterdto<integer>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="booleanreportparameterdto" >
+      <xs:complexContent>
+       <xs:extension base="reportparameterdto<boolean>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datereportparameterdto" >
+      <xs:complexContent>
+       <xs:extension base="reportparameterdto<date>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listreportparameterdto" >
+      <xs:complexContent>
+       <xs:extension base="reportparameterdto<list<string>>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="stringreportparameterdto" >
+      <xs:complexContent>
+       <xs:extension base="reportparameterdto<string>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="reportparameterdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="report" type="reportdto" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reportdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="base_path" type="xs:string" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="entities" type="companydto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="type" type="reporttypedto" nillable="true" minOccurs="0" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="filename" type="xs:string" />
+          <xs:element name="parameters" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="childentities" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ageingentitystepdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="userstatus" type="userstatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="days" type="xs:long" />
+          <xs:element name="retrypayment" type="xs:long" />
+          <xs:element name="suspend" type="xs:long" />
+          <xs:element name="sendnotification" type="xs:long" />
+          <xs:element name="versionnum" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="processrunuserdto" >
+      <xs:sequence>
+        <xs:element name="status_failed" type="xs:anyType" />
+        <xs:element name="status_succeeded" type="xs:anyType" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="processrun" type="processrundto" nillable="true" minOccurs="0" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="status" type="xs:anyType" />
+        <xs:element name="created" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processruntotalpmdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="paymentmethod" type="paymentmethoddto" nillable="true" minOccurs="0" />
+        <xs:element name="total" type="xs:anyType" />
+        <xs:element name="processruntotal" type="processruntotaldto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paperinvoicebatchdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="totalinvoices" type="xs:long" />
+        <xs:element name="delivery" type="xs:dateTime" />
+        <xs:element name="isselfmanaged" type="xs:long" />
+        <xs:element name="billingprocesses" type="billingprocessdto" nillable="true" minOccurs="0" />
+        <xs:element name="invoices" type="invoicedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billingprocessfaileduserdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="batchprocessdto" type="batchprocessinfodto" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="periodunitdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="month" type="xs:long" />
+          <xs:element name="week" type="xs:long" />
+          <xs:element name="day" type="xs:long" />
+          <xs:element name="year" type="xs:long" />
+          <xs:element name="semi_monthly" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="partners" type="partnerdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="orderperioddtos" type="orderperioddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="billingprocesses" type="billingprocessdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="billingprocessconfigurations" type="billingprocessconfigurationdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="billingprocessconfigurationdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="periodunitdto" nillable="true" minOccurs="0" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="nextrun" type="xs:dateTime" />
+        <xs:element name="generatereport" type="xs:anyType" />
+        <xs:element name="retries" type="xs:anyType" />
+        <xs:element name="daysforretry" type="xs:anyType" />
+        <xs:element name="daysforreport" type="xs:anyType" />
+        <xs:element name="reviewstatus" type="xs:long" />
+        <xs:element name="duedateunitid" type="xs:long" />
+        <xs:element name="duedatevalue" type="xs:long" />
+        <xs:element name="dffm" type="xs:anyType" />
+        <xs:element name="onlyrecurring" type="xs:anyType" />
+        <xs:element name="invoicedateprocess" type="xs:anyType" />
+        <xs:element name="maximumperiods" type="xs:long" />
+        <xs:element name="autopaymentapplication" type="xs:long" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="lastdayofmonth" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="proratingtype" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billingprocessdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="periodunitdto" nillable="true" minOccurs="0" />
+        <xs:element name="paperinvoicebatch" type="paperinvoicebatchdto" nillable="true" minOccurs="0" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="billing" type="xs:dateTime" />
+        <xs:element name="periodvalue" type="xs:long" />
+        <xs:element name="isreview" type="xs:long" />
+        <xs:element name="retriestodo" type="xs:long" />
+        <xs:element name="orderprocesses" type="orderprocessdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="invoices" type="invoicedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="processruns" type="processrundto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="batchinfos" type="batchprocessinfodto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="batchprocessinfodto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="billingprocessdto" nillable="true" minOccurs="0" />
+        <xs:element name="//todo:ifweincludebatchtablesinjbillingschema,thisvaluewillbereplacedbyentityjobexecutionid" type="xs:anyType" />
+        <xs:element name="totalfailedusers" type="xs:anyType" />
+        <xs:element name="totalsuccessfulusers" type="xs:anyType" />
+        <xs:element name="processes" type="billingprocessfaileduserdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processrunstatusdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractgenericstatus">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="processrundto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="billingprocessdto" nillable="true" minOccurs="0" />
+        <xs:element name="run" type="xs:dateTime" />
+        <xs:element name="started" type="xs:dateTime" />
+        <xs:element name="finished" type="xs:dateTime" />
+        <xs:element name="invoicesgenerated" type="xs:anyType" />
+        <xs:element name="paymentfinished" type="xs:dateTime" />
+        <xs:element name="processruntotals" type="processruntotaldto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="status" type="processrunstatusdto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processruntotaldto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="processrun" type="processrundto" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="totalinvoiced" type="xs:anyType" />
+        <xs:element name="totalpaid" type="xs:anyType" />
+        <xs:element name="totalnotpaid" type="xs:anyType" />
+        <xs:element name="totalspaymentmethod" type="processruntotalpmdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pluggabletasktypecategorydto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="interfacename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pluggabletaskdto" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="//thisisinsynchwiththedb(pluggabletasktype)type_email" type="xs:anyType" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="entityid" type="xs:anyType" />
+        <xs:element name="processingorder" type="xs:anyType" />
+        <xs:element name="notes" type="xs:string" />
+        <xs:element name="type" type="pluggabletasktypedto" nillable="true" minOccurs="0" />
+        <xs:element name="parameters" type="pluggabletaskparameterdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pluggabletaskparameterdto" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:long" />
+        <xs:element name="str" type="xs:long" />
+        <xs:element name="flo" type="xs:long" />
+        <xs:element name="//mappedcolumsid" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="intvalue" type="xs:anyType" />
+        <xs:element name="strvalue" type="xs:string" />
+        <xs:element name="floatvalue" type="xs:anyType" />
+        <xs:element name="task" type="pluggabletaskdto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:anyType" />
+        <xs:element name="//internalfields//thisindicatesthedatatypeofthevaluetype" type="xs:anyType" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pluggabletasktypedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="pk" type="xs:anyType" />
+          <xs:element name="classname" type="xs:string" />
+          <xs:element name="minparameters" type="xs:anyType" />
+          <xs:element name="category" type="pluggabletasktypecategorydto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="invoicelinedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="invoicelinetype" type="invoicelinetypedto" nillable="true" minOccurs="0" />
+        <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+        <xs:element name="invoice" type="invoicedto" nillable="true" minOccurs="0" />
+        <xs:element name="amount" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="price" type="xs:anyType" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="sourceuserid" type="xs:anyType" />
+        <xs:element name="ispercentage" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="order" type="orderdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicelinetypedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="orderposition" type="xs:long" />
+        <xs:element name="invoicelines" type="invoicelinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicedto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="process" type="xs:long" />
+          <xs:element name="do_not_process" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="" type="billingprocessdto" nillable="true" minOccurs="0" />
+          <xs:element name="baseuser" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="invoice" type="invoicedto" nillable="true" minOccurs="0" />
+          <xs:element name="paperinvoicebatch" type="paperinvoicebatchdto" nillable="true" minOccurs="0" />
+          <xs:element name="createtime" type="xs:dateTime" />
+          <xs:element name="due" type="xs:dateTime" />
+          <xs:element name="total" type="xs:anyType" />
+          <xs:element name="paymentattempts" type="xs:long" />
+          <xs:element name="invoicestatus" type="invoicestatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="balance" type="xs:anyType" />
+          <xs:element name="carriedbalance" type="xs:anyType" />
+          <xs:element name="inprocesspayment" type="xs:long" />
+          <xs:element name="isreview" type="xs:anyType" />
+          <xs:element name="deleted" type="xs:anyType" />
+          <xs:element name="customernotes" type="xs:string" />
+          <xs:element name="publicnumber" type="xs:string" />
+          <xs:element name="lastreminder" type="xs:dateTime" />
+          <xs:element name="overduestep" type="xs:anyType" />
+          <xs:element name="createtimestamp" type="xs:dateTime" />
+          <xs:element name="invoicelines" type="invoicelinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="invoices" type="invoicedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="orderprocesses" type="orderprocessdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="paymentmap" type="paymentinvoicemapdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="//fortransitiontojpacurrencyname" type="xs:string" />
+          <xs:element name="currencysymbol" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="invoicedeliverymethoddto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="entities" type="companydto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="customers" type="customerdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicestatusdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractgenericstatus">
+         <xs:sequence>
+          <xs:element name="invoicedtos" type="invoicedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="suretaxtransactionlogdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="transactionid" type="xs:string" />
+        <xs:element name="transactiontype" type="xs:string" />
+        <xs:element name="transactiondata" type="xs:string" />
+        <xs:element name="transactiondate" type="xs:anyType" />
+        <xs:element name="responsetransactionid" type="xs:anyType" />
+        <xs:element name="requesttype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicetemplateversiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="invoicetemplate" type="invoicetemplatedto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnumber" type="xs:string" />
+        <xs:element name="tagname" type="xs:string" />
+        <xs:element name="createdtime" type="xs:dateTime" />
+        <xs:element name="size" type="xs:anyType" />
+        <xs:element name="userid" type="xs:anyType" />
+        <xs:element name="templatejson" type="xs:string" />
+        <xs:element name="useforinvoice" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicetemplatefiledto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="template" type="invoicetemplatedto" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicetemplatedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="invoiceid" type="xs:anyType" />
+          <xs:element name="templatejson" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="customers" type="customerdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="invoicetemplateversions" type="invoicetemplateversiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="boabaiprocessingerrordto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="filename" type="xs:string" />
+        <xs:element name="rawdata" type="xs:string" />
+        <xs:element name="processingerrors" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boabaiprocessedfiledto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="filename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="blacklistdto" >
+      <xs:sequence>
+        <xs:element name="//constants//blacklisttypestype_user_id" type="xs:anyType" />
+        <xs:element name="type_name" type="xs:anyType" />
+        <xs:element name="type_cc_number" type="xs:anyType" />
+        <xs:element name="type_address" type="xs:anyType" />
+        <xs:element name="type_ip_address" type="xs:anyType" />
+        <xs:element name="type_phone_number" type="xs:anyType" />
+        <xs:element name="//blacklistsourcessource_customer_service" type="xs:anyType" />
+        <xs:element name="source_external_upload" type="xs:anyType" />
+        <xs:element name="source_user_status_change" type="xs:anyType" />
+        <xs:element name="source_billing_process" type="xs:anyType" />
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="//mappedcolumnsid" type="xs:anyType" />
+        <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="type" type="xs:anyType" />
+        <xs:element name="source" type="xs:anyType" />
+        <xs:element name="creditcard" type="paymentinformationdto" nillable="true" minOccurs="0" />
+        <xs:element name="contact" type="contactdto" nillable="true" minOccurs="0" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymenttransferdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="payment" type="paymentdto" nillable="true" minOccurs="0" />
+        <xs:element name="fromuserid" type="xs:anyType" />
+        <xs:element name="touserid" type="xs:anyType" />
+        <xs:element name="amount" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="createdby" type="xs:anyType" />
+        <xs:element name="deleted" type="xs:long" />
+        <xs:element name="paymenttransfernotes" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentinformationdto" >
+      <xs:complexContent>
+       <xs:extension base="groupcustomizedentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="processingorder" type="xs:anyType" />
+          <xs:element name="deleted" type="xs:anyType" />
+          <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="paymentmethodtype" type="paymentmethodtypedto" nillable="true" minOccurs="0" />
+          <xs:element name="metafields" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="paymentmethod" type="paymentmethoddto" nillable="true" minOccurs="0" />
+          <xs:element name="//transientfieldsblacklisted" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paymentresultdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="payments" type="paymentdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paymentauthorizationdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="payment" type="paymentdto" nillable="true" minOccurs="0" />
+        <xs:element name="processor" type="xs:string" />
+        <xs:element name="code1" type="xs:string" />
+        <xs:element name="code2" type="xs:string" />
+        <xs:element name="code3" type="xs:string" />
+        <xs:element name="approvalcode" type="xs:string" />
+        <xs:element name="avs" type="xs:string" />
+        <xs:element name="transactionid" type="xs:string" />
+        <xs:element name="md5" type="xs:string" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="cardcode" type="xs:string" />
+        <xs:element name="responsemessage" type="xs:string" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentinstrumentinfodto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="payment" type="paymentdto" nillable="true" minOccurs="0" />
+        <xs:element name="result" type="paymentresultdto" nillable="true" minOccurs="0" />
+        <xs:element name="paymentmethod" type="paymentmethoddto" nillable="true" minOccurs="0" />
+        <xs:element name="paymentinformation" type="paymentinformationdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentdto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="baseuser" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="paymentmethod" type="paymentmethoddto" nillable="true" minOccurs="0" />
+          <xs:element name="payment" type="paymentdto" nillable="true" minOccurs="0" />
+          <xs:element name="paymentresult" type="paymentresultdto" nillable="true" minOccurs="0" />
+          <xs:element name="attempt" type="xs:anyType" />
+          <xs:element name="amount" type="xs:anyType" />
+          <xs:element name="createtime" type="xs:dateTime" />
+          <xs:element name="payment" type="xs:dateTime" />
+          <xs:element name="deleted" type="xs:long" />
+          <xs:element name="isrefund" type="xs:long" />
+          <xs:element name="payoutid" type="partnerpayout" nillable="true" minOccurs="0" />
+          <xs:element name="balance" type="xs:anyType" />
+          <xs:element name="uptime" type="xs:dateTime" />
+          <xs:element name="ispreauth" type="xs:anyType" />
+          <xs:element name="//creditcardcreditcard" type="paymentinformationdto" nillable="true" minOccurs="0" />
+          <xs:element name="invoicesmap" type="paymentinvoicemapdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="paymentauthorizations" type="paymentauthorizationdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="payments" type="paymentdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="partnerpayouts" type="partnerpayout" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="paymentinstrumentsinfo" type="paymentinstrumentinfodto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="paymentperiod" type="xs:anyType" />
+          <xs:element name="paymentnotes" type="xs:string" />
+          <xs:element name="provisioningcommands" type="paymentprovisioningcommanddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="provisioningstatus" type="provisioningstatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="transferredpayments" type="paymenttransferdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paymentinvoicemapdto" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="payment" type="paymentdto" nillable="true" minOccurs="0" />
+        <xs:element name="invoiceentity" type="invoicedto" nillable="true" minOccurs="0" />
+        <xs:element name="amount" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentmethodtemplatedto" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="templatename" type="xs:string" />
+        <xs:element name="paymenttemplatemetafields" type="xs:anyType" />
+        <xs:element name="version" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentmethoddto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="payments" type="paymentdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="processruntotalpms" type="processruntotalpmdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paymentmethodtypedto" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="methodname" type="xs:string" />
+        <xs:element name="isrecurring" type="xs:anyType" />
+        <xs:element name="allaccounttype" type="xs:anyType" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="paymentmethodtemplate" type="paymentmethodtemplatedto" nillable="true" minOccurs="0" />
+        <xs:element name="metafields" type="xs:anyType" />
+        <xs:element name="accounttypes" type="accounttypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="version" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventlogmoduledto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="eventlogs" type="eventlogdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventlogdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="baseuser" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="affecteduser" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="eventlogmessage" type="eventlogmessagedto" nillable="true" minOccurs="0" />
+        <xs:element name="eventlogmodule" type="eventlogmoduledto" nillable="true" minOccurs="0" />
+        <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="foreignid" type="xs:long" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="levelfield" type="xs:long" />
+        <xs:element name="oldnum" type="xs:anyType" />
+        <xs:element name="oldstr" type="xs:string" />
+        <xs:element name="old" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventlogmessagedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="eventlogs" type="eventlogdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="preferencetypedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="defaultvalue" type="xs:string" />
+          <xs:element name="preferences" type="preferencedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="notificationcategorydto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="messagetypes" type="notificationmessagetypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="preferencedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="preferencetype" type="preferencetypedto" nillable="true" minOccurs="0" />
+        <xs:element name="foreignid" type="xs:long" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderprovisioningcommanddto" >
+      <xs:complexContent>
+       <xs:extension base="provisioningcommanddto">
+         <xs:sequence>
+          <xs:element name="order" type="orderdto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="provisioningcommanddto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="executionorder" type="xs:anyType" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="lastup" type="xs:dateTime" />
+        <xs:element name="commandstatus" type="xs:anyType" />
+        <xs:element name="parametermap" type="xs:anyType" />
+        <xs:element name="provisioningrequests" type="provisioningrequestdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderlineprovisioningcommanddto" >
+      <xs:complexContent>
+       <xs:extension base="provisioningcommanddto">
+         <xs:sequence>
+          <xs:element name="orderchange" type="orderchangedto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paymentprovisioningcommanddto" >
+      <xs:complexContent>
+       <xs:extension base="provisioningcommanddto">
+         <xs:sequence>
+          <xs:element name="payment" type="paymentdto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="assetprovisioningcommanddto" >
+      <xs:complexContent>
+       <xs:extension base="provisioningcommanddto">
+         <xs:sequence>
+          <xs:element name="asset" type="assetdto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="provisioningrequestdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//uniqueidentifier-uuidoftherequest(differentthanthedbid)identifier" type="xs:string" />
+        <xs:element name="commanddto" type="provisioningcommanddto" nillable="true" minOccurs="0" />
+        <xs:element name="processor" type="xs:string" />
+        <xs:element name="executionorder" type="xs:anyType" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="submit" type="xs:dateTime" />
+        <xs:element name="submitrequest" type="xs:string" />
+        <xs:element name="rollbackrequest" type="xs:string" />
+        <xs:element name="continueontype" type="xs:string" />
+        <xs:element name="requeststatus" type="xs:anyType" />
+        <xs:element name="resultreceived" type="xs:dateTime" />
+        <xs:element name="resultmap" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="provisioningstatusdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractgenericstatus">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userpassworddto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="created" type="xs:dateTime" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="encryptedpassword" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerdto" >
+      <xs:complexContent>
+       <xs:extension base="groupcustomizedentity">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="baseuser" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="invoicedeliverymethod" type="invoicedeliverymethoddto" nillable="true" minOccurs="0" />
+          <xs:element name="partners" type="partnerdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="referralfeepaid" type="xs:anyType" />
+          <xs:element name="autopaymenttype" type="xs:anyType" />
+          <xs:element name="duedateunitid" type="xs:anyType" />
+          <xs:element name="duedatevalue" type="xs:anyType" />
+          <xs:element name="dffm" type="xs:anyType" />
+          <xs:element name="parent" type="customerdto" nillable="true" minOccurs="0" />
+          <xs:element name="children" type="customerdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="customernotes" type="customernotedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="isparent" type="xs:anyType" />
+          <xs:element name="excludeaging" type="xs:long" />
+          <xs:element name="invoicechild" type="xs:anyType" />
+          <xs:element name="useparentpricing" type="xs:anyType" />
+          <xs:element name="dynamicbalance" type="xs:anyType" />
+          <xs:element name="autorecharge" type="xs:anyType" />
+          <xs:element name="creditlimit" type="xs:anyType" />
+          <xs:element name="creditnotificationlimit1" type="xs:anyType" />
+          <xs:element name="creditnotificationlimit2" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="lastinvoice" type="xs:dateTime" />
+          <xs:element name="usercodelinks" type="usercodecustomerlinkdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="customerusagepools" type="customerusagepooldto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="nextinvoice" type="xs:dateTime" />
+          <xs:element name="mainsubscription" type="mainsubscriptiondto" nillable="true" minOccurs="0" />
+          <xs:element name="accounttype" type="accounttypedto" nillable="true" minOccurs="0" />
+          <xs:element name="invoicedesign" type="xs:string" />
+          <xs:element name="invoicetemplate" type="invoicetemplatedto" nillable="true" minOccurs="0" />
+          <xs:element name="customeraccountinfotypemetafields" type="customeraccountinfotypemetafield" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="aitmetafieldmap" type="xs:anyType" />
+          <xs:element name="//#4501-customautorechargerechargethreshold" type="xs:anyType" />
+          <xs:element name="monthlylimit" type="xs:anyType" />
+          <xs:element name="currentmonthlyamount" type="xs:anyType" />
+          <xs:element name="currentmonth" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customerpricedto" >
+      <xs:sequence>
+        <xs:element name="id" type="customerpricepk" nillable="true" minOccurs="0" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="pricesubscription" type="xs:dateTime" />
+        <xs:element name="priceexpiry" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userstatusdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="canlogin" type="xs:long" />
+          <xs:element name="ageingentitystep" type="ageingentitystepdto" nillable="true" minOccurs="0" />
+          <xs:element name="baseusers" type="userdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="accounttypepricedto" >
+      <xs:sequence>
+        <xs:element name="id" type="accounttypepricepk" nillable="true" minOccurs="0" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="priceexpiry" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercodedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="/***uniqueidentifiertoidentifythisuser*/identifier" type="xs:string" />
+        <xs:element name="/***areferencethatmightbeusedinanexternalsystem*/externalreference" type="xs:string" />
+        <xs:element name="/***whattypeofprogramdoesthetranslationidrelateto*/type" type="xs:string" />
+        <xs:element name="/***descriptionoftheprogramtype*/typedescription" type="xs:string" />
+        <xs:element name="validfrom" type="xs:dateTime" />
+        <xs:element name="validto" type="xs:dateTime" />
+        <xs:element name="usercodelinks" type="usercodelinkdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resetpasswordcodedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="created" type="xs:dateTime" />
+        <xs:element name="token" type="xs:string" />
+        <xs:element name="newpassword" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customeraccountinfotypemetafield" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="customer" type="customerdto" nillable="true" minOccurs="0" />
+        <xs:element name="accountinfotype" type="accountinformationtypedto" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="effective" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="deleted" type="xs:long" />
+        <xs:element name="enabled" type="xs:anyType" />
+        <xs:element name="accountexpired" type="xs:anyType" />
+        <xs:element name="accountlocked" type="xs:anyType" />
+        <xs:element name="passwordexpired" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="laststatuschange" type="xs:dateTime" />
+        <xs:element name="lastlogin" type="xs:dateTime" />
+        <xs:element name="accountdisabled" type="xs:dateTime" />
+        <xs:element name="failedattempts" type="xs:long" />
+        <xs:element name="changepassword" type="xs:dateTime" />
+        <xs:element name="roles" type="roledto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="permissions" type="permissionuserdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="subscriberstatus" type="subscriberstatusdto" nillable="true" minOccurs="0" />
+        <xs:element name="userstatus" type="userstatusdto" nillable="true" minOccurs="0" />
+        <xs:element name="language" type="xs:anyType" />
+        <xs:element name="customer" type="customerdto" nillable="true" minOccurs="0" />
+        <xs:element name="contact" type="contactdto" nillable="true" minOccurs="0" />
+        <xs:element name="partnersforuserid" type="partnerdto" nillable="true" minOccurs="0" />
+        <xs:element name="encryptionscheme" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="payments" type="paymentdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="purchaseordersforcreatedby" type="orderdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="orders" type="orderdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="notificationmessagearchs" type="notificationmessagearchdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="eventlogs" type="eventlogdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="invoices" type="invoicedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="prices" type="customerpricedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="processes" type="billingprocessfaileduserdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//paymentinstrumentspaymentinstruments" type="paymentinformationdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="accountlockedtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="companydto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="language" type="xs:anyType" />
+          <xs:element name="externalid" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="createtime" type="xs:dateTime" />
+          <xs:element name="invoiceasreseller" type="xs:anyType" />
+          <xs:element name="parent" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="reseller" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="ageingentitysteps" type="ageingentitystepdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="orderperioddtos" type="orderperioddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="billingprocesses" type="billingprocessdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="baseusers" type="userdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="items" type="itemdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="eventlogs" type="eventlogdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="notificationmessages" type="notificationmessagedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="currencydtos" type="xs:anyType" />
+          <xs:element name="itemtypes" type="itemtypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="billingprocessconfigurations" type="billingprocessconfigurationdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="invoicedeliverymethods" type="invoicedeliverymethoddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="reports" type="reportdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="metafields" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="deleted" type="xs:anyType" />
+          <xs:element name="customerinformationdesign" type="xs:string" />
+          <xs:element name="uicolor" type="xs:anyType" />
+          <xs:element name="brokercatalogversion" type="xs:string" />
+          <xs:element name="type" type="companytype" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="accountinformationtypedto" >
+      <xs:complexContent>
+       <xs:extension base="metafieldgroup">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="accounttype" type="accounttypedto" nillable="true" minOccurs="0" />
+          <xs:element name="customeraccountinfotypemetafields" type="customeraccountinfotypemetafield" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="usefornotifications" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usercodelinkdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="usercode" type="usercodedto" nillable="true" minOccurs="0" />
+        <xs:element name="/***typeofobjectlinkedto*/objecttype" type="usercodeobjecttype" nillable="true" minOccurs="0" />
+        <xs:element name="objectid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercodeorderlinkdto" >
+      <xs:complexContent>
+       <xs:extension base="usercodelinkdto">
+         <xs:sequence>
+          <xs:element name="order" type="orderdto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usercodecustomerlinkdto" >
+      <xs:complexContent>
+       <xs:extension base="usercodelinkdto">
+         <xs:sequence>
+          <xs:element name="customer" type="customerdto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="subscriberstatusdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractgenericstatus">
+         <xs:sequence>
+          <xs:element name="baseusers" type="userdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="matchingfielddto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="ordersequence" type="xs:anyType" />
+        <xs:element name="required" type="xs:anyType" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="mediationfield" type="xs:string" />
+        <xs:element name="matchingfield" type="xs:string" />
+        <xs:element name="type" type="matchingfieldtype" nillable="true" minOccurs="0" />
+        <xs:element name="route" type="routedto" nillable="true" minOccurs="0" />
+        <xs:element name="routeratecard" type="routeratecarddto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:anyType" />
+        <xs:element name="longestvalue" type="xs:anyType" />
+        <xs:element name="smallestvalue" type="xs:anyType" />
+        <xs:element name="mandatoryfieldsquery" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customernotedto" >
+      <xs:sequence>
+        <xs:element name="noteid" type="xs:long" />
+        <xs:element name="notetitle" type="xs:string" />
+        <xs:element name="notecontent" type="xs:string" />
+        <xs:element name="creationtime" type="xs:dateTime" />
+        <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="customer" type="customerdto" nillable="true" minOccurs="0" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accounttypedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="creditlimit" type="xs:anyType" />
+          <xs:element name="invoicedesign" type="xs:string" />
+          <xs:element name="invoicetemplate" type="invoicetemplatedto" nillable="true" minOccurs="0" />
+          <xs:element name="billingcycle" type="mainsubscriptiondto" nillable="true" minOccurs="0" />
+          <xs:element name="created" type="xs:dateTime" />
+          <xs:element name="creditnotificationlimit1" type="xs:anyType" />
+          <xs:element name="creditnotificationlimit2" type="xs:anyType" />
+          <xs:element name="invoicedeliverymethod" type="invoicedeliverymethoddto" nillable="true" minOccurs="0" />
+          <xs:element name="language" type="xs:anyType" />
+          <xs:element name="currency" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="informationtypes" type="accountinformationtypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="customers" type="customerdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="paymentmethodtypes" type="paymentmethodtypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="preferrednotificationaitid" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="roledto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="role_authority_prefix" type="xs:string" />
+          <xs:element name="//authorityvaluesinenglishauthority_language_id" type="xs:anyType" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="roletypeid" type="xs:anyType" />
+          <xs:element name="baseusers" type="userdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="permissions" type="permissiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="authority" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="permissiontypedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="permissions" type="permissiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="permissionuserdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="baseuser" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="permission" type="permissiondto" nillable="true" minOccurs="0" />
+        <xs:element name="isgrant" type="xs:long" />
+        <xs:element name="authority" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="permissiondto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="permissiontype" type="permissiontypedto" nillable="true" minOccurs="0" />
+          <xs:element name="foreignid" type="xs:anyType" />
+          <xs:element name="permissionusers" type="permissionuserdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="roles" type="roledto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="authority" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paymentcommissiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="invoice" type="invoicedto" nillable="true" minOccurs="0" />
+        <xs:element name="paymentamount" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="commissionprocessconfigurationdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="nextrun" type="xs:dateTime" />
+        <xs:element name="periodunit" type="periodunitdto" nillable="true" minOccurs="0" />
+        <xs:element name="periodvalue" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="partnerpayout" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="payment" type="paymentdto" nillable="true" minOccurs="0" />
+        <xs:element name="partner" type="partnerdto" nillable="true" minOccurs="0" />
+        <xs:element name="starting" type="xs:dateTime" />
+        <xs:element name="ending" type="xs:dateTime" />
+        <xs:element name="paymentsamount" type="xs:anyType" />
+        <xs:element name="refundsamount" type="xs:anyType" />
+        <xs:element name="balanceleft" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="paymentid" type="xs:anyType" />
+        <xs:element name="partnerid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="partnercommissionexceptiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="partner" type="partnerdto" nillable="true" minOccurs="0" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+        <xs:element name="percentage" type="xs:anyType" />
+        <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="partnerdto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="baseuserbyuserid" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="totalpayments" type="xs:anyType" />
+          <xs:element name="totalrefunds" type="xs:anyType" />
+          <xs:element name="totalpayouts" type="xs:anyType" />
+          <xs:element name="duepayout" type="xs:anyType" />
+          <xs:element name="type" type="partnertype" nillable="true" minOccurs="0" />
+          <xs:element name="parent" type="partnerdto" nillable="true" minOccurs="0" />
+          <xs:element name="children" type="partnerdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="commissions" type="commissiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="commissionexceptions" type="partnercommissionexceptiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="referralcommissions" type="partnerreferralcommissiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="referrercommissions" type="partnerreferralcommissiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="commissionvalues" type="partnercommissionvaluedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="commissiontype" type="partnercommissiontype" nillable="true" minOccurs="0" />
+          <xs:element name="brokerid" type="xs:string" />
+          <xs:element name="partnerpayouts" type="partnerpayout" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="customers" type="customerdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="invoicecommissiondto" >
+      <xs:complexContent>
+       <xs:extension base="partnercommissionlinedto">
+         <xs:sequence>
+          <xs:element name="invoice" type="invoicedto" nillable="true" minOccurs="0" />
+          <xs:element name="standardamount" type="xs:anyType" />
+          <xs:element name="masteramount" type="xs:anyType" />
+          <xs:element name="exceptionamount" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customercommissiondto" >
+      <xs:complexContent>
+       <xs:extension base="partnercommissionlinedto">
+         <xs:sequence>
+          <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="amount" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="partnerreferralcommissiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="referral" type="partnerdto" nillable="true" minOccurs="0" />
+        <xs:element name="referrer" type="partnerdto" nillable="true" minOccurs="0" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+        <xs:element name="percentage" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="referralcommissiondto" >
+      <xs:complexContent>
+       <xs:extension base="partnercommissionlinedto">
+         <xs:sequence>
+          <xs:element name="referralamount" type="xs:anyType" />
+          <xs:element name="referralpartner" type="partnerdto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="commissionprocessrundto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="run" type="xs:dateTime" />
+        <xs:element name="periodstart" type="xs:dateTime" />
+        <xs:element name="periodend" type="xs:dateTime" />
+        <xs:element name="errorcount" type="xs:long" />
+        <xs:element name="commissions" type="commissiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="partnercommissionlinedto" >
+      <xs:complexContent>
+       <xs:extension base="partnercommissionlinedto>">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="commissionprocessrun" type="commissionprocessrundto" nillable="true" minOccurs="0" />
+          <xs:element name="partner" type="partnerdto" nillable="true" minOccurs="0" />
+          <xs:element name="commission" type="commissiondto" nillable="true" minOccurs="0" />
+          <xs:element name="reversal" type="partnercommissionlinedto" nillable="true" minOccurs="0" />
+          <xs:element name="//oppositeofreversal.thisobjectmustthereversaloriginalcommissionline" type="partnercommissionlinedto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="partnercommissionvaluedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="partner" type="partnerdto" nillable="true" minOccurs="0" />
+        <xs:element name="days" type="xs:long" />
+        <xs:element name="rate" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="commissiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="amount" type="xs:anyType" />
+        <xs:element name="partner" type="partnerdto" nillable="true" minOccurs="0" />
+        <xs:element name="type" type="commissiontype" nillable="true" minOccurs="0" />
+        <xs:element name="commissionprocessrun" type="commissionprocessrundto" nillable="true" minOccurs="0" />
+        <xs:element name="invoicecommissions" type="partnercommissionlinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contactdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="organizationname" type="xs:string" />
+        <xs:element name="address1" type="xs:string" />
+        <xs:element name="address2" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="stateprovince" type="xs:string" />
+        <xs:element name="postalcode" type="xs:string" />
+        <xs:element name="countrycode" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="initial" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="phonecountrycode" type="xs:anyType" />
+        <xs:element name="phoneareacode" type="xs:anyType" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="faxcountrycode" type="xs:anyType" />
+        <xs:element name="faxareacode" type="xs:anyType" />
+        <xs:element name="faxnumber" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="deleted" type="xs:long" />
+        <xs:element name="include" type="xs:anyType" />
+        <xs:element name="userid" type="xs:anyType" />
+        <xs:element name="baseuser" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="contactmap" type="contactmapdto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contactmapdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="contact" type="contactdto" nillable="true" minOccurs="0" />
+        <xs:element name="foreignid" type="xs:long" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datatablequeryentrydto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***route/tablethisqueryshouldbejoinedto*/route" type="routedto" nillable="true" minOccurs="0" />
+        <xs:element name="/***columnstojoinon*/columns" type="xs:anyType" />
+        <xs:element name="/***nextqueryinthelistofnestedqueries*/nextquery" type="datatablequeryentrydto" nillable="true" minOccurs="0" />
+        <xs:element name="/***previousqueryinthelistofnestedqueries*/prevquery" type="datatablequeryentrydto" nillable="true" minOccurs="0" />
+        <xs:element name="/***query-notnullonlyifthisistherootentry*/query" type="datatablequerydto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pricemodeldto" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="attribute_wildcard" type="xs:string" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="type" type="pricemodelstrategy" nillable="true" minOccurs="0" />
+        <xs:element name="attributes" type="xs:anyType" />
+        <xs:element name="rate" type="xs:anyType" />
+        <xs:element name="currency" type="xs:anyType" />
+        <xs:element name="//pricemodelchainingnext" type="pricemodeldto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datatablequerydto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="/***routethisquerymaybeexecutedon*/route" type="routedto" nillable="true" minOccurs="0" />
+        <xs:element name="global" type="xs:long" />
+        <xs:element name="versionnum" type="xs:anyType" />
+        <xs:element name="/***thefirstqueryinthelistofnestedqueries*/rootentry" type="datatablequeryentrydto" nillable="true" minOccurs="0" />
+        <xs:element name="/***userthatcreatedthequery*/user" type="userdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routeratecarddto" >
+      <xs:sequence>
+        <xs:element name="table_prefix" type="xs:string" />
+        <xs:element name="table_columns" type="xs:anyType" />
+        <xs:element name="table_columns_names" type="xs:anyType" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="tablename" type="xs:string" />
+        <xs:element name="ratingunit" type="ratingunitdto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:anyType" />
+        <xs:element name="matchingfields" type="matchingfielddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//transientrouteratecardrecords" type="routeratecardrecord" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routedto" >
+      <xs:sequence>
+        <xs:element name="table_prefix" type="xs:string" />
+        <xs:element name="route_table_columns" type="xs:anyType" />
+        <xs:element name="non_route_table_columns" type="xs:anyType" />
+        <xs:element name="table_columns_names" type="xs:anyType" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="tablename" type="xs:string" />
+        <xs:element name="roottable" type="xs:anyType" />
+        <xs:element name="routetable" type="xs:anyType" />
+        <xs:element name="outputfieldname" type="xs:string" />
+        <xs:element name="/***nextroutetouseincasenothingmatches*/defaultroute" type="xs:string" />
+        <xs:element name="versionnum" type="xs:anyType" />
+        <xs:element name="matchingfields" type="matchingfielddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//transientrouterecords" type="routerecord" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ratingunitdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="incrementunit" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="priceunit" nillable="true" minOccurs="0" />
+        <xs:element name="canbedeleted" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ratecarddto" >
+      <xs:sequence>
+        <xs:element name="table_prefix" type="xs:string" />
+        <xs:element name="table_columns" type="xs:anyType" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="tablename" type="xs:string" />
+        <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="childcompanies" type="companydto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="global" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerusagepooldto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="customer" type="customerdto" nillable="true" minOccurs="0" />
+        <xs:element name="usagepool" type="usagepooldto" nillable="true" minOccurs="0" />
+        <xs:element name="//thisistheplanthatcreatedthiscustomerusagepoolplan" type="plandto" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="initialquantity" type="xs:anyType" />
+        <xs:element name="cycleend" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:long" />
+        <xs:element name="/***acomparatorthatisusedtosortcustomerusagepoolsbasedonprecedenceprovidedatsystemlevelusagepools.*ifprecedenceatusagepoollevelissame,thencreateddateforsystemlevelusagepoolsisconsidered.*/customerusagepoolsbyprecedenceorcreateddatecomparator" type="customerusagepooldto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="comsumptionactiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="actionname" type="xs:string" />
+        <xs:element name="actiondescription" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usagepooldto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="default_precedence" type="xs:anyType" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="quantity" type="xs:anyType" />
+          <xs:element name="precedence" type="xs:anyType" />
+          <xs:element name="cycleperiodunit" type="xs:string" />
+          <xs:element name="cycleperiodvalue" type="xs:anyType" />
+          <xs:element name="itemtypes" type="itemtypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="items" type="itemdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="usagepoolresetvalue" type="usagepoolresetvalueenum" nillable="true" minOccurs="0" />
+          <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="created" type="xs:dateTime" />
+          <xs:element name="attributes" type="xs:anyType" />
+          <xs:element name="consumptionactions" type="usagepoolconsumptionactiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usagepoolconsumptionlogdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="customerusagepool" type="customerusagepooldto" nillable="true" minOccurs="0" />
+        <xs:element name="oldquantity" type="xs:anyType" />
+        <xs:element name="newquantity" type="xs:anyType" />
+        <xs:element name="percentageconsumption" type="xs:anyType" />
+        <xs:element name="consumption" type="xs:dateTime" />
+        <xs:element name="actionexecuted" type="xs:string" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usagepoolconsumptionactiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="percentage" type="xs:anyType" />
+        <xs:element name="notificationid" type="xs:anyType" />
+        <xs:element name="mediumtype" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="productid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderprocessdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="billingprocessdto" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orderdto" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="invoicedto" nillable="true" minOccurs="0" />
+        <xs:element name="periodsincluded" type="xs:anyType" />
+        <xs:element name="periodstart" type="xs:dateTime" />
+        <xs:element name="periodend" type="xs:dateTime" />
+        <xs:element name="isreview" type="xs:long" />
+        <xs:element name="origin" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderchangetypedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="defaulttype" type="xs:anyType" />
+        <xs:element name="itemtypes" type="itemtypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="alloworderstatuschange" type="xs:anyType" />
+        <xs:element name="orderchangetypemetafields" type="xs:anyType" />
+        <xs:element name="optlock" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderlineusagepooldto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="orderline" type="orderlinedto" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="customerusagepool" type="customerusagepooldto" nillable="true" minOccurs="0" />
+        <xs:element name="istouched" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderstatusdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderbillingtypedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="orderdtos" type="orderdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderchangedto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="parentorderchange" type="orderchangedto" nillable="true" minOccurs="0" />
+          <xs:element name="parentorderline" type="orderlinedto" nillable="true" minOccurs="0" />
+          <xs:element name="orderline" type="orderlinedto" nillable="true" minOccurs="0" />
+          <xs:element name="order" type="orderdto" nillable="true" minOccurs="0" />
+          <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+          <xs:element name="quantity" type="xs:anyType" />
+          <xs:element name="price" type="xs:anyType" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="useitem" type="xs:anyType" />
+          <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="createtime" type="xs:dateTime" />
+          <xs:element name="start" type="xs:dateTime" />
+          <xs:element name="application" type="xs:dateTime" />
+          <xs:element name="userassignedstatus" type="orderchangestatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="status" type="orderchangestatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="assets" type="assetdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="errormessage" type="xs:string" />
+          <xs:element name="errorcodes" type="xs:string" />
+          <xs:element name="optlock" type="xs:long" />
+          <xs:element name="orderchangetype" type="orderchangetypedto" nillable="true" minOccurs="0" />
+          <xs:element name="orderstatustoapply" type="orderstatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="orderchangeplanitems" type="orderchangeplanitemdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="provisioningcommands" type="orderlineprovisioningcommanddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="appliedmanually" type="xs:anyType" />
+          <xs:element name="removal" type="xs:anyType" />
+          <xs:element name="nextbillable" type="xs:dateTime" />
+          <xs:element name="end" type="xs:dateTime" />
+          <xs:element name="//non-persistedfields//thisfieldfilledaftercreationoforderlineduringchangeapplylinecreated" type="orderlinedto" nillable="true" minOccurs="0" />
+          <xs:element name="istouched" type="xs:anyType" />
+          <xs:element name="ispercentage" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderchangeplanitemdto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="optlock" type="xs:long" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="orderchange" type="orderchangedto" nillable="true" minOccurs="0" />
+          <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+          <xs:element name="assets" type="assetdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderlinedto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="" type="orderlinetypedto" nillable="true" minOccurs="0" />
+          <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="orderdto" nillable="true" minOccurs="0" />
+          <xs:element name="amount" type="xs:anyType" />
+          <xs:element name="quantity" type="xs:anyType" />
+          <xs:element name="price" type="xs:anyType" />
+          <xs:element name="createtime" type="xs:dateTime" />
+          <xs:element name="deleted" type="xs:long" />
+          <xs:element name="useitem" type="xs:anyType" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="editable" type="xs:anyType" />
+          <xs:element name="assets" type="assetdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="assetassignments" type="assetassignmentdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="parentline" type="orderlinedto" nillable="true" minOccurs="0" />
+          <xs:element name="childlines" type="orderlinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="//provisioningfieldsprovisioningstatus" type="provisioningstatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="provisioningrequestid" type="xs:string" />
+          <xs:element name="sipuri" type="xs:string" />
+          <xs:element name="orderchanges" type="orderchangedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="start" type="xs:dateTime" />
+          <xs:element name="end" type="xs:dateTime" />
+          <xs:element name="//otherfields,non-persistentpricestr" type="xs:string" />
+          <xs:element name="totalreadonly" type="xs:anyType" />
+          <xs:element name="provisioningstatusstr" type="xs:string" />
+          <xs:element name="orderlineplanitems" type="orderlineplanitemdtoex" nillable="true" minOccurs="0" />
+          <xs:element name="istouched" type="xs:anyType" />
+          <xs:element name="orderlineusagepools" type="orderlineusagepooldto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="mediated" type="xs:anyType" />
+          <xs:element name="mediatedquantity" type="xs:anyType" />
+          <xs:element name="ispercentage" type="xs:anyType" />
+          <xs:element name="orderlinechangedtostartdatecomparator" type="orderchangedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="orderlinechangedtocreatedatetimecomparator" type="orderchangedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderperioddto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="periodunitdto" nillable="true" minOccurs="0" />
+          <xs:element name="value" type="xs:anyType" />
+          <xs:element name="orderdtos" type="orderdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderchangestatusdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractgenericstatus">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="deleted" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderdto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="baseuserbyuserid" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="baseuserbycreatedby" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="orderstatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="orderperioddto" nillable="true" minOccurs="0" />
+          <xs:element name="" type="orderbillingtypedto" nillable="true" minOccurs="0" />
+          <xs:element name="primary" type="orderdto" nillable="true" minOccurs="0" />
+          <xs:element name="activesince" type="xs:dateTime" />
+          <xs:element name="activeuntil" type="xs:dateTime" />
+          <xs:element name="deleted" type="xs:dateTime" />
+          <xs:element name="cyclestarts" type="xs:dateTime" />
+          <xs:element name="create" type="xs:dateTime" />
+          <xs:element name="nextbillableday" type="xs:dateTime" />
+          <xs:element name="deleted" type="xs:long" />
+          <xs:element name="notify" type="xs:anyType" />
+          <xs:element name="lastnotified" type="xs:dateTime" />
+          <xs:element name="notificationstep" type="xs:anyType" />
+          <xs:element name="duedateunitid" type="xs:anyType" />
+          <xs:element name="duedatevalue" type="xs:anyType" />
+          <xs:element name="dffm" type="xs:anyType" />
+          <xs:element name="anticipateperiods" type="xs:anyType" />
+          <xs:element name="owninvoice" type="xs:anyType" />
+          <xs:element name="//resellerentityorderidresellerorder" type="xs:anyType" />
+          <xs:element name="notes" type="xs:string" />
+          <xs:element name="notesininvoice" type="xs:anyType" />
+          <xs:element name="orderprocesses" type="orderprocessdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="lines" type="orderlinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="discountlines" type="discountlinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="usercodelinks" type="usercodeorderlinkdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="parentorder" type="orderdto" nillable="true" minOccurs="0" />
+          <xs:element name="childorders" type="orderdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="provisioningcommands" type="orderprovisioningcommanddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="provisioningstatus" type="provisioningstatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="//othernon-persitentfieldsnonreviewperiods" type="orderprocessdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="invoices" type="invoicedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="billingprocesses" type="billingprocessdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="periodstr" type="xs:string" />
+          <xs:element name="billingtypestr" type="xs:string" />
+          <xs:element name="statusstr" type="xs:string" />
+          <xs:element name="timeunitstr" type="xs:string" />
+          <xs:element name="currencysymbol" type="xs:string" />
+          <xs:element name="currencyname" type="xs:string" />
+          <xs:element name="total" type="xs:anyType" />
+          <xs:element name="pricingfields" type="xs:anyType" />
+          <xs:element name="cancellationfeetype" type="xs:string" />
+          <xs:element name="cancellationfee" type="xs:anyType" />
+          <xs:element name="cancellationfeepercentage" type="xs:anyType" />
+          <xs:element name="cancellationmaximumfee" type="xs:anyType" />
+          <xs:element name="cancellationminimumperiod" type="xs:anyType" />
+          <xs:element name="istouched" type="xs:anyType" />
+          <xs:element name="freeusagequantity" type="xs:anyType" />
+          <xs:element name="prorateflag" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderlinetypedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="editable" type="xs:anyType" />
+          <xs:element name="orderlinedtos" type="orderlinedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="itemdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="entities" type="companydto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="internalnumber" type="xs:string" />
+          <xs:element name="glcode" type="xs:string" />
+          <xs:element name="defaultprices" type="entityitemprice" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="percentage" type="xs:anyType" />
+          <xs:element name="excludedtypes" type="itemtypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="deleted" type="xs:anyType" />
+          <xs:element name="hasdecimals" type="xs:anyType" />
+          <xs:element name="itemtypes" type="itemtypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="plans" type="plandto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="metafields" type="xs:anyType" />
+          <xs:element name="orderlinemetafields" type="xs:anyType" />
+          <xs:element name="standardavailability" type="xs:anyType" />
+          <xs:element name="global" type="xs:anyType" />
+          <xs:element name="accounttypeavailability" type="accounttypedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***iftheitemwilldoassetmanagement.onlypossibleifonelinkeditemtypedtoallowsassetmanagement*/assetmanagementenabled" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="dependencies" type="itemdependencydto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="itemusagepools" type="usagepooldto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="types" type="xs:anyType" />
+          <xs:element name="excludedtypeids" type="xs:anyType" />
+          <xs:element name="accounttypeids" type="xs:anyType" />
+          <xs:element name="dependencyids" type="xs:anyType" />
+          <xs:element name="childentityids" type="xs:anyType" />
+          <xs:element name="parentandchildids" type="xs:anyType" />
+          <xs:element name="//forrules'contains'operatorstrtypes" type="xs:anyType" />
+          <xs:element name="promocode" type="xs:string" />
+          <xs:element name="currencyid" type="xs:anyType" />
+          <xs:element name="price" type="xs:anyType" />
+          <xs:element name="orderlinetypeid" type="xs:anyType" />
+          <xs:element name="pricemodelcompanyid" type="xs:anyType" />
+          <xs:element name="activesince" type="xs:dateTime" />
+          <xs:element name="activeuntil" type="xs:dateTime" />
+          <xs:element name="standardpartnerpercentage" type="xs:anyType" />
+          <xs:element name="masterpartnerpercentage" type="xs:anyType" />
+          <xs:element name="ispercentage" type="xs:anyType" />
+          <xs:element name="reservationduration" type="xs:anyType" />
+          <xs:element name="isplan" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="plandto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="//plansubscriptionitemitem" type="itemdto" nillable="true" minOccurs="0" />
+          <xs:element name="period" type="orderperioddto" nillable="true" minOccurs="0" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="editable" type="xs:long" />
+          <xs:element name="planitems" type="planitemdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="metafields" type="xs:anyType" />
+          <xs:element name="usagepools" type="usagepooldto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="parentplan" type="plandto" nillable="true" minOccurs="0" />
+          <xs:element name="childplans" type="plandto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="itemtypedto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="entities" type="companydto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="orderlinetypeid" type="xs:long" />
+          <xs:element name="internal" type="xs:anyType" />
+          <xs:element name="global" type="xs:anyType" />
+          <xs:element name="items" type="itemdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="excludeditems" type="itemdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="assetstatuses" type="assetstatusdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="assetmetafields" type="xs:anyType" />
+          <xs:element name="metafields" type="xs:anyType" />
+          <xs:element name="allowassetmanagement" type="xs:anyType" />
+          <xs:element name="assetidentifierlabel" type="xs:string" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="parent" type="itemtypedto" nillable="true" minOccurs="0" />
+          <xs:element name="usagepools" type="usagepooldto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="oneperorder" type="xs:anyType" />
+          <xs:element name="onepercustomer" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="assetreservationdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="creator" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="asset" type="assetdto" nillable="true" minOccurs="0" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemdependencyonitemdto" >
+      <xs:complexContent>
+       <xs:extension base="itemdependencydto">
+         <xs:sequence>
+          <xs:element name="dependent" type="itemdto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityitemprice" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+        <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+        <xs:element name="prices" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="assetstatusdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="itemtype" type="itemtypedto" nillable="true" minOccurs="0" />
+          <xs:element name="isdefault" type="xs:long" />
+          <xs:element name="isordersaved" type="xs:long" />
+          <xs:element name="isavailable" type="xs:long" />
+          <xs:element name="isernal" type="xs:long" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="deleted" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="assetassignmentdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="asset" type="assetdto" nillable="true" minOccurs="0" />
+        <xs:element name="orderline" type="orderlinedto" nillable="true" minOccurs="0" />
+        <xs:element name="starttime" type="xs:dateTime" />
+        <xs:element name="endtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemdependencydto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+        <xs:element name="minimum" type="xs:anyType" />
+        <xs:element name="maximum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="planitemdto" >
+      <xs:sequence>
+        <xs:element name="default_precedence" type="xs:anyType" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="plan" type="plandto" nillable="true" minOccurs="0" />
+        <xs:element name="//affecteditemitem" type="itemdto" nillable="true" minOccurs="0" />
+        <xs:element name="models" type="xs:anyType" />
+        <xs:element name="bundle" type="planitembundledto" nillable="true" minOccurs="0" />
+        <xs:element name="precedence" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="assetdto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="//uniqueperitemtypedtoidentifier" type="xs:string" />
+          <xs:element name="assetstatus" type="assetstatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="deleted" type="xs:long" />
+          <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+          <xs:element name="transitions" type="assettransitiondto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="assignments" type="assetassignmentdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="createtime" type="xs:dateTime" />
+          <xs:element name="orderline" type="orderlinedto" nillable="true" minOccurs="0" />
+          <xs:element name="notes" type="xs:string" />
+          <xs:element name="/***canonlycontainassetsisagroup*/containedassets" type="assetdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***parentgroup*/group" type="assetdto" nillable="true" minOccurs="0" />
+          <xs:element name="provisioningcommands" type="assetprovisioningcommanddto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="provisioningstatus" type="provisioningstatusdto" nillable="true" minOccurs="0" />
+          <xs:element name="//transientpropertiesprevorderline" type="orderlinedto" nillable="true" minOccurs="0" />
+          <xs:element name="unlinkedfromline" type="xs:anyType" />
+          <xs:element name="istouched" type="xs:anyType" />
+          <xs:element name="global" type="xs:anyType" />
+          <xs:element name="entities" type="companydto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="childentityids" type="xs:anyType" />
+          <xs:element name="isreserved" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="planitembundledto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="period" type="orderperioddto" nillable="true" minOccurs="0" />
+        <xs:element name="target" type="xs:anyType" />
+        <xs:element name="addifexists" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="assettransitiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="previousstatus" type="assetstatusdto" nillable="true" minOccurs="0" />
+        <xs:element name="newstatus" type="assetstatusdto" nillable="true" minOccurs="0" />
+        <xs:element name="asset" type="assetdto" nillable="true" minOccurs="0" />
+        <xs:element name="/***usertheassetisassignto(throughorderlinelinkedtotheasset)*/assignedto" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="/***userwhomadethechange*/user" type="userdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemdependencyonitemtypedto" >
+      <xs:complexContent>
+       <xs:extension base="itemdependencydto">
+         <xs:sequence>
+          <xs:element name="dependent" type="itemtypedto" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customerenrollmentdto" >
+      <xs:complexContent>
+       <xs:extension base="customizedentity">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="versionnum" type="xs:long" />
+          <xs:element name="accounttype" type="accounttypedto" nillable="true" minOccurs="0" />
+          <xs:element name="company" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="//useridofcustomercreatedbycustomerenrollmentuser" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="deleted" type="xs:long" />
+          <xs:element name="parentcustomer" type="userdto" nillable="true" minOccurs="0" />
+          <xs:element name="parentenrollment" type="customerenrollmentdto" nillable="true" minOccurs="0" />
+          <xs:element name="//thisisaenumclass.detailsarementionedinnextpoint.status" type="customerenrollmentstatus" nillable="true" minOccurs="0" />
+          <xs:element name="comments" type="customerenrollmentcommentdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="createtime" type="xs:dateTime" />
+          <xs:element name="message" type="xs:string" />
+          <xs:element name="bulkenrollment" type="xs:anyType" />
+          <xs:element name="brokerid" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customerenrollmentcommentdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="comment" type="xs:string" />
+        <xs:element name="creationtime" type="xs:dateTime" />
+        <xs:element name="customerenrollment" type="customerenrollmentdto" nillable="true" minOccurs="0" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationconfiguration" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="entityid" type="xs:anyType" />
+        <xs:element name="localinputdirectory" type="xs:string" />
+        <xs:element name="pluggabletask" type="pluggabletaskdto" nillable="true" minOccurs="0" />
+        <xs:element name="processor" type="pluggabletaskdto" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="mediationjoblauncher" type="xs:string" />
+        <xs:element name="ordervalue" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:anyType" />
+        <xs:element name="rootroute" type="routedto" nillable="true" minOccurs="0" />
+        <xs:element name="cdrsforrecycle" type="xs:anyType" />
+        <xs:element name="global" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chargesessiondto" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="baseuser" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="started" type="xs:dateTime" />
+        <xs:element name="lastaccessed" type="xs:dateTime" />
+        <xs:element name="carriedunits" type="xs:anyType" />
+        <xs:element name="reservations" type="reservedamountdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reservedamountdto" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="session" type="chargesessiondto" nillable="true" minOccurs="0" />
+        <xs:element name="created" type="xs:dateTime" />
+        <xs:element name="currency" type="xs:anyType" />
+        <xs:element name="amount" type="xs:anyType" />
+        <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="data" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="discountlinedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="discount" type="discountdto" nillable="true" minOccurs="0" />
+        <xs:element name="planitem" type="planitemdto" nillable="true" minOccurs="0" />
+        <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+        <xs:element name="order" type="orderdto" nillable="true" minOccurs="0" />
+        <xs:element name="//orderlinecreatedbythisdiscountline.discountorderline" type="orderlinedto" nillable="true" minOccurs="0" />
+        <xs:element name="//orderlineamountwhichwillbeusedinproductleveldiscounts.orderlineamount" type="xs:anyType" />
+        <xs:element name="//descriptionwhichwillbeusedininvoicefordiscountline.description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="discountdto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="entity" type="companydto" nillable="true" minOccurs="0" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="type" type="discountstrategytype" nillable="true" minOccurs="0" />
+          <xs:element name="rate" type="xs:anyType" />
+          <xs:element name="start" type="xs:dateTime" />
+          <xs:element name="end" type="xs:dateTime" />
+          <xs:element name="attributes" type="xs:anyType" />
+          <xs:element name="lastuptime" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

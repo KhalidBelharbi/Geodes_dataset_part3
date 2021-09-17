@@ -1,0 +1,11 @@
+
+uploadfile(id:Long [PK], tenantid:Long, filename:String, localpath:String, remoteurl:String, purpose:String, contenttype:String, filesize:Long, createtime:Date);
+
+smsresult(smsid:Long [PK], tenantid:Long, mobile:String, action:String, content:String, result:Boolean, message:String, sendtime:Date);
+
+pushuser(userid:Long [PK], clientid:String, pushchannel:String, messagecount:Integer);
+
+district(id:Long [PK], parentid:Long, name:String, fullname:String, level:Integer, initial:String, initials:String, pinyin:String, suffix:String, code:String, areacode:String, order:Integer);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

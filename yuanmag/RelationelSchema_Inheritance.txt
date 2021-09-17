@@ -1,0 +1,47 @@
+
+message(tplcode:String, content:String, receiver:String, type:Integer, state:Integer);
+
+messagesender(name:String, classname:String, tplcode:String);
+
+messagetemplate(code:String, title:String, content:String, cond:String, idmessagesender:Long, type:Integer, id:MessageSender #FK to(messagesender));
+
+cfg(cfgname:String, cfgvalue:String, cfgdesc:String);
+
+relation(id:Long [PK], menuid:Long, roleid:Long);
+
+tasklog(exe_failure_result:int, exe_success_result:int, id:Long [PK], idtask:Long, name:String, execat:Date, execsuccess:int, jobexception:String);
+
+user(avatar:String, account:String, password:String, salt:String, name:String, birthday:Date, sex:Integer, email:String, phone:String, roleid:String, deptid:Long, status:Integer, version:Integer);
+
+loginlog(id:Integer [PK], logname:String, userid:Integer, succeed:String, message:String, ip:String, createtime:Date);
+
+dict(num:String, pid:Long, name:String, tips:String);
+
+operationlog(id:Long [PK], logtype:String, logname:String, userid:Integer, classname:String, method:String, createtime:Date, succeed:String, message:String);
+
+fileinfo(originalfilename:String, realfilename:String);
+
+dept(num:Integer, pid:Long, pids:String, simplename:String, fullname:String, tips:String, version:Integer);
+
+task(name:String, jobgroup:String, jobclass:String, note:String, cron:String, concurrent:boolean, data:String, execat:Date, execresult:String, disabled:boolean);
+
+role(num:Integer, pid:Long, name:String, deptid:Long, tips:String, version:Integer);
+
+menu(code:String, pcode:String, pcodes:String, name:String, icon:String, url:String, num:Integer, levels:Integer, ismenu:Integer, tips:String, status:Integer, isopen:Integer, component:String, hidden:Boolean);
+
+notice(title:String, type:Integer, content:String);
+
+channel(name:String, code:String);
+
+dish(idchannel:Long, title:String, content:String, price:int, inventory:int, img:String);
+
+banner(url:String, title:String, type:String, idfile:Long);
+
+order(userid:String, mobile:String, remark:String, content:String, status:String);
+
+boy(name:String, age:Integer, birthday:String, hasgirfriend:Boolean);
+
+girl(name:String, age:Integer, birthday:Date, hasboyfriend:Boolean);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

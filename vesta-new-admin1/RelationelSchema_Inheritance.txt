@@ -1,0 +1,17 @@
+
+viewappbilldetailinfo(//session中的标记位pay_detail_flag:String, pay_bill_info_flag:String, //支付过期时间pay_post_time:long, call_back_status_success:int, //是否同意agress:int, mdpguid:String, paymentid:String [PK], paystartdate:String, payenddate:String, paymoney:String, projectid:String, price:String, paytype:String, hourseid:String, paydesc:String, mdpbatchtime:String, mdpoperationtype:String, mdp_result:String, ownerid:String);
+
+viewpaymentidownerid(id:String [PK], paymentid:String, ownerid:String);
+
+arbillitem(id:String [PK], billitemid:String, itemname:String);
+
+viewapphadbilldetialinfoentity(mdpguid:String [PK], username:String, houseid:Integer, havebill:String, paysource:String, housedesc:String, payementid:String, paystartdate:Timestamp, payenddate:Timestamp, paymoney:String, paytype:String, price:BigDecimal, paymonths:Integer, companyid:Integer, receiptid:Integer, paytime:Timestamp, mdp_batchtime:Timestamp, mdp_operationtype:String, mdp_result:String);
+
+payingcallbacklog(id:String [PK], callbacktime:String, callpayingid:String, status:String, //系统保存的支付详情idbillinfoid:String, failreanson:String, requrl:String, reqbody:String, md5value:String, callbackresult:String, //系统app生成的订单流水号apporderno:String, //支付流水号微信以及支付宝端生成thirdorderno:String, //收款方银行账号信息bankaccountno:String, //收款方支付宝/微信账号paymentreceiveaccount:String, //类型区分//记录日志发生的阶段logproccess:String, logstatus:String);
+
+billinfoentity(id:String [PK], paymentid:String, //发票信息billinfo:String, //付款方式paytype:String, //配送方式sendway:String, //生成时间createtime:String, //支付开始时间payingstarttime:String, //支付结果payresult:String, //支付回调时间callbacktime:String, //支付人类型payertype:String, //支付人联系方式payerphone:String, sendparamstr:String, payeruserid:String, payerusername:String, //缴费人的角色类型，用来区分是待缴还是业主缴费payusertype:String, //支付人所在项目id现在是存储的是业务系统的projectidprojectid:String, //公司名称companyname:String, //楼栋号blockno:String, //房间号unitno:String, //业主名称ownername:String, //费项编号billitemid:String, //费项名称billitemname:String, //代缴时需要传缴费人名字paybywho:String, //系统生成的订单号apporderno:String, //支付流水号，微信端/支付宝端生成thirdorderno:String, //收款人银行账号bankacountno:String, //***********************用于缴费历史查询的冗余字段paystartdate:Timestamp, payenddate:Timestamp, paymoney:String, houseid:String, paymenttypename:String, //**********************发票的处理信息//处理状态processstatus:String, //处理人processusername:String, //处理人idprocessuserid:String, //处理时间processtime:String);
+
+viewapphouseinfoentityforpayment(//房屋idhouseid:int, //项目idprojectid:int, //项目名称projectname:String, //业态类型idformatid:int, //业态名称formatname:String, //楼blockname:String, //单元cellno:String, //房间号houseno:String, //地址address:String, //房屋类型housetype:String, //建筑面积billingarea:BigDecimal, //公司idcompanyid:int, //公司名称companyname:String, //时间mdpbatchtime:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,27 @@
+
+customer(id:long [PK], firstname:String, lastname:String);
+
+user(id:Integer [PK], name:String, status:Integer);
+
+employee(id:int [PK], name:String, title:String);
+
+genericentity(id:Long [PK], value:String);
+
+car(id:int [PK], power:Integer, model:String);
+
+country(id:Integer [PK], name:String);
+
+preference(id:Long [PK], name:String, GeneratedName:Account #FK to(account));
+
+account(id:Long [PK], defaultemail:String, secondaryemail:String);
+
+customer(id:long [PK], name:String, email:String);
+
+book(id:Long [PK], name:String);
+
+user(id:long [PK], name:String, email:String);
+
+user(id:long [PK], name:String, email:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="serververticle" >
+      <xs:complexContent>
+       <xs:extension base="abstractverticle">
+         <xs:sequence>
+          <xs:element name="defaultport" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="articlerecipientverticle" >
+      <xs:complexContent>
+       <xs:extension base="abstractverticle">
+         <xs:sequence>
+          <xs:element name="get_all_articles" type="xs:string" />
+          <xs:element name="mapper" type="xs:anyType" />
+          <xs:element name="" type="articleservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="articleservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="articlerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vertxspringapplication" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="serververticle" nillable="true" minOccurs="0" />
+        <xs:element name="serviceverticle" type="articlerecipientverticle" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="portconfiguration" >
+      <xs:sequence>
+        <xs:element name="default_port" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="article" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="article" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="articlerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<article,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dbbootstrap" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="articlerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conf" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vertxspringapplicationintegrationtest" >
+      <xs:sequence>
+        <xs:element name="port" type="xs:anyType" />
+        <xs:element name="resttemplate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springcontexttest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

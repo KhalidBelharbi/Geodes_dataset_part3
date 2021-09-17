@@ -1,0 +1,55 @@
+car(serialversionuid:long, brand:String [PK]);
+
+phone(id:Integer [PK], deleted:boolean, number:String);
+
+user(userid:long [PK]);
+
+product(prodid:String [PK]);
+
+polygonentity(id:Long [PK], GeneratedName:Polygon);
+
+orderentry(entryid:OrderEntryPK);
+
+pointentity(id:Long [PK], GeneratedName:Point);
+
+userprofile(profileid:long [PK], GeneratedName:User #FK to(User));
+
+employee(id:Integer [PK], grossincome:long, taxinpercents:int, deleted:boolean, tax:long);
+
+course(courseid:UUID [PK]);
+
+department(depid:long [PK]);
+
+temporalvalues(id:long [PK], sqldate:java.sql.Date, sqltime:java.sql.Time, sqltimestamp:java.sql.Timestamp, utildate:java.util.Date, utiltime:java.util.Date, utiltimestamp:java.util.Date, calendardate:java.util.Calendar, calendartimestamp:java.util.Calendar, localdate:java.time.LocalDate, localtime:java.time.LocalTime, offsettime:java.time.OffsetTime, instant:java.time.Instant, localdatetime:java.time.LocalDateTime, offsetdatetime:java.time.OffsetDateTime, zoneddatetime:java.time.ZonedDateTime);
+
+person(id:Long [PK], GeneratedName:PersonName);
+
+entitydescription(id:Integer [PK], description:String, entity:Serializable);
+
+student(studentid:long [PK]);
+
+car(engine:String);
+
+pet(name:String);
+
+animal(animalid:long [PK], species:String);
+
+myemployee(company:String);
+
+pen(color:String);
+
+vehicle(vehicleid:long [PK], manufacturer:String);
+
+book(author:String);
+
+bag(bagid:long [PK], type:String);
+
+orderentryidclass(orderid:long [PK], productid:long [PK]);
+
+user(id:long [PK], name:String, about:String, lastmodified:Date);
+
+myproduct(productid:long [PK], name:String, product_type: String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

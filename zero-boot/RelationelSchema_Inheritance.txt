@@ -1,0 +1,19 @@
+
+account(userid:String [PK], username:String, email:String, phone:String, password:String, delflag:Boolean);
+
+sys_account_role(user_id:Account [PK] #FK to Account,role_id:list<role> [PK] #FK to list<role>);
+
+accountrole(userid:String [PK], roleid:String [PK]);
+
+rolepermission(roleid:String [PK], permissionid:String [PK]);
+
+permission(permissionid:String [PK], permission:String, description:String, delflag:Boolean);
+
+sys_role_permission(permission_id:Permission [PK] #FK to Permission,role_id:list<role> [PK] #FK to list<role>);
+
+role(roleid:String [PK], role:String, description:String, delflag:Boolean);
+
+sys_role_permission(role_id:Role [PK] #FK to Role,permission_id:list<permission> [PK] #FK to list<permission>);sys_account_role(role_id:Role [PK] #FK to Role,user_id:list<account> [PK] #FK to list<account>);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

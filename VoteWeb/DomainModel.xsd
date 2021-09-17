@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="candidate" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="sequencenumber" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="selectedvalue" type="xs:long" />
+        <xs:element name="elected" type="xs:long" />
+        <xs:element name="image" type="xs:string" />
+        <xs:element name="//조인됨m:1" type="vote" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vote" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="//투표순서sequencenumber" type="xs:long" />
+        <xs:element name="//선택갯수selectednumber" type="xs:long" />
+        <xs:element name="//당선갯수electedcount" type="xs:long" />
+        <xs:element name="candidatelist" type="candidate" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="voteinfo" type="voteinfomation" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="result" >
+      <xs:sequence>
+        <xs:element name="voterid" type="xs:long" />
+        <xs:element name="candidateid" type="xs:long" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteinfomation" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="count" type="xs:long" />
+        <xs:element name="status" type="voteinfostatustype" nillable="true" minOccurs="0" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="current" type="xs:long" />
+        <xs:element name="votelist" type="vote" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="apply" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="black" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="user" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrole" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="user" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="role" type="userroletype" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="member" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="status" type="userstatustype" nillable="true" minOccurs="0" />
+        <xs:element name="role" type="userrole" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voter" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="ssn" type="xs:string" />
+        <xs:element name="//@enumerated(enumtype.string)status" type="voterstatustype" nillable="true" minOccurs="0" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="voteddate" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="apply" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apply" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="expectedcount" type="xs:long" />
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="status" type="applystatustype" nillable="true" minOccurs="0" />
+        <xs:element name="approval" type="xs:long" />
+        <xs:element name="hasvote" type="xs:anyType" />
+        <xs:element name="hasvoter" type="xs:anyType" />
+        <xs:element name="hasresult" type="xs:anyType" />
+        <xs:element name="//배치를통해들어감voted" type="xs:anyType" />
+        <xs:element name="user" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="deleted" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

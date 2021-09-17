@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="classusingproperty" >
+      <xs:sequence>
+        <xs:element name="propertyone" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeerolecontroller" >
+      <xs:sequence>
+        <xs:element name="userrolecache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertysourceresolver" >
+      <xs:sequence>
+        <xs:element name="firstproperty" type="xs:string" />
+        <xs:element name="secondproperty" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="status" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="additionservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hrservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeeservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="hrservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="counter" >
+      <xs:sequence>
+        <xs:element name="count" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scheduledconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfig" >
+      <xs:sequence>
+        <xs:element name="ctx" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springdatarestapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercache" >
+      <xs:sequence>
+        <xs:element name="userlist" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="context-override-application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="other-location" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaulttestpropertysourceintegrationtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dirtiescontextintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="usercache" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="locationtestpropertysourceintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="classusingproperty" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertiestestpropertysourceintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="classusingproperty" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaulttestpropertysourceintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="classusingproperty" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mockannotationunittest" >
+      <xs:sequence>
+        <xs:element name="mockrepository" type="userrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mockbeanannotationintegrationtest" >
+      <xs:sequence>
+        <xs:element name="mockrepository" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="context" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="profilepropertysourceresolverintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="propertysourceresolver" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contextpropertysourceresolverintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="propertysourceresolver" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyoverridecontextinitializer" >
+      <xs:sequence>
+        <xs:element name="property_first_value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testresourcepropertysourceresolverintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="propertysourceresolver" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springbootpropertysourceresolverintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="propertysourceresolver" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolecontrollerintegrationtest" >
+      <xs:sequence>
+        <xs:element name="wac" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="content_type" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolecontrollerparameterizedclassruleintegrationtest" >
+      <xs:sequence>
+        <xs:element name="content_type" type="xs:string" />
+        <xs:element name="scr" type="xs:anyType" />
+        <xs:element name="smr" type="xs:anyType" />
+        <xs:element name="wac" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="role" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolecontrollerparameterizedintegrationtest" >
+      <xs:sequence>
+        <xs:element name="content_type" type="xs:string" />
+        <xs:element name="wac" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="role" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reflectiontestutilsunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scheduledintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="counter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scheduledawaitilityintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="counter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="additionserviceunittest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="additionservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testexecutionlistenerswithoutmergemodeunittest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="additionservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customtestexecutionlistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testexecutionlistenerswithmergemodeunittest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="additionservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

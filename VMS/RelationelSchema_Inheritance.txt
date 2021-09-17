@@ -1,0 +1,71 @@
+
+content(contentid:int [PK], contentdata:String, group:KidsGroup #FK to(kidsgroup));
+
+project(projectid:int [PK], projectname:String, startingdate:Calendar, endingdate:Calendar, projectdata:String, description:String, creationdate:Calendar, photo:String, creationtime:Calendar, totalkids:int, totalsessions:int, totalvolunteachers:int);
+
+project_list<user>(projectID:project [PK] #FK to project,list<user>ID:list<user> [PK] #FK to list<user>);project_list<kid>(projectID:project [PK] #FK to project,list<kid>ID:list<kid> [PK] #FK to list<kid>);
+
+kidsgroup(groupid:int [PK], groupname:String, criteria:String);
+
+usertype(typeid:int [PK], type:String);
+
+payment(paymentid:int [PK], creationdate:Calendar, paymentmode:String, amount:double, transactionid:String, GeneratedName:Donor #FK to(donor));
+
+applicantrequest(requestid:int [PK], emailid:String, name:String, phonenumber:String, gender:int, status:int, requestdate:Calendar);
+
+school(schoolid:int [PK], schoolname:String, pincode:int, lab:boolean, grade:String, totalteachers:int, phonenumber:String, startingdate:Calendar, type:String, totalstudent:int, status:int, requirements:String, GeneratedName:Village #FK to(village));
+
+sessionreport(sessionreportid:int [PK], description:String, suggestions:String, experience:String, requirements:String, GeneratedName:Session #FK to(session), GeneratedName:User #FK to(user));
+
+volunteacher(volunteacherid:int [PK], school:String, employername:String, status:int, joiningdate:Calendar, pincode:int, education:String, GeneratedName:User #FK to(user), GeneratedName:Village #FK to(village), GeneratedName:District #FK to(district));
+
+announcement(announcementid:Long [PK], data:String, createdby:User #FK to(user), creationdate:Calendar, creationtime:Calendar);
+
+district(districtid:int [PK], districtname:String, GeneratedName:State #FK to(state));
+
+taluka(talukaid:int [PK], talukaname:String, GeneratedName:District #FK to(district));
+
+event(eventid:int [PK], title:String, eventdata:String, eventdate:Calendar, eventstartingtime:Calendar, eventendingtime:Calendar, photo:String, notified:boolean, GeneratedName:Project #FK to(project), GeneratedName:Village #FK to(village), GeneratedName:Notification #FK to(notification));
+
+event_list<kid>(eventID:event [PK] #FK to event,list<kid>ID:list<kid> [PK] #FK to list<kid>);event_list<user>(eventID:event [PK] #FK to event,list<user>ID:list<user> [PK] #FK to list<user>);event_list<activity>(eventID:event [PK] #FK to event,list<activity>ID:list<activity> [PK] #FK to list<activity>);
+
+participant(participantid:Long [PK], name:String, email:String, gender:int, phonenumber:String, dob:Calendar, type:UserType #FK to(usertype), GeneratedName:Event #FK to(event));
+
+participant_list<activity>(participantID:participant [PK] #FK to participant,list<activity>ID:list<activity> [PK] #FK to list<activity>);
+
+report(reportid:int [PK], title:String, description:String, pdfurl:String, creationdate:Calendar, createdby:User #FK to(user));
+
+user(userid:Long [PK], username:String, email:String, gender:int, phonenumber:String, dob:Calendar, password:String, type:UserType #FK to(usertype), photo:String, userotp:String, GeneratedName:Volunteacher #FK to(volunteacher));
+
+session(sessionid:Long [PK], //attendancesessiondate:Calendar, startingtime:Calendar, endingtime:Calendar, creationdate:Calendar, notified:boolean, GeneratedName:Project #FK to(project), GeneratedName:Village #FK to(village), GeneratedName:Notification #FK to(notification));
+
+session_list<user>(sessionID:session [PK] #FK to session,list<user>ID:list<user> [PK] #FK to list<user>);
+
+kidsreport(kidreportid:int [PK], GeneratedName:Kid #FK to(kid), createddate:Calendar, discipline:int, prayer:int, goshthi:int, abhivyakti:int, volunteaching:int, games:int, interestarea:String, artcraft:int, sports:int, science:int, //@notnull//@column(nullable:String, maths:int, gujarati:int, english:int);
+
+area(areaid:int [PK], areaname:String, GeneratedName:Village #FK to(village));
+
+state(stateid:int [PK], statename:String, GeneratedName:Country #FK to(country));
+
+kid(kidid:Long [PK], name:String, gender:int, dob:Calendar, standard:int, level:int, totalsessions:int, photo:String, school:String, creationdate:Calendar, group:KidsGroup #FK to(kidsgroup), GeneratedName:Village #FK to(village), GeneratedName:Area #FK to(area));
+
+timelinepost(postid:Long [PK], postphoto:String, postdescription:String, creationdate:Calendar, createdby:User #FK to(user));
+
+village(villageid:int [PK], villagename:String, GeneratedName:Taluka #FK to(taluka));
+
+attendance(attendanceid:Long [PK], GeneratedName:Session #FK to(session), GeneratedName:KidsGroup #FK to(kidsgroup));
+
+attendance_list<kid>(attendanceID:attendance [PK] #FK to attendance,list<kid>ID:list<kid> [PK] #FK to list<kid>);
+
+notification(notificationid:Long [PK], notificationtype:String, createdby:User #FK to(user), usertype:String, GeneratedName:Session #FK to(session), GeneratedName:Event #FK to(event), createddate:Calendar);
+
+donor(donorid:int [PK], donorname:String, donorphone:String, donoremail:String, GeneratedName:UserType #FK to(usertype));
+
+eventkidactivity(serialversionuid:long, GeneratedName:Kid [PK] #FK to(kid), GeneratedName:Event [PK] #FK to(event), GeneratedName:Activity #FK to(activity));
+
+activity(activityid:int [PK], activityname:String, description:String);
+
+country(countryid:int [PK], countryname:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

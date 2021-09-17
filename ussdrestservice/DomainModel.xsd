@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="sessionstepsmodel" >
+      <xs:sequence>
+        <xs:element name="stepnumber" type="xs:anyType" />
+        <xs:element name="question" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionmodel" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="currentstep" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversionmodel" >
+      <xs:sequence>
+        <xs:element name="to" type="xs:string" />
+        <xs:element name="from" type="xs:string" />
+        <xs:element name="conversionrate" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="countrymodel" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="countrycode" type="xs:string" />
+        <xs:element name="countryname" type="xs:string" />
+        <xs:element name="foreigncurrencycode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionanswersmodel" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="msisdn" type="xs:string" />
+        <xs:element name="stepnumber" type="xs:long" />
+        <xs:element name="value" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

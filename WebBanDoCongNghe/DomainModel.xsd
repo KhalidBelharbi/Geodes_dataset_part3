@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="subname" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="image" type="xs:string" />
+        <xs:element name="listedprice" type="xs:double" />
+        <xs:element name="discount" type="xs:double" />
+        <xs:element name="boxincluded" type="xs:string" />
+        <xs:element name="guarantee" type="xs:string" />
+        <xs:element name="productstatus" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="comments" type="comment" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="images" type="xs:anyType" />
+        <xs:element name="attributes" type="attribute" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="specialfeatures" type="specialfeatures" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="productvariations" type="productvariation" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="smartphone" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="laptop" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="subcategory" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="category" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="specialfeatures" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="category" nillable="true" minOccurs="0" />
+        <xs:element name="products" type="product" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="laptop" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="screensize" type="xs:double" />
+        <xs:element name="screenresolution" type="xs:string" />
+        <xs:element name="resolution" type="xs:string" />
+        <xs:element name="cpu" type="xs:string" />
+        <xs:element name="cputype" type="xs:string" />
+        <xs:element name="ram" type="xs:long" />
+        <xs:element name="ramdescription" type="xs:string" />
+        <xs:element name="harddrive" type="xs:string" />
+        <xs:element name="harddrivedescription" type="xs:string" />
+        <xs:element name="graphics" type="xs:string" />
+        <xs:element name="graphicsdescription" type="xs:string" />
+        <xs:element name="operatingsystem" type="xs:string" />
+        <xs:element name="pin" type="xs:string" />
+        <xs:element name="weight" type="xs:string" />
+        <xs:element name="sizedescription" type="xs:string" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="subcategory" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="GeneratedName" type="category" nillable="true" minOccurs="0" />
+        <xs:element name="products" type="product" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="gender" type="xs:anyType" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="verificationcode" type="xs:string" />
+        <xs:element name="status" type="xs:anyType" />
+        <xs:element name="roles" type="role" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quanhuyen" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="maquanhuyen" type="xs:string" />
+        <xs:element name="ten" type="xs:string" />
+        <xs:element name="loai" type="xs:string" />
+        <xs:element name="mathanhpho" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="category" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="subcategories" type="subcategory" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="products" type="product" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="specialfeatures" type="specialfeatures" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordersdetail" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="productvariation" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orders" nillable="true" minOccurs="0" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="discount" type="xs:double" />
+        <xs:element name="quantity" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productvariation" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="color" nillable="true" minOccurs="0" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="image" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tinhthanhpho" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="mathanhpho" type="xs:string" />
+        <xs:element name="ten" type="xs:string" />
+        <xs:element name="loai" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="phuongxa" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="maphuongxa" type="xs:string" />
+        <xs:element name="ten" type="xs:string" />
+        <xs:element name="loai" type="xs:string" />
+        <xs:element name="maquanhuyen" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="attribute" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="products" type="product" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="slider" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="image" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="color" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smartphone" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="screensize" type="xs:double" />
+        <xs:element name="screenresolution" type="xs:string" />
+        <xs:element name="screentechnology" type="xs:string" />
+        <xs:element name="operatingsystem" type="xs:string" />
+        <xs:element name="chipset" type="xs:string" />
+        <xs:element name="ramcapacity" type="xs:long" />
+        <xs:element name="ernalmemory" type="xs:long" />
+        <xs:element name="frontcamera" type="xs:string" />
+        <xs:element name="rearcamera" type="xs:string" />
+        <xs:element name="pin" type="xs:string" />
+        <xs:element name="cpu" type="xs:string" />
+        <xs:element name="gpu" type="xs:string" />
+        <xs:element name="sizedescription" type="xs:string" />
+        <xs:element name="weight" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orders" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="customername" type="xs:string" />
+        <xs:element name="customerphone" type="xs:string" />
+        <xs:element name="customeraddress" type="xs:string" />
+        <xs:element name="customeremail" type="xs:string" />
+        <xs:element name="orderdate" type="xs:anyType" />
+        <xs:element name="note" type="xs:string" />
+        <xs:element name="status" type="ordersstatus" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="comment" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="rate" type="xs:long" />
+        <xs:element name="time" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="users" type="user" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

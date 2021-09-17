@@ -1,0 +1,8 @@
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Class>> UserEvent =>=>=> RelationalSchema.Table>> userevent;
+ClassDiagram.Attribut>> User.//willbesetwhenpersistingid:Long =>=>=> RelationalSchema.Column>> user.//willbesetwhenpersistingid PRIMARY KEY;
+ClassDiagram.Attribut>> User.nickname:String =>=>=> RelationalSchema.Column>> user.nickname;
+ClassDiagram.Attribut>> User.//whicheverotheruser-specificattributescontactinformation:ContactInformationSupport =>=>=> RelationalSchema.Column>> user.//whicheverotheruser-specificattributescontactinformation;
+ClassDiagram.Attribut>> UserEvent.//thisclassisjustforsamplepurposes.id:Long =>=>=> RelationalSchema.Column>> userevent.//thisclassisjustforsamplepurposes.id PRIMARY KEY;
+One-To-Many relationship from ClassDiagram.Class>>User  to ClassDiagram.Class>>List<UserEvent>;
+Many-To-One relationship from ClassDiagram.Class>>UserEvent  to ClassDiagram.Class>>User represented by ClassDiagram.Atrribute>>GeneratedName;

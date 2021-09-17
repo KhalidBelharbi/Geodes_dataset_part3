@@ -1,0 +1,3322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="timeformattag" >
+      <xs:complexContent>
+       <xs:extension base="tagsupport">
+         <xs:sequence>
+          <xs:element name="/***gerforthisclass*/ger" type="xs:anyType" />
+          <xs:element name="/***源日期对象*/source" type="xs:anyType" />
+          <xs:element name="/***源格式字符串*/sfmt" type="xs:string" />
+          <xs:element name="/***输出格式字符串*/tfmt" type="xs:string" />
+          <xs:element name="/***源为null时输出的对象*/nullval" type="xs:anyType" />
+          <xs:element name="/***友好格式化结果*/friendly" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="btnviewtag" >
+      <xs:complexContent>
+       <xs:extension base="tagsupport">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="/***css样式*/style" type="xs:string" />
+          <xs:element name="/***id属性,不自定义留空*/styleid" type="xs:string" />
+          <xs:element name="/***name属性,不自定义留空*/name" type="xs:string" />
+          <xs:element name="/***class属性,不自定义留空*/styleclass" type="xs:string" />
+          <xs:element name="/***按钮的类型:submit提交按钮,reset重置按钮,button普通按钮,link链接*/type" type="xs:string" />
+          <xs:element name="/***按钮显示的文字*/value" type="xs:string" />
+          <xs:element name="/***如果type为link,则此处定义链接地址*/href" type="xs:string" />
+          <xs:element name="/***如果type为link,则此处定义链接的target*/target" type="xs:string" />
+          <xs:element name="/***如果type为button,则此处定义执行的javascript函数*/onclick" type="xs:string" />
+          <xs:element name="/***提交默认文字*/submit_text" type="xs:string" />
+          <xs:element name="/***重置默认文字*/reset_text" type="xs:string" />
+          <xs:element name="/***查询默认文字*/search_text" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="utilsfunction" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcareadao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<dcarea,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcoplogdao" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<dcoplog,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="monitorinfodao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<monitorinfo,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcpaytypedao" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<dcpaytypeentity,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcmenudao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<dcmenu,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcrolemenudao" >
+      <xs:complexContent>
+       <xs:extension base="		pagingandsortingrepository<dcrolemenu,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcloginlogdao" >
+      <xs:complexContent>
+       <xs:extension base="		pagingandsortingrepository<dcloginlog,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcroledao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<dcrole,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcuserdao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<dcuser,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcuserroledao" >
+      <xs:complexContent>
+       <xs:extension base="		pagingandsortingrepository<dcuserrole,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cookieslogininterceptor" >
+      <xs:complexContent>
+       <xs:extension base="abstractexcludepathinterceptor">
+         <xs:sequence>
+          <xs:element name="" type="dcuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="appconfig" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractexcludepathinterceptor" >
+      <xs:complexContent>
+       <xs:extension base="handlerinterceptoradapter">
+         <xs:sequence>
+          <xs:element name="" type="appconfig" nillable="true" minOccurs="0" />
+          <xs:element name="/***不做权限验证的地址列表。可以使前缀路径或是具体的url*/ignorepaths" type="xs:anyType" />
+          <xs:element name="/***信任的客户端访问地址*/trustremoteaddrs" type="xs:anyType" />
+          <xs:element name="/***接口地址*/interfacepaths" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="authenticationinterceptor" >
+      <xs:complexContent>
+       <xs:extension base="abstractexcludepathinterceptor">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="basecontroller" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserpostvalidator" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maincontroller" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="menuservice" type="dcmenuservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="commoncacheservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="logutils" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderpaystatuscontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="orderpaystatusservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crmcontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="crmservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="orderservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flowcontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="flowservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="backupcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="backupservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validateimagecontroller" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="/***随机字符范围*/range" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermgmtcontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcareaservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserpostvalidator" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcroledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserroledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcuserpostvalidator" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mainshowcontroller" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfacecontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="interfaceservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosuptimecontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="msosuptimeservice" nillable="true" minOccurs="0" />
+        <xs:element name="service2" type="msosmpstatservice" nillable="true" minOccurs="0" />
+        <xs:element name="service3" type="msosdiskspaceservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verifycontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="verifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymoneycontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="paymoneyservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolemgmtcontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcroleservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginlogcontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="loginlogservice" type="dcloginlogservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pvcontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="pvservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oplogcontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="oplogservice" type="dcoplogservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="certcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="certservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="codeserviceclient" type="verifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="ger" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitorinfocontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="monitorinfoservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="monitorinfodao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcroledao" nillable="true" minOccurs="0" />
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="mailsender" nillable="true" minOccurs="0" />
+        <xs:element name="usercache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderratecontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="orderrateservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exceldata" >
+      <xs:sequence>
+        <xs:element name="simple_view_name" type="xs:string" />
+        <xs:element name="/***输出的文件名*/filename" type="xs:string" />
+        <xs:element name="/***sheet对象*/sheets" type="excelsheet" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="simpleexcelview" >
+      <xs:complexContent>
+       <xs:extension base="abstractexcelview">
+         <xs:sequence>
+          <xs:element name="key_data" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="excelsheet" >
+      <xs:sequence>
+        <xs:element name="/***sheet名*/name" type="xs:string" />
+        <xs:element name="titles" type="xs:string" />
+        <xs:element name="/***内容数据*/contents" type="xs:anyType" />
+        <xs:element name="widths" type="xs:long" />
+        <xs:element name="s" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcoplogservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pvservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="pvmenu" type="map" nillable="true" minOccurs="0" />
+        <xs:element name="channel_id" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfaceservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderrateservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosdiskspaceservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcroleservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dcroledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcrolemenudao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcmenuservice" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="////privateuserroleprivilegedaouserroleprivilegedao" type="commoncacheservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcroleservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcuserservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="menuservice" type="dcmenuservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserroledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="aeswithcbcservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcroleservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderpaystatusservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="certservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="codeserviceclient" type="verifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="ger" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosuptimeservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="channel_id" type="xs:string" />
+        <xs:element name="services" type="xs:anyType" />
+        <xs:element name="msoslistmenu" type="map" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="commoncacheservice" >
+      <xs:sequence>
+        <xs:element name="menudao" type="dcmenudao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcareaservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitorinfoservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="monitorinfodao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymoneyservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosmpstatservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="backupservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verifyservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flowservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcloginlogservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crmservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间�?time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonrespwrapper" >
+      <xs:complexContent>
+       <xs:extension base="hashmap<string,">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ipaddress" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pathutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="areaauthority" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pager" >
+      <xs:sequence>
+        <xs:element name="//这个值在列表的时候作为iterator标签的fromrow属性值调用，例如request.setattribute("offset",fromrow)//查询起始记录fromrow" type="xs:long" />
+        <xs:element name="//查询结束记录torow" type="xs:long" />
+        <xs:element name="//总记录数totalrow" type="xs:long" />
+        <xs:element name="//当前页面数currentpage" type="xs:long" />
+        <xs:element name="//总页面数totalpage" type="xs:long" />
+        <xs:element name="//这个值在列表的时候作为iterator标签的length属性值调用，例如request.setattribute("length",rowsperpage)//每页显示记录数rowsperpage" type="xs:long" />
+        <xs:element name="flag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="functionsutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fusionchart" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="chart" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="categories" nillable="true" minOccurs="0" />
+        <xs:element name="dataset" type="dataset" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pie3chart" >
+      <xs:sequence>
+        <xs:element name="/***百分比显示状态：显示*/show_percent_show" type="xs:string" />
+        <xs:element name="/***百分比显示状态：隐藏*/show_percent_hide" type="xs:string" />
+        <xs:element name="caption" type="xs:string" />
+        <xs:element name="showpercentvalues" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pie3data" >
+      <xs:sequence>
+        <xs:element name="label" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pie3fusion" >
+      <xs:sequence>
+        <xs:element name="chart" type="pie3chart" nillable="true" minOccurs="0" />
+        <xs:element name="data" type="pie3data" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsoncreater" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categories" >
+      <xs:sequence>
+        <xs:element name="category" type="category" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dataset" >
+      <xs:sequence>
+        <xs:element name="seriesname" type="xs:string" />
+        <xs:element name="data" type="data" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fusionchartscreator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chartsxmlutils" >
+      <xs:sequence>
+        <xs:element name="default_xml_top" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="data" >
+      <xs:sequence>
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="category" >
+      <xs:sequence>
+        <xs:element name="label" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="piepart" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chart" >
+      <xs:sequence>
+        <xs:element name="caption" type="xs:string" />
+        <xs:element name="formatnumberscale" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scriptcreater" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chartdatautil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logutils" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dcoplogdao" nillable="true" minOccurs="0" />
+        <xs:element name="loginlogdao" type="dcloginlogdao" nillable="true" minOccurs="0" />
+        <xs:element name="/***查看*/op_type_query" type="xs:long" />
+        <xs:element name="/***增加*/op_type_insert" type="xs:long" />
+        <xs:element name="/***修改*/op_type_update" type="xs:long" />
+        <xs:element name="/***删除*/op_type_delete" type="xs:long" />
+        <xs:element name="/***审核*/op_type_verify" type="xs:long" />
+        <xs:element name="/***其他*/op_type_other" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dateutil" >
+      <xs:sequence>
+        <xs:element name="a_day" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="urlencoder" >
+      <xs:sequence>
+        <xs:element name="hexadecimal" type="xs:anyType" />
+        <xs:element name="//arraycontainingthesafecharactersset.safecharacters" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="urlpathencoder" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="urlencoder" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datetag" >
+      <xs:complexContent>
+       <xs:extension base="tagsupport">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exportexcelutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exportexcelutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dailyutils" >
+      <xs:sequence>
+        <xs:element name="operate_dzhy" type="xs:string" />
+        <xs:element name="operate_zcyh" type="xs:string" />
+        <xs:element name="operate_jyqk" type="xs:string" />
+        <xs:element name="operate_hyyhsh" type="xs:string" />
+        <xs:element name="operate_zdyz" type="xs:string" />
+        <xs:element name="operate_khd" type="xs:string" />
+        <xs:element name="operate_dsyw_day" type="xs:string" />
+        <xs:element name="operate_dsyw_week" type="xs:string" />
+        <xs:element name="operate_lt" type="xs:string" />
+        <xs:element name="operate_shspsl" type="xs:string" />
+        <xs:element name="operate_dxqf" type="xs:string" />
+        <xs:element name="operate_dxg" type="xs:string" />
+        <xs:element name="operate_pvuv" type="xs:string" />
+        <xs:element name="rb_dzhy_title" type="xs:string" />
+        <xs:element name="rb_zcyh_title" type="xs:string" />
+        <xs:element name="rb_jyqk_title" type="xs:string" />
+        <xs:element name="rb_hyyhsh_title" type="xs:string" />
+        <xs:element name="rb_zdyz_title" type="xs:string" />
+        <xs:element name="rb_khd_title" type="xs:string" />
+        <xs:element name="rb_day_title" type="xs:string" />
+        <xs:element name="rb_week_title" type="xs:string" />
+        <xs:element name="rb_lt_title" type="xs:string" />
+        <xs:element name="rb_shspsl_title" type="xs:string" />
+        <xs:element name="rb_dxqf_title" type="xs:string" />
+        <xs:element name="rb_dxg_title" type="xs:string" />
+        <xs:element name="rb_pvuv_title" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tablecreater" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timeutil" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="empty" type="xs:string" />
+        <xs:element name="/***yyyy-mm-ddhh:mm:ss*/target_1" type="xs:string" />
+        <xs:element name="/***yyyy-mm-ddhh:mm*/target_2" type="xs:string" />
+        <xs:element name="/***yyyy-mm-dd*/target_3" type="xs:string" />
+        <xs:element name="/***yyyy年mm月dd日*/target_4" type="xs:string" />
+        <xs:element name="/***yyyymmddhhmmss*/source_1" type="xs:string" />
+        <xs:element name="/***yyyymmdd*/source_2" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="weeksofmonthutils" >
+      <xs:sequence>
+        <xs:element name="mmdd" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appconfig" >
+      <xs:sequence>
+        <xs:element name="/***tokencookie的名称*/cookie_token" type="xs:string" />
+        <xs:element name="/***门店类*/shop_class_shop" type="xs:long" />
+        <xs:element name="/***商户类*/shop_class_store" type="xs:long" />
+        <xs:element name="/***渠道商类*/shop_class_agent" type="xs:long" />
+        <xs:element name="/***帐号类型管理员*/shop_user_admin" type="xs:long" />
+        <xs:element name="/***帐号类型普通用户*/shop_user_ordinary" type="xs:long" />
+        <xs:element name="/***帐号类型操作员*/shop_user_operator" type="xs:long" />
+        <xs:element name="cookieskey" type="xs:string" />
+        <xs:element name="cookiesmaxage" type="xs:long" />
+        <xs:element name="siteurl" type="xs:string" />
+        <xs:element name="sitename" type="xs:string" />
+        <xs:element name="uploadimgdir" type="xs:string" />
+        <xs:element name="uploadimgpath" type="xs:string" />
+        <xs:element name="uploadpicext" type="xs:string" />
+        <xs:element name="uploadapppicmaxsize" type="xs:string" />
+        <xs:element name="xheditorexts" type="xs:string" />
+        <xs:element name="xheditorext" type="xs:string" />
+        <xs:element name="xheditorimageexts" type="xs:string" />
+        <xs:element name="xheditorimageext" type="xs:string" />
+        <xs:element name="xheditormaxsize" type="xs:long" />
+        <xs:element name="xheditoruploaddir" type="xs:string" />
+        <xs:element name="xheditoruploadpath" type="xs:string" />
+        <xs:element name="xheditordomain" type="xs:string" />
+        <xs:element name="/***页面静态化调用接口url*/pageurl" type="xs:string" />
+        <xs:element name="ordergoodsimgserver" type="xs:string" />
+        <xs:element name="ordergoodshostserver" type="xs:string" />
+        <xs:element name="/***查询数据库用户*/dbqueryuser" type="xs:string" />
+        <xs:element name="webshownum" type="xs:long" />
+        <xs:element name="webmainshow" type="xs:string" />
+        <xs:element name="monitorrole" type="xs:string" />
+        <xs:element name="/***邮件服务器相关*/mailhost" type="xs:string" />
+        <xs:element name="mailuser" type="xs:string" />
+        <xs:element name="mailpwd" type="xs:string" />
+        <xs:element name="mailojb" type="xs:string" />
+        <xs:element name="mailcc" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hintutil" >
+      <xs:sequence>
+        <xs:element name="/***经分报表*/jfywsrqx" type="xs:string" />
+        <xs:element name="jfywsrqxsyhbzz" type="xs:string" />
+        <xs:element name="jfywsrqxbnljwcqk" type="xs:string" />
+        <xs:element name="jfywsrhx" type="xs:string" />
+        <xs:element name="jfywsrhxsyhbzz" type="xs:string" />
+        <xs:element name="jfywsrhxbnljwcqk" type="xs:string" />
+        <xs:element name="jfdzhymfbdyxz" type="xs:string" />
+        <xs:element name="jfdzhymfbdyjz" type="xs:string" />
+        <xs:element name="jfdzhymfbdydds" type="xs:string" />
+        <xs:element name="jfjyyhxs" type="xs:string" />
+        <xs:element name="jfjyyhxx" type="xs:string" />
+        <xs:element name="jfjyyhhj" type="xs:string" />
+        <xs:element name="jfkhdazs" type="xs:string" />
+        <xs:element name="jfkhdhyyhs" type="xs:string" />
+        <xs:element name="jfdsjysyhbzz" type="xs:string" />
+        <xs:element name="jfdsjybnljwcqk" type="xs:string" />
+        <xs:element name="jfhyyhdy" type="xs:string" />
+        <xs:element name="jfhyyhyj" type="xs:string" />
+        <xs:element name="/***经分*/internetllyjqddlfwcs" type="xs:string" />
+        <xs:element name="internetllyjqddlfwyh" type="xs:string" />
+        <xs:element name="internetllyjqdhyyzcs" type="xs:string" />
+        <xs:element name="internetllyjqdddbs" type="xs:string" />
+        <xs:element name="internetllyjqdcgzfs" type="xs:string" />
+        <xs:element name="internetllyjqdxffhbs" type="xs:string" />
+        <xs:element name="internetllyjqdjye" type="xs:string" />
+        <xs:element name="internetllyjqdzflxscb" type="xs:string" />
+        <xs:element name="internetllyjqdzflxjf" type="xs:string" />
+        <xs:element name="internetllyjqdzflxxj" type="xs:string" />
+        <xs:element name="internetggyxzbhdcyyh" type="xs:string" />
+        <xs:element name="internetggyxzbhycyyh" type="xs:string" />
+        <xs:element name="internetggyxzbzcxzyh" type="xs:string" />
+        <xs:element name="internetkhjzzbyhs" type="xs:string" />
+        <xs:element name="internetkhjzzbdkhkdj" type="xs:string" />
+        <xs:element name="internetkhjzzb1xfyhs" type="xs:string" />
+        <xs:element name="internetkhjzzb3xfyhs" type="xs:string" />
+        <xs:element name="internetkhjzzb6xfyhs" type="xs:string" />
+        <xs:element name="internetkhjzzbjye" type="xs:string" />
+        <xs:element name="internetnbjyzbpv" type="xs:string" />
+        <xs:element name="internetnbjyzbuv" type="xs:string" />
+        <xs:element name="internetnbjyzbddzhl" type="xs:string" />
+        <xs:element name="internetnbjyzbzfzhl" type="xs:string" />
+        <xs:element name="internetnbjyzbddsl" type="xs:string" />
+        <xs:element name="internetnbjyzbjye" type="xs:string" />
+        <xs:element name="internetnbjyzbjyyhs" type="xs:string" />
+        <xs:element name="internetnbjyzbpjtcl" type="xs:string" />
+        <xs:element name="internetnbjyzbrjllyms" type="xs:string" />
+        <xs:element name="internetnbjyzbrjllysc" type="xs:string" />
+        <xs:element name="/***日报部分*/rbdzhyxzsmhy" type="xs:string" />
+        <xs:element name="rbdzhytdsmhy" type="xs:string" />
+        <xs:element name="rbdzhyjzsmhy" type="xs:string" />
+        <xs:element name="rbdzhymfb" type="xs:string" />
+        <xs:element name="rbdzhy3yb" type="xs:string" />
+        <xs:element name="rbdzhy5yb" type="xs:string" />
+        <xs:element name="rbdzhy10yb" type="xs:string" />
+        <xs:element name="rbdzhybn" type="xs:string" />
+        <xs:element name="rbdzhylj" type="xs:string" />
+        <xs:element name="rbdzhyxzhzhy" type="xs:string" />
+        <xs:element name="rbzcyhxzzcyh" type="xs:string" />
+        <xs:element name="rbzcyhljzcyh" type="xs:string" />
+        <xs:element name="rbjyqkbrjyze" type="xs:string" />
+        <xs:element name="rbjyqkxnlspjye" type="xs:string" />
+        <xs:element name="rbjyqkwebjye" type="xs:string" />
+        <xs:element name="rbjyqkwapjye" type="xs:string" />
+        <xs:element name="rbjyqkkhdjye" type="xs:string" />
+        <xs:element name="rbjyqkdxgjye" type="xs:string" />
+        <xs:element name="rbjyqkxxxfjye" type="xs:string" />
+        <xs:element name="rbjyqkscb" type="xs:string" />
+        <xs:element name="rbjyqkxj" type="xs:string" />
+        <xs:element name="rbjyqkjf" type="xs:string" />
+        <xs:element name="rbjyqkdjq" type="xs:string" />
+        <xs:element name="rbjyqkhb" type="xs:string" />
+        <xs:element name="rbjyqkjyyhs" type="xs:string" />
+        <xs:element name="rbjyqkscbzjl" type="xs:string" />
+        <xs:element name="rbjyqkdds" type="xs:string" />
+        <xs:element name="rbjyqkddzhl" type="xs:string" />
+        <xs:element name="rbjyqkkdj" type="xs:string" />
+        <xs:element name="rbjyqksckjyezb" type="xs:string" />
+        <xs:element name="rbhyyhshyh" type="xs:string" />
+        <xs:element name="rbhyyhshsh" type="xs:string" />
+        <xs:element name="rbkhdxzyh" type="xs:string" />
+        <xs:element name="rbkhdddzhl" type="xs:string" />
+        <xs:element name="rbkhdddcgl" type="xs:string" />
+        <xs:element name="rbdsywdayyhqdxsl" type="xs:string" />
+        <xs:element name="rbdsywdayyhqcxsl" type="xs:string" />
+        <xs:element name="rbdsywdayyhqdxxzl" type="xs:string" />
+        <xs:element name="rbdsywdayyhqcxxzl" type="xs:string" />
+        <xs:element name="rbdsywdaycpdds" type="xs:string" />
+        <xs:element name="rbdsywdaycpcyrs" type="xs:string" />
+        <xs:element name="rbdsywdaycpscsl" type="xs:string" />
+        <xs:element name="rbdsywdaycpxsze" type="xs:string" />
+        <xs:element name="rbdsywweekzdxstjdds" type="xs:string" />
+        <xs:element name="rbdsywweekzdxstjcyrs" type="xs:string" />
+        <xs:element name="rbdsywweekzdxstjscsl" type="xs:string" />
+        <xs:element name="rbdsywweekzdxstjxsze" type="xs:string" />
+        <xs:element name="rbltbzfts" type="xs:string" />
+        <xs:element name="rblthyyhs" type="xs:string" />
+        <xs:element name="rbshspslswspsh" type="xs:string" />
+        <xs:element name="rbdxqfbzdxfsts" type="xs:string" />
+        <xs:element name="rbdxqfbzcxfsts" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hintutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="aeswithcbcservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="iv" type="xs:anyType" />
+        <xs:element name="key_algorithm" type="xs:string" />
+        <xs:element name="default_cipher_algorithm" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="ivspec" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pagestaticinterface" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tagutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sqlhelper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailsender" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="areaselecttag" >
+      <xs:complexContent>
+       <xs:extension base="tagsupport">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="value" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="stringutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datautil" >
+      <xs:sequence>
+        <xs:element name="string" type="xs:anyType" />
+        <xs:element name="integer" type="xs:anyType" />
+        <xs:element name="decimal_2" type="xs:anyType" />
+        <xs:element name="decimal_4" type="xs:anyType" />
+        <xs:element name="percent_2" type="xs:anyType" />
+        <xs:element name="percent_4" type="xs:anyType" />
+        <xs:element name="date" type="xs:anyType" />
+        <xs:element name="df" type="xs:anyType" />
+        <xs:element name="df2" type="xs:anyType" />
+        <xs:element name="df4" type="xs:anyType" />
+        <xs:element name="df12" type="xs:anyType" />
+        <xs:element name="df14" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chartdateutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderrateinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***转换率*/rate" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verifyinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pvinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="urlname" type="xs:string" />
+        <xs:element name="weburl" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***转换率*/num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menuprivilege" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//菜单代码menucode" type="xs:string" />
+        <xs:element name="//该模块下的按钮权限buttons" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymoneyinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="money" type="xs:double" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosdiskspaceinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="ms_mount_on" type="xs:string" />
+        <xs:element name="ms_use" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfaceinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="intername" type="xs:string" />
+        <xs:element name="interurl" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="collecttime" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="backupinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="platname" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/backuptime" type="xs:string" />
+        <xs:element name="filesize" type="xs:string" />
+        <xs:element name="checktime" type="xs:string" />
+        <xs:element name="backfile" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crminfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***数量*/num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionuser" >
+      <xs:sequence>
+        <xs:element name="session_user_key" type="xs:string" />
+        <xs:element name="/***图片验证码sessionkey*/session_image_code_key" type="xs:string" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="terminalid" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="type" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="areas" type="dcarea" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="listarea" type="xs:string" />
+        <xs:element name="privilege" type="xs:anyType" />
+        <xs:element name="menus" type="stacksysmenu" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="roleid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosuptimeinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="load1" type="xs:double" />
+        <xs:element name="load5" type="xs:double" />
+        <xs:element name="load15" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosmpstatinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="cpu_user" type="xs:double" />
+        <xs:element name="cpu_sys" type="xs:double" />
+        <xs:element name="iowait" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flowinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="spcode" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***数量*/num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderpaystatusinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***类型*/paytype" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***转换率*/num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stacksysmenu" >
+      <xs:complexContent>
+       <xs:extension base="dcmenu">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="childmenus" type="stacksysmenu" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***数量*/flownum" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcrole" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="status_using" type="xs:long" />
+        <xs:element name="status_block" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="rolename" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="/***角色拥有的菜单权限*/menus" type="xs:anyType" />
+        <xs:element name="/***记录该角色是否存在*/flag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcmenu" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="menucode" type="xs:string" />
+        <xs:element name="menuname" type="xs:string" />
+        <xs:element name="parentcode" type="xs:string" />
+        <xs:element name="menuurl" type="xs:string" />
+        <xs:element name="leafyn" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcpaytypeentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcjfbbywsr" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="sdate" type="xs:string" />
+        <xs:element name="areacode" type="xs:string" />
+        <xs:element name="areaname" type="xs:string" />
+        <xs:element name="cnt1" type="xs:string" />
+        <xs:element name="cnt2" type="xs:string" />
+        <xs:element name="cnt3" type="xs:string" />
+        <xs:element name="cnt4" type="xs:string" />
+        <xs:element name="cnt5" type="xs:string" />
+        <xs:element name="cnt6" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tradedict" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="pid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="sortlevel" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcuser" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="/***用户状态－正常*/status_valid" type="xs:long" />
+        <xs:element name="/***用户状态－暂停*/status_pause" type="xs:long" />
+        <xs:element name="/***用户状态－删除*/status_del" type="xs:long" />
+        <xs:element name="/***用户类型－超级管理员*/type_admin" type="xs:long" />
+        <xs:element name="/***用户类型-单位管理员*/type_company_admin" type="xs:long" />
+        <xs:element name="/***用户类型－普通用户*/type_company_user" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="pwd" type="xs:string" />
+        <xs:element name="terminalid" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="area" type="xs:string" />
+        <xs:element name="/***修改密码*/oldpass" type="xs:string" />
+        <xs:element name="confirmpass" type="xs:string" />
+        <xs:element name="newpass" type="xs:string" />
+        <xs:element name="/***角色*/roleid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcrolemenu" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="roleid" type="xs:long" />
+        <xs:element name="menucode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcarea" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="areacode" type="xs:string" />
+        <xs:element name="areaname" type="xs:string" />
+        <xs:element name="provinceid" type="xs:long" />
+        <xs:element name="provincename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcloginlog" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="ip" type="xs:string" />
+        <xs:element name="logintime" type="xs:string" />
+        <xs:element name="usercode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcuserrole" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="roleid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitorinfo" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//seq序列号seqid" type="xs:long" />
+        <xs:element name="//平台名称1:方正，2:高阳3:宽连platname" type="xs:string" />
+        <xs:element name="platmap" type="xs:anyType" />
+        <xs:element name="//告警级别1，2，3，4，5monitorlevel" type="xs:string" />
+        <xs:element name="//告警类型，1:数据库，2:系统monitortype" type="xs:long" />
+        <xs:element name="//告警内容monitor_content" type="xs:string" />
+        <xs:element name="//告警是否展示1:是2:否show" type="xs:string" />
+        <xs:element name="//告警是否工单1:是2:否work_order" type="xs:string" />
+        <xs:element name="//告警是否短信1:是2:否send_sms" type="xs:string" />
+        <xs:element name="//指定处理人appoint_deal_name" type="xs:string" />
+        <xs:element name="//告警时间monitor_time" type="xs:string" />
+        <xs:element name="//入库时间collect_time" type="xs:string" />
+        <xs:element name="//告警提交人员monitor_create_name" type="xs:long" />
+        <xs:element name="//是否已经处理1:未处理2:已处理status" type="xs:string" />
+        <xs:element name="//告警内容处理deal_content" type="xs:string" />
+        <xs:element name="//告警处理时间deal_time" type="xs:string" />
+        <xs:element name="//告警处理人员deal_name" type="xs:long" />
+        <xs:element name="//展示的平台plat" type="xs:long" />
+        <xs:element name="//辅助文本，不入库txt" type="xs:string" />
+        <xs:element name="//辅助名称，不入库temp_name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcoplog" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="optime" type="xs:string" />
+        <xs:element name="optype" type="xs:long" />
+        <xs:element name="module" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="opobject" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="httpinvoker" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="client" type="xs:anyType" />
+        <xs:element name="serverurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifileoperator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="downhdfsutils" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet{">
+         <xs:sequence>
+          <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+          <xs:element name="content_type" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clientmanager" >
+      <xs:sequence>
+        <xs:element name="manager" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hdfsfileoperator" >
+      <xs:sequence>
+        <xs:element name="conf" type="xs:anyType" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wdatepicker" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wdatepicker" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="map" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.mousewheel.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tools.scrollable-1.0.5.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="zdrag" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tree" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="preloaders.net - ajax loading gif and apng spinners, bars and 3d animations generator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.spinner" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.combobox" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.core" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.accordion" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.autocomplete" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.genyx" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.progressbar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.menu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.button" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.tabs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.datepicker" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="data" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="test" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fusionchartsexportcomponent" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="zdrag" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="map" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rangeslider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rangeslider-ruler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="migrate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.flot.time.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.flot.orderbars" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ztree.excheck-3.5" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ztree.exhide-3.5.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ztree.excheck-3.5.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ztree.exedit-3.5.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ztree.exhide-3.5" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.ui.touch-punch.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jrespond.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="load-image.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmap3" >
+      <xs:complexContent>
+       <xs:extension base="current">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="gmap3.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_ro" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_sk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_cs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_zh-cn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_de" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_nl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_eu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_ja" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_da" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_es" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_hr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_pt-br" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_pl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_ru" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_it" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_he" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_tr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_ua" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_pt-pt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_hu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="select2_locale_sv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.mask.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ba" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sma-no" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.or-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.th" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-029" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-iq" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.it-ch" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-hant" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ka" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.se-fi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-sa" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.moh-ca" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.et-ee" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-bh" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-jo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-gt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ro" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-nz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.af-za" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tzm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ro-ro" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.se-no" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.lv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.no" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.lt-lt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.pa" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fr-ca" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-ar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ps-af" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.da-dk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.si" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fr-mc" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-chs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.et" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hy-am" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zu-za" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-py" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mr-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ms" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.cs-cz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-dz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.iu-cans-ca" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.pt-br" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.lt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.lb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.cs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.am-et" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.quz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.smn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.eu-es" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.uz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.de-lu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.de" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.pt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ta-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.gl-es" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.de-de" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.quz-bo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.rm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nl-nl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-bo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hr-hr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.gl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.oc-fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fr-be" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tzm-latn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fi-fi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.it-it" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.eu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fy" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.qut-gt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ne-np" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.dv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-cyrl-rs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.arn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.km-kh" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-us" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.lo-la" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-cl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hy" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ca-es" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mn-mn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.prs-af" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bo-cn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ja" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bs-latn-ba" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nn-no" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-hk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-ly" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-hans" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.uz-latn-uz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.da" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.syr-sy" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nb-no" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.lb-lu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.smj" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.gd-gb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ca" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tr-tr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ii" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ps" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-latn-rs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mi-nz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ja-jp" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.lv-lv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.br" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-ae" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sk-sk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-co" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ba-ru" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.az-cyrl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fa-ir" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-do" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.vi-vn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.pt-pt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nl-be" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.uz-cyrl-uz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.smj-se" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.gu-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.smn-fi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bs-cyrl-ba" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.moh" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.gsw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-cht" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.be" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ka-ge" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sq-al" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bg-bg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-sv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-mx" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.uk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fr-lu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.iu-cans" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sv-se" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-ca" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.pa-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.am" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.is-is" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-pa" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.or" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.el" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sa-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.te" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.se-se" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.kok" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hu-hu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.iu-latn-ca" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.yo-ng" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.se" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.gu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mn-mong" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bs-latn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-om" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.qut" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ha-latn-ng" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.iu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.br-fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.uk-ua" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.kl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-cn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.km" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-ye" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mt-mt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.as" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nso-za" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-latn-cs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sma-se" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.uz-latn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mk-mk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tk-tm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.pl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ko-kr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ru" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sma" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mn-cyrl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.it" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fy-nl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.nso" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tt-ru" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-tw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.he" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-cyrl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-cyrl-ba" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.gsw-fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-latn-me" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-uy" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-sg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.th-th" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.iu-latn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tg-cyrl-tj" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bn-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-mo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hsb-de" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-cr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.vi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.cy-gb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.dsb-de" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-bz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sw-ke" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-ec" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.kl-gl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-ma" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-sy" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.dv-mv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ga-ie" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.quz-ec" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ky" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ko" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-ve" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.lo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.rw-rw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.rw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tn-za" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ig-ng" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.el-gr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-qa" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.xh-za" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-tn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.syr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.xh" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-eg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.az-cyrl-az" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.wo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ms-bn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.kn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-cyrl-cs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.af" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.de-ch" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-gb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mn-mong-cn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-latn-ba" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.te-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-cyrl-me" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sl-si" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.prs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ga" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hr-ba" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sq" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tzm-latn-dz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fo-fo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.yo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ne" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ur" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fr-fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ha-latn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-hn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sms-fi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.wo-sn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-ph" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.is" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hi-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hsb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ug-cn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.pl-pl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-ni" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.zh-sg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ru-ru" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.oc" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.be-by" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.si-lk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-my" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sah" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-lb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.gd" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.hu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.as-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ml" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ur-pk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.id" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.kn-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-za" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.de-at" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-zw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.kk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.tg-cyrl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.uz-cyrl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.smj-no" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fa" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sms" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.arn-cl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.co-fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-ie" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ug" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ky-kg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-es" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fr-ch" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.id-id" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-pr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.mn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ha" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sr-latn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-jm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-tt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.kk-kz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sa" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ar-kw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sah-ru" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ta" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.quz-pe" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.rm-ch" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.kok-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ml-in" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.dsb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.es-pe" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.sv-fi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ms-my" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bn-bd" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.fil-ph" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.de-li" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.bs-cyrl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-us" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.cy" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.co" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.ii-cn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.en-au" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalize.culture.he-il" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_sv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_fa" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_my" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_kk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_pt_br" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_hu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_ko" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_vi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_pt_pt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_ar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_el" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_hr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_he" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_sr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_tr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_pl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_it" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_ru" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_zh_tw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_uk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_es" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_sl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_bg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_da" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_ca" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_ja" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_lt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_cs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_de" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_et" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_sk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_eu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_nl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_zh" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_ka" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_fi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_ro" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_th" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_si" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_lv" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_no" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.es-es" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.nb-nb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.ru-ru" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.pl-pl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.fr-fr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.el-gr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.mo-md" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.zh-tw" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.ko-kr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.zh-cn" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.sv-se" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.bg-bg" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.ar-ar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.sk-sk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.ja-jp" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.tr-tr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.ca-ct" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.ua-ua" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.it-it" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.hr-hr" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.de-de" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.nl-nl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.pt-br" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.cs-cz" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.da-dk" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.es-ar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-wysihtml5.lt-lt" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wysiwyg-color" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="domready" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tables" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="support" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="profile" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dir" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xheditor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="body-path" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="body-nav" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="page" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="index-menu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="index-nav" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="page" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xheditor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imp" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="top" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bottom" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="if" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="importer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="t" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="list" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v1" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maxuploadsizeexceededexception" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="config" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="delegating-filter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="log4j" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="views" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datacenterstart" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tair" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bjtjhb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jiangsu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

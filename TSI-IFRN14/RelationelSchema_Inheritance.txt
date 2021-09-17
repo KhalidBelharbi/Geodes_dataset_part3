@@ -1,0 +1,19 @@
+
+privilege(id:Long [PK], name:String);
+
+role(id:Long [PK], name:String);
+
+roles_privileges(role_id:Role [PK] #FK to Role,privilege_id:collection<privilege> [PK] #FK to collection<privilege>);
+
+user(id:Long [PK], firstname:String, lastname:String, email:String, password:String, enabled:boolean, isusing2fa:boolean, secret:String);
+
+users_roles(user_id:User [PK] #FK to User,role_id:collection<role> [PK] #FK to collection<role>);
+
+verificationtoken(expiration:int, id:Long [PK], token:String, GeneratedName:User #FK to(user), expiry:Date);
+
+passwordresettoken(expiration:int, id:Long [PK], token:String, GeneratedName:User #FK to(user), expiry:Date);
+
+devicemetadata(id:Long [PK], userid:Long, devicedetails:String, location:String, lastloggedin:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

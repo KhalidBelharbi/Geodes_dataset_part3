@@ -1,0 +1,25 @@
+
+invoice(planid:Long, custid:Long, discount:Long, totalamt:Long, netamt:Long, paymethod:String, active:Boolean);
+
+mobileaccessory(price:int, active:int, pricecurr:String, imageid:Long);
+
+mobileplan(roidata:String, roifreecall:String, roifreetext:String, eudata:String, eufreecall:String, eufreetext:String, ukdata:String, ukfreecall:String, ukfreetext:String, intdata:String, intfreecall:String, intfreetext:String, canadaroaming:String, usaroaming:String, reward:String, contract:String, discount:String, price:int, pricecurr:String, active:int);
+
+plan_phone(plan_id:MobilePlan [PK] #FK to MobilePlan,phone_id:list<mobilephone> [PK] #FK to list<mobilephone>);plan_offer(plan_id:MobilePlan [PK] #FK to MobilePlan,offer_id:list<planoffer> [PK] #FK to list<planoffer>);
+
+planoffer(valueperc:int, valuefixed:int, active:int);
+
+customer(id:Long [PK], firstname:String, middlename:String, lastname:String, address1:String, address2:String, address3:String, county:String, country:String, planstart:String, planend:String, homephone:String, mobilephone:String, email:String, email2:String, active:Boolean);
+
+customer_plan(cust_id:Customer [PK] #FK to Customer,plan_id:list<mobileplan> [PK] #FK to list<mobileplan>);
+
+mobilephone(model:String, memory:String, storage:String, color:String, network:String, display:String, maincamera:String, frontcamera:String, os:String, price:int, pricecurr:String, active:int, imageid:Long);
+
+phone_accessory(phone_id:MobilePhone [PK] #FK to MobilePhone,accessory_id:list<mobileaccessory> [PK] #FK to list<mobileaccessory>);
+
+image(image:byte);
+
+appuser(id:Long [PK], login:String, password:String, createonly:String, readonly:String, updateonly:String, active:Boolean);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

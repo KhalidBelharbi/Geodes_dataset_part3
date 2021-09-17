@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="skills" >
+      <xs:sequence>
+        <xs:element name="sno" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="keywords" >
+      <xs:sequence>
+        <xs:element name="keywordid" type="xs:long" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="sno" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="comment" >
+      <xs:sequence>
+        <xs:element name="commentid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="img" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="score" type="xs:long" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pin" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="pinid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="likes" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="likesid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="follow" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="followemail" type="xs:string" />
+        <xs:element name="followid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notification" >
+      <xs:sequence>
+        <xs:element name="notificationid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="other" type="xs:string" />
+        <xs:element name="othernickname" type="xs:string" />
+        <xs:element name="readn" type="xs:long" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="ready" type="xs:long" />
+        <xs:element name="createtime" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="article" >
+      <xs:sequence>
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="imgurl" type="xs:string" />
+        <xs:element name="ispublic" type="xs:long" />
+        <xs:element name="preview" type="xs:string" />
+        <xs:element name="//@column(insertable" type="xs:anyType" />
+        <xs:element name="//@column(updatable" type="xs:anyType" />
+        <xs:element name="hits" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interest" >
+      <xs:sequence>
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="sno" type="xs:long" />
+        <xs:element name="erestid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="no" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="info" type="xs:string" />
+        <xs:element name="img" type="xs:string" />
+        <xs:element name="github" type="xs:string" />
+        <xs:element name="score" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

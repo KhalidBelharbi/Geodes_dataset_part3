@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="timeformattag" >
+      <xs:complexContent>
+       <xs:extension base="tagsupport">
+         <xs:sequence>
+          <xs:element name="/***gerforthisclass*/ger" type="xs:anyType" />
+          <xs:element name="/***源日期对象*/source" type="xs:anyType" />
+          <xs:element name="/***源格式字符串*/sfmt" type="xs:string" />
+          <xs:element name="/***输出格式字符串*/tfmt" type="xs:string" />
+          <xs:element name="/***源为null时输出的对象*/nullval" type="xs:anyType" />
+          <xs:element name="/***友好格式化结果*/friendly" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="btnviewtag" >
+      <xs:complexContent>
+       <xs:extension base="tagsupport">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="/***css样式*/style" type="xs:string" />
+          <xs:element name="/***id属性,不自定义留空*/styleid" type="xs:string" />
+          <xs:element name="/***name属性,不自定义留空*/name" type="xs:string" />
+          <xs:element name="/***class属性,不自定义留空*/styleclass" type="xs:string" />
+          <xs:element name="/***按钮的类型:submit提交按钮,reset重置按钮,button普通按钮,link链接*/type" type="xs:string" />
+          <xs:element name="/***按钮显示的文字*/value" type="xs:string" />
+          <xs:element name="/***如果type为link,则此处定义链接地址*/href" type="xs:string" />
+          <xs:element name="/***如果type为link,则此处定义链接的target*/target" type="xs:string" />
+          <xs:element name="/***如果type为button,则此处定义执行的javascript函数*/onclick" type="xs:string" />
+          <xs:element name="/***提交默认文字*/submit_text" type="xs:string" />
+          <xs:element name="/***重置默认文字*/reset_text" type="xs:string" />
+          <xs:element name="/***查询默认文字*/search_text" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="utilsfunction" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcareadao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<dcarea,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcoplogdao" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<dcoplog,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="monitorinfodao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<monitorinfo,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcpaytypedao" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<dcpaytypeentity,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcmenudao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<dcmenu,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcrolemenudao" >
+      <xs:complexContent>
+       <xs:extension base="		pagingandsortingrepository<dcrolemenu,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcloginlogdao" >
+      <xs:complexContent>
+       <xs:extension base="		pagingandsortingrepository<dcloginlog,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcroledao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<dcrole,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcuserdao" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<dcuser,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dcuserroledao" >
+      <xs:complexContent>
+       <xs:extension base="		pagingandsortingrepository<dcuserrole,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cookieslogininterceptor" >
+      <xs:complexContent>
+       <xs:extension base="abstractexcludepathinterceptor">
+         <xs:sequence>
+          <xs:element name="" type="dcuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="appconfig" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractexcludepathinterceptor" >
+      <xs:complexContent>
+       <xs:extension base="handlerinterceptoradapter">
+         <xs:sequence>
+          <xs:element name="" type="appconfig" nillable="true" minOccurs="0" />
+          <xs:element name="/***不做权限验证的地址列表。可以使前缀路径或是具体的url*/ignorepaths" type="xs:anyType" />
+          <xs:element name="/***信任的客户端访问地址*/trustremoteaddrs" type="xs:anyType" />
+          <xs:element name="/***接口地址*/interfacepaths" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="authenticationinterceptor" >
+      <xs:complexContent>
+       <xs:extension base="abstractexcludepathinterceptor">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="basecontroller" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserpostvalidator" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maincontroller" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="menuservice" type="dcmenuservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="commoncacheservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="logutils" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderpaystatuscontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="orderpaystatusservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crmcontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="crmservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="orderservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flowcontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="flowservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="backupcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="backupservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validateimagecontroller" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="/***随机字符范围*/range" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermgmtcontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcareaservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserpostvalidator" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcroledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserroledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcuserpostvalidator" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mainshowcontroller" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfacecontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="interfaceservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosuptimecontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="msosuptimeservice" nillable="true" minOccurs="0" />
+        <xs:element name="service2" type="msosmpstatservice" nillable="true" minOccurs="0" />
+        <xs:element name="service3" type="msosdiskspaceservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verifycontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="verifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymoneycontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="paymoneyservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolemgmtcontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcroleservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginlogcontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="loginlogservice" type="dcloginlogservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pvcontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="pvservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oplogcontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="oplogservice" type="dcoplogservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="certcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="certservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="codeserviceclient" type="verifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="ger" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitorinfocontroller" >
+      <xs:sequence>
+        <xs:element name="logutil" type="logutils" nillable="true" minOccurs="0" />
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="monitorinfoservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="monitorinfodao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcroledao" nillable="true" minOccurs="0" />
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="mailsender" nillable="true" minOccurs="0" />
+        <xs:element name="usercache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderratecontroller" >
+      <xs:sequence>
+        <xs:element name="orderservice" type="orderrateservice" nillable="true" minOccurs="0" />
+        <xs:element name="ret_code_success" type="xs:string" />
+        <xs:element name="ret_code_no_update" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exceldata" >
+      <xs:sequence>
+        <xs:element name="simple_view_name" type="xs:string" />
+        <xs:element name="/***输出的文件名*/filename" type="xs:string" />
+        <xs:element name="/***sheet对象*/sheets" type="excelsheet" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="simpleexcelview" >
+      <xs:complexContent>
+       <xs:extension base="abstractexcelview">
+         <xs:sequence>
+          <xs:element name="key_data" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="excelsheet" >
+      <xs:sequence>
+        <xs:element name="/***sheet名*/name" type="xs:string" />
+        <xs:element name="titles" type="xs:string" />
+        <xs:element name="/***内容数据*/contents" type="xs:anyType" />
+        <xs:element name="widths" type="xs:long" />
+        <xs:element name="s" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcoplogservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pvservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="pvmenu" type="map" nillable="true" minOccurs="0" />
+        <xs:element name="channel_id" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfaceservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderrateservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosdiskspaceservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcroleservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dcroledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcrolemenudao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcmenuservice" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="////privateuserroleprivilegedaouserroleprivilegedao" type="commoncacheservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcroleservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcuserservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="menuservice" type="dcmenuservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="dcuserroledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="aeswithcbcservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcroleservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderpaystatusservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="certservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="codeserviceclient" type="verifyservice" nillable="true" minOccurs="0" />
+        <xs:element name="ger" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosuptimeservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="channel_id" type="xs:string" />
+        <xs:element name="services" type="xs:anyType" />
+        <xs:element name="msoslistmenu" type="map" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="commoncacheservice" >
+      <xs:sequence>
+        <xs:element name="menudao" type="dcmenudao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcareaservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="dcuserdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="monitorinfoservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="monitorinfodao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymoneyservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosmpstatservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="backupservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verifyservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flowservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dcloginlogservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间差time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crmservice" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//时间�?time_dif" type="xs:long" />
+        <xs:element name="//取数据量search_num" type="xs:long" />
+        <xs:element name="start_time_cache" type="xs:string" />
+        <xs:element name="cache" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonrespwrapper" >
+      <xs:complexContent>
+       <xs:extension base="hashmap<string,">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ipaddress" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pathutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="areaauthority" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pager" >
+      <xs:sequence>
+        <xs:element name="//这个值在列表的时候作为iterator标签的fromrow属性值调用，例如request.setattribute("offset",fromrow)//查询起始记录fromrow" type="xs:long" />
+        <xs:element name="//查询结束记录torow" type="xs:long" />
+        <xs:element name="//总记录数totalrow" type="xs:long" />
+        <xs:element name="//当前页面数currentpage" type="xs:long" />
+        <xs:element name="//总页面数totalpage" type="xs:long" />
+        <xs:element name="//这个值在列表的时候作为iterator标签的length属性值调用，例如request.setattribute("length",rowsperpage)//每页显示记录数rowsperpage" type="xs:long" />
+        <xs:element name="flag" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="functionsutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fusionchart" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="chart" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="categories" nillable="true" minOccurs="0" />
+        <xs:element name="dataset" type="dataset" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pie3chart" >
+      <xs:sequence>
+        <xs:element name="/***百分比显示状态：显示*/show_percent_show" type="xs:string" />
+        <xs:element name="/***百分比显示状态：隐藏*/show_percent_hide" type="xs:string" />
+        <xs:element name="caption" type="xs:string" />
+        <xs:element name="showpercentvalues" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pie3data" >
+      <xs:sequence>
+        <xs:element name="label" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pie3fusion" >
+      <xs:sequence>
+        <xs:element name="chart" type="pie3chart" nillable="true" minOccurs="0" />
+        <xs:element name="data" type="pie3data" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsoncreater" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categories" >
+      <xs:sequence>
+        <xs:element name="category" type="category" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dataset" >
+      <xs:sequence>
+        <xs:element name="seriesname" type="xs:string" />
+        <xs:element name="data" type="data" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fusionchartscreator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chartsxmlutils" >
+      <xs:sequence>
+        <xs:element name="default_xml_top" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="data" >
+      <xs:sequence>
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="category" >
+      <xs:sequence>
+        <xs:element name="label" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="piepart" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chart" >
+      <xs:sequence>
+        <xs:element name="caption" type="xs:string" />
+        <xs:element name="formatnumberscale" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scriptcreater" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chartdatautil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logutils" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dcoplogdao" nillable="true" minOccurs="0" />
+        <xs:element name="loginlogdao" type="dcloginlogdao" nillable="true" minOccurs="0" />
+        <xs:element name="/***查看*/op_type_query" type="xs:long" />
+        <xs:element name="/***增加*/op_type_insert" type="xs:long" />
+        <xs:element name="/***修改*/op_type_update" type="xs:long" />
+        <xs:element name="/***删除*/op_type_delete" type="xs:long" />
+        <xs:element name="/***审核*/op_type_verify" type="xs:long" />
+        <xs:element name="/***其他*/op_type_other" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dateutil" >
+      <xs:sequence>
+        <xs:element name="a_day" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="urlencoder" >
+      <xs:sequence>
+        <xs:element name="hexadecimal" type="xs:anyType" />
+        <xs:element name="//arraycontainingthesafecharactersset.safecharacters" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="urlpathencoder" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="urlencoder" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datetag" >
+      <xs:complexContent>
+       <xs:extension base="tagsupport">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exportexcelutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exportexcelutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dailyutils" >
+      <xs:sequence>
+        <xs:element name="operate_dzhy" type="xs:string" />
+        <xs:element name="operate_zcyh" type="xs:string" />
+        <xs:element name="operate_jyqk" type="xs:string" />
+        <xs:element name="operate_hyyhsh" type="xs:string" />
+        <xs:element name="operate_zdyz" type="xs:string" />
+        <xs:element name="operate_khd" type="xs:string" />
+        <xs:element name="operate_dsyw_day" type="xs:string" />
+        <xs:element name="operate_dsyw_week" type="xs:string" />
+        <xs:element name="operate_lt" type="xs:string" />
+        <xs:element name="operate_shspsl" type="xs:string" />
+        <xs:element name="operate_dxqf" type="xs:string" />
+        <xs:element name="operate_dxg" type="xs:string" />
+        <xs:element name="operate_pvuv" type="xs:string" />
+        <xs:element name="rb_dzhy_title" type="xs:string" />
+        <xs:element name="rb_zcyh_title" type="xs:string" />
+        <xs:element name="rb_jyqk_title" type="xs:string" />
+        <xs:element name="rb_hyyhsh_title" type="xs:string" />
+        <xs:element name="rb_zdyz_title" type="xs:string" />
+        <xs:element name="rb_khd_title" type="xs:string" />
+        <xs:element name="rb_day_title" type="xs:string" />
+        <xs:element name="rb_week_title" type="xs:string" />
+        <xs:element name="rb_lt_title" type="xs:string" />
+        <xs:element name="rb_shspsl_title" type="xs:string" />
+        <xs:element name="rb_dxqf_title" type="xs:string" />
+        <xs:element name="rb_dxg_title" type="xs:string" />
+        <xs:element name="rb_pvuv_title" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tablecreater" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timeutil" >
+      <xs:sequence>
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="empty" type="xs:string" />
+        <xs:element name="/***yyyy-mm-ddhh:mm:ss*/target_1" type="xs:string" />
+        <xs:element name="/***yyyy-mm-ddhh:mm*/target_2" type="xs:string" />
+        <xs:element name="/***yyyy-mm-dd*/target_3" type="xs:string" />
+        <xs:element name="/***yyyy年mm月dd日*/target_4" type="xs:string" />
+        <xs:element name="/***yyyymmddhhmmss*/source_1" type="xs:string" />
+        <xs:element name="/***yyyymmdd*/source_2" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="weeksofmonthutils" >
+      <xs:sequence>
+        <xs:element name="mmdd" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appconfig" >
+      <xs:sequence>
+        <xs:element name="/***tokencookie的名称*/cookie_token" type="xs:string" />
+        <xs:element name="/***门店类*/shop_class_shop" type="xs:long" />
+        <xs:element name="/***商户类*/shop_class_store" type="xs:long" />
+        <xs:element name="/***渠道商类*/shop_class_agent" type="xs:long" />
+        <xs:element name="/***帐号类型管理员*/shop_user_admin" type="xs:long" />
+        <xs:element name="/***帐号类型普通用户*/shop_user_ordinary" type="xs:long" />
+        <xs:element name="/***帐号类型操作员*/shop_user_operator" type="xs:long" />
+        <xs:element name="cookieskey" type="xs:string" />
+        <xs:element name="cookiesmaxage" type="xs:long" />
+        <xs:element name="siteurl" type="xs:string" />
+        <xs:element name="sitename" type="xs:string" />
+        <xs:element name="uploadimgdir" type="xs:string" />
+        <xs:element name="uploadimgpath" type="xs:string" />
+        <xs:element name="uploadpicext" type="xs:string" />
+        <xs:element name="uploadapppicmaxsize" type="xs:string" />
+        <xs:element name="xheditorexts" type="xs:string" />
+        <xs:element name="xheditorext" type="xs:string" />
+        <xs:element name="xheditorimageexts" type="xs:string" />
+        <xs:element name="xheditorimageext" type="xs:string" />
+        <xs:element name="xheditormaxsize" type="xs:long" />
+        <xs:element name="xheditoruploaddir" type="xs:string" />
+        <xs:element name="xheditoruploadpath" type="xs:string" />
+        <xs:element name="xheditordomain" type="xs:string" />
+        <xs:element name="/***页面静态化调用接口url*/pageurl" type="xs:string" />
+        <xs:element name="ordergoodsimgserver" type="xs:string" />
+        <xs:element name="ordergoodshostserver" type="xs:string" />
+        <xs:element name="/***查询数据库用户*/dbqueryuser" type="xs:string" />
+        <xs:element name="webshownum" type="xs:long" />
+        <xs:element name="webmainshow" type="xs:string" />
+        <xs:element name="monitorrole" type="xs:string" />
+        <xs:element name="/***邮件服务器相关*/mailhost" type="xs:string" />
+        <xs:element name="mailuser" type="xs:string" />
+        <xs:element name="mailpwd" type="xs:string" />
+        <xs:element name="mailojb" type="xs:string" />
+        <xs:element name="mailcc" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hintutil" >
+      <xs:sequence>
+        <xs:element name="/***经分报表*/jfywsrqx" type="xs:string" />
+        <xs:element name="jfywsrqxsyhbzz" type="xs:string" />
+        <xs:element name="jfywsrqxbnljwcqk" type="xs:string" />
+        <xs:element name="jfywsrhx" type="xs:string" />
+        <xs:element name="jfywsrhxsyhbzz" type="xs:string" />
+        <xs:element name="jfywsrhxbnljwcqk" type="xs:string" />
+        <xs:element name="jfdzhymfbdyxz" type="xs:string" />
+        <xs:element name="jfdzhymfbdyjz" type="xs:string" />
+        <xs:element name="jfdzhymfbdydds" type="xs:string" />
+        <xs:element name="jfjyyhxs" type="xs:string" />
+        <xs:element name="jfjyyhxx" type="xs:string" />
+        <xs:element name="jfjyyhhj" type="xs:string" />
+        <xs:element name="jfkhdazs" type="xs:string" />
+        <xs:element name="jfkhdhyyhs" type="xs:string" />
+        <xs:element name="jfdsjysyhbzz" type="xs:string" />
+        <xs:element name="jfdsjybnljwcqk" type="xs:string" />
+        <xs:element name="jfhyyhdy" type="xs:string" />
+        <xs:element name="jfhyyhyj" type="xs:string" />
+        <xs:element name="/***经分*/internetllyjqddlfwcs" type="xs:string" />
+        <xs:element name="internetllyjqddlfwyh" type="xs:string" />
+        <xs:element name="internetllyjqdhyyzcs" type="xs:string" />
+        <xs:element name="internetllyjqdddbs" type="xs:string" />
+        <xs:element name="internetllyjqdcgzfs" type="xs:string" />
+        <xs:element name="internetllyjqdxffhbs" type="xs:string" />
+        <xs:element name="internetllyjqdjye" type="xs:string" />
+        <xs:element name="internetllyjqdzflxscb" type="xs:string" />
+        <xs:element name="internetllyjqdzflxjf" type="xs:string" />
+        <xs:element name="internetllyjqdzflxxj" type="xs:string" />
+        <xs:element name="internetggyxzbhdcyyh" type="xs:string" />
+        <xs:element name="internetggyxzbhycyyh" type="xs:string" />
+        <xs:element name="internetggyxzbzcxzyh" type="xs:string" />
+        <xs:element name="internetkhjzzbyhs" type="xs:string" />
+        <xs:element name="internetkhjzzbdkhkdj" type="xs:string" />
+        <xs:element name="internetkhjzzb1xfyhs" type="xs:string" />
+        <xs:element name="internetkhjzzb3xfyhs" type="xs:string" />
+        <xs:element name="internetkhjzzb6xfyhs" type="xs:string" />
+        <xs:element name="internetkhjzzbjye" type="xs:string" />
+        <xs:element name="internetnbjyzbpv" type="xs:string" />
+        <xs:element name="internetnbjyzbuv" type="xs:string" />
+        <xs:element name="internetnbjyzbddzhl" type="xs:string" />
+        <xs:element name="internetnbjyzbzfzhl" type="xs:string" />
+        <xs:element name="internetnbjyzbddsl" type="xs:string" />
+        <xs:element name="internetnbjyzbjye" type="xs:string" />
+        <xs:element name="internetnbjyzbjyyhs" type="xs:string" />
+        <xs:element name="internetnbjyzbpjtcl" type="xs:string" />
+        <xs:element name="internetnbjyzbrjllyms" type="xs:string" />
+        <xs:element name="internetnbjyzbrjllysc" type="xs:string" />
+        <xs:element name="/***日报部分*/rbdzhyxzsmhy" type="xs:string" />
+        <xs:element name="rbdzhytdsmhy" type="xs:string" />
+        <xs:element name="rbdzhyjzsmhy" type="xs:string" />
+        <xs:element name="rbdzhymfb" type="xs:string" />
+        <xs:element name="rbdzhy3yb" type="xs:string" />
+        <xs:element name="rbdzhy5yb" type="xs:string" />
+        <xs:element name="rbdzhy10yb" type="xs:string" />
+        <xs:element name="rbdzhybn" type="xs:string" />
+        <xs:element name="rbdzhylj" type="xs:string" />
+        <xs:element name="rbdzhyxzhzhy" type="xs:string" />
+        <xs:element name="rbzcyhxzzcyh" type="xs:string" />
+        <xs:element name="rbzcyhljzcyh" type="xs:string" />
+        <xs:element name="rbjyqkbrjyze" type="xs:string" />
+        <xs:element name="rbjyqkxnlspjye" type="xs:string" />
+        <xs:element name="rbjyqkwebjye" type="xs:string" />
+        <xs:element name="rbjyqkwapjye" type="xs:string" />
+        <xs:element name="rbjyqkkhdjye" type="xs:string" />
+        <xs:element name="rbjyqkdxgjye" type="xs:string" />
+        <xs:element name="rbjyqkxxxfjye" type="xs:string" />
+        <xs:element name="rbjyqkscb" type="xs:string" />
+        <xs:element name="rbjyqkxj" type="xs:string" />
+        <xs:element name="rbjyqkjf" type="xs:string" />
+        <xs:element name="rbjyqkdjq" type="xs:string" />
+        <xs:element name="rbjyqkhb" type="xs:string" />
+        <xs:element name="rbjyqkjyyhs" type="xs:string" />
+        <xs:element name="rbjyqkscbzjl" type="xs:string" />
+        <xs:element name="rbjyqkdds" type="xs:string" />
+        <xs:element name="rbjyqkddzhl" type="xs:string" />
+        <xs:element name="rbjyqkkdj" type="xs:string" />
+        <xs:element name="rbjyqksckjyezb" type="xs:string" />
+        <xs:element name="rbhyyhshyh" type="xs:string" />
+        <xs:element name="rbhyyhshsh" type="xs:string" />
+        <xs:element name="rbkhdxzyh" type="xs:string" />
+        <xs:element name="rbkhdddzhl" type="xs:string" />
+        <xs:element name="rbkhdddcgl" type="xs:string" />
+        <xs:element name="rbdsywdayyhqdxsl" type="xs:string" />
+        <xs:element name="rbdsywdayyhqcxsl" type="xs:string" />
+        <xs:element name="rbdsywdayyhqdxxzl" type="xs:string" />
+        <xs:element name="rbdsywdayyhqcxxzl" type="xs:string" />
+        <xs:element name="rbdsywdaycpdds" type="xs:string" />
+        <xs:element name="rbdsywdaycpcyrs" type="xs:string" />
+        <xs:element name="rbdsywdaycpscsl" type="xs:string" />
+        <xs:element name="rbdsywdaycpxsze" type="xs:string" />
+        <xs:element name="rbdsywweekzdxstjdds" type="xs:string" />
+        <xs:element name="rbdsywweekzdxstjcyrs" type="xs:string" />
+        <xs:element name="rbdsywweekzdxstjscsl" type="xs:string" />
+        <xs:element name="rbdsywweekzdxstjxsze" type="xs:string" />
+        <xs:element name="rbltbzfts" type="xs:string" />
+        <xs:element name="rblthyyhs" type="xs:string" />
+        <xs:element name="rbshspslswspsh" type="xs:string" />
+        <xs:element name="rbdxqfbzdxfsts" type="xs:string" />
+        <xs:element name="rbdxqfbzcxfsts" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hintutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="aeswithcbcservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="appconfig" nillable="true" minOccurs="0" />
+        <xs:element name="iv" type="xs:anyType" />
+        <xs:element name="key_algorithm" type="xs:string" />
+        <xs:element name="default_cipher_algorithm" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="ivspec" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pagestaticinterface" >
+      <xs:sequence>
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tagutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sqlhelper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailsender" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="config" type="appconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="areaselecttag" >
+      <xs:complexContent>
+       <xs:extension base="tagsupport">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="value" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="stringutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datautil" >
+      <xs:sequence>
+        <xs:element name="string" type="xs:anyType" />
+        <xs:element name="integer" type="xs:anyType" />
+        <xs:element name="decimal_2" type="xs:anyType" />
+        <xs:element name="decimal_4" type="xs:anyType" />
+        <xs:element name="percent_2" type="xs:anyType" />
+        <xs:element name="percent_4" type="xs:anyType" />
+        <xs:element name="date" type="xs:anyType" />
+        <xs:element name="df" type="xs:anyType" />
+        <xs:element name="df2" type="xs:anyType" />
+        <xs:element name="df4" type="xs:anyType" />
+        <xs:element name="df12" type="xs:anyType" />
+        <xs:element name="df14" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chartdateutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderrateinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***转换率*/rate" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="verifyinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pvinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="urlname" type="xs:string" />
+        <xs:element name="weburl" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***转换率*/num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menuprivilege" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//菜单代码menucode" type="xs:string" />
+        <xs:element name="//该模块下的按钮权限buttons" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymoneyinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="money" type="xs:double" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosdiskspaceinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="ms_mount_on" type="xs:string" />
+        <xs:element name="ms_use" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfaceinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="intername" type="xs:string" />
+        <xs:element name="interurl" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="collecttime" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="backupinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="platname" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/backuptime" type="xs:string" />
+        <xs:element name="filesize" type="xs:string" />
+        <xs:element name="checktime" type="xs:string" />
+        <xs:element name="backfile" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="crminfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***数量*/num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionuser" >
+      <xs:sequence>
+        <xs:element name="session_user_key" type="xs:string" />
+        <xs:element name="/***图片验证码sessionkey*/session_image_code_key" type="xs:string" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="terminalid" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="type" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="areas" type="dcarea" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="listarea" type="xs:string" />
+        <xs:element name="privilege" type="xs:anyType" />
+        <xs:element name="menus" type="stacksysmenu" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="roleid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosuptimeinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="load1" type="xs:double" />
+        <xs:element name="load5" type="xs:double" />
+        <xs:element name="load15" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msosmpstatinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="cpu_user" type="xs:double" />
+        <xs:element name="cpu_sys" type="xs:double" />
+        <xs:element name="iowait" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flowinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="spcode" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***数量*/num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderpaystatusinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***类型*/paytype" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***转换率*/num" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stacksysmenu" >
+      <xs:complexContent>
+       <xs:extension base="dcmenu">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="childmenus" type="stacksysmenu" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="/***类型*/type" type="xs:string" />
+        <xs:element name="/***时间*/collecttime" type="xs:string" />
+        <xs:element name="/***数量*/flownum" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="httpinvoker" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="client" type="xs:anyType" />
+        <xs:element name="serverurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifileoperator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="downhdfsutils" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet{">
+         <xs:sequence>
+          <xs:element name="/***serialversionuid*/serialversionuid" type="xs:long" />
+          <xs:element name="content_type" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clientmanager" >
+      <xs:sequence>
+        <xs:element name="manager" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hdfsfileoperator" >
+      <xs:sequence>
+        <xs:element name="conf" type="xs:anyType" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datacenterstart" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

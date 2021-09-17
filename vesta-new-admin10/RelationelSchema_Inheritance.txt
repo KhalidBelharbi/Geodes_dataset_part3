@@ -1,0 +1,17 @@
+
+clickusersentity(id:String [PK], //创建时间create:Date, //点击量clicks:Integer, //点击人userid:String, //外键id(菜单统计id)foreignid:String);
+
+clicktimespageentity(/*首页模块*///公告property:String, //咨询consultation:String, //表扬praise:String, //投诉complaint:String, //报修repair:String, //评价evaluate:String, id:String [PK], //项目小区project:String, //项目idprojectid:String, //公司idcompanyid:String, //区域idregionid:String, //公告property:int, //咨询consultation:int, //表扬praise:int, //投诉compla:int, //报修repair:int, //评价evaluate:int);
+
+usertotalentity(id:String [PK], //创建时间create:Date, //普通用户commonuser:Integer, //业主用户owneruser:Integer, //安卓用户android:Integer, //ios用户ios:Integer, //微信用户wechat:Integer, //app用户app:Integer);
+
+equipstatisticsentity(id:String [PK], //项目小区project:String, //项目idprojectid:String, //公司idcompanyid:String, //区域idregionid:String, //用户iduserid:String, //设备类型type:String, //个数counts:String);
+
+menutotalentity(id:String [PK], //创建时间create:Date, //模块名称modulename:String);
+
+clicktimesentity(/*模块*///邻里圈circle:String, //服务信息service:String, //周边periphery:String, //我的home:String, id:String [PK], //项目小区project:String, //项目idprojectid:String, //公司idcompanyid:String, //区域idregionid:String, //邻里圈circle:int, //服务信息service:int, //周边periphery:int, //我的home:int);
+
+invoicestotalentity(id:String [PK], //城市city:String, //项目project:String, //创建时间create:Date, //报修数量repairnum:Integer, //反馈数量(不含项目)feedbacknum:Integer, //反馈数量(含项目)feedbacktotal:Integer, //访客数量visitornum:Integer, //缴费数量paymentnum:Integer);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

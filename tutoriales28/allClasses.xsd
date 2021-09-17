@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="bootstrap" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2tokenmockutil" >
+      <xs:sequence>
+        <xs:element name="tokenservices" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cookietokenextractortest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cookietokenextractor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cookiecollectiontest" >
+      <xs:sequence>
+        <xs:element name="cookie_name" type="xs:string" />
+        <xs:element name="cookie_value" type="xs:string" />
+        <xs:element name="brownie_name" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="cups" type="xs:anyType" />
+        <xs:element name="brownie" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2cookiehelpertest" >
+      <xs:sequence>
+        <xs:element name="get_cookie_domain_method" type="xs:string" />
+        <xs:element name="GeneratedName" type="oauth2properties" nillable="true" minOccurs="0" />
+        <xs:element name="cookiehelper" type="oauth2cookiehelper" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2authenticationservicetest" >
+      <xs:sequence>
+        <xs:element name="client_authorization" type="xs:string" />
+        <xs:element name="access_token_value" type="xs:string" />
+        <xs:element name="refresh_token_value" type="xs:string" />
+        <xs:element name="expired_session_token_value" type="xs:string" />
+        <xs:element name="new_access_token_value" type="xs:string" />
+        <xs:element name="new_refresh_token_value" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="authorizationclient" type="oauth2tokenendpointclient" nillable="true" minOccurs="0" />
+        <xs:element name="authenticationservice" type="oauth2authenticationservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="refreshtokenfilter" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="oauth2properties" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfigurertestcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfigurertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="webconfigurer" nillable="true" minOccurs="0" />
+        <xs:element name="servletcontext" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="props" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securitybeanoverrideconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="swaggerbasepathrewritingfiltertest" >
+      <xs:sequence>
+        <xs:element name="filter" type="swaggerbasepathrewritingfilter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exceptiontranslatortestcontroller" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exceptiontranslatorinttest" >
+      <xs:sequence>
+        <xs:element name="controller" type="exceptiontranslatortestcontroller" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="exceptiontranslator" nillable="true" minOccurs="0" />
+        <xs:element name="jacksonmessageconverter" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paginationutilunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testutil" >
+      <xs:complexContent>
+       <xs:extension base="typesafediagnosingmatcher<string>">
+         <xs:sequence>
+          <xs:element name="/***forjsonutf8*/application_json_utf8" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="logsresourceinttest" >
+      <xs:sequence>
+        <xs:element name="restlogs" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sonar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hazelcast-management-center" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicationwebxml" >
+      <xs:complexContent>
+       <xs:extension base="springbootservletinitializer">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="loggingaspect" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gatewayconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="localeconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfigurer" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datetimeformatconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaultprofileutil" >
+      <xs:sequence>
+        <xs:element name="spring_profile_default" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="liquibaseconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicationproperties" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2properties" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2jwtaccesstokenconverter" >
+      <xs:complexContent>
+       <xs:extension base="jwtaccesstokenconverter">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="" type="oauth2properties" nillable="true" minOccurs="0" />
+          <xs:element name="signatureverifierclient" type="oauth2signatureverifierclient" nillable="true" minOccurs="0" />
+          <xs:element name="/***whendidwelastfetchthepublickey?*/lastkeyfetchtimestamp" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oauth2authenticationconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="resourceserverconfigureradapter">
+         <xs:sequence>
+          <xs:element name="" type="oauth2properties" nillable="true" minOccurs="0" />
+          <xs:element name="tokenendpointclient" type="oauth2tokenendpointclient" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="auditeventconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingaspectconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metricsconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="metricsconfigureradapter">
+         <xs:sequence>
+          <xs:element name="prop_metric_reg_jvm_memory" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_garbage" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_threads" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_files" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_buffers" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_attribute_set" type="xs:string" />
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="asyncconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="databaseconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="resourceserverconfigureradapter">
+         <xs:sequence>
+          <xs:element name="" type="oauth2properties" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clouddatabaseconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="abstractcloudconfig">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jacksonconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="constants" >
+      <xs:sequence>
+        <xs:element name="//regexforacceptableloginslogin_regex" type="xs:string" />
+        <xs:element name="system_account" type="xs:string" />
+        <xs:element name="anonymous_user" type="xs:string" />
+        <xs:element name="default_language" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="contextawarebase">
+         <xs:sequence>
+          <xs:element name="logstash_appender_name" type="xs:string" />
+          <xs:element name="async_logstash_appender_name" type="xs:string" />
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="context" type="xs:anyType" />
+          <xs:element name="appname" type="xs:string" />
+          <xs:element name="serverport" type="xs:string" />
+          <xs:element name="version" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="gatewayswaggerresourcesprovider" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cacheconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractauditingentity" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="lastmodifiedby" type="xs:string" />
+        <xs:element name="lastmodifieddate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistentauditevent" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="principal" type="xs:string" />
+        <xs:element name="auditeventdate" type="xs:anyType" />
+        <xs:element name="auditeventtype" type="xs:string" />
+        <xs:element name="data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refreshtokenfilterconfigurer" >
+      <xs:complexContent>
+       <xs:extension base="securityconfigureradapter<defaultsecurityfilterchain,">
+         <xs:sequence>
+          <xs:element name="/***refreshtokenfilterneedsthetorefreshcookiesusingtherefreshtoken.*/authenticationservice" type="oauth2authenticationservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="refreshtokenfilter" >
+      <xs:complexContent>
+       <xs:extension base="genericfilterbean">
+         <xs:sequence>
+          <xs:element name="/***numberofsecondsbeforeexpirytostartrefreshingaccesstokenssowedon'trunoraceconditionswhenforwarding*requestsdownstream.otherwise,accesstokensmaystillbevalidwhenwecheckherebutmaythenbeexpired*whenrelayedtoanothermicroserviceaweebitlater.*/refresh_window_secs" type="xs:long" />
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="/***theisdoingtheactualwork.wearejustasimplefilterafterall.*/authenticationservice" type="oauth2authenticationservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="routevm" >
+      <xs:sequence>
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="serviceid" type="xs:string" />
+        <xs:element name="serviceinstances" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggervm" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="level" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authresource" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="authenticationservice" type="oauth2authenticationservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fielderrorvm" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="objectname" type="xs:string" />
+        <xs:element name="field" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorconstants" >
+      <xs:sequence>
+        <xs:element name="err_concurrency_failure" type="xs:string" />
+        <xs:element name="err_validation" type="xs:string" />
+        <xs:element name="problem_base_url" type="xs:string" />
+        <xs:element name="default_type" type="xs:anyType" />
+        <xs:element name="constraint_violation_type" type="xs:anyType" />
+        <xs:element name="parameterized_type" type="xs:anyType" />
+        <xs:element name="entity_not_found_type" type="xs:anyType" />
+        <xs:element name="invalid_password_type" type="xs:anyType" />
+        <xs:element name="email_already_used_type" type="xs:anyType" />
+        <xs:element name="login_already_used_type" type="xs:anyType" />
+        <xs:element name="email_not_found_type" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="badrequestalertexception" >
+      <xs:complexContent>
+       <xs:extension base="abstractthrowableproblem">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="entityname" type="xs:string" />
+          <xs:element name="errorkey" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="emailnotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="abstractthrowableproblem">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="internalservererrorexception" >
+      <xs:complexContent>
+       <xs:extension base="abstractthrowableproblem">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="emailalreadyusedexception" >
+      <xs:complexContent>
+       <xs:extension base="badrequestalertexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exceptiontranslator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginalreadyusedexception" >
+      <xs:complexContent>
+       <xs:extension base="badrequestalertexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customparameterizedexception" >
+      <xs:complexContent>
+       <xs:extension base="abstractthrowableproblem">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="param" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="invalidpasswordexception" >
+      <xs:complexContent>
+       <xs:extension base="abstractthrowableproblem">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="gatewayresource" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logsresource" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paginationutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="headerutil" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="application_name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gatewayapp" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2authenticationservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="/***numberofmillisecondstocacherefreshtokengrantssowedon'thavetorepeatthemincaseofparallelrequests.*/refresh_token_validity_millis" type="xs:long" />
+        <xs:element name="/***usedtocontacttheoauth2tokenendpoint.*/authorizationclient" type="oauth2tokenendpointclient" nillable="true" minOccurs="0" />
+        <xs:element name="/***helpsuswithcookiehandling.*/cookiehelper" type="oauth2cookiehelper" nillable="true" minOccurs="0" />
+        <xs:element name="/***cachesrefreshgrantresultsforarefreshtokenvaluesowecanreusethem.*thisavoidshammeringuaaincaseofseveralmulti-threadedrequestsarrivinginparallel.*/recentlyrefreshed" type="oauth2cookies" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2tokenendpointclientadapter" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="oauth2properties" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2cookies" >
+      <xs:sequence>
+        <xs:element name="accesstoken" type="xs:anyType" />
+        <xs:element name="refreshtoken" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2signatureverifierclient" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uaasignatureverifierclient" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="oauth2properties" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uaatokenendpointclient" >
+      <xs:complexContent>
+       <xs:extension base="oauth2tokenendpointclientadapter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oauth2tokenendpointclient" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cookietokenextractor" >
+      <xs:complexContent>
+       <xs:extension base="bearertokenextractor">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cookiecollection" >
+      <xs:complexContent>
+       <xs:extension base="cookie>">
+         <xs:sequence>
+          <xs:element name="cookiemap" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cookieshttpservletrequestwrapper" >
+      <xs:complexContent>
+       <xs:extension base="httpservletrequestwrapper">
+         <xs:sequence>
+          <xs:element name="s" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oauth2cookiehelper" >
+      <xs:sequence>
+        <xs:element name="/***nameoftheaccesstokencookie.*/access_token_cookie" type="xs:string" />
+        <xs:element name="/***nameoftherefreshtokencookieincaseofrememberme.*/refresh_token_cookie" type="xs:string" />
+        <xs:element name="/***nameofthesession-onlyrefreshtokenincasetheuserdidnotcheckrememberme.*/session_token_cookie" type="xs:string" />
+        <xs:element name="/***thenamesofthecookiesweset.*/cookie_names" type="xs:anyType" />
+        <xs:element name="/***numberofsecondstoexpirerefreshtokencookiesbeforetheenclosedtokenexpires.*thismakessurewedon'trunintoraceconditionswherethecookieisstilltherebut*expireswhileweprocessit.*/refresh_token_expiration_window_secs" type="xs:long" />
+        <xs:element name="/***publicsuffixmatcher(tostripprivatesubdomainsoffcookiescope).*/suffixmatcher" type="xs:anyType" />
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="oauth2properties" nillable="true" minOccurs="0" />
+        <xs:element name="/***usedtoparsejwtclaims.*/" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authoritiesconstants" >
+      <xs:sequence>
+        <xs:element name="admin" type="xs:string" />
+        <xs:element name="user" type="xs:string" />
+        <xs:element name="anonymous" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springsecurityauditoraware" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ratelimitingfilter" >
+      <xs:complexContent>
+       <xs:extension base="zuulfilter">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="gateway_rate_limiting_cache_name" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="cache" type="xs:anyType" />
+          <xs:element name="buckets" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="swaggerbasepathrewritingfilter" >
+      <xs:complexContent>
+       <xs:extension base="sendresponsefilter">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="mapper" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="accesscontrolfilter" >
+      <xs:complexContent>
+       <xs:extension base="zuulfilter">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manifest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pagination.constants" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="app.constants" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metrics-modal.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="docs.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logs.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="log.model" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configuration.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gateway-route.model" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gateway.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user-management-delete-dialog.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="audit-data.model" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="footer.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="profile-info.model" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="main.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="error.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quote-detail.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quote-delete-dialog.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activate.component" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="account.model" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user.model" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settings" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metrics" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quotesquote" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configuration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="health" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="global" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="register" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessions" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="audits" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user-management" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="error" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="home" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reset" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gateway" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="password" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="password" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configuration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metrics" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="error" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reset" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="audits" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="home" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="health" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user-management" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settings" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="global" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessions" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quotesquote" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="register" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gateway" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="password" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quotesquote" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configuration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gateway" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="audits" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="health" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settings" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="global" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user-management" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="home" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessions" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reset" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metrics" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="register" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="error" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback-spring" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="master" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

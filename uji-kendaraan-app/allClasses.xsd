@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="otentikasi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appconfig" >
+      <xs:sequence>
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lineprinter" >
+      <xs:sequence>
+        <xs:element name="/*instancevars*/pgformat" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="p" type="xs:anyType" />
+        <xs:element name="prompt" type="xs:anyType" />
+        <xs:element name="linesize" type="xs:long" />
+        <xs:element name="y_space" type="xs:long" />
+        <xs:element name="lines" type="xs:anyType" />
+        <xs:element name="w" type="xs:long" />
+        <xs:element name="h" type="xs:long" />
+        <xs:element name="usedlines" type="xs:long" />
+        <xs:element name="availablelines" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="lines" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refbahanbakar" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="bahanbakar" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="skrd" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nouji" type="xs:string" />
+        <xs:element name="jnspengujian" type="xs:string" />
+        <xs:element name="biayapemeriksaan" type="xs:anyType" />
+        <xs:element name="biayabukuuji" type="xs:anyType" />
+        <xs:element name="biayatandauji" type="xs:anyType" />
+        <xs:element name="biayatandasamping" type="xs:anyType" />
+        <xs:element name="dendaadm" type="xs:anyType" />
+        <xs:element name="tglpemeriksaan" type="xs:dateTime" />
+        <xs:element name="tglhabisujilalu" type="xs:dateTime" />
+        <xs:element name="nippejabat" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refbahankaroseri" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="bahan" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refbiayabukuuji" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tarif" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refjnsrumah" >
+      <xs:sequence>
+        <xs:element name="idjnskendaraan" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="jnsrumah" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admkendaraan" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nouji" type="xs:string" />
+        <xs:element name="namapemilik" type="xs:string" />
+        <xs:element name="alamat" type="xs:string" />
+        <xs:element name="merk" type="xs:string" />
+        <xs:element name="tipe" type="xs:string" />
+        <xs:element name="thnpembuatan" type="xs:string" />
+        <xs:element name="idjnskendaraan" type="xs:long" />
+        <xs:element name="idjnsbahanbakar" type="xs:long" />
+        <xs:element name="idjnsrumah" type="xs:long" />
+        <xs:element name="nomorkendaraan" type="xs:string" />
+        <xs:element name="norangka" type="xs:string" />
+        <xs:element name="nomesin" type="xs:string" />
+        <xs:element name="idbahankeroseri" type="xs:long" />
+        <xs:element name="tglrekam" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refjnskendaraan" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="jnskendaraan" type="xs:string" />
+        <xs:element name="trfpemeriksaan" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refjnsrumahpk" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="idjnskendaraan" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refpejabat" >
+      <xs:sequence>
+        <xs:element name="nip" type="xs:string" />
+        <xs:element name="nama" type="xs:string" />
+        <xs:element name="jabatan" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admkendaraanpk" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nouji" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datuser" >
+      <xs:sequence>
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mainapp" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="datuserrepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="admkendaraanrepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="refjnskendaraanrepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="refjnsrumahrepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="refbiayabukuujirepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="skrdrepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="refpejabatrepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="refbahanbakarrepo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="refbahankaroserirepo" nillable="true" minOccurs="0" />
+        <xs:element name="fentryskrd" type="entryskrdui" nillable="true" minOccurs="0" />
+        <xs:element name="fadmkendaraan" type="admkendaraanui" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refbahanbakarrepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<refbahanbakar,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="refjnsrumahrepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<refjnsrumah,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datuserrepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<datuser,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="refbahankaroserirepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<refbahankaroseri,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="refjnskendaraanrepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<refjnskendaraan,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="admkendaraanrepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<admkendaraan,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skrdrepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<skrd,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="refpejabatrepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<refpejabat,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="refbiayabukuujirepo" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<refbiayabukuuji,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractreportgenerator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reportgen" >
+      <xs:complexContent>
+       <xs:extension base="abstractreportgenerator">
+         <xs:sequence>
+          <xs:element name="nouji" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="admkendaraanui" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admkendaraanui" >
+      <xs:complexContent>
+       <xs:extension base="javax.swing.jframe">
+         <xs:sequence>
+          <xs:element name="" type="mainapp" nillable="true" minOccurs="0" />
+          <xs:element name="datakendaraan" type="admkendaraan" nillable="true" minOccurs="0" />
+          <xs:element name="//variablesdeclaration-donotmodify//gen-begin:variablesbtnbatal" type="xs:anyType" />
+          <xs:element name="btnsimpan" type="xs:anyType" />
+          <xs:element name="cbbahanbakar" type="xs:anyType" />
+          <xs:element name="cbbahankaroseri" type="xs:anyType" />
+          <xs:element name="cbjeniskendaraan" type="xs:anyType" />
+          <xs:element name="cbjnsrumah" type="xs:anyType" />
+          <xs:element name="jlabel1" type="xs:anyType" />
+          <xs:element name="jlabel10" type="xs:anyType" />
+          <xs:element name="jlabel11" type="xs:anyType" />
+          <xs:element name="jlabel12" type="xs:anyType" />
+          <xs:element name="jlabel13" type="xs:anyType" />
+          <xs:element name="jlabel14" type="xs:anyType" />
+          <xs:element name="jlabel2" type="xs:anyType" />
+          <xs:element name="jlabel3" type="xs:anyType" />
+          <xs:element name="jlabel4" type="xs:anyType" />
+          <xs:element name="jlabel5" type="xs:anyType" />
+          <xs:element name="jlabel6" type="xs:anyType" />
+          <xs:element name="jlabel7" type="xs:anyType" />
+          <xs:element name="jlabel8" type="xs:anyType" />
+          <xs:element name="jlabel9" type="xs:anyType" />
+          <xs:element name="jpanel1" type="xs:anyType" />
+          <xs:element name="tfalamat" type="xs:anyType" />
+          <xs:element name="tfmerk" type="xs:anyType" />
+          <xs:element name="tfnopendaftaran" type="xs:anyType" />
+          <xs:element name="tfnoken" type="xs:anyType" />
+          <xs:element name="tfnomormesin" type="xs:anyType" />
+          <xs:element name="tfnomorrangka" type="xs:anyType" />
+          <xs:element name="tfnomoruji" type="xs:anyType" />
+          <xs:element name="tfpemilik" type="xs:anyType" />
+          <xs:element name="tftahunpembuatan" type="xs:anyType" />
+          <xs:element name="tftipe" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="loginui" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="entryskrdui" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="entryskrdui" >
+      <xs:complexContent>
+       <xs:extension base="javax.swing.jframe">
+         <xs:sequence>
+          <xs:element name="dateformatter" type="xs:anyType" />
+          <xs:element name="" type="mainapp" nillable="true" minOccurs="0" />
+          <xs:element name="indoformat" type="xs:anyType" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="tglhabisuji" type="xs:anyType" />
+          <xs:element name="daftarpejabat" type="xs:anyType" />
+          <xs:element name="" type="skrd" nillable="true" minOccurs="0" />
+          <xs:element name="" type="admkendaraan" nillable="true" minOccurs="0" />
+          <xs:element name="//variablesdeclaration-donotmodify//gen-begin:variablesbtncetakformpendaftaran" type="xs:anyType" />
+          <xs:element name="btncetakskrd" type="xs:anyType" />
+          <xs:element name="btndatabaru" type="xs:anyType" />
+          <xs:element name="btngrpgantibuku" type="xs:anyType" />
+          <xs:element name="btnsimpan" type="xs:anyType" />
+          <xs:element name="cbjeniskendaraan" type="xs:anyType" />
+          <xs:element name="cbjnsrumah" type="xs:anyType" />
+          <xs:element name="cbnamapejabat" type="xs:anyType" />
+          <xs:element name="dptgldaftar" type="xs:anyType" />
+          <xs:element name="dptglhabisuji" type="xs:anyType" />
+          <xs:element name="dptglhabisujilalu" type="xs:anyType" />
+          <xs:element name="jlabel1" type="xs:anyType" />
+          <xs:element name="jlabel10" type="xs:anyType" />
+          <xs:element name="jlabel11" type="xs:anyType" />
+          <xs:element name="jlabel12" type="xs:anyType" />
+          <xs:element name="jlabel13" type="xs:anyType" />
+          <xs:element name="jlabel14" type="xs:anyType" />
+          <xs:element name="jlabel15" type="xs:anyType" />
+          <xs:element name="jlabel16" type="xs:anyType" />
+          <xs:element name="jlabel17" type="xs:anyType" />
+          <xs:element name="jlabel18" type="xs:anyType" />
+          <xs:element name="jlabel19" type="xs:anyType" />
+          <xs:element name="jlabel2" type="xs:anyType" />
+          <xs:element name="jlabel20" type="xs:anyType" />
+          <xs:element name="jlabel21" type="xs:anyType" />
+          <xs:element name="jlabel22" type="xs:anyType" />
+          <xs:element name="jlabel3" type="xs:anyType" />
+          <xs:element name="jlabel4" type="xs:anyType" />
+          <xs:element name="jlabel5" type="xs:anyType" />
+          <xs:element name="jlabel6" type="xs:anyType" />
+          <xs:element name="jlabel7" type="xs:anyType" />
+          <xs:element name="jlabel8" type="xs:anyType" />
+          <xs:element name="jlabel9" type="xs:anyType" />
+          <xs:element name="jpanel1" type="xs:anyType" />
+          <xs:element name="jseparator1" type="xs:anyType" />
+          <xs:element name="jseparator2" type="xs:anyType" />
+          <xs:element name="jseparator3" type="xs:anyType" />
+          <xs:element name="jseparator4" type="xs:anyType" />
+          <xs:element name="rbtidak" type="xs:anyType" />
+          <xs:element name="rbya" type="xs:anyType" />
+          <xs:element name="tfalamat" type="xs:anyType" />
+          <xs:element name="tfbiaya" type="xs:anyType" />
+          <xs:element name="tfbiayaadm" type="xs:anyType" />
+          <xs:element name="tfbiayabukuuji" type="xs:anyType" />
+          <xs:element name="tfbiayapemeriksaan" type="xs:anyType" />
+          <xs:element name="tfbiayatandasamping" type="xs:anyType" />
+          <xs:element name="tfbiayatandauji" type="xs:anyType" />
+          <xs:element name="tfdenda" type="xs:anyType" />
+          <xs:element name="tfjabatan" type="xs:anyType" />
+          <xs:element name="tfjnspengujian" type="xs:anyType" />
+          <xs:element name="tfnouji" type="xs:anyType" />
+          <xs:element name="tfnourut" type="xs:anyType" />
+          <xs:element name="tfnoken" type="xs:anyType" />
+          <xs:element name="tfpemilik" type="xs:anyType" />
+          <xs:element name="tfpokokretribusi" type="xs:anyType" />
+          <xs:element name="tftahunpembuatan" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="loginui" >
+      <xs:complexContent>
+       <xs:extension base="javax.swing.jframe">
+         <xs:sequence>
+          <xs:element name="" type="datuserrepo" nillable="true" minOccurs="0" />
+          <xs:element name="//variablesdeclaration-donotmodify//gen-begin:variablesbtnkeluar" type="xs:anyType" />
+          <xs:element name="btnok" type="xs:anyType" />
+          <xs:element name="jlabel1" type="xs:anyType" />
+          <xs:element name="jlabel2" type="xs:anyType" />
+          <xs:element name="jpanel1" type="xs:anyType" />
+          <xs:element name="tfpassword" type="xs:anyType" />
+          <xs:element name="tfuser" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

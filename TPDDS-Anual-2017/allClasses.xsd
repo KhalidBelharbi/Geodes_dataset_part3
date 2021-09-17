@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="datos" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pruebaarchivotest" >
+      <xs:sequence>
+        <xs:element name="lector" type="lectorarchivo" nillable="true" minOccurs="0" />
+        <xs:element name="t" type="traductor" nillable="true" minOccurs="0" />
+        <xs:element name="sincuentas" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="thrown" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pruebaindicadorestest" >
+      <xs:sequence>
+        <xs:element name="lector" type="lectorarchivo" nillable="true" minOccurs="0" />
+        <xs:element name="procesador1" type="procesarindicadores" nillable="true" minOccurs="0" />
+        <xs:element name="t" type="traductor" nillable="true" minOccurs="0" />
+        <xs:element name="p" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="sincuentas" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="delta" type="xs:double" />
+        <xs:element name="thrown" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="indicadorestest" >
+      <xs:sequence>
+        <xs:element name="procesador1" type="procesarindicadores" nillable="true" minOccurs="0" />
+        <xs:element name="t" type="traductor" nillable="true" minOccurs="0" />
+        <xs:element name="lector" type="lectorarchivo" nillable="true" minOccurs="0" />
+        <xs:element name="p" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="indprueba" type="indicador" nillable="true" minOccurs="0" />
+        <xs:element name="indicadores" type="indicador" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="delta" type="xs:double" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="et" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="empresatest" >
+      <xs:sequence>
+        <xs:element name="cuentasempresa" type="cuenta" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="empresas" type="empresa" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="periodos" type="periodo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="prueba" type="cuenta" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="prueba" type="empresa" nillable="true" minOccurs="0" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="et" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metodologiatest" >
+      <xs:sequence>
+        <xs:element name="procesador1" type="procesarindicadores" nillable="true" minOccurs="0" />
+        <xs:element name="t" type="traductor" nillable="true" minOccurs="0" />
+        <xs:element name="metod" type="metodologia" nillable="true" minOccurs="0" />
+        <xs:element name="lector" type="lectorarchivo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="sum" type="sumatoria" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="condicion" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="condicion" nillable="true" minOccurs="0" />
+        <xs:element name="indprueba" type="indicador" nillable="true" minOccurs="0" />
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="session" type="xs:anyType" />
+        <xs:element name="et" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cuentatest" >
+      <xs:sequence>
+        <xs:element name="cuentas" type="cuenta" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="periodos" type="periodo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="prueba" type="cuenta" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="delta" type="xs:double" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="et" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="periodotest" >
+      <xs:sequence>
+        <xs:element name="periodos" type="periodo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="session" type="xs:anyType" />
+        <xs:element name="et" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="warrenbuffettest" >
+      <xs:sequence>
+        <xs:element name="lector" type="lectorarchivo" nillable="true" minOccurs="0" />
+        <xs:element name="procesador1" type="procesarindicadores" nillable="true" minOccurs="0" />
+        <xs:element name="t" type="traductor" nillable="true" minOccurs="0" />
+        <xs:element name="meto" type="metodologia" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="thrown" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pruebametodologiatest" >
+      <xs:sequence>
+        <xs:element name="lector" type="lectorarchivo" nillable="true" minOccurs="0" />
+        <xs:element name="procesador1" type="procesarindicadores" nillable="true" minOccurs="0" />
+        <xs:element name="t" type="traductor" nillable="true" minOccurs="0" />
+        <xs:element name="meto" type="metodologia" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="thrown" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datos" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="procesarindicadores" >
+      <xs:sequence>
+        <xs:element name="t" type="traductor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lectorarchivo" >
+      <xs:sequence>
+        <xs:element name="t" type="traductor" nillable="true" minOccurs="0" />
+        <xs:element name="lineasarchivo" type="lineaarchivo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lineaarchivo" >
+      <xs:sequence>
+        <xs:element name="valorcuenta" type="xs:double" />
+        <xs:element name="nombreempresa" type="xs:string" />
+        <xs:element name="nombrecuenta" type="xs:string" />
+        <xs:element name="fechainicio" type="xs:string" />
+        <xs:element name="fechafin" type="xs:string" />
+        <xs:element name="fechainscripcion" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metodologias" >
+      <xs:sequence>
+        <xs:element name="metodologias" type="metodologia" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cuentas" >
+      <xs:sequence>
+        <xs:element name="cuentas" type="cuenta" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="periodos" >
+      <xs:sequence>
+        <xs:element name="periodos" type="periodo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="indicadores" >
+      <xs:sequence>
+        <xs:element name="indicadores" type="indicador" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="empresas" >
+      <xs:sequence>
+        <xs:element name="empresas" type="empresa" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuarios" >
+      <xs:sequence>
+        <xs:element name="usuarios" type="usuario" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="expressionparser" >
+      <xs:sequence>
+        <xs:element name="_listener" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorfechaexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entradadedatoserroneaexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="campovacioexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nohayempresasquecumplanlacondicionexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="noseencuentralacuentaexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metodologiayaexisteexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yahayunindicadorconesenombreexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nohaycondicionesexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="noseencuentralacuentaenelperiodoexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fechainicioposteriorafinexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="noseencuentraelindicadorexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="noseencuentralaempresaexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nosepudoordenarlacondicionexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="condicion" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="ladoizq" type="valorcalculable" nillable="true" minOccurs="0" />
+        <xs:element name="s" type="periodo" nillable="true" minOccurs="0" />
+        <xs:element name="empresas" type="empresa" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="anios" type="xs:long" />
+        <xs:element name="filtro" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="puntajeempresa" >
+      <xs:sequence>
+        <xs:element name="nombreempresa" type="xs:string" />
+        <xs:element name="puntaje" type="xs:long" />
+        <xs:element name="resultadodeaplicarcondicion" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuario" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="usuario" type="xs:string" />
+        <xs:element name="pass" type="xs:string" />
+        <xs:element name="indicadores" type="indicador" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="indicador" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="operacion" type="xs:string" />
+        <xs:element name="nodo" type="nodoindicador" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="valorcalculable" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="indicador" nillable="true" minOccurs="0" />
+        <xs:element name="empresas" type="empresa" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="traductor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="division" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="operando" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordenaaplicandocriterioordenamiento" >
+      <xs:complexContent>
+       <xs:extension base="condicion">
+         <xs:sequence>
+          <xs:element name="//mayoramenoromenoramayor,sonpalabrasnosimbolos,ingresadainterfaz//graficacriterioordenamiento" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="promedio" >
+      <xs:complexContent>
+       <xs:extension base="valorcalculable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nodoindicador" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="operador" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="operando" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="operando" nillable="true" minOccurs="0" />
+        <xs:element name="parser" type="expressionparser" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creciente" >
+      <xs:complexContent>
+       <xs:extension base="valorcalculable">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="longevidad" >
+      <xs:complexContent>
+       <xs:extension base="valorcalculable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="operador" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="multiplicacion" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sumatoria" >
+      <xs:complexContent>
+       <xs:extension base="valorcalculable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="periodo" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="fechainicio" type="xs:anyType" />
+        <xs:element name="fechafin" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cuenta" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="valor" type="xs:double" />
+        <xs:element name="GeneratedName" type="periodo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="filtrosegunecuacion" >
+      <xs:complexContent>
+       <xs:extension base="condicion">
+         <xs:sequence>
+          <xs:element name="/*ladodersiemprevaaserunnumeropuede*/ladoder" type="xs:long" />
+          <xs:element name="comparador" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nodocuenta" >
+      <xs:sequence>
+        <xs:element name="nomcuenta" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="empresa" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="fechainscripcion" type="xs:anyType" />
+        <xs:element name="cuentas" type="cuenta" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="decreciente" >
+      <xs:complexContent>
+       <xs:extension base="valorcalculable">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mediana" >
+      <xs:complexContent>
+       <xs:extension base="valorcalculable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metodologia" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="condicionesdemetodologia" type="condicion" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="puntajeempresas" type="puntajeempresa" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="contador" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nodonumero" >
+      <xs:sequence>
+        <xs:element name="numero" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="filtro" >
+      <xs:complexContent>
+       <xs:extension base="condicion">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="resta" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="suma" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="traductor" >
+      <xs:sequence>
+        <xs:element name="empresas" type="empresa" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="indicadores" type="indicador" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="metodologias" type="metodologia" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="parser" type="expressionparser" nillable="true" minOccurs="0" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="utilidades" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

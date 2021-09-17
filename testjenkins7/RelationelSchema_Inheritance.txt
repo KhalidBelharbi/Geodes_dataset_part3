@@ -1,0 +1,13 @@
+
+role(roleid:Integer [PK], rolename:String, roletype:String, start:Date, end:Date, GeneratedName:Resource);
+
+team(teamid:Integer [PK], teamname:String, teamstatus:String, start:Date, end:Date);
+
+user(username:String [PK], password:String, role:String);
+
+resource(resourceid:Integer [PK], resourcename:String, resourcestatus:String, projects:Team);
+
+project(projectid:Integer [PK], projectname:String, //resourceresource:Team);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,10 @@
+ClassDiagram.Class>> Admin =>=>=> RelationalSchema.Table>> admin;
+ClassDiagram.Class>> Role =>=>=> RelationalSchema.Table>> role;
+ClassDiagram.Attribut>> Admin.id:Long =>=>=> RelationalSchema.Column>> admin.id PRIMARY KEY;
+ClassDiagram.Attribut>> Admin.firstname:String =>=>=> RelationalSchema.Column>> admin.firstname;
+ClassDiagram.Attribut>> Admin.lastname:String =>=>=> RelationalSchema.Column>> admin.lastname;
+ClassDiagram.Attribut>> Admin.email:String =>=>=> RelationalSchema.Column>> admin.email;
+ClassDiagram.Attribut>> Admin.password:String =>=>=> RelationalSchema.Column>> admin.password;
+ClassDiagram.Attribut>> Role.id:Long =>=>=> RelationalSchema.Column>> role.id PRIMARY KEY;
+ClassDiagram.Attribut>> Role.name:String =>=>=> RelationalSchema.Column>> role.name;
+Many-To-Many relationship between ClassDiagram.Class>>Admin  and ClassDiagram.Class>>collection<role>: users_roles(admin_id:Admin [PK] #FK to Admin,role_id:collection<role> [PK] #FK to collection<role>);

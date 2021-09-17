@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="smaapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storagecontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="storagemanageservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smaapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storemanagerdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storemanagerdaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="totalprice" type="xs:double" />
+        <xs:element name="pricewithgst" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderhistory" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:long" />
+        <xs:element name="//@manytoone(cascade" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="products" >
+      <xs:sequence>
+        <xs:element name="pid" type="xs:long" />
+        <xs:element name="pname" type="xs:string" />
+        <xs:element name="category" type="xs:string" />
+        <xs:element name="company" type="xs:string" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ormconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storagemanageservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storagemanageserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="storemanagerdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

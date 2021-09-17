@@ -1,0 +1,11 @@
+
+senha(serialversionuid:long, senha:int, tipo:EnumTipoSenha, dataemissao:Timestamp, foiatendido:boolean);
+
+atendimento(serialversionuid:long, GeneratedName:Senha #FK to(senha), GeneratedName:Guiche #FK to(guiche), dataatendido:Timestamp);
+
+usuario(serialversionuid:long, login:String, senha:String);
+
+guiche(serialversionuid:long, numero:Integer, estado:EnumGuicheEstados, GeneratedName:Usuario #FK to(usuario), dataapertura:Timestamp);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

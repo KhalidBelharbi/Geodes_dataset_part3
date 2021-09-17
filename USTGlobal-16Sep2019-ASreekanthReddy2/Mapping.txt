@@ -1,0 +1,14 @@
+ClassDiagram.Class>> Products =>=>=> RelationalSchema.Table>> products;
+ClassDiagram.Class>> OrderHistory =>=>=> RelationalSchema.Table>> orderhistory;
+ClassDiagram.Class>> OrderInfo =>=>=> RelationalSchema.Table>> orderinfo;
+ClassDiagram.Attribut>> Products.pid:int =>=>=> RelationalSchema.Column>> products.pid PRIMARY KEY;
+ClassDiagram.Attribut>> Products.pname:String =>=>=> RelationalSchema.Column>> products.pname;
+ClassDiagram.Attribut>> Products.category:String =>=>=> RelationalSchema.Column>> products.category;
+ClassDiagram.Attribut>> Products.company:String =>=>=> RelationalSchema.Column>> products.company;
+ClassDiagram.Attribut>> Products.quantity:int =>=>=> RelationalSchema.Column>> products.quantity;
+ClassDiagram.Attribut>> Products.price:double =>=>=> RelationalSchema.Column>> products.price;
+ClassDiagram.Attribut>> OrderHistory.orderid:int =>=>=> RelationalSchema.Column>> orderhistory.orderid PRIMARY KEY;
+ClassDiagram.Attribut>> OrderHistory.//@manytoone(cascade:int =>=>=> RelationalSchema.Column>> orderhistory.//@manytoone(cascade;
+ClassDiagram.Attribut>> OrderInfo.id:int =>=>=> RelationalSchema.Column>> orderinfo.id PRIMARY KEY;
+ClassDiagram.Attribut>> OrderInfo.totalprice:double =>=>=> RelationalSchema.Column>> orderinfo.totalprice;
+ClassDiagram.Attribut>> OrderInfo.pricewithgst:double =>=>=> RelationalSchema.Column>> orderinfo.pricewithgst;

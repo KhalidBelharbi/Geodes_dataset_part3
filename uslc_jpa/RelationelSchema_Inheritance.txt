@@ -1,0 +1,27 @@
+
+purchaseorder(serialversionuid:long, id:int [PK], deleted:boolean, departmentnumber:String, referencenumber:String, shipfrom:String, shipto:String, timestamp:Date, totalcartons:int, totalitems:int);
+
+packingdetail(serialversionuid:long, id:int [PK], deleted:boolean, quantity:int, sku:int, GeneratedName:PurchaseOrderDetail #FK to(PurchaseOrder), GeneratedName:Carton #FK to(carton));
+
+size(serialversionuid:long, id:int [PK], hip:int, inseam:int, waist:int);
+
+purchaseorderdetail(serialversionuid:long, id:int [PK], deleted:boolean, preticketed:boolean, timestamp:Date, total:int, GeneratedName:PurchaseOrder #FK to(PurchaseOrder), GeneratedName:Upc #FK to(upc));
+
+scandetail(serialversionuid:long, id:int [PK], deleted:boolean, timestamp:Date, GeneratedName:Upc #FK to(upc), upcreferencenumber:String, GeneratedName:Carton #FK to(carton));
+
+user(serialversionuid:long, id:int [PK], enabled:boolean, active:boolean, firstname:String, lastname:String, password:String, timestamp:Date, usertype:int, username:String);
+
+color(serialversionuid:long, id:int [PK], name:String, number:String);
+
+carton(serialversionuid:long, id:int [PK], completed:boolean, deleted:boolean, items:int, referencenumber:String, upccode:String, GeneratedName:User #FK to(user), GeneratedName:PackingDetail #FK to(packingdetail));
+
+purchaseorderbyuser(serialversionuid:long, id:int [PK], deleted:boolean, GeneratedName:PurchaseOrder #FK to(PurchaseOrder), GeneratedName:User #FK to(user));
+
+upc(serialversionuid:long, id:int [PK], coloritemcode:String, deleted:boolean, timestamp:Date, upccode:String, GeneratedName:Color #FK to(color), GeneratedName:Item #FK to(item), GeneratedName:Size #FK to(size));
+
+log(serialversionuid:long, id:int [PK], actionid:int, description:String, formid:int, timestamp:Date, GeneratedName:User #FK to(user));
+
+item(serialversionuid:long, id:int [PK], code:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

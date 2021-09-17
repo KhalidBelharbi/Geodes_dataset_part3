@@ -1,0 +1,17 @@
+
+userfocus(userid:Long [PK], userfocusid:Long [PK]);
+
+dept(id:Long [PK], name:String);
+
+article(id:Long [PK], title:String, content:String, browsecount:Long, publish:Date, publishrealname:String, userid:Long);
+
+user();
+
+meetingjoin(uid:Long [PK], mid:Long [PK]);
+
+meeting(id:Long [PK], deptname:String, deptid:Long, title:String, content:String, publish:Date, starttime:Date, endtime:Date, status:Long, makeuser:String);
+
+favorite(uid:Long [PK], aid:Long [PK]);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

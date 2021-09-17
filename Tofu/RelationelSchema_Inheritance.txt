@@ -1,0 +1,27 @@
+
+user(primarykey:UserKey, name:String, ipaddress:String, lastquestion:Date, roleid:Integer);
+
+poll(primarykey:PollKey, title:String, closed:Boolean, optioncount:Integer, correctchoice:String, createdat:Date);
+
+question(primarykey:QuestionKey, studentid:Integer, studentip:String, content:String, votecounter:Integer, answered:Boolean, createdat:Date, answertext:String);
+
+lecture(id:Integer [PK], lecturename:String, starttime:Date, studentjoinid:String, moderatorjoinid:String, lecturerjoinid:String, lectureongoing:Boolean);
+
+moderator();
+
+vote(primarykey:VoteKey, votevalue:Integer);
+
+pollvote(primarykey:PollVoteKey, vote:String);
+
+role(id:Integer [PK], name:String);
+
+answer(primarykey:AnswerKey, answertext:String, questionid:Integer, moderatorid:Integer);
+
+ban(primarykey:BanKey);
+
+lecturefeedback(GeneratedName:UserKey, lecturefeedbackcodeas:Integer);
+
+quote(id:long [PK], quote:String, author:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

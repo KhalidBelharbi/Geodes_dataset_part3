@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="login-error" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="beans" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="microprofile-config" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="private-key" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="public-key" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="server" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authorizationcode" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="clientid" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="approvedscopes" type="xs:string" />
+        <xs:element name="redirecturi" type="xs:string" />
+        <xs:element name="expirationdate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="roles" type="xs:string" />
+        <xs:element name="scopes" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appdatarepository" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:sequence>
+        <xs:element name="clientid" type="xs:string" />
+        <xs:element name="clientsecret" type="xs:string" />
+        <xs:element name="redirecturi" type="xs:string" />
+        <xs:element name="scope" type="xs:string" />
+        <xs:element name="authorizedgranttypes" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pemkeyutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2serverapplication" >
+      <xs:complexContent>
+       <xs:extension base="application">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tokenendpoint" >
+      <xs:sequence>
+        <xs:element name="supportedgranttypes" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="appdatarepository" nillable="true" minOccurs="0" />
+        <xs:element name="authorizationgranttypehandlers" type="authorizationgranttypehandler" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwkendpoint" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authorizationendpoint" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="appdatarepository" nillable="true" minOccurs="0" />
+        <xs:element name="authorizationgranttypehandlers" type="authorizationgranttypehandler" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useridentitystore" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="appdatarepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authorizationcodegranttypehandler" >
+      <xs:complexContent>
+       <xs:extension base="abstractgranttypehandler">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="authorizationgranttypehandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refreshtokengranttypehandler" >
+      <xs:complexContent>
+       <xs:extension base="abstractgranttypehandler">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractgranttypehandler" >
+      <xs:sequence>
+        <xs:element name="//alwaysrsa256,butcouldbeparametrized" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="//30minexpiresinmin" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

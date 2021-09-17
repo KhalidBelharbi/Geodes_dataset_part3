@@ -1,0 +1,16 @@
+ClassDiagram.Class>> DriversLicense =>=>=> RelationalSchema.Table>> driverslicense;
+ClassDiagram.Class>> ContextualPerson =>=>=> RelationalSchema.Table>> contextualperson;
+ClassDiagram.Class>> Person =>=>=> RelationalSchema.Table>> person;
+ClassDiagram.Attribut>> DriversLicense.id:int =>=>=> RelationalSchema.Column>> driverslicense.id PRIMARY KEY;
+ClassDiagram.Attribut>> DriversLicense.serial_number:String =>=>=> RelationalSchema.Column>> driverslicense.serial_number;
+ClassDiagram.Attribut>> ContextualPerson.id:Integer =>=>=> RelationalSchema.Column>> contextualperson.id PRIMARY KEY;
+ClassDiagram.Attribut>> ContextualPerson.transient:TestBean =>=>=> RelationalSchema.Column>> contextualperson.transient;
+ClassDiagram.Attribut>> ContextualPerson.first_name:String =>=>=> RelationalSchema.Column>> contextualperson.first_name;
+ClassDiagram.Attribut>> ContextualPerson.last_name:String =>=>=> RelationalSchema.Column>> contextualperson.last_name;
+ClassDiagram.Attribut>> ContextualPerson.transient:EntityManager =>=>=> RelationalSchema.Column>> contextualperson.transient;
+ClassDiagram.Attribut>> Person.id:Integer =>=>=> RelationalSchema.Column>> person.id PRIMARY KEY;
+ClassDiagram.Attribut>> Person.transient:TestBean =>=>=> RelationalSchema.Column>> person.transient;
+ClassDiagram.Attribut>> Person.first_name:String =>=>=> RelationalSchema.Column>> person.first_name;
+ClassDiagram.Attribut>> Person.last_name:String =>=>=> RelationalSchema.Column>> person.last_name;
+One-To-One relationship between ClassDiagram.Class>>ContextualPerson  to ClassDiagram.Class>>driverslicense represented by ClassDiagram.Atrribute>>//lazyrelationshiptoforceuseofinstrumentationinjpaimplementation.//toplink,atleast,willnotinstrumentclassesunlessabsolutelynecessary.;
+One-To-One relationship between ClassDiagram.Class>>Person  to ClassDiagram.Class>>driverslicense represented by ClassDiagram.Atrribute>>//lazyrelationshiptoforceuseofinstrumentationinjpaimplementation.//toplink,atleast,willnotinstrumentclassesunlessabsolutelynecessary.;

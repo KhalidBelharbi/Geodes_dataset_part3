@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="goods" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="pic" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="browsecount" type="xs:long" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="publish" type="xs:dateTime" />
+        <xs:element name="publishrealname" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="qqopenid" type="xs:string" />
+        <xs:element name="wxopenid" type="xs:string" />
+        <xs:element name="realname" type="xs:string" />
+        <xs:element name="age" type="xs:long" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="gender" type="xs:string" />
+        <xs:element name="info" type="xs:string" />
+        <xs:element name="registertime" type="xs:dateTime" />
+        <xs:element name="logintime" type="xs:dateTime" />
+        <xs:element name="pic" type="xs:string" />
+        <xs:element name="look" type="xs:long" />
+        <xs:element name="issecret" type="xs:string" />
+        <xs:element name="shopid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="favorite" >
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long" />
+        <xs:element name="gid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

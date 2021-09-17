@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shipmentproductid" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="shipmentid" type="xs:anyType" />
+        <xs:element name="productid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storeshipment" >
+      <xs:sequence>
+        <xs:element name="shipmentid" type="xs:anyType" />
+        <xs:element name="senderstoreid" type="xs:anyType" />
+        <xs:element name="senderwarehousecheckerid" type="xs:anyType" />
+        <xs:element name="shipment" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="staff" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="staffid" type="xs:anyType" />
+        <xs:element name="storeid" type="xs:anyType" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="jobtitle" type="xs:string" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="age" type="xs:anyType" />
+        <xs:element name="employmentstart" type="xs:dateTime" />
+        <xs:element name="employmentend" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="returns" >
+      <xs:sequence>
+        <xs:element name="returnid" type="xs:anyType" />
+        <xs:element name="transactionid" type="xs:anyType" />
+        <xs:element name="warehouseoperatorid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billingoperator" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="staffid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="productid" type="xs:anyType" />
+        <xs:element name="productname" type="xs:string" />
+        <xs:element name="productcategoryid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="signupinformation" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="signupid" type="xs:anyType" />
+        <xs:element name="storeid" type="xs:anyType" />
+        <xs:element name="customerid" type="xs:anyType" />
+        <xs:element name="staffid" type="xs:anyType" />
+        <xs:element name="tierid" type="xs:anyType" />
+        <xs:element name="signup" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cashier" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="staffid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manager" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="staffid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="returnmerchandiseid" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="returnid" type="xs:anyType" />
+        <xs:element name="merchandiseid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shipmentcontainsproduct" >
+      <xs:sequence>
+        <xs:element name="shipmentid" type="xs:anyType" />
+        <xs:element name="productid" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="store" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="storeid" type="xs:anyType" />
+        <xs:element name="managerid" type="xs:anyType" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="phonenumber" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="warehouseoperator" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="staffid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="registrationoperator" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="staffid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="discount" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="discountid" type="xs:anyType" />
+        <xs:element name="productid" type="xs:anyType" />
+        <xs:element name="discountpercentage" type="xs:double" />
+        <xs:element name="discountstart" type="xs:dateTime" />
+        <xs:element name="discountexpiration" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="membershiptier" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="tierid" type="xs:anyType" />
+        <xs:element name="tiername" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customer" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="customerid" type="xs:anyType" />
+        <xs:element name="tierid" type="xs:anyType" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="emailaddress" type="xs:string" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="homeaddress" type="xs:string" />
+        <xs:element name="membershipstatus" type="xs:anyType" />
+        <xs:element name="rewardpoints" type="xs:double" />
+        <xs:element name="membershipamountpaid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="supplier" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="supplierid" type="xs:anyType" />
+        <xs:element name="suppliername" type="xs:string" />
+        <xs:element name="emailaddress" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactioncontainsmerchandise" >
+      <xs:sequence>
+        <xs:element name="transactionid" type="xs:anyType" />
+        <xs:element name="merchandiseid" type="xs:anyType" />
+        <xs:element name="discountedprice" type="xs:double" />
+        <xs:element name="quantity" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactionmerchandiseid" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="transactionid" type="xs:anyType" />
+        <xs:element name="merchandiseid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transaction" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="transactionid" type="xs:anyType" />
+        <xs:element name="storeid" type="xs:anyType" />
+        <xs:element name="customerid" type="xs:anyType" />
+        <xs:element name="cashierid" type="xs:anyType" />
+        <xs:element name="purchase" type="xs:dateTime" />
+        <xs:element name="totalprice" type="xs:double" />
+        <xs:element name="cashbackreward" type="xs:double" />
+        <xs:element name="GeneratedName" type="paymentmethod" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentmethod" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billinginfo" >
+      <xs:sequence>
+        <xs:element name="billid" type="xs:anyType" />
+        <xs:element name="shipmentid" type="xs:anyType" />
+        <xs:element name="staffid" type="xs:anyType" />
+        <xs:element name="amount" type="xs:double" />
+        <xs:element name="paymentstatus" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="returncontainsmerchandise" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="returnid" type="xs:anyType" />
+        <xs:element name="merchandiseid" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="merchandise" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="merchandiseid" type="xs:anyType" />
+        <xs:element name="productid" type="xs:anyType" />
+        <xs:element name="expiration" type="xs:dateTime" />
+        <xs:element name="production" type="xs:dateTime" />
+        <xs:element name="storeid" type="xs:anyType" />
+        <xs:element name="supplierid" type="xs:anyType" />
+        <xs:element name="marketprice" type="xs:double" />
+        <xs:element name="buyprice" type="xs:double" />
+        <xs:element name="quantityinstock" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="category" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="productcategoryid" type="xs:anyType" />
+        <xs:element name="categoryname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="suppliershipment" >
+      <xs:sequence>
+        <xs:element name="shipmentid" type="xs:anyType" />
+        <xs:element name="supplierid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shipment" >
+      <xs:sequence>
+        <xs:element name="shipmentid" type="xs:anyType" />
+        <xs:element name="recepientstoreid" type="xs:anyType" />
+        <xs:element name="recepientwarehouseoperatorid" type="xs:anyType" />
+        <xs:element name="received" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="signupcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="signupservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billingcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="billingservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="customerservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="staffcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="staffservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="merchandisecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="merchandiseservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="membershiptiercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="membershiptierservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reportscontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="reportsservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shipmentcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="shipmentservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categorycontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="categoryservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="suppliercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="supplierservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="discountcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="discountservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="storeservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactioncontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="transactionservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="returncontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="returnservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productservice" >
+      <xs:sequence>
+        <xs:element name="productrepo" type="productrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="merchandiseservice" >
+      <xs:sequence>
+        <xs:element name="merchandiserepo" type="merchandiserepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billingservice" >
+      <xs:sequence>
+        <xs:element name="billingrepo" type="billinginforepository" nillable="true" minOccurs="0" />
+        <xs:element name="staffrepo" type="staffrepository" nillable="true" minOccurs="0" />
+        <xs:element name="merchrepo" type="merchandiserepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reportsservice" >
+      <xs:sequence>
+        <xs:element name="transactionrepo" type="transactionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="merchandiserepo" type="merchandiserepository" nillable="true" minOccurs="0" />
+        <xs:element name="signuprepo" type="signuprepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storeservice" >
+      <xs:sequence>
+        <xs:element name="storerepo" type="storerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="membershiptierservice" >
+      <xs:sequence>
+        <xs:element name="membershiptierrepo" type="membershiptierrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categoryservice" >
+      <xs:sequence>
+        <xs:element name="categoryrepo" type="categoryrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="returnservice" >
+      <xs:sequence>
+        <xs:element name="returnrepo" type="returnrepository" nillable="true" minOccurs="0" />
+        <xs:element name="returncontainsmerchrepo" type="returncontainsmerchandiserepository" nillable="true" minOccurs="0" />
+        <xs:element name="transactionrepo" type="transactionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="transactioncontainsmerchrepo" type="transactioncontainsmerchandiserepository" nillable="true" minOccurs="0" />
+        <xs:element name="merchrepo" type="merchandiserepository" nillable="true" minOccurs="0" />
+        <xs:element name="customerrepo" type="customerrepository" nillable="true" minOccurs="0" />
+        <xs:element name="membershiptierrepo" type="membershiptierrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shipmentservice" >
+      <xs:sequence>
+        <xs:element name="shipmentrepo" type="shipmentrepository" nillable="true" minOccurs="0" />
+        <xs:element name="storeshipmentrepo" type="storeshipmentrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="billingservice" nillable="true" minOccurs="0" />
+        <xs:element name="suppliershipmentrepo" type="suppliershipmentrepository" nillable="true" minOccurs="0" />
+        <xs:element name="merchandiserepo" type="merchandiserepository" nillable="true" minOccurs="0" />
+        <xs:element name="shipmentcontainsproductrepo" type="shipmentcontainsproductrepository" nillable="true" minOccurs="0" />
+        <xs:element name="staffrepo" type="staffrepository" nillable="true" minOccurs="0" />
+        <xs:element name="merchservice" type="merchandiseservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="staffservice" >
+      <xs:sequence>
+        <xs:element name="staffrepo" type="staffrepository" nillable="true" minOccurs="0" />
+        <xs:element name="cashierrepo" type="cashierrepository" nillable="true" minOccurs="0" />
+        <xs:element name="managerrepo" type="managerrepository" nillable="true" minOccurs="0" />
+        <xs:element name="billingrepo" type="billingoperatorrepository" nillable="true" minOccurs="0" />
+        <xs:element name="registrationrepo" type="registrationoperatorrepository" nillable="true" minOccurs="0" />
+        <xs:element name="warehouserepo" type="warehouseoperatorrepository" nillable="true" minOccurs="0" />
+        <xs:element name="storerepo" type="storerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="supplierservice" >
+      <xs:sequence>
+        <xs:element name="supplierrepo" type="supplierrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactionservice" >
+      <xs:sequence>
+        <xs:element name="transactionrepo" type="transactionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="merchandiserepo" type="merchandiserepository" nillable="true" minOccurs="0" />
+        <xs:element name="customerrepo" type="customerrepository" nillable="true" minOccurs="0" />
+        <xs:element name="membershiptierrepo" type="membershiptierrepository" nillable="true" minOccurs="0" />
+        <xs:element name="discountrepo" type="discountrepository" nillable="true" minOccurs="0" />
+        <xs:element name="transactioncontainsmerchandiserepo" type="transactioncontainsmerchandiserepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerservice" >
+      <xs:sequence>
+        <xs:element name="customerrepo" type="customerrepository" nillable="true" minOccurs="0" />
+        <xs:element name="signuprepo" type="signuprepository" nillable="true" minOccurs="0" />
+        <xs:element name="membershiptierrepo" type="membershiptierrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="discountservice" >
+      <xs:sequence>
+        <xs:element name="discountrepo" type="discountrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="signupservice" >
+      <xs:sequence>
+        <xs:element name="signuprepo" type="signuprepository" nillable="true" minOccurs="0" />
+        <xs:element name="customerrepo" type="customerrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springfoxconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wolfwrapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cashierrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<cashier,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="returnrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<returns,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="suppliershipmentrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<suppliershipment,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="merchandiserepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<merchandise,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="storeshipmentrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<storeshipment,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="storerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<store,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="billinginforepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<billinginfo,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="membershiptierrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<membershiptier,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="warehouseoperatorrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<warehouseoperator,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customerrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<customer,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="supplierrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<supplier,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="staffrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<staff,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="categoryrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<category,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="returncontainsmerchandiserepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<returncontainsmerchandise,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<product,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shipmentrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<shipment,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="transactionrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<transaction,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="signuprepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<signupinformation,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="registrationoperatorrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<registrationoperator,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shipmentcontainsproductrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<shipmentcontainsproduct,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="managerrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<manager,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="transactioncontainsmerchandiserepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<transactioncontainsmerchandise,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="billingoperatorrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<billingoperator,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="discountrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<discount,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customersignuppojo" >
+      <xs:sequence>
+        <xs:element name="tierid" type="xs:anyType" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="emailaddress" type="xs:string" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="homeaddress" type="xs:string" />
+        <xs:element name="membershipstatus" type="xs:anyType" />
+        <xs:element name="rewardpoints" type="xs:double" />
+        <xs:element name="membershipamountpaid" type="xs:anyType" />
+        <xs:element name="storeid" type="xs:anyType" />
+        <xs:element name="staffid" type="xs:anyType" />
+        <xs:element name="signup" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shipmentmerchdetails" >
+      <xs:sequence>
+        <xs:element name="merchandiseid" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shipmentproductdetails" >
+      <xs:sequence>
+        <xs:element name="productid" type="xs:anyType" />
+        <xs:element name="buyprice" type="xs:double" />
+        <xs:element name="marketprice" type="xs:double" />
+        <xs:element name="production" type="xs:dateTime" />
+        <xs:element name="expiration" type="xs:dateTime" />
+        <xs:element name="quantity" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="storeshipmentpojo" >
+      <xs:sequence>
+        <xs:element name="details" type="shipment" nillable="true" minOccurs="0" />
+        <xs:element name="senderstoreid" type="xs:anyType" />
+        <xs:element name="senderwarehousecheckerid" type="xs:anyType" />
+        <xs:element name="shipment" type="xs:dateTime" />
+        <xs:element name="shipmentmerchdetails" type="shipmentmerchdetails" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactionmerchandisedetails" >
+      <xs:sequence>
+        <xs:element name="merchandiseid" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactionpojo" >
+      <xs:sequence>
+        <xs:element name="details" type="transaction" nillable="true" minOccurs="0" />
+        <xs:element name="merchlist" type="transactionmerchandisedetails" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="returnpojo" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="returns" nillable="true" minOccurs="0" />
+        <xs:element name="merchcountmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="returnresponse" >
+      <xs:sequence>
+        <xs:element name="returnid" type="xs:anyType" />
+        <xs:element name="returnamount" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="suppliershipmentpojo" >
+      <xs:sequence>
+        <xs:element name="details" type="shipment" nillable="true" minOccurs="0" />
+        <xs:element name="supplierid" type="xs:anyType" />
+        <xs:element name="productslist" type="shipmentproductdetails" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basicutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wolfwrapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

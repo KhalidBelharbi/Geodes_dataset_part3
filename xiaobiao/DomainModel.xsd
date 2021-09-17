@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="userfocus" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="userfocusid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dept" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="article" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="browsecount" type="xs:long" />
+        <xs:element name="publish" type="xs:dateTime" />
+        <xs:element name="publishrealname" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="meetingjoin" >
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long" />
+        <xs:element name="mid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="meeting" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="deptname" type="xs:string" />
+        <xs:element name="deptid" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="publish" type="xs:dateTime" />
+        <xs:element name="starttime" type="xs:dateTime" />
+        <xs:element name="endtime" type="xs:dateTime" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="makeuser" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="favorite" >
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long" />
+        <xs:element name="aid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

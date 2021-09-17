@@ -1,0 +1,12 @@
+ClassDiagram.Class>> MailInfo =>=>=> RelationalSchema.Table>> mailinfo;
+ClassDiagram.Class>> UserBean =>=>=> RelationalSchema.Table>> userbean;
+ClassDiagram.Attribut>> MailInfo.id:int =>=>=> RelationalSchema.Column>> mailinfo.id PRIMARY KEY;
+ClassDiagram.Attribut>> MailInfo.from_id:int =>=>=> RelationalSchema.Column>> mailinfo.from_id;
+ClassDiagram.Attribut>> MailInfo.to_id:int =>=>=> RelationalSchema.Column>> mailinfo.to_id;
+ClassDiagram.Attribut>> MailInfo.subject:String =>=>=> RelationalSchema.Column>> mailinfo.subject;
+ClassDiagram.Attribut>> MailInfo.message:String =>=>=> RelationalSchema.Column>> mailinfo.message;
+ClassDiagram.Attribut>> MailInfo.status:String =>=>=> RelationalSchema.Column>> mailinfo.status;
+ClassDiagram.Attribut>> UserBean.id:int =>=>=> RelationalSchema.Column>> userbean.id PRIMARY KEY;
+ClassDiagram.Attribut>> UserBean.user_name:String =>=>=> RelationalSchema.Column>> userbean.user_name;
+ClassDiagram.Attribut>> UserBean.email:String =>=>=> RelationalSchema.Column>> userbean.email;
+ClassDiagram.Attribut>> UserBean.password:String =>=>=> RelationalSchema.Column>> userbean.password;

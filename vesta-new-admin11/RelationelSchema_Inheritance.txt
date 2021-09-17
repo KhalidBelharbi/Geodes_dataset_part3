@@ -1,0 +1,13 @@
+
+complaintentity(//正常(状态)status_valid:String, //删除(状态)status_invalid:String, //投诉idid:String, //用户iduserid:String, //用户名username:String, //投诉内容content:String, //投诉时间crttime:Date, //事物idbussinessid:String, //地址address:String, //手机号码mobile:String, //状态status:String, //项目idprojectid:String, //项目名称projectname:String, //投诉单号codenum:String);
+
+isayimageentity(//图片idid:String, //关联idbussinessid:String, //图片地址url:String, //创建时间crttime:Date);
+
+answerentity(answer_consult:String, answer_complaint:String, answer_praise:String, answer_reply:String, //回复idid:String, //关联idconsultid:String, //用户iduserid:String, //回复内容content:String, //回复时间crttime:Date, //回复类型1.咨询2.投诉3.表扬4.随手拍answertype:String);
+
+praiseentity(//已读readstatus_yes:String, //未读readstatus_not:String, //正常(状态)status_valid:String, //删除(状态)status_invalid:String, //已回复(是否回复)reply_yes:String, //未回复(是否回复)reply_no:String, //表扬idid:String, //用户iduserid:String, //对象idtargetid:String, //表扬对象targetname:String, //项目idprojectid:String, //项目名称projectname:String, //单号codenum:String, //时间crttime:Date, //内容content:String, //星级level:String, //读取状态0-未读，1-已读readstatus:String, //地址address:String, //用户名username:String, //手机号mobile:String, //状态1正常2删除status:String, //是否已回复1已回复2未回复reply:String);
+
+consultentity(//正常(状态)status_valid:String, //删除(状态)status_invalid:String, //已回复(是否回复)reply_status_yes:String, //未回复(是否回复)reply_status_no:String, //咨询idid:String, //用户iduserid:String, //用户名username:String, //手机mobile:String, //项目idprojectid:String, //项目名称projectname:String, //地址address:String, //咨询内容content:String, //咨询时间crttime:Date, //状态status:String, //是否回复replystatus:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

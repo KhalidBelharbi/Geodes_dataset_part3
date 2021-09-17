@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="validation" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="validationcode" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermodel" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="GeneratedName" type="role" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activitymodel" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//@serializedname("name")name" type="xs:string" />
+        <xs:element name="//@serializedname("category")category" type="categories" nillable="true" minOccurs="0" />
+        <xs:element name="//@serializedname("phonenumber")phonenumber" type="xs:string" />
+        <xs:element name="//@serializedname("email")email" type="xs:string" />
+        <xs:element name="//@serializedname("ageminlimit")ageminlimit" type="xs:long" />
+        <xs:element name="//@serializedname("agemaxlimit")agemaxlimit" type="xs:long" />
+        <xs:element name="//@serializedname("latitude")latitude" type="xs:double" />
+        <xs:element name="//@serializedname("longitude")longitude" type="xs:double" />
+        <xs:element name="//@serializedname("comment")comment" type="xs:string" />
+        <xs:element name="//@serializedname("city")city" type="xs:string" />
+        <xs:element name="zipcode" type="xs:long" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="priceinhuf" type="xs:double" />
+        <xs:element name="durationinminutes" type="xs:long" />
+        <xs:element name="subcategory" type="xs:string" />
+        <xs:element name="isactive" type="xs:anyType" />
+        <xs:element name="ispremium" type="xs:anyType" />
+        <xs:element name="views" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

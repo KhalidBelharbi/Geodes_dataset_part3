@@ -1,0 +1,37 @@
+
+multicodevalue(/***child_num*/childnum:Integer, /***代码id*/codeid:String, /***代码项值*/itemvalue:String, /***代码项显示值*/codename:String, /***上层代码id*/parentitemid:String, /***代码编号*/itemcode:String, /***排序*/sortsq:Integer, /***评论*/comments:String, parentdict:MultiCodeValue #FK to(multicodevalue));
+
+udppointpermission(/***功能点名称*/pointname:String, /***功能点表达式*/pointexpression:String);
+
+point_in_role(point_id:UdpPointPermission [PK] #FK to UdpPointPermission,role_id:list<role> [PK] #FK to list<role>);
+
+weddingphoto(/***照片分类*/photosort:String, /***相册分类*/albumsort:String, /***照片*/photo:String);
+
+user(/***密码*/password:String, /***出生日期*/birthday:Date, /***电子邮箱*/email:String, /***部门*/deptid:String, /***姓名*/name:String, /***性别*/gender:String, /***用户名*/userid:String, /***手机*/mobile:String, sort:Integer, enable:Integer, GeneratedName:Department #FK to(department), passworderrortimes:Integer, lastpassworderrortime:Date, lastchangepwdtime:Date);
+
+user_in_role(user_id:User [PK] #FK to User,role_id:list<role> [PK] #FK to list<role>);user_in_dept(user_id:User [PK] #FK to User,dept_id:list<department> [PK] #FK to list<department>);
+
+code(/***上层编码*/parentcode:String, /***下层最大编码*/maxchildcode:String);
+
+informationcontent(/***作者*/author:String, /***发布日期*/released:Date, /***标题*/title:String, /***内容*/content:String, /***信息类别*/infotype:String, /***附件*/attachment:String, GeneratedName:User #FK to(user));
+
+sensitivewords(/***敏感词*/words:String);
+
+role(/***排序*/sort:Integer, /***上层角色*/parentroleid:String, /***备注*/backup:String, /***角色名称*/rolename:String, /***是否管理员角色*/admin:Boolean, parent:Role #FK to(role));
+
+module_in_role(role_id:Role [PK] #FK to Role,module_id:list<module> [PK] #FK to list<module>);user_in_role(role_id:Role [PK] #FK to Role,user_id:list<user> [PK] #FK to list<user>);
+
+module(/***模块地址*/moduleaddr:String, /***模块序号*/sortsq:Integer, /***是否可见*/isvisible:Integer, /***父模块id*/parentmoduleid:String, /***是否公开*/ispublic:Integer, /***目标*/target:String, /***模块code*/modulecode:String, /***模块名称*/modulename:String, /***小图标地址*/iconaddr:String, /***权限判断是否严格过滤url*/stick:Integer, parent:Module #FK to(module), /***是否含有子模块*/haschild:Integer);
+
+module_in_role(module_id:Module [PK] #FK to Module,role_id:list<role> [PK] #FK to list<role>);
+
+department(/***部门编码*/deptcode:String, /***部门名称*/deptname:String, /***排序*/sort:Integer, /***上层部门*/parentdeptid:String, enable:Integer, parentdept:Department #FK to(department));
+
+department_in_role(dept_id:Department [PK] #FK to Department,role_id:list<role> [PK] #FK to list<role>);
+
+multicode(/***code名*/codename:String, /***排序*/sortsq:Integer, /***评论*/comments:String);
+
+datadictionary(/***dictionary_code*/dictionarycode:String, /***content*/content:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

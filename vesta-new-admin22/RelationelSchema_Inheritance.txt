@@ -1,0 +1,35 @@
+
+suppliersnapentity(//自增idid:long, //业务idbusinessid:String, //供应商名称name:String, //类别type:String, //状态；0无效1有效state:String, //创建时间create:Date, //修改时间modify:Date, //级别graded:String, //父级idparentid:String);
+
+supplierentity(//供应商idid:String, //供应商名称name:String, //简称shortname:String, //性质nature:String, //负责人manage:String, //联系人contact:String, //联系电话phone:String, //类别type:String, //创建时间create:Date, //修改时间modify:Date);
+
+repairmodeentity(//显示信息label:String, //值信息value:String, //三级分类的idthirdid:String, //修改时间modify:Date);
+
+thirdtypeentity(//主键id:String, //分类名称name:String, //等级degree:String, //创建时间create:Date, //关联iddegreeid:String);
+
+describeentity(//显示信息label:String, //值信息value:String, //三级分类的idthirdid:String, //修改时间modify:Date);
+
+thirdclassificationentity(//显示信息label:String, //值信息value:String, //二级分类的idsecondid:String, //修改时间modify:Date, //三级分类别名alias:String);
+
+suppliercrmentity(//供应商idsupplierid:String, //名称name:String, //创建时间createon:Date, //项目编码projectcode:String, //所属三级分类threetype:String, //类别suppliertype:String, //修改时间modifyon:Date);
+
+secondclassificationentity(//显示信息label:String, //值信息value:String, //一级分类的idfirstid:String, //修改时间modify:Date);
+
+staffregisterentity(//签到idstaffregisterid:String, //员工idstaffid:String, //员工姓名staffname:String, //员工部门idstaffsectionid:String, //员工部门staffsection:String, //0-未签订，1-已签到staffregisterstatus:String, //签到时间registertime:Date, //签到日期registerdate:String, //项目idprojectid:String, //员工电话mobile:String);
+
+directoryentity(//通讯录iddirectoryid:String, //公司名称companyname:String, //部门section:String, //员工姓名staffname:String, //电话staffmobile:String, //创建时间createtime:Date, //排序sort:String);
+
+firstclassificationentity(//显示信息label:String, //值信息value:String, //修改时间modify:Date);
+
+roomlocationentity(id:String [PK], name:String, createon:Date, //修改时间modify:Date, //状态：0为创建1为修改state:String);
+
+worktimeentity(//显示信息label:String, //值信息value:String, //维修方式的idrepairid:String, //修改时间modify:Date);
+
+supplierrelationshipsnapentity(//自增idid:long, //供应商idsupplierid:String, //项目idprojectid:String, //项目编码projectnum:String, //三级分类idthirdid:String, //状态0无效1有效state:String, //创建时间create:Date, //修改时间modify:Date, //业务businessid:String);
+
+thirdclassificationcommentity(//idid:String, //显示信息label:String, //value:String, //二级分类的idsecondid:String, //最新修改时间timestamp:Date, //三级分类别名alias:String, //需求改变增加排序//分类排名itemorder:Integer);
+
+supplierrelationshipentity(id:String [PK], //供应商idsupplierid:String, //项目idprojectid:String, //项目编码projectnum:String, //三级分类idthirdid:String, //创建时间create:Date, //修改时间modify:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

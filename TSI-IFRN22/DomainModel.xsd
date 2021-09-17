@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="postcommentfingerprinttest" >
+      <xs:complexContent>
+       <xs:extension base="abstractjooqpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="pcs" type="xs:string" />
+          <xs:element name="tsg" type="xs:string" />
+          <xs:element name="st" type="xs:string" />
+          <xs:element name="sbc" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postcommentscorestoredproceduretest" >
+      <xs:complexContent>
+       <xs:extension base="abstractjooqpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postcommentscoretest" >
+      <xs:complexContent>
+       <xs:extension base="abstractjooqpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="pcs" type="xs:string" />
+          <xs:element name="tsg" type="xs:string" />
+          <xs:element name="st" type="xs:string" />
+          <xs:element name="sbc" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

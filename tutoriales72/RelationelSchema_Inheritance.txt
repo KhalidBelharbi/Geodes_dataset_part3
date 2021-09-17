@@ -1,0 +1,13 @@
+
+user(id:Long [PK], name:String, GeneratedName:Preference #FK to(preference));
+
+subject(id:long [PK], name:String);
+
+preference(id:Long [PK], timezone:String);
+
+post(id:Long [PK], title:String, url:String, date:String, redditid:String, submission:Date, sent:boolean, username:String);
+
+foo(id:long [PK], name:String, version:long);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

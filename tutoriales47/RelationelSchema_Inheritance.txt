@@ -1,0 +1,25 @@
+
+userentity(id:Long [PK], name:String);
+
+user(id:Long [PK], name:String, age:Integer, locked:Boolean);
+
+item(id:Long [PK], color:String, grade:String, name:String);
+
+product(id:long [PK], name:String, description:String, category:String, unitprice:BigDecimal);
+
+employee(/***/serialversionuid:long, id:Long [PK], empnumber:String, name:String, age:int);
+
+exam(id:Long [PK], description:String, text:String, shorttext:String);
+
+article(table_name:String);
+
+mealwithembeddedallergens(id:Long [PK], name:String, description:String, price:BigDecimal, allergens:AllergensAsEmbeddable);
+
+mealassingleentity(id:Long [PK], name:String, description:String, price:BigDecimal, peanuts:boolean, celery:boolean, sesameseeds:boolean);
+
+mealwithmultipleentities(id:Long [PK], name:String, description:String, price:BigDecimal, allergens:AllergensAsEntity #FK to(allergensasentity));
+
+allergensasentity(mealid:Long [PK], meal:MealAsSingleEntity #FK to(mealassingleentity), peanuts:boolean, celery:boolean, sesameseeds:boolean);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="expensetypemaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="expensetype" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skillsetcategorymaster" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="skillcategory" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accesstypemaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="accesstype" type="xs:string" />
+          <xs:element name="accessdesc" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="expensedetailsreport" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="exp_id" type="xs:string" />
+        <xs:element name="exp_entry_id" type="xs:string" />
+        <xs:element name="exp_date" type="xs:string" />
+        <xs:element name="exp_type" type="xs:string" />
+        <xs:element name="expense_type" type="xs:string" />
+        <xs:element name="exp_currency" type="xs:string" />
+        <xs:element name="currency_code" type="xs:string" />
+        <xs:element name="exp_amount" type="xs:string" />
+        <xs:element name="exp_country" type="xs:string" />
+        <xs:element name="country_name" type="xs:string" />
+        <xs:element name="exp_city" type="xs:string" />
+        <xs:element name="exchange_rate" type="xs:string" />
+        <xs:element name="exp_amt_inr" type="xs:string" />
+        <xs:element name="exp_desc" type="xs:string" />
+        <xs:element name="status_id" type="xs:string" />
+        <xs:element name="status_desc" type="xs:string" />
+        <xs:element name="file_name" type="xs:string" />
+        <xs:element name="file_path" type="xs:string" />
+        <xs:element name="user_id" type="xs:string" />
+        <xs:element name="emp_id" type="xs:string" />
+        <xs:element name="emp_name" type="xs:string" />
+        <xs:element name="exp_category" type="xs:string" />
+        <xs:element name="project_id" type="xs:string" />
+        <xs:element name="project_name" type="xs:string" />
+        <xs:element name="orgunit_id" type="xs:string" />
+        <xs:element name="org_node_name" type="xs:string" />
+        <xs:element name="exp_heading" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="exptemplateid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="userfname" type="xs:string" />
+          <xs:element name="usermname" type="xs:string" />
+          <xs:element name="userlname" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="empid" type="xs:string" />
+          <xs:element name="orgnode" type="xs:long" />
+          <xs:element name="reportingmgr" type="xs:long" />
+          <xs:element name="accesstypeid" type="xs:long" />
+          <xs:element name="phoneno" type="xs:string" />
+          <xs:element name="isactive" type="xs:long" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="istsopen" type="xs:long" />
+          <xs:element name="isexpopen" type="xs:long" />
+          <xs:element name="extid" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tsinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="projectid" type="xs:long" />
+          <xs:element name="activityid" type="xs:long" />
+          <xs:element name="taskactivityid" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="taskid" type="xs:long" />
+          <xs:element name="statusid" type="xs:long" />
+          <xs:element name="plannedactivity" type="xs:anyType" />
+          <xs:element name="ts" type="xs:dateTime" />
+          <xs:element name="submit" type="xs:dateTime" />
+          <xs:element name="tstotalsubmittedtime" type="xs:double" />
+          <xs:element name="tstotalapprovedtime" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="timesheetreport" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="tsid" type="xs:long" />
+        <xs:element name="ts" type="xs:dateTime" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="empid" type="xs:string" />
+        <xs:element name="projectid" type="xs:long" />
+        <xs:element name="projectname" type="xs:string" />
+        <xs:element name="taskname" type="xs:string" />
+        <xs:element name="request" type="xs:dateTime" />
+        <xs:element name="action" type="xs:dateTime" />
+        <xs:element name="statename" type="xs:string" />
+        <xs:element name="actionname" type="xs:string" />
+        <xs:element name="submittedhours" type="xs:double" />
+        <xs:element name="approvedhours" type="xs:double" />
+        <xs:element name="approverid" type="xs:long" />
+        <xs:element name="approvername" type="xs:string" />
+        <xs:element name="comments" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectdetailsreport" >
+      <xs:sequence>
+        <xs:element name="tsentry_id" type="xs:long" />
+        <xs:element name="client_code" type="xs:string" />
+        <xs:element name="client_name" type="xs:string" />
+        <xs:element name="proj_id" type="xs:string" />
+        <xs:element name="project_name" type="xs:string" />
+        <xs:element name="project_manager" type="xs:string" />
+        <xs:element name="pm_name" type="xs:string" />
+        <xs:element name="user_id" type="xs:string" />
+        <xs:element name="employee_name" type="xs:string" />
+        <xs:element name="emp_id" type="xs:string" />
+        <xs:element name="team_id" type="xs:string" />
+        <xs:element name="team" type="xs:string" />
+        <xs:element name="ts_id" type="xs:string" />
+        <xs:element name="ts_date" type="xs:string" />
+        <xs:element name="submit_date" type="xs:string" />
+        <xs:element name="task_code" type="xs:string" />
+        <xs:element name="task_name" type="xs:string" />
+        <xs:element name="activity_code" type="xs:string" />
+        <xs:element name="activity_desc" type="xs:string" />
+        <xs:element name="timesheet_status" type="xs:string" />
+        <xs:element name="timesheet_status_desc" type="xs:string" />
+        <xs:element name="ts_start_time" type="xs:string" />
+        <xs:element name="ts_end_time" type="xs:string" />
+        <xs:element name="timeentry_duration" type="xs:string" />
+        <xs:element name="timeentry_desc" type="xs:string" />
+        <xs:element name="timetype_id" type="xs:string" />
+        <xs:element name="time_type" type="xs:string" />
+        <xs:element name="timeentry_status" type="xs:string" />
+        <xs:element name="timeentry_status_desc" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="expensewfrcomments" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="expwrid" type="xs:long" />
+        <xs:element name="expid" type="xs:long" />
+        <xs:element name="action" type="xs:dateTime" />
+        <xs:element name="approverid" type="xs:long" />
+        <xs:element name="comments" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="leaveinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="//@column(name" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="leavedesc" type="xs:string" />
+          <xs:element name="leavetype" type="xs:long" />
+          <xs:element name="leavestart" type="xs:dateTime" />
+          <xs:element name="startsession" type="xs:long" />
+          <xs:element name="leaveend" type="xs:dateTime" />
+          <xs:element name="endsession" type="xs:long" />
+          <xs:element name="approverid" type="xs:long" />
+          <xs:element name="approvercomments" type="xs:string" />
+          <xs:element name="statusid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="expensetemplate" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="templatename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="taskactivity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="taskactivityid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="projectid" type="xs:long" />
+          <xs:element name="taskid" type="xs:long" />
+          <xs:element name="activityid" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="start" type="xs:dateTime" />
+          <xs:element name="end" type="xs:dateTime" />
+          <xs:element name="plannedhrs" type="xs:double" />
+          <xs:element name="actualhrs" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="questionmaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="question" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="statusmaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="statuscode" type="xs:string" />
+          <xs:element name="statusdesc" type="xs:string" />
+          <xs:element name="statustype" type="xs:string" />
+          <xs:element name="isdefault" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="workflowrequest" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="templateid" type="xs:long" />
+        <xs:element name="projectid" type="xs:long" />
+        <xs:element name="projecttaskid" type="xs:long" />
+        <xs:element name="stepid" type="xs:long" />
+        <xs:element name="tsid" type="xs:long" />
+        <xs:element name="request" type="xs:dateTime" />
+        <xs:element name="action" type="xs:dateTime" />
+        <xs:element name="currentstep" type="xs:long" />
+        <xs:element name="approverid" type="xs:long" />
+        <xs:element name="requestorid" type="xs:long" />
+        <xs:element name="statetype" type="xs:long" />
+        <xs:element name="actiontype" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectmaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="projecttypeid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="typename" type="xs:string" />
+          <xs:element name="custmandatory" type="xs:anyType" />
+          <xs:element name="iseditable" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userqualification" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="qualificationdesc" type="xs:string" />
+          <xs:element name="qualfilename" type="xs:string" />
+          <xs:element name="qualfilepath" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="actiontypemaster" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="actionname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timetype" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="timetype" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orgunitusermapping" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="orgunitid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accesstypescreenmapping" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="screenid" type="xs:long" />
+          <xs:element name="accesstypeid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="questionanswermaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="questionid" type="xs:long" />
+          <xs:element name="answer" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="expenseentries" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="expid" type="xs:long" />
+          <xs:element name="exp" type="xs:dateTime" />
+          <xs:element name="exptype" type="xs:long" />
+          <xs:element name="expamount" type="xs:double" />
+          <xs:element name="expcity" type="xs:string" />
+          <xs:element name="expcountry" type="xs:long" />
+          <xs:element name="expcurrency" type="xs:long" />
+          <xs:element name="exchangerate" type="xs:double" />
+          <xs:element name="expamtinr" type="xs:double" />
+          <xs:element name="expdesc" type="xs:string" />
+          <xs:element name="statusid" type="xs:long" />
+          <xs:element name="filename" type="xs:string" />
+          <xs:element name="filepath" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="expenseworkflowrequest" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="projectid" type="xs:long" />
+        <xs:element name="orgunitid" type="xs:long" />
+        <xs:element name="expid" type="xs:long" />
+        <xs:element name="stepid" type="xs:long" />
+        <xs:element name="requestorid" type="xs:long" />
+        <xs:element name="request" type="xs:dateTime" />
+        <xs:element name="action" type="xs:dateTime" />
+        <xs:element name="currentstep" type="xs:long" />
+        <xs:element name="approverid" type="xs:long" />
+        <xs:element name="statetype" type="xs:long" />
+        <xs:element name="actiontype" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="skillsetusermapping" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="skillsetid" type="xs:long" />
+        <xs:element name="skilllevel" type="xs:long" />
+        <xs:element name="comments" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processmaster" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="processname" type="xs:string" />
+        <xs:element name="processtype" type="xs:string" />
+        <xs:element name="additionalapprover" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activitymaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="activityid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="//@column(name" type="xs:string" />
+          <xs:element name="active" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tsworkflow" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tsid" type="xs:long" />
+        <xs:element name="workflowstepid" type="xs:long" />
+        <xs:element name="statusid" type="xs:long" />
+        <xs:element name="statuscomment" type="xs:string" />
+        <xs:element name="commentedby" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="countrymaster" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="countryname" type="xs:string" />
+        <xs:element name="countrycode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processconfig" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="templateid" type="xs:long" />
+        <xs:element name="stepid" type="xs:long" />
+        <xs:element name="approvertype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagemaster" >
+      <xs:sequence>
+        <xs:element name="messageid" type="xs:long" />
+        <xs:element name="msgcode" type="xs:string" />
+        <xs:element name="msgtype" type="xs:string" />
+        <xs:element name="msgdesc" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tstimeentries" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="tsid" type="xs:long" />
+          <xs:element name="timetype" type="xs:long" />
+          <xs:element name="statusid" type="xs:long" />
+          <xs:element name="tsstarttime" type="xs:double" />
+          <xs:element name="tsendtime" type="xs:double" />
+          <xs:element name="tsduration" type="xs:double" />
+          <xs:element name="timedesc" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="baseentity" >
+      <xs:sequence>
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="modifiedby" type="xs:string" />
+        <xs:element name="created" type="xs:dateTime" />
+        <xs:element name="modified" type="xs:dateTime" />
+        <xs:element name="isdelete" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tsreport" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="emp_id" type="xs:string" />
+        <xs:element name="team_id" type="xs:string" />
+        <xs:element name="team" type="xs:string" />
+        <xs:element name="employee_name" type="xs:string" />
+        <xs:element name="proj_id" type="xs:string" />
+        <xs:element name="project_name" type="xs:string" />
+        <xs:element name="task_name" type="xs:string" />
+        <xs:element name="activity_desc" type="xs:string" />
+        <xs:element name="planned_hours" type="xs:string" />
+        <xs:element name="actual_hours" type="xs:string" />
+        <xs:element name="ts_date" type="xs:string" />
+        <xs:element name="submit_date" type="xs:string" />
+        <xs:element name="submitted_hrs" type="xs:string" />
+        <xs:element name="approved_hrs" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="expenseinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="//@column(name" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="expcategory" type="xs:string" />
+          <xs:element name="projectid" type="xs:long" />
+          <xs:element name="orgunitid" type="xs:long" />
+          <xs:element name="expheading" type="xs:string" />
+          <xs:element name="expstart" type="xs:dateTime" />
+          <xs:element name="expend" type="xs:dateTime" />
+          <xs:element name="expposting" type="xs:dateTime" />
+          <xs:element name="expamount" type="xs:double" />
+          <xs:element name="approvedamt" type="xs:double" />
+          <xs:element name="statusid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="currencymaster" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="currencyname" type="xs:string" />
+        <xs:element name="currencycode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exptemplatesteps" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="templateid" type="xs:long" />
+          <xs:element name="stepid" type="xs:long" />
+          <xs:element name="checkamt" type="xs:long" />
+          <xs:element name="approverid" type="xs:long" />
+          <xs:element name="approveramount" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="custinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="custinfoid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="custname" type="xs:string" />
+          <xs:element name="custaddress" type="xs:string" />
+          <xs:element name="custdetails" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orginfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="orgunitid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="//@notblank//@column(name" type="xs:string" />
+          <xs:element name="orgmanager" type="xs:long" />
+          <xs:element name="iscompany" type="xs:anyType" />
+          <xs:element name="isdept" type="xs:anyType" />
+          <xs:element name="iscostcenter" type="xs:anyType" />
+          <xs:element name="isprofitcenter" type="xs:anyType" />
+          <xs:element name="isbusinessresidence" type="xs:anyType" />
+          <xs:element name="orgparentid" type="xs:long" />
+          <xs:element name="orgstatus" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="projectinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="projectinfoid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="//@notblank//@column(name" type="xs:string" />
+          <xs:element name="projecttype" type="xs:long" />
+          <xs:element name="projectorgnode" type="xs:long" />
+          <xs:element name="projectmanager" type="xs:long" />
+          <xs:element name="templateid" type="xs:long" />
+          <xs:element name="directapprover" type="xs:long" />
+          <xs:element name="allowunplanned" type="xs:long" />
+          <xs:element name="custid" type="xs:long" />
+          <xs:element name="projectstatus" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="workflowrequesthistory" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="wrid" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="templateid" type="xs:long" />
+        <xs:element name="projectid" type="xs:long" />
+        <xs:element name="projecttaskid" type="xs:long" />
+        <xs:element name="tsid" type="xs:long" />
+        <xs:element name="stepid" type="xs:long" />
+        <xs:element name="request" type="xs:dateTime" />
+        <xs:element name="action" type="xs:dateTime" />
+        <xs:element name="currentstep" type="xs:long" />
+        <xs:element name="approverid" type="xs:long" />
+        <xs:element name="requestorid" type="xs:long" />
+        <xs:element name="statetype" type="xs:long" />
+        <xs:element name="actiontype" type="xs:long" />
+        <xs:element name="comments" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="statetypemaster" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="statename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processsteps" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="projectid" type="xs:long" />
+        <xs:element name="templateid" type="xs:long" />
+        <xs:element name="projecttaskid" type="xs:long" />
+        <xs:element name="stepid" type="xs:long" />
+        <xs:element name="approverid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolemaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="userrole" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tasktypemaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="tasktypeid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="tasktypedescription" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clientinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientcode" type="xs:string" />
+          <xs:element name="clientname" type="xs:string" />
+          <xs:element name="clientstatus" type="xs:long" />
+          <xs:element name="clientcomments" type="xs:string" />
+          <xs:element name="superadmin" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="screensmaster" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="screencode" type="xs:string" />
+        <xs:element name="screencategory" type="xs:string" />
+        <xs:element name="screendesc" type="xs:string" />
+        <xs:element name="screentitle" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="connectionmasterinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="connectionname" type="xs:string" />
+          <xs:element name="sid" type="xs:string" />
+          <xs:element name="protocol" type="xs:string" />
+          <xs:element name="host" type="xs:string" />
+          <xs:element name="port" type="xs:string" />
+          <xs:element name="sourcetype" type="xs:string" />
+          <xs:element name="loginid" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skillsetmaster" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="clientid" type="xs:long" />
+        <xs:element name="skillname" type="xs:string" />
+        <xs:element name="skillcategory" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="leavetypemaster" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="leavetype" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="projectsummaryreport" >
+      <xs:sequence>
+        <xs:element name="row_num" type="xs:long" />
+        <xs:element name="emp_id" type="xs:string" />
+        <xs:element name="team_id" type="xs:string" />
+        <xs:element name="team" type="xs:string" />
+        <xs:element name="employee_name" type="xs:string" />
+        <xs:element name="proj_id" type="xs:string" />
+        <xs:element name="project_name" type="xs:string" />
+        <xs:element name="pm_name" type="xs:string" />
+        <xs:element name="submitted_hrs" type="xs:string" />
+        <xs:element name="approved_hrs" type="xs:string" />
+        <xs:element name="total_planned_hrs" type="xs:string" />
+        <xs:element name="total_actual_hrs" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="custorgnodemapping" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="custorgnodeid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="custid" type="xs:long" />
+          <xs:element name="orgnode" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="expensesummaryreport" >
+      <xs:sequence>
+        <xs:element name="exp_id" type="xs:string" />
+        <xs:element name="user_id" type="xs:string" />
+        <xs:element name="employee_name" type="xs:string" />
+        <xs:element name="exp_category" type="xs:string" />
+        <xs:element name="project_id" type="xs:string" />
+        <xs:element name="project_name" type="xs:string" />
+        <xs:element name="orgunit_id" type="xs:string" />
+        <xs:element name="org_node_name" type="xs:string" />
+        <xs:element name="exp_heading" type="xs:string" />
+        <xs:element name="exp_start_date" type="xs:string" />
+        <xs:element name="exp_end_date" type="xs:string" />
+        <xs:element name="exp_posting_date" type="xs:string" />
+        <xs:element name="exp_amount" type="xs:string" />
+        <xs:element name="approved_amt" type="xs:string" />
+        <xs:element name="approver_id" type="xs:string" />
+        <xs:element name="approver_name" type="xs:string" />
+        <xs:element name="status_id" type="xs:string" />
+        <xs:element name="status_desc" type="xs:string" />
+        <xs:element name="emp_id" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="workflowrequestcomments" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="wrid" type="xs:long" />
+        <xs:element name="tsid" type="xs:long" />
+        <xs:element name="action" type="xs:dateTime" />
+        <xs:element name="approverid" type="xs:long" />
+        <xs:element name="comments" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tssumreport" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="emp_id" type="xs:string" />
+        <xs:element name="team_id" type="xs:string" />
+        <xs:element name="team" type="xs:string" />
+        <xs:element name="employee_name" type="xs:string" />
+        <xs:element name="proj_id" type="xs:string" />
+        <xs:element name="project_name" type="xs:string" />
+        <xs:element name="tid" type="xs:string" />
+        <xs:element name="task_name" type="xs:string" />
+        <xs:element name="activity_desc" type="xs:string" />
+        <xs:element name="submitted_hrs" type="xs:string" />
+        <xs:element name="approved_hrs" type="xs:string" />
+        <xs:element name="total_planned_hrs" type="xs:string" />
+        <xs:element name="total_actual_hrs" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdetails" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="extid" type="xs:string" />
+          <xs:element name="location" type="xs:string" />
+          <xs:element name="designation" type="xs:string" />
+          <xs:element name="gender" type="xs:string" />
+          <xs:element name="dob" type="xs:dateTime" />
+          <xs:element name="doj" type="xs:dateTime" />
+          <xs:element name="lwd" type="xs:dateTime" />
+          <xs:element name="reaosnleaving" type="xs:string" />
+          <xs:element name="meritalstatus" type="xs:string" />
+          <xs:element name="fathername" type="xs:string" />
+          <xs:element name="mothername" type="xs:string" />
+          <xs:element name="spousename" type="xs:string" />
+          <xs:element name="bankname" type="xs:string" />
+          <xs:element name="bankaccname" type="xs:string" />
+          <xs:element name="bankaccnum" type="xs:string" />
+          <xs:element name="bankifsc" type="xs:string" />
+          <xs:element name="//@column(name" type="xs:string" />
+          <xs:element name="resumefilepath" type="xs:string" />
+          <xs:element name="pannumber" type="xs:string" />
+          <xs:element name="panfilename" type="xs:string" />
+          <xs:element name="panfilepath" type="xs:string" />
+          <xs:element name="adharnumber" type="xs:string" />
+          <xs:element name="adharfilename" type="xs:string" />
+          <xs:element name="adharfilepath" type="xs:string" />
+          <xs:element name="passportnumber" type="xs:string" />
+          <xs:element name="passportfilename" type="xs:string" />
+          <xs:element name="passportfilepath" type="xs:string" />
+          <xs:element name="drivinglicense" type="xs:string" />
+          <xs:element name="dlfilename" type="xs:string" />
+          <xs:element name="dlfilepath" type="xs:string" />
+          <xs:element name="permaddress" type="xs:string" />
+          <xs:element name="contactaddress" type="xs:string" />
+          <xs:element name="emergencynumber" type="xs:string" />
+          <xs:element name="emergencyname" type="xs:string" />
+          <xs:element name="emergencyrelationship" type="xs:string" />
+          <xs:element name="bloodgrp" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tasksbyuser" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="project_id" type="xs:long" />
+          <xs:element name="task_id" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="project_code" type="xs:string" />
+          <xs:element name="task_code" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="taskinfo" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="taskinfoid" type="xs:long" />
+          <xs:element name="clientid" type="xs:long" />
+          <xs:element name="projectid" type="xs:long" />
+          <xs:element name="taskdescription" type="xs:string" />
+          <xs:element name="//@notblank//@column(name" type="xs:long" />
+          <xs:element name="taskparent" type="xs:long" />
+          <xs:element name="taskmanager" type="xs:long" />
+          <xs:element name="taskstatus" type="xs:long" />
+          <xs:element name="taskstart" type="xs:dateTime" />
+          <xs:element name="taskend" type="xs:dateTime" />
+          <xs:element name="sortkey" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

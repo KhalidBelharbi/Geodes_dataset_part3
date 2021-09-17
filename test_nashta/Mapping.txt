@@ -1,0 +1,17 @@
+ClassDiagram.Class>> matakuliah =>=>=> RelationalSchema.Table>> matakuliah;
+ClassDiagram.Class>> mahasiswa =>=>=> RelationalSchema.Table>> mahasiswa;
+ClassDiagram.Class>> nilai =>=>=> RelationalSchema.Table>> nilai;
+ClassDiagram.Attribut>> matakuliah.////ididmatkul:long =>=>=> RelationalSchema.Column>> matakuliah.////ididmatkul PRIMARY KEY;
+ClassDiagram.Attribut>> matakuliah.matakuliah:String =>=>=> RelationalSchema.Column>> matakuliah.matakuliah;
+ClassDiagram.Attribut>> matakuliah.idmhs:long =>=>=> RelationalSchema.Column>> matakuliah.idmhs;
+ClassDiagram.Attribut>> matakuliah.nilai:int =>=>=> RelationalSchema.Column>> matakuliah.nilai;
+ClassDiagram.Attribut>> mahasiswa.////ididmhs:long =>=>=> RelationalSchema.Column>> mahasiswa.////ididmhs PRIMARY KEY;
+ClassDiagram.Attribut>> mahasiswa.nama:String =>=>=> RelationalSchema.Column>> mahasiswa.nama;
+ClassDiagram.Attribut>> mahasiswa.alamat:String =>=>=> RelationalSchema.Column>> mahasiswa.alamat;
+ClassDiagram.Attribut>> nilai.id:long =>=>=> RelationalSchema.Column>> nilai.id PRIMARY KEY;
+ClassDiagram.Attribut>> nilai.idmhs:long =>=>=> RelationalSchema.Column>> nilai.idmhs;
+ClassDiagram.Attribut>> nilai.idmatkul:long =>=>=> RelationalSchema.Column>> nilai.idmatkul;
+ClassDiagram.Attribut>> nilai.nilai:Integer =>=>=> RelationalSchema.Column>> nilai.nilai;
+ClassDiagram.Attribut>> nilai.keterangan:String =>=>=> RelationalSchema.Column>> nilai.keterangan;
+Many-To-One relationship from ClassDiagram.Class>>nilai  to ClassDiagram.Class>>mahasiswa represented by ClassDiagram.Atrribute>>idmhs;
+Many-To-One relationship from ClassDiagram.Class>>nilai  to ClassDiagram.Class>>matakuliah represented by ClassDiagram.Atrribute>>idmatkul;

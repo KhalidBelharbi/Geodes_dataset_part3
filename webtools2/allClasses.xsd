@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="tcitytest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="tcityrepository" nillable="true" minOccurs="0" />
+        <xs:element name="//动态条件" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baserepository" >
+      <xs:sequence>
+        <xs:element name="em" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="thotelrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="thotelrepositorycustom" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="thotelrepositoryimpl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tcityrepositoryimpl" >
+      <xs:complexContent>
+       <xs:extension base="baserepository">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tcityrepositorycustom" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tcityrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<tcity,long>,querydslpredicateexecutor<tcity>,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tcity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="country" type="xs:string" />
+        <xs:element name="map" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="thotel" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="city" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="queryparams" >
+      <xs:sequence>
+        <xs:element name="/***属性分隔符*/property_separator" type="xs:string" />
+        <xs:element name="/***and条件*/andfilters" type="filter" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***or条件*/orfilters" type="filter" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***排序属性*/orders" type="order" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="filter" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="/***默认是否忽略大小写*/default_ignore_case" type="xs:anyType" />
+        <xs:element name="/***属性*/property" type="xs:string" />
+        <xs:element name="/***运算符*/operator" type="xs:anyType" />
+        <xs:element name="/***值*/value" type="xs:anyType" />
+        <xs:element name="/***是否忽略大小写*/ignorecase" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="/***默认方向*/default_direction" type="xs:anyType" />
+        <xs:element name="/***属性*/property" type="xs:string" />
+        <xs:element name="/***方向*/direction" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="index" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,2420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="identitytransactionalentities" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactionalentities" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="inheritancecachetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="querycachetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nonstrictreadwritecacheconcurrencystrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nonstrictreadwritecacheconcurrencystrategywithconcurrentupdatetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="applyinterceptor" type="xs:anyType" />
+          <xs:element name="endlatch" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="readonlycacheconcurrencystrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequencereadonlycacheconcurrencystrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="identityreadonlycacheconcurrencystrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="readonlycacheconcurrencystrategyimmutabletest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="collectioncachetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="hydratedstatebenchmarktest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="logreporter" type="xs:anyType" />
+          <xs:element name="insertcount" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="readwritecacheconcurrencystrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="identityreadwritecacheconcurrencystrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequencereadwritecacheconcurrencystrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="repositoryreadwritecacheconcurrencystrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="reference" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="readwritecacheconcurrencystrategywithlocktimeouttest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="applyinterceptor" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="queryhydratedstatetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="collectionhydratedstatetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityhydratedstatetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lazyinitializationexceptionfixwithdtotest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="criteriaapimemberoftest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nativequerytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mysqlscrollableresultsnostreamingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="logreporter" type="xs:anyType" />
+          <xs:element name="resultsetsize" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fetchallassociationstest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nplusonelazyfetchingwithsubselectmanytoonefindentitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postgresqlquerytofiletest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postgresqlscrollableresultsstreamingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="logreporter" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lazyinitializationoutsidetransactiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="naturalidtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="eagerfetchingonetomanybagsfindentitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lazyinitializationexceptionfixtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="eagerfetchingmanytoonefindentitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lazyattributewithmultipleentitiestest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fetchentitieswithpaginationtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="projectiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="distincttest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="plancachesizeperformancetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="logreporter" type="xs:anyType" />
+          <xs:element name="plancachemaxsize" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nplusonelazyfetchingmanytoonefindentitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mysqlscrollableresultsstreamingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="logreporter" type="xs:anyType" />
+          <xs:element name="resultsetsize" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="hibernateproxytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="eagerfetchingonetomanyfindentitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lazyinitializationexceptiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="findentitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="namednativequeryparametertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="defaultoptimisticlockingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="optimisticlockingonerootdirtyversioningtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="loadpostlatch" type="xs:anyType" />
+          <xs:element name="alicelatch" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cascadelocktest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="allpropertiesoptimisticlockingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityoptimisticlockingonunidirectionalcollectiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractentityoptimisticlockingcollectiontest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cascadelockelementcollectiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lockmodeoptimisticforceincrementtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityoptimisticlockingonbidirectionalparentowningcollectiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractentityoptimisticlockingcollectiontest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skiplockjobqueuetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="followonlockingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractoraclexeintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="optimisticlockingonerootoneversiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="loadpostlatch" type="xs:anyType" />
+          <xs:element name="alicelatch" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="optimisticlockingchildupdatesrootversiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="optimisticlockingbidirectionalchildupdatesrootversiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityoptimisticlockingoverruleonbidirectionalparentowningcollectiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractentityoptimisticlockingcollectiontest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lockmodepessimisticreadwriteintegrationtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="wait_millis" type="xs:long" />
+          <xs:element name="endlatch" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cascadelockmanytoonetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lockmodepessimisticforceincrementtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="startlatch" type="xs:anyType" />
+          <xs:element name="endlatch" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="optimisticlockingrepeatablereadtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="loadpostlatch" type="xs:anyType" />
+          <xs:element name="alicelatch" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="optimisticlockingonerootdirtyversioningselectbeforeupdatetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityoptimisticlockingoncomponentcollectiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractentityoptimisticlockingcollectiontest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractlockmodeoptimistictest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cascadelockunidirectionalonetomanytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityoptimisticlockingonbidirectionalchildowningcollectiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractentityoptimisticlockingcollectiontest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityfirstlevelcachereusetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="optimisticlockingonerootentitymultipleversionstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="original" type="post" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oracledeleteglobaltablestoredproceduretest" >
+      <xs:complexContent>
+       <xs:extension base="abstractoraclexeintegrationtest">
+         <xs:sequence>
+          <xs:element name="infoentrycount" type="xs:long" />
+          <xs:element name="errorentrycount" type="xs:long" />
+          <xs:element name="warnentrycount" type="xs:long" />
+          <xs:element name="totalentrycount" type="xs:long" />
+          <xs:element name="timestamp" type="xs:dateTime" />
+          <xs:element name="millisstep" type="xs:long" />
+          <xs:element name="batchsize" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oraclestoredproceduretest" >
+      <xs:complexContent>
+       <xs:extension base="abstractoraclexeintegrationtest">
+         <xs:sequence>
+          <xs:element name="entityprovider" type="blogentityprovider" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oraclecustomsqlwithstoredproceduretest" >
+      <xs:complexContent>
+       <xs:extension base="abstractoraclexeintegrationtest">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oracledeletestoredproceduretest" >
+      <xs:complexContent>
+       <xs:extension base="abstractoraclexeintegrationtest">
+         <xs:sequence>
+          <xs:element name="infoentrycount" type="xs:long" />
+          <xs:element name="errorentrycount" type="xs:long" />
+          <xs:element name="warnentrycount" type="xs:long" />
+          <xs:element name="totalentrycount" type="xs:long" />
+          <xs:element name="timestamp" type="xs:dateTime" />
+          <xs:element name="millisstep" type="xs:long" />
+          <xs:element name="batchsize" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="flexypoolentities" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourcelocaldelayconnectionacquisitiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="data_file_path" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="warmupduration" type="xs:long" />
+          <xs:element name="measurementsduration" type="xs:long" />
+          <xs:element name="parsecount" type="xs:long" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="hikaricpcockroachdbconnectionprovidertest" >
+      <xs:complexContent>
+       <xs:extension base="driverconnectionprovidertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="defaulttimestamptest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tableperclasstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sortindexcollectioninheritance" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="singletabletest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jointablebulkdeletetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mappedsuperclasstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mysqlsingletabletest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="topic" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="owner" type="xs:string" />
+        <xs:element name="createdon" type="xs:dateTime" />
+        <xs:element name="GeneratedName" type="board" nillable="true" minOccurs="0" />
+        <xs:element name="type" type="topictype" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="topictype" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="topicstatistics" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="topic" nillable="true" minOccurs="0" />
+        <xs:element name="views" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="post" >
+      <xs:complexContent>
+       <xs:extension base="topic">
+         <xs:sequence>
+          <xs:element name="content" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="board" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="//onlyusefulforthesakeofseeingthequeriesbeinggenerated.topics" type="topic" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="integerdiscriminatordefaulttest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="announcement" >
+      <xs:complexContent>
+       <xs:extension base="topic">
+         <xs:sequence>
+          <xs:element name="validuntil" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jointablediscriminatortest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jointabletest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsnotification" >
+      <xs:complexContent>
+       <xs:extension base="notification">
+         <xs:sequence>
+          <xs:element name="phonenumber" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="notification" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="createdon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="emailnotification" >
+      <xs:complexContent>
+       <xs:extension base="notification">
+         <xs:sequence>
+          <xs:element name="emailaddress" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="consistencytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="post" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="comments" type="postcomment" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="details" type="postdetails" nillable="true" minOccurs="0" />
+        <xs:element name="tags" type="tag" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tag" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postdetails" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createdon" type="xs:dateTime" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="GeneratedName" type="post" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postcomment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="post" nillable="true" minOccurs="0" />
+        <xs:element name="review" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refreshtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistidentitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ordertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="postid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="identityordertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="postid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="batchprocessingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="alwaysflushtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="readonlyquerytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="hibernatesavesequencetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sessionalwaysflushtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="defaultdirtycheckingperformancetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="logreporter" type="xs:anyType" />
+          <xs:element name="entitycount" type="xs:long" />
+          <xs:element name="iterationcount" type="xs:long" />
+          <xs:element name="postids" type="xs:anyType" />
+          <xs:element name="enablemetrics" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistsequencetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="defaultnamingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractoraclexeintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jpacalculatedtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jpacalculatedpostloadtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="formulatest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mapsidwithonetoonetest" >
+      <xs:complexContent>
+       <xs:extension base="		abstractsqlserverintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="generatedtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractsqlserverintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fluentsetterstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="optionalattributetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="enumpostgresqltest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="enumstringtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="enumordinaltest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="joinformulatest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="latestchildjoinformulatest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="hydratedstatelistenertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jpafluentinterfacetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="defaultupdatetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="softdeletetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="softdeleteversiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dynamicupdatetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mapsidwithmanytoonetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="joinformulacollationtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="encrypttest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jmxtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="criteriafetchaliastest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="criterianestedquerytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="criteriacountgroupbytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalonetomanyuniquenesstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalonetomanyjoincolumntest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalonetoonemapsidtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="twomapsidstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalonetomanytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalonetomanyjoincolumnnotnulltest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalonetoonetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalonetoonetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalonetomanysetidequalstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanyasonetomanyextracolumnstestv2" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalonetomanyjoincolumnsettest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="elementcollectionnestedtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="manytoonejoincolumnnonpktest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="elementcollectiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanytomanylisttest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanyasonetomanywithoutembeddedidtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanyasonetomanytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalmanyasonetomanyextracolumnstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalorderedonetomanytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalonetomanysettest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="manytoonetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="onetoonemapsidtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="elementcollectionwithcollectiontabletest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalonetomanytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="introassociationtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanyasonetomanyextracolumnstestv1" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanytomanytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="allassociationtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanytomanyordercolumntest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalonetomanyjoincolumntest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalonetomanyjoincolumnandordercolumntest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanyasonetomanyextracolumnstest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unidirectionalmanytomanytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanytomanysettest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bidirectionalmanyasonetomanyordercolumntest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="flywayentities" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="charactertypetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mysqljsontypetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postgresqljsonnodebinarytypetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postgresqljsonstringtypetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postgresqljsonbinarytypetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="longtonumerictypetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractsqlserverintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="localdatetimetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="enumarraytypetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="arraytypetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postgresuuidtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datetimetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ipv4typetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mysqltextstringtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="enversauditeddefaultstrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postgresqlcasttest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="updatesubquerytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="spatialtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="runningtotaltest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="escapekeywordtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="windowfunctiongroupingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="windowfunctionupdatebygroupingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postcomment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="parent" type="postcomment" nillable="true" minOccurs="0" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="GeneratedName" type="status" nillable="true" minOccurs="0" />
+        <xs:element name="children" type="postcomment" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postcommentscoretest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractpostcommentscoreperformancetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="timer" type="xs:anyType" />
+          <xs:element name="logreporter" type="xs:anyType" />
+          <xs:element name="1" type="xs:anyType" />
+          <xs:element name="2" type="xs:anyType" />
+          <xs:element name="postcount" type="xs:long" />
+          <xs:element name="commentcount" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="post" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postcomment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="post" nillable="true" minOccurs="0" />
+        <xs:element name="parent" type="postcomment" nillable="true" minOccurs="0" />
+        <xs:element name="createdon" type="xs:dateTime" />
+        <xs:element name="review" type="xs:string" />
+        <xs:element name="score" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nativequerywithcustomschematest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="property" >
+      <xs:sequence>
+        <xs:element name="id" type="propertyid" nillable="true" minOccurs="0" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="component" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="service" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rowvalueexpressiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="escapeliketest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="country" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="locale" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="locale" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="post" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="createdon" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedon" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="version" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nativequeryentitymappingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="naturalidequalitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractequalitychecktest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="defaultequalitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractequalitychecktest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="properidequalitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractequalitychecktest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="defaultidequalitytest" >
+      <xs:complexContent>
+       <xs:extension base="abstractequalitychecktest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="book" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="createdon" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updatabletest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="batchexceptiontest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="identitybatchingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="batchmergevsupdatetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="deletingwithsqlcascadebatchingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="deletingwithoutcascadebatchingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistencecontextextendedbatchtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="batchingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="batchtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="versionedbatchingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sqlstatementcountvalidatorjoinfetchtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sqlstatementcountvalidatortest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="hibernateloggingtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datasourceproxytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="p6spytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="assignedsequencestylegeneratortest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pooledsequenceidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpooledsequenceidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityidentifiercockroachdbtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractcockroachdbintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sqlserverscopeidentity" >
+      <xs:complexContent>
+       <xs:extension base="abstractsqlserverintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="globalidentifiergeneratorscopetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="uuid2identifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="assigneduuididentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="uuididentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pooledlosequenceidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpooledsequenceidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="compositeidmanytoonewithcompanyinidtest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="compositeidonetoonetest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="compositeidmanytoonetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="compositeidgeneratedidclasstest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="compositeididentitygeneratedtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractsqlserverintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="stringsequenceidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="embeddablecollectionaccessstrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="overrideaccessstrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="embeddableaccessstrategytest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="table5postentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<table5postentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequence1postentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<sequence1postentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequence10postentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<sequence10postentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="table50postentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<table50postentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="table10postentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<table10postentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequence50postentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<sequence50postentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequence5postentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<sequence5postentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="table1postentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<table1postentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oraclerowidtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractoraclexeintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="assignedidentitygeneratortest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="autoidentifiermysqltest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nativeidentifiermysqltest" >
+      <xs:complexContent>
+       <xs:extension base="abstractmysqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tableallocationsizeidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractbatchidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="post" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="identitypostentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<identitypostentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tablepostentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<tablepostentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequencepostentityprovider" >
+      <xs:complexContent>
+       <xs:extension base="postentityprovider<sequencepostentityprovider.post>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tableidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractbatchidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="autoidentifierwithsequencegeneratortest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postgrestablegeneratortest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequenceallocationsizeidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractbatchidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="assignedtablebatchidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractbatchidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="identityidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractbatchidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequenceidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractbatchidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="simplesequenceidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="post" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hiloidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pooleddefaultsequenceidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpooledsequenceidentifiertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sequencevstablegeneratortest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityidentifiertimestampcockroachdbtest" >
+      <xs:complexContent>
+       <xs:extension base="abstractcockroachdbintegrationtest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="assignedidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="simpletableidentifiertest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="autoincrementbatchentityprovider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="blogentityprovider" >
+      <xs:sequence>
+        <xs:element name="instance" type="entityprovider" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postdetailscommentsentityprovider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sequencebatchentityprovider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="taskentityprovider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bankentityprovider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="indexentityprovider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractlinearizabilityphenomenatest" >
+      <xs:complexContent>
+       <xs:extension base="abstractphenomenatest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mvccpostgresqltest" >
+      <xs:complexContent>
+       <xs:extension base="abstractpostgresqlintegrationtest">
+         <xs:sequence>
+          <xs:element name="alicelatch" type="xs:anyType" />
+          <xs:element name="boblatch" type="xs:anyType" />
+          <xs:element name="endlatch" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractpredicatelocktest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="wait_millis" type="xs:long" />
+          <xs:element name="alicelatch" type="xs:anyType" />
+          <xs:element name="boblatch" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstracttablelocktest" >
+      <xs:complexContent>
+       <xs:extension base="abstracttest">
+         <xs:sequence>
+          <xs:element name="insert_department" type="xs:string" />
+          <xs:element name="insert_employee" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="post" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="comments" type="postcomment" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="details" type="postdetails" nillable="true" minOccurs="0" />
+        <xs:element name="tags" type="tag" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postdetails" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createdon" type="xs:dateTime" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="GeneratedName" type="post" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="attachment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="mediatype" nillable="true" minOccurs="0" />
+        <xs:element name="content" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tag" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postcomment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="post" nillable="true" minOccurs="0" />
+        <xs:element name="review" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="event" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="" type="location" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="participant" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="" type="ticket" nillable="true" minOccurs="0" />
+          <xs:element name="" type="event" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

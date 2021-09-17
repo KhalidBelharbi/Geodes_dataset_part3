@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="alertservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="alertrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="constants" >
+      <xs:sequence>
+        <xs:element name="market_not_found" type="xs:string" />
+        <xs:element name="market_add_ok" type="xs:string" />
+        <xs:element name="space_blank" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="antoniogasbot" >
+      <xs:complexContent>
+       <xs:extension base="telegramlongpollingbot">
+         <xs:sequence>
+          <xs:element name="add_command" type="xs:string" />
+          <xs:element name="check_market_command" type="xs:string" />
+          <xs:element name="check_mine_market_command" type="xs:string" />
+          <xs:element name="command_not_found" type="xs:string" />
+          <xs:element name="token" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="alertservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="alert" >
+      <xs:sequence>
+        <xs:element name="market" type="xs:string" />
+        <xs:element name="chatid" type="xs:string" />
+        <xs:element name="value" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="alertid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="market" type="xs:string" />
+        <xs:element name="chatid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendmessageclient" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="alertrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<alert,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="schedulertask" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="sendmessageclient" nillable="true" minOccurs="0" />
+        <xs:element name="marketclient" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="alertrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="telegramapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

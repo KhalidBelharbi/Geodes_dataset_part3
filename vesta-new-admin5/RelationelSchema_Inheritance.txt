@@ -1,0 +1,25 @@
+
+inforeleaseentity(//主键logid:String, //用户名username:String, //用户类型usertype:String, //手机号usermobile:String, //身份证idcard:String, //时间logtime:Date, //内容logcontent:String, //操作类型或报修单类型等泛指日志自身里面的类型thistype:String, //版块thissection:String, //功能thisfunction:String, //项目idprojectid:String, //来源1微信2安卓3iossourcefrom:String, //关联社区asscommunity:String);
+
+interfacelogentity(//日志idid:String, //接口名称interfacename:String, //数据库表名entityname:String, //返回码code:String, //错误日期error:Date, //操作人memberid:String, //日志信息message:String, //数据identityid:String);
+
+translogentity(//idid:String, //输入文本contentin:String, //请求controller定义contentformat:String, //输入bodybodycontent:String, //请求方法method:String, //输出文本contentout:String, //创建时间createtime:Date, //返回时间backtime:Date, //上下文context:String, //tokenidvestatoken:String);
+
+interfacerepairlogsentity(//日志idid:String, //返回码code:String, //创建日期crea:Date, //接口类interfaceclass:String, //接口名称interfacename:String, //保修单idrepairid:String, //保修单状态repairstate:String, //创建人creaby:String, //日志信息info:String);
+
+interfacerectifylogsentity(//日志idid:String, //返回码code:String, //创建日期crea:Date, //接口类interfaceclass:String, //接口名称interfacename:String, //整改单idrectifyid:String, //整改单状态rectifystate:String, //创建人creaby:String, //日志信息info:String);
+
+interfaceplanlogentity(//日志idid:String, //接口名称interfacename:String, //数据库表名entityname:String, //返回码code:String, //错误日期error:Date, //操作人memberid:String, //日志信息message:String, //数据identityid:String);
+
+userdocumentsentity(//主键logid:String, //用户名username:String, //用户类型usertype:String, //手机号usermobile:String, //身份证idcard:String, //系统版本sysversion:String, //来源1微信2安卓3iossourcefrom:String, //项目idprojectid:String, //时间logtime:Date, //内容logcontent:String, //单据编号docnum:String, //单据状态什么的泛指状态一类thisstatus:String, //版块thissection:String, //功能thisfunction:String, //操作类型或报修单类型等泛指日志自身里面的类型thistype:String, //房产realestate:String);
+
+interfacecomplainlogentity(//日志idid:String, //接口名称interfacename:String, //数据库表名entityname:String, //返回码code:String, //错误日期error:Date, //操作人memberid:String, //日志信息message:String, //数据identityid:String);
+
+systemlogentity(//主键logid:String, //用户名username:String, //用户类型usertype:String, //手机号usermobile:String, //身份证idcard:String, //系统版本sysversion:String, //来源1微信2安卓3iossourcefrom:String, //项目idprojectid:String, //日志类型1新增用户2用户访问3用户单据4信息发布logtype:String, //时间logtime:Date, //内容logcontent:String, //操作类型或报修单类型等泛指日志自身里面的类型thistype:String, //单据编号docnum:String, //单据状态什么的泛指状态一类thisstatus:String, //版块thissection:String, //功能thisfunction:String);
+
+interfaceclassuserlogentity(//日志idid:String, //接口名称interfacename:String, //数据库表名entityname:String, //返回码code:String, //错误日期error:Date, //操作人memberid:String, //日志信息message:String, //数据identityid:String);
+
+uservisitlogentity(//主键logid:String, //用户名username:String, //用户类型usertype:String, //手机号usermobile:String, //时间logtime:Date, //版块thissection:String, //功能thisfunction:String, //内容logcontent:String, //来源1微信2安卓3iossourcefrom:String, //项目idprojectid:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

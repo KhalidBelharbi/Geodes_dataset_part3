@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="aeroport" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:anyType" />
+        <xs:element name="nom" type="xs:string" />
+        <xs:element name="villes" type="ville" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="client" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="version" type="xs:long" />
+        <xs:element name="nom" type="xs:string" />
+        <xs:element name="adresses" type="adresse" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="reservations" type="reservation" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compagnieaerienne" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="nom" type="xs:string" />
+        <xs:element name="compagnieaeriennevol" type="compagnieaeriennevol" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="billet" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="version" type="xs:long" />
+        <xs:element name="numeroplace" type="xs:string" />
+        <xs:element name="classe" type="xs:string" />
+        <xs:element name="prix" type="xs:double" />
+        <xs:element name="GeneratedName" type="reservation" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="vol" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adresse" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="version" type="xs:long" />
+        <xs:element name="rue" type="xs:string" />
+        <xs:element name="complement" type="xs:string" />
+        <xs:element name="codepostal" type="xs:string" />
+        <xs:element name="ville" type="xs:string" />
+        <xs:element name="pays" type="xs:string" />
+        <xs:element name="GeneratedName" type="client" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ville" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nom" type="xs:string" />
+        <xs:element name="aeroports" type="aeroport" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="particulier" >
+      <xs:complexContent>
+       <xs:extension base="client">
+         <xs:sequence>
+          <xs:element name="prenom" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="passager" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="version" type="xs:long" />
+        <xs:element name="nom" type="xs:string" />
+        <xs:element name="prenom" type="xs:string" />
+        <xs:element name="numeroidentite" type="xs:string" />
+        <xs:element name="GeneratedName" type="typeidentite" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="reservation" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vol" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="dtdepart" type="xs:dateTime" />
+        <xs:element name="dtarrivee" type="xs:dateTime" />
+        <xs:element name="statut" type="statutvol" nillable="true" minOccurs="0" />
+        <xs:element name="nbplacedispo" type="xs:long" />
+        <xs:element name="billetsvol" type="billet" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="compagnieaeriennevols" type="compagnieaeriennevol" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="depart" type="aeroport" nillable="true" minOccurs="0" />
+        <xs:element name="arrivee" type="aeroport" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="entreprise" >
+      <xs:complexContent>
+       <xs:extension base="client">
+         <xs:sequence>
+          <xs:element name="siret" type="xs:string" />
+          <xs:element name="numerotva" type="xs:string" />
+          <xs:element name="" type="statutjuridique" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="compagnieaeriennevol" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="numerovol" type="xs:string" />
+        <xs:element name="GeneratedName" type="compagnieaerienne" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="vol" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reservation" >
+      <xs:sequence>
+        <xs:element name="numero" type="xs:anyType" />
+        <xs:element name="version" type="xs:long" />
+        <xs:element name="dtreservtion" type="xs:dateTime" />
+        <xs:element name="GeneratedName" type="statutreservation" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="passager" nillable="true" minOccurs="0" />
+        <xs:element name="billetsreservation" type="billet" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="client" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

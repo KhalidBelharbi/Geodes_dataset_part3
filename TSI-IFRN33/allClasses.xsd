@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="//willbesetwhenpersistingid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="//whicheverotheruser-specificattributescontactinformation" type="contactinformationsupport" nillable="true" minOccurs="0" />
+        <xs:element name="//useritelfwillimplementallcontactinformationbydelegationevents" type="userevent" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginresult" >
+      <xs:sequence>
+        <xs:element name="logints" type="xs:anyType" />
+        <xs:element name="authtoken" type="xs:string" />
+        <xs:element name="tokenvalidity" type="xs:anyType" />
+        <xs:element name="tokenrefresh" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hascontactinformation" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contactinformationsupport" >
+      <xs:sequence>
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="phonenr" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userevent" >
+      <xs:sequence>
+        <xs:element name="//thisclassisjustforsamplepurposes.id" type="xs:long" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apiclientconfiguration" >
+      <xs:sequence>
+        <xs:element name="host" type="xs:string" />
+        <xs:element name="port" type="xs:long" />
+        <xs:element name="usehttps" type="xs:anyType" />
+        <xs:element name="connecttimeout" type="xs:long" />
+        <xs:element name="readtimeout" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userintegrationtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginresultlivetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apiclientconfigurationintegrationtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

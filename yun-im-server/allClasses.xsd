@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application-pro" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application-dev" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonhelper" >
+      <xs:sequence>
+        <xs:element name="//region--field//jackson转换工具" type="xs:anyType" />
+        <xs:element name="features" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="requestutil" >
+      <xs:sequence>
+        <xs:element name="controller_para" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="proputil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="threadlocalmap" >
+      <xs:complexContent>
+       <xs:extension base="threadlocal<map<string,">
+         <xs:sequence>
+          <xs:element name="thread_context" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="longidutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalconstant" >
+      <xs:sequence>
+        <xs:element name="file_max_size" type="xs:long" />
+        <xs:element name="unknown" type="xs:string" />
+        <xs:element name="x_forwarded_for" type="xs:string" />
+        <xs:element name="x_real_ip" type="xs:string" />
+        <xs:element name="proxy_client_ip" type="xs:string" />
+        <xs:element name="wl_proxy_client_ip" type="xs:string" />
+        <xs:element name="http_client_ip" type="xs:string" />
+        <xs:element name="http_x_forwarded_for" type="xs:string" />
+        <xs:element name="dev_profile" type="xs:string" />
+        <xs:element name="test_profile" type="xs:string" />
+        <xs:element name="pro_profile" type="xs:string" />
+        <xs:element name="localhost_ip" type="xs:string" />
+        <xs:element name="localhost_ip_16" type="xs:string" />
+        <xs:element name="max_ip_length" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imrstcodetype" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:anyType" />
+        <xs:element name="msg" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="urlinterceptconfig" >
+      <xs:complexContent>
+       <xs:extension base="webmvcconfigureradapter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="setsystem" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtokenconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wsmvcconfigurer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authhandlerinterceptor" >
+      <xs:sequence>
+        <xs:element name="/***需要手动注入*/_loginserviceimp" type="userservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="corsfilter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springcontextutil" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalexceptionhandler" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="springevnconfig" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logmsg" >
+      <xs:sequence>
+        <xs:element name="msg" type="xs:string" />
+        <xs:element name="locmsg" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="para" type="xs:string" />
+        <xs:element name="stacktrace" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="systemserviceimp" >
+      <xs:sequence>
+        <xs:element name="isserveron" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="swagger2config" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="noneedaccessauthentication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="snowflakeidconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springevnconfig" >
+      <xs:sequence>
+        <xs:element name="profile" type="xs:string" />
+        <xs:element name="isproevn" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wsproperties" >
+      <xs:sequence>
+        <xs:element name="accesskey" type="xs:string" />
+        <xs:element name="host" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wsapiserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="wsproperties" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resttemplateconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientuserloginvo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="extrauserid" type="xs:string" />
+        <xs:element name="platform" type="xs:string" />
+        <xs:element name="para" type="xs:string" />
+        <xs:element name="sessionid" type="xs:string" />
+        <xs:element name="wspath" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wsconversationvo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagedto" >
+      <xs:sequence>
+        <xs:element name="conversationid" type="xs:long" />
+        <xs:element name="extraconversationid" type="xs:string" />
+        <xs:element name="contentjson" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="ignorelist" type="ignoreuserplatformdto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientuserdto" >
+      <xs:sequence>
+        <xs:element name="extrauserid" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wsconversationdto" >
+      <xs:sequence>
+        <xs:element name="extracvsid" type="xs:string" />
+        <xs:element name="extrauserid" type="xs:anyType" />
+        <xs:element name="remark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ignoreuserplatformdto" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="platform" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientuservo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="extrauserid" type="xs:string" />
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="updatetime" type="xs:long" />
+        <xs:element name="remark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yunimserverapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientplatformtype" >
+      <xs:sequence>
+        <xs:element name="des" type="xs:string" />
+        <xs:element name="type" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pushserviceimpl" >
+      <xs:sequence>
+        <xs:element name="//region--fieldwsapiservice" type="wsapiserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pushservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="commoncontroller" >
+      <xs:sequence>
+        <xs:element name="//region--field" type="qiniuservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qiniuservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qiniuserviceimpl" >
+      <xs:sequence>
+        <xs:element name="//region--fieldbucketname" type="xs:string" />
+        <xs:element name="qncdnurl" type="xs:string" />
+        <xs:element name="accesskey" type="xs:string" />
+        <xs:element name="secretkey" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uservo" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="wspath" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="//region--fieldusersv" type="userservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userserviceimpl" >
+      <xs:complexContent>
+       <xs:extension base="baseserviceimpl">
+         <xs:sequence>
+          <xs:element name="wsapiservice" type="wsapiserviceimpl" nillable="true" minOccurs="0" />
+          <xs:element name="" type="userjpa" nillable="true" minOccurs="0" />
+          <xs:element name="tokenutil" type="authtokenutil" nillable="true" minOccurs="0" />
+          <xs:element name="svrphlp" type="user" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="rstbeanhelper" type="baserstbeanhelper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useracct" >
+      <xs:sequence>
+        <xs:element name="//region--fieldname" type="xs:string" />
+        <xs:element name="pws" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddatecreator">
+         <xs:sequence>
+          <xs:element name="//region--field" type="useracct" nillable="true" minOccurs="0" />
+          <xs:element name="token" type="xs:string" />
+          <xs:element name="wspath" type="xs:string" />
+          <xs:element name="" type="userinfo" nillable="true" minOccurs="0" />
+          <xs:element name="/***最后一次登录时间*/lastloadtime" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usertokenrl" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithautoiddate">
+         <xs:sequence>
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="token" type="xs:string" />
+          <xs:element name="platform" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userinfo" >
+      <xs:sequence>
+        <xs:element name="headurl" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="company" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userjpa" >
+      <xs:complexContent>
+       <xs:extension base="basejparepositorybyautoid<user>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationmessagevo" >
+      <xs:sequence>
+        <xs:element name="conversationlist" type="conversationvo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="lasttime" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationvo" >
+      <xs:sequence>
+        <xs:element name="//region--fieldid" type="xs:long" />
+        <xs:element name="type" type="conversationtype" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="messagelist" type="messagevo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="lastmsgtime" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupuservo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="userinfo" nillable="true" minOccurs="0" />
+        <xs:element name="remarkname" type="xs:string" />
+        <xs:element name="role" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupinfovo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="info" type="conversationgroupinfo" nillable="true" minOccurs="0" />
+        <xs:element name="maxmeb" type="xs:anyType" />
+        <xs:element name="adminuserid" type="xs:long" />
+        <xs:element name="createuserid" type="xs:long" />
+        <xs:element name="userlist" type="groupuservo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagevo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="updatetime" type="xs:long" />
+        <xs:element name="//todosenddate" type="xs:long" />
+        <xs:element name="info" type="conversationmessageinfo" nillable="true" minOccurs="0" />
+        <xs:element name="senduserid" type="xs:long" />
+        <xs:element name="platformtype" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendmessagedto" >
+      <xs:sequence>
+        <xs:element name="info" type="conversationmessageinfo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationserviceimpl" >
+      <xs:complexContent>
+       <xs:extension base="baseserviceimpl">
+         <xs:sequence>
+          <xs:element name="//region--field" type="coupleservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="groupservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="coupleservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupserviceimpl" >
+      <xs:complexContent>
+       <xs:extension base="baseserviceimpl">
+         <xs:sequence>
+          <xs:element name="//region--fieldwsapiservice" type="wsapiserviceimpl" nillable="true" minOccurs="0" />
+          <xs:element name="" type="conversationgroupjpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="conversationgroupuserrljpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="conversationmessagejpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="usermessagejpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="pushservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="userjpa" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="groupservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="coupleserviceimpl" >
+      <xs:complexContent>
+       <xs:extension base="baseserviceimpl">
+         <xs:sequence>
+          <xs:element name="//region--fieldwsapiservice" type="wsapiserviceimpl" nillable="true" minOccurs="0" />
+          <xs:element name="" type="conversationcouplejpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="userjpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="userserviceimpl" nillable="true" minOccurs="0" />
+          <xs:element name="" type="conversationmessagejpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="usermessagejpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="pushservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationmessageinfo" >
+      <xs:sequence>
+        <xs:element name="conversationid" type="xs:long" />
+        <xs:element name="conversationtype" type="xs:anyType" />
+        <xs:element name="/***消息内容类型*/messagetype" type="xs:anyType" />
+        <xs:element name="/***各种类型消息的内容：文本、图片链接、语音链接、视频链接*/message" type="xs:string" />
+        <xs:element name="/***发送者，同步本地消息使用*/clientid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationcoupleinfo" >
+      <xs:sequence>
+        <xs:element name="createuserid" type="xs:long" />
+        <xs:element name="anotheruserid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationcouplejpa" >
+      <xs:complexContent>
+       <xs:extension base="basejparepositorybyautoid<conversationcouple>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationcouple" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddate">
+         <xs:sequence>
+          <xs:element name="info" type="conversationcoupleinfo" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="messagetype" >
+      <xs:sequence>
+        <xs:element name="des" type="xs:string" />
+        <xs:element name="type" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationmessage" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddate">
+         <xs:sequence>
+          <xs:element name="info" type="conversationmessageinfo" nillable="true" minOccurs="0" />
+          <xs:element name="senduserid" type="xs:long" />
+          <xs:element name="platformtype" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationmessagejpa" >
+      <xs:complexContent>
+       <xs:extension base="basejparepositorybyautoid<conversationmessage>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationgroupuserrl" >
+      <xs:sequence>
+        <xs:element name="pkid" type="conversationgroupuserpk" nillable="true" minOccurs="0" />
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="updatetime" type="xs:long" />
+        <xs:element name="remarkname" type="xs:string" />
+        <xs:element name="role" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationgroupjpa" >
+      <xs:complexContent>
+       <xs:extension base="basejparepositorybyautoid<conversationgroup>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationgroup" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddate">
+         <xs:sequence>
+          <xs:element name="info" type="conversationgroupinfo" nillable="true" minOccurs="0" />
+          <xs:element name="maxmeb" type="xs:anyType" />
+          <xs:element name="adminuserid" type="xs:long" />
+          <xs:element name="createuserid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationgroupuserrljpa" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<conversationgroupuserrl,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationgroupinfo" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="descp" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationgroupuserpk" >
+      <xs:sequence>
+        <xs:element name="//region--fieldgroupid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermessagejpa" >
+      <xs:complexContent>
+       <xs:extension base="basejparepositorybyautoid<usermessage>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usermessage" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithautoiddate">
+         <xs:sequence>
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="senduserid" type="xs:long" />
+          <xs:element name="platformtype" type="xs:anyType" />
+          <xs:element name="messageid" type="xs:long" />
+          <xs:element name="messagecreatetime" type="xs:long" />
+          <xs:element name="info" type="conversationmessageinfo" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conversationtype" >
+      <xs:sequence>
+        <xs:element name="des" type="xs:string" />
+        <xs:element name="type" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupcontroller" >
+      <xs:sequence>
+        <xs:element name="//region--field" type="groupservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversationcontroller" >
+      <xs:sequence>
+        <xs:element name="//region--field" type="conversationservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="couplecontroller" >
+      <xs:sequence>
+        <xs:element name="//region--field" type="coupleservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseserviceimpl" >
+      <xs:sequence>
+        <xs:element name="queryfactory" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newfriendserverimpl" >
+      <xs:complexContent>
+       <xs:extension base="baseserviceimpl">
+         <xs:sequence>
+          <xs:element name="" type="userservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="newfriendjpa" nillable="true" minOccurs="0" />
+          <xs:element name="" type="conversationservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="newfriendcontroller" >
+      <xs:sequence>
+        <xs:element name="newfriendserver" type="newfriendserverimpl" nillable="true" minOccurs="0" />
+        <xs:element name="usersv" type="userservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newfriendjpa" >
+      <xs:complexContent>
+       <xs:extension base="basejparepositorybyautoid<newfriend>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="newfriend" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="updatetime" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="userstatus" type="xs:anyType" />
+        <xs:element name="friendid" type="xs:long" />
+        <xs:element name="friendstatus" type="xs:anyType" />
+        <xs:element name="userfriendid" type="xs:string" />
+        <xs:element name="addremark" type="xs:string" />
+        <xs:element name="checkremark" type="xs:string" />
+        <xs:element name="conversationid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="friendstatustype" >
+      <xs:sequence>
+        <xs:element name="des" type="xs:string" />
+        <xs:element name="type" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userstatustype" >
+      <xs:sequence>
+        <xs:element name="des" type="xs:string" />
+        <xs:element name="type" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newfriendcheckdto" >
+      <xs:sequence>
+        <xs:element name="newfriendid" type="xs:long" />
+        <xs:element name="pass" type="xs:anyType" />
+        <xs:element name="checkremark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="friendvo" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="GeneratedName" type="userinfo" nillable="true" minOccurs="0" />
+        <xs:element name="conversationid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newfriendvo" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="newfriend" nillable="true" minOccurs="0" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="friendname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newfrienddto" >
+      <xs:sequence>
+        <xs:element name="friendid" type="xs:long" />
+        <xs:element name="addremark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="objectutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stringutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="valueutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="listutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jrputil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enableauthtoken" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtokenutil" >
+      <xs:sequence>
+        <xs:element name="//region--fieldtokenparam" type="authtokenparam" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtokenpayload" >
+      <xs:sequence>
+        <xs:element name="//region--fielduserid" type="xs:string" />
+        <xs:element name="claims" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtokenthreadlocal" >
+      <xs:sequence>
+        <xs:element name="threadlocal" type="authtokenpayload" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtokenparam" >
+      <xs:sequence>
+        <xs:element name="//region--field//加密keysecretkey" type="xs:string" />
+        <xs:element name="//authtoken的位置，1：header默认值2:paraauthtokenlocal" type="xs:anyType" />
+        <xs:element name="//authtoken的keyauthtokenkeyname" type="xs:string" />
+        <xs:element name="tokenissuer" type="xs:string" />
+        <xs:element name="//过期时间ttlmillis" type="xs:long" />
+        <xs:element name="//忽略token为null，测试时候用ignoretoken" type="xs:anyType" />
+        <xs:element name="//采用threadlocal传输isthreadlocalmode" type="xs:anyType" />
+        <xs:element name="//默认所有方法需要token验证，如果不需要验证，则加noauthtoken注解isallneedtokenon" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtoken" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtokenexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="//region--fieldrst" type="baserstbean" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="headerthreadlocal" >
+      <xs:sequence>
+        <xs:element name="platformname" type="xs:string" />
+        <xs:element name="threadlocal" type="xs:anyType" />
+        <xs:element name="map" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtokeninterceptor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authtokenaspect" >
+      <xs:sequence>
+        <xs:element name="tokenparam" type="authtokenparam" nillable="true" minOccurs="0" />
+        <xs:element name="tokenutil" type="authtokenutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="noauthtoken" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rqtstridsbean" >
+      <xs:complexContent>
+       <xs:extension base="rqtitemsbean<string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rqtitemsbean" >
+      <xs:sequence>
+        <xs:element name="items" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baserstbeanhelper" >
+      <xs:sequence>
+        <xs:element name="//region--field//1.模块标示module" type="xs:long" />
+        <xs:element name="//2.模块数据modulename" type="xs:string" />
+        <xs:element name="//3.模块数据moduledata" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baserstmoduletype" >
+      <xs:sequence>
+        <xs:element name="module" type="xs:anyType" />
+        <xs:element name="remark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baserstbean" >
+      <xs:sequence>
+        <xs:element name="//region--field//默认内容//1.状态码code" type="xs:long" />
+        <xs:element name="//2.错误信息errormsg" type="xs:string" />
+        <xs:element name="//3.结果数据data" type="xs:anyType" />
+        <xs:element name="//模块内容//1.模块标示module" type="xs:long" />
+        <xs:element name="//2.模块数据modulename" type="xs:string" />
+        <xs:element name="//3.模块数据moduledata" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baserstcodetype" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:anyType" />
+        <xs:element name="msg" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baserstbeant" >
+      <xs:sequence>
+        <xs:element name="//region--field//默认内容//1.状态码code" type="xs:long" />
+        <xs:element name="//2.错误信息errormsg" type="xs:string" />
+        <xs:element name="//3.结果数据daa" type="xs:anyType" />
+        <xs:element name="//模块内容//1.模块标示module" type="xs:long" />
+        <xs:element name="//2.模块数据modulename" type="xs:string" />
+        <xs:element name="//3.模块数据moduledata" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rstbeanexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="//region--fieldrst" type="baserstbean" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="snowflakeidworkerautoconfigure" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="snowflakeidworkerproperties" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="generatesnowflakeid" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="snowflakeidutil" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="snowflakeidutil" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="snowflakeidworker" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="longjsonserializer" >
+      <xs:complexContent>
+       <xs:extension base="jsonserializer<long>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="longjsondeserializer" >
+      <xs:complexContent>
+       <xs:extension base="jsondeserializer<long>">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="snowflakeidworker" >
+      <xs:sequence>
+        <xs:element name="//" type="xs:long" />
+        <xs:element name="/***机器id所占的位数*/workeridbits" type="xs:long" />
+        <xs:element name="/***数据标识id所占的位数*/datacenteridbits" type="xs:long" />
+        <xs:element name="/***支持的最大机器id，结果是31(这个移位算法可以很快的计算出几位二进制数所能表示的最大十进制数)*/maxworkerid" type="xs:long" />
+        <xs:element name="/***支持的最大数据标识id，结果是31*/maxdatacenterid" type="xs:long" />
+        <xs:element name="/***序列在id中占的位数*/sequencebits" type="xs:long" />
+        <xs:element name="/***机器id向左移12位*/workeridshift" type="xs:long" />
+        <xs:element name="/***数据标识id向左移17位(12+5)*/datacenteridshift" type="xs:long" />
+        <xs:element name="/***时间截向左移22位(5+5+12)*/timestampleftshift" type="xs:long" />
+        <xs:element name="/***生成序列的掩码，这里为4095(0b111111111111" type="xs:long" />
+        <xs:element name="/***工作机器id(0~31)*/workerid" type="xs:long" />
+        <xs:element name="/***数据中心id(0~31)*/datacenterid" type="xs:long" />
+        <xs:element name="/***毫秒内序列(0~4095)*/sequence" type="xs:long" />
+        <xs:element name="/***上次生成id的时间截*/lasttimestamp" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="snowflakeidworkerproperties" >
+      <xs:sequence>
+        <xs:element name="/***工作机器id(0~31)*/workerid" type="xs:long" />
+        <xs:element name="/***数据中心id(0~31)*/datacenterid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enablesnowflakeid" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithdate" >
+      <xs:sequence>
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="updatetime" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithautoiddate" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithdate">
+         <xs:sequence>
+          <xs:element name="//region--fieldid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithgliddatecreator" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithgliddate">
+         <xs:sequence>
+          <xs:element name="creatorid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithuuid" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithuuiddate" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithdate">
+         <xs:sequence>
+          <xs:element name="id" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithuuiddatecreator" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithuuiddate">
+         <xs:sequence>
+          <xs:element name="creatorid" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithautoid" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseentitywithgliddate" >
+      <xs:complexContent>
+       <xs:extension base="baseentitywithdate">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="basejparepositorybyuuid" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<t,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="repositoryhelper" >
+      <xs:sequence>
+        <xs:element name="//region--fieldentityname" type="xs:string" />
+        <xs:element name="rstbeanhelper" type="baserstbeanhelper" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basejparepositorybyautoid" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<t,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

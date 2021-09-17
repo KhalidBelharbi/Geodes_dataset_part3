@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="matakuliah" >
+      <xs:sequence>
+        <xs:element name="////ididmatkul" type="xs:long" />
+        <xs:element name="matakuliah" type="xs:string" />
+        <xs:element name="idmhs" type="xs:long" />
+        <xs:element name="nilai" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mahasiswa" >
+      <xs:sequence>
+        <xs:element name="////ididmhs" type="xs:long" />
+        <xs:element name="nama" type="xs:string" />
+        <xs:element name="alamat" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nilai" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="idmhs" type="xs:long" />
+        <xs:element name="idmatkul" type="xs:long" />
+        <xs:element name="nilai" type="xs:anyType" />
+        <xs:element name="keterangan" type="xs:string" />
+        <xs:element name="mhs" type="mahasiswa" nillable="true" minOccurs="0" />
+        <xs:element name="matkul" type="matakuliah" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

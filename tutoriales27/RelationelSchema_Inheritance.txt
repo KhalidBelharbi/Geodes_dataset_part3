@@ -1,0 +1,9 @@
+
+persistentauditevent(serialversionuid:long, id:Long [PK], principal:String, auditeventdate:Instant, auditeventtype:String, data:Map<String,String>);
+
+abstractauditingentity(serialversionuid:long, createdby:String, createddate:Instant, lastmodifiedby:String, lastmodifieddate:Instant);
+
+quote(serialversionuid:long, id:Long [PK], symbol:String, price:BigDecimal, lasttrade:ZonedDateTime);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

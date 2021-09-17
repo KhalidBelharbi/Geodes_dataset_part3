@@ -1,0 +1,15 @@
+
+usuario(serialversionuid:long, id:int [PK], nome:String, cpf:String, senha:String, ativo:boolean);
+
+usuario_regra(usuario_id:Usuario [PK] #FK to Usuario,regra_id:list<regra> [PK] #FK to list<regra>);
+
+cartao(serialversionuid:long, id:int [PK], numero:String, datavalidade:Date, bloqueado:boolean, dataatualizacao:Date, GeneratedName:Cliente #FK to(cliente));
+
+regra(serialversionuid:long, id:int [PK], nome:String, descricao:String, ativo:boolean);
+
+cliente(serialversionuid:long, id:int [PK], nome:String, cpf:String, uf:String, dataatualizacao:Date);
+
+transacao(serialversionuid:long, id:int [PK], datatransacao:Date, cnpj:String, valor:Double, qdtparcelas:int, juros:Double, GeneratedName:Cartao #FK to(cartao));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,17 @@
+
+startpageentity(id:String [PK], imgurl:String, //发布人publishby:String, //发布时间publish:Date);
+
+operationlogentity(id:String [PK], name:String, username:String, time:Date, content:String, //开始时间start:Date, //结束时间end:Date, //项目projectid:String);
+
+initializedataentity(/***状态*///0代表区域公司area_company_state:Integer, //1代表项目业态楼号单元房间project_housing_state:Integer, /***是否成功*///0成功type_yes:Integer, //1失败type_no:Integer, /***是否有数据*///无相关数据perform_no:String, //有相关数据perform_yes:String, //iddataid:String, //批次batch:Integer, //批次量amount:Integer, //批次时间batch:Date, //状态state:Integer, //是否成功type:Integer, //是否有相关数据perform:String, //是否有匹配数据matching:String, //区域数据量area:Integer, //公司数据量company:Integer, //项目数据量project:Integer, //业态数据量format:Integer, //楼号数据量building:Integer, //单元数据量unit:Integer, //房间数据量room:Integer);
+
+messagedepartmententity(id:String [PK], messageid:String, departmentid:String);
+
+loginlogentity(id:String [PK], //项目idprojectid:String, //区域idregionid:String, name:String, username:String, project:String, logintime:Date, userip:String, loginmsg:String, equip:String, accounttype:String, //开始时间start:Date, //结束时间end:Date);
+
+homepagecarouselentity(//主键id:String, //图片urlimgurl:String, //链接urllinkurl:String, //轮播排序carouselorder:Integer, //项目codeprojectcode:String, //项目名称projectname:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+messagemanageentity(id:String [PK], department:String, type:String, content:String, projectid:String, title:String, creatby:String, creat:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="logback" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ratingserviceapplication" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="skippattern" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dataloader" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="ratingservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ratingcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="ratingservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ratingservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="ratingrepository" nillable="true" minOccurs="0" />
+        <xs:element name="cacherepository" type="ratingcacherepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rating" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="bookid" type="xs:long" />
+        <xs:element name="stars" type="xs:long" />
+        <xs:element name="fromcache" type="xs:anyType" />
+        <xs:element name="cachedts" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ratingnotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ratingcacherepository" >
+      <xs:sequence>
+        <xs:element name="cacheconnectionfactory" type="xs:anyType" />
+        <xs:element name="redistemplate" type="xs:anyType" />
+        <xs:element name="valueops" type="xs:anyType" />
+        <xs:element name="setops" type="xs:anyType" />
+        <xs:element name="jsonmapper" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ratingrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<rating,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sessionconfig" >
+      <xs:complexContent>
+       <xs:extension base="abstracthttpsessionapplicationinitializer">
+         <xs:sequence>
+          <xs:element name="properties" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="springcontextlivetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

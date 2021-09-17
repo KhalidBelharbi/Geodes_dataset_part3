@@ -1,0 +1,17 @@
+
+basket(serialversionuid:long, idaccount:Integer [PK], idproduct:Integer [PK], GeneratedName:Account #FK to(account), GeneratedName:Product #FK to(product), quantity:Integer, push:Date);
+
+bill(serialversionuid:long, idbill:Integer [PK], export:Date, idaccount:Integer, GeneratedName:Account #FK to(account));
+
+account(serialversionuid:long, idaccount:Integer [PK], username:String, email:String, password:String, avatar:String, phone:String, fullname:String, address:String, man:Boolean, enable:Boolean, admin:Boolean);
+
+product(serialversionuid:long, idproduct:Integer [PK], title:String, price:Double, trademark:String, guaratee:Double, deliveryaddress:String, detail:String);
+
+detailbill(serialversionuid:long, idbill:Integer [PK], idproduct:Integer [PK], GeneratedName:Bill #FK to(bill), GeneratedName:Product #FK to(product), quantity:Integer, unitprice:Double);
+
+producttype(serialversionuid:long, idtype:Integer [PK], GeneratedName:Product #FK to(product), name:String);
+
+productimage(serialversionuid:long, idimage:Integer [PK], GeneratedName:Product #FK to(product), nameimage:String, alternative:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

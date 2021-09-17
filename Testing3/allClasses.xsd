@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="samplemediationrecords" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="samplemediationformat" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediation-context-for-integration-test" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediation-test-context" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationservicetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationprocessorintegrationtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationprocessortest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="samplemediationformat" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrrepository" >
+      <xs:complexContent>
+       <xs:extension base="">
+         <xs:sequence>
+          <xs:element name="orderbyprocessingdate" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jbillingmediationrecordid" >
+      <xs:sequence>
+        <xs:element name="recordkey" type="xs:string" />
+        <xs:element name="event" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmerrorrepository" >
+      <xs:complexContent>
+       <xs:extension base="">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jbillingmediationerrorrecordid" >
+      <xs:sequence>
+        <xs:element name="jbillingcompanyid" type="xs:anyType" />
+        <xs:element name="mediationcfgid" type="xs:anyType" />
+        <xs:element name="recordkey" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="daoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationrecordlinedas" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrrepositorydasimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jbillingmediationrecorddao" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="jbillingcompanyid" type="xs:anyType" />
+        <xs:element name="mediationcfgid" type="xs:anyType" />
+        <xs:element name="recordkey" type="xs:string" />
+        <xs:element name="userid" type="xs:anyType" />
+        <xs:element name="event" type="xs:dateTime" />
+        <xs:element name="processing" type="xs:dateTime" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="currencyid" type="xs:anyType" />
+        <xs:element name="itemid" type="xs:anyType" />
+        <xs:element name="orderid" type="xs:anyType" />
+        <xs:element name="orderlineid" type="xs:anyType" />
+        <xs:element name="ratedprice" type="xs:anyType" />
+        <xs:element name="ratedcostprice" type="xs:anyType" />
+        <xs:element name="processid" type="xs:anyType" />
+        <xs:element name="//thesearepricingfieldsneededtoresolvepricing.forexample,the//destinationnumberdialedfor//longdistancepricingbasedonaratecard//thewilllaterbeprocessedwithpricingfield.getpricingfieldsvalue()pricingfields" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jbillingmediationerrorrecorddao" >
+      <xs:sequence>
+        <xs:element name="jbillingcompanyid" type="xs:anyType" />
+        <xs:element name="mediationcfgid" type="xs:anyType" />
+        <xs:element name="recordkey" type="xs:string" />
+        <xs:element name="errorcodes" type="xs:string" />
+        <xs:element name="processid" type="xs:anyType" />
+        <xs:element name="//thesearepricingfieldsneededtoresolvepricing.forexample,the//destinationnumberdialedfor//longdistancepricingbasedonaratecard//thewilllaterbeprocessedwithpricingfield.getpricingfieldsvalue()pricingfields" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrrepositorydas" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="formatlogger" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationjobinformations" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="util" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationstringtocalldatarecord" >
+      <xs:sequence>
+        <xs:element name="converter" type="mediationrecordlineconverter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrwriter" >
+      <xs:complexContent>
+       <xs:extension base="conversionresult>">
+         <xs:sequence>
+          <xs:element name="" type="jmrrepository" nillable="true" minOccurs="0" />
+          <xs:element name="errorrepository" type="jmerrorrepository" nillable="true" minOccurs="0" />
+          <xs:element name="mediationprocessid" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="calldatarecordtoconversionresult" >
+      <xs:sequence>
+        <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+        <xs:element name="resolver" type="jmrmediationcdrresolver" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="formatfield" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="startposition" type="xs:anyType" />
+        <xs:element name="length" type="xs:anyType" />
+        <xs:element name="iskey" type="xs:anyType" />
+        <xs:element name="durationformat" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="separatormediationtokenizer" >
+      <xs:sequence>
+        <xs:element name="default_separator" type="xs:string" />
+        <xs:element name="fieldseparator" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="samplemediationreader" >
+      <xs:complexContent>
+       <xs:extension base="flatfileitemreader">
+         <xs:sequence>
+          <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mediationrecordlineconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tokenizedformatfactory" >
+      <xs:sequence>
+        <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+        <xs:element name="formatfilename" type="xs:string" />
+        <xs:element name="tokenizer" type="mediationtokenizer" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationtokenizer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basicmediationrecordlineconverter" >
+      <xs:sequence>
+        <xs:element name="dateformat" type="xs:anyType" />
+        <xs:element name="removequote" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrmediationcdrresolver" >
+      <xs:sequence>
+        <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+        <xs:element name="steps" type="xs:anyType" />
+        <xs:element name="validationsteps" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imediationcdrresolver" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractuserresolutionstep" >
+      <xs:complexContent>
+       <xs:extension base="abstractmediationstep<t>">
+         <xs:sequence>
+          <xs:element name="user_expired" type="xs:string" />
+          <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractmediationstep" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationresolverstatus" >
+      <xs:sequence>
+        <xs:element name="intvalue" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationstepresult" >
+      <xs:sequence>
+        <xs:element name="item_id" type="xs:string" />
+        <xs:element name="quantity" type="xs:string" />
+        <xs:element name="user_id" type="xs:string" />
+        <xs:element name="currency_id" type="xs:string" />
+        <xs:element name="jbillingcompanyid" type="xs:anyType" />
+        <xs:element name="mediationcfgid" type="xs:anyType" />
+        <xs:element name="cdrrecordkey" type="xs:string" />
+        <xs:element name="userid" type="xs:anyType" />
+        <xs:element name="event" type="xs:dateTime" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="currencyid" type="xs:anyType" />
+        <xs:element name="itemid" type="xs:anyType" />
+        <xs:element name="pricingfields" type="xs:string" />
+        <xs:element name="errors" type="xs:anyType" />
+        <xs:element name="//deprecatedmethodsusedduringthecurrentorderupdatedone" type="xs:anyType" />
+        <xs:element name="persist" type="xs:anyType" />
+        <xs:element name="currentorder" type="xs:anyType" />
+        <xs:element name="lines" type="xs:anyType" />
+        <xs:element name="oldlines" type="xs:anyType" />
+        <xs:element name="difflines" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmreventdateresolutionstep" >
+      <xs:complexContent>
+       <xs:extension base="abstractmediationstep<mediationstepresult>">
+         <xs:sequence>
+          <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractitemresolutionstep" >
+      <xs:complexContent>
+       <xs:extension base="abstractmediationstep<t>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jmrpricingresolutionstep" >
+      <xs:complexContent>
+       <xs:extension base="abstractmediationstep<mediationstepresult>">
+         <xs:sequence>
+          <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+          <xs:element name="default_csv_file_separator" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="imediationstepvalidation" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imediationstep" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmruserloginresolutionstep" >
+      <xs:complexContent>
+       <xs:extension base="abstractuserresolutionstep<mediationstepresult>">
+         <xs:sequence>
+          <xs:element name="usernamefield" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jmritemresolutionstep" >
+      <xs:complexContent>
+       <xs:extension base="abstractitemresolutionstep<mediationstepresult>">
+         <xs:sequence>
+          <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+          <xs:element name="ld_call_item_id" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="format" >
+      <xs:sequence>
+        <xs:element name="tokenizer" type="mediationtokenizer" nillable="true" minOccurs="0" />
+        <xs:element name="fields" type="formatfield" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationjob" >
+      <xs:complexContent>
+       <xs:extension base="serializable">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="idgenerator" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="instance" type="idgenerator" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="constants" >
+      <xs:sequence>
+        <xs:element name="//mediationrecordstatusmediation_record_status_done_and_billable" type="xs:anyType" />
+        <xs:element name="mediation_record_status_done_and_not_billable" type="xs:anyType" />
+        <xs:element name="mediation_record_status_error_detected" type="xs:anyType" />
+        <xs:element name="mediation_record_status_error_declared" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationsteptype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationstepcontext" >
+      <xs:sequence>
+        <xs:element name="result" type="mediationstepresult" nillable="true" minOccurs="0" />
+        <xs:element name="record" type="xs:anyType" />
+        <xs:element name="entityid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationresultvalidationstep" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="duplicaterecordvalidationstep" >
+      <xs:sequence>
+        <xs:element name="bean_name" type="xs:string" />
+        <xs:element name="GeneratedName" type="jmrrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imediationstepvalidation" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaultmediationjob" >
+      <xs:sequence>
+        <xs:element name="lineconverter" type="xs:string" />
+        <xs:element name="resolver" type="xs:string" />
+        <xs:element name="writer" type="xs:string" />
+        <xs:element name="job" type="xs:string" />
+        <xs:element name="recyclejob" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="performancemediationreader" >
+      <xs:sequence>
+        <xs:element name="stepsstarted" type="xs:anyType" />
+        <xs:element name="uuidsalreadychosen" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sharedcounter" >
+      <xs:sequence>
+        <xs:element name="counter" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="performancemediationjob" >
+      <xs:complexContent>
+       <xs:extension base="defaultmediationjob{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="samplerootratemediationjob" >
+      <xs:complexContent>
+       <xs:extension base="samplemediationjob">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="samplerecyclerootratemediationjob" >
+      <xs:complexContent>
+       <xs:extension base="samplemediationjob">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sampleeventdateresolutionstep" >
+      <xs:complexContent>
+       <xs:extension base="abstractmediationstep<mediationstepresult>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="samplerecyclerowmapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="samplemediationjob" >
+      <xs:complexContent>
+       <xs:extension base="defaultmediationjob{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="samplerecyclejob" >
+      <xs:complexContent>
+       <xs:extension base="samplemediationjob">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sampleitemresolutionstep" >
+      <xs:complexContent>
+       <xs:extension base="abstractitemresolutionstep<mediationstepresult>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="samplemediationrecordlineconverter" >
+      <xs:complexContent>
+       <xs:extension base="basicmediationrecordlineconverter">
+         <xs:sequence>
+          <xs:element name="" type="format" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cdrconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationjobs" >
+      <xs:sequence>
+        <xs:element name="jobs" type="mediationjob" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationserviceimplementation" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+        <xs:element name="parameter_mediation_process_id_key" type="xs:string" />
+        <xs:element name="parameter_mediation_file_path_key" type="xs:string" />
+        <xs:element name="parameter_mediation_config_id_key" type="xs:string" />
+        <xs:element name="GeneratedName" type="jmrrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="jmrrepositorydas" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="jmerrorrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrprocessormodulepartitioner" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="jmrrepository" nillable="true" minOccurs="0" />
+        <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrprocessorreader" >
+      <xs:sequence>
+        <xs:element name="recordstoprocess" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="jmrrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrpaginationprocessorwriterimpl" >
+      <xs:complexContent>
+       <xs:extension base="list<jbillingmediationrecord>>">
+         <xs:sequence>
+          <xs:element name="" type="jmrrepository" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jmrprocessorwriterimpl" >
+      <xs:complexContent>
+       <xs:extension base="jbillingmediationrecord>">
+         <xs:sequence>
+          <xs:element name="" type="jmrrepository" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jmrpaginationprocessorreader" >
+      <xs:sequence>
+        <xs:element name="recordstoprocessbyuserid" type="xs:anyType" />
+        <xs:element name="log" type="formatlogger" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="jmrrepository" nillable="true" minOccurs="0" />
+        <xs:element name="userids" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jmrprocessorconstants" >
+      <xs:sequence>
+        <xs:element name="parm_processor_idx" type="xs:string" />
+        <xs:element name="parm_grid_size" type="xs:string" />
+        <xs:element name="parm_user_list" type="xs:string" />
+        <xs:element name="parm_number_of_partitions" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metricshelper" >
+      <xs:sequence>
+        <xs:element name="metricurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recyclemediationjoblistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="jmerrorrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="processidstoupdate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mediationjoblistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

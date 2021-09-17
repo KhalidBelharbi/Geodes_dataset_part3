@@ -1,0 +1,89 @@
+
+userwandastaffentity(//1-有效，0-无效state_on:String, state_off:String, //已加入type_yes:String, //未加入type_no:String, //员工idstaffid:String, //用户名username:String, //密码password:String, //名称staffname:String, //状态staffstate:String, //手机mobile:String, //公司idcompanyid:String, //项目idprojectid:String, //部门iddepartmentid:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //头像logo:String, //员工状态yes-已加入no-未加入type:String);
+
+roleroleanthorityentity(//主键不知道谁弄的叫userid混淆视听userid:String, //人员idstaffid:String, //后台角色idsetid:String, //app角色idappsetid:String, //项目idprojectid:String);
+
+staffcrmentity(//用户iduserid:Integer, //分部subcompanyid1:String, //部门departmentid:String, //编号workcode:String, //姓名lastname:String, //系统账号loginid:String, //密码password:String, //安全级别seclevel:String, //性别sex:String, //岗位jobtitle:String, //职务jobactivityid:String, //职务类型jobgroupid:String, //职称jobcall:String, //职级joblevel:String, //职责描述jobactivitydesc:String, //直接上级managerid:String, //助理assistantid:String, //状态eg:正式、试用等status:String, //办公地点locationid:String, //办公室workroom:String, //办公电话telephone:String, //移动电话mobile:String, //其他电话mobilecall:String, //传真fax:String, //电子邮件email:String, //系统语言默认7systemlanguage:String, //生日birthday:String, //民族folk:String, //籍贯nativeplace:String, //户口regresidentplace:String, //身份证号certificatenum:String, //婚姻状况maritalstatus:String, //政治面貌policy:String, //入团日期bememberdate:String, //入党日期bepartydate:String, //是否是工会会员islabouunion:String, //学历educationlevel:String, //学位degree:String, //健康状况healthinfo:String, //身高height:String, //体重weight:String, //居住地residentplace:String, //家庭住址homeaddress:String, //暂住证号码tempresidentnumber:String, //合同开始日期startdate:String, //合同结束日期enddate:String, //创建日期createdate:String, //最后修改日期lastchangdate:String, //账号类型accounttype:Integer, //显示顺序dsporder:Integer, //个人信息自定义personfields:String, //个人信息自定义值personfieldsvalue:String);
+
+usertypeprojectconfigentity(//主键idid:String, //城市idcityid:String, //城市编码citynum:String, //城市名称cityname:String, //项目编码projectnum:String, //项目名称projectname:String, //用户类型(1,2,3,4,5,6,)usertypes:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+appfunctionconfigentity(//社区公告function_module_sqgg:String, //新闻资讯function_module_xwzx:String, //金茂楼盘function_module_jmlp:String, //意见反馈function_module_yjfk:String, //物业报修function_module_wybx:String, //活动报名function_module_hdbm:String, //便民信息function_module_bmxx:String, //交付预约function_module_jfyy:String, //智能门禁function_module_znmj:String, //物业缴费function_module_wyjf:String, //访客通行function_module_fktx:String, //管家信息function_module_gjxx:String, //线上活动function_module_xshd:String, functionmodulemap:Map<String,Object>, //主键idid:String, //城市idcityid:String, //城市编码citynum:String, //城市名称cityname:String, //项目编码projectnum:String, //项目名称projectname:String, //功能模块(sqgg,xwzx,)functionmodules:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+userprojectentity(//主键id:String, //用户iduserid:String, //项目idprojectid:String, //创建时间create:Date, //创建人createby:String);
+
+gradecrmentity(//会员编号memberid:String, //会员等级memberlevel:String, //所属业态formats:String);
+
+familycrmentity(id:String [PK], //会员编号memberid:String, //出生日期birth:Date, //与会员关系membership:String, //手机联系方式phonenumber:String, //名称name:String, //关联会员idassociatememberid:String, //删除标记1:删除，0：正常statecode:String);
+
+userimageentity(/*图片类型*///意见反馈type_feedback:String, //主键id:String, //名称name:String, //地址url:String, //跳转地址jumpurl:String, //业务idbusinessid:String, //类型type:String);
+
+departmentcrmentity(//部门iddepartmentid:String, //简称shortname:String, //全称fullname:String, //所属分部idsubcompanyid:String, //上级部门idsupdepartmentid:String, //显示顺序showorder:String, //部门编码code:String, //是否封存canceled:String, //最后更新日期lastchangdate:String);
+
+userselectentity(//iduserselectid:String [PK], //问卷idquestid:String, //题目idquestiontitleid:String, //选项idquestiontitleselectid:String, //用户iduserid:String, //创建日期createon:Date);
+
+ehrorganizationentity(mdpguid:String [PK], orgid:String, orgname:String, orgcode:String, orgcategory:String, isroot:String, officetel:String, fax:String, address:String, postcode:String, email:String, web:String, introduction:String, remark:String, operatetime:String, orgoperator:String, status:String, validdate:String, begindate:String, businessarea:String, shortname:String, bustype:String, orgsort:String, orgunitstatus:String, cadorgtype:String, opendate:String, parentunitid:String, parentunitcode:String, parentstatus:String, orgorder:String, fullpath:String, companycategoryid:String, mdpbatchtime:String, mdpoperationtype:String, mdpresult:String);
+
+userinformationentity(//员工idstaffid:String, //用户名oa同步过来的账号username:String, //系统账号系统登录账号sysname:String, //密码password:String, //名称staffname:String, //状态0停用1启用staffstate:String, //类型type:String, //手机mobile:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //头像logo:String, //性别sex:String, //生日birthday:java.sql.Date, //邮件email:String, //工作电话officephone:String, //金茂内部员工0：外部合作单位1：oa同步jinmaois:String, //排序ordernum:Integer, //备注memo:String, //oa同步使用，用户iduserid:String, //是否为临时账号temporary:String);
+
+usersubjectentity(//idusersubjectid:String [PK], //问卷idquestid:String, //问答idsubjectid:String, //用户iduserid:String, //创建日期createon:Date, //内容message:String);
+
+ehrtreeentity(mdpguid:String [PK], employeeid:String, employeecode:String, unitid:String, unitcode:String, ismainorg:String, mdpbatchtime:String, mdpoperationtype:String, mdpresult:String);
+
+questiontitleentity(//idquestiontitleid:String [PK], //调查问卷idquestid:String, //标题questiontitlename:String, //1单选2多选questionopt:Integer, //创建日期createon:Date, //countnum:Integer);
+
+userloginbookentity(/*登录状态*///正常登录state_normal:String, //正常退出state_exit:String, //踢出（在其他设备登录）state_out:String, /*登录类型*///ui测试登录login_type_ui:String, //登录idloginid:String, //用户iduserid:String, //登录类型logintype:String, //手机唯一标识phoneuuid:String, //微信唯一标识unionid:String, //登录状态state:String, //业务idbusinessid:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+userauthinfoentity(/*状态*///自动通过state_auto_succeed:String, //自动失败state_auto_fail:String, //待审核state_audit_wait:String, //审核通过state_audit_succeed:String, //审核失败state_audit_fail:String, //租户注册state_audit_tenant:String, //主键id:String, //状态state:String, //content:String, //项目idprojectname:String, //业态idformatname:String, //楼idbuildingname:String, //单元idunitname:String, //房间号idroomname:String, //真实姓名name:String, //证件号码idnumber:String, //手机号码mobile:String, //来源form:String, //手机唯一标识phoneuuid:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+visitorpasslogentity(//主键idid:String [PK], //访客通行idvisitorpassid:String, //扫码人姓名guardname:String, //是否放行ispass:Integer, //放行时间pass:Date, //创建人(用户id)createby:String, //创建时间createon:Date);
+
+questionnaireentity(//idquestid:String [PK], //区域cityid:String, //项目projectname:String, //标题questname:String, //积分rulenum:String, //开始日期begin:Date, //结束日期end:Date, //状态1未开始2开始3结束queststatus:String, //创建日期createon:Date, //人数num:String, //状态0,未删除1,已删除deletestatus:Integer);
+
+usercrmentity(/*用户类型*///游客user_type_visitor:String, //普通user_type_normal:String, //业主user_type_owner:String, //家属user_type_family:String, //租户user_type_tenant:String, /*用户状态*///正常user_state_normal:int, //主键iduserid:String, //用户名username:String, //会员编号memberid:String, //登录密码password:String, //手机mobile:String, //昵称nickname:String, //真实姓名realname:String, //性别sex:String, //生日birthday:Date, //证件号码idcard:String, //证件类型idtype:String, //头像logo:String, //婚姻状况marriage:String, //用户状态userstate:Integer, //用户类型usertype:String, //注册时间register:Date, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //金茂项目：业主idid:String, //国籍nationality:String, //籍贯nativesplace:String, //教育程度education:String, //酒店会员标识：0为会员，1为非会员state:String, //兴趣爱好hobby:String, //英文名字englishname:String, //职业occupation:String, //工作单位jobunit:String, //会员收入incomelevel:String, //单位类别companytype:String);
+
+userinfoentity(/*用户类型*///游客user_type_visitor:String, //会员user_type_normal:String, //业主user_type_owner:String, //同住人user_type_family:String, //废弃user_type_tenant:String, //app注册user_type_source_app:String, //微信注册user_type_source_weixin:String, /*用户状态*///正常user_state_normal:int, //主键iduserid:String, //用户名username:String, //登录密码password:String, //手机mobile:String, //昵称nickname:String, //真实姓名realname:String, //性别：1男2女sex:Integer, //生日birthday:Date, //证件号码idcard:String, //证件类型idtype:String, //头像logo:String, //婚姻状况marriage:String, //用户状态userstate:Integer, //用户类型usertype:String, //注册时间register:Date, //物业业主idviewappownerid:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //金茂项目：业主idid:String, //金茂跳转页面专用字段1未填写身份证2填写了身份证3填了身份证认证失败4认证成功jump:String, //数据来源1-app2-微信sourcetype:String, //操作系统：android/iosoperatingsystem:String, //微信用户昵称wc_nickname:String);
+
+userpropertystaffentity(/*员工类型*///编外（不在万达系统内）自建type_off_staff:String, //编内（万达系统内）引入type_in_staff:String, //1-有效，0-无效state_on:String, state_off:String, //员工idstaffid:String, //用户名username:String, //密码password:String, //名称staffname:String, //状态staffstate:String, //类型in-引入，off-自建type:String, //手机mobile:String, //是否公开手机号0不公开1公开openmobile:String, //公司idcompanyid:String, //项目idprojectid:String, //部门iddepartmentid:String, //权限idrolesetid:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //头像logo:String, //性别sex:String, //生日birthday:java.sql.Date, //生日类型birthdaytype:String, //邮件email:String, //工作电话officephone:String, //查询负责范围(模块条件)queryscope:String, //金茂内部员工0不是1是jinmaois:String, //排序ordernum:Integer, //备注memo:String, /*新增字段_2016-08-16_wyd-会员数据权限开发*///员工负责区域scope:String, //员工负责项目project:String, //员工所在公司company:String);
+
+accountcrmentity(accountid:String [PK], //会员账号idid:String, //会员编号memberid:String, //注册手机号mobile:String, //注册账号registerid:String, //昵称nickname:String, //密码password:String, //注册电子邮箱mailbox:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+visitorpassentity(//主键idid:String [PK], //项目编码projectcode:String, //项目名称projectname:String, //房产idhouseroomid:String, //房产地址houseaddress:String, //业主姓名ownername:String, //业主电话ownerphone:String, //访客姓名visitorname:String, //访客电话visitorphone:String, //拜访日期visit:Date, //二维码图片路径pathqrcode:String, //二维码扫描次数numqrcode:Integer, //创建人(用户id)createby:String, //创建时间createon:Date);
+
+useractivityscopeentity(//用户iduserid:String, //活动idactivityid:String, //标识1:已读readed:String);
+
+userintegralruleentity(//idid:String [PK], //useriduserid:String, //微信appidwechatappid:String, //积分数量integralnumber:String);
+
+uplusmembershipcardentity(//主键idid:Integer, //会员卡编码cardnum:String, //用户iduserid:String, //卡状态(0,已刪除1,已启用)cardstate:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+userstaffloginbookentity(/*登录状态*///正常登录state_normal:String, //正常退出state_exit:String, //踢出（在其他设备登录）state_out:String, /*登录类型*///ui测试登录login_type_ui:String, //登录idloginid:String, //员工idstaffid:String, //登录类型logintype:String, //手机唯一标识phoneuuid:String, //登录状态state:String, //业务idbusinessid:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, loginout:boolean);
+
+userfeedbackentity(/*状态*/state_new:String, //主键id:String, //用户iduserid:String, //状态:1为未处理2为已处理state:String, //内容content:String, //手机mobile:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //类型1金茂会员2金茂质检3微信feedbacktype:String, //类别：1为身份申诉、2为意见反馈memo:String, //反馈开始时间start:Date, //反馈结束时间end:Date, //用户类型:2为普通会员3为业主4为同住人usertype:String, //项目idprojectid:String, //项目名称projectname:String, //地址address:String, //意见反馈来源分类1便民信息纠错2:意见反馈fbclassification:String);
+
+ownerappealentity(//申诉未处理state_untreat:int, //申诉通过state_pass:int, //申诉失败state_fail:int, //主键idid:String, //客户端idappid:String, //城市idcityid:String, //城市名称cityname:String, //项目编码projectnum:String, //项目名称projectname:String, //用户iduserid:String, //手机号mobile:String, //证件类型(ownerauthenticationentity,参照常量)idtype:String, //证件号idcard:String, //业主姓名ownername:String, roomnum)housenum:String, //房产地址houseaddress:String, //合同封面contractcoverurl:String, //证件照片(正面)idphotofronturl:String, //证件照片(背面)idphotobackurl:String, //0,普通申诉1,特殊申诉,身份证被使用//申诉类型appealtype:Integer, //100,申诉未处理101,申诉通过102,申诉失败//处理状态handlestate:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+qualitylogentity(//日志idlogid:String, //用户名username:String, //名称staffname:String, //手机号usermobile:String, //来源sourcefrom:String, //项目名projectname:String, //项目idprojectid:String, //时间systime:Date, //内容syscontent:String, //单据类型sysdoctype:String, //单据编号sysdocnum:String, //状态一类sysstatus:String, //版块syssection:String, //功能sysfunction:String, //ip地址ipaddress:String);
+
+questiontitleselectentity(//idquestiontitleselectid:String [PK], //题目idquestiontitleid:String, //选项名称selectname:String, //图片地址pictureurl:String, //选项数量number:Integer, //创建日期createon:Date, //countnum:Integer);
+
+contactcrmentity(id:String [PK], //会员编号memberid:String, //电子邮箱email:String, //微博idweibo:String, //微信号weixin:String, //qqqq:String, //通讯地址address:String, //备用联系方式1backupphoneone:String, //备用联系方式2backupphonetwo:String, //备用联系方式3backupphonethree:String, //备用联系方式4backupphonefour:String, //备用联系方式5backupphonefive:String, //手机号码phonenumber:String, //删除标记1:删除，0：正常statecode:String);
+
+carcrmentity(id:String [PK], //会员编号memberid:String, //车牌号licenseid:String, //车辆类型cartype:String, //车辆动力carpower:String, //记录更新日期modify:Date, //删除标记1:删除，0：正常statecode:String);
+
+usertokenentity(//tokenidtokenid:String, //用户iduserid:String, //openidopenid:String, //本token是否有效标记1有效2无效isactive:String, //创建人createby:String, //创建日期create:Date, //创建时间create:Time);
+
+usersettingentity(//用户iduserid:String, //项目idprojectid:String, //项目名称projectname:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //小区idpinyincode:String);
+
+clientprojectconfigentity(//主键idid:String, //城市idcityid:String, //城市编码citynum:String, //城市名称cityname:String, //项目编码projectnum:String, //项目名称projectname:String, //客户端id(0,1,2,3,)clientids:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+subcompanycrmentity(//分部idsubcompanyid:String, //简称shortname:String, //全称fullname:String, //上级分部idsupsubcompanyid:String, //网站website:String, //显示顺序showorder:String, //公司编码code:String, //是否封存canceled:String, //最后更新日期lastchangdate:String);
+
+subjectentity(//idsubjectid:String [PK], //问卷idquestid:String, //标题subjectname:String);
+
+defaultconfigentity(/**********modifybytom2016-7-1514:00:39begin**********//*配置类型*///用户默认头像config_type_default_user_logo:String, //功能介绍config_type_function_introduction:String, /**********modifybytom2016-7-1514:00:39end**********///主键id:String, //配置类型(1_用户默认头像,2_功能介绍页)configtype:String, //配置值configvalue:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+ownerauthenticationentity(//身份证id_type_sf:String, //军官证id_type_jung:String, //警官证id_type_jingg:String, //护照id_type_hz:String, //营业执照id_type_yyzz:String, //认证未处理state_untreat:int, //认证通过state_pass:int, //认证失败state_fail:int, //主键idid:String, //客户端idappid:String, //用户iduserid:String, //手机号mobile:String, //证件类型idtype:String, //证件号idcard:String, //证件照片(正面)idphotofronturl:String, //证件照片(背面)idphotobackurl:String, //100,认证未处理101,认证通过102,认证失败//处理状态handlestate:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+clientconfigentity(//主鍵id_客户端编码id:int, //客戶端名称clientname:String, //微信appidwechatappid:String, //微信appsecretwechatappsecret:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

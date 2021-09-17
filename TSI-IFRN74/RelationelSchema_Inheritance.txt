@@ -1,0 +1,15 @@
+
+categoria(serialversionuid:long, id:Long [PK], nome:String);
+
+user(serialversionuid:long, id:Long [PK], username:String, password:String, roli:Role #FK to(role));
+
+questao(serialversionuid:long, id:Long [PK], nome:String, data:Date, GeneratedName:Categoria #FK to(categoria), i:User #FK to(user), GeneratedName:Resposta #FK to(resposta), imagem:String);
+
+role(serialversionuid:long, id:Long [PK], nome:String);
+
+resposta(serialversionuid:long, id:Long [PK], verdadeira1:String, falsa1:String, falsa2:String, falsa3:String, GeneratedName:Questao #FK to(questao));
+
+tarefa(serialversionuid:long, id:Long [PK], titulo:String, descricao:String, GeneratedName:Status, criacao:Date, edicao:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="senha" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="senha" type="xs:long" />
+          <xs:element name="tipo" type="enumtiposenha" nillable="true" minOccurs="0" />
+          <xs:element name="dataemissao" type="xs:anyType" />
+          <xs:element name="foiatendido" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="atendimento" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="" type="senha" nillable="true" minOccurs="0" />
+          <xs:element name="" type="guiche" nillable="true" minOccurs="0" />
+          <xs:element name="dataatendido" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usuario" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="login" type="xs:string" />
+          <xs:element name="senha" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="guiche" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="numero" type="xs:anyType" />
+          <xs:element name="estado" type="enumguicheestados" nillable="true" minOccurs="0" />
+          <xs:element name="" type="usuario" nillable="true" minOccurs="0" />
+          <xs:element name="dataapertura" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

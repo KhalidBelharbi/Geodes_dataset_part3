@@ -1,0 +1,10 @@
+ClassDiagram.Class>> Car =>=>=> RelationalSchema.Table>> car;
+ClassDiagram.Class>> Manufacturer =>=>=> RelationalSchema.Table>> manufacturer;
+ClassDiagram.Attribut>> Car.model:String =>=>=> RelationalSchema.Column>> car.model PRIMARY KEY;
+ClassDiagram.Attribut>> Car.description:String =>=>=> RelationalSchema.Column>> car.description;
+ClassDiagram.Attribut>> Car.year:int =>=>=> RelationalSchema.Column>> car.year;
+ClassDiagram.Attribut>> Car.engine:String =>=>=> RelationalSchema.Column>> car.engine;
+ClassDiagram.Attribut>> Car.GeneratedName:Manufacturer =>=>=> RelationalSchema.Column>> car.GeneratedName;
+ClassDiagram.Attribut>> Manufacturer.name:String =>=>=> RelationalSchema.Column>> manufacturer.name PRIMARY KEY;
+ClassDiagram.Attribut>> Manufacturer.city:String =>=>=> RelationalSchema.Column>> manufacturer.city;
+One-To-Many relationship from ClassDiagram.Class>>Manufacturer  to ClassDiagram.Class>>List<Car>;

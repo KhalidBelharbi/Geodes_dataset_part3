@@ -1,0 +1,59 @@
+notification(id:long [PK], /***thecontextofthenotification*/content:String, /***theusername*/principal:String);
+
+mangerstore(id:int [PK], /***thepermissionsthatweregiventothemanager*/storepermissions:Set<StorePermission>, /***theactualuserthatappointedtobemanager*/appointedmanager:UserSystem #FK to(usersystem));
+
+appointingagreement(appoingagreementnumber:int [PK], newowner:UserSystem #FK to(usersystem), appointee:String, ownersandapproval:Map<String,StatusOwner>);
+
+productdetailspolicy(/***thevalidrangeofamountofproductstobuyinapurchase*inshoppingbagdetailsitistheamountofdifferentitems*inproductdetailsitistheamountofitemsfromaspecificoneproduct*/min:int, max:int, /***thesnofproductwhichhaslimitationsamounts*/productid:int);
+
+composedpurchase(/***logicaloperatorbetweenpolicies*/:CompositeOperator);
+
+purchase(/***uniqueidofthepurchasepolicyinthestore*/purchaseid:long [PK], /***theactualtypeofpurchasepolicy*/:PurchasePolicy #FK to(purchasepolicy), /***thetypeofpolicy*/:PurchaseType, /***describestheverbaldescriptionofthepolicy*/description:String);
+
+systemdetailspolicy(/***thedaysintheweekanyuserispermittedtoperformapurchase*/storeworkdays:Set<Day>);
+
+shoppingbagdetailspolicy(min:int, max:int);
+
+userdetailspolicy(/***listofcountriesthatthestorehavedeliveriesto*/countriespermitted:Set<String>);
+
+store(storeid:int [PK], storename:String, /***thestorerank*/rank:int, /***description*/description:String);
+
+store_set<ownersappointee>(storeID:store [PK] #FK to store,set<ownersappointee>ID:set<ownersappointee> [PK] #FK to set<ownersappointee>);store_set<managersappointee>(storeID:store [PK] #FK to store,set<managersappointee>ID:set<managersappointee> [PK] #FK to set<managersappointee>);
+
+receipt(receiptsn:int [PK], /***thestoreidthatconnectedtothestoreinwhichthepurchasehappened.*/storeid:int, /***theusernamewhoperformthispurchaseoraguest*/username:String, /***thepurchase*/purchase:Date, /***thepricethattheuserhadtopayinthispurchase.*/amounttopay:double, /***transactionswithexternalsystemsidentifiers*/paytransid:String, supplytransid:String, productsbought:Map<Product,Integer>);
+
+ownersappointee(id:long [PK], appointeeuser:UserSystem #FK to(usersystem));
+
+shoppingcart(id:int [PK]);
+
+dailyvisitor(GeneratedName:Date [PK], guests:long, ownerstores:long, managerstores:long, simpleuser:long, admins:long);
+
+shoppingbag(id:int [PK], productlistfromstore:Map<Product,Integer>);
+
+product(/***theproductserialnumber*/productsn:int [PK], /***thenameoftheproduct*/name:String, /***thecategoryoftheproduct*/category:ProductCategory, /***theamountofthisproductinthestore(:int, /***thecostofthisproduct*/cost:double, /***theoriginalpriceofthisproductbeforediscountifappliedone*/originalcost:double, /***therankofthisproduct*/rank:int, /***thestoreidthatconnectedtothestorethattheproductexistsinit.*/storeid:int);
+
+conditionalstorediscount(/***theminimalpriceofpurchasetoapplythediscountfrom*/minprice:double);
+
+composeddiscount(amountofproductsforapplydiscounts:Map<Product,Integer>, productsunderthisdiscount:Map<Product,Integer>, /***theoperationbetweentheconditionalsdiscounts*/:CompositeOperator);
+
+discount(discountid:long [PK], /***howmuchdiscountshouldtoapplyonproduct*/discountpercentage:double, /***theproductvalidationdate*/endtime:Calendar, /***describestheconditionandthepostofthespecifieddiscount*/description:String, isapplied:boolean, /***typesofdiscountsinthestore*/:DiscountPolicy #FK to(discountpolicy), GeneratedName:DiscountType);
+
+visiblediscount(amountofproductsforapplydiscounts:Map<Product,Integer>);
+
+conditionalproductdiscount(productsunderthisdiscount:Map<Product,Integer>, productsapplydiscounts:Map<Product,Integer>);
+
+usersystem(/***theusername*/username:String [PK], /***theencryptionpasswordofthetheuser*/password:String, /***thesaltweusetohashthepasswordfortheuser*/salt:String, /***thefirstnameoftheuser*/firstname:String, /***thelastnameoftheuser*/lastname:String, /***theuserpersonalshoppingcart*/:ShoppingCart #FK to(shoppingcart), principal:String, isadmin:boolean, imageurl:String, /***forhttps*/grantedauthorities:Set<GrantedAuthority>);
+
+usersystem_set<store>(usersystemID:usersystem [PK] #FK to usersystem,set<store>ID:set<store> [PK] #FK to set<store>);usersystem_set<store>(usersystemID:usersystem [PK] #FK to usersystem,set<store>ID:set<store> [PK] #FK to set<store>);
+
+managersappointee(id:long [PK], appointeeuser:String);
+
+ownertoapprove(storeid:int [PK], storename:String, usernametoapprove:String [PK]);
+
+purchasepolicy(id:long [PK]);
+
+discountpolicy(id:long [PK]);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="tabelaitensvendatest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="tabelaitensvenda" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="context" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="web" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="erroscontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dashboardcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="vendas" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cervejas" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="clientes" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientescontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="estados" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cadastroclienteservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="clientes" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cidadescontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cidades" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="estados" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cadastrocidadeservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="segurancacontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cervejascontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="estilos" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cadastrocervejaservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cervejas" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="relatorioscontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="relatorioservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendavalidator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuarioscontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cadastrousuarioservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="grupos" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="usuarios" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="controlleradviceexceptionhandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fotoscontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="fotostorage" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estiloscontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cadastroestiloservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="estilos" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendascontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cervejas" nillable="true" minOccurs="0" />
+        <xs:element name="tabelaitens" type="tabelasitenssession" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cadastrovendaservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="vendavalidator" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="vendas" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="mailer" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cidadeconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grupoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estiloconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estadoconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pagewrapper" >
+      <xs:sequence>
+        <xs:element name="page" type="xs:anyType" />
+        <xs:element name="uribuilder" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="atributoconfirmacaovalidator" >
+      <xs:sequence>
+        <xs:element name="atributo" type="xs:string" />
+        <xs:element name="atributoconfirmacao" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="atributoconfirmacao" >
+      <xs:complexContent>
+       <xs:extension base="payload>[]">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sku" >
+      <xs:complexContent>
+       <xs:extension base="payload>[]">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mailer" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="mailsender" type="xs:anyType" />
+        <xs:element name="thymeleaf" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="fotostorage" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tabelasitenssession" >
+      <xs:sequence>
+        <xs:element name="tabelas" type="tabelaitensvenda" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tabelaitensvenda" >
+      <xs:sequence>
+        <xs:element name="uuid" type="xs:string" />
+        <xs:element name="itens" type="itemvenda" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="venda" >
+      <xs:sequence>
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="datacriacao" type="xs:anyType" />
+        <xs:element name="valorfrete" type="xs:anyType" />
+        <xs:element name="valordesconto" type="xs:anyType" />
+        <xs:element name="valortotal" type="xs:anyType" />
+        <xs:element name="observacao" type="xs:string" />
+        <xs:element name="datahoraentrega" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="cliente" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="usuario" nillable="true" minOccurs="0" />
+        <xs:element name="status" type="statusvenda" nillable="true" minOccurs="0" />
+        <xs:element name="itens" type="itemvenda" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="uuid" type="xs:string" />
+        <xs:element name="dataentrega" type="xs:anyType" />
+        <xs:element name="horarioentrega" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="statusvenda" >
+      <xs:sequence>
+        <xs:element name="descricao" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cliente" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="GeneratedName" type="tipopessoa" nillable="true" minOccurs="0" />
+        <xs:element name="cpfoucnpj" type="xs:string" />
+        <xs:element name="//@notblank(message" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="//@valid" type="endereco" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="endereco" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//@notblank(message" type="xs:string" />
+        <xs:element name="numero" type="xs:string" />
+        <xs:element name="complemento" type="xs:string" />
+        <xs:element name="cep" type="xs:string" />
+        <xs:element name="GeneratedName" type="cidade" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="estado" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="permissao" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sabor" >
+      <xs:sequence>
+        <xs:element name="descricao" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="origem" >
+      <xs:sequence>
+        <xs:element name="descricao" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuario" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="senha" type="xs:string" />
+        <xs:element name="confirmacaosenha" type="xs:string" />
+        <xs:element name="ativo" type="xs:anyType" />
+        <xs:element name="grupos" type="grupo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//@notnull(message" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grupo" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="permissoes" type="permissao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estilo" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cervejas" type="cerveja" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemvenda" >
+      <xs:sequence>
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="quantidade" type="xs:anyType" />
+        <xs:element name="valorunitario" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="cerveja" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="venda" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cidade" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="GeneratedName" type="estado" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estado" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="sigla" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientegroupsequenceprovider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cnpjgroup" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cpfgroup" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuariogrupo" >
+      <xs:sequence>
+        <xs:element name="id" type="usuariogrupoid" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuariogrupoid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="usuario" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="grupo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cerveja" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="sku" type="xs:string" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="valor" type="xs:anyType" />
+        <xs:element name="teoralcoolico" type="xs:anyType" />
+        <xs:element name="comissao" type="xs:anyType" />
+        <xs:element name="quantidadeestoque" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="origem" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sabor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="estilo" nillable="true" minOccurs="0" />
+        <xs:element name="foto" type="xs:string" />
+        <xs:element name="contenttype" type="xs:string" />
+        <xs:element name="novafoto" type="xs:anyType" />
+        <xs:element name="urlfoto" type="xs:string" />
+        <xs:element name="urlthumbnailfoto" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tipopessoa" >
+      <xs:sequence>
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="documento" type="xs:string" />
+        <xs:element name="mascara" type="xs:string" />
+        <xs:element name="grupo" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="brewerdialect" >
+      <xs:complexContent>
+       <xs:extension base="abstractprocessordialect">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paginationelementtagprocessor" >
+      <xs:complexContent>
+       <xs:extension base="abstractelementtagprocessor">
+         <xs:sequence>
+          <xs:element name="nome_tag" type="xs:string" />
+          <xs:element name="precedencia" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderelementtagprocessor" >
+      <xs:complexContent>
+       <xs:extension base="abstractelementtagprocessor">
+         <xs:sequence>
+          <xs:element name="nome_tag" type="xs:string" />
+          <xs:element name="precedencia" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="messageelementtagprocessor" >
+      <xs:complexContent>
+       <xs:extension base="abstractelementtagprocessor">
+         <xs:sequence>
+          <xs:element name="nome_tag" type="xs:string" />
+          <xs:element name="precedencia" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="classforerrorattributetagprocessor" >
+      <xs:complexContent>
+       <xs:extension base="abstractattributetagprocessor{">
+         <xs:sequence>
+          <xs:element name="nome_atributo" type="xs:string" />
+          <xs:element name="precedencia" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="menuattributetagprocessor" >
+      <xs:complexContent>
+       <xs:extension base="abstractattributetagprocessor{">
+         <xs:sequence>
+          <xs:element name="nome_atributo" type="xs:string" />
+          <xs:element name="precedencia" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cadastrovendaservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="vendas" nillable="true" minOccurs="0" />
+        <xs:element name="publisher" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastrocidadeservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cidades" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastrocervejaservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cervejas" nillable="true" minOccurs="0" />
+        <xs:element name="/*		applicationeventpublisherpublisher*/" type="fotostorage" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="relatorioservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="emailusuariojacadastradoexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nomeestilojacadastradoexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="senhaobrigatoriausuarioexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cpfcnpjclientejacadastradoexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="impossivelexcluirentidadeexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nomecidadejacadastradaexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cadastroestiloservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="estilos" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastrousuarioservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="usuarios" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendaevent" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="venda" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendalistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cervejas" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cidadesalvarevent" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cidade" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="statususuario" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastroclienteservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="clientes" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jpaconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="serviceconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bigdecimalformatter" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfig" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="s3config" >
+      <xs:sequence>
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter{">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mailconfig" >
+      <xs:sequence>
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appinitializer" >
+      <xs:complexContent>
+       <xs:extension base="abstractannotationconfigdispatcherservletinitializer">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="securityinitializer" >
+      <xs:complexContent>
+       <xs:extension base="abstractsecuritywebapplicationinitializer">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usuarios" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<usuario,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="estados" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<estado,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paginacaoutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estilosimpl" >
+      <xs:sequence>
+        <xs:element name="manager" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="paginacaoutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estilosqueries" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendasimpl" >
+      <xs:sequence>
+        <xs:element name="manager" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="paginacaoutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendasqueries" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientesqueries" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientesimpl" >
+      <xs:sequence>
+        <xs:element name="manager" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="paginacaoutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cidadesqueries" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cidadesimpl" >
+      <xs:sequence>
+        <xs:element name="//paralistarcidadesmanager" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="paginacaoutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuariosqueries" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuariosimpl" >
+      <xs:sequence>
+        <xs:element name="manager" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="paginacaoutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cervejasimpl" >
+      <xs:sequence>
+        <xs:element name="manager" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="paginacaoutil" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="fotostorage" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cervejasqueries" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cervejaentitylistener" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="fotostorage" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grupos" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<grupo,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clientes" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<cliente,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="estilos" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<estilo,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="vendas" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<venda,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cidades" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<cidade,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cervejas" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<cerveja,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usuariofilter" >
+      <xs:sequence>
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="grupos" type="grupo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cidadefilter" >
+      <xs:sequence>
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="GeneratedName" type="estado" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendafilter" >
+      <xs:sequence>
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="status" type="statusvenda" nillable="true" minOccurs="0" />
+        <xs:element name="desde" type="xs:anyType" />
+        <xs:element name="ate" type="xs:anyType" />
+        <xs:element name="valorminimo" type="xs:anyType" />
+        <xs:element name="valormaximo" type="xs:anyType" />
+        <xs:element name="nomecliente" type="xs:string" />
+        <xs:element name="cpfoucnpjcliente" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estilofilter" >
+      <xs:sequence>
+        <xs:element name="nome" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cervejafilter" >
+      <xs:sequence>
+        <xs:element name="sku" type="xs:string" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="GeneratedName" type="estilo" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sabor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="origem" nillable="true" minOccurs="0" />
+        <xs:element name="valorde" type="xs:anyType" />
+        <xs:element name="valorate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientefilter" >
+      <xs:sequence>
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cpfoucnpj" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fotostorage" >
+      <xs:sequence>
+        <xs:element name="thumbnail_prefix" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fotostoragelocal" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="thumbnail_prefix" type="xs:string" />
+        <xs:element name="local" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fotostoragerunnable" >
+      <xs:sequence>
+        <xs:element name="files" type="xs:anyType" />
+        <xs:element name="resultado" type="fotodto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="fotostorage" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fotostorages3" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="bucket" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appuserdetailsservice" >
+      <xs:complexContent>
+       <xs:extension base="grantedauthority>">
+         <xs:sequence>
+          <xs:element name="" type="usuarios" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usuariosistema" >
+      <xs:complexContent>
+       <xs:extension base="user{">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="" type="usuario" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="geracaodesenha" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="valoritensestoque" >
+      <xs:sequence>
+        <xs:element name="valor" type="xs:anyType" />
+        <xs:element name="totalitens" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendames" >
+      <xs:sequence>
+        <xs:element name="mes" type="xs:string" />
+        <xs:element name="total" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cervejadto" >
+      <xs:sequence>
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="sku" type="xs:string" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="origem" type="xs:string" />
+        <xs:element name="valor" type="xs:anyType" />
+        <xs:element name="foto" type="xs:string" />
+        <xs:element name="urlthumbnailfoto" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="periodorelatorio" >
+      <xs:sequence>
+        <xs:element name="datainicio" type="xs:anyType" />
+        <xs:element name="datafim" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fotodto" >
+      <xs:sequence>
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="contenttype" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vendaorigem" >
+      <xs:sequence>
+        <xs:element name="mes" type="xs:string" />
+        <xs:element name="totalnacional" type="xs:anyType" />
+        <xs:element name="totalinternacional" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="log4j2" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_en_us" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_pt_br" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mail-local" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mail-homolog" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tabelaitensvenda" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pesquisavendas" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="404" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastrorapidoestilo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastroestilo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pesquisaestilos" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="relatoriovendasemitidas" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pesquisarapidaclientes" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pesquisaclientes" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastrocliente" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastrocidade" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pesquisacidades" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pesquisausuarios" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="403" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pesquisacervejas" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cadastrocerveja" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fotocerveja" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="templateautocompletecerveja" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dashboard" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resumovenda" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menulateral" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="barranavegacao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="footer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="500" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordenacao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mensagenserrovalidacao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paginacao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mensagemsucesso" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="algaworks.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="glyphicons-halflings-regular" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fontawesome-webfont" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="index" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-datepicker.pt-br.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pt-br.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-switch.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="upload.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v12__criar_tabela_venda_e_item_venda" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v06__alterar_cpf_cnpj_para_not_null" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v02__criar_coluna_quantidade_estoque_em_cerveja" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v03__criar_colunas_foto_e_contettype_na_cerveja" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v08__alterando_ativo_do_usuario_para_not_null" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v05__adicionar_tabela_cliente" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v07__criar_tabela_usuario_grupo_permissao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

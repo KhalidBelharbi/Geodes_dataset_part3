@@ -1,0 +1,11 @@
+
+post(serialversionuid:long, id:Long [PK], title:String, text:String);
+
+posts_categories(cod_posts:Post [PK] #FK to Post,cod_categories:Category [PK] #FK to Category);
+
+category(serialversionuid:long, id:Long [PK], name:String);
+
+comment(serialversionuid:long, id:Long [PK], GeneratedName:Post #FK to(Post), owner:String, text:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

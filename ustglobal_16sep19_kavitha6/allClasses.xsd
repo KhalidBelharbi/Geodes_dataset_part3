@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="gmailapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmailapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ormconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmailserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="gmaildao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmailservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmaildao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmaildaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+        <xs:element name="manager" type="xs:anyType" />
+        <xs:element name="transaction" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmailcontroller" >
+      <xs:sequence>
+        <xs:element name="statuscode" type="xs:long" />
+        <xs:element name="statuscodef" type="xs:long" />
+        <xs:element name="statusmge" type="xs:string" />
+        <xs:element name="statusmgef" type="xs:string" />
+        <xs:element name="service" type="gmailservice" nillable="true" minOccurs="0" />
+        <xs:element name="response" type="gmailresponse" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmailresponse" >
+      <xs:sequence>
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="statuscode" type="xs:long" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="user" type="userbean" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="email" type="gmailbean" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gmailbean" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="subject" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="user" type="userbean" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userbean" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userbean" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="question" type="xs:string" />
+        <xs:element name="ans" type="xs:string" />
+        <xs:element name="mail" type="gmailbean" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="emailbean" type="gmailbean" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

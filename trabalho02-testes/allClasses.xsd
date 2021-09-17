@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="clientecontrollertest" >
+      <xs:sequence>
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="clienteservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clienterepositorytest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="clienterepository" nillable="true" minOccurs="0" />
+        <xs:element name="teste" type="cliente" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transacaorepositorytest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="clienterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartaorepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="transacaorepository" nillable="true" minOccurs="0" />
+        <xs:element name="teste" type="cliente" nillable="true" minOccurs="0" />
+        <xs:element name="teste" type="cartao" nillable="true" minOccurs="0" />
+        <xs:element name="teste" type="transacao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transacaoservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="transacaorepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartaorepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="transacaoservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clienteservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="clienterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="clienteservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartoesapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application-prod" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ehcache" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuario" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cpf" type="xs:string" />
+        <xs:element name="senha" type="xs:string" />
+        <xs:element name="ativo" type="xs:anyType" />
+        <xs:element name="regras" type="regra" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartao" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="numero" type="xs:string" />
+        <xs:element name="datavalidade" type="xs:dateTime" />
+        <xs:element name="bloqueado" type="xs:anyType" />
+        <xs:element name="dataatualizacao" type="xs:dateTime" />
+        <xs:element name="GeneratedName" type="cliente" nillable="true" minOccurs="0" />
+        <xs:element name="transacoes" type="transacao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="regra" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="ativo" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cliente" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cpf" type="xs:string" />
+        <xs:element name="uf" type="xs:string" />
+        <xs:element name="dataatualizacao" type="xs:dateTime" />
+        <xs:element name="cartoes" type="cartao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transacao" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="datatransacao" type="xs:dateTime" />
+        <xs:element name="cnpj" type="xs:string" />
+        <xs:element name="valor" type="xs:double" />
+        <xs:element name="qdtparcelas" type="xs:long" />
+        <xs:element name="juros" type="xs:double" />
+        <xs:element name="GeneratedName" type="cartao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="regradto" >
+      <xs:sequence>
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="ativo" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="senhadto" >
+      <xs:sequence>
+        <xs:element name="idusuario" type="xs:string" />
+        <xs:element name="senhaatual" type="xs:string" />
+        <xs:element name="novasenha" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuariodto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cpf" type="xs:string" />
+        <xs:element name="ativo" type="xs:string" />
+        <xs:element name="regras" type="regradto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transacaodto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="datatransacao" type="xs:string" />
+        <xs:element name="cnpj" type="xs:string" />
+        <xs:element name="valor" type="xs:string" />
+        <xs:element name="qdtparcelas" type="xs:string" />
+        <xs:element name="juros" type="xs:string" />
+        <xs:element name="cartaoid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cpf" type="xs:string" />
+        <xs:element name="uf" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartaodto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="numero" type="xs:string" />
+        <xs:element name="datavalidade" type="xs:string" />
+        <xs:element name="bloqueado" type="xs:string" />
+        <xs:element name="clienteid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuariocontroller" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="usuarioservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartaocontroller" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="cartaoservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientecontroller" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="clienteservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="regracontroller" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="regraservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transacaocontroller" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="transacaoservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="response" >
+      <xs:sequence>
+        <xs:element name="dados" type="xs:anyType" />
+        <xs:element name="erros" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="consistenciaexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="mensagem" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="senhautils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversaoutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="regrarepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<regra,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usuariorepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<usuario,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cartaorepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<cartao,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clienterepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<cliente,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="transacaorepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<transacao,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cartoesapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtauthenticationentrypoint" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtuser" >
+      <xs:complexContent>
+       <xs:extension base="grantedauthority>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="authorities" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="authenticationcontroller" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="jwttokenutil" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tokendto" >
+      <xs:sequence>
+        <xs:element name="token" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtauthenticationdto" >
+      <xs:sequence>
+        <xs:element name="cpf" type="xs:string" />
+        <xs:element name="senha" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwttokenutil" >
+      <xs:sequence>
+        <xs:element name="claim_key_username" type="xs:string" />
+        <xs:element name="claim_key_role" type="xs:string" />
+        <xs:element name="claim_key_audience" type="xs:string" />
+        <xs:element name="claim_key_created" type="xs:string" />
+        <xs:element name="secret" type="xs:string" />
+        <xs:element name="expiration" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtuserfactory" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtuserdetailsservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="usuarioservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtauthenticationtokenfilter" >
+      <xs:complexContent>
+       <xs:extension base="onceperrequestfilter">
+         <xs:sequence>
+          <xs:element name="auth_header" type="xs:string" />
+          <xs:element name="bearer_prefix" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="jwttokenutil" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="websecurityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+          <xs:element name="unauthorizedhandler" type="jwtauthenticationentrypoint" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="swaggerconfig" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="jwttokenutil" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="regraservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="regrarepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transacaoservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="transacaorepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartaorepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clienteservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="clienterepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartaoservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="cartaorepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="clienterepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuarioservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="usuariorepository" nillable="true" minOccurs="0" />
+        <xs:element name="regrareprository" type="regrarepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="jwttokenutil" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

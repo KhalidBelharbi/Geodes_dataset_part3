@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="boat" >
+      <xs:sequence>
+        <xs:element name="boatid" type="xs:string" />
+        <xs:element name="/*船只类型*/type" type="xs:string" />
+        <xs:element name="/*当前位置*/presentlocation" type="xs:string" />
+        <xs:element name="/*当前船速*/speed" type="xs:string" />
+        <xs:element name="/*超速判断，正常为0，超速为1*/overspeedjudging" type="xs:anyType" />
+        <xs:element name="/*当前船的方向*/direction" type="xs:string" />
+        <xs:element name="/*船只状态*/status" type="xs:string" />
+        <xs:element name="/*船只航线id号*/routeid" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boatpredict" >
+      <xs:sequence>
+        <xs:element name="predictid" type="xs:string" />
+        <xs:element name="/*船只编号*/boatid" type="xs:string" />
+        <xs:element name="/*预测到达地点*/predictlocation" type="xs:string" />
+        <xs:element name="/*预测到达时间*/arrivetime" type="xs:string" />
+        <xs:element name="/*预测到达该地点的概率*/probability" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensorstatus" >
+      <xs:sequence>
+        <xs:element name="statusid" type="xs:string" />
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="//@column(name" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="/*记录时间*/recordtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sensortype" >
+      <xs:sequence>
+        <xs:element name="typeid" type="xs:string" />
+        <xs:element name="typename" type="xs:string" />
+        <xs:element name="lowestvalue" type="xs:string" />
+        <xs:element name="highestvalue" type="xs:string" />
+        <xs:element name="/*创建时间*/create_time" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/up_time" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegmentpredict" >
+      <xs:sequence>
+        <xs:element name="predictid" type="xs:string" />
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="predictlife" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattype" >
+      <xs:sequence>
+        <xs:element name="/*船只种类id*/typeid" type="xs:string" />
+        <xs:element name="/*船只种类名称*/typename" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boattrace" >
+      <xs:sequence>
+        <xs:element name="/*轨迹编号*/traceid" type="xs:string" />
+        <xs:element name="/*船只编号*/boatid" type="xs:string" />
+        <xs:element name="/*轨迹序列号*/traceserialnumber" type="xs:string" />
+        <xs:element name="/*记录位置*/recordlocation" type="xs:string" />
+        <xs:element name="/*记录船速*/speed" type="xs:string" />
+        <xs:element name="/*超速判断，正常为0，超速为1*/overspeedjudging" type="xs:anyType" />
+        <xs:element name="/*记录船方向*/direction" type="xs:string" />
+        <xs:element name="/*船只状态*/status" type="xs:string" />
+        <xs:element name="/*记录时间*/recordtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipeline" >
+      <xs:sequence>
+        <xs:element name="pipeid" type="xs:string" />
+        <xs:element name="/*管道起点*/source" type="xs:string" />
+        <xs:element name="/*管道终点*/destination" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searoute" >
+      <xs:sequence>
+        <xs:element name="//航线idrouteid" type="xs:string" />
+        <xs:element name="//航线状态，默认为启用110status" type="xs:string" />
+        <xs:element name="//航线起点source" type="xs:string" />
+        <xs:element name="//航线终点destination" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="routesegment" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应航线id*/routeid" type="xs:string" />
+        <xs:element name="/*航线段的序列号*/segmentserialnumber" type="xs:anyType" />
+        <xs:element name="/*这一段的起点坐标*/start" type="xs:string" />
+        <xs:element name="/*这一段的终点坐标*/end" type="xs:string" />
+        <xs:element name="/*航道限速*/limitingspeed" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesensor" >
+      <xs:sequence>
+        <xs:element name="sensorid" type="xs:string" />
+        <xs:element name="/*对应的管道段id*/segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*传感器类型*/typeid" type="xs:string" />
+        <xs:element name="/*传感器坐标*/location" type="xs:string" />
+        <xs:element name="/*传感器当前状态，默认状态正常*/presentstatus" type="xs:string" />
+        <xs:element name="/*传感器当前值*/presentvalue" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pipelinesegment" >
+      <xs:sequence>
+        <xs:element name="segmentid" type="xs:string" />
+        <xs:element name="/*对应管道id*/pipeid" type="xs:string" />
+        <xs:element name="/*管道段的序列号*/segmentserialnumber" type="xs:anyType" />
+        <xs:element name="/*这一段的起点坐标*/start" type="xs:string" />
+        <xs:element name="/*这一段的终点坐标*/end" type="xs:string" />
+        <xs:element name="/*创建时间*/createtime" type="xs:dateTime" />
+        <xs:element name="/*更新时间*/uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

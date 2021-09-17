@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="qcart" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<cart>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="cart" type="qcart" nillable="true" minOccurs="0" />
+          <xs:element name="orderid" type="xs:anyType" />
+          <xs:element name="orderrdate" type="xs:anyType" />
+          <xs:element name="orderudate" type="xs:anyType" />
+          <xs:element name="productid" type="xs:anyType" />
+          <xs:element name="username" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qorder" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<order>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="order" type="qorder" nillable="true" minOccurs="0" />
+          <xs:element name="detailaddr" type="xs:anyType" />
+          <xs:element name="extraaddr" type="xs:anyType" />
+          <xs:element name="isbuy" type="xs:anyType" />
+          <xs:element name="jibunaddr" type="xs:anyType" />
+          <xs:element name="orderid" type="xs:anyType" />
+          <xs:element name="orderrdate" type="xs:anyType" />
+          <xs:element name="orderudate" type="xs:anyType" />
+          <xs:element name="phone" type="xs:anyType" />
+          <xs:element name="postcode" type="xs:anyType" />
+          <xs:element name="productid" type="xs:anyType" />
+          <xs:element name="receivername" type="xs:anyType" />
+          <xs:element name="roadaddr" type="xs:anyType" />
+          <xs:element name="senderid" type="xs:anyType" />
+          <xs:element name="sendername" type="xs:anyType" />
+          <xs:element name="state" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cartservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cartrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartrepositorysupport" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderservice" >
+      <xs:sequence>
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="orderrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orderrepositorysupport" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productsender" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartrepositorysupport" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="orderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="controllerlinkbuilder" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="orderresource" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="ordervalidator" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cartservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="controllerlinkbuilder" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="cartresource" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jacksondateconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourceserverconfig" >
+      <xs:complexContent>
+       <xs:extension base="resourceserverconfigureradapter{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="appconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="querydslconfiguration" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorsresource" >
+      <xs:complexContent>
+       <xs:extension base="entitymodel<errors>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="testdescription" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorsserializer" >
+      <xs:complexContent>
+       <xs:extension base="jsonserializer<errors>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datetype" >
+      <xs:sequence>
+        <xs:element name="datetime" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordernotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderreceiver" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="orderservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordersink" >
+      <xs:sequence>
+        <xs:element name="orderq_test" type="xs:string" />
+        <xs:element name="orderq_success_billing_process" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productsource" >
+      <xs:sequence>
+        <xs:element name="productq" type="xs:string" />
+        <xs:element name="productq_after_billing_from_order_to_product" type="xs:string" />
+        <xs:element name="productq_test" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productsender" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="productqchannel" type="xs:anyType" />
+        <xs:element name="productqafterbillingchannel" type="xs:anyType" />
+        <xs:element name="productqtestchannel" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartrepositorysupport" >
+      <xs:complexContent>
+       <xs:extension base="querydslrepositorysupport{">
+         <xs:sequence>
+          <xs:element name="queryfactory" type="xs:anyType" />
+          <xs:element name="cart" type="qcart" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<order,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cartrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<cart,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderrepositorysupport" >
+      <xs:complexContent>
+       <xs:extension base="querydslrepositorysupport">
+         <xs:sequence>
+          <xs:element name="queryfactory" type="xs:anyType" />
+          <xs:element name="order" type="qorder" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yosorderapiapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cart" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="productid" type="xs:string" />
+        <xs:element name="orderrdate" type="xs:anyType" />
+        <xs:element name="orderudate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartresource" >
+      <xs:complexContent>
+       <xs:extension base="entitymodel<cart>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderresource" >
+      <xs:complexContent>
+       <xs:extension base="entitymodel<order>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productmessagequeueaboutafterbiilingprocessdto" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="productid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultaboutbillingorderdto" >
+      <xs:sequence>
+        <xs:element name="result" type="xs:anyType" />
+        <xs:element name="orderidlist" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordermessagequeueafterbillingdto" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="productname" type="xs:string" />
+        <xs:element name="success" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordercreatevalidator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="productid" type="xs:string" />
+        <xs:element name="senderid" type="xs:string" />
+        <xs:element name="sendername" type="xs:string" />
+        <xs:element name="receivername" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="postcode" type="xs:string" />
+        <xs:element name="roadaddr" type="xs:string" />
+        <xs:element name="jibunaddr" type="xs:string" />
+        <xs:element name="extraaddr" type="xs:string" />
+        <xs:element name="detailaddr" type="xs:string" />
+        <xs:element name="isbuy" type="xs:anyType" />
+        <xs:element name="state" type="xs:long" />
+        <xs:element name="orderrdate" type="xs:anyType" />
+        <xs:element name="orderudate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartvalidator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordervalidator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderstate" >
+      <xs:sequence>
+        <xs:element name="wait" type="xs:long" />
+        <xs:element name="billing_success_but_buy_fail" type="xs:long" />
+        <xs:element name="success" type="xs:long" />
+        <xs:element name="send_mms_about_fail" type="xs:long" />
+        <xs:element name="wait_in_cart" type="xs:long" />
+        <xs:element name="wait_refund" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartdto" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="productid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderdto" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="productid" type="xs:string" />
+        <xs:element name="senderid" type="xs:string" />
+        <xs:element name="sendername" type="xs:string" />
+        <xs:element name="receivername" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="postcode" type="xs:string" />
+        <xs:element name="roadaddr" type="xs:string" />
+        <xs:element name="jibunaddr" type="xs:string" />
+        <xs:element name="extraaddr" type="xs:string" />
+        <xs:element name="detailaddr" type="xs:string" />
+        <xs:element name="isbuy" type="xs:anyType" />
+        <xs:element name="state" type="xs:long" />
+        <xs:element name="//@jsondeserialize(using" type="xs:anyType" />
+        <xs:element name="//datetypeorderrdate//@jsondeserialize(using" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basecontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="restdocsconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordercontrollertest" >
+      <xs:complexContent>
+       <xs:extension base="basecontrollertest{">
+         <xs:sequence>
+          <xs:element name="" type="orderrepository" nillable="true" minOccurs="0" />
+          <xs:element name="" type="orderservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="resourcefortest" type="xs:anyType" />
+          <xs:element name="accesstokenfortest" type="xs:anyType" />
+          <xs:element name="clientcontextfortest" type="xs:anyType" />
+          <xs:element name="fortest" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="orderservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="orderservice" nillable="true" minOccurs="0" />
+        <xs:element name="forrabbittest" type="orderservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productsender" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orderrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orderrepositorysupport" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cartrepositorysupport" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cartrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yosorderapiapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderrepositorytest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderrepositorysupporttest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="orderrepositorysupport" nillable="true" minOccurs="0" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="query" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartrepositorysupporttest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cartrepositorysupport" nillable="true" minOccurs="0" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="query" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

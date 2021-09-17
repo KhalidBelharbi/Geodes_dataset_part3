@@ -1,0 +1,15 @@
+ClassDiagram.Class>> Person =>=>=> RelationalSchema.Table>> person;
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Class>> BlogPost =>=>=> RelationalSchema.Table>> blogpost;
+ClassDiagram.Attribut>> Person.id:Long =>=>=> RelationalSchema.Column>> person.id PRIMARY KEY;
+ClassDiagram.Attribut>> Person.firstname:String =>=>=> RelationalSchema.Column>> person.firstname;
+ClassDiagram.Attribut>> Person.surname:String =>=>=> RelationalSchema.Column>> person.surname;
+ClassDiagram.Attribut>> Person.age:int =>=>=> RelationalSchema.Column>> person.age;
+ClassDiagram.Attribut>> User.id:Long =>=>=> RelationalSchema.Column>> user.id PRIMARY KEY;
+ClassDiagram.Attribut>> User.login:String =>=>=> RelationalSchema.Column>> user.login;
+ClassDiagram.Attribut>> User.disabled:Boolean =>=>=> RelationalSchema.Column>> user.disabled;
+ClassDiagram.Attribut>> BlogPost.id:Long =>=>=> RelationalSchema.Column>> blogpost.id PRIMARY KEY;
+ClassDiagram.Attribut>> BlogPost.title:String =>=>=> RelationalSchema.Column>> blogpost.title;
+ClassDiagram.Attribut>> BlogPost.body:String =>=>=> RelationalSchema.Column>> blogpost.body;
+One-To-Many relationship from ClassDiagram.Class>>User  to ClassDiagram.Class>>Set<BlogPost>;
+Many-To-One relationship from ClassDiagram.Class>>BlogPost  to ClassDiagram.Class>>user represented by ClassDiagram.Atrribute>>GeneratedName;

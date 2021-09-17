@@ -1,0 +1,17 @@
+ClassDiagram.Class>> Dealer =>=>=> RelationalSchema.Table>> dealer;
+ClassDiagram.Class>> PersistentAuditEvent =>=>=> RelationalSchema.Table>> persistentauditevent;
+ClassDiagram.Class>> AbstractAuditingEntity =>=>=> RelationalSchema.Table>> abstractauditingentity;
+ClassDiagram.Attribut>> Dealer.serialversionuid:long =>=>=> RelationalSchema.Column>> dealer.serialversionuid;
+ClassDiagram.Attribut>> Dealer.id:Long =>=>=> RelationalSchema.Column>> dealer.id PRIMARY KEY;
+ClassDiagram.Attribut>> Dealer.name:String =>=>=> RelationalSchema.Column>> dealer.name;
+ClassDiagram.Attribut>> Dealer.address:String =>=>=> RelationalSchema.Column>> dealer.address;
+ClassDiagram.Attribut>> PersistentAuditEvent.id:Long =>=>=> RelationalSchema.Column>> persistentauditevent.id PRIMARY KEY;
+ClassDiagram.Attribut>> PersistentAuditEvent.principal:String =>=>=> RelationalSchema.Column>> persistentauditevent.principal;
+ClassDiagram.Attribut>> PersistentAuditEvent.auditeventdate:LocalDateTime =>=>=> RelationalSchema.Column>> persistentauditevent.auditeventdate;
+ClassDiagram.Attribut>> PersistentAuditEvent.auditeventtype:String =>=>=> RelationalSchema.Column>> persistentauditevent.auditeventtype;
+ClassDiagram.Attribut>> PersistentAuditEvent.data:Map<String,String> =>=>=> RelationalSchema.Column>> persistentauditevent.data;
+ClassDiagram.Attribut>> AbstractAuditingEntity.serialversionuid:long =>=>=> RelationalSchema.Column>> abstractauditingentity.serialversionuid;
+ClassDiagram.Attribut>> AbstractAuditingEntity.createdby:String =>=>=> RelationalSchema.Column>> abstractauditingentity.createdby;
+ClassDiagram.Attribut>> AbstractAuditingEntity.createddate:ZonedDateTime =>=>=> RelationalSchema.Column>> abstractauditingentity.createddate;
+ClassDiagram.Attribut>> AbstractAuditingEntity.lastmodifiedby:String =>=>=> RelationalSchema.Column>> abstractauditingentity.lastmodifiedby;
+ClassDiagram.Attribut>> AbstractAuditingEntity.lastmodifieddate:ZonedDateTime =>=>=> RelationalSchema.Column>> abstractauditingentity.lastmodifieddate;

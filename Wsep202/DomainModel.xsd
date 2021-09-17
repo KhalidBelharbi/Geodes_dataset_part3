@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="notification" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***thecontextofthenotification*/content" type="xs:string" />
+        <xs:element name="/***theusername*/principal" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mangerstore" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***thepermissionsthatweregiventothemanager*/storepermissions" type="storepermission" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***theactualuserthatappointedtobemanager*/appointedmanager" type="usersystem" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appointingagreement" >
+      <xs:sequence>
+        <xs:element name="appoingagreementnumber" type="xs:long" />
+        <xs:element name="newowner" type="usersystem" nillable="true" minOccurs="0" />
+        <xs:element name="appointee" type="xs:string" />
+        <xs:element name="ownersandapproval" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productdetailspolicy" >
+      <xs:complexContent>
+       <xs:extension base="purchasepolicy">
+         <xs:sequence>
+          <xs:element name="/***thevalidrangeofamountofproductstobuyinapurchase*inshoppingbagdetailsitistheamountofdifferentitems*inproductdetailsitistheamountofitemsfromaspecificoneproduct*/min" type="xs:long" />
+          <xs:element name="max" type="xs:long" />
+          <xs:element name="/***thesnofproductwhichhaslimitationsamounts*/productid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="composedpurchase" >
+      <xs:complexContent>
+       <xs:extension base="purchasepolicy{">
+         <xs:sequence>
+          <xs:element name="/***logicaloperatorbetweenpolicies*/" type="compositeoperator" nillable="true" minOccurs="0" />
+          <xs:element name="/***childrencomponentsofthecompositepurchasepolicy*theoperandsofthecomposedpurchasepolicy*/composedpurchasepolicies" type="purchase" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="purchasepolicy" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchase" >
+      <xs:sequence>
+        <xs:element name="/***uniqueidofthepurchasepolicyinthestore*/purchaseid" type="xs:long" />
+        <xs:element name="/***theactualtypeofpurchasepolicy*/" type="purchasepolicy" nillable="true" minOccurs="0" />
+        <xs:element name="/***thetypeofpolicy*/" type="purchasetype" nillable="true" minOccurs="0" />
+        <xs:element name="/***describestheverbaldescriptionofthepolicy*/description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="systemdetailspolicy" >
+      <xs:complexContent>
+       <xs:extension base="purchasepolicy">
+         <xs:sequence>
+          <xs:element name="/***thedaysintheweekanyuserispermittedtoperformapurchase*/storeworkdays" type="day" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shoppingbagdetailspolicy" >
+      <xs:complexContent>
+       <xs:extension base="purchasepolicy">
+         <xs:sequence>
+          <xs:element name="min" type="xs:long" />
+          <xs:element name="max" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userdetailspolicy" >
+      <xs:complexContent>
+       <xs:extension base="purchasepolicy">
+         <xs:sequence>
+          <xs:element name="/***listofcountriesthatthestorehavedeliveriesto*/countriespermitted" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="store" >
+      <xs:sequence>
+        <xs:element name="stocklock" type="xs:anyType" />
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="storename" type="xs:string" />
+        <xs:element name="/***maptofindalltheownersasvalueappointedtheownerwhoisinthefitkey*/appointedowners" type="ownersappointee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***mapthatholdsusersaskeyandtheirappointedmanagersasvalue*/appointedmanagers" type="managersappointee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***theproductsthatthestoreholdsinit*/products" type="product" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***thesetpurchasepolicyforthestore*/purchasepolicies" type="purchase" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***thesetpurchasepolicyforthestore*/discounts" type="discount" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***listofpurchasesmadeinthestore*/receipts" type="receipt" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***thestorerank*/rank" type="xs:long" />
+        <xs:element name="/***description*/description" type="xs:string" />
+        <xs:element name="/***listofappointingagreementsofownersinthestore*/appointingagreements" type="appointingagreement" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="receipt" >
+      <xs:sequence>
+        <xs:element name="receiptsn" type="xs:long" />
+        <xs:element name="/***thestoreidthatconnectedtothestoreinwhichthepurchasehappened.*/storeid" type="xs:long" />
+        <xs:element name="/***theusernamewhoperformthispurchaseoraguest*/username" type="xs:string" />
+        <xs:element name="/***thepurchase*/purchase" type="xs:dateTime" />
+        <xs:element name="/***thepricethattheuserhadtopayinthispurchase.*/amounttopay" type="xs:double" />
+        <xs:element name="/***transactionswithexternalsystemsidentifiers*/paytransid" type="xs:string" />
+        <xs:element name="supplytransid" type="xs:string" />
+        <xs:element name="productsbought" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ownersappointee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="appointeeuser" type="usersystem" nillable="true" minOccurs="0" />
+        <xs:element name="appointedusers" type="usersystem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shoppingcart" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="shoppingbagslist" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dailyvisitor" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+        <xs:element name="guests" type="xs:long" />
+        <xs:element name="ownerstores" type="xs:long" />
+        <xs:element name="managerstores" type="xs:long" />
+        <xs:element name="simpleuser" type="xs:long" />
+        <xs:element name="admins" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shoppingbag" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="productlistfromstore" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="/***theproductserialnumber*/productsn" type="xs:long" />
+        <xs:element name="/***thenameoftheproduct*/name" type="xs:string" />
+        <xs:element name="/***thecategoryoftheproduct*/category" type="productcategory" nillable="true" minOccurs="0" />
+        <xs:element name="/***theamountofthisproductinthestore(" type="xs:long" />
+        <xs:element name="/***thecostofthisproduct*/cost" type="xs:double" />
+        <xs:element name="/***theoriginalpriceofthisproductbeforediscountifappliedone*/originalcost" type="xs:double" />
+        <xs:element name="/***therankofthisproduct*/rank" type="xs:long" />
+        <xs:element name="/***thestoreidthatconnectedtothestorethattheproductexistsinit.*/storeid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conditionalstorediscount" >
+      <xs:complexContent>
+       <xs:extension base="discountpolicy">
+         <xs:sequence>
+          <xs:element name="/***theminimalpriceofpurchasetoapplythediscountfrom*/minprice" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="composeddiscount" >
+      <xs:complexContent>
+       <xs:extension base="discountpolicy">
+         <xs:sequence>
+          <xs:element name="amountofproductsforapplydiscounts" type="xs:anyType" />
+          <xs:element name="productsunderthisdiscount" type="xs:anyType" />
+          <xs:element name="/***childrencomponentsofthecompositeconditionaldiscount*/composeddiscounts" type="discount" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***theoperationbetweentheconditionalsdiscounts*/" type="compositeoperator" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="discountpolicy" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="discount" >
+      <xs:sequence>
+        <xs:element name="discountid" type="xs:long" />
+        <xs:element name="/***howmuchdiscountshouldtoapplyonproduct*/discountpercentage" type="xs:double" />
+        <xs:element name="/***theproductvalidationdate*/endtime" type="xs:anyType" />
+        <xs:element name="/***describestheconditionandthepostofthespecifieddiscount*/description" type="xs:string" />
+        <xs:element name="isapplied" type="xs:anyType" />
+        <xs:element name="/***typesofdiscountsinthestore*/" type="discountpolicy" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="discounttype" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="visiblediscount" >
+      <xs:complexContent>
+       <xs:extension base="discountpolicy">
+         <xs:sequence>
+          <xs:element name="amountofproductsforapplydiscounts" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="conditionalproductdiscount" >
+      <xs:complexContent>
+       <xs:extension base="discountpolicy">
+         <xs:sequence>
+          <xs:element name="productsunderthisdiscount" type="xs:anyType" />
+          <xs:element name="productsapplydiscounts" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usersystem" >
+      <xs:sequence>
+        <xs:element name="/***theusername*/username" type="xs:string" />
+        <xs:element name="/***theencryptionpasswordofthetheuser*/password" type="xs:string" />
+        <xs:element name="/***thesaltweusetohashthepasswordfortheuser*/salt" type="xs:string" />
+        <xs:element name="/***thefirstnameoftheuser*/firstname" type="xs:string" />
+        <xs:element name="/***thelastnameoftheuser*/lastname" type="xs:string" />
+        <xs:element name="/***thestoresthattheusermanages*/managedstores" type="store" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***thestoresthattheuserown*/ownedstores" type="store" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***theuserpersonalshoppingcart*/" type="shoppingcart" nillable="true" minOccurs="0" />
+        <xs:element name="/***theuserspersonalreceiptslist*/receipts" type="receipt" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="/***fornotification*/notifications" type="notification" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="ownertoapproves" type="ownertoapprove" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="principal" type="xs:string" />
+        <xs:element name="isadmin" type="xs:anyType" />
+        <xs:element name="imageurl" type="xs:string" />
+        <xs:element name="/***forhttps*/grantedauthorities" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="managersappointee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="appointeeuser" type="xs:string" />
+        <xs:element name="appointedmanagers" type="mangerstore" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ownertoapprove" >
+      <xs:sequence>
+        <xs:element name="storeid" type="xs:long" />
+        <xs:element name="storename" type="xs:string" />
+        <xs:element name="usernametoapprove" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

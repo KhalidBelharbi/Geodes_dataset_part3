@@ -1,0 +1,9 @@
+
+driverslicense(id:int [PK], serial_number:String);
+
+contextualperson(id:Integer [PK], transient:TestBean, //lazyrelationshiptoforceuseofinstrumentationinjpaimplementation.//toplink,atleast,willnotinstrumentclassesunlessabsolutelynecessary.:DriversLicense #FK to(driverslicense), first_name:String, last_name:String, transient:EntityManager);
+
+person(id:Integer [PK], transient:TestBean, //lazyrelationshiptoforceuseofinstrumentationinjpaimplementation.//toplink,atleast,willnotinstrumentclassesunlessabsolutelynecessary.:DriversLicense #FK to(driverslicense), first_name:String, last_name:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

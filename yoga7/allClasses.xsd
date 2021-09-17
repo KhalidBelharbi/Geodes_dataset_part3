@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="branchcache" >
+      <xs:complexContent>
+       <xs:extension base="basecache">
+         <xs:sequence>
+          <xs:element name="" type="branchmapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="branchservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="branchmapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="privilegeservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="branchcache" nillable="true" minOccurs="0" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="key_logonbranch" type="xs:string" />
+          <xs:element name="key_maxlevel" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="branchmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<branch>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="branch" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="parentid" type="xs:long" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="roles" type="xs:string" />
+        <xs:element name="children" type="branch" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="operatorapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accredit" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="objecttype" type="xs:anyType" />
+        <xs:element name="objectid" type="xs:long" />
+        <xs:element name="roleid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="priviege" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="roleid" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="privilegeservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="accreditmapper" nillable="true" minOccurs="0" />
+          <xs:element name="objecttype_branch" type="xs:long" />
+          <xs:element name="objecttype_duty" type="xs:long" />
+          <xs:element name="objecttype_user" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="roleservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="rolemapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="accreditmapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="privilegemapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="rolecache" nillable="true" minOccurs="0" />
+          <xs:element name="modulename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rolemapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<role>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="accreditmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<accredit>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="privilegemapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<priviege>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rolecache" >
+      <xs:complexContent>
+       <xs:extension base="basecache">
+         <xs:sequence>
+          <xs:element name="" type="rolemapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="duty" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="level" type="xs:anyType" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="roles" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dutyservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="dutymapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="privilegeservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="dutycache" nillable="true" minOccurs="0" />
+          <xs:element name="modulename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dutycache" >
+      <xs:complexContent>
+       <xs:extension base="basecache">
+         <xs:sequence>
+          <xs:element name="" type="dutymapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dutymapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<duty>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userdata" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="branchid" type="xs:long" />
+        <xs:element name="dutyid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="gender" type="gendertype" nillable="true" minOccurs="0" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="mobile" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="postcode" type="xs:string" />
+        <xs:element name="company" type="xs:string" />
+        <xs:element name="birthday" type="xs:dateTime" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="uptime" type="xs:dateTime" />
+        <xs:element name="lastlogin" type="xs:dateTime" />
+        <xs:element name="enabled" type="xs:anyType" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="branch" type="xs:string" />
+        <xs:element name="duty" type="xs:string" />
+        <xs:element name="roles" type="xs:string" />
+        <xs:element name="level" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="gendertype" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:anyType" />
+        <xs:element name="desc" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="usermapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="dutymapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="branchmapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="privilegeservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="userdatamapper" nillable="true" minOccurs="0" />
+          <xs:element name="userdata_signature" type="xs:string" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="key_logonusecaptcha" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userdatamapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<userdata>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usermapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<user>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="admin" >
+      <xs:sequence>
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="adminname" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentstat" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="javamarks" type="xs:long" />
+        <xs:element name="sqlmarks" type="xs:long" />
+        <xs:element name="jquerymarks" type="xs:long" />
+        <xs:element name="student" type="studentdetail" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentdetail" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="fname" type="xs:string" />
+        <xs:element name="lname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="dob" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="qualification" type="xs:string" />
+        <xs:element name="mobile" type="xs:string" />
+        <xs:element name="stats" type="studentstat" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quiz" >
+      <xs:sequence>
+        <xs:element name="qid" type="xs:long" />
+        <xs:element name="topic" type="xs:string" />
+        <xs:element name="question" type="xs:string" />
+        <xs:element name="optiona" type="xs:string" />
+        <xs:element name="optionb" type="xs:string" />
+        <xs:element name="optionc" type="xs:string" />
+        <xs:element name="optiond" type="xs:string" />
+        <xs:element name="correctans" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

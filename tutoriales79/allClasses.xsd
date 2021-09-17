@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="readme" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeeeditor" >
+      <xs:complexContent>
+       <xs:extension base="verticallayout">
+         <xs:sequence>
+          <xs:element name="repository" type="employeerepository" nillable="true" minOccurs="0" />
+          <xs:element name="" type="employee" nillable="true" minOccurs="0" />
+          <xs:element name="firstname" type="xs:anyType" />
+          <xs:element name="lastname" type="xs:anyType" />
+          <xs:element name="save" type="xs:anyType" />
+          <xs:element name="cancel" type="xs:anyType" />
+          <xs:element name="delete" type="xs:anyType" />
+          <xs:element name="actions" type="xs:anyType" />
+          <xs:element name="binder" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mainview" >
+      <xs:complexContent>
+       <xs:extension base="verticallayout">
+         <xs:sequence>
+          <xs:element name="" type="employeerepository" nillable="true" minOccurs="0" />
+          <xs:element name="editor" type="employeeeditor" nillable="true" minOccurs="0" />
+          <xs:element name="grid" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="filter" type="xs:anyType" />
+          <xs:element name="addnewbtn" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<employee,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="binddata" >
+      <xs:sequence>
+        <xs:element name="bindname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vaadinui" >
+      <xs:complexContent>
+       <xs:extension base="ui">
+         <xs:sequence>
+          <xs:element name="currenttime" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="row" >
+      <xs:sequence>
+        <xs:element name="column1" type="xs:string" />
+        <xs:element name="column2" type="xs:string" />
+        <xs:element name="column3" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="addons" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="styles" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mytheme" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

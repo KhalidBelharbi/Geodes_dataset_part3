@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="qcknowledgerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagemouldrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feedbackrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagetargetrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagerepairpushrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagetokenrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagedetailrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qcknowledgeentity" >
+      <xs:sequence>
+        <xs:element name="//主键id自增长id" type="xs:long" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//创建人staff_iduserid" type="xs:string" />
+        <xs:element name="//创建人姓名username" type="xs:string" />
+        <xs:element name="//状态0启用状态1.删除状态state" type="xs:string" />
+        <xs:element name="//知识库类型knowledgetype" type="xs:string" />
+        <xs:element name="//内容类型1图文2pdf3视频contenttype" type="xs:string" />
+        <xs:element name="//知识库标题title" type="xs:string" />
+        <xs:element name="//知识库富文本内容content" type="xs:string" />
+        <xs:element name="//知识库pdf文件名filename" type="xs:string" />
+        <xs:element name="//知识库pdf文件地址fileurl" type="xs:string" />
+        <xs:element name="//文件大小filesize" type="xs:string" />
+        <xs:element name="//视频名videoname" type="xs:string" />
+        <xs:element name="//视频地址videourl" type="xs:string" />
+        <xs:element name="//视频外部地址outvideourl" type="xs:string" />
+        <xs:element name="//点击量visits" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagetargetentity" >
+      <xs:sequence>
+        <xs:element name="//消息目标信息idmessagetargetid" type="xs:string" />
+        <xs:element name="//消息详情idmessagedetailid" type="xs:string" />
+        <xs:element name="//接收人iduserid" type="xs:string" />
+        <xs:element name="//消息模块消息类型员工端：公区，户内，通知，会议，投诉；业主端：分类一，分类二messagetype" type="xs:string" />
+        <xs:element name="//消息创建时间targetcreatetime" type="xs:dateTime" />
+        <xs:element name="//消息推送状态0-未推送，1-已推送messagepushstatus" type="xs:string" />
+        <xs:element name="//消息推送时间messagepushtime" type="xs:dateTime" />
+        <xs:element name="//消息已读状态0-未读，1-已读messagereadstatus" type="xs:string" />
+        <xs:element name="//消息读取时间messagereadtime" type="xs:dateTime" />
+        <xs:element name="//消息删除状态0-删除，1-未删messagedeletestatue" type="xs:string" />
+        <xs:element name="//消息删除时间messagedeletetime" type="xs:dateTime" />
+        <xs:element name="//用户类型usertype" type="xs:string" />
+        <xs:element name="//手机设备码messagetokennum" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagetokenentity" >
+      <xs:sequence>
+        <xs:element name="messagetokenid" type="xs:string" />
+        <xs:element name="//token码messagetokennum" type="xs:string" />
+        <xs:element name="//手机类型mobiletype" type="xs:long" />
+        <xs:element name="//创建时间tokencreatetime" type="xs:dateTime" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagemouldentity" >
+      <xs:sequence>
+        <xs:element name="//消息模板idmessagemouldid" type="xs:string" />
+        <xs:element name="//用户类型，1-业主，2-员工messageusertype" type="xs:string" />
+        <xs:element name="//用户类型备注messageusertyperemark" type="xs:string" />
+        <xs:element name="//消息类型，如业主的通知，申请等，员工的会议，投诉等messagetype" type="xs:string" />
+        <xs:element name="//消息类型备注messagetyperemark" type="xs:string" />
+        <xs:element name="//消息里该类型下不同的状态，如报修各个状态等messagetypestate" type="xs:string" />
+        <xs:element name="//消息里该类型下不同的状态messagetypestateremark" type="xs:string" />
+        <xs:element name="//消息标题模板messagemouldtitle" type="xs:string" />
+        <xs:element name="//消息内容模板messagemouldcontent" type="xs:string" />
+        <xs:element name="//消息跳转页面网址messagemouldurl" type="xs:string" />
+        <xs:element name="//消息模板的总备注，手动更新数据库数据时填写，如注意事项等messagemouldremark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagepushrepairentity" >
+      <xs:sequence>
+        <xs:element name="//消息模板idmessagemouldid" type="xs:string" />
+        <xs:element name="//消息创建时间messagecreatetime" type="xs:dateTime" />
+        <xs:element name="//消息推送状态0-未推送，1-已推送pushstatus" type="xs:string" />
+        <xs:element name="//报修单idrepairid" type="xs:string" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//用户staffname" type="xs:string" />
+        <xs:element name="//别名alias" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feedbackentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//反馈内容content" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//处理状态state" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagepushuserentity" >
+      <xs:sequence>
+        <xs:element name="//设备码唯一registrationid" type="xs:string" />
+        <xs:element name="//别名alias" type="xs:string" />
+        <xs:element name="//标签tag" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//用户账号username" type="xs:string" />
+        <xs:element name="//用户姓名staffname" type="xs:string" />
+        <xs:element name="//1.ios2.androidtype" type="xs:string" />
+        <xs:element name="//消息模块消息类型1.交付app2.工程app3.安全appmessagetype" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagepushtargeentity" >
+      <xs:sequence>
+        <xs:element name="//idid" type="xs:string" />
+        <xs:element name="//消息模块消息类型1.交付app2.工程app3.安全appmessagetype" type="xs:string" />
+        <xs:element name="//1.1报修单员工1.2报修单经理1.3.投诉单处理人type" type="xs:string" />
+        <xs:element name="//内容target" type="xs:string" />
+        <xs:element name="//标题title" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagepushlogentity" >
+      <xs:sequence>
+        <xs:element name="//日志idid" type="xs:string" />
+        <xs:element name="//接口名称interfacename" type="xs:string" />
+        <xs:element name="//数据库表名entityname" type="xs:string" />
+        <xs:element name="//返回码code" type="xs:string" />
+        <xs:element name="//错误日期error" type="xs:dateTime" />
+        <xs:element name="//操作人memberid" type="xs:string" />
+        <xs:element name="//日志信息message" type="xs:string" />
+        <xs:element name="//数据identityid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagedetailentity" >
+      <xs:sequence>
+        <xs:element name="//消息idmessagedetailid" type="xs:string" />
+        <xs:element name="//消息标题messagetitle" type="xs:string" />
+        <xs:element name="//消息内容messagecontent" type="xs:string" />
+        <xs:element name="//消息创建时间messagecreatetime" type="xs:dateTime" />
+        <xs:element name="//消息目标网址messagetargeturl" type="xs:string" />
+        <xs:element name="//消息发件人messagesendername" type="xs:string" />
+        <xs:element name="//消息类型员工端：公区，户内，通知，会议，投诉；业主端：分类一，分类二messagetype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

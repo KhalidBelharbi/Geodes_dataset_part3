@@ -1,0 +1,121 @@
+car(serialversionuid:long, brand:String [PK]);
+
+footballplayer(id:long [PK], name:String);
+
+orderentry(entryid:OrderEntryPK);
+
+pointentity(id:Long [PK], GeneratedName:Point);
+
+polygonentity(id:Long [PK], GeneratedName:Polygon);
+
+product(prodid:String [PK]);
+
+orderentryidclass(orderid:long [PK], productid:long [PK]);
+
+userprofile(profileid:long [PK], GeneratedName:User #FK to(user));
+
+entitydescription(id:Integer [PK], description:String, entity:Serializable);
+
+post(id:int [PK], title:String, body:String);
+
+student(studentid:long [PK], name:String, age:int);
+
+course(courseid:UUID [PK]);
+
+movie(id:Long [PK], moviename:String, releaseyear:Integer, language:String);
+
+employee(id:Integer [PK], grossincome:long, taxinpercents:int, deleted:boolean, tax:long);
+
+department(depid:long [PK]);
+
+phone(id:Integer [PK], deleted:boolean, number:String);
+
+temporalvalues(id:long [PK], sqldate:java.sql.Date, sqltime:java.sql.Time, sqltimestamp:java.sql.Timestamp, utildate:java.util.Date, utiltime:java.util.Date, utiltimestamp:java.util.Date, calendardate:java.util.Calendar, calendartimestamp:java.util.Calendar, localdate:java.time.LocalDate, localtime:java.time.LocalTime, offsettime:java.time.OffsetTime, instant:java.time.Instant, localdatetime:java.time.LocalDateTime, offsetdatetime:java.time.OffsetDateTime, zoneddatetime:java.time.ZonedDateTime);
+
+pet(name:String);
+
+car(engine:String);
+
+animal(animalid:long [PK], species:String);
+
+
+
+pen(color:String);
+
+myemployee(company:String);
+
+vehicle(vehicleid:long [PK], manufacturer:String);
+
+book(author:String);
+
+bag(bagid:long [PK], type:String);
+
+person(id:Long [PK], GeneratedName:PersonName);
+
+user(userid:long [PK]);
+
+officeemployee(id:long [PK], dateofjoining:LocalDate, employeenumber:PhoneNumber, emp:Address, GeneratedName:Salary);
+
+user(id:long [PK], name:String, about:String, lastmodified:Date);
+
+officialemployee(id:Long [PK]);
+
+email(id:Long [PK], address:String, employee:OfficialEmployee #FK to(officialemployee));
+
+officeaddress(id:Long [PK], zipcode:String);
+
+office(id:Long [PK], id:OfficeAddress #FK to(officeaddress));
+
+entitywithnoid(id:int);
+
+product(id:int [PK], name:String, description:String);
+
+deptemployee(id:long [PK], employeenumber:String, title:String, name:String, GeneratedName:Department #FK to(department));
+
+department(id:long [PK], name:String);
+
+user(id:long [PK], name:String, email:String);
+
+customer(id:int [PK], firstname:String, lastname:String, customerattributejson:String, customerattributes:Map<String,Object>, GeneratedName:ObjectMapper);
+
+customer(id:Long [PK], firstname:String, lastname:String, emailaddress:String);
+
+address(id:Long [PK], street:String, city:String, GeneratedName:User #FK to(user));
+
+user(id:Long [PK], username:String, GeneratedName:Address #FK to(address));
+
+address(id:Long [PK], street:String, city:String, GeneratedName:User #FK to(user));
+
+user(id:Long [PK], username:String, GeneratedName:Address #FK to(address));
+
+employee(id:Long [PK], name:String, GeneratedName:WorkStation #FK to(workstation));
+
+workstation(id:Long [PK], workstationnumber:Integer, floor:String, GeneratedName:Employee #FK to(employee));
+
+pessimisticlockingemployee(salary:BigDecimal);
+
+customer(customerid:Long [PK], name:String, lastname:String, addresslist:List<Address>);
+
+pessimisticlockingstudent(id:Long [PK], name:String);
+
+pessimisticlockingcourse(courseid:Long [PK], name:String, student:PessimisticLockingStudent #FK to(pessimisticlockingstudent));
+
+individual(id:Long [PK], name:String, lastname:String);
+
+user(id:String [PK], name:String, photo:byte);
+
+optimisticlockingcourse(id:Long [PK], name:String, student:OptimisticLockingStudent #FK to(optimisticlockingstudent));
+
+optimisticlockingstudent(id:Long [PK], name:String, lastname:String, version:Integer);
+
+student(id:int [PK], firstname:String, lastname:String, gradyear:int);
+
+employee(id:Long [PK], workplace:Company #FK to(company), firstname:String);
+
+company(id:Long [PK], name:String);
+
+myproduct(productid:long [PK], name:String, product_type: String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

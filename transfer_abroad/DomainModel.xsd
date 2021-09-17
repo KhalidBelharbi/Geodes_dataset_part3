@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="exchangeratetran" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="procymd" type="xs:string" />
+          <xs:element name="procseq" type="xs:anyType" />
+          <xs:element name="currcode" type="xs:string" />
+          <xs:element name="buyrate" type="xs:anyType" />
+          <xs:element name="sellrate" type="xs:anyType" />
+          <xs:element name="baserate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smstran" >
+      <xs:sequence>
+        <xs:element name="procymd" type="xs:string" />
+        <xs:element name="acctno" type="xs:string" />
+        <xs:element name="procseq" type="xs:anyType" />
+        <xs:element name="tellno" type="xs:string" />
+        <xs:element name="msgcntt" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maintransactiontran" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="dealymd" type="xs:string" />
+          <xs:element name="acctno" type="xs:string" />
+          <xs:element name="dealno" type="xs:anyType" />
+          <xs:element name="cashamt" type="xs:double" />
+          <xs:element name="cmsnamt" type="xs:double" />
+          <xs:element name="exctamt" type="xs:double" />
+          <xs:element name="currcode" type="xs:string" />
+          <xs:element name="bsnsrmrkcode" type="xs:string" />
+          <xs:element name="trnsbankcode" type="xs:string" />
+          <xs:element name="trnsbankacctno" type="xs:string" />
+          <xs:element name="trnsacctnm" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="accountamountmaster" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="acctno" type="xs:string" />
+          <xs:element name="cashamt" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dealfeemaster" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="trnsbasecode" type="xs:string" />
+          <xs:element name="sectionbaseamt" type="xs:anyType" />
+          <xs:element name="currcode" type="xs:string" />
+          <xs:element name="feeamt" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="foreigntransactiontran" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="dealymd" type="xs:string" />
+          <xs:element name="acctno" type="xs:string" />
+          <xs:element name="dealno" type="xs:anyType" />
+          <xs:element name="trnsbasecode" type="xs:string" />
+          <xs:element name="sendnm" type="xs:string" />
+          <xs:element name="recvnm" type="xs:string" />
+          <xs:element name="recvaddress" type="xs:string" />
+          <xs:element name="recvcity" type="xs:string" />
+          <xs:element name="recvnatncode" type="xs:string" />
+          <xs:element name="recvstatecode" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="accountmaster" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn{">
+         <xs:sequence>
+          <xs:element name="acctno" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="acctnm" type="xs:string" />
+          <xs:element name="acctmangbasecode" type="xs:string" />
+          <xs:element name="livingyn" type="xs:string" />
+          <xs:element name="stayyn" type="xs:string" />
+          <xs:element name="tellno" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sendfeptran" >
+      <xs:sequence>
+        <xs:element name="procymd" type="xs:string" />
+        <xs:element name="procseq" type="xs:anyType" />
+        <xs:element name="trnsbasecode" type="xs:string" />
+        <xs:element name="fepcomcntt" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deallimitmaster" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn{">
+         <xs:sequence>
+          <xs:element name="trnsbasecode" type="xs:string" />
+          <xs:element name="currcode" type="xs:string" />
+          <xs:element name="excptyn" type="xs:string" />
+          <xs:element name="trnslimamt" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

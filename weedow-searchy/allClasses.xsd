@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="sampleappjavaapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sampleappjavaapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sampleappjavaconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="repositoryconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personrepository" >
+      <xs:complexContent>
+       <xs:extension base="repository<person,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="addressdto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persondto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vehicledto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feature" >
+      <xs:complexContent>
+       <xs:extension base="jpapersistable<long>">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="metadata" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jpapersistable" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="createdon" type="xs:anyType" />
+          <xs:element name="updatedon" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:complexContent>
+       <xs:extension base="jpapersistable<long>">
+         <xs:sequence>
+          <xs:element name="firstname" type="xs:string" />
+          <xs:element name="lastname" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="birthday" type="xs:anyType" />
+          <xs:element name="height" type="xs:double" />
+          <xs:element name="weight" type="xs:double" />
+          <xs:element name="nicknames" type="xs:anyType" />
+          <xs:element name="phonenumbers" type="xs:anyType" />
+          <xs:element name="addressentities" type="address" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="entity" type="job" nillable="true" minOccurs="0" />
+          <xs:element name="vehicles" type="vehicle" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="characteristics" type="xs:anyType" />
+          <xs:element name="tasks" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="address" >
+      <xs:complexContent>
+       <xs:extension base="jpapersistable<long>">
+         <xs:sequence>
+          <xs:element name="street" type="xs:string" />
+          <xs:element name="city" type="xs:string" />
+          <xs:element name="zipcode" type="xs:string" />
+          <xs:element name="country" type="xs:anyType" />
+          <xs:element name="persons" type="person" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="task" >
+      <xs:complexContent>
+       <xs:extension base="jpapersistable<long>">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="vehicletype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vehicle" >
+      <xs:complexContent>
+       <xs:extension base="jpapersistable<long>">
+         <xs:sequence>
+          <xs:element name="" type="vehicletype" nillable="true" minOccurs="0" />
+          <xs:element name="brand" type="xs:string" />
+          <xs:element name="model" type="xs:string" />
+          <xs:element name="" type="person" nillable="true" minOccurs="0" />
+          <xs:element name="features" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="job" >
+      <xs:complexContent>
+       <xs:extension base="jpapersistable<long>">
+         <xs:sequence>
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="title" type="xs:string" />
+          <xs:element name="company" type="xs:string" />
+          <xs:element name="salary" type="xs:long" />
+          <xs:element name="hiredate" type="xs:anyType" />
+          <xs:element name="" type="person" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="myentityjoinhandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

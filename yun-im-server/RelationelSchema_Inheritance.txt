@@ -1,0 +1,21 @@
+
+user(//region--field:UserAcct, token:String, wspath:String, GeneratedName:UserInfo, /***最后一次登录时间*/lastloadtime:Long);
+
+usertokenrl(userid:Long, token:String, platform:Integer);
+
+conversationcouple(info:ConversationCoupleInfo);
+
+conversationmessage(info:ConversationMessageInfo, senduserid:Long, platformtype:Integer);
+
+conversationgroupuserrl(pkid:ConversationGroupUserPk, createtime:Long, updatetime:Long, remarkname:String, role:Integer);
+
+conversationgroup(info:ConversationGroupInfo, maxmeb:Integer, adminuserid:Long, createuserid:Long);
+
+usermessage(userid:Long, senduserid:Long, platformtype:Integer, messageid:Long, messagecreatetime:Long, info:ConversationMessageInfo);
+
+newfriend(id:Long [PK], createtime:Long, updatetime:Long, userid:Long, userstatus:Integer, friendid:Long, friendstatus:Integer, userfriendid:String, addremark:String, checkremark:String, conversationid:Long);
+
+baseentitywithdate(createtime:Long, updatetime:Long);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

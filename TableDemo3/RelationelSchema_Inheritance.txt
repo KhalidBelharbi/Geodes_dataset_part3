@@ -1,0 +1,8 @@
+
+department(did:Long [PK], dname:String, daddress:String);
+
+product(id:Integer [PK], name:String);
+
+employee(eid:long [PK], fname:String, lname:String, email:String, phone:String, GeneratedName:Department #FK to(Department));
+
+user(id:Integer [PK], //@notempty@emailemail:String, name:String);

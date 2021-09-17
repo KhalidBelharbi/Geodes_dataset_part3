@@ -1,0 +1,6 @@
+ClassDiagram.Class>> AuditDAO =>=>=> RelationalSchema.Table>> auditdao;
+ClassDiagram.Attribut>> AuditDAO.auditkey:String =>=>=> RelationalSchema.Column>> auditdao.auditkey PRIMARY KEY;
+ClassDiagram.Attribut>> AuditDAO.timestamp:Date =>=>=> RelationalSchema.Column>> auditdao.timestamp PRIMARY KEY;
+ClassDiagram.Attribut>> AuditDAO.type:String =>=>=> RelationalSchema.Column>> auditdao.type PRIMARY KEY;
+ClassDiagram.Attribut>> AuditDAO.entity:byte =>=>=> RelationalSchema.Column>> auditdao.entity;
+ClassDiagram.Attribut>> AuditDAO.event:String =>=>=> RelationalSchema.Column>> auditdao.event;

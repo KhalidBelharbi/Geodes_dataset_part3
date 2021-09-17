@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="interns" >
+      <xs:sequence>
+        <xs:element name="ernid" type="xs:long" />
+        <xs:element name="internfirstname" type="xs:string" />
+        <xs:element name="internlastname" type="xs:string" />
+        <xs:element name="ernage" type="xs:long" />
+        <xs:element name="internlevel" type="levels" nillable="true" minOccurs="0" />
+        <xs:element name="semester1marks" type="xs:long" />
+        <xs:element name="semester2marks" type="xs:long" />
+        <xs:element name="semester3marks" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,571 @@
+
+trendreportcontentsentity(contentid:Integer [PK], trendreportid:Integer, contents:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+codecreditcardtypeentity(creditcardtypeid:Integer [PK], creditcardtype:String);
+
+inventoryentity(inventoryid:Integer [PK], productid:Integer, colorid:Integer, available:Boolean, availableqty:Integer, active:Boolean, sizename:String, modifiedon:LocalDateTime, createdon:LocalDateTime, statuscode:Integer, threshold:Integer, availableon:LocalDateTime, markifless:Integer, lowifless:Integer, modifiedby:String, xcolors:XColorEntity #FK to(xcolorentity));
+
+retailerlogincountentity(id:RetailerLoginCountVirtualPK, logincount:Integer);
+
+orderstatuschangelogentity(id:Integer [PK], orderid:Integer, isadmin:Boolean, wholesalerid:Integer, username:String, accessip:String, orderstatusid:Integer, createdon:LocalDateTime, happenedat:Integer, referencetypeid:Integer);
+
+vendorcatalogsendqueueentity(catalogsendqueueid:Integer [PK], catalogid:int, subject:String, contents:String, createdon:Timestamp, modifiedon:Timestamp, scheduledsendon:Timestamp, senton:Timestamp, active:boolean, mailitemid:Integer, isthistoallretailer:boolean, istestemail:boolean, includedvendors:String);
+
+vendorcategoryentity(vendorcategoryid:Integer [PK], wholesalerid:Integer, categoryname:String, categoryname2:String, categorydescription:String, imgheightg:Integer, imgheights:Integer, listorder:int, active:boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, defaultbodysizeid:Integer, defaultpatternid:Integer, defaultstyleid:Integer, defaultlengthid:Integer, defaultfabricid:Integer, defaultinventorystatusid:Integer, defaultmadein:String, defaultfabricdescription:String, defaultsizeid:Integer, defaultpackid:Integer, defaultlabelid:Integer, categoryid:Integer, parentvendorcategoryid:Integer, parentcategoryid:Integer, parentparentcategoryid:Integer);
+
+vendorpayoutinfoentity(vendorpayoutinfoid:Integer [PK], wholesalerid:Integer, referenceid:String, businessname:String, businessidentificationno:String, firstname:String, lastname:String, dateofbirth:LocalDateTime, personidentificationno:String, street:String, city:String, state:String, country:String, zipcode:String, bankreferenceid:String, bankname:String, routingno:String, accountno:String, accountholdername:String, isverified:Boolean, status:String, statusdetail:String, agreedon:LocalDateTime, agreeipaddress:String, agreedby:String, verifiedon:LocalDateTime, payoutschedule:Integer, maxpayoutperday:Integer, weekday:Integer, dayofmonth:Integer, billingstatementdescription:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+mapwholesalergroupentity(mapid:Integer [PK], wholesalerid:Integer, wholesalerid2:Integer);
+
+codewholesalercompanytypeentity(companytypeid:Integer [PK], companytypename:String, active:boolean);
+
+vendornamehistoryentity(wholesalerid:Integer [PK], companyname:String, namehistory:String);
+
+seoentity(serialversionuid:long, siteseoid:Integer [PK], pagename:String, url:String, title:String, metakeyword:String, metadescription:String, isactive:boolean, isdeleted:boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String);
+
+storecreditentity(creditid:Integer [PK], wholesalerid:int, retailerid:int, creditedamount:BigDecimal, creditreason:String, creditedon:Timestamp, creditedby:String, isused:Boolean, modifiedon:Timestamp, modifiedby:String, isdeleted:Boolean);
+
+gnbmenucollectionentity(menucollectionid:Integer [PK], menucollectionname:String, targeturl:String, sortno:Integer, isactive:boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+listsocialmediaentity(socialmediaid:Integer [PK], socialmedia:String, listorder:Integer, icon:String, url:String, active:Boolean);
+
+customersocialmediaentity(mapid:Integer [PK], usertypeid:Integer, referenceid:Integer, socialmediaid:Integer, socialmediausername:String);
+
+vendorblockedentity(blockid:Integer [PK], wholesalerid:Integer, blockreasonid:Integer, blockedon:LocalDateTime, blockedby:String, GeneratedName:ListVendorBlockReasonEntity #FK to(listvendorblockreasonentity));
+
+fraudnoticeentity(fraudnoticeid:Integer [PK], wholesalerid:int, retailerid:int, frauddetail:String, commentbywholesaler:String, commentbyfg:String, active:boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String, orderid:Integer, originalstatus:Integer, vendor_id:VendorEntity #FK to(vendorentity), retailerid:RetailerEntity #FK to(retailerentity));
+
+listvendordocumenttypeentity(vendordocumenttypeid:Integer [PK], vendordocumenttype:String);
+
+mergeordersentity(mergeid:Integer [PK], mergeponumber:String, wholesalerid:Integer, wholecompanyname:String, retailerid:Integer, retailercompanyname:String, paymentmethodid:Integer, paymentmethod:String, shipmethodid:Integer, shipmethod:String, invoiceno:String, shiptrackno:String, mergedate:Timestamp, totalqty:Integer, totalamount:BigDecimal, discountamount:BigDecimal, handlingfeeamount:BigDecimal, storecreditusedamount:BigDecimal, additionaldiscountamount:BigDecimal, shippingchargeamount:BigDecimal, creditcardid:Integer, nameoncard:String, cardtypeid:Integer, last4digit:String, cvv:String, shipdate:Timestamp, shipaddressid:Integer, shipstreetno:String, shipcity:String, shipstate:String, shipzipcode:String, shipcountry:String, shipcountryid:Integer, phone:String, fax:String, email:String, billstreetno:String, billcity:String, billstate:String, billzipcode:String, billcountry:String, billcountryid:String, billphone:String, billfax:String, orderstatusid:Integer, isccformsent:Boolean, buyernotes:String, additionalinfo:String, staffnotes:String, buyerponumber:String, isdeleted:Boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String, total_coupon_amount:BigDecimal, totalamountwsc:BigDecimal, vendor_id:VendorEntity #FK to(vendorentity));
+
+codelengthentity(lengthid:Integer [PK], lengthname:String, active:boolean);
+
+vendorcapentity(vendorcapid:Integer [PK], wholesalerid:Integer, vendorcaptypeid:Integer, cap:Integer, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+gnbmenubannerentity(menubannerid:Integer [PK], menubannertypeid:int, imagefilename:String, targeturl:String, isactive:boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+featureditementity(featureditemid:Integer [PK], featureditemdate:LocalDateTime, bestitemuse:Integer, wholesalerid:Integer, wholesalername:String, productid:Integer, productname:String, createdon:LocalDateTime, createdby:String, GeneratedName:ProductsEntity #FK to(productsentity));
+
+vendoremailentity(id:Long [PK], vendorid:Long, typecode:Integer, email:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, GeneratedName:VendorEntity #FK to(vendorentity));
+
+vendorindustryentity(id:Long [PK], vendorid:Long, typecode:Integer, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, GeneratedName:VendorEntity #FK to(vendorentity));
+
+shipmethodentity(shipmethodid:Integer [PK], courierid:Integer, shipmethodname:String, startingdate:Timestamp, active:Boolean, lastuser:String, lastmodifieddatetime:Timestamp);
+
+securitylogincontrolentity(controlid:Integer [PK], userid:Integer, weekday:Integer, timefrom:LocalDateTime, timeto:LocalDateTime, allow:Boolean, active:boolean);
+
+vendorlambskeyentity(wholesalerid:Integer [PK], lambskey:String, active:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+mappatterncategoryentity(mapid:Integer [PK], patternid:Integer, categoryid:Integer);
+
+orderpaymentstatusentity(orderpaymentstatusid:Integer [PK], referenceid:int, isorder:int, paymentstatusid:int, prepaymentstatusid:Integer, retailerid:Integer, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String);
+
+vendorcatalogsendrequestentity(catalogsendrequestid:Integer [PK], requestedcatalogid:int, catalogsendqueueid:Integer, fgcatalogid:Integer, catalogsortno:int, createdon:Timestamp, modifiedon:Timestamp, active:boolean);
+
+orderdetailsentity(orderdetailsid:Integer [PK], orderid:Integer, orderdate:Timestamp, productid:Integer, productname:String, sizeid:Integer, colorid:Integer, colorname:String, bq1:Integer, bq2:Integer, bq3:Integer, bq4:Integer, bq5:Integer, bq6:Integer, bq7:Integer, bq8:Integer, bq9:Integer, bq10:Integer, bq11:Integer, totalqty:Integer, unitprice:BigDecimal, subtotal:BigDecimal, shipdetailconfirm:String, shipdate:Timestamp, packid:Integer, noofpack:Integer, discountyn:boolean, discountamount:BigDecimal, discounttotal:BigDecimal, todaydealid:Integer, orderitemstatusid:int, backorderdate:Timestamp, returndate:Timestamp, modifiedon:Timestamp, discountedunitpriceamount:BigDecimal, available:boolean, discountid:Integer, currentstate:String, mintqstyle:Integer, mintqynstyle:String, catename:String, cateid:Integer, savedon:Timestamp, cartid:Integer, sessionid:String, isdeleted:Boolean, createdby:String, modifiedby:String, availableon:Timestamp, promotionplanvendorid:Integer, createdon:Timestamp, coupon_issue_id:Long, coupon_amount:BigDecimal);
+
+summaryordersentity(orderid:Integer [PK], wholesalerid:Integer, retailerid:Integer, totalqty:Integer, orderstatusid:int, totalamount:BigDecimal, totalamountwsc:BigDecimal, totalamountwosc:BigDecimal, iscancelledbybuyer:Boolean);
+
+codevendorindustryentity(vendorindustryid:Integer [PK], vendorindustryname:String, active:Boolean);
+
+aspnetmembershipentity(userid:String [PK], applicationid:String, password:String, passwordformat:int, passwordsalt:String, mobilepin:String, email:String, loweredemail:String, passwordquestion:String, passwordanswer:String, isapproved:boolean, islockedout:boolean, createdate:Timestamp, lastlogindate:Timestamp, lastpasswordchangeddate:Timestamp, lastlockoutdate:Timestamp, failedpasswordattemptcount:int, failedpasswordattemptwindowstart:Timestamp, failedpasswordanswerattemptcount:int, failedpasswordanswerattemptwindowstart:Timestamp, comment:String, aspnetusers:AspnetUsersEntity #FK to(aspnetusersentity));
+
+securitypermissionentity(permissionid:Integer [PK], userid:Integer, resourceid:Integer, allow:Boolean, allowedit:Boolean, allowdelete:Boolean, allowadd:Boolean, applicationid:Integer);
+
+productimageentity(productimageid:Integer [PK], productid:int, colorid:Integer, imagename:String, listorder:Integer, active:Boolean, products:ProductsEntity #FK to(productsentity));
+
+gnbvendorgroupmapentity(mapid:GnbVendorGroupMapId, sortno:int, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, vendor_id:VendorEntity #FK to(vendorentity));
+
+order(id:Integer [PK], vendorid:Integer, buyerid:Integer, totalamount:BigDecimal, totalqty:Integer, consolidationid:Integer, isconsolidated:Boolean, orderstatusid:Integer, shipdate:LocalDateTime, consolidationshipcharge:BigDecimal, shiptrackno:String, modifiedby:String, modifiedon:LocalDateTime);
+
+webadminsearchqueryusernameentity(id:Integer [PK], searchedon:LocalDateTime, searchquery:String, usernamecount:Integer);
+
+xcolormasterentity(colorlistid:Integer [PK], mastercolorname:String, colorname:String, active:Boolean);
+
+ordersentity(orderid:Integer [PK], orderdate:Timestamp, checkoutdate:Timestamp, wholesalerid:Integer, wholecompanyname:String, wfirstname:String, wlastname:String, wbillstreetno:String, wbillcity:String, wbillstate:String, wbillzipcode:String, wbillcountry:String, wbillphone:String, wbillfax:String, wstreetno:String, wcity:String, wstate:String, wzipcode:String, wcountry:String, wphone:String, wfax:String, wemail:String, retailerid:Integer, retailercompanyname:String, firstname:String, lastname:String, billstreetno:String, billcity:String, billstate:String, billzipcode:String, billcountry:String, billphone:String, billfax:String, streetno:String, city:String, state:String, zipcode:String, country:String, phone:String, fax:String, email:String, totalqty:Integer, totalamount:BigDecimal, discount:BigDecimal, shippingcharge:BigDecimal, cardnumber:String, cardexpiremonth:Integer, cardexpireyear:Integer, paymentmethodid:Integer, paymentmethod:String, shipmethodid:Integer, shipmethod:String, invoiceno:String, ponumber:String, shiptrackno:String, orderconfirm:String, confirmdate:Timestamp, shipconfirm:String, shipdate:Timestamp, comments:String, billstreetno2:String, streetno2:String, wbillstreetno2:String, minorderamount:Double, minorderamountyn:String, mintqyn:String, mintq:Integer, remark:String, promotion:String, insertdate:Timestamp, creditcardid:Integer, buyerponumber:String, canceltypeid:Integer, cancelnote:String, canceldate:Timestamp, ordersessionguid:String, shipname:String, storeno:String, shipattention:String, shipaddressid:Integer, orderstatusid:Integer, iscancelledbybuyer:Boolean, modifiedon:Timestamp, isccformsent:boolean, additionaldiscount:BigDecimal, iscouponverified:Boolean, isfreeshipping:boolean, discountqualified:boolean, discountid:Integer, handlingfee:BigDecimal, currentstate:String, nameoncard:String, ccname:String, cardtypeid:Integer, last4digit:String, cvv:String, createdbyvendor:Boolean, isconsolidated:Boolean, consolidationid:Integer, consolidationshipcharge:BigDecimal, mapisimportedon:Timestamp, creditused:BigDecimal, referenceorderid:Integer, backorderon:Timestamp, suborderstatusid:Integer, returnon:Timestamp, createdby:String, modifiedby:String, originalorderdate:Timestamp, sessionid:String, statuschange:boolean, needbackorderconfirm:Boolean, showid:Integer, showscheduleid:Integer, isinsurance:Boolean, issignature:Boolean, coupon_issue_id:Long, coupon_amount:BigDecimal, totalamountwsc:BigDecimal, totalamountwosc:BigDecimal);
+
+shipaddressentity(id:Integer [PK], verifiedon:LocalDateTime);
+
+listpaymentstatusentity(paymentstatusid:Integer [PK], paymentstatus:String, paymentstatusdescription:String);
+
+buyeremailhistoryentity(id:Long [PK], buyerid:Long, email:String, createdon:LocalDateTime, createdby:String);
+
+storecredituseentity(credituseid:Integer [PK], retailerid:int, wholesalerid:int, usedamount:BigDecimal, ordersessionid:String, ponumber:String, active:boolean, usedon:Timestamp);
+
+mapadvendoritementity(mapid:Integer [PK], adid:Integer, productid:Integer, listorder:Integer, products:ProductsEntity #FK to(productsentity));
+
+codeorderstatusentity(orderstatusid:Integer [PK], orderstatusname:String, name2vendor:String, name2retailer:String);
+
+securitypermissiongroupentity(permissionid:Integer [PK], groupid:int, resourceid:int, allow:boolean, allowedit:boolean, allowdelete:boolean, allowadd:boolean);
+
+collectioncategoryitementity(collectioncategoryitemid:Integer [PK], spotid:Integer, fromdate:LocalDateTime, collectioncategoryid:Integer, productid:Integer, createdon:LocalDateTime, createdby:String, collectioncategorytype:Integer, wholesalerid:Integer, products:ProductsEntity #FK to(productsentity), wholesaler:VendorEntity #FK to(vendorentity));
+
+featuredwholesalerinfoentity(wholesalerid:Integer [PK], vendorrate:BigDecimal, buyerrate:BigDecimal, checkoutamount:BigDecimal, checkoutqty:Integer, totaladamount:BigDecimal, vendortiergroup:String, iscm:Boolean, ispg:Boolean, iscs:Boolean);
+
+policyentity(policyid:Integer [PK], policytitle:String, policycontents:String, isforvendor:boolean, isforretailer:boolean, createdon:Timestamp, effectiveon:Timestamp, modifiedon:Timestamp, createdby:String, modifiedby:String, active:boolean);
+
+aspnetrolesentity(applicationid:String, roleid:String [PK], rolename:String, loweredrolename:String, description:String);
+
+codepatternentity(patternid:Integer [PK], patternname:String, active:boolean);
+
+buyeraddresshistoryentity(id:Long [PK], buyeraddressid:Long, buyerid:Long, typecode:Integer, name:String, attention:String, streetno1:String, streetno2:String, storeno:String, city:String, state:String, zipcode:String, countryname:String, phone:String, phone2:String, phone3:String, fax:String, isdefault:Boolean, isactive:Boolean, iscommercial:Boolean, createdon:LocalDateTime, createdby:String);
+
+xshipaddressentity(shipaddid:Integer [PK], custid2:int, shipname2:String, shipattention:String, shipaddress2:String, shipaddress2b:String, shipcity2:String, shipstate2:String, shipzip2:String, shipcountry2:String, shipphone:String, shipfax:String, storeno:String, defaultyn:boolean, active:boolean, startingdate:Timestamp, lastuser:String, lastmodifieddatetime:Timestamp, shipphonealternate:String, shipphoneevening:String, iscommercialaddress:Boolean, shipcountry2id:Integer, latitude:String, longitude:String, verifiedon:Timestamp);
+
+vendorcatalogentity(catalogid:Integer [PK], vendorid:int, catalogname:String, createdon:Timestamp, modifiedon:Timestamp);
+
+aspnetusersentity(userid:String [PK], applicationid:String, username:String, loweredusername:String, mobilealias:String, isanonymous:boolean, lastactivitydate:Timestamp);
+
+codevendorcaptypeentity(vendorcaptypeid:Integer [PK], vendorcaptypename:String, defaultcap:Integer);
+
+vendorcontracthistoryentity(id:Long [PK], vendorid:Long, typecode:Integer, planid:Long, setupfee:BigDecimal, lastmonthservicefee:BigDecimal, monthlyfee:BigDecimal, issetupfeewaived:Boolean, islastmonthservicefeewaived:Boolean, commissionrate:BigDecimal, commissionbasedatecode:Integer, monthlyitemcap:Integer, memo:String, datefrom:LocalDateTime, dateto:LocalDateTime, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, accountexecutiveid:Integer, accountexecutiveby:String, GeneratedName:VendorEntity #FK to(vendorentity));
+
+creditcardentity(creditcardid:Integer [PK], ccname:String, retailerid:int, cardtypeid:int, cardnumber:String, last4digit:String, cvv:String, expirationmonth:int, expirationyear:int, nameoncard:String, active:boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String, streetno:String, streetno2:String, city:String, state:String, zipcode:String, country:String, countryid:Integer, phone:String, isdefaultcard:boolean, creditcardtypeid:CodeCreditCardTypeEntity #FK to(codecreditcardtypeentity));
+
+listentityactionentity(entityactionid:Integer [PK], entityactionname:String);
+
+policyagreemententity(policyagreementid:Integer [PK], policyid:Integer, wholesalerid:Integer, companyname:String, retailerid:Integer, agreedon:Timestamp, agreedbyname:String, agreedbyid:String, ipaddress:String, agreed:boolean, policyid:PolicyEntity #FK to(policyentity));
+
+vendorsettingentity(id:Long [PK], vendorid:Long, statuscode:Integer, isblock:Boolean, isadblock:Boolean, opendate:LocalDateTime, closeddate:LocalDateTime, ordernotice:String, buyernotice:String, sizechart:String, sizechartimagefilename:String, isallowvendormainanony:Boolean, isallowimmediateshopping:Boolean, isallowaccessunverifiedbuyer:Boolean, isproductsortbylastupdate:Boolean, minorderbyamount:BigDecimal, minorderbyqty:Integer, extracharge:BigDecimal, extrachargeamountfrom:BigDecimal, extrachargeamountto:BigDecimal, isshowfeedback:Boolean, isshowestimateshippingcharge:Boolean, ispaperless:Boolean, isconsolidation:Boolean, isnew:Boolean, isexclusive:Boolean, capaccount:Integer, capcategory:Integer, capfraudreport:Integer, capitem:Integer, inhousememo:String, memo:String, isusepgservice:Boolean, transactionfeerate1:BigDecimal, transactionfeerate2:BigDecimal, transactionfeerate1intl:BigDecimal, transactionfeerate2intl:BigDecimal, transactionfeefixed:BigDecimal, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, GeneratedName:VendorEntity #FK to(vendorentity));
+
+franchiseretailerentity(retailerid:Integer [PK], retailerguid:String, startingdate:Timestamp, companyname:String, firstname:String, lastname:String, description:String, billstreetno:String, billcity:String, billstate:String, billzipcode:String, billcountry:String, billphone:String, billfax:String, streetno:String, city:String, state:String, zipcode:String, country:String, phone:String, email:String, fax:String, addressstatus:Boolean, memo:String, website:String, userid:String, pwd:String, active:String, dm:String, posuse:String, retailerpermitno:String, vendor1name:String, vendor2name:String, vendor1phone:String, vendor2phone:String, lastlogindate:Timestamp, logincount:Integer, currentstatus:Integer, currentcomment:String, newyn:String, editorscore:Integer, fashiongoscore:Integer, favoritevendor:String, billstreetno2:String, streetno2:String, asknownas:String, lastuser:String, lastmodifieddatetime:Timestamp, inhousememo:String, terminatedby:String, terminatednote:String, terminateddate:Timestamp, emailsentyn:Boolean, emailsentdate:Timestamp, emailstate:Integer, howknowntype:Integer, howknownother:String, marketcategoryid:Integer, prmyn:boolean, showfgnews:boolean, showfavvendor:boolean, receivefgnewsletter:boolean, billphonealternate:String, billphonealternate2:String, phonealternate:String, phonealternate2:String, iscommercialaddress:Boolean, storeno:String, shipname:String, shipattention:String, sns:String, usemobile:String, sellerpermitfilename:String, invoicefilename1:String, invoicefilename2:String, additionaldocumentfilename:String, approvedon:Timestamp, billcountryid:Integer, countryid:Integer, creditscore:int, createdbyvendorid:Integer, confirmedon:Timestamp, confirmedby:String, emailverifiedon:Timestamp, isoperatorread:Boolean, acceptsmsmessage:Boolean, acceptpushmessage:Boolean, mobilephoneno:String, buyercompanyid:Long, buyertype:Integer, retailerid:FranchiseMasterAccountEntity #FK to(franchisemasteraccountentity), retailerid:MapFranchiseSubAccountEntity #FK to(mapfranchisesubaccountentity));
+
+gnbmenubannertypeentity(menubannertypeid:Integer [PK], menubannertypename:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+vendorcontracthistorydocumententity(id:Long [PK], vendorid:Long, vendorcontracthistoryid:Long, typecode:Integer, filename1:String, filename2:String, filename3:String, note:String, receiveduserid:Integer, receivedusername:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+cartitementity(cartid:Integer [PK], wholesalerid:Integer, retailerid:Integer, productid:Integer, productname:String, sizeid:Integer, colorid:Integer, colorname:String, packid:Integer, noofpack:Integer, bq1:Integer, bq2:Integer, bq3:Integer, bq4:Integer, bq5:Integer, bq6:Integer, bq7:Integer, bq8:Integer, bq9:Integer, bq10:Integer, bq11:Integer, totalqty:Integer, unitprice:BigDecimal, subtotal:BigDecimal, todaydealid:Integer, statusid:int, available:boolean, savedon:Timestamp, createdon:Timestamp, modifiedon:Timestamp, orderid:Integer, sessionid:String, ordersessionguid:String, nclicksessionid:String, availableon:Timestamp, inventorystatus:Integer);
+
+webadminsearchquerysearchidentity(id:Integer [PK], searchedon:LocalDateTime, searchquery:String, searchidcount:Integer);
+
+consolidationshipmethodentity(consolidationshipmethodid:Integer [PK], shipmethodid:int, shipmethodname:String, coutierid:Integer, active:boolean);
+
+trendreportentity(trendreportid:Integer [PK], title:String, image:String, datefrom:LocalDateTime, dateto:LocalDateTime, listorder:Integer, active:Boolean, createdon:LocalDateTime, createdby:String, trdescription:String, miniimage:String, squareimage:String, modifiedon:LocalDateTime, modifiedby:String, sticky:Boolean, kmmimage:String, kmmimage1:String, kmmimage2:String, showid:Integer, showscheduleid:Integer, curatedtype:int);
+
+fashiongoformentity(fashiongoformid:Integer [PK], formname:String, memo:String, attachment:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+mapwauservendorentity(mapid:Integer [PK], userid:int, vendorid:int, vendor_id:VendorEntity #FK to(vendorentity));
+
+countentity(countid:Integer [PK], counttypeid:int, entityid:int, referenceid:Integer, count:int);
+
+logemailsententity(logid:Integer [PK], retailerid:int, companyname:String, sentemailtypeid:int, emailcontents:String, senton:Timestamp, sentby:String, referenceid:Integer, referencetext:String, emailtypeid:ListEmailTypeEntity #FK to(listemailtypeentity));
+
+mapstylecategoryentity(mapid:Integer [PK], styleid:Integer, categoryid:Integer);
+
+couponnotificationentity(couponnotificationid:Integer [PK], couponid:Integer, notificationmethod:Integer, issent:boolean, sentdate:Timestamp, notificationsubject:String, notificationpreviewtext:String, notificationtargetfile:String, notificationimagefilename:String, issendemail:Boolean, createdby:String, createdon:Timestamp, modifiedby:String, modifiedon:Timestamp);
+
+advendoritementity(advendoritemid:Integer [PK], categoryid:Integer, wholesalerid:Integer, fromdate:LocalDateTime, todate:LocalDateTime, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, isconfirmed:Boolean, isconfirmeddate:LocalDateTime, activatedon:LocalDateTime, activatedby:String, howtoinput:Integer, howtosell:Integer, invoiceout:Boolean, itemcount:Integer, actualprice:BigDecimal, transferredtocs:LocalDateTime);
+
+paymentrecoveryentity(serialversionuid:long, transactionfailureid:Integer [PK], transactiontype:Integer, referenceid:Integer, referencetypeid:Integer, pgreferenceid:String, paymentpgreferenceid:String, creditcardid:Integer, creditcardreferenceid:String, netamount:BigDecimal, transferamount:BigDecimal, paymentdate:Timestamp, applieddate:Timestamp, billingdate:Timestamp, needtobill:Boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String);
+
+vendoradminloginlogentity(vendoradminloginid:Integer [PK], username:String, wholesalerid:Integer, loginedon:LocalDateTime, ipaddress:String);
+
+adpageentity(pageid:Integer [PK], pagename:String, pageurl:String, isbid:Boolean);
+
+ratingcommententity(ratingcommentid:Integer [PK], referenceid:int, isvendorrating:boolean, comment:String, active:boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String);
+
+logvendorholdentity(logid:Integer [PK], wholesalerid:int, holdfrom:Timestamp, holdto:Timestamp, createdon:Timestamp, createdby:String, active:boolean);
+
+listapplicationentity(applicationid:Integer [PK], applicationname:String);
+
+vendoradminaccountentity(vendoradminaccountid:Integer [PK], wholesalerid:Integer, firstname:String, lastname:String, username:String, userguid:String, active:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, creditcardaccess:Boolean);
+
+statisticswabestitemperdayentity(start:Date [PK], productid:Integer [PK], wholesalerid:Integer, categoryid:Integer, parentcategoryid:Integer, parentparentcategoryid:Integer, orderqty:Integer, orderitemqty:Integer, orderamount:BigDecimal, createdon:Timestamp);
+
+securitylistipentity(ipid:Integer [PK], ipaddress:String, description:String);
+
+mapwholesalersisterentity(mapid:Integer [PK], wholesalerid:Integer, sisterwholesalerid:Integer, createdon:LocalDateTime, createdby:String, vendor_id:VendorEntity #FK to(vendorentity));
+
+listaccountdeactivationreasonentity(reasonid:Integer [PK], reason:String);
+
+codefabricentity(fabricid:Integer [PK], fabricname:String, active:boolean);
+
+mapwholesalerpaymentmethodentity(mapid:Integer [PK], wholesalerid:int, paymentmethodid:int, paymentmethodid:CodePaymentMethodEntity #FK to(codepaymentmethodentity));
+
+mapfranchisesubaccountentity(franchisesubaccountid:Integer [PK], franchisemasteraccountid:int, retailerid:int, franchisemasteraccountid:FranchiseMasterAccountEntity #FK to(franchisemasteraccountentity));
+
+mapusergroupentity(mapid:Integer [PK], userid:Integer, groupid:Integer);
+
+showscheduleentity(showscheduleid:Integer [PK], showid:int, bannerimage:String, titleimage:String, datefrom:LocalDateTime, dateto:LocalDateTime, active:boolean, listorder:int, mobileimage:String);
+
+listshowwithscheduleentity(showid:Integer [PK], showname:String, location:String, url:String, active:boolean, logofilename:String, showcode:String, activeregister:Boolean);
+
+showschedulepromotionplanwithvendorentity(planid:Integer [PK], planname:String, showscheduleid:int, isonline:boolean, isoffline:boolean, commissioneffectivefrom:LocalDateTime, commissioneffectiveto:LocalDateTime, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+listshowentity(showid:Integer [PK], showname:String, location:String, url:String, active:boolean, logofilename:String, showcode:String, activeregister:Boolean);
+
+mapshowschedulepromotionplanvendorentity(mapid:Integer [PK], planid:int, wholesalerid:int, commissionrate:BigDecimal, rackcount:int, fee:BigDecimal, itemcountmax:int, isdeleted:Boolean, canceldate:LocalDateTime, canceledby:String, isactive:Boolean, discountamount:BigDecimal, totalamount:BigDecimal, isregularcommission:Boolean, vendor_id:VendorEntity #FK to(vendorentity));
+
+showschedulewithpromotionentity(showscheduleid:Integer [PK], showid:int, bannerimage:String, titleimage:String, datefrom:LocalDateTime, dateto:LocalDateTime, active:boolean, listorder:int, mobileimage:String, showid:ListShowEntity #FK to(listshowentity));
+
+mapshowschedulewholesalerentity(mapid:Integer [PK], showscheduleid:int, wholesalerid:int, booth:String);
+
+gnbvendorgroupentity(vendorgroupid:Integer [PK], vendorgrouptitle:String, targeturl:String, isalphabeticalorder:boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, vendorgrouptype:Integer);
+
+adpagespotentity(spotid:Integer [PK], pageid:Integer, categoryid:Integer, bodysizeid:Integer, spotname:String, spotdescription:String, price1:BigDecimal, price2:BigDecimal, price3:BigDecimal, price4:BigDecimal, price5:BigDecimal, price6:BigDecimal, price7:BigDecimal, active:boolean, includevendorcategory:boolean, spotinstancecount:int, bannerimage:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, bideffectiveon:LocalDateTime, spotitemcount:Integer, maxpurchasable:Integer, isbannerad:boolean, GeneratedName:AdPageEntity #FK to(adpageentity));
+
+newsentity(newsid:Integer [PK], wholesalerid:Integer, newstitle:String, newscontent:String, startingdate:LocalDateTime, newstype:String, fromdate:LocalDateTime, todate:LocalDateTime, lastuser:String, lastmodifieddatetime:LocalDateTime, sortno:int, active:boolean, activeold:String, showbanner:boolean);
+
+aspnetusersinrolesentity(userid:String [PK], roleid:String [PK]);
+
+vendorcatalogproductentity(catalogproductid:Integer [PK], catalogid:int, productid:int, sortno:int, sendrequestid:Integer);
+
+securitymenuentity(menuid:Integer [PK], name:String, parentid:Integer, applicationid:int, resourceid:Integer, visible:boolean, active:boolean, listorder:Integer, routepath:String, menuicon:String, GeneratedName:SecurityPermissionEntity #FK to(securitypermissionentity), GeneratedName:SecurityResourceEntity #FK to(securityresourceentity), securityparentmenuentity:SecurityMenuEntity #FK to(securitymenuentity));
+
+couponnotificationtargetentity(couponnotificationtargetid:Integer [PK], coupon_notification_id:Integer, notificationmethod:Integer, notificationtarget:String, issent:boolean, unsubscribedate:Timestamp, sentfailreason:String, createdby:String, createdon:Timestamp, modifiedby:String, modifiedon:Timestamp, coupon_notification_id:CouponNotificationEntity #FK to(couponnotificationentity));
+
+paymentcreditcardentity(creditcardid:Integer [PK], retailerid:Integer, referenceid:String, cardtypeid:Integer, last4digit:String, cvv:String, expirationmonth:Integer, expirationyear:Integer, nameoncard:String, fingerprint:String, email:String, street:String, city:String, state:String, zipcode:String, country:String, countryid:Integer, isdefaultcard:Boolean, cardstatusid:Integer, isdeleted:Boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String, referenceid2:String, source:String, sourcedate:LocalDateTime, cardfunding:String);
+
+logloginentity(loginid:Integer [PK], retailerid:int, username:String, ipaddress:String, loggedon:Timestamp);
+
+securitymapusergroupentity(mapid:Integer [PK], userid:Integer, groupid:Integer, GeneratedName:SecurityGroupEntity #FK to(securitygroupentity));
+
+wholesalerratingentity(wholesalerratingid:Integer [PK], orderid:Integer, wholesalerid:Integer, retailerid:Integer, comment:String, score:Integer, active:boolean, createdon:Timestamp);
+
+maplengthcategoryentity(mapid:Integer [PK], lengthid:Integer, categoryid:Integer);
+
+shipmethod(id:int [PK], courierid:Integer, shipmethodname:String, startingdate:LocalDateTime, active:Boolean, lastuser:String, lastmodifieddatetime:LocalDateTime);
+
+productvideoentity(productvideoid:Integer [PK], productid:Integer, videoname:String, listorder:Integer, active:Boolean);
+
+consolidationentity(id:Integer [PK], totalamount:BigDecimal, totalqty:Integer, ordercount:Integer, inhousememo:String, streetno:String, city:String, state:String, zipcode:String, country:String, countryid:Integer, iscommercialaddress:Boolean, modifiedon:LocalDateTime, modifiedby:String, shipmethodid:Integer, shipmethodname:String, couponamount:BigDecimal, shippedon:LocalDateTime, shippingcharge:BigDecimal, actualshippingcharge:BigDecimal, originalshippingcharge:BigDecimal, appliedcouponamount:BigDecimal, wavedamount:BigDecimal, waivedamountbyfg:BigDecimal, trackingnumber:String, creditcardid:Integer, buyercompanyname:String, retailerid:Integer, nameoncard:String, last4digit:String, cardtype:String);
+
+advendorentity(adid:Integer [PK], pageid:int, spotid:Integer, wholesalerid:Integer, categoryid:Integer, bodysizeid:Integer, vendorcategoryid:Integer, actualprice:BigDecimal, fromdate:Timestamp, todate:Timestamp, active:boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String, isconfirmed:Boolean, isconfirmeddate:Timestamp, howtoinput:Integer, howtosell:Integer, adpagespotlistid:Integer, invoiceout:boolean, transferredtocs:Timestamp, wholesaler:VendorEntity #FK to(vendorentity), collectioncategory:CollectionCategoryEntity #FK to(collectioncategoryentity));
+
+retailerratingentity(retailerratingid:Integer [PK], orderid:Integer, wholesalerid:Integer, retailerid:Integer, comment:String, score:Integer, active:boolean, createdon:Timestamp);
+
+wasavedsearchentity(savedid:Integer [PK], savedname:String, savedtype:String, displaystr:String, filterstr:String, remark:String, active:boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String);
+
+codestyleentity(styleid:Integer [PK], stylename:String, active:boolean);
+
+listemailtypeentity(emailtypeid:Integer [PK], emailtype:String, templatefilename:String);
+
+paymenttransactionentity(transactionid:Integer [PK], transactiontype:int, referenceid:Integer, referencetypeid:Integer, pgreferenceid:String, creditcardid:int, creditcardreferenceid:String, amount:BigDecimal, success:boolean, reasoncode:int, detail:String, createdby:String, createdon:Timestamp, modifiedby:String, modifiedon:Timestamp, declinecode:String, idempotencykey:String, idempotencykeycreatedon:Timestamp, requesttime:Timestamp, responsetime:Timestamp, card_funding:String, card_brand:String, card_last4:String);
+
+logcommunicationentity(communicationid:Integer [PK], retailerid:Integer, companyname:String, contactedby:String, reasonid:Integer, notes:String, communicatedon:Timestamp, checkedby:String, checkedon:Timestamp, checkedby2:String, checkedon2:Timestamp, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String, isforvendor:Boolean, reasonid:ListCommunicationReasonEntity #FK to(listcommunicationreasonentity), retailerid:RetailerEntity #FK to(retailerentity));
+
+mapmergeordersentity(mapid:Integer [PK], mergeid:Integer, orderid:Integer);
+
+vendoraddressentity(id:Long [PK], vendorid:Long, typecode:Integer, name:String, streetno1:String, streetno2:String, city:String, state:String, zipcode:String, countryname:String, phone:String, phone2:String, fax:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, GeneratedName:VendorEntity #FK to(vendorentity));
+
+codepaymentmethodentity(paymentmethodid:Integer [PK], paymentmethodname:String, paymentmethoddescription:String, paymentcode:String, active:boolean);
+
+wholeretailerblockentity(wholeretailerblockid:Integer [PK], wholesalerid:Integer, retailerid:Integer, startingdate:Timestamp, lastuser:String, lastmodifieddatetime:Timestamp, vendor_id:VendorEntity #FK to(vendorentity));
+
+listvendorblockreasonentity(blockreasonid:Integer [PK], blockreasontitle:String, blockreasondetail:String);
+
+trendreportmapentity(mapid:Integer [PK], trendreportid:Integer, productid:Integer, sortno:Integer, createdon:LocalDateTime, createdby:String);
+
+codecountryentity(countryid:Integer [PK], countrycode:String, countryname:String, sortno:int, active:Boolean, insertuser:String, insertdate:Timestamp, updateuser:String, updatedate:Timestamp);
+
+productsentity(productid:Integer [PK], wholesalerid:Integer, sizeid:Integer, sortno:Integer, packid:Integer, productname:String, productname2:String, productdescription:String, season:Integer, unitprice:BigDecimal, unitprice1:BigDecimal, unitprice2:BigDecimal, picturegeneral:String, pictureex01:String, pictureex02:String, pictureex03:String, pictureex04:String, pictureex05:String, pictureex06:String, pictureex07:String, pictureex08:String, pictureex09:String, packqtytotal:Integer, packqty1:Integer, packqty2:Integer, packqty3:Integer, packqty4:Integer, packqty5:Integer, packqty6:Integer, packqty7:Integer, packqty8:Integer, packqty9:Integer, packqty10:Integer, packqty11:Integer, packqty12:Integer, packqty13:Integer, prepackyn:Character, salesitem:Boolean, hotitems:boolean, promotionalitems:Boolean, itemlocation:String, mintqynstyle:String, mintqstyle:Integer, firstinput:Date, evencoloryn:String, discountyn:boolean, patternid:Integer, lengthid:Integer, styleid:Integer, fabricid:Integer, fabricdescription:String, madein:String, stockavailability:String, bodysizeid:Integer, activatedon:Date, createdon:Date, modifiedon:Date, active:Boolean, createdby:String, modifiedby:String, activatedby:String, labeltypeid:Integer, inventorystatusid:Integer, vendorcategoryid:Integer, categoryid:Integer, callforprice:boolean, webactive:String, activeold:String, starting:Date, catemastersubsubid:Integer, mintastyle:Integer, mintaynstyle:String, firstupdateyn:Boolean, firstup:Date, minpolicyuseyn:String, qtyseqyn:String, minecq:Integer, minecqyn:String, mindollar:Float, mindollaryn:String, mintq:Integer, mintqyn:String, startingho:Date, inactive:String, cateid:Integer, searchkeyword:String, brandname:String, timestamp:Byte, availableon:Date, fashiongoexclusive:Boolean, parentcategoryid:Integer, parentparentcategoryid:Integer, colorcount:int, productmastercolors:String, itemname:String, category:CategoryEntity #FK to(categoryentity), vendor_id:VendorEntity #FK to(vendorentity), GeneratedName:VendorCategoryEntity #FK to(vendorcategoryentity), xsizechart:XSizeChartEntity #FK to(xsizechartentity));
+
+securityaccesscodeentity(codeid:Integer [PK], accesscode:String, expiredon:LocalDateTime);
+
+mapfabriccategoryentity(mapid:Integer [PK], fabricid:Integer, categoryid:Integer);
+
+socialmedia(serialversionuid:long, socialmediaid:Integer [PK], socialmedia:String, listorder:Integer, icon:String, url:String, active:Boolean);
+
+codebodysizeentity(bodysizeid:Integer [PK], bodysizename:String, titleimage:String, categoryid:Integer, active:boolean);
+
+systemimageserversentity(imageserverid:Integer [PK], imageservername:String, urlpath:String, physicalpath:String, comment:String, addmorevendoryn:boolean, vendoradminurl:String, active:boolean, insertuser:String, insertdate:Timestamp, updateuser:String, updatedate:Timestamp);
+
+vendorseoentity(serialversionuid:long, vendorseoid:Integer [PK], vendorid:Integer, metakeyword:String, metadescription:String, isdeleted:boolean, createdon:Timestamp, createdby:String, modifiedon:Timestamp, modifiedby:String);
+
+sitesettingentity(id:int [PK], gnbvendorgroupid:Integer);
+
+collectioncategoryentity(collectioncategoryid:Integer [PK], collectioncategoryname:String, parentcollectioncategoryid:Integer, spotid:Integer, lvl:Integer, listorder:Integer, active:Boolean, serviceinuse:String, vendortype:String, vendortiergroup:String, orderby:String, modifiedby:String, modifiedon:LocalDateTime, pagespotentity:AdPageSpotEntity #FK to(adpagespotentity));
+
+wholeshipmethodentity(wholeshipid:Integer [PK], wholesalerid:Integer, shipmethodid:Integer, startingdate:Timestamp, sortno:int, isdefault:boolean, active:boolean, lastuser:String, lastmodifieddatetime:Timestamp, shipmethodid:ShipMethodEntity #FK to(shipmethodentity));
+
+xcolorentity(colorid:Integer [PK], wholesalerid:Integer, color:String, startingdate:LocalDateTime, colorlistid:Integer, lastuser:String, lastmodifieddatetime:LocalDateTime, image:String, active:Boolean, activeold:String);
+
+trendreportmapcandidateentity(candidateid:Integer [PK], trendreportid:int, productid:int, listorder:Integer);
+
+consolidationordersentity(orderid:Integer [PK], consolidationid:int, droppedby:String, receivedby:String, receivedon:Timestamp, notifiedby:String, notifiedon:Timestamp, dropreferenceid:Integer);
+
+trenddailykeywordentity(trenddailykeywordid:long [PK], exposedate:LocalDateTime, keywordtext:String, keywordtype:int, sortno:int, categoryid:Integer, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, categoryid:CategoryEntity #FK to(categoryentity));
+
+channellogentity(channellogid:Integer [PK], ipaddress:String, referenceid:Integer, ordersessionguid:String, happenedat:Integer, actiontypeid:Integer, totalqty:Integer, totalamount:BigDecimal, createdon:Timestamp);
+
+securityuserentity(userid:Integer [PK], username:String, fullname:String, userguid:String, role:String, active:boolean, iptimeexempt:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, email:String, dataaccesslevel:Integer);
+
+categoryentity(categoryid:Integer [PK], categoryname:String, categoryname2:String, categorydescription:String, parentcategoryid:int, parentparentcategoryid:Integer, lvl:int, titleimage:String, islandingpage:boolean, isfeatured:boolean, listorder:int, active:boolean);
+
+listcardstatusentity(cardstatusid:Integer [PK], cardstatusname:String);
+
+vendorbannerentity(id:Long [PK], vendorid:Long, bannertypeid:Long, requestdate:LocalDateTime, requestby:String, isapproved:Boolean, rejecteddate:LocalDateTime, rejectedby:String, rejectreason:String, decideddate:LocalDateTime, decidedby:String, isactive:Boolean, filename:String, deletedon:LocalDateTime, deletedby:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, GeneratedName:VendorEntity #FK to(vendorentity));
+
+xpackentity(packid:Integer [PK], wholesalerid:Integer, packname:String, packqtytotal:Integer, packqty1:Integer, packqty2:Integer, packqty3:Integer, packqty4:Integer, packqty5:Integer, packqty6:Integer, packqty7:Integer, packqty8:Integer, packqty9:Integer, packqty10:Integer, packqty11:Integer, active:boolean, startingdate:Timestamp, lastuser:String, lastmodifieddatetime:Timestamp);
+
+securitygroupentity(groupid:Integer [PK], groupname:String, description:String, active:boolean);
+
+vendornamehistorylogentity(wholesalerid:Integer [PK], companyname:String, oldcompanyname:String, newcompanyname:String, createdon:LocalDateTime, changeid:Integer);
+
+todaydealentity(todaydealid:Integer [PK], productid:Integer, title:String, description:String, todaydealprice:BigDecimal, todate:Timestamp, fromdate:Timestamp, createdon:Timestamp, createdby:String, modifiedon:Timestamp, appliedon:Timestamp, modifiedby:String, approvedon:Timestamp, active:Boolean, revokedon:Timestamp, revokedby:String, notes:String, createdbyvendor:Boolean, products:ProductsEntity #FK to(productsentity));
+
+vendordirnamechangelogentity(changeid:Integer [PK], sourcedirname:String, targetdirname:String, oldcompanyname:String, newcompanyname:String, createdon:LocalDateTime);
+
+vendorimagerequestentity(imagerequestid:Integer [PK], wholesalerid:int, vendorimagetypeid:int, requestedon:LocalDateTime, requestedby:String, isapproved:Boolean, rejectreason:String, decidedon:LocalDateTime, decidedby:String, deletedon:LocalDateTime, deletedby:String, active:boolean, originalfilename:String, vendor_id:VendorEntity #FK to(vendorentity));
+
+retailerentity(retailerid:Integer [PK], retailerguid:String, startingdate:Timestamp, companyname:String, firstname:String, lastname:String, description:String, billstreetno:String, billcity:String, billstate:String, billzipcode:String, billcountry:String, billphone:String, billfax:String, streetno:String, city:String, state:String, zipcode:String, country:String, phone:String, email:String, fax:String, addressstatus:Boolean, memo:String, website:String, userid:String, pwd:String, active:String, dm:String, posuse:String, retailerpermitno:String, vendor1name:String, vendor2name:String, vendor1phone:String, vendor2phone:String, lastlogindate:Timestamp, logincount:Integer, currentstatus:Integer, currentcomment:String, newyn:String, editorscore:Integer, fashiongoscore:Integer, favoritevendor:String, billstreetno2:String, streetno2:String, asknownas:String, lastuser:String, lastmodifieddatetime:Timestamp, inhousememo:String, terminatedby:String, terminatednote:String, terminateddate:Timestamp, emailsentyn:Boolean, emailsentdate:Timestamp, emailstate:Integer, howknowntype:Integer, howknownother:String, marketcategoryid:Integer, prmyn:boolean, showfgnews:boolean, showfavvendor:boolean, receivefgnewsletter:boolean, billphonealternate:String, billphonealternate2:String, phonealternate:String, phonealternate2:String, iscommercialaddress:Boolean, storeno:String, shipname:String, shipattention:String, sns:String, usemobile:String, sellerpermitfilename:String, invoicefilename1:String, invoicefilename2:String, additionaldocumentfilename:String, approvedon:Timestamp, billcountryid:Integer, countryid:Integer, creditscore:int, createdbyvendorid:Integer, confirmedon:Timestamp, confirmedby:String, emailverifiedon:Timestamp, isoperatorread:Boolean, acceptsmsmessage:Boolean, acceptpushmessage:Boolean, mobilephoneno:String, buyercompanyid:Long, buyertype:Integer, buyerclass:Integer, amuserid:Integer);
+
+mapcollectioncategoryentity(mapid:Integer [PK], collectioncategoryid:Integer, categoryid:Integer, category:CategoryEntity #FK to(categoryentity));
+
+listcommunicationreasonentity(reasonid:Integer [PK], reason:String, parentid:Integer, active:boolean);
+
+vendoraccountentity(id:Long [PK], vendorid:Long, firstname:String, lastname:String, userid:String, userguid:String, typecode:Integer, isactive:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, GeneratedName:VendorEntity #FK to(vendorentity));
+
+securityresourceentity(resourceid:Integer [PK], applicationid:Integer, name:String, parentid:Integer, active:boolean, resourcetype:String, url:String, parentresource:SecurityResourceEntity #FK to(securityresourceentity), listapplication:ListApplicationEntity #FK to(listapplicationentity));
+
+xsizechartentity(sizeid:Integer [PK], wholesalerid:Integer, sizename:String, description:String, s1:String, s2:String, s3:String, s4:String, s5:String, s6:String, s7:String, s8:String, s9:String, s10:String, s11:String, startingdate:LocalDateTime, active:Boolean, lastuser:String, lastmodifieddatetime:LocalDateTime);
+
+securityloginlogentity(logid:Integer [PK], userid:Integer, ip:String, loginon:LocalDateTime, GeneratedName:SecurityUserEntity #FK to(securityuserentity));
+
+entityactionlogentity(logid:Integer [PK], entitytypeid:Integer, entityid:Integer, actionid:Integer, actedon:LocalDateTime, actedby:String, remark:String, entityactionid:ListEntityActionEntity #FK to(listentityactionentity));
+
+wholesalerentity(wholesalerid:Integer [PK], sortno:Integer, startingdate:Timestamp, companyname:String, regcompanyname:String, dirname:String, codename:String, firstname:String, lastname:String, description:String, billstreetno:String, billcity:String, billstate:String, billzipcode:String, billcountry:String, billphone:String, billfax:String, streetno:String, city:String, state:String, zipcode:String, country:String, phone:String, email:String, fax:String, memo:String, website:String, userid:String, pwd:String, websiteactive:String, slactive:String, reportactive:String, catalogactive:String, lambsactive:String, group1:Integer, group2:Integer, dm:String, posuse:String, mainpage:String, titlepagememo:String, wsapolicy:String, wholesalertitlepage:String, onsale:String, newcustyn:String, goodupyn:String, mintqyn:String, mintq:Integer, mindollaryn:String, mindollar:Float, minecqyn:String, minecq:Integer, qtyseqyn:String, minpolicyuseyn:String, ordernotice:String, compcharge:String, ratio:Float, autoractive:String, mincharge:String, minamount:Float, ismonthly:String, isyearly:String, yearlyamount:BigDecimal, noticetoall:String, asknownas:String, honote1:String, honote2:String, honote3:String, honote4:String, actualopendate:Timestamp, billingnote2:String, specialnote1:String, specialnote2:String, adv1:String, adv2:String, advertiseyn:String, actualopen:String, ownercountry:String, contractexpiredate:Timestamp, billreviewholee:String, opendate:LocalDateTime, compsolutionno:Integer, retaileryes:Boolean, retailerblocklist:String, retaileropenlist:String, datetimemodified:LocalDateTime, prepackyn:String, salesitem:Boolean, hotitems:Boolean, promotionalitems:Boolean, billstreetno2:String, streetno2:String, itemlocation:String, lastuser:String, lastmodifieddatetime:Timestamp, mintqynstyle:String, mintqstyle:Integer, billingnote1:String, billingyn:Boolean, inhousememo:String, sizeid:Integer, packid:Integer, districtid:Integer, fgplan:int, websitelinkcount:Integer, howknowntype:Integer, howknownother:String, discountyn:Boolean, insertedwhichapp:Integer, allowimage2anony:Boolean, maxpictureqty:Integer, allowimmediateshopping:Boolean, businesscategory:String, imageserverid:Integer, contactperson:String, companytypeid:Integer, establishedyear:Integer, picturemain:String, picturelogo:String, sizechart:String, madein:String, productsortbylastupdate:Boolean, active:Boolean, shopactive:Boolean, orderactive:Boolean, billcountryid:Integer, countryid:Integer, billphone2:String, phone2:String, creditcardaccesspassword:String, adminaccountcap:Integer, defaultsizeid:Integer, defaultpackid:Integer, defaultfabricdescriptionid:Integer, manageinventory:Boolean, allowaccess2y3:Boolean, sm_facebook:String, sm_twitter:String, sm_youtube:String, blog:String, minorderbyamount:BigDecimal, minorderbyqty:Integer, extracharge:BigDecimal, extrachargeamountfrom:BigDecimal, extrachargeamountto:BigDecimal, industrytype:String, orderactivelock:Boolean, activeold:String, shopactiveold:String, minorderamount:Float, minorderamountyn:String, mintqallyn:String, mintqall:Integer, itemuploadcap:Integer, defaultmadeincountryid:Integer, defaultlabelid:Integer, defaultinventorystatusid:Integer, picturemain2:String, showfeedback:Boolean, consolidationyn:Boolean, defaultvendorid:Integer, adminwebserverid:Integer, wholesalerguid:String, fashiongoexclusive:Boolean, sizechartimage:String, blockpolicy:Boolean, sm_instagram:String, chargedbycreditcard:Boolean, viewestimateshippingcharge:Boolean, usecreditcardpaymentservice:Boolean, transactionfeerate1:Double, transactionfeerate2:Double, transactionfeerate1intl:Double, transactionfeerate2intl:Double, transactionfeefixed:Double, commissionrate:Double, usemergeorder:Boolean, billingemail1:String, billingemail2:String, billingemail3:String, showroomstreetno:String, showroomcity:String, showroomstate:String, showroomzipcode:String, showroomcountry:String, showroomcountryid:Integer, showroomphone:String, showroomfax:String, ispaperless:Boolean, vendortype:Integer, premiumemail:String, privacypolicyurl:String, sourcetype:Integer);
+
+franchisemasteraccountentity(franchisemasteraccountid:Integer [PK], retailerid:int, createdon:Timestamp, createdby:String, retailerid:RetailerEntity #FK to(retailerentity));
+
+vendorentity(vendor_id:Long [PK], guid:String, name:String, dbaname:String, codename:String, dirname:String, description:String, firstname:String, lastname:String, email:String, startingdate:LocalDateTime, website:String, businesscategoryinfo:String, classcode:Integer, typecode:Integer, sourcecode:Integer, establishedyear:Integer, contactperson:String, isvirtualvendor:Boolean, howknownid:Integer, howknownnote:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+searchentity(searchid:Integer [PK], username:String, searchquery:String, searchedon:LocalDateTime);
+
+emapplication(appid:Integer [PK], name:String, code:String, guid:String);
+
+emconfiguration(configid:Integer [PK], configtype:String, configvalue:String);
+
+mapfabriccategory(mapid:Integer [PK], fabricid:Integer, categoryid:Integer);
+
+vendorimagerequest(imagerequestid:Integer [PK], wholesalerid:Integer, vendorimagetypeid:Integer, requestedon:LocalDateTime, requestedby:String, isapproved:Boolean, rejectreason:String, decidedon:LocalDateTime, decidedby:String, active:Boolean, originalfilename:String, deletedon:LocalDateTime, deletedby:String);
+
+retailercompany(retailerid:Integer [PK], companyname:String, firstname:String, lastname:String, email:String, active:String, currentstatus:int, retailerguid:String, userid:String, retailerpermitno:String, terminatednote:String, inhousememo:String, website:String, lastuser:String, lastmodifieddatetime:LocalDateTime, sellerpermitfilename:String, invoicefilename1:String, invoicefilename2:String, additionaldocumentfilename:String, operatorread:Boolean, buyerclass:Integer, amuserid:Integer);
+
+vendorcatalogsendrequest(serialversionuid:long, catalogsendrequestid:Integer [PK], requestedcatalogid:Integer, catalogsendqueueid:Integer, fgcatalogid:Integer, catalogsortno:Integer, createdon:LocalDateTime, modifiedon:LocalDateTime, active:Boolean);
+
+mapstylecategory(mapid:Integer [PK], styleid:Integer, categoryid:Integer);
+
+disputedocument(disputeid:String [PK], filename1:String, filename2:String, filename3:String, filename4:String, filename5:String, filename6:String, filename7:String, filename8:String, isaccepted:Boolean, acceptedon:LocalDateTime, acceptedby:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+vendorcontentfile(vendorcontentfileid:Integer [PK], vendorcontentid:Integer, filetype:Integer, filename:String, listorder:Integer);
+
+paymentcustomer(paymentcustomerid:Integer [PK], retailerid:Integer, emailaddress:String, description:String, referenceid:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+vendornewsview(newsid:Integer [PK], wholesalerid:Integer, newstitle:String, newscontent:String, newstype:String, startingdate:LocalDateTime, fromdate:LocalDateTime, todate:LocalDateTime, lastuser:String, lastmodifieddatetime:LocalDateTime, sortno:Integer, active:Boolean, showbanner:Boolean, recipient:String);
+
+consolidationorders(orderid:Integer [PK], consolidationid:Integer, droppedby:String, receivedby:String, receivedon:LocalDateTime, notifiedby:String, notifiedon:LocalDateTime, dropreferenceid:Integer, itemqty:Integer, boxqty:Integer, bagqty:Integer, memo:String);
+
+consolidatedorder(orderid:Integer [PK], ponumber:String, vendorname:String, consolidationid:Integer, buyer:String, firstname:String, lastname:String, orderstatusid:Integer, consolidationorder:ConsolidationOrders #FK to(consolidationorders));
+
+vendorcompanycard(wholesalerid:Integer [PK], chargedbycreditcard:Boolean, wholesalerguid:String);
+
+contactus(contactid:Integer [PK], name:String, email:String, subject:String, message:String, sessionid:String, ipaddress:String, createdon:LocalDateTime, reply:String, repliedon:LocalDateTime, repliedby:String);
+
+securitymenu(menuid:Integer [PK], name:String, parentid:Integer, applicationid:Integer, resourceid:Integer, visible:Boolean, active:Boolean, listorder:Integer, routepath:String, menuicon:String);
+
+securityloginlog(logid:Integer [PK], userid:Integer, ip:String, loginon:LocalDateTime);
+
+cardstatus(cardstatusid:Integer [PK], cardstatusname:String);
+
+vendoradminaccount(vendoradminaccountid:Integer [PK], wholesalerid:Integer, firstname:String, lastname:String, username:String, userguid:String, active:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, creditcardaccess:Integer);
+
+mapadvendoritem(mapid:Integer [PK], adid:Integer, productid:Integer, listorder:Integer);
+
+trendreport(/***/serialversionuid:long, trendreportid:Integer [PK], title:String, image:String, datefrom:LocalDateTime, dateto:LocalDateTime, listorder:Integer, active:Boolean, createdon:LocalDateTime, createdby:String, trdescription:String, miniimage:String, curatedtype:Integer, squareimage:String, modifiedon:LocalDateTime, modifiedby:String, sticky:Boolean, kmmimage:String, kmmimage1:String, kmmimage2:String, showid:Integer, showscheduleid:Integer, externalurl:String);
+
+buyerstatuschangelog(buyersurveyid:long [PK], buyerid:int, buyerstatuschangetypecode:String, createdon:LocalDateTime, createdby:String);
+
+vendorcategory(serialversionuid:long, vendorcategoryid:Integer [PK], wholesalerid:Integer, active:Boolean, categoryname:String);
+
+collectioncategory(//execup_wa_getcollectioncategory@categoryid:long, collectioncategoryid:Integer [PK], collectioncategoryname:String, parentcollectioncategoryid:Integer, spotid:Integer, lvl:Integer, listorder:Integer, active:Boolean, serviceinuse:String, vendortype:String, vendortiergroup:String, orderby:String, modifiedby:String, /*	*	*	*	*	*@temporal(temporaltype.timestamp)datemodifiedon	*/modifiedon:LocalDateTime);
+
+editorpickvendorcontent(editorpickvendorcontentid:Integer [PK], editortitle:String, editordescription:String, startdate:LocalDateTime, enddate:LocalDateTime, vendorid:Integer, vendorcontentid:Integer, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, imagerequestid:Integer, vendor_id:VendorEntity #FK to(vendorentity), GeneratedName:VendorContent #FK to(vendorcontent), GeneratedName:VendorImageRequest #FK to(vendorimagerequest));
+
+codefabric(fabricid:Integer [PK], fabricname:String, active:Boolean);
+
+messagecategory(messagecategoryid:Integer [PK], categoryname:String, isforretailer:Boolean, isforwholesaler:Boolean, isforfashiongo:Boolean, active:Boolean, sortnoretailer:Integer, sortnowholesaler:Integer, sortnofashiongo:Integer);
+
+securitylistip(ipid:Integer [PK], ipaddress:String, description:String);
+
+topcategories(categoryid:Integer [PK], categoryname:String, lvl:Integer, listorder:Integer, active:Boolean);
+
+todaydeal(todaydealid:Integer [PK], productid:Integer, title:String, description:String, todaydealprice:BigDecimal, todate:LocalDateTime, fromdate:LocalDateTime, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, appliedon:LocalDateTime, modifiedby:String, approvedon:LocalDateTime, active:Boolean, revokedon:LocalDateTime, revokedby:String, notes:String, createdbyvendor:Boolean);
+
+securityaccessip(ipid:Integer [PK], ipaddress:String, description:String);
+
+vendorcreditcard(vendorcreditcardid:Integer [PK], wholesalerid:Integer, cardtypeid:Integer, last4digit:String, streetno:String, city:String, state:String, zipcode:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, attachment:String, isrecurring:Boolean);
+
+listvendorimagetype(vendorimagetypeid:Integer [PK], vendorimagetype:String, uploadedbyvendor:Boolean, listorder:Integer);
+
+adbidlog(logid:Integer [PK], bidid:Integer, bidsettingid:Integer, wholesalerid:Integer, bidamount:BigDecimal, biddedon:LocalDateTime, statusid:Integer, maxbidamount:BigDecimal, createdon:LocalDateTime, createdby:String, biddedby:String, originbidid:Integer);
+
+creditcardtype(creditcardtypeid:Integer [PK], creditcardname:String, active:boolean);
+
+aspnetusers(userid:String [PK], applicationid:String, username:String, loweredusername:String, mobilealias:String, isanonymous:Boolean, lastactivity:Date);
+
+fraudnotice(fraudnoticeid:int [PK], wholesalerid:int, retailerid:int, frauddetail:String, commentbywholesaler:String, commentbyfg:String, active:boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, orderid:Integer, originalstatus:Integer);
+
+fashiongoform(fashiongoformid:Integer [PK], formname:String, memo:String, attachment:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+wholesalerrating(wholesalerratingid:Integer [PK], orderid:Integer, wholesalerid:Integer, retailerid:Integer, comment:String, score:Integer, active:Boolean, createdon:LocalDateTime);
+
+logcommunication(communicationid:Integer [PK], retailerid:Integer, companyname:String, contactedby:String, reasonid:Integer, notes:String, communicatedon:LocalDateTime, checkedby:String, checkedon:LocalDateTime, checkedby2:String, checkedon2:LocalDateTime, createdon:LocalDateTime, modifiedon:LocalDateTime, modifiedby:String, isforvendor:Boolean);
+
+category(serialversionuid:long, categoryid:Integer [PK], categoryname:String, categorydescription:String, parentcategoryid:Integer, parentparentcategoryid:Integer, lvl:Integer, titleimage:String, islandingpage:Boolean, isfeatured:Boolean, listorder:Integer, active:Boolean);
+
+featureditem(serialversionuid:long, featureditemid:Integer [PK], featureditemdate:LocalDateTime, bestitemuse:Integer, wholesalerid:Integer, wholesalername:String, productid:Integer, productname:String, createdon:LocalDateTime, createdby:String);
+
+adpagespot(serialversionuid:long, spotid:Integer [PK], pageid:int, categoryid:Integer, bodysizeid:Integer, spotname:String, spotdescription:String, //@max(value:BigDecimal, price2:BigDecimal, price3:BigDecimal, price4:BigDecimal, price5:BigDecimal, price6:BigDecimal, price7:BigDecimal, active:boolean, includevendorcategory:Boolean, spotinstancecount:int, bannerimage:String, /*	@temporal(temporaltype.timestamp)		createdon*/createdon:LocalDateTime, createdby:String, /*	@temporal(temporaltype.timestamp)		modifiedon*/modifiedon:LocalDateTime, modifiedby:String, /*	@temporal(temporaltype.timestamp)		bideffectiveon*/bideffectiveon:LocalDateTime, spotitemcount:Integer, maxpurchasable:Integer);
+
+collectioncategory2(serialversionuid:long, collectioncategoryid:Integer [PK], parentcollectioncategoryid:Integer, collectioncategoryname:String, lvl:Integer, listorder:Integer, active:Boolean);
+
+mapcollectioncategory(serialversionuid:long, mapid:Integer [PK], collectioncategoryid:Integer, categoryid:Integer);
+
+paymentstatus(paymentstatusid:Integer [PK], paymentstatus:String, paymentstatusdescription:String);
+
+vendorcatalogsendqueue(serialversionuid:long, catalogsendqueueid:Integer [PK], catalogid:Integer, subject:String, contents:String, createdon:LocalDateTime, modifiedon:LocalDateTime, scheduledsendon:LocalDateTime, senton:LocalDateTime, active:Boolean, mailitemid:Integer, isthistoallretailer:Boolean, istestemail:Boolean, includedvendors:String);
+
+trendreportcontents(contentid:Integer [PK], trendreportid:Integer, contents:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+vendorcompanytype(companytypeid:Integer [PK], companytypename:String, active:Boolean);
+
+codebodysize(bodysizeid:Integer [PK], bodysizename:String);
+
+adbidsetting(bidsettingid:Integer [PK], spotid:Integer, fromdate:LocalDateTime, bidstartedon:LocalDateTime, bidendedon:LocalDateTime, bidstartingprice:BigDecimal, bidpriceunit:BigDecimal, buyitnowprice:BigDecimal, izedon:LocalDateTime, izedby:String, spot:AdPageSpot #FK to(adpagespot));
+
+codestyle(styleid:Integer [PK], stylename:String, active:Boolean);
+
+tblretailernews(newsid:Integer [PK], retailerid:Integer, newstitle:String, newscontent:String, active:String, startingdate:LocalDateTime, fromdate:LocalDateTime, todate:LocalDateTime, lastuser:String, lastmodifieddatetime:LocalDateTime, sortno:Integer, externallink:Boolean, externalurl:String);
+
+message(messageid:Integer [PK], referenceid:Integer, title:String, body:String, sendertypeid:Integer, senderid:Integer, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, isdeletedbysender:Integer, active:Boolean, attachedfilename:String, attachedfilename2:String, attachedfilename3:String, messagecategoryid:Integer, messageguid:String, sortmodifiedon:LocalDateTime, topreferenceid:Integer, isfavorite:Integer, updatedon:LocalDateTime, hasnewreply:Boolean);
+
+contractplan(vendorcontractplanid:Integer [PK], contractplanname:String, contracttypecode:Integer, setupfee:BigDecimal, lastmonthservicefee:BigDecimal, monthlyfee:BigDecimal, monthlyitemcap:Integer, commissionrate:BigDecimal, commissionbasedatecode:Integer, memo:String, iseditable:Boolean, isactive:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+codepattern(patternid:Integer [PK], patternname:String, active:Boolean);
+
+mapshowschedulewholesaler(serialversionuid:long, mapid:Integer [PK], showscheduleid:int, wholesalerid:int, booth:String);
+
+mapshowschedulepromotionplanvendor(serialversionuid:long, mapid:Integer [PK], planid:int, wholesalerid:int, commissionrate:double, rackcount:int, //@max(value:BigDecimal, itemcountmax:int, isdeleted:Boolean, canceledby:String, canceldate:LocalDateTime, active:Boolean, discountamount:BigDecimal, totalamount:BigDecimal, isregularcommission:Boolean);
+
+mapshowscheduleproduct(serialversionuid:long, mapid:Integer [PK], showscheduleid:int, productid:int, createdon:Date, active:Boolean);
+
+showschedulepromotionplan(serialversionuid:long, planid:Integer [PK], planname:String, showscheduleid:int, isonline:boolean, isoffline:boolean, commissioneffectivefrom:LocalDateTime, commissioneffectiveto:LocalDateTime, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+listshow(serialversionuid:long, showid:Integer [PK], showname:String, location:String, url:String, active:boolean, logofilename:String, showcode:String);
+
+showschedule(serialversionuid:long, showscheduleid:Integer [PK], showid:int, bannerimage:String, titleimage:String, /*	*@basic(optional:LocalDateTime, /*	*@basic(optional:LocalDateTime, active:boolean, listorder:int, mobileimage:String);
+
+advendor(adid:Integer [PK], pageid:Integer, spotid:Integer, wholesalerid:Integer, categoryid:Integer, bodysizeid:Integer, vendorcategoryid:Integer, actualprice:BigDecimal, from:Date, to:Date, active:Boolean, createdon:Date, createdby:String, modifiedon:Date, modifiedby:String, isconfirmed:Boolean, isconfirmed:Date, howtoinput:Integer, howtosell:Integer, adpagespotlistid:Integer, invoiceout:Boolean, transferredtocs:Date);
+
+adpurchase(adpurchaseid:Integer [PK], purchasesessionid:String, adid:Integer, wholesalerid:Integer, purchaseamount:BigDecimal, purchasetypeid:Integer, ponumber:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+vendorcontent(vendorcontentid:Integer [PK], wholesalerid:Integer, targettypeid:Integer, title:String, statusid:Integer, requestedon:LocalDateTime, requestedby:String, approvedon:LocalDateTime, approvedby:String, rejectedon:LocalDateTime, rejectedby:String, rejectedreason:String, deletedon:LocalDateTime, deletedby:String, isdeleted:Boolean, isactive:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, vendor:VendorEntity #FK to(vendorentity));
+
+policyagreement(policyagreementid:Integer [PK], policyid:Integer, wholesalerid:Integer, companyname:String, retailerid:Integer, agreedon:LocalDateTime, agreedbyname:String, agreedbyid:String, ipaddress:String, agreed:Boolean);
+
+retailerrating(retailerratingid:Integer [PK], orderid:Integer, wholesalerid:Integer, retailerid:Integer, comment:String, score:Integer, active:Boolean, createdon:LocalDateTime);
+
+maplengthcategory(mapid:Integer [PK], lengthid:Integer, categoryid:Integer);
+
+securitypermissiongroup(permissionid:int [PK], groupid:Integer, resourceid:Integer, allow:Boolean, allowedit:Boolean, allowdelete:Boolean, allowadd:Boolean);
+
+securitylogincontrol(controlid:Integer [PK], userid:Integer, weekday:Integer, timefrom:Date, timeto:Date, allow:Boolean, active:Boolean);
+
+securityuser(userid:Integer [PK], username:String, fullname:String, userguid:String, role:String, active:Boolean, iptimeexempt:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, email:String, dataaccesslevel:Integer);
+
+securitymapusergroup(mapid:Integer [PK], userid:Integer, groupid:Integer);
+
+messagemap(mapid:Integer [PK], messageid:Integer, recipientid:Integer, readon:LocalDateTime, isdeletedbyrecipient:Boolean, recipienttypeid:Integer);
+
+aspnetmembership(/***/serialversionuid:long, userid:String [PK], applicationid:String, password:String, passwordformat:Integer, passwordsalt:String, mobilepin:String, email:String, loweredemail:String, passwordquestion:String, passwordanswer:String, isapproved:Boolean, islockedout:Boolean, createdate:LocalDateTime, lastlogindate:LocalDateTime, lastpasswordchangeddate:LocalDateTime, lastlockoutdate:LocalDateTime, failedpasswordattemptcount:Integer, failedpasswordattemptwindowstart:LocalDateTime, failedpasswordanswerattemptcount:Integer, failedpasswordanswerattemptwindowstart:LocalDateTime, comment:Clob);
+
+codelength(lengthid:Integer [PK], lengthname:String, active:Boolean);
+
+securitypermission(permissionid:Integer [PK], userid:Integer, resourceid:Integer, allow:Boolean, allowedit:Boolean, allowdelete:Boolean, allowadd:Boolean, applicationid:Integer);
+
+securityaccesscode(codeid:Integer [PK], accesscode:String, expiredon:Date);
+
+policy(policyid:Integer [PK], policytitle:String, policycontents:String, forvendor:Boolean, forretailer:Boolean, createdon:LocalDateTime, effectiveon:LocalDateTime, modifiedon:LocalDateTime, createdby:String, modifiedby:String, active:Boolean);
+
+securitygroup(groupid:Integer [PK], groupname:String, description:String, active:Boolean);
+
+vendornewsdetail(newsid:Integer [PK], wholesalerid:Integer, newstitle:String, newscontent:String, newstype:String, startingdate:LocalDateTime, fromdate:LocalDateTime, todate:LocalDateTime, lastuser:String, lastmodifieddatetime:LocalDateTime, sortno:Integer, active:Boolean, showbanner:Boolean);
+
+collectioncategoryitem(collectioncategoryitemid:Integer [PK], spotid:Integer, fromdate:LocalDateTime, collectioncategoryid:Integer, productid:Integer, createdon:LocalDateTime, createdby:String, collectioncategorytype:Integer, wholesalerid:Integer);
+
+paymentcreditcard(creditcardid:Integer [PK], retailerid:Integer, referenceid:String, cardtypeid:Integer, last4digit:String, cvv:String, expirationmonth:Integer, expirationyear:Integer, nameoncard:String, fingerprint:String, email:String, street:String, city:String, state:String, zipcode:String, country:String, countryid:Integer, defaultcard:Boolean, cardstatusid:Integer, deleted:Boolean, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String, referenceid2:String);
+
+communicationreason(reasonid:Integer [PK], reason:String, parentid:Integer, active:Boolean);
+
+orderpaymentstatus(orderpaymentstatusid:Integer [PK], referenceid:Integer, isorder:Integer, paymentstatusid:Integer, prepaymentstatusid:Integer, retailerid:Integer, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+mappatterncategory(mapid:Integer [PK], patternid:Integer, categoryid:Integer);
+
+adbid(bidid:Integer [PK], bidsettingid:Integer, wholesalerid:Integer, bidamount:BigDecimal, biddedon:LocalDateTime, statusid:Integer, izedon:LocalDateTime, izedby:String, maxbidamount:BigDecimal, biddedby:String, originbidamount:BigDecimal, izedbidamount:BigDecimal);
+
+entityactionlog(logid:Integer [PK], entitytypeid:Integer, entityid:Integer, actionid:Integer, actedon:LocalDateTime, actedby:String, remark:String);
+
+securityresource(resourceid:Integer [PK], applicationid:Integer, name:String, parentid:Integer, active:Boolean, resourcetype:String, url:String);
+
+codecreditcardtype(creditcardtypeid:Integer [PK], creditcardtype:String);
+
+adpage(serialversionuid:long, pageid:Integer [PK], pagename:String, pageurl:String, GeneratedName:AdPageSpot #FK to(adpagespot));
+
+vendorcatalog(serialversionuid:long, catalogid:Integer [PK], vendorid:Integer, catalogname:String, createdon:LocalDateTime, modifiedon:LocalDateTime);
+
+mapwauservendor(mapid:Integer [PK], userid:Integer, vendorid:Integer);
+
+photocredit(date_pattern_yyyymmddhhmmss:String, date_pattern_yyyymmdd:String, from_time:String, to_time:String, photocreditid:Integer [PK], photocreditreason:String, wholesalerid:Integer, wholesalercompanyname:String, photocreditamount:BigDecimal, photocreditbalance:BigDecimal, isused:Boolean, iscreditback:Boolean, _fromdate:LocalDateTime, _todate:LocalDateTime, active:Boolean, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String);
+
+photodropper(dropperid:int [PK], wholesalerid:int, droppername:String, dropperemail:String, createdon:LocalDateTime, createdby:String, modifiedon:LocalDateTime, modifiedby:String);
+
+photocalendar(date_pattern_yyyymmdd:String, calendarid:Integer [PK], _thedate:LocalDateTime, available:Boolean, isholiday:Boolean, ismodelshot:Boolean, datename:String, maxunitperday:BigDecimal, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String, minunit:BigDecimal);
+
+mapphotoimage(imagemappingid:Integer [PK], mappingtype:Integer, imageid:Integer, referenceid:Integer, listorder:Integer, colorid:Integer, GeneratedName:PhotoImage #FK to(photoimage));
+
+photomodel(date_pattern_yyyymmdd:String, modelid:Integer [PK], modelname:String, agencyname:String, type:String, size:String, heightft:Integer, heightin:Integer, weight:Integer, shoesize:BigDecimal, cup:String, bust:String, waist:String, hip:String, haircolor:String, eyescolor:String, hourlypayrate:BigDecimal, isdeleted:Boolean, email:String, phone:String, note:String, warning:String, popularity:BigDecimal, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String);
+
+photoorderentity(orderid:Integer [PK], cartid:Integer, wholesalerid:Integer, wholesalercompanyname:String, ponumber:String, categoryid:Integer, packageid:Integer, colorid:Integer, isbystyle:Boolean, bookingid:Integer, orderstatusid:Integer, totalunit:BigDecimal, totalqty:Integer, subtotalamount:BigDecimal, totalamount:BigDecimal, discountid:Integer, discountamount:BigDecimal, discountcode:String, additionaldiscountamount:BigDecimal, photocreditusedamount:BigDecimal, _checkoutdate:LocalDateTime, _dropoffdate:LocalDateTime, _prepdate:LocalDateTime, _photoshootdate:LocalDateTime, _retouchdate:LocalDateTime, _uploaddate:LocalDateTime, specialrequest:String, inhousenote:String, canceltypeid:Integer, cancellationfee:BigDecimal, cancellationfeerate:BigDecimal, cancelledbyusername:String, iscancelledby:Integer, cancelnote:String, issocialmediapromotionagree:Boolean, _cancelledon:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String, _pickupdate:LocalDateTime, categoryid:PhotoCategory #FK to(photocategory), packageid:PhotoPackage #FK to(photopackage), GeneratedName:PhotoBooking #FK to(photobooking), colorid:CodePhotoBackgroundColor #FK to(codephotobackgroundcolor), GeneratedName:PhotoCancellationFee #FK to(photocancellationfee));
+
+mapphotocalendarmodel(modelscheduleid:Integer [PK], calendarid:Integer, modelid:Integer, availableunit:BigDecimal, isdelete:Boolean, calendarid:PhotoCalendarEntity #FK to(photocalendarentity), modelid:PhotoModel #FK to(photomodel));
+
+photodiscount(date_pattern_yyyymmddhhmmss:String, date_pattern_yyyymmdd:String, from_time:String, to_time:String, discountid:Integer [PK], discountname:String, discountdescription:String, _fromdate:LocalDateTime, _todate:LocalDateTime, discountcode:String, isrequiredpriceqty:Boolean, requiredprice:BigDecimal, requiredqty:BigDecimal, discountrate:BigDecimal, discountamount:BigDecimal, active:Boolean, isfirsttimeorder:Boolean, couponusagelimit:Integer, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String);
+
+photoprice(date_pattern_yyyymmddhhmmss:String, date_pattern_yyyymmdd:String, effective_from_time:String, effective_to_time:String, priceid:Integer [PK], pricetypeid:Integer, photoshoottype:Integer, unitprice:BigDecimal, _fromeffectivedate:LocalDateTime, _toeffectivedate:LocalDateTime, minqty:Integer, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String, pricetypename:String, packageid:Integer, packageid:PhotoPackage #FK to(photopackage));
+
+photocalendarentity(calendarid:Integer [PK], thedate:LocalDateTime, available:Boolean, isholiday:Boolean, ismodelshot:Boolean, datename:String, maxunitperday:BigDecimal, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String);
+
+photoorder(date_pattern_yyyymmddhhmmss:String, date_pattern_yyyymmdd:String, default_time:String, orderid:Integer [PK], cartid:Integer, wholesalerid:Integer, wholesalercompanyname:String, ponumber:String, categoryid:Integer, packageid:Integer, colorid:Integer, isbystyle:Boolean, bookingid:Integer, orderstatusid:Integer, totalunit:BigDecimal, totalqty:Integer, subtotalamount:BigDecimal, totalamount:BigDecimal, discountid:Integer, discountamount:BigDecimal, discountcode:String, additionalchargeamount:BigDecimal, additionaldiscountamount:BigDecimal, photocreditusedamount:BigDecimal, _checkoutdate:LocalDateTime, _dropoffdate:LocalDateTime, _prepdate:LocalDateTime, _photoshootdate:LocalDateTime, _retouchdate:LocalDateTime, _uploaddate:LocalDateTime, specialrequest:String, inhousenote:String, canceltypeid:Integer, cancellationfee:BigDecimal, cancellationfeerate:BigDecimal, cancelledbyusername:String, iscancelledby:Integer, cancelnote:String, issocialmediapromotionagree:Boolean, _cancelledon:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, pickupdate:LocalDateTime, modifiedby:String, categoryid:PhotoCategory #FK to(photocategory), discountid:PhotoDiscount #FK to(photodiscount), GeneratedName:PhotoBooking #FK to(photobooking), packageid:PhotoPackage #FK to(photopackage), colorid:CodePhotoBackgroundColor #FK to(codephotobackgroundcolor));
+
+photocart(id:Integer [PK], wholesalerid:Integer, wholesalercompanyname:String, category:PhotoCategory #FK to(photocategory), packageinfo:PhotoPackage #FK to(photopackage), colorid:Integer, isbystyle:Boolean, discount:PhotoDiscount #FK to(photodiscount), discountamount:BigDecimal, photocreditusedamount:BigDecimal, model:PhotoModel #FK to(photomodel), photoshootdate:LocalDateTime, specialrequest:String, isdeleted:Boolean, cartstatusstep:Integer, createdon:LocalDateTime, discountcode:String);
+
+photopackage(id:Integer [PK], name:String, description:String, isoption:Boolean, createdon:Date, createdby:String, modifiedon:Date, modifiedby:String, categoryid:Integer, categoryid:PhotoCategory #FK to(photocategory));
+
+photobannerclick(id:Integer [PK], wholesalerid:Integer, wholesalercompanyname:String, bannertype:Integer, clickedon:LocalDateTime);
+
+photoimage(imageid:Integer [PK], imagedescription:String, imageurl:String, movieclipurl:String, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String);
+
+photocancellationfee(date_pattern_yyyymmddhhmmss:String, date_pattern_yyyymmdd:String, from_time:String, to_time:String, canceltypeid:Integer [PK], canceltypeno:Integer, canceltypename:String, cancellationfeerate:BigDecimal, _fromeffectivedate:LocalDateTime, _toeffectivedate:LocalDateTime, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String);
+
+photobooking(bookingid:Integer [PK], modelscheduleid:Integer, bookedunit:BigDecimal, statusid:Integer, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String, modelscheduleid:MapPhotoCalendarModel #FK to(mapphotocalendarmodel), photoorder:PhotoOrderEntity #FK to(photoorderentity));
+
+photocategory(categoryid:Integer [PK], categoryname:String, typeofphotoshoot:String, categorydescription:String, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String);
+
+photounit(date_pattern_yyyymmddhhmmss:String, date_pattern_yyyymmdd:String, effective_from_time:String, effective_to_time:String, unitid:Integer [PK], pricetypeid:Integer, pricetypename:String, photoshoottype:Integer, unit:BigDecimal, _fromeffectivedate:LocalDateTime, _toeffectivedate:LocalDateTime, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String, packageid:Integer, packageid:PhotoPackage #FK to(photopackage));
+
+photocreditusage(creditusageid:Integer [PK], photocreditid:String, wholesalerid:Integer, iscreditback:Boolean, photocreditusedamount:BigDecimal, orderid:Integer, ponumber:String, _usedon:LocalDateTime);
+
+photocartdetail(id:Integer [PK], cartid:Integer, stylename:String, styleunitprice:BigDecimal, styleqty:Integer, styleamount:BigDecimal, colorsetunitprice:BigDecimal, colorsetqty:Integer, colorsetamount:BigDecimal, colorunitprice:BigDecimal, colorqty:Integer, coloramount:BigDecimal, movieunitprice:BigDecimal, movieqty:Integer, movieamount:BigDecimal, basecolorsetunitprice:BigDecimal, basecolorsetqty:Integer, basecolorsetamount:BigDecimal, modelswatchunitprice:BigDecimal, modelswatchqty:Integer, modelswatchamount:BigDecimal, movieclipunitprice:BigDecimal, movieclipqty:Integer, movieclipamount:BigDecimal, colorswatchunitprice:BigDecimal, colorswatchqty:Integer, colorswatchamount:BigDecimal);
+
+logphotoaction(actionid:Integer [PK], actiontype:Integer, orderid:Integer, itemqty:Integer, droppedby:String, createdondate:LocalDateTime, createdby:String, orderid:PhotoOrder #FK to(photoorder));
+
+photoorderdetail(orderdetailid:Integer [PK], orderid:Integer, cartdetailid:Integer, stylename:String, //oldstyleunitprice:BigDecimal, styleqty:Integer, styleamount:BigDecimal, colorsetunitprice:BigDecimal, colorsetqty:Integer, colorsetamount:BigDecimal, colorunitprice:BigDecimal, colorqty:Integer, coloramount:BigDecimal, movieunitprice:BigDecimal, movieqty:Integer, movieamount:BigDecimal, //newbasecolorsetunitprice:BigDecimal, basecolorsetqty:Integer, basecolorsetamount:BigDecimal, colorswatchunitprice:BigDecimal, colorswatchqty:Integer, colorswatchamount:BigDecimal, modelswatchunitprice:BigDecimal, modelswatchqty:Integer, modelswatchamount:BigDecimal, movieclipunitprice:BigDecimal, movieclipqty:Integer, movieclipamount:BigDecimal, createdondate:LocalDateTime, createdby:String, modifiedondate:LocalDateTime, modifiedby:String);
+
+mapphotocategoryprice(categorypricemappingid:Integer [PK], categoryid:Integer, priceid:Integer);
+
+codephotobackgroundcolor(colorid:Integer [PK], photocolorname:String, createdon:Date, createdby:String, modifiedon:Date, modifiedby:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

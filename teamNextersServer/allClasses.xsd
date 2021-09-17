@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="test-resource" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qproductentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<productentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="productentity" type="qproductentity" nillable="true" minOccurs="0" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="proddate" type="xs:anyType" />
+          <xs:element name="proddesc" type="xs:anyType" />
+          <xs:element name="prodlink" type="xs:anyType" />
+          <xs:element name="prodtitle" type="xs:anyType" />
+          <xs:element name="prodtype" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="quseractiveentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<useractiveentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="useractiveentity" type="quseractiveentity" nillable="true" minOccurs="0" />
+          <xs:element name="completeyn" type="xs:anyType" />
+          <xs:element name="gener" type="xs:anyType" />
+          <xs:element name="userno" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qproductattendentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<productattendentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="inits" type="xs:anyType" />
+          <xs:element name="productattendentity" type="qproductattendentity" nillable="true" minOccurs="0" />
+          <xs:element name="prodid" type="xs:anyType" />
+          <xs:element name="productattend" type="xs:anyType" />
+          <xs:element name="role" type="xs:anyType" />
+          <xs:element name="userno" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qmemoryimgentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<memoryimgentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="inits" type="xs:anyType" />
+          <xs:element name="memoryimgentity" type="qmemoryimgentity" nillable="true" minOccurs="0" />
+          <xs:element name="img" type="xs:anyType" />
+          <xs:element name="memory" type="xs:anyType" />
+          <xs:element name="seq" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="quserinfoentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<userinfoentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="userinfoentity" type="quserinfoentity" nillable="true" minOccurs="0" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="infoname" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qarchiveentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<archiveentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="archiveentity" type="qarchiveentity" nillable="true" minOccurs="0" />
+          <xs:element name="desc" type="xs:anyType" />
+          <xs:element name="no" type="xs:anyType" />
+          <xs:element name="prizeyn" type="xs:anyType" />
+          <xs:element name="title" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="quserentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<userentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="userentity" type="quserentity" nillable="true" minOccurs="0" />
+          <xs:element name="img" type="xs:anyType" />
+          <xs:element name="password" type="xs:anyType" />
+          <xs:element name="useractives" type="xs:anyType" />
+          <xs:element name="userauth" type="xs:anyType" />
+          <xs:element name="userbirth" type="xs:anyType" />
+          <xs:element name="userid" type="xs:anyType" />
+          <xs:element name="userinfovalues" type="xs:anyType" />
+          <xs:element name="username" type="xs:anyType" />
+          <xs:element name="userno" type="xs:anyType" />
+          <xs:element name="userproducts" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qmemoryentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<memoryentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="memoryentity" type="qmemoryentity" nillable="true" minOccurs="0" />
+          <xs:element name="desc" type="xs:anyType" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="memoryimgs" type="xs:anyType" />
+          <xs:element name="title" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="quserinfovalueentity" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<userinfovalueentity>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="inits" type="xs:anyType" />
+          <xs:element name="userinfovalueentity" type="quserinfovalueentity" nillable="true" minOccurs="0" />
+          <xs:element name="infoopenyn" type="xs:anyType" />
+          <xs:element name="infovalue" type="xs:anyType" />
+          <xs:element name="userinfo" type="xs:anyType" />
+          <xs:element name="userno" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="recruit_end" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recruit_finalend" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resource" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useractivekey" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="gener" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useractivedto" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:long" />
+        <xs:element name="gener" type="xs:long" />
+        <xs:element name="completeyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useractiveservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="useractiverepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useractivecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="useractiveservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useractiveentity" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="gener" type="xs:long" />
+        <xs:element name="completeyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useractiverepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<useractiveentity,useractivekey>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userinfovalueentity" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="userinfo" type="userinfoentity" nillable="true" minOccurs="0" />
+        <xs:element name="infovalue" type="xs:string" />
+        <xs:element name="infoopenyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfovaluedto" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:long" />
+        <xs:element name="infoid" type="xs:long" />
+        <xs:element name="infovalue" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfovaluekey" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="userinfo" type="userinfoentity" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfovaluecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userinfovalueservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfovalueservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userinfovaluerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfovaluerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<userinfovalueentity,userinfovaluekey>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="prodtype" type="xs:string" />
+        <xs:element name="prodtitle" type="xs:string" />
+        <xs:element name="proddesc" type="xs:string" />
+        <xs:element name="prodlink" type="xs:string" />
+        <xs:element name="prod" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="proudctdto" >
+      <xs:sequence>
+        <xs:element name="prodid" type="xs:long" />
+        <xs:element name="prodtype" type="xs:string" />
+        <xs:element name="prodtitle" type="xs:string" />
+        <xs:element name="proddesc" type="xs:string" />
+        <xs:element name="prodlink" type="xs:string" />
+        <xs:element name="proddate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<productentity,integer>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userrepositoryimpl" >
+      <xs:complexContent>
+       <xs:extension base="querydslrepositorysupport">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<userentity,string>,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userrepositorycustom" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdto" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="userbirth" type="xs:long" />
+        <xs:element name="userauth" type="xs:string" />
+        <xs:element name="img" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userentity" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="userbirth" type="xs:long" />
+        <xs:element name="userauth" type="xs:string" />
+        <xs:element name="img" type="xs:string" />
+        <xs:element name="userinfovalues" type="userinfovalueentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="useractives" type="useractiveentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="userproducts" type="productattendentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="corsfilter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalexceptionhandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="swaggerconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfodto" >
+      <xs:sequence>
+        <xs:element name="infoid" type="xs:long" />
+        <xs:element name="infoname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfocontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userinfoservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfoservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userinforepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfoentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="infoname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinforepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<userinfoentity,integer>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productattendkey" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="prodid" type="xs:long" />
+        <xs:element name="userno" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productattenddto" >
+      <xs:sequence>
+        <xs:element name="productid" type="xs:long" />
+        <xs:element name="userno" type="xs:long" />
+        <xs:element name="role" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productattendcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productattendservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productattendservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productattendrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productattendentity" >
+      <xs:sequence>
+        <xs:element name="prodid" type="xs:long" />
+        <xs:element name="productattend" type="productentity" nillable="true" minOccurs="0" />
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="role" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productattendrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<productattendentity,productattendkey>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="archiverepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<archiveentity,integer>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="archiveentity" >
+      <xs:sequence>
+        <xs:element name="no" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="desc" type="xs:string" />
+        <xs:element name="prizeyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="archiveservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="archiverepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="archivecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="archiveservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="archivedto" >
+      <xs:sequence>
+        <xs:element name="no" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="desc" type="xs:string" />
+        <xs:element name="prizeyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recruitcontroller" >
+      <xs:sequence>
+        <xs:element name="s" type="xs:anyType" />
+        <xs:element name="recruit" type="xs:string" />
+        <xs:element name="recruit_end" type="xs:string" />
+        <xs:element name="recurit_gener" type="xs:string" />
+        <xs:element name="recruit_end" type="xs:string" />
+        <xs:element name="target_date" type="xs:long" />
+        <xs:element name="target__date" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="teamnextersapplication" >
+      <xs:complexContent>
+       <xs:extension base="springbootservletinitializer{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="initdataloader" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memorydto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="desc" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="desc" type="xs:string" />
+        <xs:element name="memoryimgs" type="memoryimgentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memorycontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="memoryservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="memoryrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<memoryentity,integer>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="memoryimgkey" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="memory" type="memoryentity" nillable="true" minOccurs="0" />
+        <xs:element name="seq" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryimgrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<memoryimgentity,memoryimgkey>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="memoryimgdto" >
+      <xs:sequence>
+        <xs:element name="memid" type="xs:long" />
+        <xs:element name="seq" type="xs:long" />
+        <xs:element name="img" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryimgentity" >
+      <xs:sequence>
+        <xs:element name="memory" type="memoryentity" nillable="true" minOccurs="0" />
+        <xs:element name="seq" type="xs:long" />
+        <xs:element name="img" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryimgcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="memoryimgservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryimgservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="memoryimgrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

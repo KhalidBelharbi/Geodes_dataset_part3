@@ -1,0 +1,10 @@
+ClassDiagram.Class>> Product =>=>=> RelationalSchema.Table>> product;
+ClassDiagram.Class>> Store =>=>=> RelationalSchema.Table>> store;
+ClassDiagram.Attribut>> Product.id:int =>=>=> RelationalSchema.Column>> product.id PRIMARY KEY;
+ClassDiagram.Attribut>> Product.name:String =>=>=> RelationalSchema.Column>> product.name;
+ClassDiagram.Attribut>> Product.price:double =>=>=> RelationalSchema.Column>> product.price;
+ClassDiagram.Attribut>> Store.id:int =>=>=> RelationalSchema.Column>> store.id PRIMARY KEY;
+ClassDiagram.Attribut>> Store.name:String =>=>=> RelationalSchema.Column>> store.name;
+ClassDiagram.Attribut>> Store.GeneratedName:Address =>=>=> RelationalSchema.Column>> store.GeneratedName;
+Many-To-One relationship from ClassDiagram.Class>>Product  to ClassDiagram.Class>>store represented by ClassDiagram.Atrribute>>GeneratedName;
+One-To-Many relationship from ClassDiagram.Class>>Store  to ClassDiagram.Class>>List<Product>;

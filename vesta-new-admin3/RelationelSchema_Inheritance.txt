@@ -1,0 +1,17 @@
+
+electricwarnentity(//预警idwarnid:String, //是否启用warnstutus:String, //预警阈值warnvalue:String, //修改时间modifyon:Date, //修改人idmodifyby:String, //修改人姓名modifyname:String, //项目idprojectid:String);
+
+navigationmenuentity(//导航菜单idnavigationid:String, //导航菜单名称navigationname:String, //导航菜单访问路径navigationurl:String, //导航菜单图片navigationimg:String);
+
+appversionentity(//手机类型appversiontypetype_ios:String, type_adr:String, //升级情况appversionstatusstatus_unrequired:String, status_recommend:String, status_compel:String, //是否有效state_on:String, state_off:String, //版本id；appversionid:String, //ios-1,安卓-2appversiontype:String, //1.0.1；版本号appversion:String, //1：不需要升级，2：推荐升级，2：强制升级appversionstatus:String, //发布人createby:String, //发布时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //删除人deleteby:String, //删除时间deleteon:Date, //是否有效0-有效，1-无效state:String, //下载地址downurl:String, //版本名称appversionname:String, //更新记录appremark:String, //用户类型usertype:String, begindate:String, enddate:String, //文件大小filesize:String);
+
+similarappcontententity(id:String [PK], //微信appidclientid:Integer, //客户端名称clientname:String, //轮播图lbt/资讯栏zxlpositiontype:String, //主标题maintitle:String, //副标题subtitle:String, //信息标识图infosignimgurl:String, //链接地址linksrc:String, //排序序号sortnum:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+similarapppictureentity(id:String [PK], //微信appidclientid:Integer, //客户端名称clientname:String, //是否跳转详情(0,否1,是)islink:Integer, //链接地址linksrc:String, //信息标识图infosignimgurl:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+ossfilesentity(//idossid:String, //文件名称filename:String, //上传路径uploadpath:String, //微信图片idmediaid:String, //是否上传isupload:String, //创建日期create:Date, //timecreatetime//创建时间//创建人createby:String, //修改日期modify:Date, //timemodifytime//修改时间//修改人modifyby:String);
+
+systemconfigentity(//代码configcode:String, //值configvalue:String, //描述description:String, //备用remark:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

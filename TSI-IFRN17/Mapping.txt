@@ -1,0 +1,17 @@
+ClassDiagram.Class>> Post =>=>=> RelationalSchema.Table>> post;
+ClassDiagram.Class>> Category =>=>=> RelationalSchema.Table>> category;
+ClassDiagram.Class>> Comment =>=>=> RelationalSchema.Table>> comment;
+ClassDiagram.Attribut>> Post.serialversionuid:long =>=>=> RelationalSchema.Column>> post.serialversionuid;
+ClassDiagram.Attribut>> Post.id:Long =>=>=> RelationalSchema.Column>> post.id PRIMARY KEY;
+ClassDiagram.Attribut>> Post.title:String =>=>=> RelationalSchema.Column>> post.title;
+ClassDiagram.Attribut>> Post.text:String =>=>=> RelationalSchema.Column>> post.text;
+ClassDiagram.Attribut>> Category.serialversionuid:long =>=>=> RelationalSchema.Column>> category.serialversionuid;
+ClassDiagram.Attribut>> Category.id:Long =>=>=> RelationalSchema.Column>> category.id PRIMARY KEY;
+ClassDiagram.Attribut>> Category.name:String =>=>=> RelationalSchema.Column>> category.name;
+ClassDiagram.Attribut>> Comment.serialversionuid:long =>=>=> RelationalSchema.Column>> comment.serialversionuid;
+ClassDiagram.Attribut>> Comment.id:Long =>=>=> RelationalSchema.Column>> comment.id PRIMARY KEY;
+ClassDiagram.Attribut>> Comment.owner:String =>=>=> RelationalSchema.Column>> comment.owner;
+ClassDiagram.Attribut>> Comment.text:String =>=>=> RelationalSchema.Column>> comment.text;
+One-To-Many relationship from ClassDiagram.Class>>Post  to ClassDiagram.Class>>List<Comment>;
+Many-To-Many relationship between ClassDiagram.Class>>Post  and ClassDiagram.Class>>Category: posts_categories(cod_posts:Post [PK] #FK to Post,cod_categories:Category [PK] #FK to Category);
+Many-To-One relationship from ClassDiagram.Class>>Comment  to ClassDiagram.Class>>Post represented by ClassDiagram.Atrribute>>GeneratedName;

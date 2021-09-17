@@ -1,0 +1,249 @@
+
+orderrefundexception(serialversionuid:long, /***编号**/id:Long, /***订单id或者退款单id**/resourceid:Long, /***支付方式：现金、商品币、积分、话费或者其他**/payment:String, /***修改原因0：清算系统反馈长款**/reason:Long, /***修改人**/createuserid:Long, /***用户名**/username:String, /***来源类型**/resoucetype:Long, /***修改时间**/createtime:String, remark:String, reasonmap:Map<Long,String>);
+
+order(/***用户手机号码**/terminalid:String, /***退款ids（多个用逗号,隔开）**/refundids:String, /***第一个退款单id**/orderrefundfirstid:Long, /***第二个退款单id**/orderrefundsecondid:Long, /***第一个退款单状态**/refundfirststatus:Long, /***退款单计数**/refundcount:int, /***成功退款单数量，最多2个*/successrefundcount:int, payondeliverymap:Map<String,String>, /***商品信息**/spliteinfo:String, /***订单物流状态*/expressstatus:Long, /***订单状态（组合状态）*/orderstatus:String, /***退款单集合*/orderrefunds:List<OrderRefund>, /***是否有退款权限，如果有页面上会有“增加退款单”按钮*/canrefund:boolean, /***订单商品*/itemsales:List<ItemSale>, deletestatusmap:Map<String,String>, /***查询用创建开始时间**/begintime:String, /***查询用创建结束时间**/endtime:String, itemmodemap:Map<String,String>);
+
+codeinfo(serialversionuid:long, /***码编号，唯一标识*/orderid:String, /***订单商品id*/itemorderid:Long, /***订单id*/actorderid:Long, code:String, code2d:String, /***码状态，0：正常1：已撤销2：使用中3：已使用4：已过期*/codestatus:Long, transdate:String, validdate:String, expiredate:String, validtimes:Long, remaintimes:Long, terminalid:String, itemid:String, itemname:String, itemquantity:Long, totalprice:Long, /***founder：方正store：商户cplatform：宽连*/platformid:String, storeid:String, smscontent:String, statusmap:Map<Long,String>);
+
+orderrefundgoods(/***serialversionuid*/serialversionuid:long, /***序列**/id:Long, /***退货单编号**/refundid:Long, /***订单商品id**/ordergoodsid:Long, /***商品id**/goodsid:Long, /***退货数量**/backnumber:Long, /***现金**/cash:Double, /***商城币**/coin:Double, //********busmethod*************:ItemSale, //查看的时候绑定购买数量number:int, //查看的时候绑定已经购买数量hasbuynunber:Long);
+
+orderrefund(/***serialversionuid*/serialversionuid:long, //状态/***状态－等待商户确认*/status_1:Long, /***状态－等待审核*/status_2:Long, /***状态－商户拒绝确认*/status_3:Long, /***状态－等待系统退款*/status_4:Long, /***状态－审核失败*/status_5:Long, /***状态－退款成功*/status_6:Long, /***状态－退款失败*/status_7:Long, /***序列**/id:Long, /***订单id**/orderid:Long, /***商户id**/storeid:Long, /***状态**/status:Long, /***实际退款金额**/refundfee:Double, /***实际退款现金*/cashfee:Double, /***实际退款商城币*/coinfee:Double, /***申请时间**/createtime:String, /***操作人**/userid:Long, /***申请原因**/reason:String, /***商户操作人**/shopuserid:Long, /***商户操作时间**/updatetime:String, /***商户说明**/shopremark:String, /***审核人**/audituserid:Long, /***审核时间**/audittime:String, /***审核说明**/auditremark:String, /***处理时间**/dealtime:String, /***总共退码数量*/totalcode:Long, /***成功退码数量*/successcode:Long, /***失败退码数量*/failcode:Long, /***用户手机号码**/terminalid:String, orderrecordcashid:Long, orderrecordcoinid:Long, orderrecordscoreid:Long, scorefee:Double, phonefee:Double, orderrecordphoneid:Long, /***退款单类型，1平台自己，2拉手*/refundtype:Long, refundtypemap:Map<String,String>, //**********busmethod***********createtimebegin:String);
+
+itemlogisticsfee(id:Long, /***发布商品id**/saleid:Long, /***物流渠道名称**/qdname:String, /***运费**/feenum:Long);
+
+itemsalepayment(id:Long [PK], itemid:Long, paytype:Long, cashpayratio:Long, otherpayratio:Long, billpay:Long, deliverypay:Long);
+
+itemsaleuserlevelalink(id:Long, /***发布商品id**/saleid:Long, /***允许购买会员级别**/userlevel:String);
+
+itemproperty(id:Long, itemid:Long, propertyid:Long, content:String, fileid:Long, propertyname:String, imgpath:String);
+
+thirdcodename(serialversionuid:long, id:Long [PK], /***名称*/name:String, /***备注（备用）*/remark:String, /***创建时间*/createtime:String, /***操作用户id*/userid:Long, /***码类型，2非卡密，3卡密*/codetype:Long, /***码总数量*/num:Long, /***查询用创建开始时间**/begintime:String, /***查询用创建结束时间**/endtime:String);
+
+itemverifyshoplink(id:Long, /***发布商品id**/saleid:Long, /***商户id**/storeid:Long, /***业务门店id如果是全商户门店都可以验证，则只存商户id，该业务门店id可以允许为空*/shopid:Long);
+
+hisunproductionlink(/***serialversionuid*/serialversionuid:long, /***序列**/id:Long, /***商品结算资料表id**/settleid:Long, /***高阳商品id**/productionid:String, /***销售商品id**/itemid:Long, /***商品分类**/productiontype:String, /***结算价单位分**/settleprice:Double, /***创建时间**/createtime:String, /***高阳商品id(现金)**/productionidcash:String, /***高阳商品id（商城币）**/productionidcoin:String, /***高阳商品id（积分）**/productionidscore:String, //***********busmethod*********itemname:String);
+
+hisunproductionsettle(/***serialversionuid*/serialversionuid:long, //资金种类4-话费/***支持*/capitaltype4_1:Long, /***no*/capitaltype4_0:Long, //资金种类3-积分/***支持*/capitaltype3_1:Long, /***no*/capitaltype3_0:Long, //资金种类2-商城币/***支持*/capitaltype2_1:Long, /***no*/capitaltype2_0:Long, //资金种类-现金/***支持*/capitaltype1_1:Long, /***no*/capitaltype1_0:Long, //验证标识/***验证*/verifyflag_y:String, /***不验证*/verifyflag_n:String, //验证结算/***支付后结算*/verifysettleflag_s1:String, /***验证后结算*/verifysettleflag_s2:String, //结算分期类型/***一期支付二期支付*/settleperiodtype_1p2p:String, /***一期支付二期验证*/settleperiodtype_1p2v:String, /***一期验证二期验证*/settleperiodtype_1v2v:String, //状态/***状态－未审核*/status_0:Long, /***状态－审核通过*/status_1:Long, //高阳状态/***状态－未同步*/sync_gy_status_0:Long, /***状态－同步成功*/sync_gy_status_1:Long, /***状态－同步失败*/sync_gy_status_2:Long, /***状态－审核通过*/sync_gy_status_3:Long, /***状态－审核驳回*/sync_gy_status_4:Long, //协议类型/***商品协议*/type_0:Long, /***商品资料*/type_1:Long, /***序列**/id:Long, /***结算商户编号商户在统一清算平台中的编号**/merchid:String, /***商户编号在业务平台中的商户编号**/storeid:String, /***业务编号**/serviceid:String, /***合同编号(商盟必输)**/contractid:String, /***合同生效日期(yyyymmdd，商盟必输)**/contracteffdate:String, /***合同失效日期**/contractexpdate:String, /***商品编号**/productionid:String, /***商品名称**/productionname:String, /***商品类别**/productiontype:String, /***资金种类3-积分1-支持0-no**/capitaltype4:Long, /***资金种类3-积分1-支持0-no**/capitaltype3:Long, /***资金种类2-商城币1-支持0-no**/capitaltype2:Long, /***资金种类-现金1-支持0-no**/capitaltype1:Long, /***验证标识y-验证；n-不验证（默认）**/verifyflag:String, /***验证结算对于需要验证的商品，一种是支付验证都成功后才能做清结算，另一种是支付成功，但是没有验证的就要做清结算，通过此字段来区分，*这个字段当veriflag:String, /***产品上线时间yyyymmddhhmiss**/productionefftime:String, /***产品下线时间yyyymmddhhmiss**/productionexptime:String, /***验证截止日期(yyyymmdd，商盟必输)**/verifyexpdate:String, /***地市编码(商盟必输)**/cityid:String, /***地市名称(商盟必输)**/cityname:String, /***地市分成比例(商盟必输)**/cityprofitrate:String, /***代理商编码(商盟必输)**/agentid:String, /***代理商名称(商盟必输)**/agentname:String, /***代理商分成比例(商盟必输)**/agentprofitrate:String, /***商品单价以分为单位**/price:Double, /***结算单价以分为单位**/settlementprice:Double, /***结算分期数商盟必输**/settleperiod:Long, /***结算分期类型1p2p：一期支付二期支付1p2v：一期支付二期验证1v2v：一期验证二期验证**/settleperiodtype:String, /***结算时间yyyymmdd**/settledate1:String, /***结算比例**/settlerate1:String, /***结算时间2yyyymmdd**/settledate2:String, /***结算比例2**/settlerate2:String, /***结算时间3yyyymmdd**/settledate3:String, /***结算比例3**/settlerate3:String, /***状态0-未审核1-审核通过**/status:Long, /***高阳状态:现金（capitaltype1）0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus1:Long, /***高阳状态:商城币（capitaltype2）0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus2:Long, /***高阳状态:积分（capitaltype3）0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus3:Long, /***高阳状态:积分（capitaltype4）0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus4:Long, /***创建时间**/createtime:String, /***创建人**/createuser:Long, /***协议类型0-商品协议1-商品资料**/type:Long, /***协议文件路径**/filepath:String, //**************busmethod***********productiontypename:String, /***高阳状态0-未同步1-同步成功2-同步失败3-审核通过4-审核驳回**/syncgystatus:Long, //是否关联商品标识0-未关联1-关联islink:Long);
+
+lsitem(id:Long [PK], itemid:Long, venderitemid:String, smstitle:String, firstcatalog:Long, secondcatalog:Long, thirdcatalog:Long, provinceid:Long, cityid:Long, brand:String, stockmode:Long, refundstrategy:Long, maxsale:Long, createtime:String, updatetime:String);
+
+itemgrouplink(id:Long, /***套餐id*/itemorgid:Long, /***已发布商品id*/itemsaleid:Long);
+
+itempostarealink(id:Long, /***发布商品id**/saleid:Long, /***省**/provincecode:String, /***市*/citycode:String, /***县/区*/regioncode:String);
+
+itemsalearealink(id:Long, /***发布商品id**/saleid:Long, /***省**/provincecode:String, /***市*/citycode:String, /***县/区*/regioncode:String);
+
+brand(id:Long, /***品牌名称**/name:String, /***品牌描述**/remark:String, /***品牌网站**/website:String, /***品牌图片**/brandimg:String, /***创建时间**/createtime:String, /***是否有效0-无效1-有效*/isvalid:String);
+
+itemparam(id:Long, typeid:Long, itemid:Long, paramid:Long, paramkey:String, paramvalue:String, rank:Integer);
+
+itemprice(id:Long, /***省份**/province:String, /***地市**/areacode:String, /***商户id**/storeid:Long, /***商品id**/itemid:Long, /***来源:t_item_price_type**/pricetypecode:String, /***商品价格**/price:Float, /***备注**/remark:String, /***发布商品id**/saleid:Long, /***@add_bymacl@c-platform.com*/regionname:String);
+
+thirdcodeimport(serialversionuid:long, id:Long [PK], /***第三方码名称id*/codenameid:Long, /***上传文件路径*/filepath:String, /***导入文件时间*/createtime:String, /***操作用户*/userid:Long, /***导入记录数量*/totalcount:Long, /***导入类型,0-方正码平台1-平台自己2-第三方应用3-卡密*/codetype:Long, /***导入用户名*/username:String, /***第三方码名称*/codename:String, storeid:Long);
+
+itempricetype(pricetypemap:Map<String,String>, id:Long, /***省份**/province:String, /***地市**/areacode:String, /***价格类型名称,市场价,商城价,红钻价**/pricetype:String, /***来源:t_item_price_type**/pricetypecode:String, /***备注**/remark:String, /***@add_bymacl@c-platform.com**/price:String);
+
+itemsaleuserarealink(id:Long, /***发布商品id**/saleid:Long, /***省**/provincecode:String, /***市*/citycode:String, /***县/区*/regioncode:String);
+
+verifystorecode(codemd5:String [PK], codersa:String, /***商品编号*/itemid:String, /***创建日期*/createdate:String, /***制码日期*/generatedate:String, /***验码日期*/verifydate:String, /***码状态0：已制码,未验证1：已撤销2：使用中3：已使用4：已过期100:初始化，未使用*/status:String, statusname:String, storeid:String, orderid:String, userid:String, importid:Long, codenameid:Long, statusmap:Map<String,String>);
+
+itemsale(/***不限库存，库存初始值**/init_stock_num:Long, /***逻辑删除标记*/status_delete:Long, /***草稿*/status_base_saved:Long, /***待审核*/status_base_no_audit:Long, /***审核中*/status_base_auditing:Long, /***基本资料审核通过*/status_base_audit_pass:Long, /***基本资料审核驳回*/status_base_audit_retject:Long, ///**发布商品草稿*///longstatus_sale_saved:Map<Long,String>, iseckillmap:Map<Long,String>, sourcemap:Map<Long,String>, //商品来源itemsource:Long, verifycodetypemap:Map<Long,String>, sendcodemodemap:Map<Long,String>, statusmap:Map<Long,String>, syncgyflagmap:Map<Long,String>, id:Long, /***商品id和t_item_org匹配**/orgid:Long, /***支付体系价格id**/salepriceid:Long, /***码类型1--维码2--二维码**/verifycodetype:Long, /***发码方式0--不发码1--按照订单发码2--按照商品个数发码**/sendcodemode:Long, /***制码方0--平台自己1--方正码平台2--第三方应用**/sendcodechannel:Long, /***制码渠道如果制码方选择第三方应用，则该字段有用10--85度c11--鲜芋仙...**/sendcodesrc:Long, /***是否需要物流配送0-不需要物流配送1-需要物流配送**/postflag:Long, /***销售有效开始时间**/salestarttime:String, /***销售有效结束时间**/salestoptime:String, /***验证有效开始时间**/verifystarttime:String, /***验证有效结束时间**/verifystoptime:String, /***商品库存数量**/stocknum:Long, /***单个用户购买数量0不限制**/userperbuynum:Long, /***商品状态0--草稿1--待审核2--审核中3--审核通过4--审核驳回**/status:Long, /***商品是否有效0--无效1--有效**/isvalid:Long, /***是否同步高阳0--未成功同步1--成功同步**/syncgyflag:Long, /***"1--业务门店2--商户3--渠道商"**/shopclass:Long, /***结算商户id匹配表t_store**/storeid:Long, /***市场价**/marketprice:Float, /***商品类型0--实物1--虚拟物**/itemmode:Long, /***商品分类**/typeid:Long, /***"是否是优惠套餐，如果是则是n多商品的组合0-普通商品1-优惠套餐"**/groupflag:Long, /***是否虚拟商品0-否1-是*/virtualflag:Long, /***虚拟商品类型1-卡密2-直充*/virtualtype:Long, /***商品名称*/name:String, /***商品简称*/shortname:String, /***温馨提示*/warmprompt:String, /***商品介绍*/remark:String, /***商户用户id*/shopuserid:Long, /***更新时间*/updatetime:String, /***品牌*/brand:String, /***重量*/weight:Double, /***是否秒杀**/iseckill:Long, /***秒杀价格**/iseckillprice:Double, /***物流运费**/logisticsfee:Double, /***物流计算方式0-不累计1-按数量**/logisticsfeetype:Long, /***商品支付方式现金**/cashidgoods:Long, /***商品支付方式商城币**/coinidgoods:Long, /***商品支付方式积分**/scoreidgoods:Long, /***商品支付方式话费，0不支持，1支持**/billidgoods:Long, /***组合支付方式：0非组合支付方式1现金+商城币2现金+积分**/grouppaytype:Long, /***现金支付比例**/cashpayratio:Long, /***商城币或积分支付比例**/otherpayratio:Long, /***支付方式:0单一支付类型1组合支付类型**/paytype:Long, /***方正码平台验证短信附加内容*/verifycodedesc:String, cashidgoodsmap:Map<Long,String>, coinidgoodsmap:Map<Long,String>, scoreidgoodsmap:Map<Long,String>, /***更新时间*/createtime:String, /***创建人*/createuserid:Long, /***更新人*/updateuserid:Long, /***营销语*/marketcontent:String, /***商城价*/shopprice:Double, /***封面图路径*/imgpath:String, /***结算价*/settleprice:Double, /***验证天数**/verifyday:Long, /***商品是否显示0，不现实；1显示**/isview:Long, isviewname:String, //上架时间groundingtime:String, //审核时间audittime:String, /***配送区域*/postarea:String, /***配送区域编码*/postareacode:String, /***物流渠道*/qdname:String, /***销售门店*/saleshopname:String, /***销售门店id*/saleshopids:String, /***购买限制*/buylimit:String, /***会员限制*/userlimitname:String, /***销售地市*/saleareaname:String, /***验证门店*/verifyshopname:String, /***验证门店id*/verifyshopids:String, /***商户名称**/storename:String, /***门店名称**/shopname:String, /***商品名称**/itemname:String, /***购买用户地市限制*/arealimitname:String, feetype:Long, GeneratedName:SysFee, //货架分类名称goodtypename:String, //货架分类idgoodtypeid:String, //套餐商品过滤库存stocknumfilter:Long, //是否支持货到付款deliverypay:Long, itemmodemap:Map<Long,String>, groupflagmap:Map<Long,String>, isviewmap:Map<Long,String>);
+
+itemsaleshoplink(id:Long, /***发布商品id**/saleid:Long, /***商户id**/storeid:Long, /***业务门店id如果是全商户门店都可以使用，则只存商户id，该业务门店id可以允许为空*/shopid:Long);
+
+thirdcode(serialversionuid:long, id:Long, code:String, itemid:Long, /***码状态。0：正常1：已撤销2：使用中3：已使用4：已过期*/status:Long, createtime:String, userid:Long, orderid:Long, importid:Long, /***商户id*/storeid:Long);
+
+itemtag(id:Long, itemid:Long, tag:String);
+
+itemorg(id:Long, shopname:String, typename:String, itemmode:Integer, itemmodemap:Map<Integer,String>, typeid:Long, /***0--普通商品1--优惠套餐*/groupflag:Integer, groupflagmap:Map<Integer,String>, /***是否虚拟商品0-否1-是*/virtualflag:Integer, /***虚拟商品类型1-卡密2-直充*/virtualtype:Integer, shopidshopclass:String, virtualtypemap:Map<Integer,String>, name:String, shortname:String, warmprompt:String, remark:String, itemids:String, /***0--草稿1--待审核2--审核中3--审核通过4--审核驳回*/status:Integer, statusmap:Map<Integer,String>, shopuserid:Long, /***1--业务门店2--商户3--渠道商*/shopclass:Integer, shopid:Long, updatetime:String, brand:String, weight:Double, createtime:String, createuserid:Long, updateuserid:Long, /***营销语*/marketcontent:String, querystarttime:String, queryendtime:String, tag:String, itemname:String);
+
+itemsaleext(id:Long, /***和t_item_sale匹配**/saleid:Long, /***销售数量**/salenum:Long, /***人气数**/clicknum:Long, /***评论量**/commentnum:Long, /***购买人数**/usernum:Long, /***收藏数量**/collectnum:Long, /***商品评分**/rank:Double);
+
+verifycardcode(serialversionuid:long, id:Long [PK], cardid:String, cardkey:String, /***商户编号*/storeid:String, /***商品编号*/itemid:String, /***创建日期*/createdate:String, generatedate:String, /***码状态0：已制码,未验证1：已撤销2：使用中3：已使用4：已过期100:初始化，未使用*/status:Integer, orderid:String, userid:String, importid:Long, codenameid:Long);
+
+storelogisticsfee(id:Long [PK], qdid:Long, feenum:Float, storeid:Long);
+
+shoptag(/***序列**/id:Long, /***类型**/shopclass:Long, /***门店id**/shopid:Long, /***标签属性内容**/tag:String, //-------------busmethod---------------------shopname:String);
+
+storesettle(/***审核通过*/status_audit_pass:Long, /***审核驳回*/status_audit_reject:Long, id:Long [PK], /***商户id*/storeid:Long, /***高阳结算id*/merchid:String, /***结算类型0：系统结算1：手工结算*/settletype:Long, /***佣金结算0：收支两条线1：作扣*/feesettle:Long, /***结算周期0：日1：周2：旬3：月4：季5：半年6：年7：指定日*/settleperiod:Long, /***结算日标识结算间隔的数量*/settleday:Long, /***结算日标志位指定结算日时设置一个月31天的具体日期*/settledaybit:Long, /***结算划款天数*/settletrfdays:Long, /***结算起始金额*/settlebeginamt:Long, /***最低留存金额*/minretainedamt:Long, /***结算银行的名称*/withdrawbankid:String, /***开户行详细信息*/openbankdesc:String, /***结算账户*/settleac:String, /***开户人*/bankacname:String, /***生效日期*/effortdate:String, /***失效日期*/expirydate:String, /***否成功同步高阳*/syncgyflag:Long, /***状态*/status:Long, /***创建时间*/createtime:String, /***创建人*/createuser:Long, /***是否企业账户*/isbsaccount:Long, /***同步时间*/synctime:String, //商户名称name:String, //商户类别shopclass:Long, //区域名称areaname:String, settletypemap:Map<Long,String>, feesettlemap:Map<Long,String>, settleperiodmap:Map<Long,String>, statusmap:Map<Long,String>, syncgyflagmap:Map<Long,String>);
+
+goodsshelf(//货架分类名称title:String, //父货架idpid:Long, //商户编号shopid:Long, //排序orderindex:Integer, isparent:boolean);
+
+shop(//表名table_name:String, //门店状态/***门店状态－草稿*/status_0:Long, /***门店状态－待审核*/status_1:Long, /***门店状态－审核中*/status_2:Long, /***门店状态－审核通过*/status_3:Long, /***门店状态－审核驳回*/status_4:Long, //门店分类/***门店分类－业务门店*/shop_class_1:Long, /***门店分类－结算商户*/shop_class_2:Long, /***门店分类－渠道商*/shop_class_3:Long, //门店签约状态/***非签约*/sort_0:Long, /***签约*/sort_1:Long, //是否连锁/***否*/is_chain_0:Long, /***是*/is_chain_1:Long, //是否总店/***否*/is_base_shop_0:Long, /***是*/is_base_shop_1:Long, //是否有效/***否*/is_valid_0:Long, /***是*/is_valid_1:Long, /***序列**/id:Long, /***结算商户编号**/acshopid:Long, /***商户名称**/name:String, /***商户简称**/shortname:String, /***归属地市**/areacode:String, /***是否签约商户**/sort:Long, /***折扣内容**/discountdetail:String, /***是否连锁**/ischain:Long, /***是否总店**/isbaseshop:Long, /***总店名称**/baseshopname:String, /***创建时间**/createtime:String, /***更新时间**/updatetime:String, /***有效开始时间**/starttime:String, /***有效结束时间**/stoptime:String, /***商户地址**/address:String, /***联系电话**/phone:String, /***营业时间**/opentime:String, /***公交线路**/busline:String, /***面积**/area:String, /***停车位**/parkplace:String, /***人均消费**/avgspend:Long, /***包间数**/roomnum:String, /***详细介绍**/remark:String, /***地图坐标经度**/maplong:String, /***地图坐标纬度**/mapdim:String, /***创建商户账号编号**/shopuserid:Long, /***商户状态**/status:Long, /***商户是否有效**/isvalid:Long, /***商户分类**/shopclass:Long, /***业务门店logo图**/logo:String);
+
+shopsettings(/***首页文字介绍**/homepageword:String, /***1--业务门店2--商户3--渠道商**/shopclass:Long, /***商户招牌图片路径**/shopid:Long, /***图片名称**/picname:String, //审核意见auditadvice:String, /***发布状态。0未发布1已发布修改任意网店设置后此字段为0审核后为1**/pubtag:Long, operateendtime:String, /***商户招牌图片路径**/shoppicurl:String, /***商户名称**/name:String, shopclassmap:Map<Long,String>, pubtagmap:Map<Long,String>);
+
+store(store:Long, channel:Long, /***草稿*/status_save:Long, /***待审核*/status_no_audit:Long, /***审核中*/status_auditing:Long, /***审核通过*/status_audit_pass:Long, /***审核驳回*/status_audit_reject:Long, sortmap:Map<Long,String>, isbsaccountmap:Map<Long,String>, shopclassmap:Map<Long,String>, statusmap:Map<Long,String>, syncgyflagmap:Map<Long,String>, itemeditauditflagmap:Map<Long,String>, itempublishauditflagmap:Map<Long,String>, shopeditauditflagmap:Map<Long,String>, shopagentflagmap:Map<Long,String>, goodsagentflagmap:Map<Long,String>, isvalidmap:Map<Long,String>, syncgyflagmsg:Map<Long,String>, accounttypemap:Map<Long,String>, id:Long [PK], /***商户名称**/name:String, /***商户简称**/shortname:String, /***归属地市**/areacode:String, /***归属地市**/areaname:String, /***是否移动签约0--非签约1--签约**/sort:Long, /***总店名称**/baseshopname:String, /***创建时间**/createtime:String, /***更新时间**/updatetime:String, /***商户地址**/address:String, /***创建后台用户**/sysuserid:Long, /***是否企业帐户0--不是1--是**/isbsaccount:Long, /***业务主管**/bsmanagername:String, /***业务主管电话**/bsmanagerphone:String, /***财务主管**/fcmanagername:String, /***财务主管电话**/fcmanagerphone:String, /***联系人**/linkname:String, /***联系电话**/linkphone:String, /***联系传真**/linkfax:String, /***高阳结算id*/merchid:String, starttime:String, //账号来源accounttype:Long, stoptime:String, /***商户分类1--业务门店2--结算商户3--渠道商**/shopclass:Long, /***商户状态0--草稿1--待审核2--审核中3--审核通过4--审核驳回**/status:Long, /***商户是否有效0--下架1--上架**/isvalid:Long, /***商品编辑免审0--需要审核1--免审**/itemeditauditflag:Long, /***商品发布免审0--需要审核1--免审**/itempublishauditflag:Long, /***门店编辑免审0--需要审核1--免审**/shopeditauditflag:Long, /***更新用户**/updateuserid:Long, /***是否折扣商户代理0否1是****该属性已经不使用*/shopagentflag:Long, /***是否商品销售代理0否1是****该属性已经不使用*/goodsagentflag:Long, /***是否成功同步高阳0--未成功同步1--成功同步*/syncgyflag:Long, /***营业范围**/bsscope:String, /***客服电话**/servicephone:String, /***行政编码**/areaid:String, /***查询用创建开始时间**/begintime:String, /***查询用创建结束时间**/endtime:String, /***选择渠道商和商户返回的id**/storeids:String, /***选择渠道商和商户返回的名称**/storenames:String, /***协议文件地址**/isreupload:String, /***审核时间*/audittime:String);
+
+shopposlink(/***序列**/id:Long, /***门店id**/shopid:Long, /***终端id**/posid:Long, /***终端设备号**/posno:String, /***终端标识**/terminalid:String, //-------------busmethod---------------------shopname:String, GeneratedName:SysPos);
+
+storecode(id:Long [PK], storeid:Long, sendchannelid:Long, sendtypeid:Long, starttime:String, stoptime:String, operuser:String, opertime:String, sendchannelidmap:Map<Long,String>, sendtypeidmap:Map<String,String>);
+
+storefee(id:Long [PK], storeid:Long, merchid:String, /***现金*/capitaltype1:Long, /***商城币*/capitaltype2:Long, /***商城币*/capitaltype3:Long, /***话费*/capitaltype4:Long, trademode:Long, feetype:String, productiontype:String, cleartype:String, effortdate:String, expirydate:String, feedrtflag:String, feeperiodunit:String, fcname:String, feemode:Long, feemothod:Long, beganamount:String, minfeeamount:String, maxfeeamount:String, feebasicflag:Long, feelevelflag:String, feelvlbasicflag:String, upreference1:String, fixfeeamount1:String, feerate1:String, upreference2:String, fixfeeamount2:String, feerate2:String, upreference3:String, fixfeeamount3:String, feerate3:String, upreference4:String, fixfeeamount4:String, feerate4:String, upreference5:String, fixfeeamount5:String, feerate5:String, createtime:String, synctime:String, createuser:Long, status:Long, phoneeffortdate:String, syncgyflag1:Long, syncgyflag2:Long, syncgyflag3:Long, syncgyflag4:Long, //商户名称name:String, //商户类别shopclass:Long, //区域名称areaname:String, capitaltypemap:Map<Long,String>, feetypemap:Map<String,String>, cleartypemap:Map<String,String>, feedrtflagmap:Map<String,String>, feemodemap:Map<Long,String>, feemothodmap:Map<Long,String>, feelevelflagmap:Map<String,String>, feelvlbasicflagmap:Map<Long,String>, statusmap:Map<Long,String>, syncgyflagmap:Map<Long,String>, feeperiodunitmap:Map<String,String>);
+
+shopext(/***序列**/id:Long, /***门店id**/shopid:Long, /***评论量**/commentnum:Long, /***级别**/slevel:Long, /***商户方正同步id**/fzstoreid:Long, /***门店方正同步id**/fzshopid:Long);
+
+goodsshelfrel(id:Long [PK], //父货架idshelfid:Long, //商户编号goodid:Long);
+
+storeagent(/***草稿*/status_save:Long, /***待审核*/status_no_audit:Long, /***审核中*/status_auditing:Long, /***审核通过*/status_audit_pass:Long, /***审核驳回*/status_audit_reject:Long, /***渠道商编号**/qdstoreid:Long, /***商户编号**/jsstoreid:Long, /***代理有效开始时间**/starttime:String, /***代理有效结束时间**/stoptime:String, /***创建后台用户**/sysuserid:Long, /***商户或渠道商名称**/storename:String, /***是否折扣商户代理0否1是**/shopagentflag:Long, /***是否商品销售代理0否1是**/goodsagentflag:Long, /***状态0--草稿1--待审核2--审核中3--审核通过4--审核驳回*/status:Long, shopagentflagmap:Map<Long,String>, goodsagentflagmap:Map<Long,String>, statusmap:Map<Long,String>);
+
+shoptypelink(/***serialversionuid*/serialversionuid:long, /***序列**/id:Long, /***门店id**/shopid:Long, /***分类id**/typeid:Long, //-------------busmethod---------------------:SysType);
+
+shopuser(/***初始密码**/init_pwd:String, prefixmap:Map<Long,String>, /***账号名称**/code:String, /***登录密码**/pwd:String, /***状态0--失效1--有效2--暂停**/status:Long, /***用户类型1--管理员2--普通用户3--操作员**/type:Long, /***邮箱地址**/email:String, /***更新时间**/updatetime:String, /***手机号码**/mobile:String, /***昵称**/nickname:String, /***商户类型1--业务门店2--商户3--渠道商**/shopclass:Long, /***商户id**/shopid:Long);
+
+member(/***serialversionuid*/serialversionuid:long, //会员状态/***会员状态－正常*/status_1:String, /***会员状态－暂停*/status_2:String, //性别/***性别-女*/sex_1:Long, /***性别-男*/sex_2:Long, //信息是否公开/***信息是否公开-不公开*/opened_0:Long, /***信息是否公开-公开*/opened_1:Long, //会员级别/***会员级别-普通会员*/user_level_0:String, /***会员级别-定制会员*/user_level_1:String, /***会员级别-vip会员*/user_level_2:String, /***序列**/id:Long, /***用户登录名**/username:String, /***用户密码**/userpass:String, /***用户邮箱**/email:String, /***真实姓名**/realname:String, /***手机号码**/terminalid:String, /***注册时间**/regtime:String, /***状态1正常2暂停**/status:String, /***更新时间**/updatetime:String, /***jsssovid**/vid:String, /***昵称**/nickname:String, /***归属地区代码**/areacode:String, /***性别1女2男**/sex:Long, /***生日**/birthday:String, /***信息是否公开0不公开1公开**/opened:Long, /***qq**/qq:String, /***个人信息描述**/remark:String, /***个性签名**/signature:String, /***注册来源1websso**/regsource:Long, /***会员级别0普通会员1定制会员2vip会员**/userlevel:String, /***购物车标识**/cartuuid:String, //----bus-method---regtimebegin:String, GeneratedName:SysRegion);
+
+batchtask(statusmap:Map<Long,String>, id:Long [PK], actid:Long, advice:String, areacode:String, auditorid:Long, audittime:String, blackcnt:Long, blacklistfile:String, content:String, createtime:String, creatorid:Long, customtag:Long, execstarttime:String, execstoptime:String, failcnt:Long, fee:Long, feetype:Long, infoid:Long, isreport:Long, mobilelistfile:String, noticeterminalid:String, priority:Long, respondtimeout:String, servicedoc:String, serviceid:String, sleeptime:String, smil:String, spcode:String, speed:Long, starttime:String, status:Long, stoptime:String, submitcnt:Long, submitlocalflag:Long, successcnt:Long, taskname:String, tasktype:Long, title:String, tracerespond:Long, unitid:String, whitelistfile:String, itemid:String, batchtype:Long, routerid:Long);
+
+lotterytarget(/***主键id*/id:Long, /***活动id*/activeid:Long, /***手机号码*/phone:String, /***已中奖次数*/numhad:Long, /***可中奖次数*/numcould:Long);
+
+logger(id:Long [PK], activeid:Long, targetid:String, content:String, hittime:String, prizeid:Long, //@transient//publicgetphone(){//returnphone//}//@transient//publicvoidsetphone(phone){//this.phone:String, /***查询用创建结束时间**/endtime:String);
+
+prize(id:Long [PK], name:String, activeid:Long, hitlevel:Long, hitprobability:String, hitlimit:Long, hitmsg:String, numbers:Long, description:String, position:String, /***查询用创建开始时间**/begintime:String, /***查询用创建结束时间**/endtime:String, //@transient//publicgetstarttime(){//returnstarttime//}//@transient//publicvoidsetstarttime(starttime){//this.starttime:String);
+
+lotteryactive(serialversionuid:long, statusmap:Map<String,String>, typemap:Map<String,String>, /***活动id*/id:Long, /***活动名称*/name:String, /***活动开始时间*/starttime:String, /***活动结束时间*/stoptime:String, /***活动类型,0不设置参与条件*/activetype:Long, /***活动介绍*/activedesc:String, /***未中奖设置（预留）*/unhit:Long, /***未中奖提示语*/unhitmsg:String, /***创建时间*/createtime:String, /***创建人id*/creatememberid:Long, /***活动状态，0草稿，1审核中，2审核通过，3审核驳回*/status:Long, /***中奖次数，-1表示不限制次数*/hitlimit:Long, //活动奖区数量prizenumvalue:String);
+
+lotteryactiveconf(/***主键id*/id:Long, /***活动id*/activeid:Long, /***活动抽奖key*/key:String, /***活动抽奖value*/value:String);
+
+smsactonline(/***serialversionuid*/serialversionuid:long, //活动状态/***活动状态－待审核*/status_0:String, /***活动状态－待发布*/status_1:String, /***活动状态－商用*/status_2:String, /***活动状态－暂停*/status_3:String, /***活动状态－下线*/status_4:String, /***活动编号**/actid:Long, /***活动名称**/actname:String, /***活动描述**/actdesc:String, /***活动分类**/groupid:String, /***活动开始时间**/starttime:String, /***活动结束时间**/endtime:String, /***活动状态**/status:String);
+
+smsactrouter(/***serialversionuid*/serialversionuid:long, //是否需要会话/***是否需要会话－不需要*/is_session_0:Long, /***是否需要会话－需要*/is_session_1:Long, /***序号**/id:Long, /***活动编号**/actid:Long, /***特服号**/spcode:String, /***指令类型**/cmdopttype:Long, /***指令内容**/command:String, /***支付方式**/paytype:Long, /***购买价格**/itemprice:Long, /***是否需要会话**/issession:Long, //***************busmethod***************//根特服号rspcode:String, //尾特服号cspcode:String, GeneratedName:SmsActOnline);
+
+syschannelpicconf(id:Integer [PK], picpath:String, picalt:String, picindex:Integer, linkurl:String, postion:Integer, channel:Integer, updatetime:String, postionname:String, channelname:String, regioncode:String);
+
+channelcatalogrcmdconfig(id:Long, groupid:Integer, orderindex:Integer, channel:Integer, groupname:String, channelname:String, displayname:String, linkurl:String, type:Integer, imagepath:String, regioncode:String, groupmap:Map<Integer,String>, channelmap:Map<Integer,String>, typemap:Map<Integer,String>);
+
+channelfloor(//fieldsid:Long, floortitle:String, floorid:Integer, typeid:Long, orderindex:Integer, channel:Integer, regioncode:String, updatetime:String, floorname:String, channelname:String, groupmap:Map<Integer,String>, channelmap:Map<Integer,String>);
+
+sysfileimg(/***文件类型*/filetype:String, /***说明*/remark:String, /***更新时间*/updatetime:String, /***文件物理路径*/fileabspath:String, /***web路径*/filewebpath:String, /***创建人*/createuser:Long, /***文件名*/filename:String, /***业务key*/bskey:String, /***业务id*/bsid:Long, /***表明*/tablename:String, /***排序*/sort:Integer, //******busmethod****path:String);
+
+sysannouncement(dest_back:String, dest_shop:String, dest_uc:String, dest_portal:String, status_new:String, status_reject:String, status_pub:String, status_del:String, dest_map:Map<String,String>, status_map:Map<String,String>, serialversionuid:long, title:String, description:String, pubstatus:String, pubuser:Long, pubtime:String, pubdest:String, audituser:Long, audittime:String, endtime:String, advisepic:String, adviseextendpic:String);
+
+sysfilelink(/***业务key*/bskey:String, /***业务id*/bsid:Long, /***文件id*/fileid:Long, /***表明*/tablename:String, /***原始文件表*/:SysFile);
+
+pagestaticinfo(id:Long [PK], /***类型,0是商品，1是商户**/type:Integer, /***资源id，可以是商品id，或者商户id**/resourceid:Long, /***静态化状态：0失败，1成功**/status:Integer, /***创建日期**/createtime:String, /***商户名称**/storename:String, /***商品名称**/itemname:String, /***开始时间**/starttime:String, /***结束时间**/stoptime:String, /***商品类型**/type_item:Integer, /***商户类型**/type_shop:Integer, /***状态：静态化失败**/status_fail:Integer, /***状态：静态化成功**/status_success:Integer);
+
+systemplateinfo(//模版组建id:Integer, //模版名称tname:String, /*	*type:int, /*	*type:String, /***模板上传保存全路径*/filepath:String, /***输出文件编码类型*/outputchartset:String, /***支持的输入文件编码*/charlist:List<String>);
+
+sysad(/***广告图片文件**/ad_type_img_key:String, //广告状态/***广告状态－未审核*/status_0:Long, /***广告状态－审核通过*/status_1:Long, /***广告状态－审核驳回*/status_2:Long, //fieldsid:Long, adname:String, adtype:Long, adflag:Long, link:String, linkman:String, content:String, status:Long, starttime:String, validtime:String, clickcnt:Long, viewcnt:Long, createtime:String, createuser:Long, positionid:Long, //-------------busmethod---------------------starttimebegin:String);
+
+sysadposition(/***广告位置模板文件**/ad_position_template_key:String, //fieldsid:Long, name:String, width:Long, height:Long, position:String, code:String, type:Long, num:Long);
+
+sysproperty(//fieldsid:Long, content:String, type:Long);
+
+sysfileimgthumb(fileid:Long, /***图片大小50*50*/imgsize:String, /***更新时间*/updatetime:String, /***文件物理路径*/imgabspath:String, /***web路径*/imgwebpath:String);
+
+channelnavipage(//fieldscode:String, title:String, des:String, createuser:Long, createtime:String, updateuser:Long, updatetime:String, channelmap:Map<Integer,String>);
+
+channelcatalogconfig(id:Long, itemid:Long, groupid:Integer, updatetime:String, orderindex:Integer, status:Integer, channel:Integer, itemorgname:String, regioncode:String, statusmap:Map<Integer,String>);
+
+sysadregion(//fieldsid:Long, regioncode:String, adid:Long, //-------------busmethod---------------------regionname:String);
+
+syspos(//fieldsid:Long, name:String, src:String, type:String, factory:String);
+
+sysfileimglink(/***业务key*/bskey:String, /***业务id*/bsid:Long, /***文件id*/fileid:Long, /***表明*/tablename:String, /***文件名*/filename:String, /***排序*/sort:Integer, GeneratedName:SysFileImg, //-------------busmethod---------------------path:String);
+
+syslogistics(name:String, isvalid:Long, interface:String, ename:String);
+
+channeltype(//fieldstypeid:Long, regioncode:String, channel:Integer, displayname:String, channelname:String, channelmap:Map<Integer,String>);
+
+sysfile(/***文件类型*/filetype:String, /***说明*/remark:String, /***更新时间*/updatetime:String, /***文件物理路径*/fileabspath:String, /***web路径*/filewebpath:String, /***创建人*/createuser:Long, /***业务key*/bskey:String, /***业务id*/bsid:Long, /***表明*/tablename:String);
+
+systypeitemparam(//fieldsid:Long, typeid:Long, paramkey:String, paramvalue:String, rank:Long, paramtype:Long, requiredflag:Long, searchflag:Long, shopid:Long, shopclass:Long, GeneratedName:SysType);
+
+systemplateevent(//数据表字段id:Integer, code:int, /*	*1：单一模板	*2：模板组	*/type:Integer, /***模版主键*/tgid:Integer, /***模版名称*/tgname:String, /***模版事件名称*/name:String, /***备注*/memo:String);
+
+channelnavioper(pageid:Long, pagecode:String, code:String, title:String, regioncode:String, href:String, sortno:int, createuser:Long, createtime:String, updateuser:Long, updatetime:String, channelmap:Map<Integer,String>);
+
+pagemoduledata(id:Long, //模块idmoduleid:Long, //内容content:String, //状态0：未审核1：审核通过2：审核驳回status:Long, //排序sortno:Long, //省地市编码regioncode:String, //开始时间starttime:String, //结束时间endtime:String, //关联数据模板templetid:Long, //创建人createuser:Long, //创建时间createtime:String, //修改人updateuser:Long, //修改时间updatetime:String, //审核人audituser:Long, //审核时间audittime:String, //审核意见auditadvice:String, modulecode:String, contenttitle:String);
+
+moduledatatemplet(id:Long, //模板名称title:String, //模板配置路径confpath:String, //模板类型1:通用模板type:Long, //创建人createuser:Long, //创建时间createtime:String, //修改人updateuser:Long, //修改时间updatetime:String, //描述remark:String);
+
+pagemodule(id:Long, //模块编码code:String, //模块标题title:String, //关联数据模板tempid:Long, //省地市编码regioncode:String, //创建人createuser:Long, //创建时间createtime:String, //修改人updateuser:Long, //修改时间updatetime:String, //描述remark:String);
+
+smsbuyitemrouter(id:Long, actid:Long, actname:String, itemid:String, itemname:String, rootspcode:String, spcode:String, cmdopttype:Integer, command:String, paytype:Integer, itemprice:Double, issession:Integer, priority:Long, marketmsg:String, itemstatus:String, itemstatusmap:Map<String,String>, cmdopttypemap:Map<Integer,String>, paytypemap:Map<Integer,String>);
+
+smsbuyactonline(actid:Long, actname:String, actdesc:String, actarea:String, areaname:String, starttime:String, endtime:String, status:String, storeid:Long, storename:String, spcode:String, statusmap:Map<String,String>);
+
+smsbuyhelp(helpspcode:String, rootspcode:String, helparea:String, helpareaname:String, recommendtype:String, recommendspcode:String, recommendsms:String, recommendtypemap:Map<String,String>);
+
+sysrole(//fieldsrolename:String, updateuserid:Long, remark:String, updatetime:String, unitid:Long);
+
+sysareainfo(//fieldsid:Integer, areacode:String, areaname:String, provincename:String, //地市全拼areaspell:String, //所属省idprovid:Long);
+
+sysregion(regioncode:String, regionname:String, regionlevel:Long, parentregion:String, shortname:String, regionspell:String, isshow:Long, sortnum:Long, areacode:String, //全国区域china_region:SysRegion);
+
+sysuserregion(userid:Long, regioncode:String);
+
+sysblackuser(//fieldsid:Integer, terminalid:String, levtag:Integer, intag:Integer, remark:String, unitid:Long, updateuserid:Long, updatetime:String, levtagmap:Map<Integer,String>, intagmap:Map<Integer,String>);
+
+sysunit(/***电商基地*/unit_type_base:Long, /***省*/unit_type_province:Long, /***市*/unit_type_city:Long, /***单位名称**/name:String, /***单位归属地市，匹配t_sys_region表中area_code**/areacode:String, /***单位分类，1电商基地,2省移动,3市单位**/unittype:Long, /***备注**/remark:String, /***单位标识，0表示正常，9表示注销**/flag:Long, /***单位变更用户id，匹配t_sys_user_v2表中id**/updateuserid:Long, /***单位更新时间**/updatetime:String, /***单位所属省id**/provid:Long, parentunitid:Long, unittypemap:Map<Long,String>, regionname:String);
+
+sysspcode(spcode:String, valid:Integer);
+
+sysroleprivilege(roleid:Long, menucode:String, menubtn:String);
+
+sysuserrole(userid:Long, roleid:Long);
+
+systestterminalid(//fieldsid:Integer, terminalid:String, ownername:String, testtype:Short, actid:Integer, unitid:String, status:Short, remark:String, updateuserid:Integer, updatetime:String);
+
+sysuser(/*用户状态*//***用户状态－有效*/status_valid:Long, /***用户状态－无效*/status_invalid:Long, /***用户状态－删除*/status_deleted:Long, /*用户类型*//***用户类型－超级管理员*/user_type_master:int, usercode:String, userpwd:String, username:String, terminalid:String, email:String, remark:String, validtime:String, createtime:String, changepwdtime:String, updatetime:String, updateuserid:Long, lockstatus:int, status:int, flag:Integer, unitid:Long, //-------------busmethod---------------------starttime:String, usertypemap:Map<Integer,String>);
+
+opencustomer(appid:Long [PK], appkey:String, name:String, remark:String, ips:String, status:String, paynotify:String, apptype:String, shopclass:Long, shopid:Long, storeid:Long, apptypename:String, shopclassname:String, statusname:String, statusmap:Map<String,String>, apptypemap:Map<String,String>, shopclassmap:Map<String,String>);
+
+openroleitem(name:String, path:String);
+
+systype(pid:Long, name:String, isvalid:Long, type:Long, isparent:boolean, syncgyflagmap:Map<Long,String>);
+
+sysfilterword(//fieldsword:String, intag:Short, unitid:String, updateuserid:Long, updatetime:String);
+
+sysfee(name:String, fee:Float, valid:Long, syncgyflag:Long, syncgytime:String, decrfee:String, storeid:Long, //清算类别cleartype:String, syncgyflagmap:Map<Long,String>);
+
+syssegment(//fieldsid:Integer, segmentcode:String, operatorcode:String, areacode:String, mmscid:String);
+
+syslogininfo(username:String, userid:Long, ip:String, logintime:String, successflag:Integer, usertype:Integer, //-----busmethod-----/***业务使用属性，不参与数据库存储*/starttime:String, flagmap:Map<String,String>);
+
+sysloginfo(userid:String, username:String, opertime:String, opertype:String, module:String, description:String, ip:String, resultcode:String, usertype:String, opid:Long, //------------------busmethod----------/***业务使用属性，不参与数据库存储*/starttime:String);
+
+syssearchidx(id:Long [PK], type:String, typename:String, updatetime:String, actor:Long);
+
+giftrequired(batchno:Long [PK], modelno:String, cardnum:Long, issuingtime:String, effortdate:String, expirydate:String, exchangemode:Long, status:Long, cardfacemsg:String, printfacestatus:Long, binditemstatus:Long, makecardstatus:Long, parvalue:Long, remark:String, audittime:String, auditmsg:String, audituserid:Long, createdtime:String, createuserid:Long, requireduser:String, faceimg:String, regioncode:String, storeid:Long, saleid:Long, cutoffday:String, /***绑定商品状态*/bindstatus:Integer, /***卡兑换数量*/exchangenum:Integer, statusmap:Map<Long,String>, printfacestatusmap:Map<Long,String>, binditemstatusmap:Map<Long,String>, makecardstatusmap:Map<Long,String>, exchangemodemap:Map<Long,String>, bindstatusmap:Map<String,String>, /***查询用创建开始时间**/begintime:String, /***查询用创建结束时间**/endtime:String, dimcodestatusmap:Map<Long,String>);
+
+giftapplyout(typemap:Map<Long,String>, paystatusmap:Map<Integer,String>, statusmap:Map<Long,String>, serialversionuid:long, //申请类型,0：线上申请，1：线下申请type:Long, //申请人applyuser:Long, //申请人applyusername:String, //申请时间applytime:String, //支付订单orderid:Long, //支付状态，0未支付，1已支付paystatus:Integer, //金额,分payment:Double, //付款单位全称payunit:String, //付款行名称paybank:String, //联系人contactname:String, //担保人guarantorname:String, //收货地址address:String, //联系电话cellphonenumber:String, //邮政编码zipcode:String, //入账人accountedname:String, //入账单号accountedcode:String, //入账日期accountedtime:String, //状态0：未审核1：审核通过2：审核驳回3:已删除4：已出库5：已激活6:已发卡status:Long, //审核人audituser:Long, //审核时间audittime:String, //审核意见auditadvice:String, //出库状态outstatus:Long, //激活状态activestatus:Long, //备注remark:String, //出库领用人receivename:String);
+
+giftcard(serialno:String [PK], batchno:Long, memberid:Long, exchangestatus:Long, exchangetime:String, status:Long, receivetime:String, createdtime:String, storagestatus:Long, paymentday:String);
+
+giftcardtask(id:Long, resources:Long, status:Long, batchno:Long, filepath:String, serialstartno:String, serialendno:String, remark:String, createtime:String);
+
+giftcardstorage(id:Long, batchno:Long, stocks:Long, remark:String, stocksin:Long, stocksout:Long);
+
+giftcardtaskext(id:Long, taskid:Long, serialno:String, status:Long, createtime:String, acttime:String, applyid:Long);
+
+giftrequireditem(serialversionuid:long, statusmap:Map<String,String>, /***主键id*/id:Long, /***卡批次号*/batchno:Long, /***商品id*/itemid:Long, /***状态，-1：删除，0：草稿，1：待审核，2：审核通过,3:审核失败*/status:Integer, /***审核时间*/audittime:String, /***审核意见*/auditmsg:String, /***审核用户id*/audituserid:Long, /***商户编号*/storeid:Long, /***创建时间*/createdtime:String, /***创建者用户id*/createduserid:Long, /***备注*/remark:String, /***状态名称*/statusname:String, /***商品名称*/itemname:String, /***商户名称*/storename:String, dimcodeimg:String, dimcodewapurl:String, dimcodestatus:Long, dimcdetime:String, //二维码路径filewebpath:String);
+
+giftapplyoutext(/***/serialversionuid:long, //出库申请编号applyid:Long, //批次号batchno:Long, //卡数量num:int, //卡型号modelno:String, //支付单价，分payprice:int, remark:String);
+
+giftcardcbhandle(id:Long [PK], /***用户id*/userid:Long, /***卡号*/serialno:String, /***礼品卡请求流水号*/usid:Long, /***回调事件id*/cbid:Long, /***状态，1：正常2：重复的回调，不予处理，3:创建订单异常*/status:Long, /***订单id*/orderid:Long, orderresult:String, createtime:String, /***卡需求批次号*/batchno:Long, /***卡型号*/modelno:String, /***礼品卡状态，0：未兑换，1：已兑换*/cardstatus:Long, /***用户昵称*/username:String, /***用户手机号*/terminalid:String, /***用户邮箱*/email:String, statusmap:Map<String,String>, cardstatusmap:Map<String,String>, /***查询用创建开始时间**/begintime:String, /***查询用创建结束时间**/endtime:String);
+
+giftcardstorageext(id:Long, serialno:String, batchno:Long, storagestatus:Long, operatedtime:String, operateduserid:Long, applyid:Long);
+
+itemcommentreply(id:Long [PK], content:String, updatetime:String, nickname:String, userid:Long, commentid:Long);
+
+shopcomment(id:Long [PK], content:String, updatetime:String, userid:Long, status:Long, shopclass:Long, shopid:Long);
+
+itemcomment(id:Long [PK], content:String, type:Integer, questiontype:Integer, updatetime:String, nickname:String, userid:String, status:Integer, saleid:Long, audituser:Long, audittime:String, rank:Integer, usefulnum:Long, uselessnum:Long, statusmap:Map<Integer,String>, commenttypemap:Map<Integer,String>, questiontypemap:Map<Integer,String>, /***查询使用*/starttime:String, /***商品名称*/name:String);
+
+contmms(/***serialversionuid*/serialversionuid:long, astatus_wait:int, astatus_ok:int, astatus_reject:int, astatus_map:Map<Integer,String>, contentsrc:String, content:String, starttime:String, endtime:String, keyword:String, areacode:String, unitid:String, remark:String, status:Integer, auditorid:Long, advice:String, updateuserid:Long, updatetime:String, title:String, contentpath:String, picsize:String, smilname:String, param1:String, param2:String, contentsize:Integer);
+
+contsms(/***serialversionuid*/serialversionuid:long, //状态/***状态－未审核*/status_0:Long, /***状态－审核通过*/status_1:Long, /***状态－审核驳回*/status_2:Long, id:Long, contentsrc:String, content:String, starttime:String, endtime:String, keyword:String, areacode:String, unitid:String, remark:String, status:Long, auditorid:Long, advice:String, updateuserid:Long, updatetime:String, //****************busmethod*******************/***单位名称**/unitname:String, /***内容源名称**/srcname:String);
+
+contentcode(codetypemap:Map<Integer,String>, conttypemap:Map<Integer,String>, /***内容源id，使用序列seq_cont_code*/id:Long, /***内容源英文标识，唯一*/code:String, /***内容源名称*/name:String, /***内容源归属地市,例如025*/areacode:String, /***内容源信息类型，0表示短信，1表示彩信*/conttype:Integer, codetype:Integer);
+
+batchtaskschedule(//删除status_deleted:int, //有效(待处理)status_valid:int, //无效(取消)status_invalid:int, //处理中status_processing:int, //处理完成status_process_sucessed:int, //处理失败status_process_failure:int, //默认收到多少条短信的用户被过滤default_limit:int, statusmap:Map<Integer,String>, //创建帐号usercode:String, //状态0-删除1-有效(未处理)2-无效(不处理)3-处理中4-处理完成5-处理失败status:Integer, //上传号码数(由后台进程维护)uploadterminalcount:Integer, //处理结果实际过滤号码数(由后台进程维护)resultterminalcount:Integer, //开始时间(录入系统时间)createtime:String, //结束时间(后台进程处理完时间)endtime:String, //上传文件路径uploadfilepath:String, //进程处理结果文件路径resultfilepath:String, //处理日期datetime:String, //0-全过滤(不限类型)1-普通短信2-短信购filtertype:Integer, //定义收到多少条短信的用户被过滤limit:Integer, //进程处理失败原因failurereason:String, //备注remark:String, tasktype:Integer, smscontent:String);
+
+auditstep(//fieldsbsid:Long, bstype:Long, status:Long, remark:String, audituserid:Long, updatetime:String, bstabel:String, remarkl:String, statusmap:Map<Long,String>);
+
+sysmenu(menucode:String [PK], menuname:String, menupcode:String, menuurl:String, leafyn:boolean, modelcode:String, urlbtns:String, systype:int);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

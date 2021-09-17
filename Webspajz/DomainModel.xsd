@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="recipeingredient" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="quantity" type="xs:double" />
+        <xs:element name="unit" type="xs:string" />
+        <xs:element name="GeneratedName" type="ingredient" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="recipe" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recipe" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="yumid" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="numberofservings" type="xs:long" />
+        <xs:element name="iconimageurl" type="xs:string" />
+        <xs:element name="resizableimageurl" type="xs:string" />
+        <xs:element name="totalreviewcount" type="xs:long" />
+        <xs:element name="averagerating" type="xs:double" />
+        <xs:element name="difficultylevel" type="xs:string" />
+        <xs:element name="nutritionlist" type="xs:anyType" />
+        <xs:element name="techniquelist" type="xs:anyType" />
+        <xs:element name="preparationsteps" type="xs:anyType" />
+        <xs:element name="recipeingredientlist" type="recipeingredient" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useringredient" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="ingredientid" type="xs:long" />
+        <xs:element name="quantity" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ingredient" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="unit" type="xs:string" />
+        <xs:element name="recipeingredientlist" type="recipeingredient" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="book" >
+      <xs:sequence>
+        <xs:element name="bid" type="xs:long" />
+        <xs:element name="bname" type="xs:string" />
+        <xs:element name="author" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="role" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookregistration" >
+      <xs:sequence>
+        <xs:element name="studentid" type="xs:long" />
+        <xs:element name="bookid" type="xs:long" />
+        <xs:element name="bookname" type="xs:string" />
+        <xs:element name="author" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookissue" >
+      <xs:sequence>
+        <xs:element name="sno" type="xs:long" />
+        <xs:element name="bookid" type="xs:long" />
+        <xs:element name="bookname" type="xs:string" />
+        <xs:element name="issue" type="xs:dateTime" />
+        <xs:element name="return" type="xs:dateTime" />
+        <xs:element name="fine" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userresponse" >
+      <xs:sequence>
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="users" type="user" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="book" type="book" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="bookissue" type="bookissue" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="requestedbook" type="bookregistration" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ormconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginuser" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admindao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="librariandaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="librariandao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentdaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginuserdao" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admindaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="librarianservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="studentdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="librarianserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="librariandao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="loginuser" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="admindao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="librariancontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="librarianservice" nillable="true" minOccurs="0" />
+        <xs:element name="response" type="userresponse" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="studentservice" nillable="true" minOccurs="0" />
+        <xs:element name="response" type="userresponse" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="handleexception" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admincontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="adminservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userresponse" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logincontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="loginservice" nillable="true" minOccurs="0" />
+        <xs:element name="response" type="userresponse" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="web" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="index" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

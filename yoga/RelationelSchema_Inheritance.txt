@@ -1,0 +1,9 @@
+
+pointsyear(id:Long [PK], tenantid:Long, year:Integer, begindate:LocalDate, enddate:LocalDate, updatetime:LocalDateTime, warninguserids:String);
+
+pointssummary(id:Long [PK], tenantid:Long, userid:Long, year:Integer, points:Integer, penalty:Integer, yearrank:Integer, dutyrank:Integer, branchrank:Integer, detail:String);
+
+pointsadjust(id:Long [PK], tenantid:Long, userid:Long, addtime:LocalDateTime, points:Integer, reason:String, submitterid:Long);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

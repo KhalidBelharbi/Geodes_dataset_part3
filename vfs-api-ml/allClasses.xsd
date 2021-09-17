@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stubby" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testcontainertest" >
+      <xs:complexContent>
+       <xs:extension base="genericcontainer<stubbycontainer>">
+         <xs:sequence>
+          <xs:element name="stubby_port" type="xs:anyType" />
+          <xs:element name="stubby_exposed_port" type="xs:anyType" />
+          <xs:element name="mysql" type="xs:anyType" />
+          <xs:element name="stubby_container" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="applicationtests" >
+      <xs:complexContent>
+       <xs:extension base="testcontainertest">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="controllertest" >
+      <xs:complexContent>
+       <xs:extension base="testcontainertest">
+         <xs:sequence>
+          <xs:element name="header_" type="xs:string" />
+          <xs:element name="url_user" type="xs:string" />
+          <xs:element name="url_login" type="xs:string" />
+          <xs:element name="url_category" type="xs:string" />
+          <xs:element name="url_product" type="xs:string" />
+          <xs:element name="url_product_image" type="xs:string" />
+          <xs:element name="url_opinion" type="xs:string" />
+          <xs:element name="url_question" type="xs:string" />
+          <xs:element name="url_purchase" type="xs:string" />
+          <xs:element name="url_payment_paypal" type="xs:string" />
+          <xs:element name="url_payment_pagseguro" type="xs:string" />
+          <xs:element name="token" type="xs:string" />
+          <xs:element name="mvc" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="existelementvalidator" >
+      <xs:sequence>
+        <xs:element name="query" type="xs:string" />
+        <xs:element name="clazz" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uniquevaluevalidator" >
+      <xs:sequence>
+        <xs:element name="query" type="xs:string" />
+        <xs:element name="fieldname" type="xs:string" />
+        <xs:element name="clazz" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdetailsserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userlogged" >
+      <xs:complexContent>
+       <xs:extension base="grantedauthority>">
+         <xs:sequence>
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jwtexecuteloginfilter" >
+      <xs:complexContent>
+       <xs:extension base="abstractauthenticationprocessingfilter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jwtauthenticationfilter" >
+      <xs:complexContent>
+       <xs:extension base="genericfilterbean">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="loginrequest" >
+      <xs:sequence>
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tokenauthenticationservice" >
+      <xs:sequence>
+        <xs:element name="secret" type="xs:string" />
+        <xs:element name="token_prefix" type="xs:string" />
+        <xs:element name="header_" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="websecurityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="errormessage" >
+      <xs:sequence>
+        <xs:element name="timestamp" type="xs:anyType" />
+        <xs:element name="errors" type="xs:anyType" />
+        <xs:element name="path" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorhandler" >
+      <xs:complexContent>
+       <xs:extension base="responseentityexceptionhandler">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="emailnotifyservicesimulate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="emailnotifyservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="swaggerconfig" >
+      <xs:sequence>
+        <xs:element name="authorization_header" type="xs:string" />
+        <xs:element name="default_include_pattern" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uniquevalue" >
+      <xs:complexContent>
+       <xs:extension base="payload>[]">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="existelement" >
+      <xs:complexContent>
+       <xs:extension base="payload>[]">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="newpayment" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newpaymentpagseguro" >
+      <xs:sequence>
+        <xs:element name="idpurchase" type="xs:long" />
+        <xs:element name="codepayment" type="xs:string" />
+        <xs:element name="status" type="paymentpagsegurostatus" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentsuccessexistvalidator" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="purchaserepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchasepaymentvalidator" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="purchaserepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentrepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<payment,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rankingvendornotify" >
+      <xs:sequence>
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="idvendor" type="xs:long" />
+        <xs:element name="idpurchase" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicenotify" >
+      <xs:sequence>
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="idbuyer" type="xs:long" />
+        <xs:element name="idpurchase" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventpaymentnotify" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentstatus" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="purchaserepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="processeventnewpayment" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newpaymentpaypal" >
+      <xs:sequence>
+        <xs:element name="idpurchase" type="xs:long" />
+        <xs:element name="codepayment" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentpagsegurostatus" >
+      <xs:sequence>
+        <xs:element name="status" type="paymentstatus" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="payment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createat" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="purchase" nillable="true" minOccurs="0" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="status" type="paymentstatus" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processeventnewpayment" >
+      <xs:sequence>
+        <xs:element name="eventpaymentnotifies" type="eventpaymentnotify" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="emailnotifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="login" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="createat" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newuser" >
+      <xs:sequence>
+        <xs:element name="login" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="categoryrepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<category,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="newcategory" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="idcategoryparent" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categorycontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="categoryrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="category" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="category" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="othersystemcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rankingvendorrequest" >
+      <xs:sequence>
+        <xs:element name="idvendor" type="xs:long" />
+        <xs:element name="idpurchase" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicerequest" >
+      <xs:sequence>
+        <xs:element name="idbuyer" type="xs:long" />
+        <xs:element name="idpurchase" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="categoryrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newfeature" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imagestoreservicefictitiousservice" >
+      <xs:sequence>
+        <xs:element name="base_url" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imageproductcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="imagestoreservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newproduct" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="features" type="newfeature" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="price" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="idcategory" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feature" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productrepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<product,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="opinionresponse" >
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="evaluation" type="xs:anyType" />
+        <xs:element name="user" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="featureresponse" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questionresponse" >
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="createat" type="xs:anyType" />
+        <xs:element name="user" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productdetailcontroller" >
+      <xs:complexContent>
+       <xs:extension base="object>{">
+         <xs:sequence>
+          <xs:element name="" type="productrepository" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productdetailresponse" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="price" type="xs:anyType" />
+        <xs:element name="features" type="featureresponse" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="images" type="xs:anyType" />
+        <xs:element name="questions" type="questionresponse" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="opinions" type="opinionresponse" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="averageopinion" type="xs:anyType" />
+        <xs:element name="totalopinion" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createat" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="features" type="feature" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="price" type="xs:anyType" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="category" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="images" type="xs:anyType" />
+        <xs:element name="questions" type="question" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="opinions" type="opinion" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imagestoreservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentgateway" >
+      <xs:sequence>
+        <xs:element name="url" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchaserepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<purchase,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="purchase" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="gateway" type="paymentgateway" nillable="true" minOccurs="0" />
+        <xs:element name="buyer" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="payments" type="payment" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="purchasecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="purchaserepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="emailnotifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quantitybyproductvalidator" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newpurchase" >
+      <xs:sequence>
+        <xs:element name="idproduct" type="xs:long" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="gateway" type="paymentgateway" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newopinion" >
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="evaluation" type="xs:anyType" />
+        <xs:element name="idproduct" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="opinionrepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<opinion,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="opinioncontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="opinionrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="opinion" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="evaluation" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questionresponse" >
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="createat" type="xs:anyType" />
+        <xs:element name="idproduct" type="xs:long" />
+        <xs:element name="nameproduct" type="xs:string" />
+        <xs:element name="nameuser" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="question" >
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="createat" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questioncontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="emailnotifyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newquestion" >
+      <xs:sequence>
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="idproduct" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validationmessages" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

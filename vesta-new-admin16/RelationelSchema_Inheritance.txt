@@ -1,0 +1,69 @@
+
+communityactivityapplyinfoentity(applyid:String [PK], //活动idactivityid:String, //用户iduserid:String, //报名时间make:Date, //报名状态applydesc:String, //报名人联系方式applyphone:String, //报名人数applycount:Integer, applyinfo:String, /*报名信息*///报名备注applynote:String, /*新增字段_报名地址_2016-08-05_wyd*//*新增字段_城市项目信息_2017-08-15_wyd*///联系地址applyaddress:String, //项目编码projectnum:String, //项目名称projectname:String, //城市idcityid:String, //城市名称cityname:String, /*:String, //是否签到(0,未签到1,已签到)issignin:Integer, //报名时间段idapplytimerangeid:String, //报名时间段applytimerange:String);
+
+communitynewscope(//主键id:String, //communitydetailid:String, //全部0,不是全部1,全部isall:Integer, //所属城市city:String, //所属城市idcityid:String, //项目名称projectname:String, //项目idprojectid:String, //范围等级设定城市为二级菜单，设定项目为三级菜单scope:String, //0,启用1，不启用status:Integer, //创建日期create:Date, //创建人createperson:String, //操作日期operate:Date, //操作人operateperson:String);
+
+salespromotioninfoscopeentity(//主键idid:String, //促销信息idsalespromotioninfoid:String, //发布城市city:String, //发布城市idcityid:String, //发布项目projectname:String, //发布项目idprojectid:String, //范围等级设定:1,全部城市.2,城市项目scopelev:Integer, //创建人createby:String, //创建时间createon:Date);
+
+butlerscorelogentity(//主键idlogid:String, //用户iduserid:String, //用户姓名username:String, //真实姓名realname:String, //电话号码mobile:String, //管家idbutlerid:String, //管家评分butlerscore:String, //评价内容comment:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+communityactivityapplytimerangeentity(//主键idid:String, //活动idactivityid:String, //报名日期apply:Date, //起始时间starttime:String, //截止时间endtime:String, //人数配额maxuser:Integer, //已报名人数applynum:Integer, //创建时间createon:Date, //创建人createby:String);
+
+butlerstyleentity(//管家idbutlerid:String, //管家名称butlernum:String, //真实姓名realname:String, //管家头像butlerheadimgurl:String, //联系电话telephone:String, //微信昵称wechatnickname:String, //微信二维码urlwechatqrcodeurl:String, //管家评分butlerscore:String, //服务楼栋servicebuilding:String, //备注remarks:String, //城市idservicecityid:String, //城市名称servicecityname:String, //项目编码serviceprojectcode:String, //项目名称serviceprojectname:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+blacklistentity(//主键idid:String, //名单名称listname:String, //城市idcityid:String, //城市名称cityname:String, //项目编码projectcode:String, //项目名称projectname:String, //提示内容promptcontent:String, //名单类型(1,手机号码集合2,房产集合)listtype:Integer, //手机号码集合phonecollection:String, //房产集合housecollection:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+offlineactivitysignentity(//主键idsignid:String, //业主姓名ownername:String, //联系电话mobile:String, //房产地址address:String, //活动idactivityid:String, //参与人数partakenumber:Integer, //中奖信息prizeinfo:String, //创建人createby:String, //创建时间createon:Date);
+
+communityimageinfoentity(/***图片配置路径*/imgpath:String, imgvisitpath:String, imageid:String [PK], activityid:String, url:String, makedate:String, modifydate:String, operator:String, type:Integer);
+
+communityoverviewreservationentity(//主键idid:String, //楼盘idoverviewid:String, //楼盘项目名称overviewname:String, //用户iduserid:String, //预约人reservationper:String, //联系方式reservationtel:String, //预约日期reservation:Date);
+
+communityhouseappointentity(//房屋预约单idid:String, //用户iduserid:String, //社区idcommunityid:String, //批次管理idbatchmanageid:String, //用户预约房间idhouseinfoid:String, //集中交付开始时间paystatime:Date, //集中交付结束时间payendtime:Date, //预约交付开始时间appointstatime:Date, //预约交付结束时间appointendtime:Date, //操作时间operator:Date, //操作人operator:String, //创建时间、create:Date, //创建人createperson:String, //预约状态//0,为预约，1,已预约appointstatus:Integer, //支付状态//0,进行中/带交付1，已完成/已交付paystatus:Integer, //0:上午，1：下午amorpm:Integer, //交付批次名称业主输入//应该取消deliverybatch:String, //预约单状态，在用户端是否显示status:Integer);
+
+communitynewsentity(//idid:String, //新闻标题title:String, //新闻内容comment:String, //新闻图片newsimg:String, //新闻类型0.一级图片，1.二级，2.新闻3.新闻内部链接type:Integer, //新闻状态0，已删除，1，未删除status:Integer, //发布状态0，未发布，1，已经发布releasestatus:Integer, //图片标题imgtitle:String, //发布人releaseperson:String, //创建人createperson:String, //创建时间createtime:Date, //操作人operator:String, //更新时间operatortime:Date, //发布日期release:Date, //排序字段ordernum:Integer);
+
+storyscopeentity(//主键idid:String, //故事idstoryid:String, //发布城市city:String, //发布城市idcityid:String, //发布项目projectname:String, //发布项目idprojectid:String, //范围等级设定:1,全部城市.2,城市项目scopelev:Integer, //创建人createby:String, //创建时间createon:Date);
+
+communityhousetypeentity(/***/serialversionuid:long, //户型idid:String, //户型类型type:String, //是否在售0，不在，1，在售state:Integer, //户型构造图片constructimg:String, //户型面积area:Integer, //户型描述description:String, //剩余户型数量number:Integer, //户型总数量totalnumber:Integer, //户型类型图片housetypeimg:String, //联系电话phone:String, //户型与社区，多对一//communityoverviewentitycommunitycommunityid:String);
+
+activitysurveylistentity(//主键idid:String [PK], //城市idcityid:String, //城市名称cityname:String, //项目编码projectcode:String, //项目名称projectname:String, //当班日期workon:Date, //当班内容workcontent:String, //个人感受feel:String, //提升建议proposal:String, //项目照片projectphoto:String, //电子签名autograph:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+offlineactivityentity(//活动主键idactivityid:String, //活动标题activitytitle:String, //城市idcityid:String, //城市名称cityname:String, //活动地点activityplace:String, //参与人数partakenumber:Integer, //活动开始时间activitystarttime:Date, //活动结束时间activityendtime:Date, //是否抽奖isluckdraw:Integer, //一等奖人数oneprizenumber:Integer, //二等奖人数twoprizenumber:Integer, //三等奖人数threeprizenumber:Integer, //签到人数signnumber:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+communitybatchmanageentity(//预约批次id:String, //预约单iduserid:String, //项目idcommunityid:String, //交付批次名称业主输入deliverybatch:String, //创建时间create:Date, //创建人createperson:String, //操作时间operator:Date, //操作人operator:String, //集中交付开始时间paystatime:Date, //集中交付结束时间payendtime:Date, //描述description:String, //批次管理状态，在用户端是否显示0，进行中1，完成batchstatus:Integer, //是否启用，启用标识，0，未启用，1，启用status:Integer, //可接待总人数receptiontotla:Integer, //报名总人数applytotal:Integer, //每时间段最大人数业主输入maxuser:String, //上午最大办理人数maxuseram:Integer, //下午最大办理人数maxuserpm:Integer);
+
+deliveryplanreservationtimerangeentity(//主键idid:String, //交房计划iddeliveryplanid:String, //预约日期reservation:Date, //起始时间starttime:String, //截止时间endtime:String, //人数配额maxuser:Integer, //已预约人数reservationnum:Integer, //创建时间createon:Date, //创建人createby:String);
+
+communityimageentity(//图片idid:String, //社区idcommunityid:String, //图片路径url:String, //图片类型type:Integer, //备注note:String, //状态status:Integer, //创建时间create:Date, //创建人createperson:String, //操作时间operator:Date, //操作人operator:String);
+
+storyentity(//主键idid:String, //故事标题title:String, //故事内容content:String, //故事标识图infosignimgurl:String, //故事所属客户端idclientid:Integer, //是否有外链(0,否1,是)islink:Integer, //外链地址linksrc:String, //故事排序字段ordernum:Integer, //故事信息状态(0,未删除/1,已删除)infostatus:Integer, //发布状态(0,未发布/1,已发布)releasestatus:Integer, //发布日期release:Date, //发布人releaseperson:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+salespromotioninfoentity(//主键idid:String, //促销标题title:String, //促销内容content:String, //促销信息标识图infosignimgurl:String, //信息所属客户端idclientid:Integer, //是否作为banner展示(0,否/1,是)isbanner:Integer, //是否有外链(0,否1,是)islink:Integer, //外链地址linksrc:String, //信息排序字段ordernum:Integer, //促销信息状态(0,未删除/1,已删除)infostatus:Integer, //发布状态(0,未发布/1,已发布)releasestatus:Integer, //发布日期release:Date, //发布人releaseperson:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+communityoverviewscopeentity(//主键id:String, //楼盘idcommunityoverviewid:String, //项目名称projectname:String, //项目codeprojectcode:String, //0,启用1，不启用status:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+activitysurveyinfoentity(//主键idid:String [PK], //标题title:String, //内容content:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+communityoverviewentity(serialversionuid:long, //社区idid:String, //楼盘名称name:String, //项目地址address:String, //项目介绍introduction:String, //配套设施描述periphery:String, //全景图panoramaimg:String, //优惠信息favorable:String, //均价priceaverage:String, //电话phone:String, //樓盤是否在售status:Integer, //标注【科技住宅，d公园地产】types:String, //所属城市city:String, //创建时间create:Date, //创建人createperson:String, //操作时间operator:Date, //操作人operator:String, //排序字段ordernum:Integer, //发布人releaseperson:String, //发布日期release:Date, //发布状态0，未发布，1，已经发布releasestatus:Integer, //h5_url金茂制作url:String, //排序时间order:Date, //社区对社区位置信息，一对一//communitylocationentitylocationlocationid:String, //社区对社区详情表，一对一//communitydetailentitydetaildetailid:String, housetypes:String);
+
+communityactivityinfoscopeentity(//id:String, //活动idactivityid:String, isall:Integer, //城市名称city:String, cityid:String, //项目名称projectname:String, //项目codeprojectid:String, status:Integer, //创建日期create:Date, //创建人createperson:String, //操作日期operate:Date, //操作人operateperson:String);
+
+communityactivityinfoentity(//活动idactivityid:String, //标题title:String, //活动描述activitydesc:String, //活动时间activitydate:String, //地址address:String, //热线电话hotline:String, //创建时间makedate:String, //修改时间modifydate:String, //操作人operator:String, //状态1-报名中，2-已报满，3-报名结束，4-活动结束status:String, //是否删除0-已删，1-未删state:String, //是否发布0-未发布，1-已发布pushstate:String, //项目idprojectid:String, //总人数headcount:Integer, //人数people:Integer, //活动范围scope:String, //类型：1为公开2为私有types:String, //报名人联系方式applyphone:String, //报名人数applycount:Integer, //每户报名人数上限applymaxnum:Integer, activityenddate:String, /*活动截止时间*/applystarttime:String, /*报名开始时间*/applyendtime:String, /*报名截止时间*/applyinfo:String, /*活动信息*///报名信息最大组数applyinfomaxnum:Integer, /**追加字段:活动类型,是否作为banner,是否有外链,外链地址*///普通活动activity_type_common:int, //营销活动activity_type_marketing:int, //商业活动activity_type_business:int, //总部活动activity_type_headquarters:int, //活动类型(1,普通活动2,营销活动3,商业活动4,总部活动)activitytype:Integer, //主题类型(1,家兴业茂2,穆如清风3,优居计划4,金彩有你)themetype:Integer, //是否作为宣传位(0,否1,是)isbanner:Integer, //是否有外链(0,否1,是)islink:Integer, //外链地址linksrc:String, //是否使用黑名单(0,否1,是)isblacklist:Integer, //黑名单idblacklistid:String, //是否发布房产范围(0,否1,是)ishousescope:Integer, //房产范围housescope:String, //是否配置活动报名时间段(0,否1,是)istimerange:Integer);
+
+engineeringprojectentity(//主键idengineeringprojectid:String, //城市idcityid:String, //城市名称cityname:String, //工程项目名称projectname:String, //创建人createby:String, //创建时间createon:Date);
+
+communitycancelentity(id:String [PK], //创建时间或取消时间create:Date, //修改时间modify:Date, //创建人或取消用户createby:String, //取消次数cancelnumber:String);
+
+deliveryplancrmentity(//预约形式_上下午reservation_type_amandpm:String, //预约形式_时间段reservation_type_timerange:String, //计划idid:String, //项目编号_关联的项目信息new_deliveryplan的项目编码——bj-yzjmy-x88-10-01-1001projectnum:String, //计划编号_fxbj001jfjh201603310001plannum:String, //计划名称planname:String, //计划名称_别名planname_alias:String, //计划开始时间2016/4/5_集中交付开始时间planstart:Date, //计划结束时间planend:Date, //计划起止时间_别名plandate_alias:String, //办理开始时间dealstart:Date, //办理结束时间dealend:Date, //合同约定时间appoint:Date, //计划描述description:String, //计划描述_别名description_alias:String, //计划类型plantype:String, //计划执行状态start/finishstate:String, //集中处理时间focusdate:String, //集中处理地点focusaddress:String, //集中交付地点_别名focusaddress_alias:String, //客户开放日地点openaddress:String, //零星交房地址sporadicaddress:String, //修改时间modify:Date, //简称shortname:String, //批次管理状态，在用户端是否显示0，未发布1，已发布，2，查询所有batchstatus:Integer, //启用标识status:Integer, //批次背景图batchimg:String, //预约形式reservationtype:String, //上午时间段最大人数maxuseram:String, //下午时间段最大人数maxuserpm:String, //描述补充note:String, //图片地址url:String, //图片类型type:Integer, //交付标准deliverystandard:String);
+
+communitydetailentity(/***/serialversionuid:long, //详情idid:String, //楼盘idcommunityid:String, //详情标题title:String, //详情内容content:String, //详情图片img:String, //等级grade:Integer, //创建时间create:Date, //创建人createperson:String, //操作时间operator:Date, //操作人operator:String);
+
+communityoverviewimgentity(//楼盘图片类型//户型图img_type_floor_plan:String, //总平面图img_type_master_plan:String, //室内设计图img_type_interior_design:String, //园林设计图img_type_garden_design:String, //配套设施图img_type_supporting_facilities:String, //主键idid:String, //楼盘idoverviewid:String, //图片类型imgtype:String, //图片地址imgurl:String, //创建时间createon:Date);
+
+engineeringprogressentity(//工程进展idengineeringprogressid:String, //工程进展标题engineeringprogresstitle:String, //工程进展展示图engineeringprogresssignimgurl:String, //工程进展内容engineeringprogresscontent:String, //城市idcityid:String, //城市名称cityname:String, //工程项目编码projectcode:String, //工程项目名称projectname:String, //是否有外链(0,否1,是)islink:Integer, //外链地址linksrc:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+communityreservationlistentity(//房屋预约单idid:String, //用户姓名username:String, //手机号mobile:String, //身份证号idcard:String, //项目名称projectname:String, //楼号buildingname:String, //单元号unitname:String, //房间编号roomname:String, //业主预约时间reservation:Date, //0,上午1，下午amorpm:String, //交付批次（计划）名称planname:String, //预约状态0，未预约1，已预约reservationstatus:String, //标识状态0，不启用1，启用status:String, //作为标示防止重名userid:String, //操作时间operator:Date, //操作人operator:String, //创建时间create:Date, //创建人createperson:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

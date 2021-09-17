@@ -1,0 +1,15 @@
+employee(salary:BigDecimal);
+
+student(id:Long [PK], name:String);
+
+customer(customerid:Long [PK], name:String, lastname:String, addresslist:List<Address>);
+
+course(courseid:Long [PK], name:String, GeneratedName:Student #FK to(student));
+
+individual(id:Long [PK], name:String, lastname:String);
+
+person(id:Long [PK], firstname:String, lastname:String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

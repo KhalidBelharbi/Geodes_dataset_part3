@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="inmemoryidentitystore4authorization" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="customerdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sizequantity" >
+      <xs:sequence>
+        <xs:element name="size" type="xs:string" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="clothingitem" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clothingitem" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="label" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="image" type="xs:string" />
+        <xs:element name="colour" type="xs:string" />
+        <xs:element name="sizelist" type="sizequantity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="category" nillable="true" minOccurs="0" />
+        <xs:element name="customerorders" type="customerorderclothingitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerorderclothingitemid" >
+      <xs:sequence>
+        <xs:element name="customerorder" type="xs:long" />
+        <xs:element name="clothingitem" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sizequantityid" >
+      <xs:sequence>
+        <xs:element name="size" type="xs:string" />
+        <xs:element name="clothingitem" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="category" >
+      <xs:sequence>
+        <xs:element name="category_id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="clothingitemlist" type="clothingitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerorder" >
+      <xs:sequence>
+        <xs:element name="customerorder_id" type="xs:long" />
+        <xs:element name="date" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="payment" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customer" nillable="true" minOccurs="0" />
+        <xs:element name="clotheslist" type="customerorderclothingitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="payment" >
+      <xs:sequence>
+        <xs:element name="payment_id" type="xs:long" />
+        <xs:element name="paymenttype" type="xs:string" />
+        <xs:element name="GeneratedName" type="customerorder" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagecontactus" >
+      <xs:sequence>
+        <xs:element name="message_id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="subject" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerorderclothingitem" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="customerorder" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="clothingitem" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="size" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customer" >
+      <xs:sequence>
+        <xs:element name="customer_id" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="shippingadress" type="xs:string" />
+        <xs:element name="homeadress" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="GeneratedName" type="customerorder" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerorderclothingitemdao" >
+      <xs:complexContent>
+       <xs:extension base="abstractdao<customerorderclothingitem,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractdao" >
+      <xs:sequence>
+        <xs:element name="entitytype" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagedao" >
+      <xs:complexContent>
+       <xs:extension base="abstractdao<messagecontactus,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clothingiteminitbean" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="clothingitemdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="categorydao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerdao" >
+      <xs:complexContent>
+       <xs:extension base="abstractdao<customer,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="categorydao" >
+      <xs:complexContent>
+       <xs:extension base="abstractdao<category,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sizequantitydao" >
+      <xs:complexContent>
+       <xs:extension base="abstractdao<sizequantity,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customerorderdao" >
+      <xs:complexContent>
+       <xs:extension base="abstractdao<customerorder,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="questions" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clothingitemdao" >
+      <xs:complexContent>
+       <xs:extension base="abstractdao<clothingitem,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paymentdao" >
+      <xs:complexContent>
+       <xs:extension base="abstractdao<payment,">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cartbean" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="clothingitemdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customerorderdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customerorderclothingitemdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customerdao" nillable="true" minOccurs="0" />
+        <xs:element name="items" type="cartitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="customerinfo" type="xs:string" />
+        <xs:element name="customeremail" type="xs:string" />
+        <xs:element name="inloggningsstatus" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartitem" >
+      <xs:sequence>
+        <xs:element name="item" type="clothingitem" nillable="true" minOccurs="0" />
+        <xs:element name="size" type="xs:string" />
+        <xs:element name="quantity" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jaxrsconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="application">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="clothingitemservicerest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="clothingitemdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categoryservicerest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="categorydao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerservicerest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="customerdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentservicerest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="paymentdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerorderservicerest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="customerorderdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartservicerest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="cartbean" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customerdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="messagedao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="beans" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="glassfish-resources" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartbeantest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerorderdaotest" >
+      <xs:sequence>
+        <xs:element name="test_id_1" type="xs:long" />
+        <xs:element name="test_id_2" type="xs:long" />
+        <xs:element name="test_date1" type="xs:anyType" />
+        <xs:element name="test_date2" type="xs:anyType" />
+        <xs:element name="test_date3" type="xs:anyType" />
+        <xs:element name="test_1" type="customerorder" nillable="true" minOccurs="0" />
+        <xs:element name="test_2" type="customerorder" nillable="true" minOccurs="0" />
+        <xs:element name="test_3" type="customerorder" nillable="true" minOccurs="0" />
+        <xs:element name="resttest" type="customerorder" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customerorderdao" nillable="true" minOccurs="0" />
+        <xs:element name="utx" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentdaotest" >
+      <xs:sequence>
+        <xs:element name="test_id_1" type="xs:long" />
+        <xs:element name="test_id_2" type="xs:long" />
+        <xs:element name="test_id_3" type="xs:long" />
+        <xs:element name="test_p1" type="payment" nillable="true" minOccurs="0" />
+        <xs:element name="test_p2" type="payment" nillable="true" minOccurs="0" />
+        <xs:element name="test_p3" type="payment" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="paymentdao" nillable="true" minOccurs="0" />
+        <xs:element name="utx" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categorydaotest" >
+      <xs:sequence>
+        <xs:element name="test_id_1" type="xs:long" />
+        <xs:element name="test_id_2" type="xs:long" />
+        <xs:element name="test_id_3" type="xs:long" />
+        <xs:element name="test_cat1" type="category" nillable="true" minOccurs="0" />
+        <xs:element name="test_cat2" type="category" nillable="true" minOccurs="0" />
+        <xs:element name="test_cat3" type="category" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="categorydao" nillable="true" minOccurs="0" />
+        <xs:element name="utx" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clothingitemdaotest" >
+      <xs:sequence>
+        <xs:element name="item1" type="clothingitem" nillable="true" minOccurs="0" />
+        <xs:element name="item2" type="clothingitem" nillable="true" minOccurs="0" />
+        <xs:element name="item3" type="clothingitem" nillable="true" minOccurs="0" />
+        <xs:element name="sizeitem1" type="sizequantity" nillable="true" minOccurs="0" />
+        <xs:element name="sizeitem2" type="sizequantity" nillable="true" minOccurs="0" />
+        <xs:element name="sizeitem3" type="sizequantity" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="clothingitemdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sizequantitydao" nillable="true" minOccurs="0" />
+        <xs:element name="utx" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerdaotest" >
+      <xs:sequence>
+        <xs:element name="test_id_1,test_id_2,test_id_3" type="xs:long" />
+        <xs:element name="test_email_1" type="xs:string" />
+        <xs:element name="test_password_1" type="xs:string" />
+        <xs:element name="test_shippingadress_1" type="xs:string" />
+        <xs:element name="test_homeadress_1" type="xs:string" />
+        <xs:element name="test_firstname_1" type="xs:string" />
+        <xs:element name="test_lastname_1" type="xs:string" />
+        <xs:element name="test_c1" type="customer" nillable="true" minOccurs="0" />
+        <xs:element name="test_c2" type="customer" nillable="true" minOccurs="0" />
+        <xs:element name="test_c3" type="customer" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customerdao" nillable="true" minOccurs="0" />
+        <xs:element name="utx" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="glassfish-resources" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="arquillian" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

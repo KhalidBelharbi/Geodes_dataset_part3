@@ -1,0 +1,13 @@
+ClassDiagram.Class>> AbstractAuditingEntity =>=>=> RelationalSchema.Table>> abstractauditingentity;
+ClassDiagram.Class>> PersistentAuditEvent =>=>=> RelationalSchema.Table>> persistentauditevent;
+ClassDiagram.Attribut>> AbstractAuditingEntity.serialversionuid:long =>=>=> RelationalSchema.Column>> abstractauditingentity.serialversionuid;
+ClassDiagram.Attribut>> AbstractAuditingEntity.createdby:String =>=>=> RelationalSchema.Column>> abstractauditingentity.createdby;
+ClassDiagram.Attribut>> AbstractAuditingEntity.createddate:Instant =>=>=> RelationalSchema.Column>> abstractauditingentity.createddate;
+ClassDiagram.Attribut>> AbstractAuditingEntity.lastmodifiedby:String =>=>=> RelationalSchema.Column>> abstractauditingentity.lastmodifiedby;
+ClassDiagram.Attribut>> AbstractAuditingEntity.lastmodifieddate:Instant =>=>=> RelationalSchema.Column>> abstractauditingentity.lastmodifieddate;
+ClassDiagram.Attribut>> PersistentAuditEvent.serialversionuid:long =>=>=> RelationalSchema.Column>> persistentauditevent.serialversionuid;
+ClassDiagram.Attribut>> PersistentAuditEvent.id:Long =>=>=> RelationalSchema.Column>> persistentauditevent.id PRIMARY KEY;
+ClassDiagram.Attribut>> PersistentAuditEvent.principal:String =>=>=> RelationalSchema.Column>> persistentauditevent.principal;
+ClassDiagram.Attribut>> PersistentAuditEvent.auditeventdate:Instant =>=>=> RelationalSchema.Column>> persistentauditevent.auditeventdate;
+ClassDiagram.Attribut>> PersistentAuditEvent.auditeventtype:String =>=>=> RelationalSchema.Column>> persistentauditevent.auditeventtype;
+ClassDiagram.Attribut>> PersistentAuditEvent.data:Map<String,String> =>=>=> RelationalSchema.Column>> persistentauditevent.data;

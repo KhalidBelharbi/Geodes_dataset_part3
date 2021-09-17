@@ -1,0 +1,349 @@
+notificationmessagelinedto(id:int [PK], notificationmessagesection:NotificationMessageSectionDTO #FK to(MessageSection), content:String, versionnum:int);
+
+notificationmessagedto(id:int [PK], notificationmessagetype:NotificationMessageTypeDTO #FK to(NotificationMessageTypeDTO), entity:CompanyDTO #FK to(companydto), language:LanguageDTO #FK to(languagedto), useflag:short, versionnum:int, includeattachment:Integer, attachmentdesign:String, attachmenttype:String, notifyadmin:Integer, notifypartner:Integer, notifyparent:Integer, notifyallparents:Integer, mediumtypes:List<NotificationMediumType>);
+
+notificationmessagearchlinedto(id:int [PK], notificationmessagearch:NotificationMessageArchDTO #FK to(NotificationMessageArchDTO), section:int, content:String, versionnum:int);
+
+notificationmessagearchdto(id:int [PK], baseuser:UserDTO #FK to(userdto), typeid:Integer, createtime:Date, resultmessage:String, versionnum:int);
+
+notificationmessagetypedto(id:int [PK], category:NotificationCategoryDTO #FK to(notificationcategorydto), versionnum:int);
+
+notificationmessagesectiondto(id:int [PK], notificationmessage:NotificationMessageDTO #FK to(MessageDTO), section:Integer, versionnum:int);
+
+editypedto(id:int [PK], name:String, path:String, global:Integer, entity:CompanyDTO #FK to(companydto), versionnum:int, createtime:Date, edisuffix:String);
+
+edi_type_entity_map(edi_type_id:EDITypeDTO [PK] #FK to EDITypeDTO,entity_id:set<companydto> [PK] #FK to set<companydto>);
+
+edifilefielddto(id:int [PK], edifilefieldkey:String, edifilefieldvalue:String, edifilefieldorder:Integer, edifilerecord:EDIFileRecordDTO #FK to(EDIFileRecordDTO), comment:String);
+
+edifiledto(id:int [PK], name:String, createtime:Date, entity:CompanyDTO #FK to(companydto), editype:EDITypeDTO #FK to(EDITypeDTO), type:TransactionType, versionnum:int, filestatus:EDIFileStatusDTO #FK to(EDIFileStatusDTO), exceptioncode:EDIFileExceptionCodeDTO #FK to(EDIFileExceptionCodeDTO), comment:String);
+
+edifileexceptioncodedto(id:int [PK], exceptioncode:String, description:String, status:EDIFileStatusDTO #FK to(EDIFileStatusDTO), versionnum:int);
+
+edifilestatusdto(id:int [PK], name:String, createtime:Date, versionnum:int, iserror:boolean);
+
+edifilerecorddto(id:int [PK], edifile:EDIFileDTO #FK to(EDIFileDTO), edifilerecordheader:String, recordorder:Integer, creationtime:Date, versionnum:int, totalfilefield:Integer, comment:String);
+
+reporttypedto(id:int [PK], name:String, versionnum:Integer);
+
+integerreportparameterdto();
+
+booleanreportparameterdto();
+
+datereportparameterdto();
+
+listreportparameterdto();
+
+stringreportparameterdto();
+
+reportparameterdto(id:Integer [PK], report:ReportDTO #FK to(ReportDTO), name:String);
+
+reportdto(base_path:String, id:int [PK], type:ReportTypeDTO #FK to(ReportTypeDTO), name:String, filename:String, versionnum:Integer);
+
+entity_report_map(report_id:ReportDTO [PK] #FK to ReportDTO,entity_id:set<companydto> [PK] #FK to set<companydto>);
+
+ageingentitystepdto(id:int [PK], company:CompanyDTO #FK to(companydto), userstatus:UserStatusDTO #FK to(userstatusdto), days:int, retrypayment:int, suspend:int, sendnotification:int, versionnum:int);
+
+processrunuserdto(status_failed:Integer, status_succeeded:Integer, id:int [PK], processrun:ProcessRunDTO #FK to(processrundto), user:UserDTO #FK to(userdto), status:Integer, created:Date, versionnum:int);
+
+processruntotalpmdto(id:int [PK], paymentmethod:PaymentMethodDTO #FK to(paymentmethoddto), total:BigDecimal, processruntotal:ProcessRunTotalDTO #FK to(processruntotaldto), versionnum:int);
+
+paperinvoicebatchdto(id:int [PK], totalinvoices:int, delivery:Date, isselfmanaged:int, billingprocesses:BillingProcessDTO, versionnum:int);
+
+billingprocessfaileduserdto(id:int [PK], batchprocessdto:BatchProcessInfoDTO, GeneratedName:UserDTO, versionnum:int);
+
+periodunitdto(month:int, week:int, day:int, year:int, semi_monthly:int, id:int [PK], partners:Set<PartnerDTO>, orderperioddtos:Set<OrderPeriodDTO>);
+
+billingprocessconfigurationdto(id:int [PK], GeneratedName:PeriodUnitDTO, entity:CompanyDTO #FK to(companydto), nextrun:Date, generatereport:Integer, retries:Integer, daysforretry:Integer, daysforreport:Integer, reviewstatus:int, duedateunitid:int, duedatevalue:int, dffm:Integer, onlyrecurring:Integer, invoicedateprocess:Integer, maximumperiods:int, autopaymentapplication:int, versionnum:int, lastdayofmonth:Boolean, GeneratedName:ProratingType);
+
+billingprocessdto(id:int [PK], GeneratedName:PeriodUnitDTO, paperinvoicebatch:PaperInvoiceBatchDTO #FK to(paperinvoicebatchdto), entity:CompanyDTO #FK to(companydto), billing:Date, periodvalue:int, isreview:int, retriestodo:int, batchinfos:Set<BatchProcessInfoDTO>, versionnum:int, log:FormatLogger);
+
+batchprocessinfodto(id:int [PK], GeneratedName:BillingProcessDTO, //todo:ifweincludebatchtablesinjbillingschema,thisvaluewillbereplacedbyentityjobexecutionid:Integer, totalfailedusers:Integer, totalsuccessfulusers:Integer, versionnum:int);
+
+processrunstatusdto();
+
+processrundto(id:int [PK], GeneratedName:BillingProcessDTO, run:Date, started:Date, finished:Date, invoicesgenerated:Integer, paymentfinished:Date, status:ProcessRunStatusDTO #FK to(processrunstatusdto), versionnum:int);
+
+processruntotaldto(id:int [PK], processrun:ProcessRunDTO #FK to(processrundto), GeneratedName:CurrencyDTO, totalinvoiced:BigDecimal, totalpaid:BigDecimal, totalnotpaid:BigDecimal, versionnum:int);
+
+pluggabletasktypecategorydto(id:Integer [PK], interfacename:String);
+
+pluggabletaskdto(log:FormatLogger, //thisisinsynchwiththedb(pluggabletasktype)type_email:Integer, id:Integer [PK], entityid:Integer, processingorder:Integer, notes:String, type:PluggableTaskTypeDTO #FK to(pluggabletasktypedto), versionnum:Integer);
+
+pluggabletaskparameterdto(log:FormatLogger, GeneratedName:int, str:int, flo:int, //mappedcolumsid:Integer [PK], name:String, intvalue:Integer, strvalue:String, floatvalue:BigDecimal, task:PluggableTaskDTO #FK to(pluggabletaskdto), versionnum:Integer);
+
+pluggabletasktypedto(log:FormatLogger, pk:Integer [PK], classname:String, minparameters:Integer, category:PluggableTaskTypeCategoryDTO #FK to(pluggabletasktypecategorydto));
+
+invoicelinedto(id:int [PK], invoicelinetype:InvoiceLineTypeDTO #FK to(invoicelinetypedto), item:ItemDTO #FK to(itemdto), invoice:InvoiceDTO #FK to(invoicedto), amount:BigDecimal, quantity:BigDecimal, price:BigDecimal, deleted:Integer, description:String, sourceuserid:Integer, ispercentage:Integer, versionnum:int, order:OrderDTO #FK to(orderdto));
+
+invoicelinetypedto(id:int [PK], description:String, orderposition:int);
+
+invoicedto(log:FormatLogger, process:int, do_not_process:int, id:int [PK], GeneratedName:BillingProcessDTO, baseuser:UserDTO #FK to(userdto), GeneratedName:CurrencyDTO, invoice:InvoiceDTO #FK to(invoicedto), paperinvoicebatch:PaperInvoiceBatchDTO #FK to(paperinvoicebatchdto), createtime:Date, due:Date, total:BigDecimal, paymentattempts:int, invoicestatus:InvoiceStatusDTO #FK to(invoicestatusdto), balance:BigDecimal, carriedbalance:BigDecimal, inprocesspayment:int, isreview:Integer, deleted:Integer, customernotes:String, publicnumber:String, lastreminder:Date, overduestep:Integer, createtimestamp:Date, versionnum:int, //fortransitiontojpacurrencyname:String);
+
+invoicedeliverymethoddto(id:int [PK]);
+
+entity_delivery_method_map(method_id:InvoiceDeliveryMethodDTO [PK] #FK to InvoiceDeliveryMethodDTO,entity_id:set<companydto> [PK] #FK to set<companydto>);
+
+invoicestatusdto(invoicedtos:Set<InvoiceDTO>);
+
+suretaxtransactionlogdto(id:int [PK], transactionid:String, transactiontype:String, transactiondata:String, transactiondate:Timestamp, responsetransactionid:Integer, requesttype:String);
+
+invoicetemplateversiondto(id:Integer [PK], invoicetemplate:InvoiceTemplateDTO #FK to(invoicetemplatedto), versionnumber:String, tagname:String, createdtime:Date, size:Integer, userid:Integer, templatejson:String, useforinvoice:Boolean);
+
+invoicetemplatefiledto(id:long [PK], template:InvoiceTemplateDTO #FK to(invoicetemplatedto), name:String, data:byte);
+
+invoicetemplatedto(id:int [PK], invoiceid:Integer, name:String, entity:CompanyDTO #FK to(companydto));
+
+boabaiprocessingerrordto(id:int [PK], filename:String, rawdata:String, processingerrors:String);
+
+boabaiprocessedfiledto(id:int [PK], filename:String);
+
+blacklistdto(//constants//blacklisttypestype_user_id:Integer, type_name:Integer, type_cc_number:Integer, type_address:Integer, type_ip_address:Integer, type_phone_number:Integer, //blacklistsourcessource_customer_service:Integer, source_external_upload:Integer, source_user_status_change:Integer, source_billing_process:Integer, log:FormatLogger, //mappedcolumnsid:Integer [PK], company:CompanyDTO #FK to(companydto), create:Date, type:Integer, source:Integer, creditcard:PaymentInformationDTO #FK to(paymentinformationdto), contact:ContactDTO #FK to(contactdto), user:UserDTO #FK to(userdto), GeneratedName:MetaFieldValue #FK to(metafieldvalue), versionnum:Integer);
+
+paymenttransferdto(id:int [PK], payment:PaymentDTO #FK to(paymentdto), fromuserid:Integer, touserid:Integer, amount:BigDecimal, createtime:Date, createdby:Integer, deleted:int, paymenttransfernotes:String);
+
+paymentinformationdto(id:Integer [PK], processingorder:Integer, deleted:Integer, user:UserDTO #FK to(userdto), paymentmethodtype:PaymentMethodTypeDTO #FK to(paymentmethodtypedto), metafields:List<MetaFieldValue>, versionnum:int, //transientfieldsblacklisted:boolean);
+
+paymentresultdto(id:int [PK]);
+
+paymentauthorizationdto(id:int [PK], payment:PaymentDTO #FK to(paymentdto), processor:String, code1:String, code2:String, code3:String, approvalcode:String, avs:String, transactionid:String, md5:String, create:Date, cardcode:String, responsemessage:String, versionnum:int);
+
+paymentinstrumentinfodto(id:Integer [PK], payment:PaymentDTO #FK to(paymentdto), result:PaymentResultDTO #FK to(paymentresultdto), paymentmethod:PaymentMethodDTO #FK to(paymentmethoddto), paymentinformation:PaymentInformationDTO #FK to(paymentinformationdto));
+
+paymentdto(id:int [PK], baseuser:UserDTO #FK to(userdto), GeneratedName:CurrencyDTO, paymentmethod:PaymentMethodDTO #FK to(paymentmethoddto), payment:PaymentDTO #FK to(paymentdto), paymentresult:PaymentResultDTO #FK to(paymentresultdto), attempt:Integer, amount:BigDecimal, createtime:Date, payment:Date #FK to(date), deleted:int, isrefund:int, payoutid:PartnerPayout, balance:BigDecimal, uptime:Date, ispreauth:Integer, //creditcardcreditcard:PaymentInformationDTO, versionnum:int, paymentperiod:Integer, paymentnotes:String, provisioningstatus:ProvisioningStatusDTO #FK to(provisioningstatusdto), transferredpayments:List<PaymentTransferDTO>);
+
+paymentinvoicemapdto(log:FormatLogger, id:int [PK], payment:PaymentDTO #FK to(paymentdto), invoiceentity:InvoiceDTO #FK to(invoicedto), amount:BigDecimal, createtime:Date, versionnum:int);
+
+paymentmethodtemplatedto(serialversionuid:long, id:int [PK], templatename:String, version:int);
+
+paymentmethoddto(id:int [PK]);
+
+paymentmethodtypedto(serialversionuid:long, id:int [PK], methodname:String, isrecurring:boolean, allaccounttype:Boolean, entity:CompanyDTO #FK to(companydto), paymentmethodtemplate:PaymentMethodTemplateDTO #FK to(paymentmethodtemplatedto), version:int);
+
+payment_method_account_type_map(payment_method_id:PaymentMethodTypeDTO [PK] #FK to PaymentMethodTypeDTO,account_type_id:set<accounttypedto> [PK] #FK to set<accounttypedto>);
+
+eventlogmoduledto(id:int [PK]);
+
+eventlogdto(id:Integer [PK], GeneratedName:JbillingTable #FK to(jbillingtable), baseuser:UserDTO #FK to(userdto), affecteduser:UserDTO #FK to(userdto), eventlogmessage:EventLogMessageDTO #FK to(MessageDTO), eventlogmodule:EventLogModuleDTO #FK to(eventlogmoduledto), company:CompanyDTO #FK to(companydto), foreignid:int, createtime:Date, levelfield:int, oldnum:Integer, oldstr:String, old:Date, versionnum:Integer);
+
+eventlogmessagedto(id:int [PK]);
+
+preferencetypedto(id:int [PK], defaultvalue:String, GeneratedName:ValidationRule);
+
+notificationcategorydto(id:int [PK]);
+
+preferencedto(id:int [PK], GeneratedName:JbillingTable, preferencetype:PreferenceTypeDTO #FK to(preferencetypedto), foreignid:int, value:String);
+
+provisioningcommanddto(id:int [PK], name:String, entity:CompanyDTO #FK to(companydto), executionorder:Integer, create:Date, lastup:Date, commandstatus:ProvisioningCommandStatus, parametermap:Map<String,String>, versionnum:int);
+
+orderlineprovisioningcommanddto(orderchange:OrderChangeDTO #FK to(orderchangedto));
+
+paymentprovisioningcommanddto(payment:PaymentDTO #FK to(paymentdto));
+
+assetprovisioningcommanddto(asset:AssetDTO #FK to(assetdto));
+
+provisioningrequestdto(id:int [PK], //uniqueidentifier-uuidoftherequest(differentthanthedbid)identifier:String, commanddto:ProvisioningCommandDTO, processor:String, executionorder:Integer, create:Date, submit:Date, submitrequest:String, rollbackrequest:String, continueontype:String, requeststatus:ProvisioningRequestStatus, resultreceived:Date, resultmap:Map<String,String>, versionnum:int);
+
+provisioningstatusdto();
+
+userpassworddto(id:Integer [PK], user:UserDTO #FK to(userdto), created:Date, encryptedpassword:String);
+
+customerdto(log:FormatLogger, id:int [PK], baseuser:UserDTO #FK to(userdto), invoicedeliverymethod:InvoiceDeliveryMethodDTO #FK to(invoicedeliverymethoddto), referralfeepaid:Integer, autopaymenttype:Integer, duedateunitid:Integer, duedatevalue:Integer, dffm:Integer, parent:CustomerDTO #FK to(customerdto), isparent:Integer, excludeaging:int, invoicechild:Integer, useparentpricing:boolean, dynamicbalance:BigDecimal, autorecharge:BigDecimal, creditlimit:BigDecimal, creditnotificationlimit1:BigDecimal, creditnotificationlimit2:BigDecimal, versionnum:int, lastinvoice:Date, nextinvoice:Date, mainsubscription:MainSubscriptionDTO, accounttype:AccountTypeDTO #FK to(accounttypedto), invoicedesign:String, invoicetemplate:InvoiceTemplateDTO #FK to(invoicetemplatedto), //#4501-customautorechargerechargethreshold:BigDecimal, monthlylimit:BigDecimal, currentmonthlyamount:BigDecimal, currentmonth:Date);
+
+customer_partner_map(customer_id:CustomerDTO [PK] #FK to CustomerDTO,partner_id:set<partnerdto> [PK] #FK to set<partnerdto>);
+
+customerpricedto(id:CustomerPricePK [PK], createtime:Date, pricesubscription:Date, priceexpiry:Date);
+
+userstatusdto(id:int [PK], canlogin:int, ageingentitystep:AgeingEntityStepDTO #FK to(ageingentitystepdto));
+
+accounttypepricedto(id:AccountTypePricePK [PK], createtime:Date, priceexpiry:Date);
+
+usercodedto(id:int [PK], user:UserDTO #FK to(userdto), /***uniqueidentifiertoidentifythisuser*/identifier:String, /***areferencethatmightbeusedinanexternalsystem*/externalreference:String, /***whattypeofprogramdoesthetranslationidrelateto*/type:String, /***descriptionoftheprogramtype*/typedescription:String, validfrom:Date, validto:Date);
+
+resetpasswordcodedto(id:Integer [PK], user:UserDTO #FK to(userdto), created:Date, token:String, newpassword:String);
+
+customeraccountinfotypemetafield(id:int [PK], customer:CustomerDTO #FK to(customerdto), accountinfotype:AccountInformationTypeDTO #FK to(accountinformationtypedto), GeneratedName:MetaFieldValue #FK to(metafieldvalue), effective:Date);
+
+userdto(id:int [PK], username:String, password:String, deleted:int, enabled:boolean, accountexpired:boolean, accountlocked:boolean, passwordexpired:boolean, createtime:Date, laststatuschange:Date, lastlogin:Date, accountdisabled:Date, failedattempts:int, changepassword:Date, GeneratedName:CurrencyDTO, company:CompanyDTO #FK to(companydto), subscriberstatus:SubscriberStatusDTO #FK to(subscriberstatusdto), userstatus:UserStatusDTO #FK to(userstatusdto), language:LanguageDTO #FK to(languagedto), customer:CustomerDTO #FK to(customerdto), contact:ContactDTO, partnersforuserid:PartnerDTO, encryptionscheme:Integer, versionnum:int, //paymentinstrumentspaymentinstruments:List<PaymentInformationDTO>, accountlockedtime:Date);
+
+user_role_map(user_id:UserDTO [PK] #FK to UserDTO,role_id:set<roledto> [PK] #FK to set<roledto>);
+
+companydto(id:int [PK], GeneratedName:CurrencyDTO, language:LanguageDTO #FK to(languagedto), externalid:String, description:String, createtime:Date, invoiceasreseller:boolean, parent:CompanyDTO #FK to(companydto), reseller:UserDTO #FK to(userdto), orderperioddtos:Set<OrderPeriodDTO>, currencydtos:Set<CurrencyDTO>, versionnum:int, deleted:Integer, customerinformationdesign:String, uicolor:Integer, brokercatalogversion:String, type:CompanyType);
+
+item_entity_map(entity_id:CompanyDTO [PK] #FK to CompanyDTO,item_id:set<itemdto> [PK] #FK to set<itemdto>);item_type_entity_map(entity_id:CompanyDTO [PK] #FK to CompanyDTO,item_type_id:set<itemtypedto> [PK] #FK to set<itemtypedto>);entity_delivery_method_map(entity_id:CompanyDTO [PK] #FK to CompanyDTO,method_id:set<invoicedeliverymethoddto> [PK] #FK to set<invoicedeliverymethoddto>);entity_report_map(entity_id:CompanyDTO [PK] #FK to CompanyDTO,report_id:ReportDTO [PK] #FK to ReportDTO);
+
+accountinformationtypedto(name:String, accounttype:AccountTypeDTO #FK to(accounttypedto));
+
+usercodeorderlinkdto(order:OrderDTO #FK to(orderdto));
+
+usercodecustomerlinkdto(customer:CustomerDTO #FK to(customerdto));
+
+subscriberstatusdto();
+
+matchingfielddto(id:Integer [PK], ordersequence:Integer, required:Boolean, description:String, mediationfield:String, matchingfield:String, type:MatchingFieldType, route:RouteDTO #FK to(routedto), routeratecard:RouteRateCardDTO #FK to(routeratecarddto), versionnum:Integer, longestvalue:Integer, smallestvalue:Integer, mandatoryfieldsquery:String);
+
+customernotedto(noteid:int [PK], notetitle:String, notecontent:String, creationtime:Date, company:CompanyDTO #FK to(companydto), customer:CustomerDTO #FK to(customerdto), user:UserDTO #FK to(userdto));
+
+accounttypedto(id:int [PK], company:CompanyDTO #FK to(companydto), creditlimit:BigDecimal, invoicedesign:String, invoicetemplate:InvoiceTemplateDTO #FK to(invoicetemplatedto), billingcycle:MainSubscriptionDTO, created:Date, creditnotificationlimit1:BigDecimal, creditnotificationlimit2:BigDecimal, invoicedeliverymethod:InvoiceDeliveryMethodDTO #FK to(invoicedeliverymethoddto), language:LanguageDTO #FK to(languagedto), currency:CurrencyDTO #FK to(currencydto), versionnum:Integer, preferrednotificationaitid:Integer);
+
+payment_method_account_type_map(account_type_id:AccountTypeDTO [PK] #FK to AccountTypeDTO,payment_method_id:set<paymentmethodtypedto> [PK] #FK to set<paymentmethodtypedto>);
+
+roledto(role_authority_prefix:String, //authorityvaluesinenglishauthority_language_id:Integer, id:int [PK], company:CompanyDTO #FK to(companydto), roletypeid:Integer, authority:String);
+
+user_role_map(role_id:RoleDTO [PK] #FK to RoleDTO,user_id:set<userdto> [PK] #FK to set<userdto>);permission_role_map(role_id:RoleDTO [PK] #FK to RoleDTO,permission_id:set<permissiondto> [PK] #FK to set<permissiondto>);
+
+permissiontypedto(id:int [PK], description:String);
+
+permissionuserdto(id:int [PK], baseuser:UserDTO #FK to(userdto), permission:PermissionDTO #FK to(permissiondto), isgrant:short, authority:String);
+
+permissiondto(id:int [PK], permissiontype:PermissionTypeDTO #FK to(permissiontypedto), foreignid:Integer, authority:String);
+
+permission_role_map(permission_id:PermissionDTO [PK] #FK to PermissionDTO,role_id:set<roledto> [PK] #FK to set<roledto>);
+
+paymentcommissiondto(id:int [PK], invoice:InvoiceDTO #FK to(invoicedto), paymentamount:BigDecimal);
+
+commissionprocessconfigurationdto(id:int [PK], entity:CompanyDTO #FK to(companydto), nextrun:Date, periodunit:PeriodUnitDTO #FK to(periodunitdto), periodvalue:int);
+
+partnerpayout(id:int [PK], payment:PaymentDTO #FK to(paymentdto), partner:PartnerDTO #FK to(partnerdto), starting:Date, ending:Date, paymentsamount:BigDecimal, refundsamount:BigDecimal, balanceleft:BigDecimal, versionnum:int);
+
+partnercommissionexceptiondto(id:int [PK], partner:PartnerDTO #FK to(partnerdto), start:Date, end:Date, percentage:BigDecimal, item:ItemDTO #FK to(itemdto));
+
+partnerdto(id:int [PK], baseuserbyuserid:UserDTO, totalpayments:BigDecimal, totalrefunds:BigDecimal, totalpayouts:BigDecimal, duepayout:BigDecimal, type:PartnerType, parent:PartnerDTO #FK to(partnerdto), commissiontype:PartnerCommissionType, brokerid:String, versionnum:int);
+
+customer_partner_map(partner_id:PartnerDTO [PK] #FK to PartnerDTO,customer_id:set<customerdto> [PK] #FK to set<customerdto>);
+
+invoicecommissiondto(invoice:InvoiceDTO #FK to(invoicedto), standardamount:BigDecimal, masteramount:BigDecimal, exceptionamount:BigDecimal);
+
+customercommissiondto(user:UserDTO #FK to(userdto), amount:BigDecimal);
+
+partnerreferralcommissiondto(id:int [PK], referral:PartnerDTO #FK to(partnerdto), referrer:PartnerDTO #FK to(partnerdto), start:Date, end:Date, percentage:BigDecimal);
+
+referralcommissiondto(referralamount:BigDecimal, referralpartner:PartnerDTO #FK to(partnerdto));
+
+commissionprocessrundto(id:int [PK], run:Date, periodstart:Date, periodend:Date, errorcount:int, entity:CompanyDTO #FK to(companydto));
+
+partnercommissionvaluedto(id:int [PK], partner:PartnerDTO #FK to(partnerdto), days:int, rate:BigDecimal, versionnum:int);
+
+commissiondto(id:int [PK], amount:BigDecimal, partner:PartnerDTO #FK to(partnerdto), type:CommissionType, commissionprocessrun:CommissionProcessRunDTO #FK to(commissionprocessrundto), GeneratedName:CurrencyDTO);
+
+contactdto(id:Integer [PK], organizationname:String, address1:String, address2:String, city:String, stateprovince:String, postalcode:String, countrycode:String, lastname:String, firstname:String, initial:String, title:String, phonecountrycode:Integer, phoneareacode:Integer, phonenumber:String, faxcountrycode:Integer, faxareacode:Integer, faxnumber:String, email:String, create:Date, deleted:int, include:Integer, userid:Integer, baseuser:UserDTO, contactmap:ContactMapDTO #FK to(contactmapdto), versionnum:int);
+
+contactmapdto(id:int [PK], GeneratedName:JbillingTable, contact:ContactDTO #FK to(contactdto), foreignid:int, versionnum:int);
+
+datatablequeryentrydto(id:int [PK], /***route/tablethisqueryshouldbejoinedto*/route:RouteDTO, /***columnstojoinon*/columns:StringList, /***nextqueryinthelistofnestedqueries*/nextquery:DataTableQueryEntryDTO, /***previousqueryinthelistofnestedqueries*/prevquery:DataTableQueryEntryDTO, /***query-notnullonlyifthisistherootentry*/query:DataTableQueryDTO, versionnum:Integer);
+
+pricemodeldto(log:FormatLogger, attribute_wildcard:String, id:Integer [PK], type:PriceModelStrategy, attributes:SortedMap<String,String>, rate:BigDecimal, currency:CurrencyDTO #FK to(currencydto), //pricemodelchainingnext:PriceModelDTO);
+
+datatablequerydto(id:int [PK], name:String, /***routethisquerymaybeexecutedon*/route:RouteDTO, global:int, versionnum:Integer, /***thefirstqueryinthelistofnestedqueries*/rootentry:DataTableQueryEntryDTO, /***userthatcreatedthequery*/user:UserDTO);
+
+routeratecarddto(table_prefix:String, table_columns:List<com.sapienter.jbilling.server.util.sql.TableGenerator.Column>, table_columns_names:List<String>, id:Integer [PK], name:String, company:CompanyDTO #FK to(companydto), tablename:String, ratingunit:RatingUnitDTO #FK to(ratingunitdto), versionnum:Integer, //transientrouteratecardrecords:Set<RouteRateCardRecord>);
+
+routedto(table_prefix:String, route_table_columns:List<com.sapienter.jbilling.server.util.sql.TableGenerator.Column>, non_route_table_columns:List<com.sapienter.jbilling.server.util.sql.TableGenerator.Column>, table_columns_names:List<String>, id:Integer [PK], name:String, company:CompanyDTO #FK to(companydto), tablename:String, roottable:Boolean, routetable:Boolean, outputfieldname:String, /***nextroutetouseincasenothingmatches*/defaultroute:String, versionnum:Integer, //transientrouterecords:Set<RouteRecord>);
+
+ratingunitdto(id:int [PK], name:String, company:CompanyDTO #FK to(companydto), GeneratedName:IncrementUnit, GeneratedName:PriceUnit, canbedeleted:boolean, versionnum:Integer);
+
+ratecarddto(table_prefix:String, table_columns:List<TableGenerator.Column>, id:Integer [PK], name:String, tablename:String, company:CompanyDTO #FK to(companydto), global:boolean);
+
+rate_card_child_entity_map(rate_card_id:RateCardDTO [PK] #FK to RateCardDTO,entity_id:set<companydto> [PK] #FK to set<companydto>);
+
+customerusagepooldto(id:int [PK], customer:CustomerDTO #FK to(customerdto), usagepool:UsagePoolDTO #FK to(usagepooldto), //thisistheplanthatcreatedthiscustomerusagepoolplan:PlanDTO, quantity:BigDecimal, initialquantity:BigDecimal, cycleend:Date, versionnum:int);
+
+comsumptionactiondto(id:int [PK], actionname:String, actiondescription:String);
+
+usagepooldto(default_precedence:Integer, id:int [PK], quantity:BigDecimal, precedence:Integer, cycleperiodunit:String, cycleperiodvalue:Integer, usagepoolresetvalue:UsagePoolResetValueEnum, entity:CompanyDTO #FK to(companydto), versionnum:int, created:Date, attributes:SortedMap<String,String>);
+
+usage_pool_item_type_map(usage_pool_id:UsagePoolDTO [PK] #FK to UsagePoolDTO,item_type_id:set<itemtypedto> [PK] #FK to set<itemtypedto>);usage_pool_item_map(usage_pool_id:UsagePoolDTO [PK] #FK to UsagePoolDTO,item_id:set<itemdto> [PK] #FK to set<itemdto>);
+
+usagepoolconsumptionlogdto(id:int [PK], customerusagepool:CustomerUsagePoolDTO #FK to(customerusagepooldto), oldquantity:BigDecimal, newquantity:BigDecimal, percentageconsumption:BigDecimal, consumption:Date, actionexecuted:String, versionnum:int);
+
+usagepoolconsumptionactiondto(id:Integer [PK], percentage:Integer, notificationid:Integer, mediumtype:String, type:String, productid:Integer);
+
+orderprocessdto(id:int [PK], GeneratedName:BillingProcessDTO, GeneratedName:OrderDTO, GeneratedName:InvoiceDTO, periodsincluded:Integer, periodstart:Date, periodend:Date, isreview:int, origin:Integer, versionnum:Integer);
+
+orderchangetypedto(id:Integer [PK], name:String, entity:CompanyDTO #FK to(companydto), defaulttype:boolean, alloworderstatuschange:boolean, optlock:int);
+
+order_change_type_item_type_map(order_change_type_id:OrderChangeTypeDTO [PK] #FK to OrderChangeTypeDTO,item_type_id:set<itemtypedto> [PK] #FK to set<itemtypedto>);
+
+orderlineusagepooldto(id:int [PK], orderline:OrderLineDTO #FK to(orderlinedto), quantity:BigDecimal, customerusagepool:CustomerUsagePoolDTO #FK to(customerusagepooldto), istouched:boolean);
+
+orderstatusdto(log:FormatLogger, id:int [PK], GeneratedName:OrderStatusFlag, entity:CompanyDTO #FK to(companydto));
+
+orderbillingtypedto(id:int [PK], orderdtos:Set<OrderDTO>);
+
+orderchangedto(log:FormatLogger, id:Integer [PK], parentorderchange:OrderChangeDTO #FK to(orderchangedto), parentorderline:OrderLineDTO #FK to(orderlinedto), orderline:OrderLineDTO #FK to(orderlinedto), order:OrderDTO #FK to(orderdto), item:ItemDTO #FK to(itemdto), quantity:BigDecimal, price:BigDecimal, description:String, useitem:Integer, user:UserDTO #FK to(userdto), createtime:Date, start:Date, application:Date, userassignedstatus:OrderChangeStatusDTO #FK to(orderchangestatusdto), status:OrderChangeStatusDTO #FK to(orderchangestatusdto), errormessage:String, errorcodes:String, optlock:int, orderchangetype:OrderChangeTypeDTO #FK to(orderchangetypedto), orderstatustoapply:OrderStatusDTO #FK to(orderstatusdto), appliedmanually:Integer, removal:Integer, nextbillable:Date, end:Date, //non-persistedfields//thisfieldfilledaftercreationoforderlineduringchangeapplylinecreated:OrderLineDTO, istouched:boolean, ispercentage:boolean);
+
+order_change_asset_map(order_change_id:OrderChangeDTO [PK] #FK to OrderChangeDTO,asset_id:set<assetdto> [PK] #FK to set<assetdto>);
+
+orderchangeplanitemdto(id:Integer [PK], optlock:int, description:String, orderchange:OrderChangeDTO #FK to(orderchangedto), item:ItemDTO #FK to(itemdto));
+
+order_change_plan_item_asset_map(order_change_plan_item_id:OrderChangePlanItemDTO [PK] #FK to OrderChangePlanItemDTO,asset_id:set<assetdto> [PK] #FK to set<assetdto>);
+
+orderlinedto(log:FormatLogger, id:int [PK], GeneratedName:OrderLineTypeDTO, item:ItemDTO #FK to(itemdto), GeneratedName:OrderDTO, amount:BigDecimal, quantity:BigDecimal, price:BigDecimal, createtime:Date, deleted:int, useitem:Boolean, description:String, versionnum:Integer, parentline:OrderLineDTO #FK to(orderlinedto), //provisioningfieldsprovisioningstatus:ProvisioningStatusDTO, provisioningrequestid:String, sipuri:String, start:Date, end:Date, //otherfields,non-persistentpricestr:String, istouched:boolean, mediated:boolean, ispercentage:boolean, orderlinechangedtostartdatecomparator:Comparator<OrderChangeDTO>, orderlinechangedtocreatedatetimecomparator:Comparator<OrderChangeDTO>);
+
+orderperioddto(id:int [PK], company:CompanyDTO #FK to(companydto), GeneratedName:PeriodUnitDTO, value:Integer, orderdtos:Set<OrderDTO>, versionnum:Integer);
+
+orderchangestatusdto(GeneratedName:ApplyToOrder, company:CompanyDTO #FK to(companydto), deleted:int);
+
+orderdto(log:FormatLogger, id:Integer [PK], baseuserbyuserid:UserDTO #FK to(userdto), baseuserbycreatedby:UserDTO #FK to(userdto), GeneratedName:CurrencyDTO, GeneratedName:OrderStatusDTO, GeneratedName:OrderPeriodDTO, GeneratedName:OrderBillingTypeDTO, primary:OrderDTO, activesince:Date, activeuntil:Date, deleted:Date, cyclestarts:Date, create:Date, nextbillableday:Date, deleted:int, notify:Integer, lastnotified:Date, notificationstep:Integer, duedateunitid:Integer, duedatevalue:Integer, dffm:Integer, anticipateperiods:Integer, owninvoice:Integer, //resellerentityorderidresellerorder:Integer, notes:String, notesininvoice:Integer, versionnum:Integer, parentorder:OrderDTO #FK to(orderdto), provisioningstatus:ProvisioningStatusDTO #FK to(provisioningstatusdto), //othernon-persitentfieldsnonreviewperiods:Collection<OrderProcessDTO>, billingprocesses:Collection<BillingProcessDTO>, total:BigDecimal, cancellationfeetype:String, cancellationfee:Integer, cancellationfeepercentage:Integer, cancellationmaximumfee:Integer, cancellationminimumperiod:Integer, istouched:boolean, freeusagequantity:BigDecimal, prorateflag:Boolean);
+
+orderlinetypedto(id:int [PK], editable:Integer, orderlinedtos:Set<OrderLineDTO>);
+
+itemdto(id:int [PK], entity:CompanyDTO #FK to(companydto), internalnumber:String, glcode:String, deleted:Integer, hasdecimals:Integer, plans:Set<PlanDTO>, standardavailability:boolean, global:boolean, /***iftheitemwilldoassetmanagement.onlypossibleifonelinkeditemtypedtoallowsassetmanagement*/assetmanagementenabled:Integer, versionnum:int, childentityids:List<Integer>, //forrules'contains'operatorstrtypes:Collection<String>, activesince:Date, activeuntil:Date, standardpartnerpercentage:BigDecimal, masterpartnerpercentage:BigDecimal, ispercentage:boolean, reservationduration:Integer);
+
+item_entity_map(item_id:ItemDTO [PK] #FK to ItemDTO,entity_id:set<companydto> [PK] #FK to set<companydto>);item_type_exclude_map(item_id:ItemDTO [PK] #FK to ItemDTO,type_id:set<itemtypedto> [PK] #FK to set<itemtypedto>);item_type_map(item_id:ItemDTO [PK] #FK to ItemDTO,type_id:set<itemtypedto> [PK] #FK to set<itemtypedto>);item_account_type_availability(item_id:ItemDTO [PK] #FK to ItemDTO,account_type_id:list<accounttypedto> [PK] #FK to list<accounttypedto>);usage_pool_item_map(item_id:ItemDTO [PK] #FK to ItemDTO,usage_pool_id:set<usagepooldto> [PK] #FK to set<usagepooldto>);
+
+plandto(id:Integer [PK], //plansubscriptionitemitem:ItemDTO, period:OrderPeriodDTO #FK to(orderperioddto), description:String, editable:int, parentplan:PlanDTO, childplans:Set<PlanDTO>);
+
+plan_usage_pool_map(plan_id:PlanDTO [PK] #FK to PlanDTO,usage_pool_id:set<usagepooldto> [PK] #FK to set<usagepooldto>);
+
+itemtypedto(id:int [PK], entity:CompanyDTO #FK to(companydto), description:String, orderlinetypeid:int, internal:boolean, global:boolean, allowassetmanagement:Integer, assetidentifierlabel:String, versionnum:int, parent:ItemTypeDTO #FK to(itemtypedto), oneperorder:boolean, onepercustomer:boolean);
+
+item_type_entity_map(item_type_id:ItemTypeDTO [PK] #FK to ItemTypeDTO,entity_id:set<companydto> [PK] #FK to set<companydto>);item_type_map(type_id:ItemTypeDTO [PK] #FK to ItemTypeDTO,item_id:set<itemdto> [PK] #FK to set<itemdto>);item_type_exclude_map(type_id:ItemTypeDTO [PK] #FK to ItemTypeDTO,item_id:set<itemdto> [PK] #FK to set<itemdto>);usage_pool_item_type_map(item_type_id:ItemTypeDTO [PK] #FK to ItemTypeDTO,usage_pool_id:set<usagepooldto> [PK] #FK to set<usagepooldto>);
+
+assetreservationdto(id:int [PK], user:UserDTO #FK to(userdto), creator:UserDTO #FK to(userdto), asset:AssetDTO #FK to(assetdto), start:Date, end:Date, versionnum:int);
+
+itemdependencyonitemdto(dependent:ItemDTO #FK to(itemdto));
+
+entityitemprice(/***/serialversionuid:long, id:int [PK], entity:CompanyDTO #FK to(companydto), item:ItemDTO #FK to(itemdto));
+
+assetstatusdto(id:int [PK], itemtype:ItemTypeDTO #FK to(itemtypedto), isdefault:int, isordersaved:int, isavailable:int, isernal:int, versionnum:int, deleted:int);
+
+assetassignmentdto(id:int [PK], asset:AssetDTO #FK to(assetdto), orderline:OrderLineDTO #FK to(orderlinedto), starttime:Date, endtime:Date);
+
+planitemdto(default_precedence:Integer, id:Integer [PK], plan:PlanDTO #FK to(plandto), //affecteditemitem:ItemDTO, bundle:PlanItemBundleDTO #FK to(planitembundledto), precedence:Integer);
+
+assetdto(id:int [PK], //uniqueperitemtypedtoidentifier:String, assetstatus:AssetStatusDTO #FK to(assetstatusdto), entity:CompanyDTO #FK to(companydto), deleted:int, item:ItemDTO #FK to(itemdto), versionnum:int, createtime:Date, orderline:OrderLineDTO #FK to(orderlinedto), notes:String, /***canonlycontainassetsisagroup*/containedassets:Set<AssetDTO>, /***parentgroup*/group:AssetDTO, provisioningstatus:ProvisioningStatusDTO #FK to(provisioningstatusdto), //transientpropertiesprevorderline:OrderLineDTO, unlinkedfromline:boolean, istouched:boolean, global:boolean, childentityids:List<Integer>, isreserved:boolean);
+
+asset_entity_map(asset_id:AssetDTO [PK] #FK to AssetDTO,entity_id:set<companydto> [PK] #FK to set<companydto>);
+
+planitembundledto(id:Integer [PK], quantity:BigDecimal, period:OrderPeriodDTO, target:Customer, addifexists:boolean);
+
+assettransitiondto(id:int [PK], createtime:Date, previousstatus:AssetStatusDTO #FK to(assetstatusdto), newstatus:AssetStatusDTO #FK to(assetstatusdto), asset:AssetDTO #FK to(assetdto), /***usertheassetisassignto(throughorderlinelinkedtotheasset)*/assignedto:UserDTO, /***userwhomadethechange*/user:UserDTO);
+
+itemdependencyonitemtypedto(dependent:ItemTypeDTO #FK to(itemtypedto));
+
+customerenrollmentdto(log:FormatLogger, id:int [PK], versionnum:int, accounttype:AccountTypeDTO #FK to(accounttypedto), company:CompanyDTO #FK to(companydto), //useridofcustomercreatedbycustomerenrollmentuser:UserDTO, deleted:int, parentcustomer:UserDTO #FK to(userdto), parentenrollment:CustomerEnrollmentDTO #FK to(customerenrollmentdto), //thisisaenumclass.detailsarementionedinnextpoint.status:CustomerEnrollmentStatus, createtime:Date, bulkenrollment:Boolean, brokerid:String);
+
+customerenrollmentcommentdto(id:int [PK], comment:String, creationtime:Date, customerenrollment:CustomerEnrollmentDTO #FK to(customerenrollmentdto), user:UserDTO #FK to(userdto));
+
+mediationconfiguration(id:Integer [PK], entityid:Integer, localinputdirectory:String, pluggabletask:PluggableTaskDTO #FK to(pluggabletaskdto), processor:PluggableTaskDTO #FK to(pluggabletaskdto), name:String, mediationjoblauncher:String, ordervalue:Integer, createtime:Date, versionnum:Integer, rootroute:RouteDTO #FK to(routedto), global:Boolean);
+
+chargesessiondto(serialversionuid:long, id:int [PK], baseuser:UserDTO #FK to(userdto), sessionid:String, started:Date, lastaccessed:Date, carriedunits:BigDecimal);
+
+reservedamountdto(serialversionuid:long, id:int [PK], session:ChargeSessionDTO #FK to(chargesessiondto), created:Date, currency:CurrencyDTO #FK to(currencydto), amount:BigDecimal, item:ItemDTO #FK to(itemdto), quantity:BigDecimal, data:String);
+
+discountlinedto(id:Integer [PK], discount:DiscountDTO #FK to(discountdto), planitem:PlanItemDTO #FK to(planitemdto), item:ItemDTO #FK to(itemdto), order:OrderDTO, //orderlinecreatedbythisdiscountline.discountorderline:OrderLineDTO, //orderlineamountwhichwillbeusedinproductleveldiscounts.orderlineamount:BigDecimal, //descriptionwhichwillbeusedininvoicefordiscountline.description:String);
+
+discountdto(id:int [PK], entity:CompanyDTO #FK to(companydto), code:String, type:DiscountStrategyType, rate:BigDecimal, start:Date, end:Date, attributes:SortedMap<String,String>, lastuptime:Date);
+
+provisioningcommanddto(order:OrderDTO #FK to(orderdto), dtype: String);
+
+usercodelinkdto(id:int [PK], usercode:UserCodeDTO #FK to(usercodedto), /***typeofobjectlinkedto*/objecttype:UserCodeObjectType, objectid:int, object_type: String);
+
+partnercommissionlinedto(id:int [PK], commissionprocessrun:CommissionProcessRunDTO #FK to(commissionprocessrundto), partner:PartnerDTO #FK to(partnerdto), commission:CommissionDTO #FK to(commissiondto), reversal:PartnerCommissionLineDTO #FK to(partnercommissionlinedto), //oppositeofreversal.thisobjectmustthereversaloriginalcommissionline:PartnerCommissionLineDTO, dtype: String);
+
+itemdependencydto(id:int [PK], item:ItemDTO #FK to(itemdto), minimum:Integer, maximum:Integer, dtype: String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

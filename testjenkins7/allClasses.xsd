@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="resourcedaotest" >
+      <xs:sequence>
+        <xs:element name="resourcedao" type="rsourcedaoimpl" nillable="true" minOccurs="0" />
+        <xs:element name="teamdao" type="teamdaoimpl" nillable="true" minOccurs="0" />
+        <xs:element name="projectdao" type="projectdaoimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectdaotest" >
+      <xs:sequence>
+        <xs:element name="projectdao" type="projectdaoimpl" nillable="true" minOccurs="0" />
+        <xs:element name="teamdao" type="teamdaoimpl" nillable="true" minOccurs="0" />
+        <xs:element name="resourcedao" type="rsourcedaoimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roledaotest" >
+      <xs:sequence>
+        <xs:element name="resourcedao" type="rsourcedaoimpl" nillable="true" minOccurs="0" />
+        <xs:element name="roledao" type="roledaoimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="teamdaotest" >
+      <xs:sequence>
+        <xs:element name="teamdao" type="teamdaoimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hibernate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectmanagercontroller" >
+      <xs:sequence>
+        <xs:element name="pmservice" type="projectmanagerserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logincontroller" >
+      <xs:sequence>
+        <xs:element name="userservice" type="userserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="restcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="adminserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="pservice" type="projectmanagerservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:sequence>
+        <xs:element name="roleid" type="xs:anyType" />
+        <xs:element name="rolename" type="xs:string" />
+        <xs:element name="roletype" type="xs:string" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+        <xs:element name="GeneratedName" type="resource" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="status" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:long" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolemodel" >
+      <xs:sequence>
+        <xs:element name="roleid" type="xs:anyType" />
+        <xs:element name="rolename" type="xs:string" />
+        <xs:element name="roletype" type="xs:string" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+        <xs:element name="resourceid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="teamresourcemodel" >
+      <xs:sequence>
+        <xs:element name="projectname" type="xs:string" />
+        <xs:element name="teamid" type="xs:anyType" />
+        <xs:element name="teamname" type="xs:string" />
+        <xs:element name="teamstatus" type="xs:string" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+        <xs:element name="resourcelist" type="resource" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="team" >
+      <xs:sequence>
+        <xs:element name="teamid" type="xs:anyType" />
+        <xs:element name="teamname" type="xs:string" />
+        <xs:element name="teamstatus" type="xs:string" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+        <xs:element name="resources" type="resource" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="projects" type="project" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="role" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resource" >
+      <xs:sequence>
+        <xs:element name="resourceid" type="xs:anyType" />
+        <xs:element name="resourcename" type="xs:string" />
+        <xs:element name="resourcestatus" type="xs:string" />
+        <xs:element name="roles" type="role" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="projects" type="team" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="projectid" type="xs:anyType" />
+        <xs:element name="projectname" type="xs:string" />
+        <xs:element name="//resourceresource" type="team" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rsourcedaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roledao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourcedao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="teamdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="teamdaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roledaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectdaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectmanagerserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="projectdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="teamdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="resourcedao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="roledao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="projectmanagerservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="resourcedao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourceserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="rsourcedaoimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userserviceinterface" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourceservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="userdaoimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

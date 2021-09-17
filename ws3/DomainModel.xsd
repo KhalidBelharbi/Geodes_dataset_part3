@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="eventregister" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:long" />
+        <xs:element name="event_type_template" type="xs:long" />
+        <xs:element name="event_type_group" type="xs:long" />
+        <xs:element name="type" type="xs:long" />
+        <xs:element name="tgid" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="memo" type="xs:string" />
+        <xs:element name="tgname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tempgroup" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="gname" type="xs:string" />
+        <xs:element name="memo" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webtemplate" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tname" type="xs:string" />
+        <xs:element name="/*	*type" type="xs:string" />
+        <xs:element name="/*	*type" type="xs:string" />
+        <xs:element name="type_template" type="xs:long" />
+        <xs:element name="type_jsp" type="xs:long" />
+        <xs:element name="type" type="xs:long" />
+        <xs:element name="//输出页面编码格式outputchartset" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grouptemplate" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="gid" type="xs:string" />
+        <xs:element name="tid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

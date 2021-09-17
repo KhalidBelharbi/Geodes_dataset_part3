@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="logback-test" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="carresourceintegrationtest" >
+      <xs:sequence>
+        <xs:element name="default_make" type="xs:string" />
+        <xs:element name="updated_make" type="xs:string" />
+        <xs:element name="default_brand" type="xs:string" />
+        <xs:element name="updated_brand" type="xs:string" />
+        <xs:element name="default_price" type="xs:double" />
+        <xs:element name="updated_price" type="xs:double" />
+        <xs:element name="GeneratedName" type="carrepository" nillable="true" minOccurs="0" />
+        <xs:element name="jacksonmessageconverter" type="xs:anyType" />
+        <xs:element name="pageableargumentresolver" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="exceptiontranslator" nillable="true" minOccurs="0" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="restcar" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="car" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testutil" >
+      <xs:complexContent>
+       <xs:extension base="typesafediagnosingmatcher<string>">
+         <xs:sequence>
+          <xs:element name="/***forjsonutf8*/application_json_utf8" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="carrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<car,long>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authoritiesconstants" >
+      <xs:sequence>
+        <xs:element name="admin" type="xs:string" />
+        <xs:element name="user" type="xs:string" />
+        <xs:element name="anonymous" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tokenprovider" >
+      <xs:complexContent>
+       <xs:extension base="grantedauthority>">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="authorities_key" type="xs:string" />
+          <xs:element name="secretkey" type="xs:string" />
+          <xs:element name="tokenvalidityinmilliseconds" type="xs:long" />
+          <xs:element name="tokenvalidityinmillisecondsforrememberme" type="xs:long" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jwtconfigurer" >
+      <xs:complexContent>
+       <xs:extension base="securityconfigureradapter<defaultsecurityfilterchain,">
+         <xs:sequence>
+          <xs:element name="authorization_header" type="xs:string" />
+          <xs:element name="" type="tokenprovider" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jwtfilter" >
+      <xs:complexContent>
+       <xs:extension base="genericfilterbean">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="" type="tokenprovider" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="springsecurityauditoraware" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="profileinforesource" >
+      <xs:sequence>
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="carresource" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="entity_name" type="xs:string" />
+        <xs:element name="GeneratedName" type="carrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorvm" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="fielderrors" type="fielderrorvm" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorconstants" >
+      <xs:sequence>
+        <xs:element name="err_concurrency_failure" type="xs:string" />
+        <xs:element name="err_access_denied" type="xs:string" />
+        <xs:element name="err_validation" type="xs:string" />
+        <xs:element name="err_method_not_supported" type="xs:string" />
+        <xs:element name="err_internal_server_error" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customparameterizedexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="message" type="xs:string" />
+          <xs:element name="params" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exceptiontranslator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="parameterizederrorvm" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="params" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fielderrorvm" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="objectname" type="xs:string" />
+        <xs:element name="field" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggervm" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="level" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="headerutil" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paginationutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logsresource" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistentauditevent" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="principal" type="xs:string" />
+        <xs:element name="auditeventdate" type="xs:anyType" />
+        <xs:element name="auditeventtype" type="xs:string" />
+        <xs:element name="data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractauditingentity" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="lastmodifiedby" type="xs:string" />
+        <xs:element name="lastmodifieddate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="car" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="make" type="xs:string" />
+        <xs:element name="brand" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="carappapp" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="contextawarebase">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="context" type="xs:anyType" />
+          <xs:element name="appname" type="xs:string" />
+          <xs:element name="serverport" type="xs:string" />
+          <xs:element name="instanceid" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="asyncconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="constants" >
+      <xs:sequence>
+        <xs:element name="//regexforacceptableloginslogin_regex" type="xs:string" />
+        <xs:element name="system_account" type="xs:string" />
+        <xs:element name="anonymous_user" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="localeconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="webmvcconfigureradapter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="webconfigurer" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cacheconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metricsconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="metricsconfigureradapter">
+         <xs:sequence>
+          <xs:element name="prop_metric_reg_jvm_memory" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_garbage" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_threads" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_files" type="xs:string" />
+          <xs:element name="prop_metric_reg_jvm_buffers" type="xs:string" />
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="microservicesecurityconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+          <xs:element name="" type="tokenprovider" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="applicationproperties" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingaspectconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="databaseconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="auditeventconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clouddatabaseconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="abstractcloudconfig">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datetimeformatconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="webmvcconfigureradapter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaultprofileutil" >
+      <xs:sequence>
+        <xs:element name="spring_profile_default" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="thymeleafconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicationwebxml" >
+      <xs:complexContent>
+       <xs:extension base="springbootservletinitializer">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="loggingaspect" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sonar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="master" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback-spring" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

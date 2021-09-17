@@ -1,0 +1,9 @@
+
+role(id:Long [PK], name:String);
+
+user(id:Long [PK], username:String, email:String);
+
+users_roles(user_id:User [PK] #FK to User,role_id:Role [PK] #FK to Role);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

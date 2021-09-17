@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="article" >
+      <xs:sequence>
+        <xs:element name="articleid" type="xs:string" />
+        <xs:element name="articletitle" type="xs:string" />
+        <xs:element name="GeneratedName" type="author" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="author" >
+      <xs:sequence>
+        <xs:element name="authorid" type="xs:string" />
+        <xs:element name="authorname" type="xs:string" />
+        <xs:element name="GeneratedName" type="editor" nillable="true" minOccurs="0" />
+        <xs:element name="authoredarticles" type="article" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="editor" >
+      <xs:sequence>
+        <xs:element name="editorid" type="xs:string" />
+        <xs:element name="editorname" type="xs:string" />
+        <xs:element name="assignedauthors" type="author" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="editorunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

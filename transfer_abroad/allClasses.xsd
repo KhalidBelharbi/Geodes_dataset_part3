@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="transferabroadapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="createbookservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="createbookservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="calculateamountservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendsmsservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="sendsmsservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferabroadcontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="transferabroadcontroller" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountmasterrepositorytest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="accountmasterrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deallimitmasterrepositorytest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="deallimitmasterrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountmasterrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<accountmaster,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="deallimitmasterrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<deallimitmaster,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exchangeratetranrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<exchangeratetran,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="maintransactiontranrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<maintransactiontran,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smstranrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<smstran,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="accountamountmasterrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<accountamountmaster,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sendfeptranrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<sendfeptran,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="foreigntransactiontranrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<foreigntransactiontran,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dealfeemasterrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<dealfeemaster,string>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="transferabroadapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferabroadcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="calculateamountservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="checkacctstateservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="checktransferlimitservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="createbookservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sendsmsservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendsmsservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="smstranrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="accountmasterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="strtoday" type="xs:string" />
+        <xs:element name="ipaddress" type="xs:string" />
+        <xs:element name="ew" type="errorwriter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkacctstateservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="accountmasterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="ew" type="errorwriter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checktransferlimitservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="accountmasterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="deallimitmasterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="exchangeratetranrepository" nillable="true" minOccurs="0" />
+        <xs:element name="ew" type="errorwriter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="calculateamountservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="dealfeemasterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="exchangeratetranrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="accountamountmasterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="ew" type="errorwriter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="createbookservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="maintransactiontranrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sendfeptranrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="foreigntransactiontranrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="accountmasterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="accountamountmasterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="strtoday" type="xs:string" />
+        <xs:element name="ipaddress" type="xs:string" />
+        <xs:element name="ew" type="errorwriter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorwriter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exchangeratetran" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="procymd" type="xs:string" />
+          <xs:element name="procseq" type="xs:anyType" />
+          <xs:element name="currcode" type="xs:string" />
+          <xs:element name="buyrate" type="xs:anyType" />
+          <xs:element name="sellrate" type="xs:anyType" />
+          <xs:element name="baserate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smstran" >
+      <xs:sequence>
+        <xs:element name="procymd" type="xs:string" />
+        <xs:element name="acctno" type="xs:string" />
+        <xs:element name="procseq" type="xs:anyType" />
+        <xs:element name="tellno" type="xs:string" />
+        <xs:element name="msgcntt" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maintransactiontran" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="dealymd" type="xs:string" />
+          <xs:element name="acctno" type="xs:string" />
+          <xs:element name="dealno" type="xs:anyType" />
+          <xs:element name="cashamt" type="xs:double" />
+          <xs:element name="cmsnamt" type="xs:double" />
+          <xs:element name="exctamt" type="xs:double" />
+          <xs:element name="currcode" type="xs:string" />
+          <xs:element name="bsnsrmrkcode" type="xs:string" />
+          <xs:element name="trnsbankcode" type="xs:string" />
+          <xs:element name="trnsbankacctno" type="xs:string" />
+          <xs:element name="trnsacctnm" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="accountamountmaster" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="acctno" type="xs:string" />
+          <xs:element name="cashamt" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="logcolumn" >
+      <xs:sequence>
+        <xs:element name="regiid" type="xs:string" />
+        <xs:element name="regidate" type="xs:anyType" />
+        <xs:element name="regiip" type="xs:string" />
+        <xs:element name="modiid" type="xs:string" />
+        <xs:element name="modidate" type="xs:anyType" />
+        <xs:element name="modiip" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dealfeemaster" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="trnsbasecode" type="xs:string" />
+          <xs:element name="sectionbaseamt" type="xs:anyType" />
+          <xs:element name="currcode" type="xs:string" />
+          <xs:element name="feeamt" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dealfeemasterpk" >
+      <xs:sequence>
+        <xs:element name="trnsbasecode" type="xs:string" />
+        <xs:element name="sectionbaseamt" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sendfeptranpk" >
+      <xs:sequence>
+        <xs:element name="procymd" type="xs:string" />
+        <xs:element name="procseq" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foreigntransactiontran" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn">
+         <xs:sequence>
+          <xs:element name="dealymd" type="xs:string" />
+          <xs:element name="acctno" type="xs:string" />
+          <xs:element name="dealno" type="xs:anyType" />
+          <xs:element name="trnsbasecode" type="xs:string" />
+          <xs:element name="sendnm" type="xs:string" />
+          <xs:element name="recvnm" type="xs:string" />
+          <xs:element name="recvaddress" type="xs:string" />
+          <xs:element name="recvcity" type="xs:string" />
+          <xs:element name="recvnatncode" type="xs:string" />
+          <xs:element name="recvstatecode" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exchangeratetranpk" >
+      <xs:sequence>
+        <xs:element name="procymd" type="xs:string" />
+        <xs:element name="procseq" type="xs:anyType" />
+        <xs:element name="currcode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transinfo" >
+      <xs:sequence>
+        <xs:element name="trnsbankcode" type="xs:string" />
+        <xs:element name="trnsbankacctno" type="xs:string" />
+        <xs:element name="trnsacctnm" type="xs:string" />
+        <xs:element name="recvaddress" type="xs:string" />
+        <xs:element name="recvcity" type="xs:string" />
+        <xs:element name="recvnatncode" type="xs:string" />
+        <xs:element name="recvstatecode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountmaster" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn{">
+         <xs:sequence>
+          <xs:element name="acctno" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="acctnm" type="xs:string" />
+          <xs:element name="acctmangbasecode" type="xs:string" />
+          <xs:element name="livingyn" type="xs:string" />
+          <xs:element name="stayyn" type="xs:string" />
+          <xs:element name="tellno" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sendfeptran" >
+      <xs:sequence>
+        <xs:element name="procymd" type="xs:string" />
+        <xs:element name="procseq" type="xs:anyType" />
+        <xs:element name="trnsbasecode" type="xs:string" />
+        <xs:element name="fepcomcntt" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deallimitmasterpk" >
+      <xs:sequence>
+        <xs:element name="trnsbasecode" type="xs:string" />
+        <xs:element name="currcode" type="xs:string" />
+        <xs:element name="excptyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smstranpk" >
+      <xs:sequence>
+        <xs:element name="procymd" type="xs:string" />
+        <xs:element name="acctno" type="xs:string" />
+        <xs:element name="procseq" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transferabroadinput" >
+      <xs:sequence>
+        <xs:element name="acctno" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="currcode" type="xs:string" />
+        <xs:element name="trnsbasecode" type="xs:string" />
+        <xs:element name="trnsamt" type="xs:double" />
+        <xs:element name="trnsinfo" type="transinfo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deallimitmaster" >
+      <xs:complexContent>
+       <xs:extension base="logcolumn{">
+         <xs:sequence>
+          <xs:element name="trnsbasecode" type="xs:string" />
+          <xs:element name="currcode" type="xs:string" />
+          <xs:element name="excptyn" type="xs:string" />
+          <xs:element name="trnslimamt" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="foreigntransactiontranpk" >
+      <xs:sequence>
+        <xs:element name="dealymd" type="xs:string" />
+        <xs:element name="acctno" type="xs:string" />
+        <xs:element name="dealno" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maintransactiontranpk" >
+      <xs:sequence>
+        <xs:element name="dealymd" type="xs:string" />
+        <xs:element name="acctno" type="xs:string" />
+        <xs:element name="dealno" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

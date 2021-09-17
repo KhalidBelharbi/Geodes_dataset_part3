@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="excelpointsconvertor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="yearadddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="year" type="xs:anyType" />
+          <xs:element name="begindate" type="xs:anyType" />
+          <xs:element name="enddate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yearupdatedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="year" type="xs:anyType" />
+          <xs:element name="begindate" type="xs:anyType" />
+          <xs:element name="enddate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="statisticdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="year" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="year" type="xs:anyType" />
+          <xs:element name="branchid" type="xs:long" />
+          <xs:element name="dutyid" type="xs:long" />
+          <xs:element name="keyword" type="xs:string" />
+          <xs:element name="penaltyonly" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="settingdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="annualnum" type="xs:anyType" />
+          <xs:element name="weekat" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="yeargetdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pointsyearmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<pointsyear>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pointssummarymapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<pointssummary>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pointsstatisticservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="yearservice" type="pointsyearservice" nillable="true" minOccurs="0" />
+          <xs:element name="summaryservice" type="pointssummaryservice" nillable="true" minOccurs="0" />
+          <xs:element name="summarymapper" type="pointssummarymapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="//millislockexpire" type="xs:long" />
+          <xs:element name="lockkey" type="xs:string" />
+          <xs:element name="progresskey" type="xs:string" />
+          <xs:element name="statisticentries" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pointsyearservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="yearmapper" type="pointsyearmapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="pointsyears" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pointssummaryservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="yearmapper" type="pointsyearmapper" nillable="true" minOccurs="0" />
+          <xs:element name="summarymapper" type="pointssummarymapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="yearservice" type="pointsyearservice" nillable="true" minOccurs="0" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="pointslowestcount" type="xs:string" />
+          <xs:element name="pointssummary" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="summarysetting" >
+      <xs:sequence>
+        <xs:element name="annualnum" type="xs:long" />
+        <xs:element name="weekat" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pointsyear" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="year" type="xs:anyType" />
+        <xs:element name="begindate" type="xs:anyType" />
+        <xs:element name="enddate" type="xs:anyType" />
+        <xs:element name="updatetime" type="xs:anyType" />
+        <xs:element name="warninguserids" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pointssummary" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+        <xs:element name="duty" type="xs:string" />
+        <xs:element name="year" type="xs:anyType" />
+        <xs:element name="points" type="xs:anyType" />
+        <xs:element name="penalty" type="xs:anyType" />
+        <xs:element name="yearrank" type="xs:anyType" />
+        <xs:element name="dutyrank" type="xs:anyType" />
+        <xs:element name="branchrank" type="xs:anyType" />
+        <xs:element name="detail" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="summaryitem" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="points" type="xs:anyType" />
+        <xs:element name="detail" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="summarycontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="summaryservice" type="pointssummaryservice" nillable="true" minOccurs="0" />
+          <xs:element name="statisticservice" type="pointsstatisticservice" nillable="true" minOccurs="0" />
+          <xs:element name="yearservice" type="pointsyearservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pointssummaryvo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+        <xs:element name="duty" type="xs:string" />
+        <xs:element name="year" type="xs:anyType" />
+        <xs:element name="points" type="xs:double" />
+        <xs:element name="yearrank" type="xs:anyType" />
+        <xs:element name="dutyrank" type="xs:anyType" />
+        <xs:element name="penalty" type="xs:double" />
+        <xs:element name="detail" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pointsyearvo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="year" type="xs:anyType" />
+        <xs:element name="begindate" type="xs:anyType" />
+        <xs:element name="enddate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mypointssummaryvo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+        <xs:element name="duty" type="xs:string" />
+        <xs:element name="year" type="xs:anyType" />
+        <xs:element name="points" type="xs:double" />
+        <xs:element name="yearrank" type="xs:anyType" />
+        <xs:element name="dutyrank" type="xs:anyType" />
+        <xs:element name="penalty" type="xs:double" />
+        <xs:element name="detail" type="xs:string" />
+        <xs:element name="updatetime" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pointsapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="summaryitem" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="points" type="xs:anyType" />
+        <xs:element name="count" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adjustcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="adjustservice" type="pointsadjustservice" nillable="true" minOccurs="0" />
+          <xs:element name="yearservice" type="pointsyearservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="summaryservice" type="pointssummaryservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pointsadjustservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="adjustmapper" type="pointsadjustmapper" nillable="true" minOccurs="0" />
+          <xs:element name="statisticservice" type="pointsstatisticservice" nillable="true" minOccurs="0" />
+          <xs:element name="modulename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pointsadjust" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="addtime" type="xs:anyType" />
+        <xs:element name="points" type="xs:anyType" />
+        <xs:element name="reason" type="xs:string" />
+        <xs:element name="submitterid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="submitter" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+        <xs:element name="duty" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="scoresummation" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="pos" type="xs:long" />
+        <xs:element name="count" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pointsadjustmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<pointsadjust>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="adddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="userid" type="xs:long" />
+          <xs:element name="date" type="xs:anyType" />
+          <xs:element name="points" type="xs:double" />
+          <xs:element name="reason" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="deletedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="branchid" type="xs:long" />
+          <xs:element name="dutyid" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="begindate" type="xs:anyType" />
+          <xs:element name="enddate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

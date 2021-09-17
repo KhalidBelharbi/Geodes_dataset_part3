@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="grupo" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="projeto" type="xs:string" />
+        <xs:element name="ok_1" type="xs:anyType" />
+        <xs:element name="ok_2" type="xs:anyType" />
+        <xs:element name="ok_3" type="xs:anyType" />
+        <xs:element name="nota_1" type="xs:double" />
+        <xs:element name="nota_2" type="xs:double" />
+        <xs:element name="nota_3" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="aluno" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="matricula" type="xs:string" />
+        <xs:element name="grupo" type="xs:long" />
+        <xs:element name="nota_1" type="xs:double" />
+        <xs:element name="nota_2" type="xs:double" />
+        <xs:element name="nota_3" type="xs:double" />
+        <xs:element name="nota_4" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jpautil" >
+      <xs:sequence>
+        <xs:element name="emf" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grupodao" >
+      <xs:sequence>
+        <xs:element name="em" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="grupobean" >
+      <xs:sequence>
+        <xs:element name="projeto" type="xs:string" />
+        <xs:element name="ok_1" type="xs:anyType" />
+        <xs:element name="ok_2" type="xs:anyType" />
+        <xs:element name="ok_3" type="xs:anyType" />
+        <xs:element name="nota_1" type="xs:double" />
+        <xs:element name="nota_2" type="xs:double" />
+        <xs:element name="nota_3" type="xs:double" />
+        <xs:element name="dao" type="grupodao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="editaalunobean" >
+      <xs:sequence>
+        <xs:element name="a" type="aluno" nillable="true" minOccurs="0" />
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="dao" type="alunodao" nillable="true" minOccurs="0" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="matricula" type="xs:string" />
+        <xs:element name="grupo" type="xs:long" />
+        <xs:element name="projeto" type="xs:string" />
+        <xs:element name="nota_1" type="xs:double" />
+        <xs:element name="nota_2" type="xs:double" />
+        <xs:element name="nota_3" type="xs:double" />
+        <xs:element name="nota_4" type="xs:double" />
+        <xs:element name="GeneratedName" type="grupodao" nillable="true" minOccurs="0" />
+        <xs:element name="grupos" type="xs:anyType" />
+        <xs:element name="availableitems" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="alunodao" >
+      <xs:sequence>
+        <xs:element name="em" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="alunobean" >
+      <xs:sequence>
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="matricula" type="xs:string" />
+        <xs:element name="grupo" type="xs:long" />
+        <xs:element name="nota_1" type="xs:double" />
+        <xs:element name="nota_2" type="xs:double" />
+        <xs:element name="nota_3" type="xs:double" />
+        <xs:element name="nota_4" type="xs:double" />
+        <xs:element name="saved" type="xs:anyType" />
+        <xs:element name="dao" type="alunodao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="grupodao" nillable="true" minOccurs="0" />
+        <xs:element name="grupos" type="xs:anyType" />
+        <xs:element name="index" type="xs:anyType" />
+        <xs:element name="availableitems" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nonexistententityexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="preexistingentityexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="illegalorphanexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="messages" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listaalunosbean" >
+      <xs:sequence>
+        <xs:element name="alunos" type="aluno" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="dao" type="alunodao" nillable="true" minOccurs="0" />
+        <xs:element name="current" type="aluno" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jaxrsconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="application">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="microprofile-config" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ibm-web-ext" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="beans" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="faces-config" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sampletest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

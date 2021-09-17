@@ -1,0 +1,7 @@
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Class>> Item =>=>=> RelationalSchema.Table>> item;
+ClassDiagram.Attribut>> User.id:int =>=>=> RelationalSchema.Column>> user.id PRIMARY KEY;
+ClassDiagram.Attribut>> User.firstname:String =>=>=> RelationalSchema.Column>> user.firstname;
+ClassDiagram.Attribut>> User.lastname:String =>=>=> RelationalSchema.Column>> user.lastname;
+ClassDiagram.Attribut>> Item.id:Long =>=>=> RelationalSchema.Column>> item.id PRIMARY KEY;
+ClassDiagram.Attribut>> Item.price:BigDecimal =>=>=> RelationalSchema.Column>> item.price;

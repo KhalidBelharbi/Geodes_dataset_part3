@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="settingmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<setting>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="settingservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="settingmapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="settingcache" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="permission_update" type="xs:string" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="key_pagesize" type="xs:string" />
+          <xs:element name="settableitems" type="settableitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="custompage" >
+      <xs:complexContent>
+       <xs:extension base="commonpage">
+         <xs:sequence>
+          <xs:element name="" type="settingservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="settingcache" >
+      <xs:complexContent>
+       <xs:extension base="basecache">
+         <xs:sequence>
+          <xs:element name="" type="settingmapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="settingapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="setting" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="module" type="xs:string" />
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="showvalue" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="saveitem" >
+      <xs:sequence>
+        <xs:element name="module" type="xs:string" />
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settableitem" >
+      <xs:sequence>
+        <xs:element name="module" type="xs:string" />
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="showwith" type="xs:anyType" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="showvalue" type="xs:string" />
+        <xs:element name="systemonly" type="xs:anyType" />
+        <xs:element name="showpage" type="xs:anyType" />
+        <xs:element name="type" type="xs:anyType" />
+        <xs:element name="defvalue" type="xs:string" />
+        <xs:element name="placeholder" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settables" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settable" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settabledatasource" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

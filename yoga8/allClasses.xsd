@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="menuloader" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="menuitems" type="menuitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="volatile" type="menuloader" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menuitem" >
+      <xs:sequence>
+        <xs:element name="//仅自定义菜单使用menuid" type="xs:long" />
+        <xs:element name="sort" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="icon" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="admin" type="xs:anyType" />
+        <xs:element name="checked" type="xs:anyType" />
+        <xs:element name="children" type="menuitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menuparser" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantcache" >
+      <xs:complexContent>
+       <xs:extension base="basecache">
+         <xs:sequence>
+          <xs:element name="" type="tenantmapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tenant" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="template" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="orgincode" type="xs:string" />
+        <xs:element name="modules" type="xs:string" />
+        <xs:element name="templateid" type="xs:long" />
+        <xs:element name="expire" type="xs:dateTime" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantmenu" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="group" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="enabled" type="xs:anyType" />
+        <xs:element name="sort" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantsetting" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="platformname" type="xs:string" />
+        <xs:element name="footerremark" type="xs:string" />
+        <xs:element name="resourceprefix" type="xs:string" />
+        <xs:element name="loginbackurl" type="xs:string" />
+        <xs:element name="loginlogourl" type="xs:string" />
+        <xs:element name="topimageurl" type="xs:string" />
+        <xs:element name="menucolor" type="xs:string" />
+        <xs:element name="adminicon" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantcustomize" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="adminlogin" type="xs:string" />
+        <xs:element name="adminindex" type="xs:string" />
+        <xs:element name="adminleft" type="xs:string" />
+        <xs:element name="admintop" type="xs:string" />
+        <xs:element name="adminwelcome" type="xs:string" />
+        <xs:element name="frontindex" type="xs:string" />
+        <xs:element name="frontlogin" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="templateservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="tenantmapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="tenantmenumapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="changedobserver" type="tenantchangedobserver" nillable="true" minOccurs="0" />
+          <xs:element name="defaultback" type="xs:string" />
+          <xs:element name="defaultpick" type="xs:string" />
+          <xs:element name="defaulttop" type="xs:string" />
+          <xs:element name="defaulttitle" type="xs:string" />
+          <xs:element name="defaultfooter" type="xs:string" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="key_setting" type="xs:string" />
+          <xs:element name="key_customize" type="xs:string" />
+          <xs:element name="defaultmodule" type="xs:string" />
+          <xs:element name="defaultprivilege" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tenantservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="tenantmapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="tenantmenumapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="changedobserver" type="tenantchangedobserver" nillable="true" minOccurs="0" />
+          <xs:element name="" type="tenantcache" nillable="true" minOccurs="0" />
+          <xs:element name="defaultback" type="xs:string" />
+          <xs:element name="defaultpick" type="xs:string" />
+          <xs:element name="defaulttop" type="xs:string" />
+          <xs:element name="defaulttitle" type="xs:string" />
+          <xs:element name="defaultfooter" type="xs:string" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="key_setting" type="xs:string" />
+          <xs:element name="key_customize" type="xs:string" />
+          <xs:element name="defaultmodule" type="xs:string" />
+          <xs:element name="defaultprivilege" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tenantchangedobserver" >
+      <xs:sequence>
+        <xs:element name="changedlisteners" type="tenantchangedlistener" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantchangedlistener" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<tenant>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tenantmenumapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<tenantmenu>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tenantapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

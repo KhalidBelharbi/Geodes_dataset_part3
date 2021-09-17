@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="containermanagedtest" >
+      <xs:complexContent>
+       <xs:extension base="jpapersistencetestcase">
+         <xs:sequence>
+          <xs:element name="jtaemf" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="applicationmanagedtest" >
+      <xs:complexContent>
+       <xs:extension base="jpapersistencetestcase">
+         <xs:sequence>
+          <xs:element name="jtaemf" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistenceunitinfoimpl" >
+      <xs:sequence>
+        <xs:element name="providerclassname" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="root" type="xs:anyType" />
+        <xs:element name="transactiontype" type="xs:anyType" />
+        <xs:element name="jta" type="xs:anyType" />
+        <xs:element name="nonjta" type="xs:anyType" />
+        <xs:element name="mappingfilenames" type="xs:anyType" />
+        <xs:element name="managedclassnames" type="xs:anyType" />
+        <xs:element name="excludeunlistedclasses" type="xs:anyType" />
+        <xs:element name="jarfileurls" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datasourcedriveradapter" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datasourcedriveradapterobjectfactory" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus.test1.override" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ooc-jndi-mariadb" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ooc-jndi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ooc-jndi-hsql" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datanucleus.test2.override" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ooc-jndi-postgresql" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ooc-jndi-mysql" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ooc-jndi-h2" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ooc-jndi-derby" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

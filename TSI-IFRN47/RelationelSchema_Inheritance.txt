@@ -1,0 +1,9 @@
+
+person(id:Long [PK], firstname:String, surname:String, age:int);
+
+blogpost(id:Long [PK], title:String, body:String, GeneratedName:User #FK to(user));
+
+user(id:Long [PK], login:String, disabled:Boolean);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

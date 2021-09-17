@@ -1,0 +1,35 @@
+
+person(id:Long [PK], creator:User, modifier:User, createdat:Date, modifiedat:Date);
+
+manytag(id:int [PK], name:String);
+
+student(id:long [PK], name:String, tags:List<String>, skilltags:List<SkillTag>, kvtags:List<KVTag>);
+
+manystudent(id:int [PK], name:String);
+
+manystudent_manytags(manystudent_id:ManyStudent [PK] #FK to ManyStudent,manytag_id:set<manytag> [PK] #FK to set<manytag>);
+
+country(id:Integer [PK], name:String);
+
+courserating(id:CourseRatingKey, GeneratedName:Student #FK to(student), GeneratedName:Course #FK to(course), rating:int);
+
+student(id:Long [PK]);
+
+course_like(student_id:Student [PK] #FK to Student,course_id:set<course> [PK] #FK to set<course>);
+
+course(id:Long [PK]);
+
+courseregistration(id:Long [PK], GeneratedName:Student #FK to(student), GeneratedName:Course #FK to(course), registeredat:LocalDateTime, grade:int);
+
+possession(id:long [PK], name:String);
+
+user(id:int [PK], name:String, email:String, age:int);
+
+foo(serialversionuid:long, id:Long [PK], name:String, GeneratedName:Bar #FK to(bar));
+
+bar(serialversionuid:long, id:long [PK], name:String);
+
+book(id:Long [PK], title:String, author:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

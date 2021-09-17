@@ -1,0 +1,9 @@
+
+productbean(pid:int [PK], name:String, category:String, company:String, quantity:int, price:double);
+
+orderbean(oid:int [PK], total_price:double, total_price_with_gst:double);
+
+order_history_info(oid:OrderBean [PK] #FK to OrderBean,pid:list<productbean> [PK] #FK to list<productbean>);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

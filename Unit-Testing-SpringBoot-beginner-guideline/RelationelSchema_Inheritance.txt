@@ -1,0 +1,19 @@
+
+author(id:Long [PK], author:User #FK to(user));
+
+author_list<book>(authorID:author [PK] #FK to author,list<book>ID:list<book> [PK] #FK to list<book>);
+
+post(id:Long [PK], post:String, GeneratedName:Book #FK to(book));
+
+role(id:Long [PK], name:String, createdat:Date, updat:Date);
+
+todo(title:String, description:String);
+
+comment(id:Long [PK], comment:String, GeneratedName:Post #FK to(Post), GeneratedName:User #FK to(user));
+
+user(id:Long [PK], name:String, password:String, email:String, active:Boolean, createdat:Date, updat:Date, GeneratedName:Role #FK to(Role));
+
+book(id:Long [PK], name:String, createdat:Date, updat:Date, GeneratedName:Post #FK to(Post));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

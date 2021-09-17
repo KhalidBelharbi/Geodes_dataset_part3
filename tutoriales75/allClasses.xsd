@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="getterboolean" >
+      <xs:sequence>
+        <xs:element name="running" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getterbooleansameaccessor" >
+      <xs:sequence>
+        <xs:element name="isrunning" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getterbooleanprimitive" >
+      <xs:sequence>
+        <xs:element name="running" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getterbooleanprimitivesameaccessor" >
+      <xs:sequence>
+        <xs:element name="running" type="xs:anyType" />
+        <xs:element name="isrunning" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getterbooleantype" >
+      <xs:sequence>
+        <xs:element name="running" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="immutableclient" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="widget" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientbuilder" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="message" >
+      <xs:sequence>
+        <xs:element name="sender" type="xs:string" />
+        <xs:element name="recipient" type="xs:string" />
+        <xs:element name="text" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pojo" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="original" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="givenname" type="xs:string" />
+        <xs:element name="additionalname" type="xs:string" />
+        <xs:element name="familyname" type="xs:string" />
+        <xs:element name="tags" type="xs:anyType" />
+        <xs:element name="interests" type="xs:anyType" />
+        <xs:element name="skills" type="xs:anyType" />
+        <xs:element name="awards" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sea" >
+      <xs:sequence>
+        <xs:element name="grasses" type="xs:anyType" />
+        <xs:element name="fish" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="parent" >
+      <xs:sequence>
+        <xs:element name="parentname" type="xs:string" />
+        <xs:element name="parentage" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="student" >
+      <xs:complexContent>
+       <xs:extension base="child">
+         <xs:sequence>
+          <xs:element name="schoolname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="child" >
+      <xs:complexContent>
+       <xs:extension base="parent">
+         <xs:sequence>
+          <xs:element name="childname" type="xs:string" />
+          <xs:element name="childage" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="student" >
+      <xs:complexContent>
+       <xs:extension base="child">
+         <xs:sequence>
+          <xs:element name="schoolname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="parent" >
+      <xs:sequence>
+        <xs:element name="parentname" type="xs:string" />
+        <xs:element name="parentage" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="child" >
+      <xs:complexContent>
+       <xs:extension base="parent">
+         <xs:sequence>
+          <xs:element name="childname" type="xs:string" />
+          <xs:element name="childage" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="immutableclient" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginresult" >
+      <xs:sequence>
+        <xs:element name="logints" type="xs:anyType" />
+        <xs:element name="authtoken" type="xs:string" />
+        <xs:element name="tokenvalidity" type="xs:anyType" />
+        <xs:element name="tokenrefresh" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hascontactinformation" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userevent" >
+      <xs:sequence>
+        <xs:element name="//thisclassisjustforsamplepurposes.id" type="xs:long" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apiclientconfiguration" >
+      <xs:sequence>
+        <xs:element name="host" type="xs:string" />
+        <xs:element name="port" type="xs:long" />
+        <xs:element name="usehttps" type="xs:anyType" />
+        <xs:element name="connecttimeout" type="xs:long" />
+        <xs:element name="readtimeout" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contactinformationsupport" >
+      <xs:sequence>
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="phonenr" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getterlazy" >
+      <xs:sequence>
+        <xs:element name="delimeter" type="xs:string" />
+        <xs:element name="transactions" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="utility" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="//willbesetwhenpersistingid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="//whicheverotheruser-specificattributescontactinformation" type="contactinformationsupport" nillable="true" minOccurs="0" />
+        <xs:element name="//useritelfwillimplementallcontactinformationbydelegationevents" type="userevent" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientbuilder" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basicaccount" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="balance" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fluentaccount" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="balance" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chainedfluentaccount" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="balance" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="prefixedaccount" >
+      <xs:sequence>
+        <xs:element name="sname" type="xs:string" />
+        <xs:element name="bdbalance" type="xs:anyType" />
+        <xs:element name="s_notes" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chainedaccount" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="balance" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="standardaccount" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="balance" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="prefixedfluentaccount" >
+      <xs:sequence>
+        <xs:element name="sname" type="xs:string" />
+        <xs:element name="bdbalance" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sure_in_my_jar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getterbooleanunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginresultlivetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="buildermethodunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userintegrationtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apiclientconfigurationintegrationtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accessorsunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="builderwithdefaultvalueunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="builderwithsingularsupportforcollectionsunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="builderwithcustomsetterunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="builderinheritanceusingmethodnameunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="builderinheritanceusingsuperbuilderunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="builderunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

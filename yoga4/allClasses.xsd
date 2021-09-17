@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="loggingprimaryhandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="loggingmapper" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="primaryinfocache" nillable="true" minOccurs="0" />
+        <xs:element name="instance" type="loggingservice" nillable="true" minOccurs="0" />
+        <xs:element name="allprimaryhandlers" type="xs:anyType" />
+        <xs:element name="allmodulenames" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<logging>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="primaryinfocache" >
+      <xs:complexContent>
+       <xs:extension base="basecache">
+         <xs:sequence>
+          <xs:element name="" type="loggingservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="loggingaspect" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="loggingservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginuser" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logging" >
+      <xs:sequence>
+        <xs:element name="logid" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="module" type="xs:string" />
+        <xs:element name="method" type="xs:string" />
+        <xs:element name="primaryid" type="xs:string" />
+        <xs:element name="primaryinfo" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="detail" type="xs:string" />
+        <xs:element name="result" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logging" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingprimary" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

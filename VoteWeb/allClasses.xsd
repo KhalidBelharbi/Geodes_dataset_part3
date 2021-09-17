@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="applymvcttest" >
+      <xs:sequence>
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+        <xs:element name="mapper" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applyjpatest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="staticapply" >
+      <xs:sequence>
+        <xs:element name="start_date_time" type="xs:anyType" />
+        <xs:element name="end_date_time" type="xs:anyType" />
+        <xs:element name="apply_dto" type="applyrequestdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applyservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="memberrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="apply" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="apply" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="apply" nillable="true" minOccurs="0" />
+        <xs:element name="dto" type="applyrequestdto" nillable="true" minOccurs="0" />
+        <xs:element name="page_number" type="xs:long" />
+        <xs:element name="page_size" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applymvctest" >
+      <xs:sequence>
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+        <xs:element name="mapper" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="blackuserapiinterceptor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackuserinterceptor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webmvcconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterjpatest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="now" type="xs:anyType" />
+        <xs:element name="update" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="apply" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterwebmvctest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="apply" nillable="true" minOccurs="0" />
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="mapper" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="voterservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackuserapiinterceptor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackuserinterceptor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminmvctest" >
+      <xs:sequence>
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="adminservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackuserapiinterceptor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackuserinterceptor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminservicetest" >
+      <xs:sequence>
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="userrepository" type="memberrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="adminservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votewebmvctest" >
+      <xs:sequence>
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="voteservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackuserapiinterceptor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackuserinterceptor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voteinforepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="candidaterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="resultrepository" nillable="true" minOccurs="0" />
+        <xs:element name="httpsession" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="voteservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="apply" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votejpatest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="candidaterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voteinforepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="dto" type="applyrequestdto" nillable="true" minOccurs="0" />
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votewebapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepositorytest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="signupdto" nillable="true" minOccurs="0" />
+        <xs:element name="userrepository" type="memberrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voteinforepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="candidaterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userrolerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="membercontrollertest" >
+      <xs:sequence>
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="memberserivce" type="memberservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="blackuserapiinterceptor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackuserinterceptor" nillable="true" minOccurs="0" />
+        <xs:element name="mapper" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="homecontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votewebapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="unauthorizedexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="membernotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="voteinfonotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="restcontrollererroradvice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="apply_not_found" type="customexception" nillable="true" minOccurs="0" />
+          <xs:element name="vote_not_found" type="customexception" nillable="true" minOccurs="0" />
+          <xs:element name="voter_not_found" type="customexception" nillable="true" minOccurs="0" />
+          <xs:element name="voteinfo_not_found" type="customexception" nillable="true" minOccurs="0" />
+          <xs:element name="candidate_not_found" type="customexception" nillable="true" minOccurs="0" />
+          <xs:element name="member_not_found" type="customexception" nillable="true" minOccurs="0" />
+          <xs:element name="unauthorized" type="customexception" nillable="true" minOccurs="0" />
+          <xs:element name="already_registered" type="customexception" nillable="true" minOccurs="0" />
+          <xs:element name="is_black" type="customexception" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="candidatenotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="voternotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="controllererroradvice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votenotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exceptiondetails" >
+      <xs:sequence>
+        <xs:element name="timestamp" type="xs:anyType" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="error" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applynotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="alreadyregiststeredexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="isblackexception" >
+      <xs:complexContent>
+       <xs:extension base="customexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="adminapicontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="adminservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admincontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="adminservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approvaldto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userblackdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="isblack" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminserviceimpl" >
+      <xs:sequence>
+        <xs:element name="userrepository" type="memberrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="blackrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="httpsessionconfig" >
+      <xs:sequence>
+        <xs:element name="redisport" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+          <xs:element name="userdetailservice" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jpaconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="schedulingconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webmvcconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultkey" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="voterid" type="xs:long" />
+        <xs:element name="candidateid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="candidate" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="sequencenumber" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="selectedvalue" type="xs:long" />
+        <xs:element name="elected" type="xs:long" />
+        <xs:element name="image" type="xs:string" />
+        <xs:element name="//조인됨m:1" type="vote" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteinfostatustype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vote" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="//투표순서sequencenumber" type="xs:long" />
+        <xs:element name="//선택갯수selectednumber" type="xs:long" />
+        <xs:element name="//당선갯수electedcount" type="xs:long" />
+        <xs:element name="candidatelist" type="candidate" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="voteinfo" type="voteinfomation" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="candidaterepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<candidate,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="result" >
+      <xs:sequence>
+        <xs:element name="voterid" type="xs:long" />
+        <xs:element name="candidateid" type="xs:long" />
+        <xs:element name="value" type="xs:long" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteinfomation" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="count" type="xs:long" />
+        <xs:element name="status" type="voteinfostatustype" nillable="true" minOccurs="0" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="current" type="xs:long" />
+        <xs:element name="votelist" type="vote" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="apply" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<result,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="voteinforepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<voteinfomation,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="voterepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<vote,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="voteserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voteinforepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="candidaterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voterrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="resultrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="resultrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voteinforepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="candidaterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voterrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votingdto" >
+      <xs:sequence>
+        <xs:element name="voteinfoid" type="xs:long" />
+        <xs:element name="voteid" type="xs:long" />
+        <xs:element name="candidatesequencenumber" type="xs:long" />
+        <xs:element name="candidateid" type="xs:long" />
+        <xs:element name="value" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votesigndto" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="uid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteresponsedto" >
+      <xs:sequence>
+        <xs:element name="applyid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="count" type="xs:long" />
+        <xs:element name="current" type="xs:long" />
+        <xs:element name="votelist" type="vote" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteinfodto" >
+      <xs:sequence>
+        <xs:element name="applyid" type="xs:long" />
+        <xs:element name="voteinfotitle" type="xs:string" />
+        <xs:element name="voteinfodesc" type="xs:string" />
+        <xs:element name="votedto" type="votedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="candidatedto" >
+      <xs:sequence>
+        <xs:element name="candidateseqno" type="xs:long" />
+        <xs:element name="candidatename" type="xs:string" />
+        <xs:element name="candidatedesc" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votedto" >
+      <xs:sequence>
+        <xs:element name="voteseqnum" type="xs:long" />
+        <xs:element name="voteselnum" type="xs:long" />
+        <xs:element name="votename" type="xs:string" />
+        <xs:element name="voteelecnum" type="xs:long" />
+        <xs:element name="candidate" type="candidatedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteapicontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voteservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voteservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votemakingcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voteservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultapicontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="resultservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votemakingapicontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voteservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="membercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="memberservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="signupdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkuseridrequestdto" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermodifydto" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkuseridresponsedto" >
+      <xs:sequence>
+        <xs:element name="checkuserid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applyvalidationdto" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="passwordmodifydto" >
+      <xs:sequence>
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="newpassword" type="xs:string" />
+        <xs:element name="newpasswordcheck" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberresponsedto" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberapicontroller" >
+      <xs:sequence>
+        <xs:element name="userservice" type="memberservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="black" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="user" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrole" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="user" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="role" type="userroletype" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<member,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="blackrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<black,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userrole" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userstatustype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userroletype" >
+      <xs:sequence>
+        <xs:element name="rolename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="member" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="status" type="userstatustype" nillable="true" minOccurs="0" />
+        <xs:element name="role" type="userrole" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="userrepository" type="memberrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="userrolerepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdetailsserviceimpl" >
+      <xs:sequence>
+        <xs:element name="userrepository" type="memberrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="blackuserapiinterceptor" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="memberrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="blackuserinterceptor" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="memberrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteauditoraware" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteschedule" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applyserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="memberrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applyservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voterrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrolerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<userrole,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="applyrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<apply,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="voter" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="ssn" type="xs:string" />
+        <xs:element name="//@enumerated(enumtype.string)status" type="voterstatustype" nillable="true" minOccurs="0" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="voteddate" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="apply" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterstatustype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applystatustype" >
+      <xs:sequence>
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<voter,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="apply" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="expectedcount" type="xs:long" />
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:anyType" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="updatedby" type="xs:string" />
+        <xs:element name="status" type="applystatustype" nillable="true" minOccurs="0" />
+        <xs:element name="approval" type="xs:long" />
+        <xs:element name="hasvote" type="xs:anyType" />
+        <xs:element name="hasvoter" type="xs:anyType" />
+        <xs:element name="hasresult" type="xs:anyType" />
+        <xs:element name="//배치를통해들어감voted" type="xs:anyType" />
+        <xs:element name="user" type="member" nillable="true" minOccurs="0" />
+        <xs:element name="deleted" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterdto" >
+      <xs:sequence>
+        <xs:element name="voterid" type="xs:long" />
+        <xs:element name="votername" type="xs:string" />
+        <xs:element name="voterphone" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approvaldto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applyresponsedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="expectedcount" type="xs:long" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+        <xs:element name="voted" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applyrequestdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="expectedcount" type="xs:long" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="start" type="xs:anyType" />
+        <xs:element name="end" type="xs:anyType" />
+        <xs:element name="voted" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterresponsedto" >
+      <xs:sequence>
+        <xs:element name="hasvoted" type="xs:anyType" />
+        <xs:element name="voterlist" type="voter" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voterservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applyapicontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterapicontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="voterservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applycontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="applyservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="header" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminuser" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminblackuser" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="404" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="block" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="error" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user-remove" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="edit-password" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applysuccess" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="index" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="header" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="footer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vote" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votesuccess" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="result" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteinfo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voting-sign" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterlist" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="brand-icons" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="outline-icons" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="icons" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reveal" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="image" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="site.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reveal.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rail" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rail.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="image.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sticky" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="colorize.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sticky.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="license" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

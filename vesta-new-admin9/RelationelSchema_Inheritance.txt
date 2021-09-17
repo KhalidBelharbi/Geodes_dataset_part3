@@ -1,0 +1,67 @@
+
+organizeusermapentity(//主键id:String, //员工idstaffid:String, //类型1员工2组织机构暂时不用此字段stafftype:String, //组idorganizeid:String, //状态0删除1正常orgstatus:String, //修改时间modifytime:Date);
+
+roledataentity(//主键id:String, //数据类型1项目2角色datatype:String, //数据iddataid:String, //组织类型1机构2群组3用户authoritytype:String, //组织idauthorityid:String, //状态0删除1正常status:String, //交验房：1（数据查看）5（验房工程师）6（质量经理）//报修：100000001（物业接单）100000000（开发接单）10（数据查看）12（项目前台）//投诉：9（总部客观）11（数据查看）8（项目前台）//项目下的权限1数据查看2工程接单3派单到人4关单权限5验房工程师100000001物业接单100000000开发接单6质量经理7乙方工程师8报事派单（目前被称为：客观信息员(2017-07-18被修改为“项目前台”)）9总部客观（投诉单废弃权限（2017-07-18jason新加））//角色情况下admin后台角色permission:String, //项目编码projectnum:String, //修改时间modifytime:Date);
+
+organizeprojectmapentity(//主键id:String, //项目idprojectid:String, //项目编码projectcode:String, //组idorganizeid:String, //状态0删除1正常prostatus:String);
+
+approlesetentity(//无效state_off:String, //有效state_on:String, //不允许allot_no:String, //允许allot_yes:String, //角色idappsetid:String, //角色描述appsetdesc:String, //创建时间createon:Date, //创建人createby:String, //修改时间modifyon:Date, //修改人modifyby:String, //是否有效0-无效，1-有效appsetstate:String, //角色类型appsettype:String, //公司idappcompanyid:String, //是否允许被分配0-不允许，1-允许appsetallot:String, //角色名称appsetname:String);
+
+authroleprojectentity(authid:String [PK], //角色idauthroleid:String, //组织结构idauthagencyid:String);
+
+authouteragencyentity(//主键uuidagencyid:String, //组织机构名agencyname:String, //上级idparentid:String, //创建时间createtime:Date, //创建人createby:String, //修改时间modifytime:Date, //修改人modifyby:String, //路径agencypath:String, //状态0删除1正常status:String, //机构描述agencydesc:String, //排序ordernum:Integer, //等级level:Integer, //是否为外部创建的组织机构0不是1是outemploy:String, //是否为临时组1:是0:不是istemporary:String, //临时组生效范围安全st工程es客观qctemporaryscope:String, //机构类型2分部1部门3临时组和外部合作单位agencytype:String);
+
+rolerolebuttonmapentity(roleid:String [PK], menuid:String [PK], //质检app暂时将此字段作为角色idbuttonid:String, buttonstate:String, make:Date, make:Time);
+
+authroleseentity(//角色idroleid:String, //角色前缀prefix:String, //角色描述rolename:String, //创建时间createon:Date, //创建人createby:String, //修改时间modifyon:Date, //修改人modifyby:String, //角色类型roletype:String, //角色性质级别rolenature:String, //0启用1删除state:String, //类别1.客关2.工程3.安全category:String);
+
+usermapentity(//自增长idid:Long, //人员idstaffid:String, //启用状态0未启用1已启用state:String, //来源oa:同步external:本地创建sourcefrom:String, //修改时间modifyon:Date, //所属模块st安全qc交付es工程projectmodule:String);
+
+authagencyentity(//自增长idid:Long, //主键agencyid:String, //组织机构名agencyname:String, //机构类型100000000：总部100000001：区域100000003：城市100000002：项目agencytype:String, //上级idparentid:String, //创建+第一次同步时间createtime:Date, //修改时间modifytime:Date, //路径agencypath:String, //状态0删除1正常status:String, //业态businesssource:String, //以上信息均有crm同步//机构描述备注agencydesc:String, //是否为根目录0不是1是isroot:String, //排序ordernum:Integer, //是否为外部合作单位0不是1是outemploy:String, //工程阶段责任单位性质1总包2分包nature:String, //等级level:Integer);
+
+rolerolesetentity(setid:String [PK], //角色描述roledesc:String, /*新增字段:角色备注_2016-08-04_wyd*///角色备注remarks:String, /*:Date, //角色创建时间make:Time, //角色修改日期modify:Date, //角色修改时间modify:Time, //角色修改人operator:String, //是否有效0-无效，1-有效setstate:String, //角色类型1--金茂会员2--金茂质检3--全部settype:String, //公司idcompanyid:String, //是否允许被分配0-不允许，1-允许isallot:String);
+
+useragencyentity(//主键mapid:String, //用户idstaffid:String, //机构idagencyid:String, //修改时间modifytime:Date, //状态0删除1正常status:String, //来源同步oa数据的时候用到其他并不需要external外部oaoa同步sourcefrom:String);
+
+authfunctionpointroleentity(//主键idid:Long, //角色idauthroleid:String, //功能点idauthfunctionid:String, //控制方式control:String, //状态0正常1删除state:String, //修改时间modify:Date, //类别1.客关2.工程3.安全category:String, //分类1.前段app2.管理平台classification:String, //修改人modifyby:String);
+
+memberrolescopeentity(//主键idid:String, //角色idrolesetid:String, //权限范围类型(0:全部城市级别,1:城市级别,2:项目级别)scopetype:String, //权限范围id(0/城市id/项目code)scopeid:String, //权限范围名称(全部城市/北京/亚奥金茂悦)scopename:String, //当前状态(0:不启用,1:启用)nowstate:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+authagencyqcentity(//自增长idid:Long, //主键agencyid:String, //组织机构名agencyname:String, //机构类型100000000：总部100000001：区域100000003：城市100000002：项目agencytype:String, //上级idparentid:String, //创建+第一次同步时间createtime:Date, //修改时间modifytime:Date, //路径agencypath:String, //状态0删除1正常status:String, //业态businesssource:String, //以上信息均有crm同步//机构描述备注agencydesc:String, //是否为根目录0不是1是isroot:String, //排序ordernum:Integer, //是否为外部合作单位0不是1是outemploy:String, //工程阶段责任单位性质1总包2分包nature:String, //等级level:Integer);
+
+useragencymapentity(//主键mapid:String, //用户idstaffid:String, //机构idagencyid:String, //修改时间modifytime:Date, //状态0删除1正常status:String, //来源同步oa数据的时候用到其他并不需要sourcefrom:String);
+
+rolestaffprojectmapqcentity(//自增长idid:Long, //人员idstaffid:String, //角色idroleid:String, //项目idagencyid:String, //状态state:String, //修改时间modifyon:Date);
+
+roleroleentity(//权限idroleid:String, //创建日期make:Date, //创建时间make:Time, //修改日期modify:Date, //修改时间modify:Time, //操作人operator:String, //所属模块，1-物业管理，2-商户管理，3-房屋租赁管理，4-邻里圈管理，5-用户管理管理，6-数据统计roledesc:String, //描述roledescription:String, //权限名称rolename:String, //角色idrolesetid:String);
+
+supplieragencymapentity(//主键mapid:String, //机构idagencyid:String, //供应商idsupplierid:String, //状态status:String, //修改时间modifytime:Date);
+
+rolestaffprojectmapentity(//自增长idid:Long, //人员idstaffid:String, //角色idroleid:String, //项目idagencyid:String, //状态state:String, //修改时间modifyon:Date);
+
+rolestaffprojectmapesappentity(//自增长idid:Long, //人员idstaffid:String, //角色idroleid:String, //项目idagencyid:String, //状态state:String, //修改时间modifyon:Date);
+
+rolerolesetmapentity(//关系idrolesetid:String, //角色idsetid:String, //权限idrolroleid:String);
+
+approleentity(//app权限idapproleid:String, //创建时间createon:Date, //创建人createby:String, //修改时间modifyon:Date, //修改人modifyby:String, //所属模块approletype:String, //描述approledesc:String, //权限名称approlename:String, //角色idapprolesetid:String);
+
+agencyentity(//主键agencyid:String, //组织机构名agencyname:String, //机构简称abbreviationname:String, //机构描述备注agencydesc:String, //机构类型3总部2公司1部门4责任单位5监理agencytype:String, //上级idparentid:String, //是否为根目录0不是1是isroot:String, //创建时间createtime:Date, //修改时间modifytime:Date, //路径agencypath:String, //状态0删除1正常status:String, //排序ordernum:Integer, //是否为外部合作单位0不是1是outemploy:String, //工程阶段责任单位性质1总包2分包nature:String, //等级level:Integer);
+
+approlesetmapentity(//关系表idapprolesetmapid:String, //权限关系approleid:String, //角色关系appsetid:String);
+
+authfunctionpointentity(//主键idcurrentid:String, //名称name:String, //父级idparentid:String, //级别level:String, //控制control是否显示0显示1不显示configurable:String, //控制方式1全部2自己control:String, //功能说明explain:String, //状态0正常1删除state:String, //修改时间modify:Date, //类别1.客关2.工程3.安全category:String, //分类1.前段app2.管理平台classification:String);
+
+memberrolemenuentity(id:String [PK], //角色idrolesetid:String, //菜单idmenuid:String, //菜单名称menuname:String, //操作级别(0:仅查看,1:所有操作)operationlevel:String, //当前状态(0:不启用,1:启用)nowstate:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+authagencyesentity(//自增长idid:Long, //主键agencyid:String, //组织机构名agencyname:String, //机构类型100000000：总部100000001：区域100000003：城市100000002：项目agencytype:String, //上级idparentid:String, //创建+第一次同步时间createtime:Date, //修改时间modifytime:Date, //路径agencypath:String, //状态0删除1正常status:String, //业态businesssource:String, //以上信息均有crm同步//机构描述备注agencydesc:String, //是否为根目录0不是1是isroot:String, //排序ordernum:Integer, //是否为外部合作单位0不是1是outemploy:String, //工程阶段责任单位性质1总包2分包nature:String, //等级level:Integer, //排序sort:Integer);
+
+rolestaffprojectmapqcappentity(//自增长idid:Long, //人员idstaffid:String, //角色idroleid:String, //项目idagencyid:String, //状态state:String, //修改时间modifyon:Date);
+
+roleviewmodelentity(menuid:String [PK], childflag:String, menudescription:String, menuname:String, menustate:String, menulevel:String, menuorder:String, operator:String, parantmenuid:String, runscript:String, owner:String, //1会员、2质检3待定belong:String);
+
+organizeentity(//主键organizeid:String, //组名organizename:String, //crm组名crmname:String, //备注memo:String, //组状态1有效0无效organizestatus:String, //crmidcrmid:String, //创建时间createtime:Date, //修改时间modifytime:Date, //排序ordernum:Integer);
+
+rolestaffprojectmapesentity(//自增长idid:Long, //人员idstaffid:String, //角色idroleid:String, //项目idagencyid:String, //状态state:String, //修改时间modifyon:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

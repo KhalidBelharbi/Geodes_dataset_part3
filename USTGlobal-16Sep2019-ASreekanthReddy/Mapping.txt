@@ -1,0 +1,14 @@
+ClassDiagram.Class>> MailBean =>=>=> RelationalSchema.Table>> mailbean;
+ClassDiagram.Class>> UserBean =>=>=> RelationalSchema.Table>> userbean;
+ClassDiagram.Attribut>> MailBean.mid:int =>=>=> RelationalSchema.Column>> mailbean.mid PRIMARY KEY;
+ClassDiagram.Attribut>> MailBean.subject:String =>=>=> RelationalSchema.Column>> mailbean.subject;
+ClassDiagram.Attribut>> MailBean.message:String =>=>=> RelationalSchema.Column>> mailbean.message;
+ClassDiagram.Attribut>> MailBean.status:String =>=>=> RelationalSchema.Column>> mailbean.status;
+ClassDiagram.Attribut>> UserBean.id:int =>=>=> RelationalSchema.Column>> userbean.id PRIMARY KEY;
+ClassDiagram.Attribut>> UserBean.user_name:String =>=>=> RelationalSchema.Column>> userbean.user_name;
+ClassDiagram.Attribut>> UserBean.email:String =>=>=> RelationalSchema.Column>> userbean.email;
+ClassDiagram.Attribut>> UserBean.password:String =>=>=> RelationalSchema.Column>> userbean.password;
+Many-To-One relationship from ClassDiagram.Class>>MailBean  to ClassDiagram.Class>>userbean represented by ClassDiagram.Atrribute>>user;
+Many-To-One relationship from ClassDiagram.Class>>MailBean  to ClassDiagram.Class>>userbean represented by ClassDiagram.Atrribute>>GeneratedName;
+One-To-Many relationship from ClassDiagram.Class>>UserBean  to ClassDiagram.Class>>List<MailBean>;
+One-To-Many relationship from ClassDiagram.Class>>UserBean  to ClassDiagram.Class>>List<MailBean>;

@@ -1,0 +1,9 @@
+
+goods(id:Long [PK], name:String, pic:String, content:String, browsecount:Long, price:Double, publish:Date, publishrealname:String, userid:Long);
+
+user(id:Long [PK], username:String, password:String, email:String, qqopenid:String, wxopenid:String, realname:String, age:Long, phone:String, gender:String, info:String, registertime:Date, logintime:Date, pic:String, look:Long, issecret:String, shopid:Long);
+
+favorite(uid:Long [PK], gid:Long [PK]);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

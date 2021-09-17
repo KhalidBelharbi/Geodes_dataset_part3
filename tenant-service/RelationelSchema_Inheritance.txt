@@ -1,0 +1,9 @@
+
+config(id:String [PK], GeneratedName:ApiName, tenantid:String, credentials:JSONObject);
+
+user(id:String [PK], firstname:String, lastname:String, email:String, password:String, GeneratedName:Role, createddate:LocalDate, modifieddate:LocalDate, active:boolean, tenantid:String);
+
+tenant(id:String [PK], description:String, createddate:Timestamp, modifieddate:Timestamp, active:boolean);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

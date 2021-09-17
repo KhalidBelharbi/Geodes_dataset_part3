@@ -1,0 +1,14 @@
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Attribut>> User.username:String =>=>=> RelationalSchema.Column>> user.username PRIMARY KEY;
+ClassDiagram.Attribut>> User.password:String =>=>=> RelationalSchema.Column>> user.password;
+ClassDiagram.Attribut>> User.name:String =>=>=> RelationalSchema.Column>> user.name;
+ClassDiagram.Attribut>> User.email:String =>=>=> RelationalSchema.Column>> user.email;
+ClassDiagram.Attribut>> User.phone:String =>=>=> RelationalSchema.Column>> user.phone;
+ClassDiagram.Attribut>> User.postcode:String =>=>=> RelationalSchema.Column>> user.postcode;
+ClassDiagram.Attribut>> User.roadaddr:String =>=>=> RelationalSchema.Column>> user.roadaddr;
+ClassDiagram.Attribut>> User.jibunaddr:String =>=>=> RelationalSchema.Column>> user.jibunaddr;
+ClassDiagram.Attribut>> User.extraaddr:String =>=>=> RelationalSchema.Column>> user.extraaddr;
+ClassDiagram.Attribut>> User.detailaddr:String =>=>=> RelationalSchema.Column>> user.detailaddr;
+ClassDiagram.Attribut>> User.userrdate:LocalDateTime =>=>=> RelationalSchema.Column>> user.userrdate;
+ClassDiagram.Attribut>> User.userudate:LocalDateTime =>=>=> RelationalSchema.Column>> user.userudate;
+ClassDiagram.Attribut>> User.roles:Set<UserRole> =>=>=> RelationalSchema.Column>> user.roles;

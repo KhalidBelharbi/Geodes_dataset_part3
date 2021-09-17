@@ -1,0 +1,15 @@
+ClassDiagram.Class>> Post =>=>=> RelationalSchema.Table>> post;
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Attribut>> Post.id:int =>=>=> RelationalSchema.Column>> post.id PRIMARY KEY;
+ClassDiagram.Attribut>> Post.post:String =>=>=> RelationalSchema.Column>> post.post;
+ClassDiagram.Attribut>> Post.title:String =>=>=> RelationalSchema.Column>> post.title;
+ClassDiagram.Attribut>> Post.createdat:Date =>=>=> RelationalSchema.Column>> post.createdat;
+ClassDiagram.Attribut>> Post.updat:Date =>=>=> RelationalSchema.Column>> post.updat;
+ClassDiagram.Attribut>> Post.GeneratedName:Logger =>=>=> NOT MAPPED -Explanation: Transient Field ;
+ClassDiagram.Attribut>> User.id:int =>=>=> RelationalSchema.Column>> user.id PRIMARY KEY;
+ClassDiagram.Attribut>> User.name:String =>=>=> RelationalSchema.Column>> user.name;
+ClassDiagram.Attribut>> User.email:String =>=>=> RelationalSchema.Column>> user.email;
+ClassDiagram.Attribut>> User.password:String =>=>=> RelationalSchema.Column>> user.password;
+ClassDiagram.Attribut>> User.createdat:Date =>=>=> RelationalSchema.Column>> user.createdat;
+ClassDiagram.Attribut>> User.updat:Date =>=>=> RelationalSchema.Column>> user.updat;
+Many-To-One relationship from ClassDiagram.Class>>Post  to ClassDiagram.Class>>user represented by ClassDiagram.Atrribute>>author;

@@ -1,0 +1,15 @@
+
+user(id:int [PK], name:String, creationdate:LocalDate, lastlogindate:LocalDate, active:boolean, age:int, email:String, status:Integer);
+
+foo(id:long [PK], name:String);
+
+possession(id:long [PK], name:String);
+
+testentity(id:int [PK], description:String);
+
+bar(serialversionuid:long, id:long [PK], name:String);
+
+foo(serialversionuid:long, id:Long [PK], name:String, GeneratedName:Bar #FK to(bar));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

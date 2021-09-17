@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="metafield" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="entityid" type="xs:anyType" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="disabled" type="xs:anyType" />
+          <xs:element name="mandatory" type="xs:anyType" />
+          <xs:element name="displayorder" type="xs:anyType" />
+          <xs:element name="defaultvalue" type="metafieldvalue" nillable="true" minOccurs="0" />
+          <xs:element name="datatableid" type="xs:anyType" />
+          <xs:element name="dependentmetafields" type="metafield" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="helpdescription" type="xs:string" />
+          <xs:element name="helpcontenturl" type="xs:string" />
+          <xs:element name="" type="validationrule" nillable="true" minOccurs="0" />
+          <xs:element name="//indicatewhetherthemetafieldisaprimaryfieldandcanbeusedforcreationofmetafieldgroupsandforproviding//ameta-fieldstobepopulatedfortheentitytypetheybelongto//metafieldscreatedfromtheconfiguration-metafieldmenuwillbeconsideredasprimarymetafieldsbydefault.//allotherdynamicmetafieldscreatedontheflyinthesystem(example:accountinformationtype,productcategory)willnotbeconsideredasprimaryprimary" type="xs:anyType" />
+          <xs:element name="fieldusage" type="xs:anyType" />
+          <xs:element name="metafieldgroups" type="metafieldgroup" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="filename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafieldgroup" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="created" type="xs:dateTime" />
+          <xs:element name="upd" type="xs:dateTime" />
+          <xs:element name="entityid" type="xs:anyType" />
+          <xs:element name="displayorder" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="metafields" type="metafield" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="validationrule" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="error_msg_label" type="xs:string" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="ruletype" type="validationruletype" nillable="true" minOccurs="0" />
+          <xs:element name="ruleattributes" type="xs:anyType" />
+          <xs:element name="enabled" type="xs:anyType" />
+          <xs:element name="errors" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="metafieldvalue" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="field" type="metafield" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<string>">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="json" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="listmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<list<string>>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datemetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<date>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="integermetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<integer>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="decimalmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<bigdecimal>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="booleanmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<boolean>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="stringmetafieldvalue" >
+      <xs:complexContent>
+       <xs:extension base="metafieldvalue<string>">
+         <xs:sequence>
+          <xs:element name="value" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="languagedto" >
+      <xs:sequence>
+        <xs:element name="english_language_id" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="currencydto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="symbol" type="xs:string" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="countrycode" type="xs:string" />
+          <xs:element name="currencyexchanges" type="currencyexchangedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="entities_1" type="xs:anyType" />
+          <xs:element name="versionnum" type="xs:anyType" />
+          <xs:element name="//fromexname" type="xs:string" />
+          <xs:element name="inuse" type="xs:anyType" />
+          <xs:element name="//willbeconvertedtofloatrate" type="xs:string" />
+          <xs:element name="sysrate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jbillingtable" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="internationaldescriptiondto" >
+      <xs:sequence>
+        <xs:element name="id" type="internationaldescriptionid" nillable="true" minOccurs="0" />
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractgenericstatus" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="statusvalue" type="xs:anyType" />
+          <xs:element name="order" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="countrydto" >
+      <xs:complexContent>
+       <xs:extension base="abstractdescription">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="code" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="enumerationdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="values" type="enumerationvaluedto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="entityid" type="xs:anyType" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="internationaldescription" >
+      <xs:sequence>
+        <xs:element name="id" type="internationaldescriptionid" nillable="true" minOccurs="0" />
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="currencyexchangedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="currencydto" nillable="true" minOccurs="0" />
+        <xs:element name="entityid" type="xs:anyType" />
+        <xs:element name="rate" type="xs:anyType" />
+        <xs:element name="validsince" type="xs:dateTime" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enumerationvaluedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="enumeration" type="enumerationdto" nillable="true" minOccurs="0" />
+        <xs:element name="versionnum" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

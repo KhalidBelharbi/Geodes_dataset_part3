@@ -1,0 +1,9 @@
+
+authorizationcode(code:String [PK], clientid:String, userid:String, approvedscopes:String, redirecturi:String, expirationdate:LocalDateTime);
+
+user(userid:String [PK], password:String, roles:String, scopes:String);
+
+client(clientid:String [PK], clientsecret:String, redirecturi:String, scope:String, authorizedgranttypes:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

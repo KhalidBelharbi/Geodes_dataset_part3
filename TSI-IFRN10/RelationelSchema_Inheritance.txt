@@ -1,0 +1,9 @@
+
+note(id:long [PK], title:String, body:String);
+
+note_list<tag>(noteID:note [PK] #FK to note,list<tag>ID:list<tag> [PK] #FK to list<tag>);
+
+tag(id:long [PK], name:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

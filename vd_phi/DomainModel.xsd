@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="baseentity" >
+      <xs:sequence>
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="createby" type="xs:long" />
+        <xs:element name="up" type="xs:dateTime" />
+        <xs:element name="updateby" type="xs:long" />
+        <xs:element name="isdelete" type="xs:anyType" />
+        <xs:element name="/***/companyid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="screenentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***screenid*/screenid" type="xs:long" />
+          <xs:element name="/***screenname*/screenname" type="xs:string" />
+          <xs:element name="/***screencode*/screencode" type="xs:string" />
+          <xs:element name="/***screenurl*/screenurl" type="xs:string" />
+          <xs:element name="/***parentscreen*/screenlevel" type="xs:long" />
+          <xs:element name="/***customerid*/groupscreen" type="groupscreenentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***groupactionentity*/groupaction" type="groupactionentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***listrolescreen*/listrolescreen" type="rolescreenentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listrolescreenaction*/listaction" type="rolescreenactionentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employeevacationtypeentity" >
+      <xs:sequence>
+        <xs:element name="/***employeeid*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***vacationtypeid*/vacationtype" type="vacationtypeentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***vacationnumber*/vacationnumber" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="holidayentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofholiday*/holidayid" type="xs:long" />
+          <xs:element name="/***holidayname*/holidayname" type="xs:string" />
+          <xs:element name="/***holidayyear*/holidayyear" type="xs:long" />
+          <xs:element name="/***listvacationdetail*/holidaydetail" type="holidaydetailentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="positionprojectentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***positionprojectid*/positionprojectid" type="xs:long" />
+          <xs:element name="/***positionprojectname*/positionprojectname" type="xs:string" />
+          <xs:element name="/***positionprojectcode*/positionprojectcode" type="xs:string" />
+          <xs:element name="/***positionprojectdescription*/positionprojectdescription" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="contractentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofcontract*/contractid" type="xs:long" />
+          <xs:element name="/***nameofcontract*/contractstart" type="xs:dateTime" />
+          <xs:element name="/***nameofcontract*/contractend" type="xs:dateTime" />
+          <xs:element name="/***contracttype*/contracttype" type="contracttypeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***positionemployee*/positionemployee" type="positionemployeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***attachmentsofcontract*/contractattachments" type="xs:string" />
+          <xs:element name="/***positionemployee*///@manytoone//@joincolumn(name" type="employeeentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="trackerdetailentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***trackerdetailid*/trackerdetailid" type="xs:long" />
+          <xs:element name="/***controltype*/field" type="fieldentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***trackerid*/tracker" type="trackerentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shiftworkoptionentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***shiftworkoptionid*/shiftworkoptionid" type="xs:long" />
+          <xs:element name="/***shiftworkoptionname*/shiftworkoptionname" type="xs:string" />
+          <xs:element name="/***shiftworkoptioncode*/shiftworkoptioncode" type="xs:string" />
+          <xs:element name="/***shiftworkoptiondescription*/shiftworkoptiondescription" type="xs:string" />
+          <xs:element name="/***shiftworkoptionstarttimeam*/shiftworkoptionstarttimeam" type="xs:string" />
+          <xs:element name="/***shiftworkoptionendtimeam*/shiftworkoptionendtimeam" type="xs:string" />
+          <xs:element name="/***shiftworkoptionstarttimepm*/shiftworkoptionstarttimepm" type="xs:string" />
+          <xs:element name="/***shiftworkoptionendtimepm*/shiftworkoptionendtimepm" type="xs:string" />
+          <xs:element name="/***listshiftwork*/listshiftwork" type="shiftworkentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="historyupdateissue" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofhistoryissueupdated*/historyupdateissueid" type="xs:long" />
+          <xs:element name="/***codeofhistoryissueupdated*/historyupdateissuecode" type="xs:string" />
+          <xs:element name="/***thetimeupissue*/historyupissuetime" type="xs:dateTime" />
+          <xs:element name="/***idofissuecontainhistory*/issue" type="issueentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***idofemployeeupdatedissue*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***listfieldupdated*/fieldissueupdate" type="fieldissueupdate" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="degreeentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofdegree*/degreeid" type="xs:long" />
+          <xs:element name="/***codeofdegree*/degreecode" type="xs:string" />
+          <xs:element name="/***nameofdegree*/degreename" type="xs:string" />
+          <xs:element name="/***descriptionofdegree*/degreedescription" type="xs:string" />
+          <xs:element name="/***listemployeeofdegree*/listemployee" type="employeeentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="vacationentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofvacation*/vacationid" type="xs:long" />
+          <xs:element name="/***reasonofvacation*/vacationreason" type="xs:string" />
+          <xs:element name="/***note1ofvacation*/vacationgrouponenote" type="xs:string" />
+          <xs:element name="/***note2ofvacation*/vacationgrouptwonote" type="xs:string" />
+          <xs:element name="/***note3ofvacation*/vacationgroupthreenote" type="xs:string" />
+          <xs:element name="/***vacationupgroupone*/vacationupgroupone" type="xs:dateTime" />
+          <xs:element name="/***vacationupgrouptwo*/vacationupgrouptwo" type="xs:dateTime" />
+          <xs:element name="/***vacationupgroupthree*/vacationupgroupthree" type="xs:dateTime" />
+          <xs:element name="/***vacationstart*/vacationstart" type="xs:dateTime" />
+          <xs:element name="/***vacationend*/vacationend" type="xs:dateTime" />
+          <xs:element name="/***groupassign1*/groupassignone" type="xs:string" />
+          <xs:element name="/***groupassign2*/groupassigntwo" type="xs:string" />
+          <xs:element name="/***groupassign3*/groupassignthree" type="xs:string" />
+          <xs:element name="/***vacationtype*/vacationtype" type="vacationtypeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***optionhourinaday*/vacationoption" type="vacationoptionentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***employeeisregistration*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***statusofvacation*/status" type="vacationstatusentity" nillable="true" minOccurs="0" />
+          <xs:element name="leavehour" type="xs:double" />
+          <xs:element name="timework" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skillprojectentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofskillinproject*/skillprojectid" type="xs:long" />
+          <xs:element name="/***codeofskillinproject*/skillprojectcode" type="xs:string" />
+          <xs:element name="/***nameofskillinproject*/skillprojectname" type="xs:string" />
+          <xs:element name="/***descriptionofskillinproject*/skillprojectdescription" type="xs:string" />
+          <xs:element name="/***listskillprojectrelationship*/skillprojectrel" type="skillprojectrelentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="contracttypeentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofcontracttype*/contracttypeid" type="xs:long" />
+          <xs:element name="/***nameofcontracttype*/contracttypename" type="xs:string" />
+          <xs:element name="/***codeornameshortofcontracttype*/contracttypecode" type="xs:string" />
+          <xs:element name="/***descriptionofcontracttype*/contracttypedescription" type="xs:string" />
+          <xs:element name="/***listcontract*/listcontract" type="contractentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="holidaydetailentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***vacationlistdetailid*/holidaydetailid" type="xs:long" />
+          <xs:element name="/***vacationlistdetailname*/holidaydetailname" type="xs:string" />
+          <xs:element name="/***vacationdetail*/holidaydetail" type="xs:dateTime" />
+          <xs:element name="/***listvacation*/holiday" type="holidayentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="levelskillentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***levelskillid*/levelskillid" type="xs:long" />
+          <xs:element name="/***levelskillname*/levelskillname" type="xs:string" />
+          <xs:element name="/***levelskillcode*/levelskillcode" type="xs:string" />
+          <xs:element name="/***levelskilldescription*/levelskilldescription" type="xs:string" />
+          <xs:element name="/***levelskillvalue*/levelskillvalue" type="xs:long" />
+          <xs:element name="/***listemployeeskill*/listemployeeskill" type="employeeskillentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="databasehistoryentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***datebasehistoryid*/databasehistoryid" type="xs:long" />
+          <xs:element name="/***datebasehistoryname*/databasehistoryname" type="xs:string" />
+          <xs:element name="/***datebasehistorycode*/databasehistorycode" type="xs:string" />
+          <xs:element name="/***listhistorywork*/listhistorywork" type="historyworkentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="actiongroupactionentity" >
+      <xs:sequence>
+        <xs:element name="/***actionid*/action" type="actionentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***groupactionid*/groupaction" type="groupactionentity" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vacationoptionentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***vacationoptionid*/vacationoptionid" type="xs:long" />
+          <xs:element name="/***vacationoptionname*/vacationoptionname" type="xs:string" />
+          <xs:element name="/***vacationoptiontime*/istime" type="xs:long" />
+          <xs:element name="/***listvacation*/listvacation" type="vacationentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="priorityissueentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***priorityissueid*/priorityissueid" type="xs:long" />
+          <xs:element name="/***priorityissuename*/priorityissuename" type="xs:string" />
+          <xs:element name="/***priorityissuecode*/priorityissuecode" type="xs:string" />
+          <xs:element name="/***priorityissuedescription*/priorityissuedescription" type="xs:string" />
+          <xs:element name="/***listissue*/listissue" type="issueentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="timekeepingdetailentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***timekeepingdetailid*/timekeepingdetailid" type="xs:long" />
+          <xs:element name="/***employeecode*/employeecode" type="xs:string" />
+          <xs:element name="/***employeename*/employeename" type="xs:string" />
+          <xs:element name="/***employeeid*/employeeid" type="xs:long" />
+          <xs:element name="/****/" type="xs:dateTime" />
+          <xs:element name="/***violation*/violation" type="xs:string" />
+          <xs:element name="/***checkinam*/checkinam" type="xs:string" />
+          <xs:element name="/***checkoutam*/checkoutam" type="xs:string" />
+          <xs:element name="/***checkinpm*/checkinpm" type="xs:string" />
+          <xs:element name="/***checkoutpm*/checkoutpm" type="xs:string" />
+          <xs:element name="/***listtimekeeping*/timekeepingid" type="timekeepingentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***minushour*/minushour" type="xs:double" />
+          <xs:element name="/***times*/times" type="xs:long" />
+          <xs:element name="/***start*/start" type="xs:dateTime" />
+          <xs:element name="/***end*/end" type="xs:dateTime" />
+          <xs:element name="/***issalary*/issalary" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skillentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***skillid*/skillid" type="xs:long" />
+          <xs:element name="/***skillname*/skillname" type="xs:string" />
+          <xs:element name="/***skillcode*/skillcode" type="xs:string" />
+          <xs:element name="/***skilldescription*/skilldescription" type="xs:string" />
+          <xs:element name="/***typeofskill*/skilltype" type="skilltypeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***listemployeeskill*/empskills" type="employeeskillentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listhistoryskill*/historyskills" type="historyskillentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fileissueentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="/***fileissueid*/fileissueid" type="xs:long" />
+          <xs:element name="/***fileissuename*/fileissuename" type="xs:string" />
+          <xs:element name="/***fileissuetype*/fileissuetype" type="xs:string" />
+          <xs:element name="/***fileissueurl*/fileissueurl" type="xs:string" />
+          <xs:element name="/***issueid*/issue" type="issueentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customerentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofcustomer*/customerid" type="xs:long" />
+          <xs:element name="/***customername*/customername" type="xs:string" />
+          <xs:element name="/***customercode*/customercode" type="xs:string" />
+          <xs:element name="/***customerdescription*/customerdescription" type="xs:string" />
+          <xs:element name="/***listproject*/listproject" type="projectentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="evaluateprojectentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***evaluateprojectid*/evaluateprojectid" type="xs:long" />
+          <xs:element name="/***evaluateprojectname*/evaluateprojectname" type="xs:string" />
+          <xs:element name="/***evaluateprojectcode*/evaluateprojectcode" type="xs:string" />
+          <xs:element name="/***evaluateprojectdescription*/evaluateprojectdescription" type="xs:string" />
+          <xs:element name="/***listproject*/listproject" type="projectentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="shiftworkentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***shiftworkid*/shiftworkid" type="xs:long" />
+          <xs:element name="/***shiftworkstartam*/shiftworkstartam" type="xs:dateTime" />
+          <xs:element name="/***shiftworkendam*/shiftworkendam" type="xs:dateTime" />
+          <xs:element name="/***shiftworkstartpm*/shiftworkstartpm" type="xs:dateTime" />
+          <xs:element name="/***shiftworkendpm*/shiftworkendpm" type="xs:dateTime" />
+          <xs:element name="/***shiftworkoptionid*/shiftworkoption" type="shiftworkoptionentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***shiftworkreason*/shiftworkreason" type="xs:string" />
+          <xs:element name="/***shiftworkemployeeid*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***shiftworkstatusid*/status" type="vacationstatusentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***assigngroupone*/shiftworkassigngroupone" type="xs:string" />
+          <xs:element name="/***assigngrouptwo*/shiftworkassigngrouptwo" type="xs:string" />
+          <xs:element name="/***assigngroupthree*/shiftworkassigngroupthree" type="xs:string" />
+          <xs:element name="/***assigngrouponenote*/shiftworkassigngrouponenote" type="xs:string" />
+          <xs:element name="/***assigngrouptwonote*/shiftworkassigngrouptwonote" type="xs:string" />
+          <xs:element name="/***assigngroupthreenote*/shiftworkassigngroupthreenote" type="xs:string" />
+          <xs:element name="/***assigngrouponeup*/shiftworkupgroupone" type="xs:dateTime" />
+          <xs:element name="/***assigngrouptwoup*/shiftworkupgrouptwo" type="xs:dateTime" />
+          <xs:element name="/***assigngroupthreeup*/shiftworkupgroupthree" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="vacationtypeentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="/***idofvacationtype*/vacationtypeid" type="xs:long" />
+          <xs:element name="/***vacationtypename*/vacationtypename" type="xs:string" />
+          <xs:element name="/***vacationtypecode*/vacationtypecode" type="xs:string" />
+          <xs:element name="/***vacationtypedescription*/vacationtypedescription" type="xs:string" />
+          <xs:element name="/***isreducedleavevacation*/isreduced" type="xs:anyType" />
+          <xs:element name="/***listvacation*/listvacation" type="vacationentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listvacationtype*/litsempvacationtype" type="employeevacationtypeentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="historymemberentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="/***historymemberid*/historymemberid" type="xs:long" />
+          <xs:element name="/***idofemployee*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***projectid*/project" type="projectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***positionprojectid*/positionproject" type="positionprojectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***join*/joinproject" type="xs:dateTime" />
+          <xs:element name="/***out*/outproject" type="xs:dateTime" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="issueentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***issueid*/issueid" type="xs:long" />
+          <xs:element name="/***issuesubject*/issuesubject" type="xs:string" />
+          <xs:element name="/***issuedescription*/issuedescription" type="xs:string" />
+          <xs:element name="/***startplan*/issuestartplan" type="xs:dateTime" />
+          <xs:element name="/***endplan*/issueendplan" type="xs:dateTime" />
+          <xs:element name="/***estimatetime*/estimatedtime" type="xs:long" />
+          <xs:element name="/***percentcomplete*/percentdone" type="xs:double" />
+          <xs:element name="/***amountinplan*/issueamountplan" type="xs:long" />
+          <xs:element name="/***qualityinplan*/issuequalityplan" type="xs:double" />
+          <xs:element name="/***startactual*/issuestartactual" type="xs:dateTime" />
+          <xs:element name="/***endreality*/issueendactual" type="xs:dateTime" />
+          <xs:element name="/***numberinactual*/issueamountactual" type="xs:long" />
+          <xs:element name="/***qualityinactual*/issuequalityactual" type="xs:double" />
+          <xs:element name="/***statusissueid*/statusissue" type="statusissueentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***priorityissueid*/priorityissue" type="priorityissueentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***projectid*/project" type="projectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***trackerid*/tracker" type="trackerentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***employeeaddedissue*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***listfileissue*/listfileissue" type="fileissueentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listhistoryissueupdated*/listhistoryupdateissue" type="historyupdateissue" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="companyentity" >
+      <xs:sequence>
+        <xs:element name="/***idofcompany*/companyid" type="xs:long" />
+        <xs:element name="/***flagdelete*/isdelete" type="xs:anyType" />
+        <xs:element name="/***createbyuser*/createby" type="xs:long" />
+        <xs:element name="/***lastmodifiedbyuser*/updateby" type="xs:long" />
+        <xs:element name="/***create*/create" type="xs:dateTime" />
+        <xs:element name="/***lastmodified*/up" type="xs:dateTime" />
+        <xs:element name="/***nameofcompany*/companyname" type="xs:string" />
+        <xs:element name="/***codeofcompany*/companycode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="historyworkentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***historyworkid*/historyworkid" type="xs:long" />
+          <xs:element name="/***historyprojectname*/historyprojectname" type="xs:string" />
+          <xs:element name="/***historycompanyname*/historycompanyname" type="xs:string" />
+          <xs:element name="/***start*/start" type="xs:dateTime" />
+          <xs:element name="/***end*/end" type="xs:dateTime" />
+          <xs:element name="/***insidecompany*/insidecompany" type="xs:anyType" />
+          <xs:element name="/***historytooldevelop*/historytools" type="xs:string" />
+          <xs:element name="/***historydescriptionaboutproject*/historydescription" type="xs:string" />
+          <xs:element name="/***completereview*/completereview" type="xs:anyType" />
+          <xs:element name="/***operationsystemid*/operationsystem" type="operationsystementity" nillable="true" minOccurs="0" />
+          <xs:element name="/***useddatabasehistoryid*/databasehistory" type="databasehistoryentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***employeeid*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***projectid*/project" type="projectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***historyevaluateproject*/evaluateemployeeproject" type="evaluateemployeeprojectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***positionprojectid*/positionproject" type="positionprojectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***listhistorytechnicalskill*/listskill" type="historyskillentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listprocessproject*/listhistoryscopework" type="historyscopeworkentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="statusissueentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="/***statusissueid*/statusissueid" type="xs:long" />
+          <xs:element name="/***statusissuename*/statusissuename" type="xs:string" />
+          <xs:element name="/***statusissuecode*/statusissuecode" type="xs:string" />
+          <xs:element name="/***statusissuedescription*/statusissuedescription" type="xs:string" />
+          <xs:element name="/***listissue*/listissue" type="issueentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="scopeworkentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***scopeworkid*/scopeworkid" type="xs:long" />
+          <xs:element name="/***scopeworkname*/scopeworkname" type="xs:string" />
+          <xs:element name="/***scopeworkcode*/scopeworkcode" type="xs:string" />
+          <xs:element name="/***scopeworkdescription*/scopeworkdescription" type="xs:string" />
+          <xs:element name="/***listhistoryprocessproject*/listhistoryscopework" type="historyscopeworkentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skillprojectrelentity" >
+      <xs:sequence>
+        <xs:element name="/***idofproject*/project" type="projectentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***idofskillinproject*/skillproject" type="skillprojectentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***levelskillinproject*/levelskillproject" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employeeskillentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***employeeid*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***skillid*/skill" type="skillentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***levelskillid*/levelskill" type="levelskillentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***expofemployeeaboutthisskill*/skillexperience" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="documententity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***documentid*/documentid" type="xs:long" />
+          <xs:element name="/***documentname*/documentname" type="xs:string" />
+          <xs:element name="/***documentdescription*/documentdescription" type="xs:string" />
+          <xs:element name="/***documenturl*/documenturl" type="xs:string" />
+          <xs:element name="/***projectid*/project" type="projectentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="actionentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofaction*/actionid" type="xs:long" />
+          <xs:element name="/***nameofaction*/actionname" type="xs:string" />
+          <xs:element name="/***codeornameshortofaction*/actioncode" type="xs:string" />
+          <xs:element name="/***listgroupaction*/listgroupaction" type="actiongroupactionentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="departmententity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofdepartment*/departmentid" type="xs:long" />
+          <xs:element name="/***departmentname*/departmentname" type="xs:string" />
+          <xs:element name="/***departmentcode*/departmentcode" type="xs:string" />
+          <xs:element name="/***departmentdescription*/departmentdescription" type="xs:string" />
+          <xs:element name="/***listemployeeofdepartment*/listemployee" type="employeeentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listprojectofdepartment*/listproject" type="projectentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nationalityentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***nationalityid*/nationalityid" type="xs:long" />
+          <xs:element name="/***nationalityname*/nationalityname" type="xs:string" />
+          <xs:element name="/***nationalitycode*/nationalitycode" type="xs:string" />
+          <xs:element name="/***listemployee*/listemployee" type="employeeentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="historyskillentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***historyid*/historywork" type="historyworkentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***skillid*/skill" type="skillentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="trackerentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***trackerid*/trackerid" type="xs:long" />
+          <xs:element name="/***trackername*/trackername" type="xs:string" />
+          <xs:element name="/***trackercode*/trackercode" type="xs:string" />
+          <xs:element name="/***trackerdescription*/trackerdescription" type="xs:string" />
+          <xs:element name="/***listissue*/listissue" type="issueentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listtrackerdetail*/listtrackerdetail" type="trackerdetailentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="levellanguageentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***levellanguageid*/levellanguageid" type="xs:long" />
+          <xs:element name="/***levellanguagename*/levellanguagename" type="xs:string" />
+          <xs:element name="/***levellanguagecode*/levellanguagecode" type="xs:string" />
+          <xs:element name="/***levellanguagedescription*/levellanguagedescription" type="xs:string" />
+          <xs:element name="/***levellanguagevalue*/levellanguagevalue" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employeeprojectentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="/***idofemployee*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***idofproject*/project" type="projectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***positionprojectid*/postionproject" type="positionprojectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***evaluateemployeeprojectid*/evaluateemployeeproject" type="evaluateemployeeprojectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***joinproject*/joinproject" type="xs:dateTime" />
+          <xs:element name="/***outproject*/outproject" type="xs:dateTime" />
+          <xs:element name="/***descriptionforemployeeinproject*/description" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="statusemployeeentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***statusemployeeid*/statusemployeeid" type="xs:long" />
+          <xs:element name="/***statusemployeename*/statusemployeename" type="xs:string" />
+          <xs:element name="/***statusemployeecode*/statusemployeecode" type="xs:string" />
+          <xs:element name="/***listemployee*/listemployee" type="employeeentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="languagecategoryentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***languagecategoryid*/languagecategoryid" type="xs:long" />
+          <xs:element name="/***languagename*/languagecategoryname" type="xs:string" />
+          <xs:element name="/***languagecode*/languagecategorycode" type="xs:string" />
+          <xs:element name="/***languagedescription*/languagecategorydescription" type="xs:string" />
+          <xs:element name="/***listlanguagecategory*/listlanguage" type="languageentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="historyscopeworkentity" >
+      <xs:sequence>
+        <xs:element name="/***historyid*/historywork" type="historyworkentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***scopeworkid*/scopework" type="scopeworkentity" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupactionentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofgroupaction*/groupactionid" type="xs:long" />
+          <xs:element name="/***codeornameshortofgroupaction*/groupactioncode" type="xs:string" />
+          <xs:element name="/***nameofgroupaction*/groupactionname" type="xs:string" />
+          <xs:element name="/***listaction*/listaction" type="actiongroupactionentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="roleentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="roleid" type="xs:long" />
+          <xs:element name="rolename" type="xs:string" />
+          <xs:element name="rolecode" type="xs:string" />
+          <xs:element name="rolevalue" type="xs:long" />
+          <xs:element name="listrolescreen" type="rolescreenentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="listuser" type="userentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employeelanguageentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofemployee*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***idoflanguage*/language" type="languageentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***idoflevellanguage*///@manytoone//@joincolumn(name" type="xs:dateTime" />
+          <xs:element name="/***languagecertificate*/languagecertificate" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="projectentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***projectid*/projectid" type="xs:long" />
+          <xs:element name="/***projectname*/projectname" type="xs:string" />
+          <xs:element name="/***projectcode*/projectcode" type="xs:string" />
+          <xs:element name="/***projectdescription*/projectdescription" type="xs:string" />
+          <xs:element name="/***projectstart*/projectstart" type="xs:dateTime" />
+          <xs:element name="/***projectend*/projectend" type="xs:dateTime" />
+          <xs:element name="/***projectcost*/projecteffort" type="xs:long" />
+          <xs:element name="/***levelproject*/levelproject" type="levelprojectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***statusprojectid*/statusproject" type="statusprojectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***evaluateprojectid*/evaluateproject" type="evaluateprojectentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***customerid*/customer" type="customerentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***departmentid*/department" type="departmententity" nillable="true" minOccurs="0" />
+          <xs:element name="/***listemployeeproject*/listempproject" type="employeeprojectentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listissueproject*/listissue" type="issueentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listdocument*/listdocument" type="documententity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***historymembers*/listhistorymembers" type="historymemberentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listskillprojectrelationship*/listskillprojectrel" type="skillprojectrelentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="positionemployeeentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***possitionemployeeid*/positionemployeeid" type="xs:long" />
+          <xs:element name="/***positionemployeename*/positionemployeename" type="xs:string" />
+          <xs:element name="/***positionemployeecode*/positionemployeecode" type="xs:string" />
+          <xs:element name="/***positionemployeedescription*/positionemployeedescription" type="xs:string" />
+          <xs:element name="/***listemployee*/listemployee" type="employeeentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fieldissueupdate" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idoffieldupdatedinhistoryissue*/fieldissueupdateid" type="xs:long" />
+          <xs:element name="/***nameoffieldupdatedinhistoryissue*/fieldissueupdatename" type="xs:string" />
+          <xs:element name="/***previousvalueofissue*/fieldissueupdatefrom" type="xs:string" />
+          <xs:element name="/***valueisupdatedinhistoryissueupdate*/fieldissueupdateto" type="xs:string" />
+          <xs:element name="/***idofhistorycontainfield*/" type="historyupdateissue" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fieldentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idoffield*/fieldid" type="xs:long" />
+          <xs:element name="/***fieldname*/fieldname" type="xs:string" />
+          <xs:element name="/***fieldcode*/fieldcode" type="xs:string" />
+          <xs:element name="/***fielddescription*/fielddescription" type="xs:string" />
+          <xs:element name="/***listtrackerdetail*/listtrackerdetail" type="trackerdetailentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="employeeentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofemployee*/employeeid" type="xs:long" />
+          <xs:element name="/***codeofemployee*/employeecode" type="xs:string" />
+          <xs:element name="/***lastnameofemployee*/lastname" type="xs:string" />
+          <xs:element name="/***firstnameofemployee*/firstname" type="xs:string" />
+          <xs:element name="/***biographyofemployee*/biography" type="xs:string" />
+          <xs:element name="/***birthdayofemployee*/birthday" type="xs:dateTime" />
+          <xs:element name="/***genderofemployee*/gender" type="xs:anyType" />
+          <xs:element name="/***emailofemployee*/email" type="xs:string" />
+          <xs:element name="/***phonenumberofemployee*/phone" type="xs:string" />
+          <xs:element name="/***addressofemployee*/address" type="xs:string" />
+          <xs:element name="/***avatarurlofemployeetodo:changestorebase64tostoreurlandresizeimage*/avataurl" type="xs:string" />
+          <xs:element name="/***identitycardofemployee*/identitycard" type="xs:string" />
+          <xs:element name="/***yeargraduateofemployee*/graduateyear" type="xs:long" />
+          <xs:element name="/***universityofemployee*/university" type="xs:string" />
+          <xs:element name="/***skypeofemployee*/skype" type="xs:string" />
+          <xs:element name="/***joincampany*/joincompany" type="xs:dateTime" />
+          <xs:element name="/***numberofchildren*/numofchild" type="xs:long" />
+          <xs:element name="/***informationforcontactemergency*/emergency" type="xs:string" />
+          <xs:element name="/***ofissueofidcard*/ofissueofidcard" type="xs:dateTime" />
+          <xs:element name="/***noteforemployee*/description" type="xs:string" />
+          <xs:element name="married" type="xs:anyType" />
+          <xs:element name="department" type="departmententity" nillable="true" minOccurs="0" />
+          <xs:element name="statusemployee" type="statusemployeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="positionemployee" type="positionemployeeentity" nillable="true" minOccurs="0" />
+          <xs:element name="nationality" type="nationalityentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***degreeofemployee*/degree" type="degreeentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***listemployeeskill*/listempskill" type="employeeskillentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listemployeelanguage*/listemplanguage" type="employeelanguageentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listemployeevacationtype*/litsempvacationtype" type="employeevacationtypeentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listemployeeproject*/listempproject" type="employeeprojectentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listvacationofemployee*/listvacation" type="vacationentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listuser*/listuser" type="userentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***employeehistory*/listhistory" type="historyworkentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***historymembers*/listhistorymembers" type="historymemberentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***historyissueisupdated*/listhistoryupdateissue" type="historyupdateissue" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listissuesadded*/listissue" type="issueentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***contracthistory*///@onetomany(mappedby" type="contractentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="timekeepingentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***timekeepingid*/timekeepingid" type="xs:long" />
+          <xs:element name="/***year*/year" type="xs:long" />
+          <xs:element name="/***starttimekeeping*/starttimekeeping" type="xs:dateTime" />
+          <xs:element name="/***endtimekeeping*/endtimekeeping" type="xs:dateTime" />
+          <xs:element name="/***description*/description" type="xs:string" />
+          <xs:element name="/***isactive*/isactive" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="levelprojectentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***levelprojectid*/levelprojectid" type="xs:long" />
+          <xs:element name="/***levelprojectname*/levelprojectname" type="xs:string" />
+          <xs:element name="/***levelprojectcode*/levelprojectcode" type="xs:string" />
+          <xs:element name="/***levelprojectdescription*/levelprojectdescription" type="xs:string" />
+          <xs:element name="/***listproject*/listproject" type="projectentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="operationsystementity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="/***operationsystemid*/operationsystemid" type="xs:long" />
+          <xs:element name="/***operationsystemname*/operationsystemname" type="xs:string" />
+          <xs:element name="/***operationsystemcode*/operationsystemcode" type="xs:string" />
+          <xs:element name="/***listhistorywork*/listhistorywork" type="historyworkentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="languageentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***languageid*/languageid" type="xs:long" />
+          <xs:element name="/***languagename*/languagename" type="xs:string" />
+          <xs:element name="/***languagecode*/languagecode" type="xs:string" />
+          <xs:element name="/***languagedescription*/languagedescription" type="xs:string" />
+          <xs:element name="/***listemployeelanguage*/listemployeelanguage" type="employeelanguageentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***categorylanguage*/languagecategory" type="languagecategoryentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rolescreenactionentity" >
+      <xs:sequence>
+        <xs:element name="/***roleid*/role" type="roleentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***screebid*/screen" type="screenentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***actionid*/action" type="actionentity" nillable="true" minOccurs="0" />
+        <xs:element name="access" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timekeepingruleentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***timekeepingid*/timekeepingruleid" type="xs:long" />
+          <xs:element name="/***min*/min" type="xs:long" />
+          <xs:element name="/***max*/max" type="xs:long" />
+          <xs:element name="/***minushour*/minushour" type="xs:double" />
+          <xs:element name="/***description*/description" type="xs:string" />
+          <xs:element name="/***violationcode*/violationcode" type="xs:string" />
+          <xs:element name="/***issalary*/issalary" type="xs:anyType" />
+          <xs:element name="/***isloop*/isloop" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rolescreenentity" >
+      <xs:sequence>
+        <xs:element name="/***roleid*/role" type="roleentity" nillable="true" minOccurs="0" />
+        <xs:element name="/***idscreen*/screen" type="screenentity" nillable="true" minOccurs="0" />
+        <xs:element name="access" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupscreenentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idofgroupscreen*/groupscreenid" type="xs:long" />
+          <xs:element name="/***nameofgroupscreen*/groupscreenname" type="xs:string" />
+          <xs:element name="/***codeornameshortofgroupscreen*/groupscreencode" type="xs:string" />
+          <xs:element name="/***iconmenuofgroupscreen*/icongroup" type="xs:string" />
+          <xs:element name="/***indexmenuofgroupscreen*/groupindex" type="xs:long" />
+          <xs:element name="/***listscreen*/listproject" type="screenentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***userid*/userid" type="xs:long" />
+          <xs:element name="/***usernameofuser*/username" type="xs:string" />
+          <xs:element name="/***passwordofuser*/password" type="xs:string" />
+          <xs:element name="/***roleofuser*/role" type="roleentity" nillable="true" minOccurs="0" />
+          <xs:element name="/***employeeofuser*/employee" type="employeeentity" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="statusprojectentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***statusprojectid*/statusprojectid" type="xs:long" />
+          <xs:element name="/***statusprojectname*/statusprojectname" type="xs:string" />
+          <xs:element name="/***statusprojectcode*/statusprojectcode" type="xs:string" />
+          <xs:element name="/***statusprojectdescription*/statusprojectdescription" type="xs:string" />
+          <xs:element name="/***listproject*/listproject" type="projectentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="evaluateemployeeprojectentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***evaluateemployeeprojectid*/evaluateemployeeprojectid" type="xs:long" />
+          <xs:element name="/***evaluateemployeeprojectname*/evaluateemployeeprojectname" type="xs:string" />
+          <xs:element name="/***evaluateemployeeprojectcode*/evaluateemployeeprojectcode" type="xs:string" />
+          <xs:element name="/***evaluateemployeeprojectdescription*/evaluateemployeeprojectdescription" type="xs:string" />
+          <xs:element name="/***listhistorywork*/listhistorywork" type="historyworkentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="/***listproject*/listemployeeproject" type="employeeprojectentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="vacationstatusentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="vacationstatusid" type="xs:long" />
+          <xs:element name="/***vacationstatusname*/vacationstatusname" type="xs:string" />
+          <xs:element name="/***vacationstatuscode*/vacationstatuscode" type="xs:string" />
+          <xs:element name="/***vacationstatusdescription*/vacationstatusdescription" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skilltypeentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity">
+         <xs:sequence>
+          <xs:element name="/***idoftypeskill*/skilltypeid" type="xs:long" />
+          <xs:element name="/***nameoftypeskill*/skilltypename" type="xs:string" />
+          <xs:element name="/***codeoftypeskill*/skilltypecode" type="xs:string" />
+          <xs:element name="/***descriptionoftypeskill*/skilltypedescription" type="xs:string" />
+          <xs:element name="/***listskill*/listskill" type="skillentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="systemsettingentity" >
+      <xs:complexContent>
+       <xs:extension base="baseentity{">
+         <xs:sequence>
+          <xs:element name="systemsettingid" type="xs:long" />
+          <xs:element name="/***timestartworkam*/timestartworkam" type="xs:string" />
+          <xs:element name="/***timeendworkam*/timeendworkam" type="xs:string" />
+          <xs:element name="/***timestartworkpm*/timestartworkpm" type="xs:string" />
+          <xs:element name="/***timeendworkpm*/timeendworkpm" type="xs:string" />
+          <xs:element name="/***stepbreaktime*/stepbreaktime" type="xs:long" />
+          <xs:element name="/***lastweekend*/lastweekend" type="xs:string" />
+          <xs:element name="/***vacationbonusrange*/vacationbonusrange" type="xs:long" />
+          <xs:element name="/***vacationbonusday*/vacationbonusday" type="xs:double" />
+          <xs:element name="/***automaticallystatistics*/automaticallystatistics" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

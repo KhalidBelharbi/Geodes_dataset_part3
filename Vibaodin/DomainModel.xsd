@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="basket" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idaccount" type="xs:anyType" />
+        <xs:element name="idproduct" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="account" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="push" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bill" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idbill" type="xs:anyType" />
+        <xs:element name="export" type="xs:dateTime" />
+        <xs:element name="idaccount" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="account" nillable="true" minOccurs="0" />
+        <xs:element name="detailbills" type="detailbill" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="account" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idaccount" type="xs:anyType" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="fullname" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="man" type="xs:anyType" />
+        <xs:element name="enable" type="xs:anyType" />
+        <xs:element name="admin" type="xs:anyType" />
+        <xs:element name="bills" type="bill" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="baskets" type="basket" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idproduct" type="xs:anyType" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="trademark" type="xs:string" />
+        <xs:element name="guaratee" type="xs:double" />
+        <xs:element name="deliveryaddress" type="xs:string" />
+        <xs:element name="detail" type="xs:string" />
+        <xs:element name="detailbills" type="detailbill" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="baskets" type="basket" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="productimages" type="productimage" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="producttypes" type="producttype" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="detailbill" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idbill" type="xs:anyType" />
+        <xs:element name="idproduct" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="bill" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="unitprice" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="producttype" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idtype" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productimage" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idimage" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="nameimage" type="xs:string" />
+        <xs:element name="alternative" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

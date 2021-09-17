@@ -1,0 +1,12 @@
+ClassDiagram.Class>> AppUser =>=>=> RelationalSchema.Table>> appuser;
+ClassDiagram.Class>> Tweet =>=>=> RelationalSchema.Table>> tweet;
+ClassDiagram.Attribut>> AppUser.id:long =>=>=> RelationalSchema.Column>> appuser.id PRIMARY KEY;
+ClassDiagram.Attribut>> AppUser.name:String =>=>=> RelationalSchema.Column>> appuser.name;
+ClassDiagram.Attribut>> AppUser.username:String =>=>=> RelationalSchema.Column>> appuser.username;
+ClassDiagram.Attribut>> AppUser.password:String =>=>=> RelationalSchema.Column>> appuser.password;
+ClassDiagram.Attribut>> AppUser.enabled:boolean =>=>=> RelationalSchema.Column>> appuser.enabled;
+ClassDiagram.Attribut>> AppUser.lastlogin:Date =>=>=> RelationalSchema.Column>> appuser.lastlogin;
+ClassDiagram.Attribut>> Tweet.id:long =>=>=> RelationalSchema.Column>> tweet.id PRIMARY KEY;
+ClassDiagram.Attribut>> Tweet.tweet:String =>=>=> RelationalSchema.Column>> tweet.tweet;
+ClassDiagram.Attribut>> Tweet.owner:String =>=>=> RelationalSchema.Column>> tweet.owner;
+ClassDiagram.Attribut>> Tweet.likes:Set<String> =>=>=> RelationalSchema.Column>> tweet.likes;

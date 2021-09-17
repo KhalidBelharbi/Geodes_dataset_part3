@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="productapiapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productservice" >
+      <xs:sequence>
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productprofilefilerepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productrepositorysupport" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="ordersender" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productcontroller" >
+      <xs:sequence>
+        <xs:element name="value1" type="xs:string" />
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="controllerlinkbuilder" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="productresource" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productreceiver" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="ordersender" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productsink" >
+      <xs:sequence>
+        <xs:element name="productq" type="xs:string" />
+        <xs:element name="productq_after_billing_from_order_to_product" type="xs:string" />
+        <xs:element name="productq_test" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordersource" >
+      <xs:sequence>
+        <xs:element name="orderq_test" type="xs:string" />
+        <xs:element name="orderq_success_billing_process" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ordersender" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="orderqtestchannel" type="xs:anyType" />
+        <xs:element name="ordersuccessbillingprocesschannel" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorsserializer" >
+      <xs:complexContent>
+       <xs:extension base="jsonserializer<errors>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="errorsresource" >
+      <xs:complexContent>
+       <xs:extension base="entitymodel<errors>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="testdescription" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productnotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="notenoughproductexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="querydslconfiguration" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourceserverconfig" >
+      <xs:complexContent>
+       <xs:extension base="resourceserverconfigureradapter{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="appconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<product,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productrepositorysupport" >
+      <xs:complexContent>
+       <xs:extension base="querydslrepositorysupport{">
+         <xs:sequence>
+          <xs:element name="em" type="xs:anyType" />
+          <xs:element name="queryfactory" type="xs:anyType" />
+          <xs:element name="product" type="qproduct" nillable="true" minOccurs="0" />
+          <xs:element name="productdescription" type="qproductdescription" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productprofilefilerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<productprofilefile,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ordermessagequeueafterbillingdto" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="productname" type="xs:string" />
+        <xs:element name="success" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productdescription" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="productdescriptionrdate" type="xs:anyType" />
+        <xs:element name="productdescriptionudate" type="xs:anyType" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productmessagequeueaboutafterbiilingprocessdto" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="productid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productdto" >
+      <xs:sequence>
+        <xs:element name="productid" type="xs:string" />
+        <xs:element name="productname" type="xs:string" />
+        <xs:element name="productsale" type="xs:long" />
+        <xs:element name="productprice" type="xs:long" />
+        <xs:element name="productquantity" type="xs:long" />
+        <xs:element name="productprofileimageurls" type="xs:anyType" />
+        <xs:element name="productdetail" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultaboutbillingorderdto" >
+      <xs:sequence>
+        <xs:element name="result" type="xs:anyType" />
+        <xs:element name="orderidlist" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="producttype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productimagefile" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productresource" >
+      <xs:complexContent>
+       <xs:extension base="entitymodel<product>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productvalidator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productprofilefile" >
+      <xs:sequence>
+        <xs:element name="fileid" type="xs:string" />
+        <xs:element name="//@column(name" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="rdate" type="xs:anyType" />
+        <xs:element name="udate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="productid" type="xs:string" />
+        <xs:element name="productname" type="xs:string" />
+        <xs:element name="productsale" type="xs:long" />
+        <xs:element name="productprice" type="xs:long" />
+        <xs:element name="productquantity" type="xs:long" />
+        <xs:element name="productdetail" type="xs:string" />
+        <xs:element name="GeneratedName" type="producttype" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productdetailtype" nillable="true" minOccurs="0" />
+        <xs:element name="productrdate" type="xs:anyType" />
+        <xs:element name="productudate" type="xs:anyType" />
+        <xs:element name="productdescriptions" type="productdescription" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//@notfound(action" type="productprofilefile" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productdetailtype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qproductprofilefile" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<productprofilefile>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="inits" type="xs:anyType" />
+          <xs:element name="productprofilefile" type="qproductprofilefile" nillable="true" minOccurs="0" />
+          <xs:element name="fileid" type="xs:anyType" />
+          <xs:element name="product" type="qproduct" nillable="true" minOccurs="0" />
+          <xs:element name="rdate" type="xs:anyType" />
+          <xs:element name="udate" type="xs:anyType" />
+          <xs:element name="url" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qproductdescription" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<productdescription>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="inits" type="xs:anyType" />
+          <xs:element name="productdescription" type="qproductdescription" nillable="true" minOccurs="0" />
+          <xs:element name="description" type="xs:anyType" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="product" type="qproduct" nillable="true" minOccurs="0" />
+          <xs:element name="productdescriptionrdate" type="xs:anyType" />
+          <xs:element name="productdescriptionudate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qproduct" >
+      <xs:complexContent>
+       <xs:extension base="entitypathbase<product>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="product" type="qproduct" nillable="true" minOccurs="0" />
+          <xs:element name="productdescriptions" type="xs:anyType" />
+          <xs:element name="productdetail" type="xs:anyType" />
+          <xs:element name="productdetailtype" type="productdetailtype" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="productid" type="xs:anyType" />
+          <xs:element name="productname" type="xs:anyType" />
+          <xs:element name="productprice" type="xs:anyType" />
+          <xs:element name="productprofileimageurls" type="xs:anyType" />
+          <xs:element name="productquantity" type="xs:anyType" />
+          <xs:element name="productrdate" type="xs:anyType" />
+          <xs:element name="productsale" type="xs:anyType" />
+          <xs:element name="producttype" type="producttype" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="productudate" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="producttest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="restdocsconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basecontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productrepositorysupporttest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productrepositorysupport" nillable="true" minOccurs="0" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="query" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productrepositorytest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="productrepositorysupport" nillable="true" minOccurs="0" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="query" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productapiapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productservicetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productcontrollertest" >
+      <xs:complexContent>
+       <xs:extension base="basecontrollertest">
+         <xs:sequence>
+          <xs:element name="" type="productrepository" nillable="true" minOccurs="0" />
+          <xs:element name="" type="productservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="resourcefortest" type="xs:anyType" />
+          <xs:element name="accesstokenfortest" type="xs:anyType" />
+          <xs:element name="clientcontextfortest" type="xs:anyType" />
+          <xs:element name="fortest" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

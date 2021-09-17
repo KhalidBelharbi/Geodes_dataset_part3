@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application-context" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dynamicdatasourceentry" >
+      <xs:sequence>
+        <xs:element name="//默认数据源default_source" type="xs:string" />
+        <xs:element name="local" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dynamicdatasource" >
+      <xs:complexContent>
+       <xs:extension base="abstractroutingdatasource">
+         <xs:sequence>
+          <xs:element name="//entry的目的，主要是用来给每个数据源打个标记datasourceentry" type="dynamicdatasourceentry" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="page" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="default_page_size" type="xs:long" />
+        <xs:element name="//每页的记录数pagesize" type="xs:long" />
+        <xs:element name="//当前页第一条数据在list中的位置,从0开始start" type="xs:long" />
+        <xs:element name="//当前页中存放的记录,类型一般为listrows" type="xs:anyType" />
+        <xs:element name="//总记录数total" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datautils" >
+      <xs:sequence>
+        <xs:element name="one" type="xs:anyType" />
+        <xs:element name="ger" type="xs:anyType" />
+        <xs:element name="supporttypemap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="genericsutils" >
+      <xs:complexContent>
+       <xs:extension base="genricmanager<book>">
+         <xs:sequence>
+          <xs:element name="ger" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="beanutils" >
+      <xs:complexContent>
+       <xs:extension base="org.apache.commons.beanutils.beanutils">
+         <xs:sequence>
+          <xs:element name="ger" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="objectutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="stringutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultmsg" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//状态码，系统的返回码status" type="xs:long" />
+        <xs:element name="//状态码的解释msg" type="xs:string" />
+        <xs:element name="//放任意结果daa" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="member" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="addr" type="xs:string" />
+        <xs:element name="age" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="memberid" type="xs:long" />
+        <xs:element name="detail" type="xs:string" />
+        <xs:element name="createtime" type="xs:long" />
+        <xs:element name="createtimefmt" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderdao" >
+      <xs:complexContent>
+       <xs:extension base="basedaosupport<order,">
+         <xs:sequence>
+          <xs:element name="yearformat" type="xs:anyType" />
+          <xs:element name="fulldataformat" type="xs:anyType" />
+          <xs:element name="datasource" type="dynamicdatasource" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="memberdao" >
+      <xs:complexContent>
+       <xs:extension base="basedaosupport<member,long>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityoperation" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="//泛型实体class对象entityclass" type="xs:anyType" />
+        <xs:element name="mappings" type="xs:anyType" />
+        <xs:element name="rowmapper" type="xs:anyType" />
+        <xs:element name="tablename" type="xs:string" />
+        <xs:element name="allcolumn" type="xs:string" />
+        <xs:element name="pk" type="xs:anyType" />
+        <xs:element name="insertable" type="xs:anyType" />
+        <xs:element name="updatable" type="xs:anyType" />
+        <xs:element name="columnname" type="xs:string" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="getter" type="xs:anyType" />
+        <xs:element name="setter" type="xs:anyType" />
+        <xs:element name="enum" type="xs:anyType" />
+        <xs:element name="fieldname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="classmappings" >
+      <xs:sequence>
+        <xs:element name="supported_sql_objects" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="queryrulesqlbuilder" >
+      <xs:sequence>
+        <xs:element name="//记录参数所在的位置curr_index" type="xs:long" />
+        <xs:element name="//保存列名列表properties" type="xs:anyType" />
+        <xs:element name="//保存参数值列表values" type="xs:anyType" />
+        <xs:element name="//保存排序规则列表orders" type="order" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="wheresql" type="xs:string" />
+        <xs:element name="ordersql" type="xs:string" />
+        <xs:element name="valuearr" type="xs:anyType" />
+        <xs:element name="valuemap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:sequence>
+        <xs:element name="//升序还是降序ascending" type="xs:anyType" />
+        <xs:element name="//哪个字段升序，哪个字段降序propertyname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basedaosupport" >
+      <xs:complexContent>
+       <xs:extension base="serializable,">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="tablename" type="xs:string" />
+          <xs:element name="write" type="xs:anyType" />
+          <xs:element name="readonly" type="xs:anyType" />
+          <xs:element name="readonly" type="xs:anyType" />
+          <xs:element name="write" type="xs:anyType" />
+          <xs:element name="op" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="queryrule" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="asc_order" type="xs:long" />
+        <xs:element name="desc_order" type="xs:long" />
+        <xs:element name="like" type="xs:long" />
+        <xs:element name="in" type="xs:long" />
+        <xs:element name="notin" type="xs:long" />
+        <xs:element name="between" type="xs:long" />
+        <xs:element name="eq" type="xs:long" />
+        <xs:element name="noteq" type="xs:long" />
+        <xs:element name="gt" type="xs:long" />
+        <xs:element name="ge" type="xs:long" />
+        <xs:element name="lt" type="xs:long" />
+        <xs:element name="le" type="xs:long" />
+        <xs:element name="isnull" type="xs:long" />
+        <xs:element name="isnotnull" type="xs:long" />
+        <xs:element name="isempty" type="xs:long" />
+        <xs:element name="isnotempty" type="xs:long" />
+        <xs:element name="and" type="xs:long" />
+        <xs:element name="or" type="xs:long" />
+        <xs:element name="rulelist" type="xs:anyType" />
+        <xs:element name="queryrulelist" type="queryrule" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="propertyname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jdbctest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ormtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="memberdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jdbctest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ormtest" >
+      <xs:sequence>
+        <xs:element name="sdf" type="xs:anyType" />
+        <xs:element name="//orm(对象关系映射objectrelationmapping)//说的就是讲已经持久化的数据内容转换为一个java对象//用java对象来描述对象与对象之间的关系和数据内容//hibernatemybatisjpaspringjdbc//hibernate全自动档不需要写一句sql语句、烧油（牺牲性能）//mybatis手自一体（半自动）支持单表映射，多表关联需要配置，轻量级一些//springjdbc手动挡包括sql语句，映射都是要自己实现的（最省油的）//喜欢轻装上阵spring本来就是万能胶ioc/aop/di/mvc/jdbc/bigdata/cloud/boot//因为spring形成一个生态//为什么要自己写orm框架//1、解决实际的业务问题（根据业务需要）//2、自定义需求，如果要直接第三方开源框架的话，需要进行二次开发//3、解决团队成员之间水平参差不齐的问题//4、可以实现统一的管理、监控、排错等等一系列底层操作" type="memberdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orderdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

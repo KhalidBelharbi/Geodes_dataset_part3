@@ -1,0 +1,51 @@
+
+storeshipment(shipmentid:Integer [PK], senderstoreid:Integer, senderwarehousecheckerid:Integer, shipment:Date);
+
+staff(/***/serialversionuid:long, staffid:Integer [PK], storeid:Integer, firstname:String, lastname:String, address:String, email:String, jobtitle:String, phonenumber:String, age:Integer, employmentstart:Date, employmentend:Date);
+
+returns(returnid:Integer [PK], transactionid:Integer, warehouseoperatorid:Integer);
+
+billingoperator(/***/serialversionuid:long, staffid:Integer [PK]);
+
+product(serialversionuid:long, productid:Integer [PK], productname:String, productcategoryid:Integer);
+
+signupinformation(serialversionuid:long, signupid:Integer [PK], storeid:Integer, customerid:Integer, staffid:Integer, tierid:Integer, signup:Date, end:Date);
+
+cashier(/***/serialversionuid:long, staffid:Integer [PK]);
+
+manager(/***/serialversionuid:long, staffid:Integer [PK]);
+
+shipmentcontainsproduct(shipmentid:Integer [PK], productid:Integer [PK], quantity:Integer);
+
+store(/***/serialversionuid:long, storeid:Integer [PK], managerid:Integer, address:String, phonenumber:String);
+
+warehouseoperator(/***/serialversionuid:long, staffid:Integer [PK]);
+
+registrationoperator(/***/serialversionuid:long, staffid:Integer [PK]);
+
+discount(serialversionuid:long, discountid:Integer [PK], productid:Integer, discountpercentage:Float, discountstart:Date, discountexpiration:Date);
+
+membershiptier(serialversionuid:long, tierid:Integer [PK], tiername:String, price:Float);
+
+customer(serialversionuid:long, customerid:Integer [PK], tierid:Integer, firstname:String, lastname:String, emailaddress:String, phonenumber:String, homeaddress:String, membershipstatus:Boolean, rewardpoints:Float, membershipamountpaid:Boolean);
+
+supplier(serialversionuid:long, supplierid:Integer [PK], suppliername:String, emailaddress:String, phone:String, address:String);
+
+transactioncontainsmerchandise(transactionid:Integer [PK], merchandiseid:Integer [PK], discountedprice:Float, quantity:Integer);
+
+transaction(serialversionuid:long, transactionid:Integer [PK], storeid:Integer, customerid:Integer, cashierid:Integer, purchase:Date, totalprice:Float, cashbackreward:Float, GeneratedName:PaymentMethod);
+
+billinginfo(billid:Integer [PK], shipmentid:Integer, staffid:Integer, amount:Float, paymentstatus:boolean);
+
+returncontainsmerchandise(serialversionuid:long, returnid:Integer [PK], merchandiseid:Integer [PK], quantity:Integer);
+
+merchandise(serialversionuid:long, merchandiseid:Integer [PK], productid:Integer, expiration:Date, production:Date, storeid:Integer, supplierid:Integer, marketprice:Float, buyprice:Float, quantityinstock:Integer);
+
+category(serialversionuid:long, productcategoryid:Integer [PK], categoryname:String);
+
+suppliershipment(shipmentid:Integer [PK], supplierid:Integer);
+
+shipment(shipmentid:Integer [PK], recepientstoreid:Integer, recepientwarehouseoperatorid:Integer, received:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

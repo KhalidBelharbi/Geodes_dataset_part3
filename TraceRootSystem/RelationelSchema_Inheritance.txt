@@ -1,0 +1,27 @@
+
+boat(boatid:String [PK], /*船只类型*/type:String, /*当前位置*/presentlocation:String, /*当前船速*/speed:String, /*超速判断，正常为0，超速为1*/overspeedjudging:Integer, /*当前船的方向*/direction:String, /*船只状态*/status:String, /*船只航线id号*/routeid:String, /*创建时间*/createtime:Date, /*更新时间*/uptime:Date);
+
+boatpredict(predictid:String [PK], /*船只编号*/boatid:String, /*预测到达地点*/predictlocation:String, /*预测到达时间*/arrivetime:String, /*预测到达该地点的概率*/probability:String, /*创建时间*/createtime:Date);
+
+sensorstatus(statusid:String [PK], sensorid:String, //@column(name:String, value:String, /*记录时间*/recordtime:Date);
+
+sensortype(typeid:String [PK], typename:String, lowestvalue:String, highestvalue:String, /*创建时间*/create_time:Date, /*更新时间*/up_time:Date);
+
+pipelinesegmentpredict(predictid:String [PK], segmentid:String, predictlife:String, /*创建时间*/createtime:Date);
+
+boattype(/*船只种类id*/typeid:String [PK], /*船只种类名称*/typename:String, /*创建时间*/createtime:Date, /*更新时间*/uptime:Date);
+
+boattrace(/*轨迹编号*/traceid:String [PK], /*船只编号*/boatid:String, /*轨迹序列号*/traceserialnumber:String, /*记录位置*/recordlocation:String, /*记录船速*/speed:String, /*超速判断，正常为0，超速为1*/overspeedjudging:Integer, /*记录船方向*/direction:String, /*船只状态*/status:String, /*记录时间*/recordtime:Date);
+
+pipeline(pipeid:String [PK], /*管道起点*/source:String, /*管道终点*/destination:String, /*创建时间*/createtime:Date, /*更新时间*/uptime:Date);
+
+searoute(//航线idrouteid:String [PK], //航线状态，默认为启用110status:String, //航线起点source:String, //航线终点destination:String, /*创建时间*/createtime:Date, /*更新时间*/uptime:Date);
+
+routesegment(segmentid:String [PK], /*对应航线id*/routeid:String, /*航线段的序列号*/segmentserialnumber:Integer, /*这一段的起点坐标*/start:String, /*这一段的终点坐标*/end:String, /*航道限速*/limitingspeed:String, /*创建时间*/createtime:Date, /*更新时间*/uptime:Date);
+
+pipelinesensor(sensorid:String [PK], /*对应的管道段id*/segmentid:String, /*对应管道id*/pipeid:String, /*传感器类型*/typeid:String, /*传感器坐标*/location:String, /*传感器当前状态，默认状态正常*/presentstatus:String, /*传感器当前值*/presentvalue:String, /*创建时间*/createtime:Date, /*更新时间*/uptime:Date);
+
+pipelinesegment(segmentid:String [PK], /*对应管道id*/pipeid:String, /*管道段的序列号*/segmentserialnumber:Integer, /*这一段的起点坐标*/start:String, /*这一段的终点坐标*/end:String, /*创建时间*/createtime:Date, /*更新时间*/uptime:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

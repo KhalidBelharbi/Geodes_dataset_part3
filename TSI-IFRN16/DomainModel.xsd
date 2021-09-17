@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="contactrepository" >
+      <xs:complexContent>
+       <xs:extension base="lazydefaultrepository<contact>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cardconsumedetailed" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="cardid" type="xs:long" />
+          <xs:element name="costcenter" type="xs:string" />
+          <xs:element name="movementclass" type="xs:string" />
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="movementclasstotal" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="financialperiodid" type="xs:long" />
+          <xs:element name="financialperiod" type="xs:string" />
+          <xs:element name="direction" type="movementclasstype" nillable="true" minOccurs="0" />
+          <xs:element name="costcenterid" type="xs:long" />
+          <xs:element name="costcenter" type="xs:string" />
+          <xs:element name="costcenter" type="color" nillable="true" minOccurs="0" />
+          <xs:element name="movementclassid" type="xs:long" />
+          <xs:element name="movementclass" type="xs:long" />
+          <xs:element name="totalvalue" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="openperiodresult" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="financialperiodid" type="xs:long" />
+          <xs:element name="financialperiod" type="xs:string" />
+          <xs:element name="expired" type="xs:anyType" />
+          <xs:element name="revenues" type="xs:anyType" />
+          <xs:element name="expenses" type="xs:anyType" />
+          <xs:element name="balance" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="openperiodresume" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="revenues" type="xs:anyType" />
+          <xs:element name="expenses" type="xs:anyType" />
+          <xs:element name="cashexpenses" type="xs:anyType" />
+          <xs:element name="creditcardexpenses" type="xs:anyType" />
+          <xs:element name="debitcardexpenses" type="xs:anyType" />
+          <xs:element name="movementsopen" type="xs:anyType" />
+          <xs:element name="balance" type="xs:anyType" />
+          <xs:element name="creditcardgoal" type="xs:anyType" />
+          <xs:element name="expensesgoal" type="xs:anyType" />
+          <xs:element name="revenuesgoal" type="xs:anyType" />
+          <xs:element name="accumulated" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dailyuse" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="financialperiodid" type="xs:long" />
+          <xs:element name="financialperiod" type="xs:string" />
+          <xs:element name="paymentdate" type="xs:anyType" />
+          <xs:element name="direction" type="movementclasstype" nillable="true" minOccurs="0" />
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usebymovementclass" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="financialperiodid" type="xs:long" />
+          <xs:element name="financialperiod" type="xs:string" />
+          <xs:element name="costcenter" type="color" nillable="true" minOccurs="0" />
+          <xs:element name="costcenterid" type="xs:long" />
+          <xs:element name="costcenter" type="xs:string" />
+          <xs:element name="movementclassid" type="xs:long" />
+          <xs:element name="movementclass" type="xs:string" />
+          <xs:element name="direction" type="movementclasstype" nillable="true" minOccurs="0" />
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="costcentertotal" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="direction" type="movementclasstype" nillable="true" minOccurs="0" />
+          <xs:element name="costcenterid" type="xs:long" />
+          <xs:element name="costcenter" type="xs:string" />
+          <xs:element name="costcenter" type="color" nillable="true" minOccurs="0" />
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="periodresult" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="financialperiodid" type="xs:long" />
+          <xs:element name="financialperiod" type="xs:string" />
+          <xs:element name="revenues" type="xs:anyType" />
+          <xs:element name="expenses" type="xs:anyType" />
+          <xs:element name="balance" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cardconsume" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="cardid" type="xs:long" />
+          <xs:element name="costcenter" type="color" nillable="true" minOccurs="0" />
+          <xs:element name="costcenter" type="xs:string" />
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usebycostcenter" >
+      <xs:complexContent>
+       <xs:extension base="immutableentity">
+         <xs:sequence>
+          <xs:element name="financialperiodid" type="xs:long" />
+          <xs:element name="financialperiod" type="xs:string" />
+          <xs:element name="costcenter" type="color" nillable="true" minOccurs="0" />
+          <xs:element name="costcenter" type="xs:string" />
+          <xs:element name="direction" type="movementclasstype" nillable="true" minOccurs="0" />
+          <xs:element name="value" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="creditcardinvoice" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="identification" type="xs:string" />
+          <xs:element name="totalvalue" type="xs:anyType" />
+          <xs:element name="duedate" type="xs:anyType" />
+          <xs:element name="closingdate" type="xs:anyType" />
+          <xs:element name="paymentdate" type="xs:anyType" />
+          <xs:element name="" type="invoicestate" nillable="true" minOccurs="0" />
+          <xs:element name="" type="card" nillable="true" minOccurs="0" />
+          <xs:element name="" type="financialperiod" nillable="true" minOccurs="0" />
+          <xs:element name="" type="periodmovement" nillable="true" minOccurs="0" />
+          <xs:element name="periodmovements" type="periodmovement" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="periodmovement" >
+      <xs:complexContent>
+       <xs:extension base="movement">
+         <xs:sequence>
+          <xs:element name="duedate" type="xs:anyType" />
+          <xs:element name="" type="periodmovementstate" nillable="true" minOccurs="0" />
+          <xs:element name="" type="periodmovementtype" nillable="true" minOccurs="0" />
+          <xs:element name="" type="payment" nillable="true" minOccurs="0" />
+          <xs:element name="" type="creditcardinvoice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="financialperiod" nillable="true" minOccurs="0" />
+          <xs:element name="/***usedatthecreditcardinvoicetomarkthemovementandhelptheusertochecktheinvoice*/checked" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="launch" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="quotenumber" type="xs:anyType" />
+          <xs:element name="" type="financialperiod" nillable="true" minOccurs="0" />
+          <xs:element name="" type="fixedmovement" nillable="true" minOccurs="0" />
+          <xs:element name="" type="periodmovement" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="movement" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="identification" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="value" type="xs:anyType" />
+          <xs:element name="" type="contact" nillable="true" minOccurs="0" />
+          <xs:element name="apportionments" type="apportionment" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="deletedapportionments" type="apportionment" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fixedmovement" >
+      <xs:complexContent>
+       <xs:extension base="movement">
+         <xs:sequence>
+          <xs:element name="totalquotes" type="xs:anyType" />
+          <xs:element name="startingquote" type="xs:anyType" />
+          <xs:element name="actualquote" type="xs:anyType" />
+          <xs:element name="autolaunch" type="xs:anyType" />
+          <xs:element name="undetermined" type="xs:anyType" />
+          <xs:element name="startdate" type="xs:anyType" />
+          <xs:element name="" type="fixedmovementstate" nillable="true" minOccurs="0" />
+          <xs:element name="alreadylaunched" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="payment" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="paidon" type="xs:anyType" />
+          <xs:element name="discount" type="xs:anyType" />
+          <xs:element name="paidvalue" type="xs:anyType" />
+          <xs:element name="" type="paymentmethod" nillable="true" minOccurs="0" />
+          <xs:element name="" type="card" nillable="true" minOccurs="0" />
+          <xs:element name="" type="wallet" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="transference" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="value" type="xs:anyType" />
+          <xs:element name="transferdate" type="xs:anyType" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="origin" type="wallet" nillable="true" minOccurs="0" />
+          <xs:element name="destination" type="wallet" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="closing" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="revenues" type="xs:anyType" />
+          <xs:element name="expenses" type="xs:anyType" />
+          <xs:element name="creditcardexpenses" type="xs:anyType" />
+          <xs:element name="debitcardexpenses" type="xs:anyType" />
+          <xs:element name="cashexpenses" type="xs:anyType" />
+          <xs:element name="balance" type="xs:anyType" />
+          <xs:element name="accumulated" type="xs:anyType" />
+          <xs:element name="closingdate" type="xs:anyType" />
+          <xs:element name="" type="financialperiod" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="walletbalance" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="actualbalance" type="xs:anyType" />
+          <xs:element name="oldbalance" type="xs:anyType" />
+          <xs:element name="transactionvalue" type="xs:anyType" />
+          <xs:element name="movementcode" type="xs:string" />
+          <xs:element name="observations" type="xs:string" />
+          <xs:element name="movementdatetime" type="xs:anyType" />
+          <xs:element name="" type="balancetype" nillable="true" minOccurs="0" />
+          <xs:element name="" type="reasontype" nillable="true" minOccurs="0" />
+          <xs:element name="" type="wallet" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="apportionment" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="value" type="xs:anyType" />
+          <xs:element name="" type="movement" nillable="true" minOccurs="0" />
+          <xs:element name="" type="costcenter" nillable="true" minOccurs="0" />
+          <xs:element name="" type="movementclass" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="configuration" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="creditcardclass" type="movementclass" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="authorization" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="functionality" type="xs:string" />
+          <xs:element name="permission" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="group" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="parent" type="group" nillable="true" minOccurs="0" />
+          <xs:element name="grants" type="grant" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="profile" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="activetheme" type="themetype" nillable="true" minOccurs="0" />
+          <xs:element name="userdarksidebar" type="xs:anyType" />
+          <xs:element name="showwalletbalances" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="" type="profile" nillable="true" minOccurs="0" />
+          <xs:element name="" type="group" nillable="true" minOccurs="0" />
+          <xs:element name="" type="storetype" nillable="true" minOccurs="0" />
+          <xs:element name="passwordconfirmation" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="grant" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="" type="group" nillable="true" minOccurs="0" />
+          <xs:element name="" type="authorization" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="revision" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="createdon" type="xs:dateTime" />
+        <xs:element name="createdby" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="card" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="number" type="xs:string" />
+          <xs:element name="flag" type="xs:string" />
+          <xs:element name="creditlimit" type="xs:anyType" />
+          <xs:element name="expirationday" type="xs:anyType" />
+          <xs:element name="owner" type="xs:string" />
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="" type="cardtype" nillable="true" minOccurs="0" />
+          <xs:element name="" type="wallet" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="telephone" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="number" type="xs:string" />
+          <xs:element name="" type="numbertype" nillable="true" minOccurs="0" />
+          <xs:element name="" type="contact" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="movementclass" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="budget" type="xs:anyType" />
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="" type="movementclasstype" nillable="true" minOccurs="0" />
+          <xs:element name="" type="costcenter" nillable="true" minOccurs="0" />
+          <xs:element name="totalmovements" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="financialperiod" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="identification" type="xs:string" />
+          <xs:element name="creditcardgoal" type="xs:anyType" />
+          <xs:element name="expensesgoal" type="xs:anyType" />
+          <xs:element name="revenuesgoal" type="xs:anyType" />
+          <xs:element name="start" type="xs:anyType" />
+          <xs:element name="end" type="xs:anyType" />
+          <xs:element name="closed" type="xs:anyType" />
+          <xs:element name="expired" type="xs:anyType" />
+          <xs:element name="" type="closing" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wallet" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="bank" type="xs:string" />
+          <xs:element name="agency" type="xs:string" />
+          <xs:element name="account" type="xs:string" />
+          <xs:element name="digit" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="actualbalance" type="xs:anyType" />
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="" type="wallettype" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="vehicle" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="identification" type="xs:string" />
+          <xs:element name="brand" type="xs:string" />
+          <xs:element name="model" type="xs:string" />
+          <xs:element name="licenseplate" type="xs:string" />
+          <xs:element name="modelyear" type="xs:anyType" />
+          <xs:element name="manufacturingyear" type="xs:anyType" />
+          <xs:element name="odometer" type="xs:long" />
+          <xs:element name="fuelcapacity" type="xs:anyType" />
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="" type="vehicletype" nillable="true" minOccurs="0" />
+          <xs:element name="" type="costcenter" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="costcenter" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="" type="color" nillable="true" minOccurs="0" />
+          <xs:element name="expensesbudget" type="xs:anyType" />
+          <xs:element name="revenuesbudget" type="xs:anyType" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="parent" type="costcenter" nillable="true" minOccurs="0" />
+          <xs:element name="percentage" type="xs:anyType" />
+          <xs:element name="totalmovements" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="contact" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="document" type="xs:string" />
+          <xs:element name="birthdate" type="xs:anyType" />
+          <xs:element name="otherinformation" type="xs:string" />
+          <xs:element name="zipcode" type="xs:string" />
+          <xs:element name="street" type="xs:string" />
+          <xs:element name="number" type="xs:string" />
+          <xs:element name="complement" type="xs:string" />
+          <xs:element name="neighborhood" type="xs:string" />
+          <xs:element name="province" type="xs:string" />
+          <xs:element name="city" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="active" type="xs:anyType" />
+          <xs:element name="" type="contacttype" nillable="true" minOccurs="0" />
+          <xs:element name="telephones" type="telephone" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="deletedtelephones" type="telephone" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fuel" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="liters" type="xs:anyType" />
+          <xs:element name="valueperliter" type="xs:anyType" />
+          <xs:element name="" type="fueltype" nillable="true" minOccurs="0" />
+          <xs:element name="" type="refueling" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="refueling" >
+      <xs:complexContent>
+       <xs:extension base="persistententity">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="accounted" type="xs:anyType" />
+          <xs:element name="accountedby" type="xs:string" />
+          <xs:element name="firstrefueling" type="xs:anyType" />
+          <xs:element name="fulltank" type="xs:anyType" />
+          <xs:element name="odometer" type="xs:long" />
+          <xs:element name="distance" type="xs:long" />
+          <xs:element name="averageconsumption" type="xs:anyType" />
+          <xs:element name="liters" type="xs:anyType" />
+          <xs:element name="cost" type="xs:anyType" />
+          <xs:element name="costperliter" type="xs:anyType" />
+          <xs:element name="place" type="xs:string" />
+          <xs:element name="eventdate" type="xs:anyType" />
+          <xs:element name="" type="periodmovement" nillable="true" minOccurs="0" />
+          <xs:element name="" type="vehicle" nillable="true" minOccurs="0" />
+          <xs:element name="" type="movementclass" nillable="true" minOccurs="0" />
+          <xs:element name="" type="financialperiod" nillable="true" minOccurs="0" />
+          <xs:element name="fuels" type="fuel" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

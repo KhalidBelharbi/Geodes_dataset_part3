@@ -1,0 +1,9 @@
+
+matakuliah(////ididmatkul:long [PK], matakuliah:String, idmhs:long, nilai:int);
+
+mahasiswa(////ididmhs:long [PK], nama:String, alamat:String);
+
+nilai(id:long [PK], idmhs:long, idmatkul:long, nilai:Integer, keterangan:String, idmhs:mahasiswa #FK to(mahasiswa), idmatkul:matakuliah #FK to(matakuliah));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

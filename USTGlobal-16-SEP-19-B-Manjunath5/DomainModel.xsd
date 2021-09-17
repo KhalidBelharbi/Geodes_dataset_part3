@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="mailinfo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="from_id" type="xs:long" />
+        <xs:element name="to_id" type="xs:long" />
+        <xs:element name="subject" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userbean" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="user_name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

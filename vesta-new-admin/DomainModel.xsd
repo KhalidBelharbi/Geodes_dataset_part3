@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="sidestandentity" >
+      <xs:sequence>
+        <xs:element name="//旁站id主键standid" type="xs:string" />
+        <xs:element name="//工序名称casename" type="xs:string" />
+        <xs:element name="//旁站位置standplace" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//旁站时间standtime" type="xs:dateTime" />
+        <xs:element name="//旁站人idstandby" type="xs:string" />
+        <xs:element name="//旁站要点standdesc" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//状态1正常2删除3关闭status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="standrecodeentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//旁站idstandid" type="xs:string" />
+        <xs:element name="//图片imageurl" type="xs:string" />
+        <xs:element name="//旁站说明recodedesc" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

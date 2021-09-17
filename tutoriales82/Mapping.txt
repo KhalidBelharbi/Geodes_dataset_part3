@@ -1,0 +1,8 @@
+ClassDiagram.Class>> Transaction =>=>=> RelationalSchema.Table>> transaction;
+ClassDiagram.Class>> CustomerRewardsAccount =>=>=> RelationalSchema.Table>> customerrewardsaccount;
+ClassDiagram.Attribut>> Transaction.id:Integer =>=>=> RelationalSchema.Column>> transaction.id PRIMARY KEY;
+ClassDiagram.Attribut>> Transaction.customerrewardsid:Integer =>=>=> RelationalSchema.Column>> transaction.customerrewardsid;
+ClassDiagram.Attribut>> Transaction.customerid:Integer =>=>=> RelationalSchema.Column>> transaction.customerid;
+ClassDiagram.Attribut>> Transaction.transaction:Date =>=>=> RelationalSchema.Column>> transaction.transaction;
+ClassDiagram.Attribut>> CustomerRewardsAccount.id:Integer =>=>=> RelationalSchema.Column>> customerrewardsaccount.id PRIMARY KEY;
+ClassDiagram.Attribut>> CustomerRewardsAccount.customerid:Integer =>=>=> RelationalSchema.Column>> customerrewardsaccount.customerid;

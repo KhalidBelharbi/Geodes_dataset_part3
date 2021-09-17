@@ -1,0 +1,21 @@
+
+refbahanbakar(id:int [PK], bahanbakar:String);
+
+skrd(id:int [PK], nouji:String, jnspengujian:String, biayapemeriksaan:BigDecimal, biayabukuuji:BigDecimal, biayatandauji:BigDecimal, biayatandasamping:BigDecimal, dendaadm:BigDecimal, tglpemeriksaan:Date, tglhabisujilalu:Date, nippejabat:String);
+
+refbahankaroseri(id:int [PK], bahan:String);
+
+refbiayabukuuji(id:int [PK], tarif:BigDecimal);
+
+refjnsrumah(idjnskendaraan:int [PK], id:int [PK], jnsrumah:String);
+
+admkendaraan(id:int [PK], nouji:String [PK], namapemilik:String, alamat:String, merk:String, tipe:String, thnpembuatan:String, idjnskendaraan:int, idjnsbahanbakar:int, idjnsrumah:int, nomorkendaraan:String, norangka:String, nomesin:String, idbahankeroseri:int, tglrekam:Date);
+
+refjnskendaraan(id:int [PK], jnskendaraan:String, trfpemeriksaan:BigDecimal);
+
+refpejabat(nip:String [PK], nama:String, jabatan:String);
+
+datuser(username:String [PK], password:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

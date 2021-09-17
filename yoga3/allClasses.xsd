@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="menu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentupvotemapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<momentupvote>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentfollowmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<momentfollow>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentmessagemapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<momentmessage>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentissuedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="groupid" type="xs:long" />
+          <xs:element name="content" type="xs:string" />
+          <xs:element name="imageids" type="xs:string" />
+          <xs:element name="imageurls" type="xs:string" />
+          <xs:element name="fileids" type="xs:string" />
+          <xs:element name="filenames" type="xs:string" />
+          <xs:element name="linkurl" type="xs:string" />
+          <xs:element name="linktitle" type="xs:string" />
+          <xs:element name="linkposter" type="xs:string" />
+          <xs:element name="address" type="xs:string" />
+          <xs:element name="longitude" type="xs:double" />
+          <xs:element name="latitude" type="xs:double" />
+          <xs:element name="poiid" type="xs:string" />
+          <xs:element name="poititle" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentupvotedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="messageid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentreplydto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="messageid" type="xs:long" />
+          <xs:element name="content" type="xs:string" />
+          <xs:element name="receiverid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentlistdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="bigthan" type="xs:long" />
+          <xs:element name="smallthan" type="xs:long" />
+          <xs:element name="groupid" type="xs:long" />
+          <xs:element name="limitcount" type="xs:anyType" />
+          <xs:element name="wantfollow" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="momentservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="messagemapper" type="momentmessagemapper" nillable="true" minOccurs="0" />
+          <xs:element name="followmapper" type="momentfollowmapper" nillable="true" minOccurs="0" />
+          <xs:element name="upvotemapper" type="momentupvotemapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentfollow" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="messageid" type="xs:long" />
+        <xs:element name="creatorid" type="xs:long" />
+        <xs:element name="replierid" type="xs:long" />
+        <xs:element name="replytime" type="xs:dateTime" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="receiverid" type="xs:long" />
+        <xs:element name="replier" type="xs:string" />
+        <xs:element name="replieravatar" type="xs:string" />
+        <xs:element name="receiver" type="xs:string" />
+        <xs:element name="receiveravatar" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentupvote" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="messageid" type="xs:long" />
+        <xs:element name="upvoterid" type="xs:long" />
+        <xs:element name="issuetime" type="xs:dateTime" />
+        <xs:element name="upvoter" type="xs:string" />
+        <xs:element name="avater" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentmessage" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="groupid" type="xs:long" />
+        <xs:element name="creatorid" type="xs:long" />
+        <xs:element name="issuetime" type="xs:dateTime" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="imageids" type="xs:string" />
+        <xs:element name="imageurls" type="xs:string" />
+        <xs:element name="fileids" type="xs:string" />
+        <xs:element name="filenames" type="xs:string" />
+        <xs:element name="linkurl" type="xs:string" />
+        <xs:element name="linktitle" type="xs:string" />
+        <xs:element name="linkposter" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="longitude" type="xs:double" />
+        <xs:element name="latitude" type="xs:double" />
+        <xs:element name="poiid" type="xs:string" />
+        <xs:element name="poititle" type="xs:string" />
+        <xs:element name="adurl" type="xs:string" />
+        <xs:element name="updtime" type="xs:dateTime" />
+        <xs:element name="creator" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+        <xs:element name="upvotes" type="momentupvote" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="follows" type="momentfollow" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentmessagevo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="groupid" type="xs:long" />
+        <xs:element name="creatorid" type="xs:long" />
+        <xs:element name="creator" type="xs:string" />
+        <xs:element name="issuetime" type="xs:dateTime" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="linkurl" type="xs:string" />
+        <xs:element name="linktitle" type="xs:string" />
+        <xs:element name="linkposter" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="longitude" type="xs:double" />
+        <xs:element name="latitude" type="xs:double" />
+        <xs:element name="poiid" type="xs:string" />
+        <xs:element name="poititle" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+        <xs:element name="adurl" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="follows" type="momentfollowvo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="upvoters" type="momentuservo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="images" type="xs:anyType" />
+        <xs:element name="files" type="momentfilevo" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentfollowvo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="messageid" type="xs:long" />
+        <xs:element name="replier" type="momentuservo" nillable="true" minOccurs="0" />
+        <xs:element name="receiver" type="momentuservo" nillable="true" minOccurs="0" />
+        <xs:element name="replytime" type="xs:dateTime" />
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentfilevo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentuservo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="avater" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentgroupvo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="usercount" type="xs:anyType" />
+        <xs:element name="lastmessage" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userforgroup" >
+      <xs:complexContent>
+       <xs:extension base="user">
+         <xs:sequence>
+          <xs:element name="included" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentgroup" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="deleted" type="xs:anyType" />
+        <xs:element name="usercount" type="xs:anyType" />
+        <xs:element name="lastmessage" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentgroupuser" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="groupid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="branch" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="momentgroupservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="groupmapper" type="momentgroupmapper" nillable="true" minOccurs="0" />
+          <xs:element name="groupusermapper" type="momentgroupusermapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentgroupusermapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<momentgroupuser>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentgroupmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<momentgroup>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="momentgroupcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="groupservice" type="momentgroupservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="groupuserupdatedto" >
+      <xs:sequence>
+        <xs:element name="groupid" type="xs:long" />
+        <xs:element name="addids" type="xs:long" />
+        <xs:element name="deleteids" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupadddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="remark" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="groupuserdeletedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="groupid" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="groupusersdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="groupid" type="xs:long" />
+          <xs:element name="branchid" type="xs:long" />
+          <xs:element name="dutyid" type="xs:long" />
+          <xs:element name="filter" type="xs:string" />
+          <xs:element name="includedonly" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="grouplistdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="filter" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="groupgetdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="groupuseradddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="groupid" type="xs:long" />
+          <xs:element name="userid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="groupdeletedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="groupupdatedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="remark" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

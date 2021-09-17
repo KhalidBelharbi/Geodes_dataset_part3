@@ -1,0 +1,19 @@
+
+user(id:long [PK], name:String);
+
+websiteuser(id:long [PK], name:String, email:String);
+
+address(id:long [PK], location:String, GeneratedName:Library #FK to(library));
+
+author(id:long [PK], name:String);
+
+book_author(book_id:Author [PK] #FK to Author,author_id:list<book> [PK] #FK to list<book>);
+
+library(id:long [PK], name:String, GeneratedName:Address #FK to(address));
+
+subject(id:long [PK], name:String);
+
+book(id:long [PK], title:String, isbn:String, GeneratedName:Library #FK to(library));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

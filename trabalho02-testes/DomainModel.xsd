@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="usuario" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cpf" type="xs:string" />
+        <xs:element name="senha" type="xs:string" />
+        <xs:element name="ativo" type="xs:anyType" />
+        <xs:element name="regras" type="regra" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cartao" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="numero" type="xs:string" />
+        <xs:element name="datavalidade" type="xs:dateTime" />
+        <xs:element name="bloqueado" type="xs:anyType" />
+        <xs:element name="dataatualizacao" type="xs:dateTime" />
+        <xs:element name="GeneratedName" type="cliente" nillable="true" minOccurs="0" />
+        <xs:element name="transacoes" type="transacao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="regra" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="ativo" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cliente" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cpf" type="xs:string" />
+        <xs:element name="uf" type="xs:string" />
+        <xs:element name="dataatualizacao" type="xs:dateTime" />
+        <xs:element name="cartoes" type="cartao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transacao" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="datatransacao" type="xs:dateTime" />
+        <xs:element name="cnpj" type="xs:string" />
+        <xs:element name="valor" type="xs:double" />
+        <xs:element name="qdtparcelas" type="xs:long" />
+        <xs:element name="juros" type="xs:double" />
+        <xs:element name="GeneratedName" type="cartao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

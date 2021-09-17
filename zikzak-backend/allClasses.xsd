@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="validation" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="validationcode" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validationkey" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="validationcode" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categories" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientform" >
+      <xs:sequence>
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="zipcode" type="xs:string" />
+        <xs:element name="street" type="xs:string" />
+        <xs:element name="streetnum" type="xs:string" />
+        <xs:element name="latitude" type="xs:double" />
+        <xs:element name="longitude" type="xs:double" />
+        <xs:element name="activityname" type="xs:string" />
+        <xs:element name="category" type="categories" nillable="true" minOccurs="0" />
+        <xs:element name="subcategory" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="price" type="xs:long" />
+        <xs:element name="minutes" type="xs:long" />
+        <xs:element name="minage" type="xs:long" />
+        <xs:element name="maxage" type="xs:long" />
+        <xs:element name="ispremium" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdto" >
+      <xs:sequence>
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermodel" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="GeneratedName" type="role" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activitymodel" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//@serializedname("name")name" type="xs:string" />
+        <xs:element name="//@serializedname("category")category" type="categories" nillable="true" minOccurs="0" />
+        <xs:element name="//@serializedname("phonenumber")phonenumber" type="xs:string" />
+        <xs:element name="//@serializedname("email")email" type="xs:string" />
+        <xs:element name="//@serializedname("ageminlimit")ageminlimit" type="xs:long" />
+        <xs:element name="//@serializedname("agemaxlimit")agemaxlimit" type="xs:long" />
+        <xs:element name="//@serializedname("latitude")latitude" type="xs:double" />
+        <xs:element name="//@serializedname("longitude")longitude" type="xs:double" />
+        <xs:element name="//@serializedname("comment")comment" type="xs:string" />
+        <xs:element name="//@serializedname("city")city" type="xs:string" />
+        <xs:element name="zipcode" type="xs:long" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="priceinhuf" type="xs:double" />
+        <xs:element name="durationinminutes" type="xs:long" />
+        <xs:element name="subcategory" type="xs:string" />
+        <xs:element name="isactive" type="xs:anyType" />
+        <xs:element name="ispremium" type="xs:anyType" />
+        <xs:element name="views" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<usermodel,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="validationrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<validation,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="activityrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<activitymodel,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="validationservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="validationrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activityservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="activityrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="emailservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categoryservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="runner" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="activityrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwttokenservices" >
+      <xs:sequence>
+        <xs:element name="secretkey" type="xs:string" />
+        <xs:element name="validityinmilliseconds" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+          <xs:element name="" type="jwttokenservices" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customuserdetailservice" >
+      <xs:sequence>
+        <xs:element name="users" type="userrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwttokenfilter" >
+      <xs:complexContent>
+       <xs:extension base="genericfilterbean">
+         <xs:sequence>
+          <xs:element name="" type="jwttokenservices" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="zikzakbackendapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categorycontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="categoryservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="jwttokenservices" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="validationservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="emailservice" nillable="true" minOccurs="0" />
+        <xs:element name="fromemail" type="xs:string" />
+        <xs:element name="hosturl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admincontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="activityservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activitycontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="activityservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="categoryservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="zikzakbackendapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

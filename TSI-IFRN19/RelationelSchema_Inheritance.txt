@@ -1,0 +1,7 @@
+
+escola(serialversionuid:long, id:Long [PK], nome:String, endereco:String, telefone:String, email:String);
+
+aluno(serialversionuid:long, id:Long [PK], matricula:String, nome:String, datanascimento:Date, endereco:String, rg:String, cpf:String, telefone:String, email:String, GeneratedName:Escola #FK to(Escola));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

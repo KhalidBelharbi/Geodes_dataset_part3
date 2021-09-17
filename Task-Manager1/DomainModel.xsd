@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="role" type="xs:string" />
+        <xs:element name="workphone" type="xs:string" />
+        <xs:element name="workemail" type="xs:string" />
+        <xs:element name="location" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="company" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="department" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="company" >
+      <xs:sequence>
+        <xs:element name="//definingcreatedtable(fromentity)as"companies"//companywillbeourid(firstsearchparam)company" type="xs:string" />
+        <xs:element name="companyid" type="xs:string" />
+        <xs:element name="companyphone" type="xs:string" />
+        <xs:element name="companydesc" type="xs:string" />
+        <xs:element name="companyaddress" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="teamuser" >
+      <xs:complexContent>
+       <xs:extension base="user">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="admin" >
+      <xs:complexContent>
+       <xs:extension base="user">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="task" >
+      <xs:sequence>
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="priorty" type="xs:long" />
+        <xs:element name="stoptime" type="xs:string" />
+        <xs:element name="desc1" type="xs:string" />
+        <xs:element name="team_assoc" type="xs:string" />
+        <xs:element name="task_name" type="xs:string" />
+        <xs:element name="task_company" type="xs:string" />
+        <xs:element name="//usertask_userapproved" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manager" >
+      <xs:complexContent>
+       <xs:extension base="user">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema> 

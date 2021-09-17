@@ -1,0 +1,11 @@
+ClassDiagram.Class>> TCity =>=>=> RelationalSchema.Table>> tcity;
+ClassDiagram.Class>> THotel =>=>=> RelationalSchema.Table>> thotel;
+ClassDiagram.Attribut>> TCity.id:int =>=>=> RelationalSchema.Column>> tcity.id PRIMARY KEY;
+ClassDiagram.Attribut>> TCity.name:String =>=>=> RelationalSchema.Column>> tcity.name;
+ClassDiagram.Attribut>> TCity.state:String =>=>=> RelationalSchema.Column>> tcity.state;
+ClassDiagram.Attribut>> TCity.country:String =>=>=> RelationalSchema.Column>> tcity.country;
+ClassDiagram.Attribut>> TCity.map:String =>=>=> RelationalSchema.Column>> tcity.map;
+ClassDiagram.Attribut>> THotel.id:int =>=>=> RelationalSchema.Column>> thotel.id PRIMARY KEY;
+ClassDiagram.Attribut>> THotel.name:String =>=>=> RelationalSchema.Column>> thotel.name;
+ClassDiagram.Attribut>> THotel.address:String =>=>=> RelationalSchema.Column>> thotel.address;
+ClassDiagram.Attribut>> THotel.city:Integer =>=>=> RelationalSchema.Column>> thotel.city;

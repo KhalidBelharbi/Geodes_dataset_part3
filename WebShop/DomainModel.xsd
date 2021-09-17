@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="sizequantity" >
+      <xs:sequence>
+        <xs:element name="size" type="xs:string" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="clothingitem" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clothingitem" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="label" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="image" type="xs:string" />
+        <xs:element name="colour" type="xs:string" />
+        <xs:element name="sizelist" type="sizequantity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="category" nillable="true" minOccurs="0" />
+        <xs:element name="customerorders" type="customerorderclothingitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="category" >
+      <xs:sequence>
+        <xs:element name="category_id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="clothingitemlist" type="clothingitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerorder" >
+      <xs:sequence>
+        <xs:element name="customerorder_id" type="xs:long" />
+        <xs:element name="date" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="payment" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customer" nillable="true" minOccurs="0" />
+        <xs:element name="clotheslist" type="customerorderclothingitem" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="payment" >
+      <xs:sequence>
+        <xs:element name="payment_id" type="xs:long" />
+        <xs:element name="paymenttype" type="xs:string" />
+        <xs:element name="GeneratedName" type="customerorder" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagecontactus" >
+      <xs:sequence>
+        <xs:element name="message_id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="subject" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerorderclothingitem" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="customerorder" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="clothingitem" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:long" />
+        <xs:element name="size" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customer" >
+      <xs:sequence>
+        <xs:element name="customer_id" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="shippingadress" type="xs:string" />
+        <xs:element name="homeadress" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="GeneratedName" type="customerorder" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

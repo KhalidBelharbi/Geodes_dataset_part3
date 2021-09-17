@@ -1,0 +1,37 @@
+
+possessionmultipledb(id:long [PK], name:String);
+
+usermultipledb(id:int [PK], name:String, age:int, email:String, status:Integer);
+
+product(id:int [PK], name:String, price:double);
+
+aggregate(id:long [PK]);
+
+aggregate2(id:long [PK]);
+
+aggregate3(id:long [PK]);
+
+article(id:Integer [PK], publication:Date, publicationtime:Date, creationtime:Date);
+
+possession(id:long [PK], name:String);
+
+item(color:String, grade:String, id:Long [PK], GeneratedName:ItemType #FK to(itemtype), name:String, price:BigDecimal, GeneratedName:Store #FK to(store));
+
+foo(id:long [PK], name:String, GeneratedName:Bar #FK to(bar));
+
+bar(GeneratedName:Logger, id:int [PK], name:String, operation:String, timestamp:long, createddate:long, modifieddate:long, createdby:String, modifiedby:String);
+
+itemtype(id:Long [PK], name:String);
+
+location(city:String, country:String, id:Long [PK]);
+
+store(active:Boolean, id:Long [PK], itemssold:Long, GeneratedName:Location #FK to(location), name:String);
+
+merchandiseentity(id:Long [PK], title:String, price:BigDecimal, brand:String);
+
+student(id:long [PK], name:String, tags:List<String>, skilltags:List<SkillTag>, kvtags:List<KVTag>);
+
+user(id:int [PK], name:String, creationdate:LocalDate, lastlogindate:LocalDate, active:boolean, age:int, email:String, status:Integer);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

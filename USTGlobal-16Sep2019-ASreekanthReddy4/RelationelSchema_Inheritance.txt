@@ -1,0 +1,19 @@
+
+pensil(pid:int [PK], color:String, GeneratedName:PensilBox #FK to(Pensil));
+
+pensilbox(bid:int [PK], bname:String);
+
+votercard(vid:int [PK], name:String, GeneratedName:Person #FK to(person));
+
+person(pid:int [PK], pname:String, GeneratedName:VoterCard #FK to(votercard));
+
+productinfo(pid:int [PK], pname:String, quantity:int);
+
+student(sid:int [PK], sname:String);
+
+student_course(sid:Student [PK] #FK to Student,cid:list<course> [PK] #FK to list<course>);
+
+course(cid:int [PK], name:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

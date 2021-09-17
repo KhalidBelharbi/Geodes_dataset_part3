@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="menubar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menu-search" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="base-form" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compo-form" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="obra-form" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fase-form" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orca-form" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="faces-config" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="web" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jboss-web" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="showcase" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="markercluster" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="markercluster.default" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="markercluster" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manifest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="starter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admin-config" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logonmb" >
+      <xs:complexContent>
+       <xs:extension base="adminsession">
+         <xs:sequence>
+          <xs:element name="usuarioatual" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="relembrar" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="conversorcnpj" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="filtro" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+          <xs:element name="enidade" type="xs:anyType" />
+          <xs:element name="primeiro" type="xs:long" />
+          <xs:element name="tamanhopagina" type="xs:long" />
+          <xs:element name="sortfield" type="xs:string" />
+          <xs:element name="" type="sortorder" nillable="true" minOccurs="0" />
+          <xs:element name="parametros" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sortorder" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="utils" >
+      <xs:sequence>
+        <xs:element name="obra" type="obra" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="fase" type="fase" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="base" type="base" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="orcamento" type="orcamento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="importatabelasinapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mainteste" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="downloadsinapi" >
+      <xs:sequence>
+        <xs:element name="//todo:urlarquivo" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compoformmb" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="composicao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="composicaoservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="faseformmb" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="fase" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="faseservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compolistamb" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="composicaoservice" nillable="true" minOccurs="0" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="composicao" type="composicao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="filtro" type="composicao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//composicaosselecionadosnacolunadocheck-boxselecaocomposicao" type="composicao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//datatablevalorfiltradoattribute(columnfilters)valorfiltrado" type="composicao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuariobean" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="usuario" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="usuariodao" nillable="true" minOccurs="0" />
+        <xs:element name="usuarios" type="usuario" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="obralistamb" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="obraservice" nillable="true" minOccurs="0" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="obra" type="obra" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="filtro" type="obra" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//obrasselecionadosnacolunadocheck-boxselecaoobra" type="obra" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//datatablevalorfiltradoattribute(columnfilters)valorfiltrado" type="obra" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orcaformmb" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="orcamento" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orcamentoservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuarioformmb" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orcalistamb" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="orcamentoservice" nillable="true" minOccurs="0" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="orcamento" type="orcamento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="filtro" type="orcamento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//orcamentosselecionadosnacolunadocheck-boxselecaoorcamento" type="orcamento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//datatablevalorfiltradoattribute(columnfilters)valorfiltrado" type="orcamento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="layoutmb" >
+      <xs:sequence>
+        <xs:element name="layout" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baselistamb" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="baseservice" nillable="true" minOccurs="0" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="base" type="base" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="filtro" type="base" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//basesselecionadosnacolunadocheck-boxselecaobase" type="base" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//datatablevalorfiltradoattribute(columnfilters)valorfiltrado" type="base" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="faselistamb" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="faseservice" nillable="true" minOccurs="0" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="fase" type="fase" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="filtro" type="fase" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//fasesselecionadosnacolunadocheck-boxselecaofase" type="fase" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//datatablevalorfiltradoattribute(columnfilters)valorfiltrado" type="fase" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="obraformmb" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="obra" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="obraservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseformmb" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="base" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="baseservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="composicao" >
+      <xs:sequence>
+        <xs:element name="idcomposicao" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="base" nillable="true" minOccurs="0" />
+        <xs:element name="//material,mao_de_obra,equipamentos" type="especie" nillable="true" minOccurs="0" />
+        <xs:element name="//composicao,insumo" type="tipo" nillable="true" minOccurs="0" />
+        <xs:element name="classe" type="xs:string" />
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="unidade" type="xs:string" />
+        <xs:element name="valorunitario" type="xs:double" />
+        <xs:element name="itens" type="composicaoitens" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuario" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="cpf" type="xs:string" />
+        <xs:element name="telefone" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fase" >
+      <xs:sequence>
+        <xs:element name="idfase" type="xs:anyType" />
+        <xs:element name="item" type="xs:string" />
+        <xs:element name="descricao" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="base" >
+      <xs:sequence>
+        <xs:element name="idbase" type="xs:anyType" />
+        <xs:element name="mesano" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categoria" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orcamento" >
+      <xs:sequence>
+        <xs:element name="idorcamento" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="obra" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="base" nillable="true" minOccurs="0" />
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="total" type="xs:double" />
+        <xs:element name="itens" type="orcamentoitens" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tipo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="composicaoitens" >
+      <xs:sequence>
+        <xs:element name="idcomposicaoitens" type="xs:anyType" />
+        <xs:element name="idcomposicao_fk" type="xs:anyType" />
+        <xs:element name="tipoitem" type="xs:string" />
+        <xs:element name="codigoitem" type="xs:string" />
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="unidade" type="xs:string" />
+        <xs:element name="coeficiente" type="xs:double" />
+        <xs:element name="precounitario" type="xs:double" />
+        <xs:element name="total" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="especie" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orcamentoitens" >
+      <xs:sequence>
+        <xs:element name="idorcaitens" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="orcamento" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="fase" nillable="true" minOccurs="0" />
+        <xs:element name="item" type="tipo" nillable="true" minOccurs="0" />
+        <xs:element name="codigoitem" type="xs:anyType" />
+        <xs:element name="descricao" type="xs:string" />
+        <xs:element name="unidade" type="xs:string" />
+        <xs:element name="quantidade" type="xs:double" />
+        <xs:element name="precounitario" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="obra" >
+      <xs:sequence>
+        <xs:element name="idobra" type="xs:anyType" />
+        <xs:element name="nomeobra" type="xs:string" />
+        <xs:element name="bdi" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="faseservice" >
+      <xs:sequence>
+        <xs:element name="todasfases" type="fase" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usuariodao" >
+      <xs:sequence>
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="nome" type="xs:string" />
+        <xs:element name="senha" type="xs:string" />
+        <xs:element name="con" type="xs:anyType" />
+        <xs:element name="comando" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="connectionfactory" >
+      <xs:sequence>
+        <xs:element name="mysql" type="xs:long" />
+        <xs:element name="mysqldriver" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseservice" >
+      <xs:sequence>
+        <xs:element name="todasbases" type="base" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="composicaoservice" >
+      <xs:sequence>
+        <xs:element name="todascomposicoes" type="composicao" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="obraservice" >
+      <xs:sequence>
+        <xs:element name="todascomposicoes" type="obra" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orcamentoservice" >
+      <xs:sequence>
+        <xs:element name="todosorcamentos" type="orcamento" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

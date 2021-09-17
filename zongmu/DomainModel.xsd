@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="task" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="title" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+          <xs:element name="" type="user" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:complexContent>
+       <xs:extension base="identity">
+         <xs:sequence>
+          <xs:element name="loginname" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="domain" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="parentid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="children" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="iconskin" type="xs:string" />
+        <xs:element name="parent" type="domain" nillable="true" minOccurs="0" />
+        <xs:element name="isplatform" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="platform" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="platformid" type="xs:long" />
+        <xs:element name="type" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="version" type="xs:string" />
+        <xs:element name="ip" type="xs:string" />
+        <xs:element name="port" type="xs:anyType" />
+        <xs:element name="loginname" type="xs:string" />
+        <xs:element name="loginpwd" type="xs:string" />
+        <xs:element name="isdns" type="xs:anyType" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="gbcode" type="xs:string" />
+        <xs:element name="isenable" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="serverinfo" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="serverid" type="xs:long" />
+        <xs:element name="servertype" type="xs:anyType" />
+        <xs:element name="servername" type="xs:string" />
+        <xs:element name="serverversion" type="xs:string" />
+        <xs:element name="ip" type="xs:string" />
+        <xs:element name="port" type="xs:anyType" />
+        <xs:element name="loginname" type="xs:string" />
+        <xs:element name="loginpwd" type="xs:string" />
+        <xs:element name="isdns" type="xs:anyType" />
+        <xs:element name="status" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginlog" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="result_success" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="logtime" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="ip" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="sourcetype" type="xs:long" />
+        <xs:element name="result" type="xs:long" />
+        <xs:element name="errorreason" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="operatelog" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="result_success" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="optime" type="xs:string" />
+        <xs:element name="opername" type="xs:string" />
+        <xs:element name="ip" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="sourcetype" type="xs:long" />
+        <xs:element name="result" type="xs:long" />
+        <xs:element name="operaobjname" type="xs:string" />
+        <xs:element name="operaobjid" type="xs:string" />
+        <xs:element name="menuname" type="xs:string" />
+        <xs:element name="menucode" type="xs:string" />
+        <xs:element name="funname" type="xs:string" />
+        <xs:element name="funcode" type="xs:string" />
+        <xs:element name="errorreason" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bizequipmentstatus" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="bizequipmentstatusid" nillable="true" minOccurs="0" />
+        <xs:element name="propertyvalue" type="xs:string" />
+        <xs:element name="uptime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bizalarm" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="alarmid" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="begintime" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+        <xs:element name="alarmlevel" type="xs:string" />
+        <xs:element name="alarmdesc" type="xs:string" />
+        <xs:element name="alarmcount" type="xs:long" />
+        <xs:element name="alarmtype" type="xs:string" />
+        <xs:element name="isfinish" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pscporganizepos" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="orgid" type="xs:anyType" />
+        <xs:element name="orgx" type="xs:string" />
+        <xs:element name="orgy" type="xs:string" />
+        <xs:element name="areaname" type="xs:string" />
+        <xs:element name="linkman" type="xs:string" />
+        <xs:element name="linkphonenumber" type="xs:string" />
+        <xs:element name="warrantyman" type="xs:string" />
+        <xs:element name="warrantyphonenumber" type="xs:string" />
+        <xs:element name="arealevel" type="xs:anyType" />
+        <xs:element name="iconkey" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bizalarmcondition" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="conditionid" type="xs:long" />
+        <xs:element name="equipmenttypeid" type="xs:long" />
+        <xs:element name="producer" type="xs:string" />
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="expression" type="xs:string" />
+        <xs:element name="alarmresult" type="xs:string" />
+        <xs:element name="alarmlevel" type="xs:string" />
+        <xs:element name="alarmdesc" type="xs:string" />
+        <xs:element name="iscamera" type="xs:anyType" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="missionid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uialarmevent" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="dataid" type="xs:long" />
+        <xs:element name="alarmlevel" type="xs:string" />
+        <xs:element name="focusflag" type="xs:string" />
+        <xs:element name="begintime" type="xs:dateTime" />
+        <xs:element name="repairflag" type="xs:string" />
+        <xs:element name="equipmentname" type="xs:string" />
+        <xs:element name="equipmenttype" type="xs:string" />
+        <xs:element name="alarmtype" type="xs:string" />
+        <xs:element name="alarmdesc" type="xs:string" />
+        <xs:element name="lastprocesstime" type="xs:dateTime" />
+        <xs:element name="lastprocessresult" type="xs:string" />
+        <xs:element name="lastalarmdesc" type="xs:string" />
+        <xs:element name="lastprocessdesc" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="begintimestr" type="xs:string" />
+        <xs:element name="processtimestr" type="xs:string" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="alarmcount" type="xs:long" />
+        <xs:element name="ismask" type="xs:string" />
+        <xs:element name="organizename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uialarmeventexcel" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="dataid" type="xs:long" />
+        <xs:element name="alarmlevel" type="xs:string" />
+        <xs:element name="focusflag" type="xs:string" />
+        <xs:element name="begintime" type="xs:dateTime" />
+        <xs:element name="repairflag" type="xs:string" />
+        <xs:element name="equipmentname" type="xs:string" />
+        <xs:element name="equipmenttype" type="xs:string" />
+        <xs:element name="alarmtype" type="xs:string" />
+        <xs:element name="alarmdesc" type="xs:string" />
+        <xs:element name="lastprocesstime" type="xs:dateTime" />
+        <xs:element name="lastprocessresult" type="xs:string" />
+        <xs:element name="lastalarmdesc" type="xs:string" />
+        <xs:element name="lastprocessdesc" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="begintimestr" type="xs:string" />
+        <xs:element name="processtimestr" type="xs:string" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="organizename" type="xs:string" />
+        <xs:element name="alarmcount" type="xs:long" />
+        <xs:element name="ismask" type="xs:string" />
+        <xs:element name="orgid" type="xs:anyType" />
+        <xs:element name="producer" type="xs:string" />
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+        <xs:element name="linkman" type="xs:string" />
+        <xs:element name="linkphonenumber" type="xs:string" />
+        <xs:element name="warrantyman" type="xs:string" />
+        <xs:element name="warrantyphonenumber" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="alarmforwardrule" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="alarmlevel" type="xs:string" />
+        <xs:element name="forwardtimetemplate" type="xs:long" />
+        <xs:element name="delaytime" type="xs:anyType" />
+        <xs:element name="isenable" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uidiagnosisstatus" >
+      <xs:sequence>
+        <xs:element name="dataid" type="xs:long" />
+        <xs:element name="pathname" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="focusflag" type="xs:string" />
+        <xs:element name="equipmentname" type="xs:string" />
+        <xs:element name="nosignal" type="xs:long" />
+        <xs:element name="chnnname" type="xs:string" />
+        <xs:element name="//darkbright" type="xs:long" />
+        <xs:element name="color" type="xs:long" />
+        <xs:element name="snow" type="xs:long" />
+        <xs:element name="roll" type="xs:long" />
+        <xs:element name="freeze" type="xs:long" />
+        <xs:element name="shake" type="xs:long" />
+        <xs:element name="covered" type="xs:long" />
+        <xs:element name="fuzzy" type="xs:long" />
+        <xs:element name="contrast" type="xs:long" />
+        <xs:element name="repairflag" type="xs:string" />
+        <xs:element name="ismask" type="xs:string" />
+        <xs:element name="producer" type="xs:string" />
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+        <xs:element name="move" type="xs:string" />
+        <xs:element name="chnncode" type="xs:string" />
+        <xs:element name="dvscode" type="xs:string" />
+        <xs:element name="dvsequipmentid" type="xs:string" />
+        <xs:element name="chnnequipmentid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bizalarmrecording" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="alarmrecordingid" type="xs:long" />
+        <xs:element name="alarmresult" type="xs:string" />
+        <xs:element name="recordduration" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="videochannelrecordintegrity" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="//idid" type="xs:long" />
+        <xs:element name="//channel_primary_id通道主键idchannelprimaryid" type="xs:long" />
+        <xs:element name="//record_录像日期record" type="xs:dateTime" />
+        <xs:element name="//is_egrity是否完整0完整1.丢失2.失败isegrity" type="xs:long" />
+        <xs:element name="//ignore忽略此日期完整性0:否1:是ignore" type="xs:long" />
+        <xs:element name="losespan" type="xs:string" />
+        <xs:element name="//up_检测更新时间up" type="xs:dateTime" />
+        <xs:element name="//check_fail_descri检测失败描述faildecription" type="xs:string" />
+        <xs:element name="recorddate" type="xs:string" />
+        <xs:element name="dvscode" type="xs:string" />
+        <xs:element name="chnncode" type="xs:string" />
+        <xs:element name="recordtype" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bizmask" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="maskid" type="xs:long" />
+        <xs:element name="orgid" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="equipmentpropertyname" type="xs:string" />
+        <xs:element name="ismask" type="xs:anyType" />
+        <xs:element name="masktime" type="xs:long" />
+        <xs:element name="finishmasktime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="videodignosemissionch" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="dvs" type="xs:string" />
+        <xs:element name="channel" type="xs:string" />
+        <xs:element name="missionid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bizalarmextend" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="alarmextendid" type="xs:long" />
+        <xs:element name="alarmid" type="xs:long" />
+        <xs:element name="//focusflagprocessflag" type="xs:anyType" />
+        <xs:element name="processresult" type="xs:string" />
+        <xs:element name="processtime" type="xs:dateTime" />
+        <xs:element name="processdesc" type="xs:string" />
+        <xs:element name="ids" type="xs:string" />
+        <xs:element name="processuser" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sysequipmenttype" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="equipmenttypeid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="remark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sysequipment" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="orgid" type="xs:long" />
+        <xs:element name="equipmenttypeid" type="xs:string" />
+        <xs:element name="producer" type="xs:string" />
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+        <xs:element name="netport" type="xs:string" />
+        <xs:element name="fsuid" type="xs:string" />
+        <xs:element name="c3mdeviceid" type="xs:string" />
+        <xs:element name="equipmenttype" type="sysequipmenttype" nillable="true" minOccurs="0" />
+        <xs:element name="equstatuslist" type="bizequipmentstatus" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="parentid" type="xs:long" />
+        <xs:element name="aliasname" type="xs:string" />
+        <xs:element name="isdelete" type="xs:long" />
+        <xs:element name="ismanualin" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="devicesignaloperation" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="operationid" type="xs:long" />
+        <xs:element name="deviceid" type="xs:long" />
+        <xs:element name="//动环设备映射标识c3mdeviceid" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="signalid" type="xs:string" />
+        <xs:element name="operationstatus" type="xs:string" />
+        <xs:element name="operationtime" type="xs:dateTime" />
+        <xs:element name="setupvalue" type="xs:string" />
+        <xs:element name="orgid" type="xs:long" />
+        <xs:element name="fsuip" type="xs:string" />
+        <xs:element name="fsuport" type="xs:string" />
+        <xs:element name="fsuid" type="xs:string" />
+        <xs:element name="signalmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="videodignosemission" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="missionid" type="xs:string" />
+        <xs:element name="missionname" type="xs:string" />
+        <xs:element name="begintime" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+        <xs:element name="isrun" type="xs:anyType" />
+        <xs:element name="isdelete" type="xs:anyType" />
+        <xs:element name="isprocess" type="xs:anyType" />
+        <xs:element name="cycle" type="xs:string" />
+        <xs:element name="nosignal" type="xs:string" />
+        <xs:element name="freeze" type="xs:string" />
+        <xs:element name="color" type="xs:string" />
+        <xs:element name="snow" type="xs:string" />
+        <xs:element name="covered" type="xs:string" />
+        <xs:element name="luminance" type="xs:string" />
+        <xs:element name="move" type="xs:string" />
+        <xs:element name="roll" type="xs:string" />
+        <xs:element name="fuzzy" type="xs:string" />
+        <xs:element name="contrast" type="xs:string" />
+        <xs:element name="shake" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tbv2devauthorg" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="authid" type="xs:long" />
+        <xs:element name="timetemplateid" type="xs:long" />
+        <xs:element name="authname" type="xs:string" />
+        <xs:element name="authtype" type="xs:long" />
+        <xs:element name="remark" type="xs:string" />
+        <xs:element name="organizeid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uisysdevstatus" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="/***@fieldsserialversionuid:todo*/dataid" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="propertyvalue" type="xs:string" />
+        <xs:element name="alarmeventviewid" type="xs:string" />
+        <xs:element name="alarmtype" type="xs:string" />
+        <xs:element name="orgid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uiequipmentnetworkstatus" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="/***@fieldsserialversionuid:todo*/equipmentid" type="xs:long" />
+        <xs:element name="pathname" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="equipmentname" type="xs:string" />
+        <xs:element name="equipmenttypename" type="xs:string" />
+        <xs:element name="producer" type="xs:string" />
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+        <xs:element name="netstatus" type="xs:string" />
+        <xs:element name="//stringalarmcount//stringlastprocesstimelastup" type="xs:dateTime" />
+        <xs:element name="lastupdatetime" type="xs:string" />
+        <xs:element name="//processresult//processdescfocusflag" type="xs:string" />
+        <xs:element name="orgid" type="xs:string" />
+        <xs:element name="repairflag" type="xs:string" />
+        <xs:element name="ismask" type="xs:string" />
+        <xs:element name="alarmcount" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uidevauthinfo" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="chnnequid" type="xs:long" />
+        <xs:element name="dvsequid" type="xs:long" />
+        <xs:element name="templateid" type="xs:long" />
+        <xs:element name="devname" type="xs:string" />
+        <xs:element name="chnnname" type="xs:string" />
+        <xs:element name="orgname" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bizfocusrepair" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="focusflag" type="xs:string" />
+        <xs:element name="repairflag" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="c3mfsuextend" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="fsuid" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+        <xs:element name="netport" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tbv2devauthchn" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="authid" type="xs:long" />
+        <xs:element name="chnid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uiequipmentstatus" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="/***@fieldsserialversionuid:todo*/dataid" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="pathname" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="equipmentname" type="xs:string" />
+        <xs:element name="equipmenttypename" type="xs:string" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="producer" type="xs:string" />
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+        <xs:element name="netstatus" type="xs:string" />
+        <xs:element name="alarmcount" type="xs:string" />
+        <xs:element name="lastprocesstime" type="xs:string" />
+        <xs:element name="lastupdatetime" type="xs:string" />
+        <xs:element name="processresult" type="xs:string" />
+        <xs:element name="processdesc" type="xs:string" />
+        <xs:element name="cpu" type="xs:string" />
+        <xs:element name="physicalmemory" type="xs:string" />
+        <xs:element name="diskspaceleft" type="xs:string" />
+        <xs:element name="diskstatus" type="xs:string" />
+        <xs:element name="focusflag" type="xs:string" />
+        <xs:element name="orgid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="videodignosemissiontree" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="missionid" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="dvs" type="xs:string" />
+        <xs:element name="parentid" type="xs:long" />
+        <xs:element name="orgid" type="xs:long" />
+        <xs:element name="path" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uifsuinfo" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="fsuid" type="xs:string" />
+        <xs:element name="fsucode" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="orgid" type="xs:long" />
+        <xs:element name="moduletype" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+        <xs:element name="netport" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="pathname" type="xs:string" />
+        <xs:element name="netstatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uivideotree" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="templateid" type="xs:long" />
+        <xs:element name="parentid" type="xs:long" />
+        <xs:element name="orgid" type="xs:long" />
+        <xs:element name="path" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="viewdevicesignaloperation" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="operationid" type="xs:long" />
+        <xs:element name="deviceid" type="xs:long" />
+        <xs:element name="equipmentname" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="signalid" type="xs:string" />
+        <xs:element name="signalname" type="xs:string" />
+        <xs:element name="operationstatus" type="xs:string" />
+        <xs:element name="operationtime" type="xs:dateTime" />
+        <xs:element name="setupvalue" type="xs:string" />
+        <xs:element name="orgid" type="xs:long" />
+        <xs:element name="areaname" type="xs:string" />
+        <xs:element name="fsuip" type="xs:string" />
+        <xs:element name="fsuname" type="xs:string" />
+        <xs:element name="fsuport" type="xs:string" />
+        <xs:element name="fsuid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timetemplateparam" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="//按星期的时间模板weektype" type="xs:long" />
+        <xs:element name="//按一次性的时间段oncetype" type="xs:long" />
+        <xs:element name="//按月monthtype" type="xs:long" />
+        <xs:element name="//按日daytype" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="timetemplate" nillable="true" minOccurs="0" />
+        <xs:element name="type" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="weekdate" type="xs:long" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+        <xs:element name="/***时间段列表*/listtimetemplateparamspan" type="timetemplateparamspan" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timetemplateparamspan" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="timetemplateparam" nillable="true" minOccurs="0" />
+        <xs:element name="start" type="xs:dateTime" />
+        <xs:element name="end" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="multilooprename" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="multilooprenameid" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uiringstatus" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="dataid" type="xs:long" />
+        <xs:element name="equipmentid" type="xs:long" />
+        <xs:element name="fsuid" type="xs:long" />
+        <xs:element name="pathname" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="equipmentname" type="xs:string" />
+        <xs:element name="equipmenttypename" type="xs:string" />
+        <xs:element name="propertyname" type="xs:string" />
+        <xs:element name="netaddress" type="xs:string" />
+        <xs:element name="netstatus" type="xs:string" />
+        <xs:element name="alarmcount" type="xs:string" />
+        <xs:element name="lastprocesstime" type="xs:string" />
+        <xs:element name="lastupdatetime" type="xs:string" />
+        <xs:element name="processresult" type="xs:string" />
+        <xs:element name="processdesc" type="xs:string" />
+        <xs:element name="//electriccity//ups//temperature//humidityfocusflag" type="xs:string" />
+        <xs:element name="orgid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="c3mfsu" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="fsuid" type="xs:string" />
+        <xs:element name="fsucode" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="orgid" type="xs:long" />
+        <xs:element name="moduletype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timetemplate" >
+      <xs:sequence>
+        <xs:element name="/***@fieldsserialversionuid:todo*/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="begindate" type="xs:string" />
+        <xs:element name="enddate" type="xs:string" />
+        <xs:element name="savedays" type="xs:string" />
+        <xs:element name="ispublic" type="xs:long" />
+        <xs:element name="//前台传过来的json字符串plans" type="xs:string" />
+        <xs:element name="isalarmrule" type="xs:anyType" />
+        <xs:element name="timetemplateparamlist" type="timetemplateparam" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

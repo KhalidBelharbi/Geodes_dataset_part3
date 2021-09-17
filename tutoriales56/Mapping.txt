@@ -1,0 +1,13 @@
+ClassDiagram.Class>> Article =>=>=> RelationalSchema.Table>> article;
+ClassDiagram.Class>> Author =>=>=> RelationalSchema.Table>> author;
+ClassDiagram.Class>> Editor =>=>=> RelationalSchema.Table>> editor;
+ClassDiagram.Attribut>> Article.articleid:String =>=>=> RelationalSchema.Column>> article.articleid PRIMARY KEY;
+ClassDiagram.Attribut>> Article.articletitle:String =>=>=> RelationalSchema.Column>> article.articletitle;
+ClassDiagram.Attribut>> Author.authorid:String =>=>=> RelationalSchema.Column>> author.authorid PRIMARY KEY;
+ClassDiagram.Attribut>> Author.authorname:String =>=>=> RelationalSchema.Column>> author.authorname;
+ClassDiagram.Attribut>> Editor.editorid:String =>=>=> RelationalSchema.Column>> editor.editorid PRIMARY KEY;
+ClassDiagram.Attribut>> Editor.editorname:String =>=>=> RelationalSchema.Column>> editor.editorname;
+Many-To-One relationship from ClassDiagram.Class>>Article  to ClassDiagram.Class>>Author represented by ClassDiagram.Atrribute>>GeneratedName;
+Many-To-One relationship from ClassDiagram.Class>>Author  to ClassDiagram.Class>>editor represented by ClassDiagram.Atrribute>>GeneratedName;
+One-To-Many relationship from ClassDiagram.Class>>Author  to ClassDiagram.Class>>Set<Article>;
+One-To-Many relationship from ClassDiagram.Class>>Editor  to ClassDiagram.Class>>Set<Author>;

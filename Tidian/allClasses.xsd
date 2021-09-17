@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="quesdisplay" >
+      <xs:sequence>
+        <xs:element name="theuser" type="users" nillable="true" minOccurs="0" />
+        <xs:element name="question" type="questions" nillable="true" minOccurs="0" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="level" type="xs:string" />
+        <xs:element name="date" type="xs:string" />
+        <xs:element name="asker" type="xs:string" />
+        <xs:element name="quesid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="edithandle" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="methods.**@paramrequestservletrequest*@paramresponseservletresponse*@throwsservletexceptionifaservlet-specificerroroccurs*@throwsioexceptionifani/oerroroccurs*/" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="answerhandle" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="methods.**@paramrequestservletrequest*@paramresponseservletresponse*@throwsservletexceptionifaservlet-specificerroroccurs*@throwsioexceptionifani/oerroroccurs*/" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dealscore" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="methods.**@paramrequestservletrequest*@paramresponseservletresponse*@throwsservletexceptionifaservlet-specificerroroccurs*@throwsioexceptionifani/oerroroccurs*/" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="settag" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="methods.**@paramrequestservletrequest*@paramresponseservletresponse*@throwsservletexceptionifaservlet-specificerroroccurs*@throwsioexceptionifani/oerroroccurs*/" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="questoindex" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="methods.**@paramrequestservletrequest*@paramresponseservletresponse*@throwsservletexceptionifaservlet-specificerroroccurs*@throwsioexceptionifani/oerroroccurs*/" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="quesfromdb" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="methods.**@paramrequestservletrequest*@paramresponseservletresponse*@throwsservletexceptionifaservlet-specificerroroccurs*@throwsioexceptionifani/oerroroccurs*/" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="dealtag" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="methods.**@paramrequestservletrequest*@paramresponseservletresponse*@throwsservletexceptionifaservlet-specificerroroccurs*@throwsioexceptionifani/oerroroccurs*/" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="search" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tagdisplay" >
+      <xs:sequence>
+        <xs:element name="tag" type="xs:string" />
+        <xs:element name="tagid" type="xs:long" />
+        <xs:element name="the" type="tag" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questionmanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dealuser" >
+      <xs:sequence>
+        <xs:element name="usersession" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ansdisplay" >
+      <xs:sequence>
+        <xs:element name="theuser" type="users" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="answers" nillable="true" minOccurs="0" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="score" type="xs:long" />
+        <xs:element name="date" type="xs:string" />
+        <xs:element name="respondent" type="xs:string" />
+        <xs:element name="ansid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="platform" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="platformadd" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fileuploadservlet" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="platfav" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="personcenter" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="indexcontrol" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pla_replyadd" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="findplatform" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="log" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="questionmanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recommend" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="usr_id" type="xs:long" />
+        <xs:element name="tran_number" type="xs:long" />
+        <xs:element name="art_number" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractfacade" >
+      <xs:sequence>
+        <xs:element name="entityclass" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logmanager" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="platformmanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="synchronised" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="articlemanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="newservlet" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="filemanager" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="collectcomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="materialfunction" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="ut" type="xs:anyType" />
+        <xs:element name="emf" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="toldownloadcomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="visitcomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="weekdownloadcomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="material" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="materialsort" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rollbackfailureexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nonexistententityexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="illegalorphanexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+          <xs:element name="messages" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="preexistingentityexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="markjpacontroller" >
+      <xs:sequence>
+        <xs:element name="utx" type="xs:anyType" />
+        <xs:element name="emf" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="materialsjpacontroller" >
+      <xs:sequence>
+        <xs:element name="utx" type="xs:anyType" />
+        <xs:element name="emf" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="collectjpacontroller" >
+      <xs:sequence>
+        <xs:element name="utx" type="xs:anyType" />
+        <xs:element name="emf" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="materialcommentjpacontroller" >
+      <xs:sequence>
+        <xs:element name="utx" type="xs:anyType" />
+        <xs:element name="emf" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usersjpacontroller" >
+      <xs:sequence>
+        <xs:element name="utx" type="xs:anyType" />
+        <xs:element name="emf" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mystatus" >
+      <xs:sequence>
+        <xs:element name="on" type="xs:string" />
+        <xs:element name="off" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mysubject" >
+      <xs:sequence>
+        <xs:element name="maths" type="xs:string" />
+        <xs:element name="english" type="xs:string" />
+        <xs:element name="chinese" type="xs:string" />
+        <xs:element name="physics" type="xs:string" />
+        <xs:element name="chemistry" type="xs:string" />
+        <xs:element name="computer" type="xs:string" />
+        <xs:element name="others" type="xs:string" />
+        <xs:element name="politics" type="xs:string" />
+        <xs:element name="history" type="xs:string" />
+        <xs:element name="geography" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mylevel" >
+      <xs:sequence>
+        <xs:element name="l1" type="xs:long" />
+        <xs:element name="l2" type="xs:long" />
+        <xs:element name="l3" type="xs:long" />
+        <xs:element name="l4" type="xs:long" />
+        <xs:element name="l5" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mygrade" >
+      <xs:sequence>
+        <xs:element name="junior1" type="xs:string" />
+        <xs:element name="junior2" type="xs:string" />
+        <xs:element name="junior3" type="xs:string" />
+        <xs:element name="senior1" type="xs:string" />
+        <xs:element name="senior2" type="xs:string" />
+        <xs:element name="senior3" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="entitymanagefactory" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rankblog" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="entitymanagefactory" type="xs:anyType" />
+          <xs:element name="number" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="showblog" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="newblog" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="entitymanagefactory" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="catblog" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="entitymanagefactory" type="xs:anyType" />
+          <xs:element name="sizeofpage" type="xs:long" />
+          <xs:element name="sizeofpart" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="blog" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="entitymanagefactory" type="xs:anyType" />
+          <xs:element name="sizeofpage" type="xs:long" />
+          <xs:element name="sizeofpart" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="regprocess" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="entitymanagefactory" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="hotblog" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="entitymanagefactory" type="xs:anyType" />
+          <xs:element name="sizeofpage" type="xs:long" />
+          <xs:element name="sizeofpart" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usermanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="md5" >
+      <xs:sequence>
+        <xs:element name="instr" type="xs:string" />
+        <xs:element name="md5" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="articlemanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="artcomments" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="comid" type="xs:anyType" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="usrid" type="users" nillable="true" minOccurs="0" />
+        <xs:element name="artid" type="articles" nillable="true" minOccurs="0" />
+        <xs:element name="artreplycollection" type="artreply" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="collect" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="collectid" type="xs:anyType" />
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="materialid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="materialcomment" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="materialcommentid" type="xs:anyType" />
+        <xs:element name="materialid" type="xs:long" />
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="comment" type="xs:string" />
+        <xs:element name="create" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkque" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="checkquepk" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="materials" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="materialid" type="xs:anyType" />
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="mname" type="xs:string" />
+        <xs:element name="mpath" type="xs:string" />
+        <xs:element name="msize" type="xs:string" />
+        <xs:element name="mintroduction" type="xs:string" />
+        <xs:element name="mtype" type="xs:string" />
+        <xs:element name="msubject" type="xs:string" />
+        <xs:element name="mgrade" type="xs:string" />
+        <xs:element name="mregion" type="xs:string" />
+        <xs:element name="mtolvisit" type="xs:long" />
+        <xs:element name="mtoldownload" type="xs:long" />
+        <xs:element name="mweekdownload" type="xs:long" />
+        <xs:element name="mtolcollect" type="xs:long" />
+        <xs:element name="mlevelamount" type="xs:long" />
+        <xs:element name="mmarknumber" type="xs:long" />
+        <xs:element name="mtolcomment" type="xs:long" />
+        <xs:element name="mcreate" type="xs:dateTime" />
+        <xs:element name="mstatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personarticles" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="personarticlespk" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="users" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="administer" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="admid" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tag" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="tagid" type="xs:anyType" />
+        <xs:element name="tag" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mark" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="markid" type="xs:anyType" />
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="materialid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questions" >
+      <xs:sequence>
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="queid" type="xs:anyType" />
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="category" type="xs:string" />
+        <xs:element name="subject" type="xs:string" />
+        <xs:element name="po" type="xs:long" />
+        <xs:element name="collectnumber" type="xs:long" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="answer" type="answers" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="tags" type="tag" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="plareply" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="plareplyid" type="xs:anyType" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+        <xs:element name="usrid" type="users" nillable="true" minOccurs="0" />
+        <xs:element name="plaid" type="platforms" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="artreply" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="replyid" type="xs:anyType" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="replytime" type="xs:dateTime" />
+        <xs:element name="usrid" type="users" nillable="true" minOccurs="0" />
+        <xs:element name="comid" type="artcomments" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkans" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="checkanspk" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="perquecontent" >
+      <xs:sequence>
+        <xs:element name="pqid" type="xs:long" />
+        <xs:element name="queid" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkquepk" >
+      <xs:sequence>
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="queid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answers" >
+      <xs:sequence>
+        <xs:element name="content" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="anwid" type="xs:anyType" />
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="po" type="xs:long" />
+        <xs:element name="question" type="questions" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personquestions" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="pqid" type="xs:anyType" />
+        <xs:element name="pqname" type="xs:string" />
+        <xs:element name="settime" type="xs:dateTime" />
+        <xs:element name="rank" type="xs:long" />
+        <xs:element name="usrid" type="users" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="users" >
+      <xs:sequence>
+        <xs:element name="birthday" type="xs:dateTime" />
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="usrid" type="xs:anyType" />
+        <xs:element name="usrname" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="//@pattern(regexp" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="province" type="xs:string" />
+        <xs:element name="sex" type="xs:string" />
+        <xs:element name="experience" type="xs:long" />
+        <xs:element name="portrait" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="personquestionscollection" type="personquestions" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="articlescollection" type="articles" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="personarticlescollection" type="personarticles" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="platformscollection" type="platforms" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="plareplycollection" type="plareply" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="artcommentscollection" type="artcomments" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="artreplycollection" type="artreply" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="platforms" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="plaid" type="xs:anyType" />
+        <xs:element name="topic" type="xs:string" />
+        <xs:element name="content" type="xs:anyType" />
+        <xs:element name="set" type="xs:dateTime" />
+        <xs:element name="last" type="xs:dateTime" />
+        <xs:element name="favnumber" type="xs:long" />
+        <xs:element name="clicknumber" type="xs:long" />
+        <xs:element name="commentnumber" type="xs:long" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="usrid" type="users" nillable="true" minOccurs="0" />
+        <xs:element name="plareplycollection" type="plareply" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="checkanspk" >
+      <xs:sequence>
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="ansid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="articles" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="artid" type="xs:anyType" />
+        <xs:element name="category" type="xs:string" />
+        <xs:element name="topic" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="writetime" type="xs:dateTime" />
+        <xs:element name="monthlyscan" type="xs:long" />
+        <xs:element name="totalscan" type="xs:long" />
+        <xs:element name="collectnumber" type="xs:long" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="usrid" type="users" nillable="true" minOccurs="0" />
+        <xs:element name="artcommentscollection" type="artcomments" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personarticlespk" >
+      <xs:sequence>
+        <xs:element name="usrid" type="xs:long" />
+        <xs:element name="artid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manifest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

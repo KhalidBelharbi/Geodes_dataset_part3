@@ -1,0 +1,45 @@
+
+product(serialversionuid:long, id:Integer [PK], name:String, subname:String, code:String, price:double, image:String, listedprice:double, discount:double, boxincluded:String, guarantee:String, productstatus:String, description:String, images:Set<String>, GeneratedName:SmartPhone #FK to(smartphone), GeneratedName:Laptop #FK to(Laptop), id:SubCategory #FK to(SubCategory), id:Category #FK to(category));
+
+specialfeatures(serialversionuid:long, id:Integer [PK], name:String, id:Category #FK to(category));
+
+product_features(features_id:SpecialFeatures [PK] #FK to SpecialFeatures,product_id:Product [PK] #FK to Product);
+
+laptop(serialversionuid:long, id:Integer [PK], screensize:double, screenresolution:String, resolution:String, cpu:String, cputype:String, ram:int, ramdescription:String, harddrive:String, harddrivedescription:String, graphics:String, graphicsdescription:String, operatingsystem:String, pin:String, weight:String, sizedescription:String, GeneratedName:Product #FK to(Product));
+
+subcategory(serialversionuid:long, id:Integer [PK], name:String, code:String, id:Category #FK to(category));
+
+user(serialversionuid:long, id:Integer [PK], name:String, gender:boolean, phone:String, address:String, email:String, password:String, verificationcode:String, status:boolean);
+
+quanhuyen(serialversionuid:long, maquanhuyen:String [PK], ten:String, loai:String, mathanhpho:String);
+
+category(serialversionuid:long, id:Integer [PK], name:String, code:String);
+
+ordersdetail(serialversionuid:long, product_id:ProductVariation [PK] #FK to(Product), id:Orders [PK] #FK to(orders), price:double, discount:double, quantity:int);
+
+productvariation(serialversionuid:long, id:Product [PK] #FK to(Product), id:Color [PK] #FK to(color), price:double, quantity:long, image:String);
+
+tinhthanhpho(serialversionuid:long, mathanhpho:String [PK], ten:String, loai:String);
+
+phuongxa(serialversionuid:long, maphuongxa:String [PK], ten:String, loai:String, maquanhuyen:String);
+
+attribute(serialversionuid:long, id:Integer [PK], name:String);
+
+product_attribute(attribute_id:Attribute [PK] #FK to Attribute,product_id:Product [PK] #FK to Product);
+
+slider(serialversionuid:long, id:Integer [PK], title:String, image:String);
+
+color(serialversionuid:long, id:Integer [PK], name:String);
+
+smartphone(serialversionuid:long, id:Integer [PK], screensize:double, screenresolution:String, screentechnology:String, operatingsystem:String, chipset:String, ramcapacity:int, ernalmemory:int, frontcamera:String, rearcamera:String, pin:String, cpu:String, gpu:String, sizedescription:String, weight:String, type:String, GeneratedName:Product #FK to(Product));
+
+orders(serialversionuid:long, id:Integer [PK], customername:String, customerphone:String, customeraddress:String, customeremail:String, orderdate:LocalDate, note:String, status:OrdersStatus);
+
+comment(serialversionuid:long, id:Integer [PK], name:String, phone:String, content:String, rate:int, time:LocalDate, id:Product #FK to(Product));
+
+role(serialversionuid:long, id:Integer [PK], name:String);
+
+user_role(role_id:Role [PK] #FK to Role,user_id:User [PK] #FK to User);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

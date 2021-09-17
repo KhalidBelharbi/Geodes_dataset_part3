@@ -1,0 +1,31 @@
+
+producto(idproducto:Integer [PK], GeneratedName:Marca #FK to(marca), nombreproducto:String, descripcion:String, valor:Integer);
+
+resettoken(id:Integer [PK], token:String, user:Usuario #FK to(usuario), expiracion:LocalDateTime);
+
+compraproducto(GeneratedName:Venta [PK], GeneratedName:Producto [PK]);
+
+rol(idrol:Integer [PK], nombre:String, descripcion:String);
+
+menu(idmenu:Integer [PK], icono:String, nombre:String, url:String);
+
+menu_rol(id_menu:Menu [PK] #FK to Menu,id_rol:list<rol> [PK] #FK to list<rol>);
+
+vendedor(idvendedor:Integer [PK], GeneratedName:Supervisor #FK to(supervisor), nombrevendedor:String, direccion:String);
+
+venta(idventa:Integer [PK], GeneratedName:Cliente #FK to(cliente), GeneratedName:Vendedor #FK to(vendedor), costo:Integer, fecha_venta:LocalDateTime);
+
+supervisor(idsupervisor:Integer [PK], nombresupervisor:String, direccion:String, telefono:String);
+
+usuario(idusuario:Integer [PK], username:String, password:String, enable:Boolean);
+
+usuario_rol(id_usuario:Usuario [PK] #FK to Usuario,id_rol:list<rol> [PK] #FK to list<rol>);
+
+archivo(idarchivo:Integer [PK], filename:String, filetype:String, value:byte);
+
+cliente(idcliente:Integer [PK], nombrecliente:String, direccion:String, telefono:String);
+
+marca(idmarca:Integer [PK], descripcion:String, direccion:String, ciudad:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

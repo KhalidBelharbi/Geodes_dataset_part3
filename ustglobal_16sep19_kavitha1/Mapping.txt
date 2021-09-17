@@ -1,0 +1,13 @@
+ClassDiagram.Class>> Retailer =>=>=> RelationalSchema.Table>> retailer;
+ClassDiagram.Class>> Order =>=>=> RelationalSchema.Table>> order;
+ClassDiagram.Class>> Product =>=>=> RelationalSchema.Table>> product;
+ClassDiagram.Attribut>> Retailer.id:int =>=>=> RelationalSchema.Column>> retailer.id PRIMARY KEY;
+ClassDiagram.Attribut>> Retailer.name:String =>=>=> RelationalSchema.Column>> retailer.name;
+ClassDiagram.Attribut>> Retailer.email:String =>=>=> RelationalSchema.Column>> retailer.email;
+ClassDiagram.Attribut>> Retailer.password:String =>=>=> RelationalSchema.Column>> retailer.password;
+ClassDiagram.Attribut>> Order.orderid:int =>=>=> RelationalSchema.Column>> order.orderid PRIMARY KEY;
+ClassDiagram.Attribut>> Order.quantity:int =>=>=> RelationalSchema.Column>> order.quantity;
+ClassDiagram.Attribut>> Order.amount:double =>=>=> RelationalSchema.Column>> order.amount;
+ClassDiagram.Attribut>> Product.id:int =>=>=> RelationalSchema.Column>> product.id PRIMARY KEY;
+ClassDiagram.Attribut>> Product.pname:String =>=>=> RelationalSchema.Column>> product.pname;
+ClassDiagram.Attribut>> Product.price:double =>=>=> RelationalSchema.Column>> product.price;

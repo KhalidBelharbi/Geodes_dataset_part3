@@ -1,0 +1,17 @@
+
+feature(name:String, description:String, metadata:Map<String,String>);
+
+person(firstname:String, lastname:String, email:String, birthday:LocalDateTime, height:Double, weight:Double, nicknames:Set<String>, phonenumbers:Set<String>, entity:Job #FK to(job), characteristics:Map<String,String>, tasks:Map<Task,LocalDateTime>);
+
+person_address(person_id:Person [PK] #FK to Person,address_id:set<address> [PK] #FK to set<address>);
+
+address(street:String, city:String, zipcode:String, country:CountryCode);
+
+task(name:String, description:String);
+
+vehicle(GeneratedName:VehicleType, brand:String, model:String, GeneratedName:Person #FK to(person));
+
+job(active:boolean, title:String, company:String, salary:int, hiredate:OffsetDateTime, GeneratedName:Person #FK to(person));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

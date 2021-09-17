@@ -1,0 +1,247 @@
+validatedperson(id:long [PK], forename:String, surname:String, login:String);
+
+validatedowner(id:long [PK], name:String, pet:ValidatedPet);
+
+validatedperson2(id:long [PK], forename:String, surname:String, login:String);
+
+mapconverterholder(id:long [PK], map1:Map<String,MyType1>, map2:Map<MyType2,String>);
+
+collectionconverterholder(id:long [PK], set1:Set<MyType1>, set2:Set<MyType1>);
+
+typeholder(id:long [PK], name:String, details:ComplicatedType, details2:ComplicatedType2, details3:ComplicatedType);
+
+jodasample5(id:long [PK], 1:Interval, 2:Interval);
+
+jodasample1(id:long [PK], 1:DateTime, 2:DateTime);
+
+jodasample4(id:long [PK], 1:Duration, 2:Duration);
+
+jodasample2(id:long [PK], 1:LocalDate, 2:LocalDate);
+
+jodasample3(id:long [PK], 1:LocalTime, 2:LocalTime);
+
+rectangle(serialversionuid:long, id:int [PK], width:double, length:double);
+
+circle(serialversionuid:long, id:int [PK], radius:double);
+
+triangle(serialversionuid:long, id:int [PK], width:double, length:double);
+
+shapeholder(id:int [PK], 1:Shape #FK to(Shape));
+
+square(serialversionuid:long, id:int [PK], width:double, length:double);
+
+javatimesample3(id:long [PK], 1:LocalTime, 2:LocalTime);
+
+javatimesample2(id:long [PK], 1:LocalDate, 2:LocalDate);
+
+javatimesample1(id:long [PK], datetime1:LocalDateTime, datetime2:LocalDateTime);
+
+mydatastoreid(name:String);
+
+dateholder(id:long [PK], datefield:java.util.Date, datefield2:java.util.Date, datefield3:java.util.Date);
+
+typeholder(//pkwhenusingappidid:long [PK], 1:String, 2:String, 1:char);
+
+enumholder(id:long [PK], 1:Colour, 2:Colour);
+
+versionedemployee(salary:double);
+
+versionedperson(name:String);
+
+manyoneother(id:long [PK]);
+
+manyoneowner(id:long [PK], other:ManyOneOther #FK to(ManyOneOther));
+
+simpleclass(id:long [PK], name:String);
+
+mycdiholder(id:long [PK], name:String, encryptedfield:String);
+
+concretesimplesub2(sub2field:String);
+
+concretesimplesub1(sub1field:String);
+
+arrayholder(id:long [PK], array:int, array:long);
+
+bytearray(id:long [PK], array1:byte, array2:byte);
+
+permission(id:long [PK], name:String);
+
+dsidholder(name:String);
+
+
+
+user(id:long [PK], name:String);
+
+idclassprivatemodifier(serialversionuid:long, name:String [PK], name2:int [PK], free:boolean);
+
+idclassaccessors(serialversionuid:long, compoundpk:IdClassAccessorsPK [PK], name:String, basic:String, free:boolean);
+
+loginaccount(id:long [PK], firstname:String, lastname:String, GeneratedName:Login #FK to(Login));
+
+login(id:long [PK], username:String, password:String);
+
+equipment(id:long [PK], make:String);
+
+boiler(model:String, GeneratedName:Timer #FK to(Timer));
+
+timer(digital:boolean, GeneratedName:Boiler #FK to(Boiler));
+
+printer(//usedforapplicationidentityid:long [PK], make:String, model:String, tonermodel:String, tonerlifetime:int);
+
+usergroup(id:long [PK], name:String);
+
+groupmember(id:long [PK], name:String [PK], details:MemberDetails #FK to(MemberDetails));
+
+memberdetails(id:long [PK], firstname:String, surname:String);
+
+expertgroupmember(title:String);
+
+moderatedusergroup(title:String);
+
+mapholderwithkeyclass(id:long [PK]);
+
+mapkeyclasstarget(id:long [PK]);
+
+mapjoinkey(serialversionuid:long, id:long [PK], name:String, description:String);
+
+mapjoinholder(id:long [PK], name:String, map2:Map<Integer,String>, map3:Map<String,MapJoinEmbeddedValue>);
+
+mapjoinvalue(serialversionuid:long, id:long [PK], name:String, description:String);
+
+house(id:long [PK], number:int, street:String);
+
+window(id:long [PK], width:long, height:long, GeneratedName:House #FK to(House));
+
+animal(name:String [PK], GeneratedName:Farm #FK to(Farm));
+
+farm(name:String [PK]);
+
+document(id:Long [PK], name:String, details:DocumentDetails);
+
+contact(id:Long [PK], name:String, main:Document #FK to(Document));
+
+pcfklistelement(serialversionuid:long, id:long [PK], name:String);
+
+listholder(id:long [PK], //stringelements,withjointablenonpc1:List);
+
+callbacksub1();
+
+callbacksub1sub1();
+
+callbackbase(id:String [PK], name:String, /***registerofcallbacksinvoked.*/transientinvoked:List<Class>);
+
+callbacksub2();
+
+callbacksub1sub2();
+
+nondurableidholder(name:String);
+
+embeddedowner2(id:long [PK], name:String, embeddedobject:EmbeddedObject2);
+
+embeddedowner3(id:EmbeddedOwner3Id [PK], name:String, a:EmbeddedObject3A);
+
+computer(//usedbyapplicationidentityid:long [PK], operatingsystem:String, graphicscard:ComputerCard, soundcard:ComputerCard);
+
+processor(//usedbyapplicationidentityid:long [PK], type:String);
+
+genericidsub(description:String);
+
+genericidpropsub1(name:String);
+
+genericoneonerelated2(serialversionuid:long, id:Long [PK], name:String, age:int);
+
+genericoneonesub1(serialversionuid:long, id:Long [PK], name:String, type:GenericEnumType, age:int);
+
+genericidpropsub2sub(version:Integer);
+
+genericoneonesub2(serialversionuid:long, id:Long [PK], name:String, type:GenericEnumType, age:int);
+
+genericoneonerelated1(serialversionuid:long, id:Long [PK], name:String, age:int);
+
+person(serialversionuid:long, //partofpkwithappidpersonnum:long [PK], //partofpkwithappidglobalnum:String [PK], firstname:String, lastname:String, emailaddress:String, age:int, bestfriend:Person #FK to(person));
+
+manager(serialversionuid:long);
+
+organisation(name:String [PK], description:String);
+
+phonenumber(//pkwhenusingappidid:long [PK], name:String, number:String);
+
+project(name:String [PK], budget:long);
+
+website(//pkforappidid:long [PK], name:String, url:String);
+
+department(serialversionuid:long, primarykey:DepartmentPK, name:String, GeneratedName:Manager #FK to(manager));
+
+account(serialversionuid:long, //pkifappidid:long [PK], username:String, enabled:boolean);
+
+qualification(serialversionuid:long, name:String [PK], GeneratedName:Person, GeneratedName:Organisation, GeneratedName:Date);
+
+employee(serialversionuid:long, serialno:String, salary:float, salarycurrency:String, yearsincompany:Integer, GeneratedName:Manager #FK to(manager), GeneratedName:Account #FK to(account), /***usedforthequeryingoffields.*/firstname:String);
+
+customuuidholder(uid:String [PK], name:String);
+
+oneoffcustomer(address:String);
+
+petroleumcustomer(id:long [PK], name:String);
+
+jpa_an_petrol_cust_supp(customer_id:PetroleumCustomer [PK] #FK to PetroleumCustomer,supplier_id:collection<petroleumsupplier> [PK] #FK to collection<petroleumsupplier>);
+
+accountcustomer(accountnumber:String);
+
+petroleumsupplier(id:long [PK], name:String);
+
+petroleumsupplier_collection<petroleumcustomer>(petroleumsupplierID:petroleumsupplier [PK] #FK to petroleumsupplier,collection<petroleumcustomer>ID:collection<petroleumcustomer> [PK] #FK to collection<petroleumcustomer>);
+
+oilsupplier(brandname:String);
+
+gassupplier(type:String);
+
+graphrelatednext(id:long [PK], name:String);
+
+graphbase(id:long [PK], name:String, relation:GraphRelated #FK to(graphrelated));
+
+graphrelated(id:long [PK], nextrelation:GraphRelatedNext #FK to(graphrelatednext));
+
+compoundholder(id:long, name:String);
+
+compoundsingletarget(//pkid:int, //pkholder:CompoundHolder, value:double);
+
+tenantedobject(id:long [PK], name:String);
+
+petroleumcustomer(id:long [PK], name:String);
+
+petroleumsupplier(id:long [PK], name:String);
+
+petroleumsupplier_collection<petroleumcustomer>(petroleumsupplierID:petroleumsupplier [PK] #FK to petroleumsupplier,collection<petroleumcustomer>ID:collection<petroleumcustomer> [PK] #FK to collection<petroleumcustomer>);
+
+employee(serialversionuid:long, serialno:String, salary:float, salarycurrency:String, yearsincompany:Integer, GeneratedName:Manager #FK to(manager), GeneratedName:Account #FK to(account), /***usedforthequeryingoffields.*/firstname:String);
+
+website(//pkforappidid:long [PK], name:String, url:String);
+
+person(serialversionuid:long, //partofpkwithappidpersonnum:long [PK], //partofpkwithappidglobalnum:String [PK], firstname:String, lastname:String, emailaddress:String, age:int, bestfriend:Person #FK to(person));
+
+department(serialversionuid:long, name:String [PK], GeneratedName:Manager #FK to(manager));
+
+account(serialversionuid:long, //pkifappidid:long [PK], username:String, enabled:boolean);
+
+phonenumber(//pkwhenusingappidid:long [PK], name:String, number:String);
+
+manager(serialversionuid:long);
+
+project(name:String [PK], budget:long);
+
+timer(digital:boolean, GeneratedName:Boiler #FK to(Boiler));
+
+boiler(model:String, GeneratedName:Timer #FK to(Timer));
+
+equipment(id:long [PK], make:String);
+
+loginaccount(id:long [PK], firstname:String, lastname:String, GeneratedName:Login #FK to(Login));
+
+login(id:long [PK], username:String, password:String);
+
+user(role:String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

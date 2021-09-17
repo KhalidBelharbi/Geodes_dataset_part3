@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="responsetransfer" >
+      <xs:sequence>
+        <xs:element name="text" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="examplepostcontroller" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="exampleservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginform" >
+      <xs:sequence>
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="preference" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="subject" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="preference" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="timezone" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="post" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="date" type="xs:string" />
+        <xs:element name="redditid" type="xs:string" />
+        <xs:element name="submission" type="xs:dateTime" />
+        <xs:element name="sent" type="xs:anyType" />
+        <xs:element name="username" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postdto" >
+      <xs:sequence>
+        <xs:element name="dateformat" type="xs:anyType" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="date" type="xs:string" />
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdto" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postrestcontroller" >
+      <xs:sequence>
+        <xs:element name="postservice" type="ipostservice" nillable="true" minOccurs="0" />
+        <xs:element name="userservice" type="iuserservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="postrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<post,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="subjectrepository" >
+      <xs:complexContent>
+       <xs:extension base="pagingandsortingrepository<subject,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="postrepository" nillable="true" minOccurs="0" />
+        <xs:element name="userservice" type="iuserservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ipostservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="iuserservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistenceconfig" >
+      <xs:sequence>
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springbootrestapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderserviceimpl" >
+      <xs:sequence>
+        <xs:element name="customermap" type="xs:anyType" />
+        <xs:element name="customeroneordermap" type="xs:anyType" />
+        <xs:element name="customertwoordermap" type="xs:anyType" />
+        <xs:element name="customerthreeordermap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exampleservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orderservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerserviceimpl" >
+      <xs:sequence>
+        <xs:element name="customermap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customerservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ifoodao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<foo,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="foo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="version" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customer" >
+      <xs:complexContent>
+       <xs:extension base="representationmodel<customer>">
+         <xs:sequence>
+          <xs:element name="customerid" type="xs:string" />
+          <xs:element name="customername" type="xs:string" />
+          <xs:element name="companyname" type="xs:string" />
+          <xs:element name="orders" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:complexContent>
+       <xs:extension base="representationmodel<order>">
+         <xs:sequence>
+          <xs:element name="orderid" type="xs:string" />
+          <xs:element name="price" type="xs:double" />
+          <xs:element name="quantity" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fooservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractservice<foo>">
+         <xs:sequence>
+          <xs:element name="dao" type="ifoodao" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractservice" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ifooservice" >
+      <xs:complexContent>
+       <xs:extension base="ioperations<foo>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customh2dialect" >
+      <xs:complexContent>
+       <xs:extension base="h2dialect">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ioperations" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="restpreconditions" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="linkutil" >
+      <xs:sequence>
+        <xs:element name="rel_collection" type="xs:string" />
+        <xs:element name="rel_next" type="xs:string" />
+        <xs:element name="rel_prev" type="xs:string" />
+        <xs:element name="rel_first" type="xs:string" />
+        <xs:element name="rel_last" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="badrequestexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="resourcenotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="myresourcenotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customexception1" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customexception2" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="restresponseentityexceptionhandler" >
+      <xs:complexContent>
+       <xs:extension base="responseentityexceptionhandler">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="restresponsestatusexceptionresolver" >
+      <xs:complexContent>
+       <xs:extension base="abstracthandlerexceptionresolver">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paginatedresultsretrievedevent" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+          <xs:element name="uribuilder" type="xs:anyType" />
+          <xs:element name="response" type="xs:anyType" />
+          <xs:element name="page" type="xs:long" />
+          <xs:element name="totalpages" type="xs:long" />
+          <xs:element name="pagesize" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="singleresourceretrievedevent" >
+      <xs:complexContent>
+       <xs:extension base="applicationevent">
+         <xs:sequence>
+          <xs:element name="response" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="resourcecreatedevent" >
+      <xs:complexContent>
+       <xs:extension base="applicationevent">
+         <xs:sequence>
+          <xs:element name="response" type="xs:anyType" />
+          <xs:element name="idofnewresource" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paginatedresultsretrieveddiscoverabilitylistener" >
+      <xs:sequence>
+        <xs:element name="page" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="singleresourceretrieveddiscoverabilitylistener" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resourcecreateddiscoverabilitylistener" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="myerrorcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basicerrorcontroller">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mycustomerrorattributes" >
+      <xs:complexContent>
+       <xs:extension base="defaulterrorattributes">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="customerservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orderservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="faultyrestcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="studentservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentservice" >
+      <xs:sequence>
+        <xs:element name="repository" type="xs:anyType" />
+        <xs:element name="//dbidsequencemocksequence" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="student" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foocontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="eventpublisher" type="xs:anyType" />
+        <xs:element name="service" type="ifooservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rootcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foo_api_test.postman_collection" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="githubbasiclivetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="githubuser" >
+      <xs:sequence>
+        <xs:element name="login" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="retrieveutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractlivetest" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+          <xs:element name="clazz" type="xs:anyType" />
+          <xs:element name="marshaller" type="imarshaller" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractbasiclivetest" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractdiscoverabilitylivetest" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="postdtounittest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jacksonmarshaller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testmarshallerfactory" >
+      <xs:sequence>
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xstreammarshaller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imarshaller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="consts" >
+      <xs:sequence>
+        <xs:element name="application_port" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springcontexttest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configintegrationtest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="examplepostcontrollerresponseintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="exampleservice" nillable="true" minOccurs="0" />
+        <xs:element name="examplecontroller" type="examplepostcontroller" nillable="true" minOccurs="0" />
+        <xs:element name="jsonbody" type="xs:string" />
+        <xs:element name="lf" type="loginform" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="examplepostcontrollerrequestintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="exampleservice" nillable="true" minOccurs="0" />
+        <xs:element name="examplecontroller" type="examplepostcontroller" nillable="true" minOccurs="0" />
+        <xs:element name="jsonbody" type="xs:string" />
+        <xs:element name="lf" type="loginform" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foopageablelivetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractbasiclivetest<foo>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="livetestsuitelivetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foocontrollerappintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foodiscoverabilitylivetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractdiscoverabilitylivetest<foo>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="foolivetest" >
+      <xs:complexContent>
+       <xs:extension base="abstractbasiclivetest<foo>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="studentcontrollerintegrationtest" >
+      <xs:sequence>
+        <xs:element name="students_path" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foocontrollercustometagintegrationtest" >
+      <xs:sequence>
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="foos_endpoint" type="xs:string" />
+        <xs:element name="custom_etag_endpoint_suffix" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="httplinkheaderutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="foocontrollerweblayerintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="service" type="ifooservice" nillable="true" minOccurs="0" />
+        <xs:element name="publisher" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorhandlinglivetest" >
+      <xs:sequence>
+        <xs:element name="base_url" type="xs:string" />
+        <xs:element name="exception_endpoint" type="xs:string" />
+        <xs:element name="error_response_key_path" type="xs:string" />
+        <xs:element name="xml_response_key_path" type="xs:string" />
+        <xs:element name="locale_response_key_path" type="xs:string" />
+        <xs:element name="cause_response_key_path" type="xs:string" />
+        <xs:element name="response_xml_root" type="xs:string" />
+        <xs:element name="xml_response_key_xml_path" type="xs:string" />
+        <xs:element name="locale_response_key_xml_path" type="xs:string" />
+        <xs:element name="cause_response_key_xml_path" type="xs:string" />
+        <xs:element name="cause_response_value" type="xs:string" />
+        <xs:element name="xml_response_value" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customercontrollerintegrationtest" >
+      <xs:sequence>
+        <xs:element name="mvc" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="customerservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="orderservice" nillable="true" minOccurs="0" />
+        <xs:element name="default_customer_id" type="xs:string" />
+        <xs:element name="default_order_id" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

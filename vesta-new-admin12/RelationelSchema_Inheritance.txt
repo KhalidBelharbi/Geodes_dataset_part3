@@ -1,0 +1,99 @@
+
+statisticsweeklyentity(//自增长idid:String, //开始时间startdate:String, //结束时间enddate:String, //项目idprojectid:String, //项目名称projectname:String, //类型1：周报2：统计type:String, //周报4周1第一周2第二周3第三周4第四周countweek:Integer, //统计3周1第一个月2第二个月3第三个月countstatistics:Integer, //日常巡检甲方dailypatrolparty:String, //日常巡检监理dailypatrolsupervisor:String, //日常巡检合格率dailypatrolpass:String, //日常巡检超期两周未整改dailypatrolextended:String, //检查验收监理acceptancesupervisor:String, //检查验收合格率acceptancepass:String, //检查验收超期两周未整改acceptanceextended:String, //材料验收甲方materialparty:String, //材料验收监理materialsupervisor:String, //材料验收合格率materialpass:String, //样板点评甲方samplecheckparty:String, //样板点评合格率samplecheckpass:String, //样板点评超期两周未整改samplecheckextended:String, //关键工序甲方keyprocessesparty:String, //关键工序合格率keyprocessespass:String, //关键工序超期两周未整改keyprocessesextended:String, //旁站统计sidestationstatistics:String, //领导检查统计leadinspectstatistics:String);
+
+projectexamineentity(//id自增长id:Long, //项目numprojectnum:String, //项目名称projectname:String, //批次idbatchid:String, //批次名称batchname:String, //甲方负责人idpartyprincipalid:String, //甲方负责人名称partyprincipalname:String, //楼栋idbuildingid:String, //楼栋名称buildingname:String, //第三方监理idsupervisorid:String, //第三方监理名称supervisorname:String, //责任单位idsupplierid:String, //责任单位名称suppliername:String, //整改人idassignid:String, //整改人名称assignnname:String, //开始楼层floorstar:int, //结束楼层floorend:int, //流水段serial:String, //完成期限completeon:Date, //问题状态state:String, //合格0：不合格；1：不合格isqualified:String, //第一次合格isfirstqualified:String, //模块domain:String, //创建人idcreateby:String, //创建人名称createname:String, //创建时间createon:Date, //修改人idmodifyby:String, //修改人名称modifyname:String, //修改时间modifyon:Date, //一级分类firstclassification:String, //一级分类firstclassificationname:String, //二级分类secondaryclassification:String, //二级分类名称secondaryclassificationname:String, //三级分类threeclassification:String, //三级分类名称threeclassificationname:String, //四级分类fourclassification:String, //（四级分类名称）检查项categoryname:String, //严重等级severityrating:String, //stringisonepass//一次性通过1：一次通过（走新增接口的时候，如果是合格就是一次通过）0：不是一次通过//检查时间checktime:Date, //抄送人idcopyid:String, //抄送人名称copyname:String, //处理人idhandlepeopleid:String, //处理人姓名handlepeoplename:String, //非正常关闭abnormalshutdown:String, //appid校验唯一性防止重复appid:String);
+
+projectexaminetargetentity(//idid:String, //检查验收idexamineid:String, //检查指标idtargetid:String, //检查指标名称targetname:String, //合格isqualified:String, //状态state:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+projectexaminetargetdetailsentity(//idid:String, //检查验收指标idexaminetargetid:String, //描述description:String, //创建人createby:String, //创建时间createon:Date, //整改记录标示rectification:String, //验收记录标示acceptance:String, //整改时间changetime:Date, //状态state:String);
+
+measuredataconstant(id:String [PK], //序号seiralnum:int, //取值范围，左边leftcode:float, //取值范围，右边rightcode:float, //检查点数checknum:int, //修改时间modify:Date, //创建时间create:Date, //创建人createby:String, //状态0可用1删除state:String);
+
+measuredetailentity(id:String [PK], //实测实量idmeasureid:String, //项目idprojectid:String, //项目名称projectname:String, //楼栋idbuildingid:String, //楼栋名称buildingname:String, //楼层idfloorid:String, //楼层名称floorname:String, //单元idunitid:String, //单元名称unitname:String, //检查阶段idinspectionphaseid:String, //检查阶段名称inspectionphasename:String, //检查内容inspectioncontentid:String, //检查内容名称inspectioncontentname:String, //检查点数checkpos:int, //合格率qualificationrate:double, //状态0可用1删除state:String, //序号serialnum:String, //是否公开二维码isopenqrcode:String, //创建时间create:Date, //合格数acceptancenum:int, //总数totalnum:int);
+
+measureisopenqrcode(id:String [PK], //0公开1不公开、isopenqrcode:String, //修改人idcreateby:String, //修改时间modifydate:String);
+
+measuremodelentity(id:int [PK], //序号serialnum:String, //检查阶段idinspectionphaseid:String, //检查阶段名称inspectionphasename:String, //检查内容idinspectioncontentid:String, //检查内容inspectioncontent:String, //评判标准evaluationcriteria:String, //规则rule:String, //检查点数checkpos:int, //状态0可用1删除state:String);
+
+measureunitentity(//单元idunitid:String, //单元名称unitname:String, //楼层idfloorid:String, //楼栋idbuildid:String, //状态unitstate:String, //创建时间createon:Date, //修改时间modifyon:Date, //自增长idautonum:long);
+
+measuredateentity(id:String [PK], //实测实量idmeasureid:String, //检查阶段idinspectionphaseid:String, //该检查阶段的数据data:String, //状态0可用1删除state:String, //序号serialnum:String);
+
+measurecountentity(//项目层级idagencyid:String, //项目层级名agencyname:String, //项目层级级别level:String, //总分totalscore:String, //检查内容id与分数josninspectioncontentscore:String, //检查分项id与分数josninspectionsubitemscore:String);
+
+measureentity(id:String [PK], //区域idregionid:String, //区域名称regionname:String, //城市idcityid:String, //城市名称cityname:String, //项目idprojectid:String, //项目编码projectnum:String, //项目名称projectname:String, //项目总得分projecttotalscore:int, //楼栋idbuildingid:String, //楼栋名称buildingname:String, //楼栋总得分buildingtotalscore:int, //单元idunitid:String, //单元名称unitname:String, //楼层idfloorid:String, //楼层名称floorname:String, //标段实测合格率mensurepercentofpass:float, //添加人员createby:String, //添加人员名称createbyname:String, //变更时间modify:Date, //创建时间create:Date, //状态0可用1删除state:String);
+
+measureqrcodeentity(//uuidid:String, //二维码地址qrcodeurl:String, //楼栋idbuildingid:String, //楼层idfloorid:String);
+
+projectleaderscheckdetailentity(//详情idid:String, //检查idcheckid:String, //描述description:String, //创建人createby:String, //创建时间createon:Date, //0：项目经理type:String, //排序号serialnumber:String);
+
+projectleaderscheckentity(//第三方监理idsupervisor:String, //第三方监理名字supervisorname:String, //详细位置id相当于第三级分类pointid:String, //工程项目编码projectnum:String, //楼栋idbuildingid:String, //楼栋编码buildingnum:String, //楼层idfloorid:String, //楼层编码floornum:String, //责任单位idsupplierid:String, //责任单位supplier:String, //处理人iddealpeople:String, //甲方负责人idfirstparty:String, //甲方负责人名字firstpartyname:String, //巡检标题title:String, //描述description:String, //x坐标xcoordinate:BigDecimal, //y坐标ycoordinate:BigDecimal, //整改时间rectificationtime:Date, //创建人标识identity:String, //创建时间createon:Date, //修改时间modifyon:Date, //一级分类classifyone:String, //二级分类classifytwo:String, //三级分类classifythree:String, //严重等级severitylevel:String, //整改时限rectificationperiod:Date, //关闭人姓名shutdownby:String, //关闭理由shutdown:String, //关闭时间shutdownon:Date, //一级分类名称classifyonename:String, //二级分类名称classifytwoname:String, //三级分类名称classifythreename:String, //以上字段为根据日常巡检实体加入备用//自增长idid:Long, //唯一校验，防止重复appid:String, //检查idcheckid:String, //项目idprojectid:String, //项目名称projectname:String, //整改人idassignid:String, //整改人名称assignname:String, //创建人idcreateby:String, //创建人名称createname:String, //创建时间create:Date, //修改人idmodifyby:String, //修改人名称modifyname:String, //修改时间modify:Date, //状态state:String);
+
+projectkeyprocessestargetdetailsentity(//idid:String, //检查验收指标idprocesstargetid:String, //描述description:String, //整改时间changetime:Date, //创建人createby:String, //创建时间createon:Date, //0乙方整改1第三方监理整改2甲方整改type:String, //指标状态state:String, //排序号serialnumber:String);
+
+projectkeyprocessesentity(//appid校验唯一性防止重复appid:String, //id自增长id:Long, //批次idprocessid:String, //批次名称processname:String, //项目idprojectid:String, //项目名称projectname:String, //楼栋idbuildingid:String, //楼栋名称buildingname:String, //开始楼层floorstar:String, //结束楼层floorend:String, //流水段serial:String, //检查时间examination:Date, //严重等级severityrating:String, //甲方负责人idpartyprincipalid:String, //甲方负责人名称partyprincipalname:String, //第三方监理idsupervisorid:String, //第三方监理名称supervisorname:String, //责任单位idsupplierid:String, //责任单位名称suppliername:String, //整改人id(乙方)assignid:String, //整改人名称assignname:String, //完成期限completeon:Date, //合格(不合格、不合格)qualifiedstate:String, //第一次合格firstqualifiedstate:String, //问题状态(合格、整改中)state:String, //创建人idcreateby:String, //创建人名称createname:String, //创建时间createon:Date, //修改人idmodifyby:String, //修改人名称modifyname:String, //修改时间modifyon:Date, //处理人idhandlepeopleid:String, //非正常关闭abnormalshutdown:String, //一级分类firstsort:String, //一级分类名称firstsortname:String, //二级分类secondsort:String, //二级分类名称secondsortname:String, //三级分类threesort:String, //三级分类名称threesortname:String, //四级分类foursort:String, //四级分类名称foursortname:String);
+
+projectkeyprocessestargetentity(//idid:String, //工序idprocessid:String, //检查指标idtargetid:String, //检查指标名称targetname:String, //合格(合格、不合格)qualifiedstate:String, //状态state:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //指标整改审核标识0乙方整改1第三方监理整改2甲方整改flag:String);
+
+projectstaffrelationentity(//主键id:long, //项目或区域idprojectid:String, //项目名projectname:String, //人员或部门idstaffid:String, //人员姓名staffname:String, //1人员2部门utype:String, //1区域2项目ptype:String, //状态state:String, //修改时间modify:Date);
+
+projectoperationentity(//主键optid:String, //经营单位名optname:String, //创建时间createon:Date, //修改时间modifyon:Date, //状态0删除1正常state:String);
+
+buildingsupplierentity(//主键autoid:long, //楼栋idbuildid:String, //责任单位idagencyid:String, //状态status:String, //修改时间modifytime:Date);
+
+projectfloorentity(//楼层idfloorid:String, //楼栋idbuildid:String, //楼层名floorname:String, //状态floorstate:String, //创建时间createon:Date, //修改时间modifyon:Date, //自增长idautonum:long);
+
+floorimagemapentity(//主键id:String, //户型图idhouseimgid:String, //楼层idfloorid:String, //创建人createby:String, //创建时间createon:Date);
+
+projectbuildingentity(//楼栋idid:String, //项目idprojectid:String, //名称name:String, //状态state:String, //创建时间createon:Date, //修改时间modifyon:Date, //自增长数autonum:long);
+
+projecttendersentity(//标段idtenderid:String, //项目idprojectid:String, //责任单位idsupplierid:String, //名称tendername:String, //状态tenderstate:String, //创建人createby:String, //修改人modifyby:String, //创建时间createon:Date, //修改时间modifyon:Date);
+
+suppliercategoryentity(//主键id:long, //责任单位idsupplierid:String, //检查项idcategoryid:String, //所属模块1日常巡检2检查验收3样板点评4材料验收5旁站6关键工序domain:String, //默认责任人iddefmanageid:String, //默认监理iddefsupervisorid:String, //默认抄送人iddefownerid:String, //状态status:String, //修改时间modifytime:Date, //勾选状态0半勾选表示无用ckstate:String);
+
+tenderscategoryentity(//主键id:long, //标段idtendersid:String, //检查项idcategoryid:String, //状态nexusstatus:String, //修改时间modifytime:Date, //所属模块domain:String, //勾选状态0半勾选1勾选ckstate:String);
+
+tendersbuildingentity(//主键id:long, //标段idtendersid:String, //楼栋idbuildingid:String, //状态tenderstatus:String, //修改时间modifytime:Date);
+
+projectcityentity(//城市idcityid:String, //城市名cityname:String, //所属经营单位optid:String, //创建时间createon:Date, //修改时间modifyon:Date, //状态0删除1正常state:String);
+
+projectimagesentity(id:String [PK], //业务idbusinessid:String, //图片地址url:String, //类型1:日常巡检；2检查验收；3：关键工序；4：样板点评；5：材料验收；6：旁站；7：户型图type:String, //状态0:不可用；1：可用state:String, //合格不合格qualifiedstate:String, //创建时间createon:Date, //修改时间modifyon:Date);
+
+projecthouseimageentity(//户型图idimgid:String, //楼层idfloorid:String, //户型图名称imgname:String, //描述imgdesc:String, //地址imgurl:String, //状态imgstate:String, //创建人createby:String, //修改人modifyby:String, //创建时间createon:Date, //修改时间modifyon:Date, //自增长数autonum:long);
+
+projectcategoryentity(//分类idcategoryid:String, //名称categoryname:String, //级别level:int, //所属模块1日常巡检2检查验收,关键工序3样板点评4材料验收5旁站domain:String, //父级idparentid:String, //状态1正常0删除categorystate:String, //备注remark:String, //创建时间createon:Date, //修改时间modifyon:Date, //备用字段freefield:String, //时长要求timespace:String, //自增长数autonum:long);
+
+projectprojectentity(//主键id:String, //名称name:String, //状态state:String, //区域cityid:String, //创建时间createon:Date, //修改时间modifyon:Date, //自增长数autonum:int);
+
+projectstaffemployentity(//主键id:long, //项目idprojectid:String, //1:甲方权限2:数据查看(项目系统管理员)3:非正常关单(已删除)4:项目经理权限（工程经理）5：领导权限projectrole:String, //1:责任单位2:人员datatype:String, //人或责任单位iddataid:String, //1:正常0:删除status:String, //修改时间modifytime:Date, /***20170913*袁亚男新增字段来区分是否由后台管理员添加的关系*///默认为0当为1时是由后台系统管理员添加的关系source:String, //机构简称abbreviationname:String);
+
+baseprojectpeopleentity(//主键autoid:long, //人员idpeopleid:String, //人员名称peoplename:String, //责任单位或监理idsupplierid:String, //责任单位名称suppliername:String, //类型1总包2分包3.监理suppliertype:String, //项目idprojectid:String, //项目名projectname:String, //修改时间modifytime:Date, //状态0删除1正常status:String, //责任单位简称abbreviationname:String);
+
+projecttargetentity(id:String, //分类idcategoryid:String, //指标名称name:String, //描述description:String, //状态state:String, //排序sort:int, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //自增长数autonum:long, //是否拍照havephoto:String);
+
+projectcopydetailsentity(//id:String, //抄送id关联project_copyidcopyid:String, //人员idmemberid:String, //人员姓名membername:String);
+
+dailypatrolinspectionentity(//自增长idid:Long, //日常巡检单idinspectionid:String, //第三方监理idsupervisor:String, //第三方监理名字supervisorname:String, //详细位置id相当于第三级分类pointid:String, //工程项目_idprojectid:String, //工程项目编码projectnum:String, //楼栋idbuildingid:String, //楼栋编码buildingnum:String, //楼层idfloorid:String, //楼层编码floornum:String, //责任单位idsupplierid:String, //责任单位supplier:String, //整改人idassignid:String, //整改人名字assignname:String, //处理人iddealpeople:String, //甲方负责人idfirstparty:String, //甲方负责人名字firstpartyname:String, //巡检标题title:String, //描述description:String, //x坐标xcoordinate:BigDecimal, //y坐标ycoordinate:BigDecimal, //整改时间rectificationtime:Date, //状态state:String, //创建人标识identity:String, //创建人createby:String, //创建人名字createname:String, //创建时间createon:Date, //修改人modifyby:String, //修改人姓名modifyname:String, //修改时间modifyon:Date, //一级分类classifyone:String, //二级分类classifytwo:String, //三级分类classifythree:String, //严重等级severitylevel:String, //整改时限rectificationperiod:Date, //appid校验唯一性防止重复appid:String, //关闭人姓名shutdownby:String, //关闭理由shutdown:String, //关闭时间shutdownon:Date, //一级分类名称classifyonename:String, //二级分类名称classifytwoname:String, //三级分类名称classifythreename:String);
+
+projectcopyentity(//id:String, //发送人sender:String, //发送人姓名sendername:String, //业务idbusiness:String, //所属模块damain:String, //创建时间createon:Date);
+
+dailypatrolinspectiondetailsentity(//idid:String, //巡检_id关联project_inspection——idinspectionid:String, //描述description:String, //创建人createby:String, //创建人姓名createname:String, //创建时间createon:Date, //0乙方整改1第三方监理整改2甲方整改type:String, //appid校验唯一性防止重复appid:String, //次数frequency:int, //记录状态detailsstate:String);
+
+projectsidestationentity(//自增长idid:Long, //旁站idsidestationid:String, //工序名称processname:String, //项目idprojectid:String, //项目名称projectname:String, //楼栋idbuildingid:String, //楼栋名称buildingname:String, //开始楼层floorstart:int, //结束楼层floorend:int, //具体位置location:String, //一级分类firstcategory:String, //一级分类名称firstcategoryname:String, //二级分类secondcategory:String, //二级分类名称secondcategoryname:String, //旁站要点sidestationpoint:String, //旁站日期sidestation:Date, //旁站人员idsidestationstaffid:String, //旁站人员名称sidestationstaffname:String, //创建人idcreatebyid:String, //创建人名称createbyname:String, //创建时间createon:Date, //appidappid:String, //状态1：结束state:String, //结束时间end:Date);
+
+projectsidestationdetailsentity(//旁站详情idid:String, //旁站idsidestationid:String, //描述description:String, //创建人idcreatebyid:String, //创建人名称createbyname:String, //旁站记录时间record:Time, //创建时间createon:Date, //排序号serialnumber:String);
+
+projectsamplecheckchangedentity(//idid:String, //指标idcheckdetailsid:String, //描述description:String, //整改时间changetime:Date, //创建人createby:String, //创建时间createon:Date, //3乙方整改2第三方监理整改1甲方整改type:String, //指标状态state:String, //排序号serialnumber:String);
+
+projectsamplecheckdetailsentity(//idid:String, //样板点评idsamplecheckid:String, //指标idtargetid:String, //指标名targetname:String, //描述description:String, //指引guide:String, //状态state:String, //创建时间createon:Date, //修改时间modify:Date, //指标整改审核标识0乙方整改1第三方监理整改2甲方整改flag:String);
+
+projectsamplecheckentity(//自增长idid:Long, //app端传入校验唯一性防止重复appid:String, //样板点评idsamplecheckid:String, //样板点评标题title:String, //描述description:String, //创建人idcreateby:String, //创建人姓名createname:String, //创建时间createon:Date, //修改时间modify:Date, //项目idprojectid:String, //项目名称projectname:String, //楼栋idbuildingid:String, //楼栋名称buildingname:String, //一级分类classifyone:String, //二级分类classifytwo:String, //三级分类classifythree:String, //一级分类名称classifyonename:String, //二级分类名称classifytwoname:String, //三级分类名称classifythreename:String, //状态state:String, //严重等级severitylevel:String, //楼层区间-始floornum1:String, //楼层区间-终floornum2:String, //检查部位checkposition:String, //检查时间check:Date, //责任单位idsupplierid:String, //责任单位名称supplier:String, //乙方负责人idassignid:String, //乙方负责人名字assignname:String, //第三方监理idsupervisorid:String, //第三方监理名字supervisorname:String, //甲方负责人idfirstparty:String, //甲方负责人名字firstpartyname:String, //处理人iddealpeople:String, //整改时限rectificationperiod:Date, //关闭人姓名shutdownby:String, //关闭理由shutdown:String, //关闭时间shutdownon:Date);
+
+projectmaterialentity(//自增长idid:Long, //材料验收idmaterialid:String, //项目idprojectid:String, //项目名称projectname:String, //供应商idsupplierid:String, //供应商名字suppliername:String, //材料负责人idassignid:String, //材料负责人assignname:String, //进场批量approachnumber:String, //批次名称batchname:String, //进场时间approachtime:Date, //准备使用部位usedpart:String, //状态state:String, //创建人createby:String, //创建人名字createname:String, //创建时间createon:Date, //合格isqualified:String, //修改时间modify:Date, //手机端idappid:String, //验收时间inspectedtime:Date, //一级分类classifyone:String, //二级分类classifytwo:String, //一级分类名称classifyonename:String, //二级分类名称classifytwoname:String, //第三方监理idsupervisor:String, //第三方监理名字supervisorname:String, //处理人dealpeople:String, //甲方负责人idfirstparty:String, //甲方负责人名字firstpartyname:String, //关闭理由shutdown:String, //关闭人shutdownby:String, //关闭时间shutdownon:Date);
+
+projectmaterialoutentity(id:String [PK], //材料验收idmaterialid:String, //退场时间outtime:Date, //退场描述description:String, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date, //app传入id唯一校验防止重复appid:String);
+
+projectmaterialdetailsentity(//idid:String, //材料验收idmaterialid:String, //指标idtargetid:String, //指标名targetname:String, //描述description:String, //指引guide:String, //合格isqualified:String, //指标urldetailsurl:String, //创建时间createon:Date, //修改时间modify:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

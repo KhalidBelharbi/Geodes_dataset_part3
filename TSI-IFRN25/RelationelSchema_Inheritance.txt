@@ -1,0 +1,29 @@
+
+venda(codigo:Long [PK], datacriacao:LocalDateTime, valorfrete:BigDecimal, valordesconto:BigDecimal, valortotal:BigDecimal, observacao:String, datahoraentrega:LocalDateTime, GeneratedName:Cliente #FK to(cliente), GeneratedName:Usuario #FK to(usuario), status:StatusVenda);
+
+cliente(serialversionuid:long, codigo:Long [PK], nome:String, GeneratedName:TipoPessoa, cpfoucnpj:String, //@notblank(message:String, email:String, //@valid:Endereco);
+
+permissao(serialversionuid:long, codigo:Long [PK], nome:String);
+
+usuario(serialversionuid:long, codigo:Long [PK], nome:String, email:String, senha:String, ativo:Boolean, //@notnull(message:LocalDate);
+
+usuario_grupo(codigo_usuario:Usuario [PK] #FK to Usuario,codigo_grupo:list<grupo> [PK] #FK to list<grupo>);
+
+grupo(serialversionuid:long, codigo:Long [PK], nome:String);
+
+grupo_permissao(codigo_grupo:Grupo [PK] #FK to Grupo,codigo_permissao:list<permissao> [PK] #FK to list<permissao>);
+
+estilo(serialversionuid:long, codigo:Long [PK], nome:String);
+
+itemvenda(codigo:Long [PK], quantidade:Integer, valorunitario:BigDecimal, GeneratedName:Cerveja #FK to(cerveja), GeneratedName:Venda #FK to(venda));
+
+cidade(serialversionuid:long, codigo:Long [PK], nome:String, GeneratedName:Estado #FK to(estado));
+
+estado(serialversionuid:long, codigo:Long [PK], nome:String, sigla:String);
+
+usuariogrupo(id:UsuarioGrupoId);
+
+cerveja(serialversionuid:long, codigo:Long [PK], sku:String, nome:String, descricao:String, valor:BigDecimal, teoralcoolico:BigDecimal, comissao:BigDecimal, quantidadeestoque:Integer, GeneratedName:Origem, GeneratedName:Sabor, GeneratedName:Estilo #FK to(estilo), foto:String, contenttype:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

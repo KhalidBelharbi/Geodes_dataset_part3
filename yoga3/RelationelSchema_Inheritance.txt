@@ -1,0 +1,13 @@
+
+momentfollow(serialversionuid:long, id:Long [PK], messageid:Long, creatorid:Long, replierid:Long, replytime:Date, content:String, receiverid:Long);
+
+momentupvote(serialversionuid:long, messageid:long [PK], upvoterid:Long [PK], issuetime:Date);
+
+momentmessage(serialversionuid:long, id:Long [PK], tenantid:Long, groupid:Long, creatorid:Long, issuetime:Date, content:String, imageids:String, imageurls:String, fileids:String, filenames:String, linkurl:String, linktitle:String, linkposter:String, address:String, longitude:Double, latitude:Double, poiid:String, poititle:String, adurl:String, updtime:Date);
+
+momentgroup(serialversionuid:long, id:Long [PK], tenantid:Long, name:String, remark:String, deleted:Boolean);
+
+momentgroupuser(serialversionuid:long, groupid:Long [PK], userid:Long [PK]);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

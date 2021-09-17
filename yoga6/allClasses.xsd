@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="captchasetting" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="format" type="xs:string" />
+          <xs:element name="length" type="xs:long" />
+          <xs:element name="expire" type="xs:long" />
+          <xs:element name="erval" type="xs:long" />
+          <xs:element name="autofill" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="savesettingdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="format" type="xs:string" />
+          <xs:element name="length" type="xs:long" />
+          <xs:element name="expire" type="xs:long" />
+          <xs:element name="erval" type="xs:long" />
+          <xs:element name="autofill" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="captchacontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="captchaservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="captchaservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="smsservice" nillable="true" minOccurs="0" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="key_config" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="utilityapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imageconvertservice" >
+      <xs:sequence>
+        <xs:element name="imagemagickpath" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="osname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uploadfilemapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<uploadfile>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="uploadfilevo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="size" type="xs:long" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="contenttype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uploadresultvo" >
+      <xs:sequence>
+        <xs:element name="result" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="file" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="size" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="filegetdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="fileid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="zuiuploaddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="resize" type="xs:anyType" />
+          <xs:element name="width" type="xs:long" />
+          <xs:element name="height" type="xs:long" />
+          <xs:element name="purpose" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fileuploaddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="resize" type="xs:anyType" />
+          <xs:element name="width" type="xs:anyType" />
+          <xs:element name="height" type="xs:anyType" />
+          <xs:element name="purpose" type="xs:string" />
+          <xs:element name="filename" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="filedeletedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="fileid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="uploadservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="imageconvertservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="filemapper" type="uploadfilemapper" nillable="true" minOccurs="0" />
+          <xs:element name="mfiletypes" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="fileuploadcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="uploadservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="zuiuploadcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="uploadservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nginxuploadcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="uploadservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uploadfile" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="filename" type="xs:string" />
+        <xs:element name="localpath" type="xs:string" />
+        <xs:element name="remoteurl" type="xs:string" />
+        <xs:element name="purpose" type="xs:string" />
+        <xs:element name="contenttype" type="xs:string" />
+        <xs:element name="filesize" type="xs:long" />
+        <xs:element name="createtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qrbindinfo" >
+      <xs:sequence>
+        <xs:element name="headers" type="xs:anyType" />
+        <xs:element name="params" type="xs:anyType" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="token" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qrcodecontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="qrcodeservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="uploadservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qrcodeservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="rediskey_qr_common" type="xs:string" />
+          <xs:element name="rediskey_qr_file" type="xs:string" />
+          <xs:element name="actionqueryentries" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qrquerydto" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qrtransferdto" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qrdownloaddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="fileid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="chartdto" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="width" type="xs:long" />
+        <xs:element name="height" type="xs:long" />
+        <xs:element name="color" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qrshowdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="url" type="xs:string" />
+          <xs:element name="transfer" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="uploadedfilebean" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="size" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qruploadfilesdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="qruploaddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="singlefile" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smssenddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="mobile" type="xs:string" />
+          <xs:element name="content" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsshowsettingdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="service" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smssavesettingdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="service" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsresultmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<smsresult>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsresult" >
+      <xs:sequence>
+        <xs:element name="smsid" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="mobile" type="xs:string" />
+        <xs:element name="action" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="result" type="xs:anyType" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="sendtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="key_smsconfig" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="smsresultmapper" nillable="true" minOccurs="0" />
+          <xs:element name="smsservices" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="smsactor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsfactory" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smscontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="smsservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mailsettingtestdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="smtpserver" type="xs:string" />
+          <xs:element name="smtpport" type="xs:long" />
+          <xs:element name="replyaddress" type="xs:string" />
+          <xs:element name="sendaccount" type="xs:string" />
+          <xs:element name="sendpassword" type="xs:string" />
+          <xs:element name="testaddress" type="xs:string" />
+          <xs:element name="usessl" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mailsettingsavedto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="smtpserver" type="xs:string" />
+          <xs:element name="smtpport" type="xs:long" />
+          <xs:element name="replyaddress" type="xs:string" />
+          <xs:element name="sendaccount" type="xs:string" />
+          <xs:element name="sendpassword" type="xs:string" />
+          <xs:element name="usessl" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mailexecutorconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailsetting" >
+      <xs:sequence>
+        <xs:element name="smtpserver" type="xs:string" />
+        <xs:element name="smtpport" type="xs:long" />
+        <xs:element name="replyaddress" type="xs:string" />
+        <xs:element name="sendaccount" type="xs:string" />
+        <xs:element name="sendpassword" type="xs:string" />
+        <xs:element name="usessl" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="mailservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mailservice" >
+      <xs:sequence>
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="key_email" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="httpsender" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ocridcardrecognizer" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="idcardrecognizeappid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ocridcardresult" >
+      <xs:sequence>
+        <xs:element name="number" type="xs:string" />
+        <xs:element name="sex" type="xs:string" />
+        <xs:element name="birthday" type="xs:string" />
+        <xs:element name="nation" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pushservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="pushactors" type="pushactor" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="pushactormap" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="pushusermapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pushactor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pushusermapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<pushuser>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pushcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="pushservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pushregisterdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="clientid" type="xs:string" />
+          <xs:element name="pushchannel" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pushuser" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="clientid" type="xs:string" />
+        <xs:element name="pushchannel" type="xs:string" />
+        <xs:element name="messagecount" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="addprinterresult" >
+      <xs:sequence>
+        <xs:element name="ok" type="xs:anyType" />
+        <xs:element name="no" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feieprintresult" >
+      <xs:sequence>
+        <xs:element name="ret" type="xs:long" />
+        <xs:element name="msg" type="xs:string" />
+        <xs:element name="daa" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="printerqueueresult" >
+      <xs:sequence>
+        <xs:element name="pr" type="xs:long" />
+        <xs:element name="waiting" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="savefeieprinterdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="sn" type="xs:string" />
+          <xs:element name="key" type="xs:string" />
+          <xs:element name="name" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="printstatusresult" >
+      <xs:sequence>
+        <xs:element name="ret" type="xs:long" />
+        <xs:element name="msg" type="xs:string" />
+        <xs:element name="data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feieprinterconfig" >
+      <xs:sequence>
+        <xs:element name="sn" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feieprintservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="feieuser" type="xs:string" />
+        <xs:element name="feieukey" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="modulename" type="xs:string" />
+        <xs:element name="singleprinterconfig" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="printinfo" >
+      <xs:sequence>
+        <xs:element name="sn" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="printqueue" >
+      <xs:sequence>
+        <xs:element name="pr" type="xs:long" />
+        <xs:element name="waiting" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feieprintcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="printservice" type="feieprintservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="quartzconfig" >
+      <xs:sequence>
+        <xs:element name="driverclassname" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="GeneratedName" type="quartzjobfactory" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quartzservice" >
+      <xs:complexContent>
+       <xs:extension base="trigger>">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="quartztask" >
+      <xs:sequence>
+        <xs:element name="datamap" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="group" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="expression" type="xs:string" />
+        <xs:element name="createtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quartzjobfactory" >
+      <xs:complexContent>
+       <xs:extension base="adaptablejobfactory">
+         <xs:sequence>
+          <xs:element name="capablebeanfactory" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="demojob" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="districtcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="districtservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="districtmapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<district>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="district" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="parentid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="fullname" type="xs:string" />
+        <xs:element name="level" type="xs:anyType" />
+        <xs:element name="initial" type="xs:string" />
+        <xs:element name="initials" type="xs:string" />
+        <xs:element name="pinyin" type="xs:string" />
+        <xs:element name="suffix" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="areacode" type="xs:string" />
+        <xs:element name="order" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="districtservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="" type="districtmapper" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="districtlistdto" >
+      <xs:sequence>
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="level" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="districtgetdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="districtchilddto" >
+      <xs:sequence>
+        <xs:element name="parentid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

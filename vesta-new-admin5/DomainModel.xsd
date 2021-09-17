@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="inforeleaseentity" >
+      <xs:sequence>
+        <xs:element name="//主键logid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//用户类型usertype" type="xs:string" />
+        <xs:element name="//手机号usermobile" type="xs:string" />
+        <xs:element name="//身份证idcard" type="xs:string" />
+        <xs:element name="//时间logtime" type="xs:dateTime" />
+        <xs:element name="//内容logcontent" type="xs:string" />
+        <xs:element name="//操作类型或报修单类型等泛指日志自身里面的类型thistype" type="xs:string" />
+        <xs:element name="//版块thissection" type="xs:string" />
+        <xs:element name="//功能thisfunction" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//来源1微信2安卓3iossourcefrom" type="xs:string" />
+        <xs:element name="//关联社区asscommunity" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfacelogentity" >
+      <xs:sequence>
+        <xs:element name="//日志idid" type="xs:string" />
+        <xs:element name="//接口名称interfacename" type="xs:string" />
+        <xs:element name="//数据库表名entityname" type="xs:string" />
+        <xs:element name="//返回码code" type="xs:string" />
+        <xs:element name="//错误日期error" type="xs:dateTime" />
+        <xs:element name="//操作人memberid" type="xs:string" />
+        <xs:element name="//日志信息message" type="xs:string" />
+        <xs:element name="//数据identityid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="translogentity" >
+      <xs:sequence>
+        <xs:element name="//idid" type="xs:string" />
+        <xs:element name="//输入文本contentin" type="xs:string" />
+        <xs:element name="//请求controller定义contentformat" type="xs:string" />
+        <xs:element name="//输入bodybodycontent" type="xs:string" />
+        <xs:element name="//请求方法method" type="xs:string" />
+        <xs:element name="//输出文本contentout" type="xs:string" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//返回时间backtime" type="xs:dateTime" />
+        <xs:element name="//上下文context" type="xs:string" />
+        <xs:element name="//tokenidvestatoken" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfacerepairlogsentity" >
+      <xs:sequence>
+        <xs:element name="//日志idid" type="xs:string" />
+        <xs:element name="//返回码code" type="xs:string" />
+        <xs:element name="//创建日期crea" type="xs:dateTime" />
+        <xs:element name="//接口类interfaceclass" type="xs:string" />
+        <xs:element name="//接口名称interfacename" type="xs:string" />
+        <xs:element name="//保修单idrepairid" type="xs:string" />
+        <xs:element name="//保修单状态repairstate" type="xs:string" />
+        <xs:element name="//创建人creaby" type="xs:string" />
+        <xs:element name="//日志信息info" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfacerectifylogsentity" >
+      <xs:sequence>
+        <xs:element name="//日志idid" type="xs:string" />
+        <xs:element name="//返回码code" type="xs:string" />
+        <xs:element name="//创建日期crea" type="xs:dateTime" />
+        <xs:element name="//接口类interfaceclass" type="xs:string" />
+        <xs:element name="//接口名称interfacename" type="xs:string" />
+        <xs:element name="//整改单idrectifyid" type="xs:string" />
+        <xs:element name="//整改单状态rectifystate" type="xs:string" />
+        <xs:element name="//创建人creaby" type="xs:string" />
+        <xs:element name="//日志信息info" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfaceplanlogentity" >
+      <xs:sequence>
+        <xs:element name="//日志idid" type="xs:string" />
+        <xs:element name="//接口名称interfacename" type="xs:string" />
+        <xs:element name="//数据库表名entityname" type="xs:string" />
+        <xs:element name="//返回码code" type="xs:string" />
+        <xs:element name="//错误日期error" type="xs:dateTime" />
+        <xs:element name="//操作人memberid" type="xs:string" />
+        <xs:element name="//日志信息message" type="xs:string" />
+        <xs:element name="//数据identityid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdocumentsentity" >
+      <xs:sequence>
+        <xs:element name="//主键logid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//用户类型usertype" type="xs:string" />
+        <xs:element name="//手机号usermobile" type="xs:string" />
+        <xs:element name="//身份证idcard" type="xs:string" />
+        <xs:element name="//系统版本sysversion" type="xs:string" />
+        <xs:element name="//来源1微信2安卓3iossourcefrom" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//时间logtime" type="xs:dateTime" />
+        <xs:element name="//内容logcontent" type="xs:string" />
+        <xs:element name="//单据编号docnum" type="xs:string" />
+        <xs:element name="//单据状态什么的泛指状态一类thisstatus" type="xs:string" />
+        <xs:element name="//版块thissection" type="xs:string" />
+        <xs:element name="//功能thisfunction" type="xs:string" />
+        <xs:element name="//操作类型或报修单类型等泛指日志自身里面的类型thistype" type="xs:string" />
+        <xs:element name="//房产realestate" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfacecomplainlogentity" >
+      <xs:sequence>
+        <xs:element name="//日志idid" type="xs:string" />
+        <xs:element name="//接口名称interfacename" type="xs:string" />
+        <xs:element name="//数据库表名entityname" type="xs:string" />
+        <xs:element name="//返回码code" type="xs:string" />
+        <xs:element name="//错误日期error" type="xs:dateTime" />
+        <xs:element name="//操作人memberid" type="xs:string" />
+        <xs:element name="//日志信息message" type="xs:string" />
+        <xs:element name="//数据identityid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="systemlogentity" >
+      <xs:sequence>
+        <xs:element name="//主键logid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//用户类型usertype" type="xs:string" />
+        <xs:element name="//手机号usermobile" type="xs:string" />
+        <xs:element name="//身份证idcard" type="xs:string" />
+        <xs:element name="//系统版本sysversion" type="xs:string" />
+        <xs:element name="//来源1微信2安卓3iossourcefrom" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//日志类型1新增用户2用户访问3用户单据4信息发布logtype" type="xs:string" />
+        <xs:element name="//时间logtime" type="xs:dateTime" />
+        <xs:element name="//内容logcontent" type="xs:string" />
+        <xs:element name="//操作类型或报修单类型等泛指日志自身里面的类型thistype" type="xs:string" />
+        <xs:element name="//单据编号docnum" type="xs:string" />
+        <xs:element name="//单据状态什么的泛指状态一类thisstatus" type="xs:string" />
+        <xs:element name="//版块thissection" type="xs:string" />
+        <xs:element name="//功能thisfunction" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interfaceclassuserlogentity" >
+      <xs:sequence>
+        <xs:element name="//日志idid" type="xs:string" />
+        <xs:element name="//接口名称interfacename" type="xs:string" />
+        <xs:element name="//数据库表名entityname" type="xs:string" />
+        <xs:element name="//返回码code" type="xs:string" />
+        <xs:element name="//错误日期error" type="xs:dateTime" />
+        <xs:element name="//操作人memberid" type="xs:string" />
+        <xs:element name="//日志信息message" type="xs:string" />
+        <xs:element name="//数据identityid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="uservisitlogentity" >
+      <xs:sequence>
+        <xs:element name="//主键logid" type="xs:string" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//用户类型usertype" type="xs:string" />
+        <xs:element name="//手机号usermobile" type="xs:string" />
+        <xs:element name="//时间logtime" type="xs:dateTime" />
+        <xs:element name="//版块thissection" type="xs:string" />
+        <xs:element name="//功能thisfunction" type="xs:string" />
+        <xs:element name="//内容logcontent" type="xs:string" />
+        <xs:element name="//来源1微信2安卓3iossourcefrom" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="content" >
+      <xs:sequence>
+        <xs:element name="contentid" type="xs:long" />
+        <xs:element name="contentdata" type="xs:string" />
+        <xs:element name="group" type="kidsgroup" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="projectid" type="xs:long" />
+        <xs:element name="projectname" type="xs:string" />
+        <xs:element name="startingdate" type="xs:anyType" />
+        <xs:element name="endingdate" type="xs:anyType" />
+        <xs:element name="projectdata" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="creationdate" type="xs:anyType" />
+        <xs:element name="photo" type="xs:string" />
+        <xs:element name="creationtime" type="xs:anyType" />
+        <xs:element name="totalkids" type="xs:long" />
+        <xs:element name="totalsessions" type="xs:long" />
+        <xs:element name="totalvolunteachers" type="xs:long" />
+        <xs:element name="sessions" type="session" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="events" type="event" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="users" type="user" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="kids" type="kid" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="kidsgroup" >
+      <xs:sequence>
+        <xs:element name="groupid" type="xs:long" />
+        <xs:element name="groupname" type="xs:string" />
+        <xs:element name="criteria" type="xs:string" />
+        <xs:element name="attendances" type="attendance" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usertype" >
+      <xs:sequence>
+        <xs:element name="typeid" type="xs:long" />
+        <xs:element name="type" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="payment" >
+      <xs:sequence>
+        <xs:element name="paymentid" type="xs:long" />
+        <xs:element name="creationdate" type="xs:anyType" />
+        <xs:element name="paymentmode" type="xs:string" />
+        <xs:element name="amount" type="xs:double" />
+        <xs:element name="transactionid" type="xs:string" />
+        <xs:element name="GeneratedName" type="donor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicantrequest" >
+      <xs:sequence>
+        <xs:element name="requestid" type="xs:long" />
+        <xs:element name="emailid" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="gender" type="xs:long" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="requestdate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="school" >
+      <xs:sequence>
+        <xs:element name="schoolid" type="xs:long" />
+        <xs:element name="schoolname" type="xs:string" />
+        <xs:element name="pincode" type="xs:long" />
+        <xs:element name="lab" type="xs:anyType" />
+        <xs:element name="grade" type="xs:string" />
+        <xs:element name="totalteachers" type="xs:long" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="startingdate" type="xs:anyType" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="totalstudent" type="xs:long" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="requirements" type="xs:string" />
+        <xs:element name="GeneratedName" type="village" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionreport" >
+      <xs:sequence>
+        <xs:element name="sessionreportid" type="xs:long" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="suggestions" type="xs:string" />
+        <xs:element name="experience" type="xs:string" />
+        <xs:element name="requirements" type="xs:string" />
+        <xs:element name="GeneratedName" type="session" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="volunteacher" >
+      <xs:sequence>
+        <xs:element name="volunteacherid" type="xs:long" />
+        <xs:element name="school" type="xs:string" />
+        <xs:element name="employername" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="joiningdate" type="xs:anyType" />
+        <xs:element name="pincode" type="xs:long" />
+        <xs:element name="education" type="xs:string" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="village" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="district" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="announcement" >
+      <xs:sequence>
+        <xs:element name="announcementid" type="xs:long" />
+        <xs:element name="data" type="xs:string" />
+        <xs:element name="createdby" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="creationdate" type="xs:anyType" />
+        <xs:element name="creationtime" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="district" >
+      <xs:sequence>
+        <xs:element name="districtid" type="xs:long" />
+        <xs:element name="districtname" type="xs:string" />
+        <xs:element name="GeneratedName" type="state" nillable="true" minOccurs="0" />
+        <xs:element name="talukas" type="taluka" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="taluka" >
+      <xs:sequence>
+        <xs:element name="talukaid" type="xs:long" />
+        <xs:element name="talukaname" type="xs:string" />
+        <xs:element name="GeneratedName" type="district" nillable="true" minOccurs="0" />
+        <xs:element name="villages" type="village" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="event" >
+      <xs:sequence>
+        <xs:element name="eventid" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="eventdata" type="xs:string" />
+        <xs:element name="eventdate" type="xs:anyType" />
+        <xs:element name="eventstartingtime" type="xs:anyType" />
+        <xs:element name="eventendingtime" type="xs:anyType" />
+        <xs:element name="photo" type="xs:string" />
+        <xs:element name="notified" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="project" nillable="true" minOccurs="0" />
+        <xs:element name="participants" type="participant" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="village" nillable="true" minOccurs="0" />
+        <xs:element name="kids" type="kid" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="users" type="user" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="activities" type="activity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="notification" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="participant" >
+      <xs:sequence>
+        <xs:element name="participantid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="gender" type="xs:long" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="dob" type="xs:anyType" />
+        <xs:element name="type" type="usertype" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="event" nillable="true" minOccurs="0" />
+        <xs:element name="activities" type="activity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="report" >
+      <xs:sequence>
+        <xs:element name="reportid" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="pdfurl" type="xs:string" />
+        <xs:element name="creationdate" type="xs:anyType" />
+        <xs:element name="createdby" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="gender" type="xs:long" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="dob" type="xs:anyType" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="type" type="usertype" nillable="true" minOccurs="0" />
+        <xs:element name="photo" type="xs:string" />
+        <xs:element name="userotp" type="xs:string" />
+        <xs:element name="announcement" type="announcement" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="sessionreports" type="sessionreport" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="volunteacher" nillable="true" minOccurs="0" />
+        <xs:element name="posts" type="timelinepost" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="notifications" type="notification" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="projects" type="project" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="sessions" type="session" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="event" type="event" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="session" >
+      <xs:sequence>
+        <xs:element name="sessionid" type="xs:long" />
+        <xs:element name="//attendancesessiondate" type="xs:anyType" />
+        <xs:element name="startingtime" type="xs:anyType" />
+        <xs:element name="endingtime" type="xs:anyType" />
+        <xs:element name="creationdate" type="xs:anyType" />
+        <xs:element name="notified" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="project" nillable="true" minOccurs="0" />
+        <xs:element name="attendance" type="attendance" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="sessionreports" type="sessionreport" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="village" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="notification" nillable="true" minOccurs="0" />
+        <xs:element name="users" type="user" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="kidsreport" >
+      <xs:sequence>
+        <xs:element name="kidreportid" type="xs:long" />
+        <xs:element name="GeneratedName" type="kid" nillable="true" minOccurs="0" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="discipline" type="xs:long" />
+        <xs:element name="prayer" type="xs:long" />
+        <xs:element name="goshthi" type="xs:long" />
+        <xs:element name="abhivyakti" type="xs:long" />
+        <xs:element name="volunteaching" type="xs:long" />
+        <xs:element name="games" type="xs:long" />
+        <xs:element name="interestarea" type="xs:string" />
+        <xs:element name="artcraft" type="xs:long" />
+        <xs:element name="sports" type="xs:long" />
+        <xs:element name="science" type="xs:long" />
+        <xs:element name="//@notnull//@column(nullable" type="xs:string" />
+        <xs:element name="maths" type="xs:long" />
+        <xs:element name="gujarati" type="xs:long" />
+        <xs:element name="english" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="area" >
+      <xs:sequence>
+        <xs:element name="areaid" type="xs:long" />
+        <xs:element name="areaname" type="xs:string" />
+        <xs:element name="GeneratedName" type="village" nillable="true" minOccurs="0" />
+        <xs:element name="kids" type="kid" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="state" >
+      <xs:sequence>
+        <xs:element name="stateid" type="xs:long" />
+        <xs:element name="statename" type="xs:string" />
+        <xs:element name="GeneratedName" type="country" nillable="true" minOccurs="0" />
+        <xs:element name="districts" type="district" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="kid" >
+      <xs:sequence>
+        <xs:element name="kidid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="gender" type="xs:long" />
+        <xs:element name="dob" type="xs:anyType" />
+        <xs:element name="standard" type="xs:long" />
+        <xs:element name="level" type="xs:long" />
+        <xs:element name="totalsessions" type="xs:long" />
+        <xs:element name="photo" type="xs:string" />
+        <xs:element name="school" type="xs:string" />
+        <xs:element name="creationdate" type="xs:anyType" />
+        <xs:element name="group" type="kidsgroup" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="village" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="area" nillable="true" minOccurs="0" />
+        <xs:element name="projects" type="project" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="events" type="event" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="kidsreport" type="kidsreport" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="attendances" type="attendance" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timelinepost" >
+      <xs:sequence>
+        <xs:element name="postid" type="xs:long" />
+        <xs:element name="postphoto" type="xs:string" />
+        <xs:element name="postdescription" type="xs:string" />
+        <xs:element name="creationdate" type="xs:anyType" />
+        <xs:element name="createdby" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="village" >
+      <xs:sequence>
+        <xs:element name="villageid" type="xs:long" />
+        <xs:element name="villagename" type="xs:string" />
+        <xs:element name="GeneratedName" type="taluka" nillable="true" minOccurs="0" />
+        <xs:element name="areas" type="area" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="kids" type="kid" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="attendance" >
+      <xs:sequence>
+        <xs:element name="attendanceid" type="xs:long" />
+        <xs:element name="GeneratedName" type="session" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="kidsgroup" nillable="true" minOccurs="0" />
+        <xs:element name="kids" type="kid" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notification" >
+      <xs:sequence>
+        <xs:element name="notificationid" type="xs:long" />
+        <xs:element name="notificationtype" type="xs:string" />
+        <xs:element name="createdby" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="usertype" type="xs:string" />
+        <xs:element name="GeneratedName" type="session" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="event" nillable="true" minOccurs="0" />
+        <xs:element name="createddate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="donor" >
+      <xs:sequence>
+        <xs:element name="donorid" type="xs:long" />
+        <xs:element name="donorname" type="xs:string" />
+        <xs:element name="donorphone" type="xs:string" />
+        <xs:element name="donoremail" type="xs:string" />
+        <xs:element name="GeneratedName" type="usertype" nillable="true" minOccurs="0" />
+        <xs:element name="payment" type="payment" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventkidactivity" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="GeneratedName" type="kid" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="event" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="activity" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activity" >
+      <xs:sequence>
+        <xs:element name="activityid" type="xs:long" />
+        <xs:element name="activityname" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="participants" type="participant" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="events" type="event" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="country" >
+      <xs:sequence>
+        <xs:element name="countryid" type="xs:long" />
+        <xs:element name="countryname" type="xs:string" />
+        <xs:element name="states" type="state" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,19 @@
+
+foo(id:long [PK], name:String);
+
+product(id:int [PK], productname:String, description:String, memory:int);
+
+employee(employeeid:Long [PK], firstname:String, lastname:String);
+
+employee_project(employee_id:Employee [PK] #FK to Employee,project_id:set<project> [PK] #FK to set<project>);
+
+project(projectid:Long [PK], title:String);
+
+event(id:Long [PK], title:String, guestlist:Set<String>);
+
+eventgeneratedid(id:Long [PK], name:String, description:String);
+
+testentity(id:int [PK], description:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

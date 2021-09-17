@@ -1,0 +1,49 @@
+
+vehiclephoto(vehiclephotoid:int [PK], vehiclephotothumbnailurl:String, vehiclephotourl:String, vehiclevehicleid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+agencyuser(userid:int [PK], travelagencyid:int [PK], isactiveuserflag:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+lkcountry(countrycode:String [PK], countryname:String, countryflagurl:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, businesspriority:Integer, isdefaultchoice:String, jpaversionnumber:int);
+
+travelagency(travelagencyid:int [PK], agencyname:String, agencyphone:String, agencymobile:String, agencyaddressid:int, responsiblepersonid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+lkreviewcategory(reviewcategorycode:int [PK], reviewcategoryname:String, reviewcategorydescription:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, businesspriority:Integer, isdefaultchoice:String, jpaversionnumber:int);
+
+quote(quoteid:int [PK], journeyid:int, quoteprice:BigDecimal, quotedescription:String, quotestatuscode:int, userid:int, travelagencyid:int, driverdriverid:int, vehicleid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+address(addressid:int [PK], addressline1:String, addressline2:String, addressline3:String, citycode:int, statecode:int, countrycode:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+lkquotestatus(quotestatuscode:int [PK], quotestatusname:String, quotestatusdescription:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, businesspriority:Integer, isdefaultchoice:String, jpaversionnumber:int);
+
+lkjourneystatus(journeystatuscode:int [PK], journeystatusname:String, journeystatusdescription:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, businesspriority:Integer, isdefaultchoice:String, jpaversionnumber:int);
+
+reviewabouttravelagency(reviewabouttravelagencyid:int [PK], travelagencyreviewtext:String, byuserid:int, fortravelagencyid:int, journeyid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+vehiclefeature(vehiclefeatureid:int [PK], vehicleid:int, featurecode:int, isfeatureverified:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+messagelog(messagelogid:int [PK], messagetext:String, userid:int, travelagencyid:int, journeyid:int, parentmessagelogid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+reviewaboutuser(reviewaboutuserid:int [PK], bytravelagencyid:int, foruserid:int, userreviewtext:String, userrating:Integer, journeyid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+person(personid:Long [PK], firstname:String, lastname:String, dateofbirth:Timestamp, phonenumber:String, mobilenumber:String, createdate:Timestamp, createdby:Long, lastupdatedate:Timestamp, lastupdatedby:Long, jpaversionnumber:Long, bypersonid:User);
+
+vehicle(vehicleid:int [PK], numberplate:String, vehiclemake:String, vehiclemodel:String, vehicleregistrationyear:String, isvehicleverified:String, travelagencyid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+journey(journeyid:Long [PK], userid:Long, fromcitycode:Long, fromstatecode:Long, fromcountrycode:String, tocitycode:Long, tostatecode:Long, tocountrycode:String, departuredatetime:String, returndatetime:String, specialrequest:String, noofpassengers:Long, noofextralargeluggage:Long, nooflargeluggage:Long, noofmediumluggage:Long, noofsmallluggage:Long, acceptedquoteid:Long, journeystatuscode:Long, createdate:Timestamp, createdby:Long, lastupdatedate:Timestamp, lastupdatedby:Long, jpaversionnumber:Long);
+
+lkstate(statecode:int [PK], countrycode:String [PK], statename:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, businesspriority:Integer, isdefaultchoice:String, jpaversionnumber:int);
+
+travelagencyrating(travelagencyratingid:int [PK], travelagencyrating:Integer, reviewcategorycode:int, reviewabouttravelagencyid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+user(userid:Long [PK], useremail:String, userpassword:String, isactiveflag:String, createdate:Timestamp, createdby:Long, lastupdatedate:Timestamp, lastupdatedby:Long, jpaversionnumber:Long, byuserid:Person);
+
+driver(driverid:int [PK], driverphotothumbnailurl:String, driverphotourl:String, driverlicencenumber:String, firstlicenceissuedate:Timestamp, islicenceverified:String, isaddressverified:String, travelagencyid:int, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+lkcity(citycode:int [PK], statecode:int [PK], countrycode:String [PK], cityname:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, businesspriority:Integer, isdefaultchoice:String, jpaversionnumber:int);
+
+personaddress(addressid:int [PK], personid:int [PK], isprimaryaddressflag:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, jpaversionnumber:int);
+
+lkfeature(featurecode:int [PK], featurename:String, featuredescription:String, createdate:Timestamp, createdby:int, lastupdatedate:Timestamp, lastupdatedby:Integer, businesspriority:Integer, isdefaultchoice:String, jpaversionnumber:int);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

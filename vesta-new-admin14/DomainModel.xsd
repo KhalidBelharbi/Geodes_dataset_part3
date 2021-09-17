@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="propertyipitementity" >
+      <xs:sequence>
+        <xs:element name="//收费项目idipitemid" type="xs:string" />
+        <xs:element name="//收费项目名称ipitemname" type="xs:string" />
+        <xs:element name="//是否生效状态:0:无效,1:有效state" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertycompanyrolemapentity" >
+      <xs:sequence>
+        <xs:element name="//关系idrolesetid" type="xs:string" />
+        <xs:element name="//公司idsetid" type="xs:string" />
+        <xs:element name="//权限idrolroleid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertypayinvoiceentity" >
+      <xs:sequence>
+        <xs:element name="/*发票状态*///电子发票type_electron_invoice" type="xs:string" />
+        <xs:element name="//普通发票type_ordinary_invoice" type="xs:string" />
+        <xs:element name="//增值专票type_increment_invoice" type="xs:string" />
+        <xs:element name="//普票已开type_ordinary_invoice_al" type="xs:string" />
+        <xs:element name="//专票已开type_increment_invoice_al" type="xs:string" />
+        <xs:element name="/*发票递取方式*///自取mode_oneself" type="xs:string" />
+        <xs:element name="//管家递送mode_butler" type="xs:string" />
+        <xs:element name="//快递mode_express" type="xs:string" />
+        <xs:element name="//票据idinvoiceid" type="xs:string" />
+        <xs:element name="//支付订单idpaymentid" type="xs:string" />
+        <xs:element name="//票据类型invoicetype" type="xs:string" />
+        <xs:element name="//发票抬头invoiceheader" type="xs:string" />
+        <xs:element name="//发票号码invoicenum" type="xs:string" />
+        <xs:element name="//发票递取方式invoicemail" type="xs:string" />
+        <xs:element name="//快递地址expressaddress" type="xs:string" />
+        <xs:element name="//票据状态(0:未开票,1:已开票)invoicestate" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="systemnotificationentity" >
+      <xs:sequence>
+        <xs:element name="//系统通知类型（通知）notification_type_notice" type="xs:string" />
+        <xs:element name="//系统通知类型（其他）notification_type_other" type="xs:string" />
+        <xs:element name="//系统通知置顶类型（已置顶）notification_topstatus_y" type="xs:string" />
+        <xs:element name="//系统通知置顶类型（未置顶）notification_topstatus_n" type="xs:string" />
+        <xs:element name="//系统通知发布类型（已发布）notification_status_y" type="xs:string" />
+        <xs:element name="//系统通发布顶类型（未发布）notification_status_n" type="xs:string" />
+        <xs:element name="//系统通知idnotificationid" type="xs:string" />
+        <xs:element name="//系统通知标题notificationtitle" type="xs:string" />
+        <xs:element name="//系统通知内容notificationcontent" type="xs:string" />
+        <xs:element name="//系统通知类型notificationtype" type="xs:string" />
+        <xs:element name="//系统通知发布类型notificationstatus" type="xs:string" />
+        <xs:element name="//系统通知置顶状态notificationtopstatus" type="xs:string" />
+        <xs:element name="//系统通知创建人notificationcreater" type="xs:string" />
+        <xs:element name="//系统通知创建时间notificationcreatetime" type="xs:dateTime" />
+        <xs:element name="//状态，1--有效0--已删除status" type="xs:string" />
+        <xs:element name="//备注notificationremarks" type="xs:string" />
+        <xs:element name="//查询条件（创建开始时间）数据库不存在notificationcreatebegintime" type="xs:string" />
+        <xs:element name="//查询条件（创建结束时间）数据库不存在notificationcreateendtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyrepairentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//报修idrepairid" type="xs:string" />
+        <xs:element name="//内容content" type="xs:string" />
+        <xs:element name="//创建人(业主)createby" type="xs:string" />
+        <xs:element name="//创建日期create" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改日期modify" type="xs:dateTime" />
+        <xs:element name="//完成日期(用于判断工单未评价是否超过24小时)complete" type="xs:dateTime" />
+        <xs:element name="//报修人姓名username" type="xs:string" />
+        <xs:element name="//报修人电话userphone" type="xs:string" />
+        <xs:element name="//报修人地址useraddress" type="xs:string" />
+        <xs:element name="//区域idregionid" type="xs:string" />
+        <xs:element name="//地区、区域名称regionname" type="xs:string" />
+        <xs:element name="//类型：0：未完成报修1：已完成报修3：已删除(逻辑)types" type="xs:string" />
+        <xs:element name="//状态:已创建处理中未评价已完成已关闭已评价state" type="xs:string" />
+        <xs:element name="//用户id(接单人)userid" type="xs:string" />
+        <xs:element name="//超过24小时未评价，待回访接单人customerid" type="xs:string" />
+        <xs:element name="/***维修任务状态：0为用户提交报修(业主)4为自主抢单(员工端)/接单(员工端)*6为退单(员工端)7为维修中(员工端/管理端)/继续维修(员工端/业主点击则从状态0开始)9为暂停维修(员工端)*10为维修完成(员工端：维修人员点击，业主可以评价)12为待客服回访(24小时后业主未评价)*13为回访完成(结束)14为业主评价(业主)/终止维修(业主)/结束*//***投诉任务状态：1为用户提交投诉(业主)2为自主抢单(员工端)/接单(员工端)*3为退单(员工端)5为处理中(员工端/管理端)/继续处理(员工端/业主点击则从状态0开始)8为暂停处理(员工端)*11为处理完成(员工端：维修人员点击，业主可以评价)15为客服回访(员工端：客服)*16为回访完成(结束：可评价，也可以不评价)17为业主评价(业主)/终止处理(业主)/结束*///任务状态taskstatus" type="xs:string" />
+        <xs:element name="//备注：报修、投诉、维修、客服、秩序、环境memo" type="xs:string" />
+        <xs:element name="//报修方式：app/微信/呼叫中心/网站/项目前台/物业单据repairway" type="xs:string" />
+        <xs:element name="//部门department" type="xs:string" />
+        <xs:element name="//房间idroomid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyservicesentity" >
+      <xs:sequence>
+        <xs:element name="//物业服务信息（服务信息类别）services_type_property" type="xs:string" />
+        <xs:element name="//公共服务信息（服务信息类别）services_type_" type="xs:string" />
+        <xs:element name="//服务信息idservicesid" type="xs:string" />
+        <xs:element name="//服务信息名称servicesname" type="xs:string" />
+        <xs:element name="//服务信息类别servicestype" type="xs:string" />
+        <xs:element name="//服务信息电话servicesphone" type="xs:string" />
+        <xs:element name="//服务信息添加时间addmessagetime" type="xs:dateTime" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//操作人optname" type="xs:string" />
+        <xs:element name="//操作时间opt" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertydoorentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//设备mac地址macaddress" type="xs:string" />
+        <xs:element name="//设备密码devicepwd" type="xs:string" />
+        <xs:element name="//设备描述devicedesc" type="xs:string" />
+        <xs:element name="//设备类型(仅提供蓝牙的门禁设备:1,提供蓝牙及无线网络的门禁设备:2)devicetype" type="xs:string" />
+        <xs:element name="//项目编码projectcode" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//地块编码blockcode" type="xs:string" />
+        <xs:element name="//地块area" type="xs:string" />
+        <xs:element name="//楼号编码buildingnum" type="xs:string" />
+        <xs:element name="//备案楼号buildingrecord" type="xs:string" />
+        <xs:element name="//预售楼号buildingsale" type="xs:string" />
+        <xs:element name="//单元编码unitcode" type="xs:string" />
+        <xs:element name="//单元unit" type="xs:string" />
+        <xs:element name="//楼层编码floorcode" type="xs:string" />
+        <xs:element name="//楼层floor" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyhelplinescopeentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//便民idpropertyhelplineid" type="xs:string" />
+        <xs:element name="//全部0,不是全部1,全部isall" type="xs:anyType" />
+        <xs:element name="//所属城市city" type="xs:string" />
+        <xs:element name="//所属城市idcityid" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//项目codeprojectid" type="xs:string" />
+        <xs:element name="//0,启用1，不启用status" type="xs:anyType" />
+        <xs:element name="//创建日期create" type="xs:dateTime" />
+        <xs:element name="//创建人createperson" type="xs:string" />
+        <xs:element name="//操作日期operate" type="xs:dateTime" />
+        <xs:element name="//操作人operateperson" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertypricesettingentity" >
+      <xs:sequence>
+        <xs:element name="//idpricesettingid" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//价格内容pricesettingcount" type="xs:string" />
+        <xs:element name="//查询负责范围（备用字段）queryscope" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyrepaircrmentity" >
+      <xs:sequence>
+        <xs:element name="////报修单号repairid" type="xs:string" />
+        <xs:element name="//部门department" type="xs:string" />
+        <xs:element name="//房间idroomid" type="xs:string" />
+        <xs:element name="//房间编码roomnum" type="xs:string" />
+        <xs:element name="//报修人会员编号memberid" type="xs:string" />
+        <xs:element name="//报修人姓名username" type="xs:string" />
+        <xs:element name="//报修人电话userphone" type="xs:string" />
+        <xs:element name="//报修人地址useraddress" type="xs:string" />
+        <xs:element name="//报修时间create" type="xs:dateTime" />
+        <xs:element name="//一级分类classifyone" type="xs:string" />
+        <xs:element name="//二级分类classifytwo" type="xs:string" />
+        <xs:element name="//三级分类classifythree" type="xs:string" />
+        <xs:element name="//维修方式：换、维修mode" type="xs:string" />
+        <xs:element name="//维修工时(分类绑定)：限期整改，工时是否超时repairdate" type="xs:string" />
+        <xs:element name="//房屋位置idroomlocation" type="xs:string" />
+        <xs:element name="//单据状态state" type="xs:string" />
+        <xs:element name="//责任判定:主责(true)、非主责(false)duty" type="xs:string" />
+        <xs:element name="//问题级别：紧急/非紧急problemlevel" type="xs:string" />
+        <xs:element name="//报修方式：会员app/微信/呼叫中心repairway" type="xs:string" />
+        <xs:element name="//基本内容content" type="xs:string" />
+        <xs:element name="//接单时间task" type="xs:dateTime" />
+        <xs:element name="//处理方案dealway" type="xs:string" />
+        <xs:element name="//处理方式:内部/责任单位/第三方dealmode" type="xs:string" />
+        <xs:element name="//责任单位1dutycompanyone" type="xs:string" />
+        <xs:element name="//责任单位2dutycompanytwo" type="xs:string" />
+        <xs:element name="//责任单位3dutycompanythree" type="xs:string" />
+        <xs:element name="//维修单位repaircompany" type="xs:string" />
+        <xs:element name="//责任单位接单时间dutytask" type="xs:dateTime" />
+        <xs:element name="//责任单位返单时间dutyreturn" type="xs:dateTime" />
+        <xs:element name="//维修负责人repairmanager" type="xs:string" />
+        <xs:element name="//处理人dealpeople" type="xs:string" />
+        <xs:element name="//处理人电话dealphone" type="xs:string" />
+        <xs:element name="//处理人2dealpeopletwo" type="xs:string" />
+        <xs:element name="//处理人电话2dealphonetwo" type="xs:string" />
+        <xs:element name="//首选上门日期firstvisit" type="xs:dateTime" />
+        <xs:element name="//备选上门日期backupvisit" type="xs:dateTime" />
+        <xs:element name="//处理状态(处理/暂不处理)dealstate" type="xs:string" />
+        <xs:element name="//处理结果dealresult" type="xs:string" />
+        <xs:element name="//受理人完工时间dealcomplete" type="xs:dateTime" />
+        <xs:element name="//回访意见visitopinion" type="xs:string" />
+        <xs:element name="//回访评价:非常满意/满意/一般/不满意/非常不满意visitevaluate" type="xs:string" />
+        <xs:element name="//回访日期visit" type="xs:dateTime" />
+        <xs:element name="//电话/短信/其他visittype" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//维修负责人repairmanagerid" type="xs:string" />
+        <xs:element name="//责任单位负责人dutycompanyoneuserid" type="xs:string" />
+        <xs:element name="//责任单位负责人dutycompanyoneuser" type="xs:string" />
+        <xs:element name="//派单人姓名sendname" type="xs:string" />
+        <xs:element name="//派单时间send" type="xs:dateTime" />
+        <xs:element name="//创建人姓名createusername" type="xs:string" />
+        <xs:element name="//创建人电话createuserphone" type="xs:string" />
+        <xs:element name="//填报人updateusername" type="xs:string" />
+        <xs:element name="//填报时间upuser" type="xs:dateTime" />
+        <xs:element name="//x坐标xcoordinates" type="xs:anyType" />
+        <xs:element name="//y坐标ycoordinates" type="xs:anyType" />
+        <xs:element name="//app端传入idappid" type="xs:string" />
+        <xs:element name="//失败标识1失败0或空成功failtype" type="xs:string" />
+        <xs:element name="//失败次数failnum" type="xs:anyType" />
+        <xs:element name="//提醒时间remindertime" type="xs:dateTime" />
+        <xs:element name="//缩略图thumbnails" type="xs:string" />
+        <xs:element name="//预计完成时间predicted" type="xs:dateTime" />
+        <xs:element name="//一级分类名称classifyonename" type="xs:string" />
+        <xs:element name="//二级分类名称classifytwoname" type="xs:string" />
+        <xs:element name="//三级分类名称classifythreename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyuserdoormapentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//门禁iddoorid" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="repairservicequestionanswerentity" >
+      <xs:sequence>
+        <xs:element name="//主键idanswerid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//报修单idrepairid" type="xs:string" />
+        <xs:element name="//问题idquestionid" type="xs:string" />
+        <xs:element name="//评分星级scorelev" type="xs:anyType" />
+        <xs:element name="//意见/建议suggestion" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyimageentity" >
+      <xs:sequence>
+        <xs:element name="//图片idimageid" type="xs:string" />
+        <xs:element name="//上传日期upload" type="xs:dateTime" />
+        <xs:element name="//修改日期modify" type="xs:dateTime" />
+        <xs:element name="//图片外键idimgfkid" type="xs:string" />
+        <xs:element name="//图片路径imagepath" type="xs:string" />
+        <xs:element name="//图片类型：imagetype" type="xs:string" />
+        <xs:element name="//0为报修1为投诉2为维修/处理完成4为便民信息5:整改单6:整改单修改；7：交房验房8内部预验图片9内部预验签字10工地开放图片11工地开放签字13正式交房签字//21验房签字25意见反馈//31保修签名32保修签字//上传名称uploadname" type="xs:string" />
+        <xs:element name="//状态:0为有效；1为无效state" type="xs:string" />
+        <xs:element name="//二进制流binarystream" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyrectifycrmentity" >
+      <xs:sequence>
+        <xs:element name="//整改单号rectifyid" type="xs:string" />
+        <xs:element name="//部门,即派单部门department" type="xs:string" />
+        <xs:element name="//房间idroomid" type="xs:string" />
+        <xs:element name="//房间编码roomnum" type="xs:string" />
+        <xs:element name="//房间计划编码plannum" type="xs:string" />
+        <xs:element name="//内部预验房日期acceptance" type="xs:dateTime" />
+        <xs:element name="//问题类型problemtype" type="xs:string" />
+        <xs:element name="//一级分类classifyone" type="xs:string" />
+        <xs:element name="//二级分类classifytwo" type="xs:string" />
+        <xs:element name="//三级分类classifythree" type="xs:string" />
+        <xs:element name="//登记日期register" type="xs:dateTime" />
+        <xs:element name="//整改状态rectifystate" type="xs:string" />
+        <xs:element name="//房屋位置roomlocation" type="xs:string" />
+        <xs:element name="//供应商supplier" type="xs:string" />
+        <xs:element name="//整改完成时间rectifycomplete" type="xs:dateTime" />
+        <xs:element name="//实际完成时间reality" type="xs:dateTime" />
+        <xs:element name="//问题描述problemdescription" type="xs:string" />
+        <xs:element name="//处理结果dealresult" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建人联系电话createphone" type="xs:string" />
+        <xs:element name="//活动类型plantype" type="xs:string" />
+        <xs:element name="//整改负责人repairmanager" type="xs:string" />
+        <xs:element name="//整改人联系电话repairphone" type="xs:string" />
+        <xs:element name="//接单时间dutytask" type="xs:dateTime" />
+        <xs:element name="//整改时限limit" type="xs:dateTime" />
+        <xs:element name="//x坐标xcoordinates" type="xs:anyType" />
+        <xs:element name="//y坐标ycoordinates" type="xs:anyType" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//整改描述repairdescription" type="xs:string" />
+        <xs:element name="//更新标志：0新建；1更新updateflag" type="xs:string" />
+        <xs:element name="//自增idid" type="xs:long" />
+        <xs:element name="//问题编号serialnumber" type="xs:string" />
+        <xs:element name="//处理人dealpeople" type="xs:string" />
+        <xs:element name="//维修负责人repairmanagerid" type="xs:string" />
+        <xs:element name="//责任单位负责人supplierid" type="xs:string" />
+        <xs:element name="//责任单位负责人suppliername" type="xs:string" />
+        <xs:element name="//派单人姓名sendname" type="xs:string" />
+        <xs:element name="//派单时间send" type="xs:dateTime" />
+        <xs:element name="//填报人updateusername" type="xs:string" />
+        <xs:element name="//填报时间upuser" type="xs:dateTime" />
+        <xs:element name="//提醒时间remindertime" type="xs:dateTime" />
+        <xs:element name="//创建人姓名(非账号)createbyname" type="xs:string" />
+        <xs:element name="//处理人姓名（非账号）dealpeoplename" type="xs:string" />
+        <xs:element name="//派单人姓名（非账号）senusername" type="xs:string" />
+        <xs:element name="//app端传入idappid" type="xs:string" />
+        <xs:element name="//失败标识1失败0或空成功failtype" type="xs:string" />
+        <xs:element name="//失败次数failnum" type="xs:long" />
+        <xs:element name="//强制关闭原因forceclose" type="xs:string" />
+        <xs:element name="//强制关闭员工账号forcecloseusername" type="xs:string" />
+        <xs:element name="//强制关闭人员名字forceclosename" type="xs:string" />
+        <xs:element name="//强制关闭时间forceclose" type="xs:dateTime" />
+        <xs:element name="//作废时间tovoid" type="xs:dateTime" />
+        <xs:element name="//作废人tovoidby" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyrepairtaskentity" >
+      <xs:sequence>
+        <xs:element name="//任务idtaskid" type="xs:string" />
+        <xs:element name="//任务名称:提交报修/派工信息/维修进展/业主回访/维修完成(业主端)taskname" type="xs:string" />
+        <xs:element name="//任务节点：客服派单/自主抢单/班长派单/退单/维修中/暂停/继续维修/回访等(员工端)tasknode" type="xs:string" />
+        <xs:element name="//任务内容taskcontent" type="xs:string" />
+        <xs:element name="//任务时间task" type="xs:dateTime" />
+        <xs:element name="//任务人(维修人员)taskuserid" type="xs:string" />
+        <xs:element name="//客服人员customerserviceid" type="xs:string" />
+        <xs:element name="//任务用户类型：0为维修人员1为客服人员taskusertype" type="xs:string" />
+        <xs:element name="/***维修任务状态：0为用户提交报修(业主)4为自主抢单(员工端)/接单(员工端)*6为退单(员工端)7为维修中(员工端/管理端)/继续维修(员工端/业主点击则从状态0开始)9为暂停维修(员工端)*10为维修完成(员工端：维修人员，业主可以评价)12为待客服回访(24小时后业主未评价)*13为回访完成(结束)14为业主评价(业主)/终止维修(业主)/结束*//***投诉任务状态：1为用户提交投诉(业主)2为自主抢单(员工端)/接单(员工端)*3为退单(员工端)5为处理中(员工端/管理端)/继续维修(员工端/业主点击则从状态0开始)8为暂停维修(员工端)*11为处理完成(员工端：维修人员，业主可以评价)15为客服回访(员工端：客服)*16为回访完成(结束：可评价，也可以不评价)17为业主评价(业主)/终止维修(业主)/结束*///任务状态taskstatus" type="xs:string" />
+        <xs:element name="//管理人：维修主管/客服主管taskmanagerid" type="xs:string" />
+        <xs:element name="//任务人电话taskuserphone" type="xs:string" />
+        <xs:element name="//报修单idrepairid" type="xs:string" />
+        <xs:element name="//消息是否已读1-已读0-未读readstatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertytypeentity" >
+      <xs:sequence>
+        <xs:element name="//类型idtypeid" type="xs:string" />
+        <xs:element name="//公告类型type" type="xs:string" />
+        <xs:element name="//公告范围propertyrange" type="xs:string" />
+        <xs:element name="//项目projectid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyelectricentity" >
+      <xs:sequence>
+        <xs:element name="//电量idelectricid" type="xs:string" />
+        <xs:element name="//房屋idhouseid" type="xs:string" />
+        <xs:element name="//房间号housenum" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//用户名称username" type="xs:string" />
+        <xs:element name="//用户状态usertype" type="xs:string" />
+        <xs:element name="//用户手机usermobile" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//电量electricquantity" type="xs:string" />
+        <xs:element name="//抄表时间createon" type="xs:string" />
+        <xs:element name="//有效状态yes-有效，no-无效state" type="xs:string" />
+        <xs:element name="//抄表人姓名staffname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertypaymententity" >
+      <xs:sequence>
+        <xs:element name="/*支付类型*///微信app支付type_wechat_pay_app" type="xs:string" />
+        <xs:element name="//type_ali_pay_app" type="xs:string" />
+        <xs:element name="//处理中state_handle" type="xs:string" />
+        <xs:element name="//已支付state_suc_pay" type="xs:string" />
+        <xs:element name="//支付日志idpaymentid" type="xs:string" />
+        <xs:element name="//支付金额totalfee" type="xs:anyType" />
+        <xs:element name="//微信支付订单号transactionid" type="xs:string" />
+        <xs:element name="//支付方式(类型)paymenttype" type="xs:string" />
+        <xs:element name="//支付状态paymentstate" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyownerentity" >
+      <xs:sequence>
+        <xs:element name="//办理方式_代办handlemode_agency" type="xs:string" />
+        <xs:element name="//办理方式_自办handlemode_self" type="xs:string" />
+        <xs:element name="//主键idpropertyid" type="xs:string" />
+        <xs:element name="//项目编码projectcode" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//地块编码blockcode" type="xs:string" />
+        <xs:element name="//地块area" type="xs:string" />
+        <xs:element name="//楼号编码buildingnum" type="xs:string" />
+        <xs:element name="//备案楼号buildingrecord" type="xs:string" />
+        <xs:element name="//预售楼号buildingsale" type="xs:string" />
+        <xs:element name="//单元编码unitcode" type="xs:string" />
+        <xs:element name="//单元unit" type="xs:string" />
+        <xs:element name="//楼层编码floorcode" type="xs:string" />
+        <xs:element name="//楼层floor" type="xs:string" />
+        <xs:element name="//房屋编码roomnum" type="xs:string" />
+        <xs:element name="//房屋号roomname" type="xs:string" />
+        <xs:element name="//房屋地址roomaddress" type="xs:string" />
+        <xs:element name="//业主姓名ownername" type="xs:string" />
+        <xs:element name="//办理方式handlemode" type="xs:string" />
+        <xs:element name="//办理进度handleprogress" type="xs:string" />
+        <xs:element name="//办理状态(0,正常状态1,待提交资料)handlestatus" type="xs:string" />
+        <xs:element name="//是否发送短信(0,否1,是)ispushmessage" type="xs:string" />
+        <xs:element name="//联系方式phone" type="xs:string" />
+        <xs:element name="//推送短信内容messagecontent" type="xs:string" />
+        <xs:element name="//是否已经发送(0,否1,是)ispushed" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertytradingentity" >
+      <xs:sequence>
+        <xs:element name="//idtradingid" type="xs:string" />
+        <xs:element name="//nametradingname" type="xs:string" />
+        <xs:element name="//是否生效状态:0:无效,1:有效state" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertydoorlogentity" >
+      <xs:sequence>
+        <xs:element name="//日志idid" type="xs:string" />
+        <xs:element name="//项目编码projectcode" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//用户名称username" type="xs:string" />
+        <xs:element name="//用户电话userphone" type="xs:string" />
+        <xs:element name="//设备mac名称macname" type="xs:string" />
+        <xs:element name="//设备mac地址macaddress" type="xs:string" />
+        <xs:element name="//设备描述devicedesc" type="xs:string" />
+        <xs:element name="//设备类型(仅提供蓝牙的门禁设备:1,提供蓝牙及无线网络的门禁设备:2)devicetype" type="xs:string" />
+        <xs:element name="//开门时间opentime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyhelplineentity" >
+      <xs:sequence>
+        <xs:element name="//热线idid" type="xs:string" />
+        <xs:element name="//群组名称groupname" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//城市city" type="xs:string" />
+        <xs:element name="//communityid//小区id//communityname//小区名称//状态：1为有效；2为无效state" type="xs:string" />
+        <xs:element name="//电话phone" type="xs:string" />
+        <xs:element name="//服务内容content" type="xs:string" />
+        <xs:element name="//排序字段sortnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyvisitorentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//项目codeprojectcode" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//房产idhouseid" type="xs:string" />
+        <xs:element name="//房产地址address" type="xs:string" />
+        <xs:element name="//业主idowneruserid" type="xs:string" />
+        <xs:element name="//业主姓名ownername" type="xs:string" />
+        <xs:element name="//业主手机ownermobile" type="xs:string" />
+        <xs:element name="//访客姓名visitorname" type="xs:string" />
+        <xs:element name="//访客手机visitormobile" type="xs:string" />
+        <xs:element name="//门禁idpropertydoorid" type="xs:string" />
+        <xs:element name="//二维码url地址url" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertycontractentity" >
+      <xs:sequence>
+        <xs:element name="//办理方式_代办handlemode_agency" type="xs:string" />
+        <xs:element name="//办理方式_自办handlemode_self" type="xs:string" />
+        <xs:element name="//主键idpropertyid" type="xs:string" />
+        <xs:element name="//项目编码projectcode" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//地块编码blockcode" type="xs:string" />
+        <xs:element name="//地块area" type="xs:string" />
+        <xs:element name="//楼号编码buildingnum" type="xs:string" />
+        <xs:element name="//备案楼号buildingrecord" type="xs:string" />
+        <xs:element name="//预售楼号buildingsale" type="xs:string" />
+        <xs:element name="//单元编码unitcode" type="xs:string" />
+        <xs:element name="//单元unit" type="xs:string" />
+        <xs:element name="//楼层编码floorcode" type="xs:string" />
+        <xs:element name="//楼层floor" type="xs:string" />
+        <xs:element name="//房屋编码roomnum" type="xs:string" />
+        <xs:element name="//房屋号roomname" type="xs:string" />
+        <xs:element name="//房屋地址roomaddress" type="xs:string" />
+        <xs:element name="//业主姓名ownername" type="xs:string" />
+        <xs:element name="//合同类型propertytype" type="xs:string" />
+        <xs:element name="//办理方式handlemode" type="xs:string" />
+        <xs:element name="//办理进度handleprogress" type="xs:string" />
+        <xs:element name="//办理状态(0,正常状态1,待提交资料)handlestatus" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyannouncemententity" >
+      <xs:sequence>
+        <xs:element name="//物业公告是否推送（否）announcement__stat_yes" type="xs:string" />
+        <xs:element name="//物业公告是否推送（是）announcement__stat_no" type="xs:string" />
+        <xs:element name="//公告类别判定条件1announcement__type_property" type="xs:string" />
+        <xs:element name="//公告类别判定条件2announcement__type_work" type="xs:string" />
+        <xs:element name="//公告idannouncementid" type="xs:string" />
+        <xs:element name="//公告简介announcementsummary" type="xs:string" />
+        <xs:element name="//公告内容announcementcontent" type="xs:string" />
+        <xs:element name="//公告时间announcementtime" type="xs:dateTime" />
+        <xs:element name="//公告类别type" type="xs:string" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//公告标题title" type="xs:string" />
+        <xs:element name="//备注memo" type="xs:string" />
+        <xs:element name="//发布人releaseperson" type="xs:string" />
+        <xs:element name="//操作人operator" type="xs:string" />
+        <xs:element name="//操作时间operat" type="xs:dateTime" />
+        <xs:element name="//状态是否推送0否1是stat" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertypayorderlogentity" >
+      <xs:sequence>
+        <xs:element name="/*缴费单状态:未支付,处理中,已支付*///未支付state_no_pay" type="xs:string" />
+        <xs:element name="//处理中state_handle" type="xs:string" />
+        <xs:element name="//已支付state_suc_pay" type="xs:string" />
+        <xs:element name="//缴费单日志主键idid" type="xs:string" />
+        <xs:element name="//缴费单编码from思源revid" type="xs:string" />
+        <xs:element name="//资源编码(思源房屋编码信息)from思源syresname" type="xs:string" />
+        <xs:element name="//房间编码(思源同步crm的房屋编码信息)from思源crmresname" type="xs:string" />
+        <xs:element name="//项目编码from思源orgid" type="xs:string" />
+        <xs:element name="//房屋业主(应缴费人姓名)from思源cstname" type="xs:string" />
+        <xs:element name="//收费类目from思源ipitemname" type="xs:string" />
+        <xs:element name="//挂起标志(挂起状态无需支付)from思源pendinglogo" type="xs:string" />
+        <xs:element name="//所属账期from思源repyears" type="xs:string" />
+        <xs:element name="//预缴费金额from思源pplanbal" type="xs:anyType" />
+        <xs:element name="//本金应收from思源prirev" type="xs:anyType" />
+        <xs:element name="//本金已收from思源pripaid" type="xs:anyType" />
+        <xs:element name="//本金欠收from思源prifailures" type="xs:anyType" />
+        <xs:element name="//本金已收合计prirevtolal" type="xs:anyType" />
+        <xs:element name="//payment//交款人from思源//filldate//交款日期from思源//locklogo//收款状态from思源//fnpaidcode//实收编码from思源//bigdecimallfrev//滞纳金from思源//bigdecimallfpaid//滞纳金已收from思源//bigdecimalprirelief//本金减免from思源//bigdecimallfrelief//滞纳金减免from思源//premarks//实收摘要from思源//trading//收款方式from思源//应收摘要from思源revabstract" type="xs:string" />
+        <xs:element name="//收费标准from思源stanmarks" type="xs:string" />
+        <xs:element name="//录入账期from思源daterecord" type="xs:string" />
+        <xs:element name="//应收时间开始日期from思源revpsdate" type="xs:string" />
+        <xs:element name="//应收时间结束日期from思源revpedate" type="xs:string" />
+        <xs:element name="//支付记录id(对应支付日志记录)paymentid" type="xs:string" />
+        <xs:element name="//缴费单状态payorderstate" type="xs:string" />
+        <xs:element name="//invoiceid//票据信息id(对应票据信息)-2016-11-23该字段对应支付订单,不应对应缴费单//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyhotlineentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//城市idcityid" type="xs:string" />
+        <xs:element name="//城市名称cityname" type="xs:string" />
+        <xs:element name="//项目编码projectcode" type="xs:string" />
+        <xs:element name="//项目名称projectname" type="xs:string" />
+        <xs:element name="//功能模块编码functionmodulecode" type="xs:string" />
+        <xs:element name="//功能模块名称(1001:智能门禁、1002:物业缴费)functionmodulename" type="xs:string" />
+        <xs:element name="//联系方式hotline" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyfeedbackentity" >
+      <xs:sequence>
+        <xs:element name="//在线反馈idfeedbackid" type="xs:string" />
+        <xs:element name="//内容content" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建日期create" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改日期modify" type="xs:dateTime" />
+        <xs:element name="//状态：0为有效1为无效state" type="xs:string" />
+        <xs:element name="//报修单idrepairid" type="xs:string" />
+        <xs:element name="//评分等级grade" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="repairservicequestionentity" >
+      <xs:sequence>
+        <xs:element name="//问题idquestionid" type="xs:string" />
+        <xs:element name="//所属客户端idclientid" type="xs:anyType" />
+        <xs:element name="//问题内容questioncontent" type="xs:string" />
+        <xs:element name="//问题类型(1,评分.2,意见/建议)questiontype" type="xs:string" />
+        <xs:element name="//问题状态(0,未启用.1,启用)questionstatus" type="xs:anyType" />
+        <xs:element name="//问题排序questionorder" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertycompanyentity" >
+      <xs:sequence>
+        <xs:element name="//物业公司信息状态（启用）company__type_enable" type="xs:string" />
+        <xs:element name="//物业公司信息状态（禁用）company_type_disable" type="xs:string" />
+        <xs:element name="//idcompanyid" type="xs:string" />
+        <xs:element name="//公司表(id)companyname" type="xs:string" />
+        <xs:element name="//项目表(id)propertyproject" type="xs:string" />
+        <xs:element name="//区域表(id)propertyarea" type="xs:string" />
+        <xs:element name="//项目管理员projectadmin" type="xs:string" />
+        <xs:element name="//角色rolename" type="xs:string" />
+        <xs:element name="//姓名name" type="xs:string" />
+        <xs:element name="//手机号phnoe" type="xs:string" />
+        <xs:element name="//项目公司添加时间propertymessagetime" type="xs:dateTime" />
+        <xs:element name="//状态(禁用或启用)propertytype" type="xs:string" />
+        <xs:element name="//操作人optname" type="xs:string" />
+        <xs:element name="//操作时间opt" type="xs:dateTime" />
+        <xs:element name="//总负责人responsibleperson" type="xs:string" />
+        <xs:element name="//总负责人电话responsiblephone" type="xs:string" />
+        <xs:element name="//项目管理员电话projectadminphone" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,37 @@
+
+passwordresettoken(id:Long [PK], token:String, GeneratedName:User #FK to(user), expiry:Date);
+
+articulopedido(idarticulopedido:int [PK], cantidad:int, preciounitario:float, //foraneas:Pedido #FK to(pedido), GeneratedName:Producto #FK to(producto));
+
+userrole(userroleid:int [PK], GeneratedName:User #FK to(user), role:String);
+
+user(iduser:int [PK], email:String, password:String, codigoverificacion:String, //indicasielusuarioestádisponibleverifyed:int);
+
+categoria(id:int [PK], nombre:String, descripcion:String, habilitado:boolean, GeneratedName:Departamento #FK to(departamento));
+
+departamento(id:int [PK], nombre:String, descripcion:String, habilitado:boolean);
+
+subcategoria(idsubcategoria:int [PK], nombresubcategoria:String, descripcionsubcategoria:String, habilitado:boolean, //foranea:Categoria #FK to(categoria));
+
+cargo(id:int [PK], titulocargo:String);
+
+estado(idestado:int [PK], tituloestado:String);
+
+pedido(idpedido:int [PK], direcciondestino:String, fechapedido:Date, //llavesforaneas:Pais #FK to(pais), GeneratedName:Estado #FK to(estado), GeneratedName:Cliente #FK to(cliente));
+
+entradasalida(identradasalida:int [PK], GeneratedName:Kardex #FK to(kardex), fecha:Date, isentradasalida:boolean, cantidad:int, precio:double);
+
+kardex(idkardex:int [PK], GeneratedName:Producto #FK to(producto), stockminimo:int, stockmaximo:int, costounitario:double, unidadesdisponibles:int);
+
+producto(//faltaelcampoparalallaveforaneadesubgategoriaidarticulo:int [PK], imagen:String, marca:String, titulo:String, margenganancia:double, porcentajedescuento:double, descripcionarticulo:String, habilitado:int, GeneratedName:Subcategoria #FK to(subcategoria), GeneratedName:Kardex #FK to(kardex));
+
+pais(idpais:int [PK], nombrepais:String, costoenvio:float, impuesto:float);
+
+cliente(idcliente:int [PK], nombrecliente:String, apellidocliente:String, direccion:String, GeneratedName:User #FK to(user));
+
+empleado(idempleado:int [PK], nombreempleado:String, apellidoempleado:String, direccion:String, GeneratedName:User #FK to(user), GeneratedName:Cargo #FK to(cargo));
+
+cuenta(id:int [PK], numerotarjeta:String, codigo:int, saldo:double, GeneratedName:Cliente #FK to(cliente), fechadevencimiento:Date);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

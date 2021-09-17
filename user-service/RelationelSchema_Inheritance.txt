@@ -1,0 +1,23 @@
+
+role(id:Long [PK], name:String);
+
+company(id:Long [PK], name:String);
+
+notificationtoken(userid:Long [PK], token:String [PK], tokentype:NotificationTokenType);
+
+userfavorite(id:User [PK] #FK to(user), id:Item [PK] #FK to(item));
+
+city(id:Long [PK], name:String);
+
+user(id:Long [PK], name:String, birthdate:LocalDate, phonenumber:String, GeneratedName:City #FK to(city), isactivated:Boolean, createdate:Instant, GeneratedName:Role #FK to(role), firebaseid:String);
+
+catalog(id:Long [PK], GeneratedName:User #FK to(user), description:String);
+
+item(id:String [PK], name:String, description:String);
+
+userfavorites(userid:Long [PK], itemid:String [PK], GeneratedName:User #FK to(user), id:Item #FK to(item));
+
+catalogitem(GeneratedName:Catalog [PK] #FK to(catalog), GeneratedName:Item [PK] #FK to(item));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

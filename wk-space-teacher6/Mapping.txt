@@ -1,0 +1,11 @@
+ClassDiagram.Class>> Member =>=>=> RelationalSchema.Table>> member;
+ClassDiagram.Class>> Order =>=>=> RelationalSchema.Table>> order;
+ClassDiagram.Attribut>> Member.id:Long =>=>=> RelationalSchema.Column>> member.id PRIMARY KEY;
+ClassDiagram.Attribut>> Member.name:String =>=>=> RelationalSchema.Column>> member.name;
+ClassDiagram.Attribut>> Member.addr:String =>=>=> RelationalSchema.Column>> member.addr;
+ClassDiagram.Attribut>> Member.age:Integer =>=>=> RelationalSchema.Column>> member.age;
+ClassDiagram.Attribut>> Order.id:Long =>=>=> RelationalSchema.Column>> order.id;
+ClassDiagram.Attribut>> Order.memberid:Long =>=>=> RelationalSchema.Column>> order.memberid;
+ClassDiagram.Attribut>> Order.detail:String =>=>=> RelationalSchema.Column>> order.detail;
+ClassDiagram.Attribut>> Order.createtime:Long =>=>=> RelationalSchema.Column>> order.createtime;
+ClassDiagram.Attribut>> Order.createtimefmt:String =>=>=> RelationalSchema.Column>> order.createtimefmt;

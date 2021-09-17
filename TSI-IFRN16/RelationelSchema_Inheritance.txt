@@ -1,0 +1,79 @@
+contactrepository();
+
+cardconsumedetailed(cardid:Long, costcenter:String, movementclass:String, value:BigDecimal);
+
+movementclasstotal(financialperiodid:Long, financialperiod:String, direction:MovementClassType, costcenterid:Long, costcenter:String, costcenter:Color, movementclassid:Long, movementclass:Long, totalvalue:BigDecimal);
+
+openperiodresult(financialperiodid:Long, financialperiod:String, expired:boolean, revenues:BigDecimal, expenses:BigDecimal, balance:BigDecimal);
+
+openperiodresume(revenues:BigDecimal, expenses:BigDecimal, cashexpenses:BigDecimal, creditcardexpenses:BigDecimal, debitcardexpenses:BigDecimal, movementsopen:BigDecimal, balance:BigDecimal, creditcardgoal:BigDecimal, expensesgoal:BigDecimal, revenuesgoal:BigDecimal);
+
+dailyuse(financialperiodid:Long, financialperiod:String, paymentdate:LocalDate, direction:MovementClassType, value:BigDecimal);
+
+usebymovementclass(financialperiodid:Long, financialperiod:String, costcenter:Color, costcenterid:Long, costcenter:String, movementclassid:Long, movementclass:String, direction:MovementClassType, value:BigDecimal);
+
+costcentertotal(direction:MovementClassType, costcenterid:Long, costcenter:String, costcenter:Color, value:BigDecimal);
+
+periodresult(financialperiodid:Long, financialperiod:String, revenues:BigDecimal, expenses:BigDecimal, balance:BigDecimal);
+
+cardconsume(cardid:Long, costcenter:Color, costcenter:String, value:BigDecimal);
+
+usebycostcenter(financialperiodid:Long, financialperiod:String, costcenter:Color, costcenter:String, direction:MovementClassType, value:BigDecimal);
+
+creditcardinvoice(identification:String, totalvalue:BigDecimal, duedate:LocalDate, closingdate:LocalDate, paymentdate:LocalDate, GeneratedName:InvoiceState, GeneratedName:Card #FK to(card), GeneratedName:FinancialPeriod #FK to(financialperiod), GeneratedName:PeriodMovement #FK to(periodmovement));
+
+launch(code:String, quotenumber:Integer, GeneratedName:FinancialPeriod #FK to(financialperiod), GeneratedName:FixedMovement #FK to(fixedmovement), GeneratedName:PeriodMovement #FK to(periodmovement));
+
+movement(code:String, identification:String, description:String, value:BigDecimal, GeneratedName:Contact #FK to(contact));
+
+fixedmovement(totalquotes:Integer, startingquote:Integer, actualquote:Integer, autolaunch:boolean, undetermined:boolean, startdate:LocalDate, GeneratedName:FixedMovementState);
+
+payment(paidon:LocalDate, discount:BigDecimal, paidvalue:BigDecimal, GeneratedName:PaymentMethod, GeneratedName:Card #FK to(card), GeneratedName:Wallet #FK to(wallet));
+
+transference(value:BigDecimal, transferdate:LocalDate, description:String, origin:Wallet #FK to(wallet), destination:Wallet #FK to(wallet));
+
+closing(revenues:BigDecimal, expenses:BigDecimal, creditcardexpenses:BigDecimal, debitcardexpenses:BigDecimal, cashexpenses:BigDecimal, balance:BigDecimal, accumulated:BigDecimal, closingdate:LocalDate, GeneratedName:FinancialPeriod #FK to(financialperiod));
+
+walletbalance(actualbalance:BigDecimal, oldbalance:BigDecimal, transactionvalue:BigDecimal, movementcode:String, observations:String, movementdatetime:LocalDateTime, GeneratedName:BalanceType, GeneratedName:ReasonType, GeneratedName:Wallet #FK to(wallet));
+
+apportionment(code:String, value:BigDecimal, GeneratedName:Movement #FK to(movement), GeneratedName:CostCenter #FK to(costcenter), GeneratedName:MovementClass #FK to(movementclass));
+
+configuration(creditcardclass:MovementClass #FK to(movementclass));
+
+authorization(functionality:String, permission:String);
+
+group(name:String, active:boolean, parent:Group #FK to(group));
+
+profile(activetheme:ThemeType, userdarksidebar:boolean, showwalletbalances:boolean);
+
+user(name:String, email:String, username:String, password:String, active:boolean, GeneratedName:Profile #FK to(profile), GeneratedName:Group #FK to(group), GeneratedName:StoreType);
+
+grant(GeneratedName:Group #FK to(group), GeneratedName:Authorization #FK to(authorization));
+
+revision(id:Long [PK], createdon:Date, createdby:String);
+
+card(name:String, number:String, flag:String, creditlimit:BigDecimal, expirationday:Integer, owner:String, active:boolean, GeneratedName:CardType, GeneratedName:Wallet #FK to(wallet));
+
+telephone(number:String, GeneratedName:NumberType, GeneratedName:Contact #FK to(contact));
+
+movementclass(name:String, budget:BigDecimal, active:boolean, GeneratedName:MovementClassType, GeneratedName:CostCenter #FK to(costcenter));
+
+financialperiod(identification:String, creditcardgoal:BigDecimal, expensesgoal:BigDecimal, revenuesgoal:BigDecimal, start:LocalDate, end:LocalDate, closed:boolean, expired:boolean, GeneratedName:Closing #FK to(closing));
+
+wallet(name:String, bank:String, agency:String, account:String, digit:String, description:String, actualbalance:BigDecimal, active:boolean, GeneratedName:WalletType);
+
+vehicle(identification:String, brand:String, model:String, licenseplate:String, modelyear:Integer, manufacturingyear:Integer, odometer:Long, fuelcapacity:Integer, active:boolean, GeneratedName:VehicleType, GeneratedName:CostCenter #FK to(costcenter));
+
+costcenter(name:String, GeneratedName:Color, expensesbudget:BigDecimal, revenuesbudget:BigDecimal, description:String, active:boolean, parent:CostCenter #FK to(costcenter));
+
+contact(code:String, name:String, document:String, birthdate:LocalDate, otherinformation:String, zipcode:String, street:String, number:String, complement:String, neighborhood:String, province:String, city:String, email:String, active:boolean, GeneratedName:ContactType);
+
+fuel(liters:BigDecimal, valueperliter:BigDecimal, GeneratedName:FuelType, GeneratedName:Refueling #FK to(refueling));
+
+refueling(code:String, accounted:boolean, accountedby:String, firstrefueling:boolean, fulltank:boolean, odometer:Long, distance:Long, averageconsumption:BigDecimal, liters:BigDecimal, cost:BigDecimal, costperliter:BigDecimal, place:String, eventdate:LocalDate, GeneratedName:PeriodMovement #FK to(periodmovement), GeneratedName:Vehicle #FK to(vehicle), GeneratedName:MovementClass #FK to(movementclass), GeneratedName:FinancialPeriod #FK to(financialperiod));
+
+movement(duedate:LocalDate, GeneratedName:PeriodMovementState, GeneratedName:PeriodMovementType, GeneratedName:Payment #FK to(payment), GeneratedName:CreditCardInvoice #FK to(creditcardinvoice), GeneratedName:FinancialPeriod #FK to(financialperiod), discriminator_value: String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

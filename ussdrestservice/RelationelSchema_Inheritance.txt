@@ -1,0 +1,13 @@
+
+sessionstepsmodel(stepnumber:Integer [PK], question:String);
+
+sessionmodel(sessionid:String [PK], msisdn:String [PK], currentstep:int);
+
+conversionmodel(to:String [PK], from:String [PK], conversionrate:double);
+
+countrymodel(id:Long [PK], countrycode:String, countryname:String, foreigncurrencycode:String);
+
+sessionanswersmodel(sessionid:String [PK], msisdn:String [PK], stepnumber:int [PK], value:double);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,12 @@
+ClassDiagram.Class>> Account =>=>=> RelationalSchema.Table>> account;
+ClassDiagram.Class>> Task =>=>=> RelationalSchema.Table>> task;
+ClassDiagram.Attribut>> Account.id:Long =>=>=> RelationalSchema.Column>> account.id PRIMARY KEY;
+ClassDiagram.Attribut>> Account.email:String =>=>=> RelationalSchema.Column>> account.email;
+ClassDiagram.Attribut>> Account.password:String =>=>=> RelationalSchema.Column>> account.password;
+ClassDiagram.Attribut>> Account.role:String =>=>=> RelationalSchema.Column>> account.role;
+ClassDiagram.Attribut>> Account.created:Instant =>=>=> RelationalSchema.Column>> account.created;
+ClassDiagram.Attribut>> Task.id:Long =>=>=> RelationalSchema.Column>> task.id PRIMARY KEY;
+ClassDiagram.Attribut>> Task.title:String =>=>=> RelationalSchema.Column>> task.title;
+ClassDiagram.Attribut>> Task.text:String =>=>=> RelationalSchema.Column>> task.text;
+ClassDiagram.Attribut>> Task.created:Calendar =>=>=> RelationalSchema.Column>> task.created;
+ClassDiagram.Attribut>> Task.dueto:Calendar =>=>=> RelationalSchema.Column>> task.dueto;

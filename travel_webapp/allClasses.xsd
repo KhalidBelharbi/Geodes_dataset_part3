@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="bookdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hoteldao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flightdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="busdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="citydao" >
+      <xs:sequence>
+        <xs:element name="cities" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cabdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="traindao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cabjson" >
+      <xs:sequence>
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="cabs" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hoteljson" >
+      <xs:sequence>
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="rooms" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="trainjson" >
+      <xs:sequence>
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="sleeper" type="xs:anyType" />
+        <xs:element name="thirdac" type="xs:anyType" />
+        <xs:element name="secondac" type="xs:anyType" />
+        <xs:element name="firstac" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="busjson" >
+      <xs:sequence>
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="seats" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flightjson" >
+      <xs:sequence>
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="economy" type="xs:anyType" />
+        <xs:element name="businessclass" type="xs:anyType" />
+        <xs:element name="firstclass" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="trainentity" >
+      <xs:sequence>
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="trainnumber" type="xs:anyType" />
+        <xs:element name="arrival" type="xs:string" />
+        <xs:element name="departure" type="xs:string" />
+        <xs:element name="bookingdata" type="xs:string" />
+        <xs:element name="trainname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cityplacepk" >
+      <xs:sequence>
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="place" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookingentity" >
+      <xs:sequence>
+        <xs:element name="bookingid" type="xs:anyType" />
+        <xs:element name="useremailid" type="xs:string" />
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="transactionid" type="xs:string" />
+        <xs:element name="bookingtype" type="xs:string" />
+        <xs:element name="noofpassengers" type="xs:anyType" />
+        <xs:element name="journeydate" type="xs:string" />
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="fare" type="xs:double" />
+        <xs:element name="entityid" type="xs:string" />
+        <xs:element name="entityname" type="xs:string" />
+        <xs:element name="arrival" type="xs:string" />
+        <xs:element name="departure" type="xs:string" />
+        <xs:element name="travelclass" type="xs:string" />
+        <xs:element name="feedback" type="xs:string" />
+        <xs:element name="rated" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="placeentity" >
+      <xs:sequence>
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="place" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userentity" >
+      <xs:sequence>
+        <xs:element name="emailid" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="contactno" type="xs:long" />
+        <xs:element name="dateofbirth" type="xs:anyType" />
+        <xs:element name="gender" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="question" type="xs:string" />
+        <xs:element name="answer" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="passengerentity" >
+      <xs:sequence>
+        <xs:element name="passengerid" type="xs:anyType" />
+        <xs:element name="bookingid" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="age" type="xs:anyType" />
+        <xs:element name="gender" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="busentity" >
+      <xs:sequence>
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="busnumber" type="xs:anyType" />
+        <xs:element name="bustype" type="xs:string" />
+        <xs:element name="arrival" type="xs:string" />
+        <xs:element name="departure" type="xs:string" />
+        <xs:element name="bookingdata" type="xs:string" />
+        <xs:element name="busname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymententity" >
+      <xs:sequence>
+        <xs:element name="cardholdername" type="xs:string" />
+        <xs:element name="cardnumber" type="xs:string" />
+        <xs:element name="cvv" type="xs:string" />
+        <xs:element name="cardexpirydate" type="xs:string" />
+        <xs:element name="cardtype" type="xs:string" />
+        <xs:element name="amount" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flightentity" >
+      <xs:sequence>
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="flightnumber" type="xs:anyType" />
+        <xs:element name="arrival" type="xs:string" />
+        <xs:element name="departure" type="xs:string" />
+        <xs:element name="bookingdata" type="xs:string" />
+        <xs:element name="flightname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cityentity" >
+      <xs:sequence>
+        <xs:element name="city" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hotelentity" >
+      <xs:sequence>
+        <xs:element name="hotelid" type="xs:anyType" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="hotelname" type="xs:string" />
+        <xs:element name="bookingdata" type="xs:string" />
+        <xs:element name="rating" type="xs:double" />
+        <xs:element name="timesrated" type="xs:double" />
+        <xs:element name="roomstype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cabentity" >
+      <xs:sequence>
+        <xs:element name="cabnumber" type="xs:string" />
+        <xs:element name="cabname" type="xs:string" />
+        <xs:element name="cartype" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="bookingdata" type="xs:string" />
+        <xs:element name="drivername" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="appconfig" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datainit" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hibernateutility" >
+      <xs:sequence>
+        <xs:element name="configuration_location" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="test" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="summary" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="priority" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user_tablescript" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="factory" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonparser" >
+      <xs:sequence>
+        <xs:element name="wrapper_types" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="busapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="letsgoapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="trainapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cabapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cityapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flightapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hotelapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cab" >
+      <xs:sequence>
+        <xs:element name="hatchback" type="xs:double" />
+        <xs:element name="sedan" type="xs:double" />
+        <xs:element name="suv" type="xs:double" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="journeydate" type="xs:anyType" />
+        <xs:element name="cartype" type="xs:string" />
+        <xs:element name="cabnumber" type="xs:string" />
+        <xs:element name="cabname" type="xs:string" />
+        <xs:element name="drivername" type="xs:string" />
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+        <xs:element name="emailid" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="hash" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="train" >
+      <xs:sequence>
+        <xs:element name="sleeper" type="xs:double" />
+        <xs:element name="thirdac" type="xs:double" />
+        <xs:element name="secondac" type="xs:double" />
+        <xs:element name="firstac" type="xs:double" />
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="trainnumber" type="xs:anyType" />
+        <xs:element name="arrival" type="xs:string" />
+        <xs:element name="departure" type="xs:string" />
+        <xs:element name="//bookingdatatrainname" type="xs:string" />
+        <xs:element name="journeydate" type="xs:anyType" />
+        <xs:element name="travelclass" type="xs:string" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="availableseats" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="passenger" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="age" type="xs:anyType" />
+        <xs:element name="gender" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="payment" >
+      <xs:sequence>
+        <xs:element name="cardnumber" type="xs:string" />
+        <xs:element name="cardholdername" type="xs:string" />
+        <xs:element name="cvv" type="xs:string" />
+        <xs:element name="amount" type="xs:double" />
+        <xs:element name="cardexpirydate" type="xs:string" />
+        <xs:element name="cardtype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="booking" >
+      <xs:sequence>
+        <xs:element name="useremailid" type="xs:string" />
+        <xs:element name="bookingid" type="xs:anyType" />
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="transactionid" type="xs:string" />
+        <xs:element name="bookingtype" type="xs:string" />
+        <xs:element name="noofpassengers" type="xs:anyType" />
+        <xs:element name="journeydate" type="xs:string" />
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="fare" type="xs:double" />
+        <xs:element name="entityid" type="xs:string" />
+        <xs:element name="entityname" type="xs:string" />
+        <xs:element name="arrival" type="xs:string" />
+        <xs:element name="departure" type="xs:string" />
+        <xs:element name="travelclass" type="xs:string" />
+        <xs:element name="feedback" type="xs:string" />
+        <xs:element name="rated" type="xs:anyType" />
+        <xs:element name="canbecancelled" type="xs:anyType" />
+        <xs:element name="canberated" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hotel" >
+      <xs:sequence>
+        <xs:element name="standard" type="xs:double" />
+        <xs:element name="deluxe" type="xs:double" />
+        <xs:element name="hotelid" type="xs:anyType" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="hotelname" type="xs:string" />
+        <xs:element name="rating" type="xs:double" />
+        <xs:element name="timesrated" type="xs:double" />
+        <xs:element name="roomstype" type="xs:string" />
+        <xs:element name="checkindate" type="xs:anyType" />
+        <xs:element name="checkoutdate" type="xs:anyType" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="bookingdate" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="changepassword" >
+      <xs:sequence>
+        <xs:element name="emailid" type="xs:string" />
+        <xs:element name="oldpassword" type="xs:string" />
+        <xs:element name="newpassword" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flight" >
+      <xs:sequence>
+        <xs:element name="economy" type="xs:double" />
+        <xs:element name="business" type="xs:double" />
+        <xs:element name="first" type="xs:double" />
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="flightnumber" type="xs:anyType" />
+        <xs:element name="arrival" type="xs:string" />
+        <xs:element name="departure" type="xs:string" />
+        <xs:element name="//bookingdataflightname" type="xs:string" />
+        <xs:element name="journeydate" type="xs:anyType" />
+        <xs:element name="travelclass" type="xs:string" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="//primarykeyintableemailid" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="contactno" type="xs:long" />
+        <xs:element name="dateofbirth" type="xs:anyType" />
+        <xs:element name="gender" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="question" type="xs:string" />
+        <xs:element name="answer" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bus" >
+      <xs:sequence>
+        <xs:element name="nonac" type="xs:double" />
+        <xs:element name="ac" type="xs:double" />
+        <xs:element name="source" type="xs:string" />
+        <xs:element name="destination" type="xs:string" />
+        <xs:element name="busnumber" type="xs:anyType" />
+        <xs:element name="arrival" type="xs:string" />
+        <xs:element name="departure" type="xs:string" />
+        <xs:element name="//bookingdatabusname" type="xs:string" />
+        <xs:element name="journeydate" type="xs:anyType" />
+        <xs:element name="travelclass" type="xs:string" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="bookingdate" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="availableseats" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="book" >
+      <xs:sequence>
+        <xs:element name="bookingobject" type="xs:string" />
+        <xs:element name="passengerarray" type="xs:string" />
+        <xs:element name="bookingtype" type="xs:string" />
+        <xs:element name="useremailid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hotelservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="trainservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cityservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bookservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="flightservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cabservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="busservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

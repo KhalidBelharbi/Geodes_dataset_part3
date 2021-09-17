@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="organizerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roleviewmodelrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolerolerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useraccreditrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authagencyrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolerolesetmaprepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roledatarepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approlerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approlesetrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="organizeuserrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolerolesetrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberauthorityrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useragencyrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="supplieragencyrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agencyrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolebuttonmaprepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="organizeusermapentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//员工idstaffid" type="xs:string" />
+        <xs:element name="//类型1员工2组织机构暂时不用此字段stafftype" type="xs:string" />
+        <xs:element name="//组idorganizeid" type="xs:string" />
+        <xs:element name="//状态0删除1正常orgstatus" type="xs:string" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roledataentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//数据类型1项目2角色datatype" type="xs:string" />
+        <xs:element name="//数据iddataid" type="xs:string" />
+        <xs:element name="//组织类型1机构2群组3用户authoritytype" type="xs:string" />
+        <xs:element name="//组织idauthorityid" type="xs:string" />
+        <xs:element name="//状态0删除1正常status" type="xs:string" />
+        <xs:element name="//交验房：1（数据查看）5（验房工程师）6（质量经理）//报修：100000001（物业接单）100000000（开发接单）10（数据查看）12（项目前台）//投诉：9（总部客观）11（数据查看）8（项目前台）//项目下的权限1数据查看2工程接单3派单到人4关单权限5验房工程师100000001物业接单100000000开发接单6质量经理7乙方工程师8报事派单（目前被称为：客观信息员(2017-07-18被修改为“项目前台”)）9总部客观（投诉单废弃权限（2017-07-18jason新加））//角色情况下admin后台角色permission" type="xs:string" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="organizeprojectmapentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//项目编码projectcode" type="xs:string" />
+        <xs:element name="//组idorganizeid" type="xs:string" />
+        <xs:element name="//状态0删除1正常prostatus" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approlesetentity" >
+      <xs:sequence>
+        <xs:element name="//无效state_off" type="xs:string" />
+        <xs:element name="//有效state_on" type="xs:string" />
+        <xs:element name="//不允许allot_no" type="xs:string" />
+        <xs:element name="//允许allot_yes" type="xs:string" />
+        <xs:element name="//角色idappsetid" type="xs:string" />
+        <xs:element name="//角色描述appsetdesc" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//是否有效0-无效，1-有效appsetstate" type="xs:string" />
+        <xs:element name="//角色类型appsettype" type="xs:string" />
+        <xs:element name="//公司idappcompanyid" type="xs:string" />
+        <xs:element name="//是否允许被分配0-不允许，1-允许appsetallot" type="xs:string" />
+        <xs:element name="//角色名称appsetname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authroleprojectentity" >
+      <xs:sequence>
+        <xs:element name="authid" type="xs:string" />
+        <xs:element name="//角色idauthroleid" type="xs:string" />
+        <xs:element name="//组织结构idauthagencyid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authouteragencyentity" >
+      <xs:sequence>
+        <xs:element name="//主键uuidagencyid" type="xs:string" />
+        <xs:element name="//组织机构名agencyname" type="xs:string" />
+        <xs:element name="//上级idparentid" type="xs:string" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//路径agencypath" type="xs:string" />
+        <xs:element name="//状态0删除1正常status" type="xs:string" />
+        <xs:element name="//机构描述agencydesc" type="xs:string" />
+        <xs:element name="//排序ordernum" type="xs:anyType" />
+        <xs:element name="//等级level" type="xs:anyType" />
+        <xs:element name="//是否为外部创建的组织机构0不是1是outemploy" type="xs:string" />
+        <xs:element name="//是否为临时组1:是0:不是istemporary" type="xs:string" />
+        <xs:element name="//临时组生效范围安全st工程es客观qctemporaryscope" type="xs:string" />
+        <xs:element name="//机构类型2分部1部门3临时组和外部合作单位agencytype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolerolebuttonmapentity" >
+      <xs:sequence>
+        <xs:element name="roleid" type="xs:string" />
+        <xs:element name="menuid" type="xs:string" />
+        <xs:element name="//质检app暂时将此字段作为角色idbuttonid" type="xs:string" />
+        <xs:element name="buttonstate" type="xs:string" />
+        <xs:element name="make" type="xs:dateTime" />
+        <xs:element name="make" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authroleseentity" >
+      <xs:sequence>
+        <xs:element name="//角色idroleid" type="xs:string" />
+        <xs:element name="//角色前缀prefix" type="xs:string" />
+        <xs:element name="//角色描述rolename" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//角色类型roletype" type="xs:string" />
+        <xs:element name="//角色性质级别rolenature" type="xs:string" />
+        <xs:element name="//0启用1删除state" type="xs:string" />
+        <xs:element name="//类别1.客关2.工程3.安全category" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermapentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//启用状态0未启用1已启用state" type="xs:string" />
+        <xs:element name="//来源oa:同步external:本地创建sourcefrom" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//所属模块st安全qc交付es工程projectmodule" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authagencyentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//主键agencyid" type="xs:string" />
+        <xs:element name="//组织机构名agencyname" type="xs:string" />
+        <xs:element name="//机构类型100000000：总部100000001：区域100000003：城市100000002：项目agencytype" type="xs:string" />
+        <xs:element name="//上级idparentid" type="xs:string" />
+        <xs:element name="//创建+第一次同步时间createtime" type="xs:dateTime" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//路径agencypath" type="xs:string" />
+        <xs:element name="//状态0删除1正常status" type="xs:string" />
+        <xs:element name="//业态businesssource" type="xs:string" />
+        <xs:element name="//以上信息均有crm同步//机构描述备注agencydesc" type="xs:string" />
+        <xs:element name="//是否为根目录0不是1是isroot" type="xs:string" />
+        <xs:element name="//排序ordernum" type="xs:anyType" />
+        <xs:element name="//是否为外部合作单位0不是1是outemploy" type="xs:string" />
+        <xs:element name="//工程阶段责任单位性质1总包2分包nature" type="xs:string" />
+        <xs:element name="//等级level" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolerolesetentity" >
+      <xs:sequence>
+        <xs:element name="setid" type="xs:string" />
+        <xs:element name="//角色描述roledesc" type="xs:string" />
+        <xs:element name="/*新增字段:角色备注_2016-08-04_wyd*///角色备注remarks" type="xs:string" />
+        <xs:element name="/*" type="xs:dateTime" />
+        <xs:element name="//角色创建时间make" type="xs:dateTime" />
+        <xs:element name="//角色修改日期modify" type="xs:dateTime" />
+        <xs:element name="//角色修改时间modify" type="xs:dateTime" />
+        <xs:element name="//角色修改人operator" type="xs:string" />
+        <xs:element name="//是否有效0-无效，1-有效setstate" type="xs:string" />
+        <xs:element name="//角色类型1--金茂会员2--金茂质检3--全部settype" type="xs:string" />
+        <xs:element name="//公司idcompanyid" type="xs:string" />
+        <xs:element name="//是否允许被分配0-不允许，1-允许isallot" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useragencyentity" >
+      <xs:sequence>
+        <xs:element name="//主键mapid" type="xs:string" />
+        <xs:element name="//用户idstaffid" type="xs:string" />
+        <xs:element name="//机构idagencyid" type="xs:string" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//状态0删除1正常status" type="xs:string" />
+        <xs:element name="//来源同步oa数据的时候用到其他并不需要external外部oaoa同步sourcefrom" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authfunctionpointroleentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:long" />
+        <xs:element name="//角色idauthroleid" type="xs:string" />
+        <xs:element name="//功能点idauthfunctionid" type="xs:string" />
+        <xs:element name="//控制方式control" type="xs:string" />
+        <xs:element name="//状态0正常1删除state" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//类别1.客关2.工程3.安全category" type="xs:string" />
+        <xs:element name="//分类1.前段app2.管理平台classification" type="xs:string" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberrolescopeentity" >
+      <xs:sequence>
+        <xs:element name="//主键idid" type="xs:string" />
+        <xs:element name="//角色idrolesetid" type="xs:string" />
+        <xs:element name="//权限范围类型(0:全部城市级别,1:城市级别,2:项目级别)scopetype" type="xs:string" />
+        <xs:element name="//权限范围id(0/城市id/项目code)scopeid" type="xs:string" />
+        <xs:element name="//权限范围名称(全部城市/北京/亚奥金茂悦)scopename" type="xs:string" />
+        <xs:element name="//当前状态(0:不启用,1:启用)nowstate" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authagencyqcentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//主键agencyid" type="xs:string" />
+        <xs:element name="//组织机构名agencyname" type="xs:string" />
+        <xs:element name="//机构类型100000000：总部100000001：区域100000003：城市100000002：项目agencytype" type="xs:string" />
+        <xs:element name="//上级idparentid" type="xs:string" />
+        <xs:element name="//创建+第一次同步时间createtime" type="xs:dateTime" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//路径agencypath" type="xs:string" />
+        <xs:element name="//状态0删除1正常status" type="xs:string" />
+        <xs:element name="//业态businesssource" type="xs:string" />
+        <xs:element name="//以上信息均有crm同步//机构描述备注agencydesc" type="xs:string" />
+        <xs:element name="//是否为根目录0不是1是isroot" type="xs:string" />
+        <xs:element name="//排序ordernum" type="xs:anyType" />
+        <xs:element name="//是否为外部合作单位0不是1是outemploy" type="xs:string" />
+        <xs:element name="//工程阶段责任单位性质1总包2分包nature" type="xs:string" />
+        <xs:element name="//等级level" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="personauthorityview" >
+      <xs:sequence>
+        <xs:element name="currentid" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="parentid" type="xs:string" />
+        <xs:element name="timestamp" type="xs:dateTime" />
+        <xs:element name="rolegroup" type="xs:string" />
+        <xs:element name="start" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useragencymapentity" >
+      <xs:sequence>
+        <xs:element name="//主键mapid" type="xs:string" />
+        <xs:element name="//用户idstaffid" type="xs:string" />
+        <xs:element name="//机构idagencyid" type="xs:string" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//状态0删除1正常status" type="xs:string" />
+        <xs:element name="//来源同步oa数据的时候用到其他并不需要sourcefrom" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolestaffprojectmapqcentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//角色idroleid" type="xs:string" />
+        <xs:element name="//项目idagencyid" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roleroleentity" >
+      <xs:sequence>
+        <xs:element name="//权限idroleid" type="xs:string" />
+        <xs:element name="//创建日期make" type="xs:dateTime" />
+        <xs:element name="//创建时间make" type="xs:dateTime" />
+        <xs:element name="//修改日期modify" type="xs:dateTime" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//操作人operator" type="xs:string" />
+        <xs:element name="//所属模块，1-物业管理，2-商户管理，3-房屋租赁管理，4-邻里圈管理，5-用户管理管理，6-数据统计roledesc" type="xs:string" />
+        <xs:element name="//描述roledescription" type="xs:string" />
+        <xs:element name="//权限名称rolename" type="xs:string" />
+        <xs:element name="//角色idrolesetid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="supplieragencymapentity" >
+      <xs:sequence>
+        <xs:element name="//主键mapid" type="xs:string" />
+        <xs:element name="//机构idagencyid" type="xs:string" />
+        <xs:element name="//供应商idsupplierid" type="xs:string" />
+        <xs:element name="//状态status" type="xs:string" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolestaffprojectmapentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//角色idroleid" type="xs:string" />
+        <xs:element name="//项目idagencyid" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolestaffprojectmapesappentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//角色idroleid" type="xs:string" />
+        <xs:element name="//项目idagencyid" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolerolesetmapentity" >
+      <xs:sequence>
+        <xs:element name="//关系idrolesetid" type="xs:string" />
+        <xs:element name="//角色idsetid" type="xs:string" />
+        <xs:element name="//权限idrolroleid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approleentity" >
+      <xs:sequence>
+        <xs:element name="//app权限idapproleid" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//所属模块approletype" type="xs:string" />
+        <xs:element name="//描述approledesc" type="xs:string" />
+        <xs:element name="//权限名称approlename" type="xs:string" />
+        <xs:element name="//角色idapprolesetid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agencyentity" >
+      <xs:sequence>
+        <xs:element name="//主键agencyid" type="xs:string" />
+        <xs:element name="//组织机构名agencyname" type="xs:string" />
+        <xs:element name="//机构简称abbreviationname" type="xs:string" />
+        <xs:element name="//机构描述备注agencydesc" type="xs:string" />
+        <xs:element name="//机构类型3总部2公司1部门4责任单位5监理agencytype" type="xs:string" />
+        <xs:element name="//上级idparentid" type="xs:string" />
+        <xs:element name="//是否为根目录0不是1是isroot" type="xs:string" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//路径agencypath" type="xs:string" />
+        <xs:element name="//状态0删除1正常status" type="xs:string" />
+        <xs:element name="//排序ordernum" type="xs:anyType" />
+        <xs:element name="//是否为外部合作单位0不是1是outemploy" type="xs:string" />
+        <xs:element name="//工程阶段责任单位性质1总包2分包nature" type="xs:string" />
+        <xs:element name="//等级level" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approlesetmapentity" >
+      <xs:sequence>
+        <xs:element name="//关系表idapprolesetmapid" type="xs:string" />
+        <xs:element name="//权限关系approleid" type="xs:string" />
+        <xs:element name="//角色关系appsetid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authfunctionpointentity" >
+      <xs:sequence>
+        <xs:element name="//主键idcurrentid" type="xs:string" />
+        <xs:element name="//名称name" type="xs:string" />
+        <xs:element name="//父级idparentid" type="xs:string" />
+        <xs:element name="//级别level" type="xs:string" />
+        <xs:element name="//控制control是否显示0显示1不显示configurable" type="xs:string" />
+        <xs:element name="//控制方式1全部2自己control" type="xs:string" />
+        <xs:element name="//功能说明explain" type="xs:string" />
+        <xs:element name="//状态0正常1删除state" type="xs:string" />
+        <xs:element name="//修改时间modify" type="xs:dateTime" />
+        <xs:element name="//类别1.客关2.工程3.安全category" type="xs:string" />
+        <xs:element name="//分类1.前段app2.管理平台classification" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberrolemenuentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//角色idrolesetid" type="xs:string" />
+        <xs:element name="//菜单idmenuid" type="xs:string" />
+        <xs:element name="//菜单名称menuname" type="xs:string" />
+        <xs:element name="//操作级别(0:仅查看,1:所有操作)operationlevel" type="xs:string" />
+        <xs:element name="//当前状态(0:不启用,1:启用)nowstate" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authagencyesentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//主键agencyid" type="xs:string" />
+        <xs:element name="//组织机构名agencyname" type="xs:string" />
+        <xs:element name="//机构类型100000000：总部100000001：区域100000003：城市100000002：项目agencytype" type="xs:string" />
+        <xs:element name="//上级idparentid" type="xs:string" />
+        <xs:element name="//创建+第一次同步时间createtime" type="xs:dateTime" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//路径agencypath" type="xs:string" />
+        <xs:element name="//状态0删除1正常status" type="xs:string" />
+        <xs:element name="//业态businesssource" type="xs:string" />
+        <xs:element name="//以上信息均有crm同步//机构描述备注agencydesc" type="xs:string" />
+        <xs:element name="//是否为根目录0不是1是isroot" type="xs:string" />
+        <xs:element name="//排序ordernum" type="xs:anyType" />
+        <xs:element name="//是否为外部合作单位0不是1是outemploy" type="xs:string" />
+        <xs:element name="//工程阶段责任单位性质1总包2分包nature" type="xs:string" />
+        <xs:element name="//等级level" type="xs:anyType" />
+        <xs:element name="//排序sort" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolestaffprojectmapqcappentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//角色idroleid" type="xs:string" />
+        <xs:element name="//项目idagencyid" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolerolebuttonmapentitypk" >
+      <xs:sequence>
+        <xs:element name="roleid" type="xs:string" />
+        <xs:element name="menuid" type="xs:string" />
+        <xs:element name="buttonid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roleviewmodelentity" >
+      <xs:sequence>
+        <xs:element name="menuid" type="xs:string" />
+        <xs:element name="childflag" type="xs:string" />
+        <xs:element name="menudescription" type="xs:string" />
+        <xs:element name="menuname" type="xs:string" />
+        <xs:element name="menustate" type="xs:string" />
+        <xs:element name="menulevel" type="xs:string" />
+        <xs:element name="menuorder" type="xs:string" />
+        <xs:element name="operator" type="xs:string" />
+        <xs:element name="parantmenuid" type="xs:string" />
+        <xs:element name="runscript" type="xs:string" />
+        <xs:element name="owner" type="xs:string" />
+        <xs:element name="//1会员、2质检3待定belong" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="organizeentity" >
+      <xs:sequence>
+        <xs:element name="//主键organizeid" type="xs:string" />
+        <xs:element name="//组名organizename" type="xs:string" />
+        <xs:element name="//crm组名crmname" type="xs:string" />
+        <xs:element name="//备注memo" type="xs:string" />
+        <xs:element name="//组状态1有效0无效organizestatus" type="xs:string" />
+        <xs:element name="//crmidcrmid" type="xs:string" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//排序ordernum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rolestaffprojectmapesentity" >
+      <xs:sequence>
+        <xs:element name="//自增长idid" type="xs:long" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//角色idroleid" type="xs:string" />
+        <xs:element name="//项目idagencyid" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

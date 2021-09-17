@@ -1,0 +1,9 @@
+
+user(id:Long [PK], firstname:String, lastname:String, GeneratedName:Address #FK to(address));
+
+address(id:Long [PK], street:String, city:String, postcode:String);
+
+member(id:Long [PK], name:String, email:String, phonenumber:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

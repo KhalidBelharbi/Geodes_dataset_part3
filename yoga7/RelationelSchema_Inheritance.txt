@@ -1,0 +1,17 @@
+
+branch(serialversionuid:long, id:Long [PK], tenantid:Long, name:String, remark:String, parentid:Long, createtime:Date, deleted:Boolean);
+
+accredit(serialversionuid:long, tenantid:Long [PK], objecttype:Integer [PK], objectid:Long [PK], roleid:Long [PK]);
+
+priviege(serialversionuid:long, tenantid:Long [PK], roleid:Long [PK], code:String [PK]);
+
+role(serialversionuid:long, id:Long [PK], tenantid:Long, name:String, remark:String, deleted:Boolean, createtime:Date);
+
+duty(serialversionuid:long, id:Long [PK], tenantid:Long, name:String, level:Integer, code:String, deleted:Boolean, remark:String);
+
+userdata(id:Long [PK], tenantid:Long, userid:Long, name:String, value:String);
+
+user(serialversionuid:long, id:Long [PK], tenantid:Long, username:String, password:String, branchid:Long, dutyid:Long, nickname:String, gender:GenderType, title:String, avatar:String, mobile:String, email:String, address:String, postcode:String, company:String, birthday:Date, createtime:Date, uptime:Date, lastlogin:Date, enabled:Boolean, deleted:Boolean);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

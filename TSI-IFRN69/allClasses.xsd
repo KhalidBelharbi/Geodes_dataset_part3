@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="api-servlet" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="homepage" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="restresponseentityexceptionhandler" >
+      <xs:complexContent>
+       <xs:extension base="responseentityexceptionhandler">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="criteriaparser" >
+      <xs:sequence>
+        <xs:element name="ops" type="xs:anyType" />
+        <xs:element name="speccriteraregex" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchcriteria" >
+      <xs:sequence>
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="operation" type="xs:string" />
+        <xs:element name="value" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="specsearchcriteria" >
+      <xs:sequence>
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="operation" type="searchoperation" nillable="true" minOccurs="0" />
+        <xs:element name="value" type="xs:anyType" />
+        <xs:element name="orpredicate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchoperation" >
+      <xs:sequence>
+        <xs:element name="simple_operation_set" type="xs:string" />
+        <xs:element name="or_predicate_flag" type="xs:string" />
+        <xs:element name="zero_or_more_regex" type="xs:string" />
+        <xs:element name="or_operator" type="xs:string" />
+        <xs:element name="and_operator" type="xs:string" />
+        <xs:element name="left_paranthesis" type="xs:string" />
+        <xs:element name="right_paranthesis" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="myresourcenotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="iuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="dao" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="myuserrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="homecontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="myuserpredicate" >
+      <xs:sequence>
+        <xs:element name="criteria" type="searchcriteria" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="genericrsqlspecbuilder" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customrsqlvisitor" >
+      <xs:sequence>
+        <xs:element name="builder" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="genericrsqlspecification" >
+      <xs:complexContent>
+       <xs:extension base="object>">
+         <xs:sequence>
+          <xs:element name="property" type="xs:string" />
+          <xs:element name="operator" type="xs:anyType" />
+          <xs:element name="arguments" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rsqlsearchoperation" >
+      <xs:sequence>
+        <xs:element name="operator" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="iuserdao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="myuserrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<myuser,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userdao" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userspecificationsbuilder" >
+      <xs:sequence>
+        <xs:element name="params" type="specsearchcriteria" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userspecification" >
+      <xs:sequence>
+        <xs:element name="criteria" type="specsearchcriteria" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="myuserpredicatesbuilder" >
+      <xs:sequence>
+        <xs:element name="params" type="searchcriteria" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="genericspecificationsbuilder" >
+      <xs:sequence>
+        <xs:element name="params" type="specsearchcriteria" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="age" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user_" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="firstname" type="xs:anyType" />
+        <xs:element name="lastname" type="xs:anyType" />
+        <xs:element name="age" type="xs:anyType" />
+        <xs:element name="email" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="myuser" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="age" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistenceconfig" >
+      <xs:sequence>
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:complexContent>
+       <xs:extension base="springbootservletinitializer">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="webconfig" >
+      <xs:complexContent>
+       <xs:extension base="webmvcconfigureradapter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rsqlintegrationtest" >
+      <xs:sequence>
+        <xs:element name="repository" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="john" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="tom" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jpacriteriaqueryintegrationtest" >
+      <xs:sequence>
+        <xs:element name="userapi" type="iuserdao" nillable="true" minOccurs="0" />
+        <xs:element name="john" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="tom" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jpaspecificationlivetest" >
+      <xs:sequence>
+        <xs:element name="//@autowired//repositoryrepositoryjohn" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="tom" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="url_prefix" type="xs:string" />
+        <xs:element name="eurl_prefix" type="xs:string" />
+        <xs:element name="adv_url_prefix" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jpaspecificationintegrationtest" >
+      <xs:sequence>
+        <xs:element name="repository" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="john" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="tom" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="percy" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jpaquerydslintegrationtest" >
+      <xs:sequence>
+        <xs:element name="repo" type="myuserrepository" nillable="true" minOccurs="0" />
+        <xs:element name="userjohn" type="myuser" nillable="true" minOccurs="0" />
+        <xs:element name="usertom" type="myuser" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="myuserlivetest" >
+      <xs:sequence>
+        <xs:element name="userjohn" type="myuser" nillable="true" minOccurs="0" />
+        <xs:element name="url_prefix" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

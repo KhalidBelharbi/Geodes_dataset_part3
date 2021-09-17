@@ -1,0 +1,7 @@
+
+carmaker(id:Long [PK], name:String);
+
+carmodel(id:Long [PK], name:String, year:Integer, sku:String, maker:CarMaker #FK to(carmaker));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

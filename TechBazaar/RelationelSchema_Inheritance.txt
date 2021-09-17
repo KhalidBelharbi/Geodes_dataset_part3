@@ -1,0 +1,25 @@
+
+delivery(id:int [PK], status:String, GeneratedName:User #FK to(user), GeneratedName:UserCart #FK to(usercart));
+
+comment(id:int [PK], GeneratedName:Product #FK to(product), GeneratedName:User #FK to(user), comment:String);
+
+cart(id:int [PK], GeneratedName:Product #FK to(product), GeneratedName:UserCart #FK to(usercart), quantity:int, subtotal:double, status:String);
+
+purchased(id:int [PK], GeneratedName:Cart #FK to(cart), status:String, ordereddate:String, delivereddate:String);
+
+location(id:int [PK], GeneratedName:Delivery #FK to(delivery), latitude:String, longitude:String);
+
+usercart(id:int [PK], GeneratedName:User #FK to(user));
+
+rating(id:int [PK], GeneratedName:User #FK to(user), GeneratedName:Product #FK to(product), rating:int);
+
+supplier(id:int [PK], name:String, email:String);
+
+user(id:int [PK], username:String, password:String, role:String, email:String, name:String, contact:String, address:String, isactive:Boolean, GeneratedName:UserCart #FK to(usercart));
+
+category(id:int [PK], name:String, isactive:Boolean);
+
+product(id:int [PK], code:String, //@field(index:String, //@field(index:String, //@field(index:String, unit_price:double, quantity:int, //columndefination:boolean, views:int, ////stringsupplier_name////stringsupplier_emailquantity_limit:int, GeneratedName:Category #FK to(category), GeneratedName:Supplier #FK to(supplier), entrydate:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

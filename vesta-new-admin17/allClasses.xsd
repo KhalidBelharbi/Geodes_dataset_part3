@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="usergiftentity" >
+      <xs:sequence>
+        <xs:element name="//idusergiftid" type="xs:string" />
+        <xs:element name="//礼物类型1积分2商品gifttype" type="xs:string" />
+        <xs:element name="//积分数量number" type="xs:string" />
+        <xs:element name="//商品idproductid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sellercollectentity" >
+      <xs:sequence>
+        <xs:element name="//收藏idcollectid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//商户idsellerid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sellerevaluateentity" >
+      <xs:sequence>
+        <xs:element name="//正常status_valid" type="xs:string" />
+        <xs:element name="//删除status_invalid" type="xs:string" />
+        <xs:element name="//鲜花好评circs_flower" type="xs:string" />
+        <xs:element name="//差评circs_negative" type="xs:string" />
+        <xs:element name="//点评idevaluateid" type="xs:string" />
+        <xs:element name="//评价情况evaluatecircs" type="xs:string" />
+        <xs:element name="//点评时间evaluatetime" type="xs:dateTime" />
+        <xs:element name="//点评状态evaluatestatus" type="xs:string" />
+        <xs:element name="//点评排序evaluatesort" type="xs:string" />
+        <xs:element name="//点评人iduserid" type="xs:string" />
+        <xs:element name="//商户idsellerid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mallproducttypeentity" >
+      <xs:sequence>
+        <xs:element name="//商品种类idproducttypeid" type="xs:string" />
+        <xs:element name="//商品种类名称producttypename" type="xs:string" />
+        <xs:element name="//商品类型状态(0,禁用1,启用)producttypestate" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sellertypeentity" >
+      <xs:sequence>
+        <xs:element name="status_valid" type="xs:string" />
+        <xs:element name="status_invalid" type="xs:string" />
+        <xs:element name="//类型idtypeid" type="xs:string" />
+        <xs:element name="//类型名称typename" type="xs:string" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//修改时间modifytime" type="xs:dateTime" />
+        <xs:element name="//类型描述typedsc" type="xs:string" />
+        <xs:element name="//操作人operator" type="xs:string" />
+        <xs:element name="//状态status" type="xs:string" />
+        <xs:element name="//类型排序typesort" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shopsellerentity" >
+      <xs:sequence>
+        <xs:element name="//禁用status_valid" type="xs:string" />
+        <xs:element name="//启用status_invalid" type="xs:string" />
+        <xs:element name="//商户idsellerid" type="xs:string" />
+        <xs:element name="//商户名称sellername" type="xs:string" />
+        <xs:element name="//商户状态sellerstatus" type="xs:string" />
+        <xs:element name="//商户简介sellerdsc" type="xs:string" />
+        <xs:element name="//商户星级sellerlevel" type="xs:string" />
+        <xs:element name="//商户电话sellertel" type="xs:string" />
+        <xs:element name="//商户地址selleraddress" type="xs:string" />
+        <xs:element name="//商户负责人sellerdirector" type="xs:string" />
+        <xs:element name="//商户负责人idsellerdirectorid" type="xs:string" />
+        <xs:element name="//商户负责人电话sellerdirectortel" type="xs:string" />
+        <xs:element name="//商户开始营业时间beginbussiness" type="xs:dateTime" />
+        <xs:element name="//商户营业结束时间endbussiness" type="xs:dateTime" />
+        <xs:element name="//商户创建时间sellercreate" type="xs:dateTime" />
+        <xs:element name="//商户到期时间sellerexpire" type="xs:dateTime" />
+        <xs:element name="//商户修改时间sellermodify" type="xs:dateTime" />
+        <xs:element name="//商户logosellerlogo" type="xs:string" />
+        <xs:element name="//商户类型sellertype" type="xs:string" />
+        <xs:element name="//商户推荐商品sellerrecommend" type="xs:string" />
+        <xs:element name="//商户标签sellerlabel" type="xs:string" />
+        <xs:element name="//商户品牌sellerbrand" type="xs:string" />
+        <xs:element name="//商户税号sellertariffline" type="xs:string" />
+        <xs:element name="//商户排序sellersort" type="xs:anyType" />
+        <xs:element name="//商户主营sellermainbussiness" type="xs:string" />
+        <xs:element name="//距离range" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mallproductcardentity" >
+      <xs:sequence>
+        <xs:element name="//idcardid" type="xs:string" />
+        <xs:element name="//编码code" type="xs:string" />
+        <xs:element name="//密码pwd" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//商品idmallid" type="xs:string" />
+        <xs:element name="//创建日期createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="integralrulemodelentity" >
+      <xs:sequence>
+        <xs:element name="//idmodelid" type="xs:string" />
+        <xs:element name="//名称modelname" type="xs:string" />
+        <xs:element name="//类型1/2/3/4/5modeltype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="integralruleentity" >
+      <xs:sequence>
+        <xs:element name="//idintegralruleid" type="xs:string" />
+        <xs:element name="//公众号idclientconfigid" type="xs:anyType" />
+        <xs:element name="//模块idintegralrulemodelid" type="xs:string" />
+        <xs:element name="//积分数量integralnumber" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tradeentity" >
+      <xs:sequence>
+        <xs:element name="//idtradeid" type="xs:string" />
+        <xs:element name="//订单号tradeno" type="xs:string" />
+        <xs:element name="//商品idproductid" type="xs:string" />
+        <xs:element name="//创建日期createon" type="xs:dateTime" />
+        <xs:element name="//数量number" type="xs:string" />
+        <xs:element name="//支付积分amount" type="xs:string" />
+        <xs:element name="//支付金额payment" type="xs:string" />
+        <xs:element name="//业主名称name" type="xs:string" />
+        <xs:element name="//手机号phone" type="xs:string" />
+        <xs:element name="//收货地址address" type="xs:string" />
+        <xs:element name="//备注message" type="xs:string" />
+        <xs:element name="//订单状态1已支付2已发货tradestatus" type="xs:string" />
+        <xs:element name="//用户信息userid" type="xs:string" />
+        <xs:element name="//微信号wechatappid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mallproductentity" >
+      <xs:sequence>
+        <xs:element name="//商品idproductid" type="xs:string" />
+        <xs:element name="//商品编码productnum" type="xs:string" />
+        <xs:element name="//商品名称productname" type="xs:string" />
+        <xs:element name="//商品类目idproducttypeid" type="xs:string" />
+        <xs:element name="//商品价格(商品应付)productprice" type="xs:anyType" />
+        <xs:element name="//商品积分productintegral" type="xs:anyType" />
+        <xs:element name="//所属商家productbusiness" type="xs:string" />
+        <xs:element name="//商品规格productspec" type="xs:string" />
+        <xs:element name="//商品库存productstock" type="xs:anyType" />
+        <xs:element name="//商品导图productpicurl" type="xs:string" />
+        <xs:element name="//商品详情productdetails" type="xs:string" />
+        <xs:element name="//商品状态(0,已下架1,已上架)productstate" type="xs:anyType" />
+        <xs:element name="//是否为卡券(0,否1,是)iscardcoupons" type="xs:anyType" />
+        <xs:element name="//卡券密码cardcouponspassword" type="xs:string" />
+        <xs:element name="//有效期限cardcouponsterm" type="xs:dateTime" />
+        <xs:element name="//卡券二维码cardcouponsqrcode" type="xs:string" />
+        <xs:element name="//商品所属客户端idclientid" type="xs:anyType" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userintegralrulerecordentity" >
+      <xs:sequence>
+        <xs:element name="//iduserintegralrulerecordid" type="xs:string" />
+        <xs:element name="//微信appidwechatappid" type="xs:string" />
+        <xs:element name="//项目idhouseprojectid" type="xs:string" />
+        <xs:element name="//地址useraddress" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//模块类型modeltype" type="xs:string" />
+        <xs:element name="//积分数量number" type="xs:string" />
+        <xs:element name="//创建日期createon" type="xs:dateTime" />
+        <xs:element name="rname" type="xs:string" />
+        <xs:element name="rid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sellerpictureentity" >
+      <xs:sequence>
+        <xs:element name="status_valid" type="xs:string" />
+        <xs:element name="status_inalid" type="xs:string" />
+        <xs:element name="//图片idid" type="xs:string" />
+        <xs:element name="//商户idsellerid" type="xs:string" />
+        <xs:element name="//图片地址pictureurl" type="xs:string" />
+        <xs:element name="//图片状态picturestatus" type="xs:string" />
+        <xs:element name="//图片类型picturetype" type="xs:string" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//图片排序picturesort" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="integralrulerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mallproductcardrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="integralmallrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sellercollectrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="traderepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="integralrulemodelrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sellerpicturerepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userintegralrulerecordrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usergiftrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sellerevaluaterepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shopsellerrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sellertyperepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

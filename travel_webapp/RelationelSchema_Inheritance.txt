@@ -1,0 +1,25 @@
+
+trainentity(source:String, destination:String, trainnumber:Integer [PK], arrival:String, departure:String, bookingdata:String, trainname:String);
+
+bookingentity(bookingid:Integer [PK], useremailid:String, bookingdate:String, transactionid:String, bookingtype:String, noofpassengers:Integer, journeydate:String, source:String, destination:String, fare:Double, entityid:String, entityname:String, arrival:String, departure:String, travelclass:String, feedback:String, rated:Character);
+
+placeentity(city:String [PK], place:String [PK]);
+
+userentity(emailid:String [PK], firstname:String, lastname:String, contactno:Long, dateofbirth:Calendar, gender:String, password:String, question:String, answer:String);
+
+passengerentity(passengerid:Integer [PK], bookingid:Integer, name:String, age:Integer, gender:String);
+
+busentity(source:String, destination:String, busnumber:Integer [PK], bustype:String, arrival:String, departure:String, bookingdata:String, busname:String);
+
+paymententity(cardholdername:String, cardnumber:String [PK], cvv:String, cardexpirydate:String, cardtype:String, amount:Double);
+
+flightentity(source:String, destination:String, flightnumber:Integer [PK], arrival:String, departure:String, bookingdata:String, flightname:String);
+
+cityentity(city:String [PK]);
+
+hotelentity(hotelid:Integer [PK], city:String, hotelname:String, bookingdata:String, rating:Double, timesrated:Double, roomstype:String);
+
+cabentity(cabnumber:String [PK], cabname:String, cartype:String, city:String, bookingdata:String, drivername:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

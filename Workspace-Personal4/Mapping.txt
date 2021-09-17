@@ -1,0 +1,15 @@
+ClassDiagram.Class>> Usuario =>=>=> RelationalSchema.Table>> usuario;
+ClassDiagram.Class>> Persona =>=>=> RelationalSchema.Table>> persona;
+ClassDiagram.Attribut>> Usuario.serialversionuid:long =>=>=> RelationalSchema.Column>> usuario.serialversionuid;
+ClassDiagram.Attribut>> Usuario.idusuario:int =>=>=> RelationalSchema.Column>> usuario.idusuario PRIMARY KEY;
+ClassDiagram.Attribut>> Usuario.username:String =>=>=> RelationalSchema.Column>> usuario.username;
+ClassDiagram.Attribut>> Usuario.password:String =>=>=> RelationalSchema.Column>> usuario.password;
+ClassDiagram.Attribut>> Persona.serialversionuid:long =>=>=> RelationalSchema.Column>> persona.serialversionuid;
+ClassDiagram.Attribut>> Persona.idpersona:int =>=>=> RelationalSchema.Column>> persona.idpersona PRIMARY KEY;
+ClassDiagram.Attribut>> Persona.apematerno:String =>=>=> RelationalSchema.Column>> persona.apematerno;
+ClassDiagram.Attribut>> Persona.apepaterno:String =>=>=> RelationalSchema.Column>> persona.apepaterno;
+ClassDiagram.Attribut>> Persona.email:String =>=>=> RelationalSchema.Column>> persona.email;
+ClassDiagram.Attribut>> Persona.nombre:String =>=>=> RelationalSchema.Column>> persona.nombre;
+ClassDiagram.Attribut>> Persona.telefono:String =>=>=> RelationalSchema.Column>> persona.telefono;
+Many-To-One relationship from ClassDiagram.Class>>Usuario  to ClassDiagram.Class>>persona represented by ClassDiagram.Atrribute>>//bi-directionalmany-to-oneassociationto;
+One-To-Many relationship from ClassDiagram.Class>>Persona  to ClassDiagram.Class>>Set<Usuario>;

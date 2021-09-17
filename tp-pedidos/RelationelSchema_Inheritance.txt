@@ -1,0 +1,17 @@
+
+material(id:Integer [PK], descripcion:String, precio:Float, nombre:String, stockactual:Integer, stockminimo:Integer, unidad:String);
+
+pedido(id:Integer [PK], fechapedido:Instant, estado:EstadoPedido, GeneratedName:Obra #FK to(obra));
+
+detallepedido(id:Integer [PK], cantidad:Integer, GeneratedName:Material #FK to(material));
+
+pago(id:Integer [PK], monto:Float);
+
+usuario(id:Integer [PK], username:String, password:String, GeneratedName:TipoUsuario);
+
+obra(id:Integer [PK], descripcion:String, latitud:Float, longitud:Float, direccion:String, superficie:Integer, tipo:TipoObra);
+
+cliente(id:Integer [PK], razonsocial:String, cuit:String, mail:String, maxcuentacorriente:Float, habilitadoonline:Boolean, GeneratedName:Usuario #FK to(usuario));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

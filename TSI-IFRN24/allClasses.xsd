@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="guiche" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="irepositoryguiche" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<guiche,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="irepositoryusuario" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<usuario,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="irepositoryatendimento" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<atendimento,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="irepositorysenhaimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="irepositorysenha" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="irepositorysenhacustom" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="irepositorysenha" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<senha,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="atendimentocaixasapiapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="servletinitializer" >
+      <xs:complexContent>
+       <xs:extension base="springbootservletinitializer">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="controllersenha" >
+      <xs:complexContent>
+       <xs:extension base="controllergenerico<senha>">
+         <xs:sequence>
+          <xs:element name="repository" type="irepositorysenha" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="controllerusuario" >
+      <xs:complexContent>
+       <xs:extension base="controllergenerico<usuario>">
+         <xs:sequence>
+          <xs:element name="repository" type="irepositoryusuario" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="controlleratendimento" >
+      <xs:complexContent>
+       <xs:extension base="controllergenerico<atendimento>">
+         <xs:sequence>
+          <xs:element name="repository" type="irepositoryatendimento" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="controllergenerico" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="controllerguiche" >
+      <xs:complexContent>
+       <xs:extension base="controllergenerico<guiche>">
+         <xs:sequence>
+          <xs:element name="repository" type="irepositoryguiche" nillable="true" minOccurs="0" />
+          <xs:element name="repositorysenha" type="irepositorysenha" nillable="true" minOccurs="0" />
+          <xs:element name="repositoryatendimento" type="irepositoryatendimento" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="configcorsfilter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configc3p0" >
+      <xs:sequence>
+        <xs:element name="driverclass" type="xs:string" />
+        <xs:element name="jdbcurl" type="xs:string" />
+        <xs:element name="jdbcusername" type="xs:string" />
+        <xs:element name="jdbcpassword" type="xs:string" />
+        <xs:element name="idlemaxageinminutes" type="xs:anyType" />
+        <xs:element name="idleconnectiontestperiodinminutes" type="xs:anyType" />
+        <xs:element name="maxstatementsperconnection" type="xs:anyType" />
+        <xs:element name="minpoolsize" type="xs:anyType" />
+        <xs:element name="maxpoolsize" type="xs:anyType" />
+        <xs:element name="maxstatements" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="iacaoobserver" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="acao" >
+      <xs:sequence>
+        <xs:element name="estado" type="enumguicheestados" nillable="true" minOccurs="0" />
+        <xs:element name="guiches" type="iacaoobserver" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="senha" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="senha" type="xs:long" />
+          <xs:element name="tipo" type="enumtiposenha" nillable="true" minOccurs="0" />
+          <xs:element name="dataemissao" type="xs:anyType" />
+          <xs:element name="foiatendido" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="enumtiposenha" >
+      <xs:sequence>
+        <xs:element name="codigo" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enumguicheestados" >
+      <xs:sequence>
+        <xs:element name="codigo" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="atendimento" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="" type="senha" nillable="true" minOccurs="0" />
+          <xs:element name="" type="guiche" nillable="true" minOccurs="0" />
+          <xs:element name="dataatendido" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="utilbaseentities" >
+      <xs:complexContent>
+       <xs:extension base="serializable>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usuario" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="login" type="xs:string" />
+          <xs:element name="senha" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="guiche" >
+      <xs:complexContent>
+       <xs:extension base="utilbaseentities<long>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="numero" type="xs:anyType" />
+          <xs:element name="estado" type="enumguicheestados" nillable="true" minOccurs="0" />
+          <xs:element name="" type="usuario" nillable="true" minOccurs="0" />
+          <xs:element name="dataapertura" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="atendimentocaixasapiapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

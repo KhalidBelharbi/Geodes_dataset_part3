@@ -1,0 +1,16 @@
+ClassDiagram.Class>> WxmpSendMessage =>=>=> RelationalSchema.Table>> wxmpsendmessage;
+ClassDiagram.Class>> WxmpBindUser =>=>=> RelationalSchema.Table>> wxmpbinduser;
+ClassDiagram.Attribut>> WxmpSendMessage.id:Long =>=>=> RelationalSchema.Column>> wxmpsendmessage.id PRIMARY KEY;
+ClassDiagram.Attribut>> WxmpSendMessage.tenantid:Long =>=>=> RelationalSchema.Column>> wxmpsendmessage.tenantid;
+ClassDiagram.Attribut>> WxmpSendMessage.userid:Long =>=>=> RelationalSchema.Column>> wxmpsendmessage.userid;
+ClassDiagram.Attribut>> WxmpSendMessage.templateid:String =>=>=> RelationalSchema.Column>> wxmpsendmessage.templateid;
+ClassDiagram.Attribut>> WxmpSendMessage.page:String =>=>=> RelationalSchema.Column>> wxmpsendmessage.page;
+ClassDiagram.Attribut>> WxmpSendMessage.data:String =>=>=> RelationalSchema.Column>> wxmpsendmessage.data;
+ClassDiagram.Attribut>> WxmpSendMessage.addtime:LocalDateTime =>=>=> RelationalSchema.Column>> wxmpsendmessage.addtime;
+ClassDiagram.Attribut>> WxmpSendMessage.send:Boolean =>=>=> RelationalSchema.Column>> wxmpsendmessage.send;
+ClassDiagram.Attribut>> WxmpSendMessage.sendtime:LocalDateTime =>=>=> RelationalSchema.Column>> wxmpsendmessage.sendtime;
+ClassDiagram.Attribut>> WxmpSendMessage.message:String =>=>=> RelationalSchema.Column>> wxmpsendmessage.message;
+ClassDiagram.Attribut>> WxmpBindUser.serialversionuid:long =>=>=> RelationalSchema.Column>> wxmpbinduser.serialversionuid;
+ClassDiagram.Attribut>> WxmpBindUser.openid:String =>=>=> RelationalSchema.Column>> wxmpbinduser.openid PRIMARY KEY;
+ClassDiagram.Attribut>> WxmpBindUser.tenantid:Long =>=>=> RelationalSchema.Column>> wxmpbinduser.tenantid PRIMARY KEY;
+ClassDiagram.Attribut>> WxmpBindUser.userid:Long =>=>=> RelationalSchema.Column>> wxmpbinduser.userid;

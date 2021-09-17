@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="smsauthentity" >
+      <xs:sequence>
+        <xs:element name="/*验证类型*///登录验证type_login" type="xs:string" />
+        <xs:element name="//注册验证type_register" type="xs:string" />
+        <xs:element name="//忘记密码type_password_r" type="xs:string" />
+        <xs:element name="//申诉type_appeal" type="xs:string" />
+        <xs:element name="//报修type_repair" type="xs:string" />
+        <xs:element name="//活动报名type_activity" type="xs:string" />
+        <xs:element name="//商品订单type_order" type="xs:string" />
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//手机号phone" type="xs:string" />
+        <xs:element name="//验证码code" type="xs:string" />
+        <xs:element name="//类型authtype" type="xs:string" />
+        <xs:element name="//发送时间sendtime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smspeoplealertsentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//人员姓名name" type="xs:string" />
+        <xs:element name="//人员手机号phone" type="xs:string" />
+        <xs:element name="//数据查看范围（城市）city" type="xs:string" />
+        <xs:element name="//数据查看范围（项目）scope" type="xs:string" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//提醒模块model" type="xs:string" />
+        <xs:element name="//短信文本content" type="xs:string" />
+        <xs:element name="//创建时间makedate" type="xs:string" />
+        <xs:element name="//操作人operator" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsconfigentity" >
+      <xs:sequence>
+        <xs:element name="//代码configcode" type="xs:string" />
+        <xs:element name="//值configvalue" type="xs:string" />
+        <xs:element name="//描述description" type="xs:string" />
+        <xs:element name="//作用域domain" type="xs:string" />
+        <xs:element name="//备用remark" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="smsalertsentity" >
+      <xs:sequence>
+        <xs:element name="//主键id" type="xs:string" />
+        <xs:element name="//城市编号citynum" type="xs:string" />
+        <xs:element name="//项目编号projectnum" type="xs:string" />
+        <xs:element name="//房屋报修管理模块编号repairmodelnum" type="xs:string" />
+        <xs:element name="//房屋报修管理短信内容repaircontent" type="xs:string" />
+        <xs:element name="//身份申诉管理模块编号appealmodelnum" type="xs:string" />
+        <xs:element name="//身份申诉管理短信内容appealcontent" type="xs:string" />
+        <xs:element name="//活动报名管理模块编号activitymodelnum" type="xs:string" />
+        <xs:element name="//活动报名管理短信内容activitycontent" type="xs:string" />
+        <xs:element name="//物业缴费管理模块编号paymentmodelnum" type="xs:string" />
+        <xs:element name="//物业缴费管理短信内容paymentcontent" type="xs:string" />
+        <xs:element name="//创建时间make" type="xs:dateTime" />
+        <xs:element name="//操作人operator" type="xs:string" />
+        <xs:element name="//排序sequence" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

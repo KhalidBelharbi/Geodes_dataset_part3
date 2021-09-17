@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="log4j2" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="liquibase-metadata" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="liquibase-tenant" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenant-changelog-v001" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metadata-changelog-v001" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="db.changelog-tenant" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="db.changelog-master" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="migrationinitbean" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="initservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="metadataservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="sourceservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="liquibaseservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="initservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metadataservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="initserviceimpl" >
+      <xs:sequence>
+        <xs:element name="generalchangelogfile" type="xs:string" />
+        <xs:element name="GeneratedName" type="liquibaseservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="liquibaseserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sourceserviceimpl" >
+      <xs:sequence>
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="bucketname" type="xs:string" />
+        <xs:element name="endpointurl" type="xs:string" />
+        <xs:element name="accesskey" type="xs:string" />
+        <xs:element name="secretkey" type="xs:string" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="configservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metadataserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="tenantservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sourceservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantserviceapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apiname" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="config" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="GeneratedName" type="apiname" nillable="true" minOccurs="0" />
+        <xs:element name="tenantid" type="xs:string" />
+        <xs:element name="credentials" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="GeneratedName" type="role" nillable="true" minOccurs="0" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="modifieddate" type="xs:anyType" />
+        <xs:element name="active" type="xs:anyType" />
+        <xs:element name="tenantid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenant" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="modifieddate" type="xs:anyType" />
+        <xs:element name="active" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantdtomapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonobjectconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configdtomapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdtomapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractentitydtomapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:complexContent>
+       <xs:extension base="entityservice<user>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="configservice" >
+      <xs:complexContent>
+       <xs:extension base="entityservice<config>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="encoder" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="tenantrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="initservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repository" type="configrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantservice" >
+      <xs:complexContent>
+       <xs:extension base="entityservice<tenant>{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entityservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="tenantservice" nillable="true" minOccurs="0" />
+        <xs:element name="mapper" type="userdtomapper" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="tenantservice" nillable="true" minOccurs="0" />
+        <xs:element name="mapper" type="tenantdtomapper" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="configservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="tenantservice" nillable="true" minOccurs="0" />
+        <xs:element name="mapper" type="configdtomapper" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messagevalidationconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistenceconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datasourceconfig" >
+      <xs:sequence>
+        <xs:element name="driverclassname" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="metadataschema" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metadataschemaconfig" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="multitenantschemaconfig" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="impl" type="xs:anyType" />
+        <xs:element name="impl" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="passwordencoderconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantidentifierresolver" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantinterceptor" >
+      <xs:complexContent>
+       <xs:extension base="handlerinterceptoradapter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="multitenantconnectionproviderimpl" >
+      <xs:sequence>
+        <xs:element name="transient" type="xs:anyType" />
+        <xs:element name="transient" type="metadataservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantcontext" >
+      <xs:sequence>
+        <xs:element name="currenttenant" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="multitenantconstants" >
+      <xs:sequence>
+        <xs:element name="default_tenant_id" type="xs:string" />
+        <xs:element name="sql_create_schema" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interceptorconfig" >
+      <xs:sequence>
+        <xs:element name="tenantinterceptor" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalexceptionhandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="migrationinitbeanfailureanalyzer" >
+      <xs:complexContent>
+       <xs:extension base="abstractfailureanalyzer<beancreationexception>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="configdtoresp" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="GeneratedName" type="apiname" nillable="true" minOccurs="0" />
+        <xs:element name="credentials" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="responsemessagedto" >
+      <xs:sequence>
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantdtoresp" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="modifieddate" type="xs:anyType" />
+        <xs:element name="active" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdtoresp" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="GeneratedName" type="role" nillable="true" minOccurs="0" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="modifieddate" type="xs:anyType" />
+        <xs:element name="active" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configdtoreq" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="apiname" nillable="true" minOccurs="0" />
+        <xs:element name="credentials" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdtoreq" >
+      <xs:sequence>
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="GeneratedName" type="role" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantdtoupdatereq" >
+      <xs:sequence>
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantdtocreatereq" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantnotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="entitynotfoundexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="duplicateentityexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="confignotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="entitynotfoundexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entitynotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usernotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="entitynotfoundexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="internalserverexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception{">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="tenantrepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<tenant,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="configrepository" >
+      <xs:complexContent>
+       <xs:extension base="crudrepository<config,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datafixture" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractcontainer" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantcontrollertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractcontainer">
+         <xs:sequence>
+          <xs:element name="template" type="xs:anyType" />
+          <xs:element name="headers" type="xs:anyType" />
+          <xs:element name="request" type="tenantdtocreatereq" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="exceptionmessage" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="configcontrollertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractcontainer">
+         <xs:sequence>
+          <xs:element name="template" type="xs:anyType" />
+          <xs:element name="headers" type="xs:anyType" />
+          <xs:element name="request" type="configdtoreq" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="exceptionmessage" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="usercontrollertest" >
+      <xs:complexContent>
+       <xs:extension base="abstractcontainer">
+         <xs:sequence>
+          <xs:element name="template" type="xs:anyType" />
+          <xs:element name="headers" type="xs:anyType" />
+          <xs:element name="request" type="userdtoreq" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="exceptionmessage" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="log4j2-test" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="admin" >
+      <xs:sequence>
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="adminname" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentstat" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="javamarks" type="xs:long" />
+        <xs:element name="sqlmarks" type="xs:long" />
+        <xs:element name="jquerymarks" type="xs:long" />
+        <xs:element name="student" type="studentdetail" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentdetail" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="fname" type="xs:string" />
+        <xs:element name="lname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="dob" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="city" type="xs:string" />
+        <xs:element name="qualification" type="xs:string" />
+        <xs:element name="mobile" type="xs:string" />
+        <xs:element name="stats" type="studentstat" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quiz" >
+      <xs:sequence>
+        <xs:element name="qid" type="xs:long" />
+        <xs:element name="topic" type="xs:string" />
+        <xs:element name="question" type="xs:string" />
+        <xs:element name="optiona" type="xs:string" />
+        <xs:element name="optionb" type="xs:string" />
+        <xs:element name="optionc" type="xs:string" />
+        <xs:element name="optiond" type="xs:string" />
+        <xs:element name="correctans" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quizrepo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminrepo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quizrepoimpl" >
+      <xs:sequence>
+        <xs:element name="em" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminrepoimpl" >
+      <xs:sequence>
+        <xs:element name="em" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentdetailrepo" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentdetailrepoimpl" >
+      <xs:sequence>
+        <xs:element name="em" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repo" type="adminrepo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quizserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repo" type="quizrepo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentserviceimpl" >
+      <xs:sequence>
+        <xs:element name="repo" type="studentdetailrepo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quizservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="studentrestcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="studentservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="adminrestcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="adminservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quizrestcontroller" >
+      <xs:sequence>
+        <xs:element name="//urltoaccesshttp://localhost:8080/exam-rest/rest/service" type="quizservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

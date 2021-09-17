@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="mailapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailresponse" >
+      <xs:sequence>
+        <xs:element name="status_code" type="xs:long" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="userbean" type="userbean" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="mailbean" type="mailbean" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailbean" >
+      <xs:sequence>
+        <xs:element name="mid" type="xs:long" />
+        <xs:element name="subject" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+        <xs:element name="user" type="userbean" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userbean" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userbean" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="user_name" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="mails" type="mailbean" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="mailbean" type="mailbean" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maildaoimpl" >
+      <xs:sequence>
+        <xs:element name="factory" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maildao" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailserviceimpl" >
+      <xs:sequence>
+        <xs:element name="dao" type="maildao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ormconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailcontroller" >
+      <xs:sequence>
+        <xs:element name="service" type="mailservice" nillable="true" minOccurs="0" />
+        <xs:element name="success_code" type="xs:long" />
+        <xs:element name="fail_code" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistence" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,43 @@
+
+artcomments(serialversionuid:long, comid:Integer [PK], content:String, usr_id:Users #FK to(users), art_id:Articles #FK to(articles));
+
+collect(serialversionuid:long, collectid:Integer [PK], usrid:int, materialid:int);
+
+materialcomment(serialversionuid:long, materialcommentid:Integer [PK], materialid:int, usrid:int, comment:String, create:Date);
+
+checkque(serialversionuid:long, GeneratedName:CheckquePK);
+
+materials(serialversionuid:long, materialid:Integer [PK], usrid:int, mname:String, mpath:String, msize:String, mintroduction:String, mtype:String, msubject:String, mgrade:String, mregion:String, mtolvisit:int, mtoldownload:int, mweekdownload:int, mtolcollect:int, mlevelamount:int, mmarknumber:int, mtolcomment:int, mcreate:Date, mstatus:String);
+
+personarticles(serialversionuid:long, GeneratedName:PersonArticlesPK, usr_id:Users #FK to(users));
+
+administer(serialversionuid:long, admid:String [PK], password:String);
+
+tag(serialversionuid:long, tagid:Integer [PK], tag:String);
+
+mark(serialversionuid:long, markid:Integer [PK], usrid:int, materialid:int);
+
+questions(content:String, GeneratedName:Date, serialversionuid:long, queid:Integer [PK], usrid:int, category:String, subject:String, po:int, collectnumber:int, status:String);
+
+que_tag(que_id:Questions [PK] #FK to Questions,tagid:collection<tag> [PK] #FK to collection<tag>);
+
+plareply(serialversionuid:long, plareplyid:Integer [PK], content:String, GeneratedName:Date, usr_id:Users #FK to(users), pla_id:Platforms #FK to(Platform));
+
+artreply(serialversionuid:long, replyid:Integer [PK], content:String, replytime:Date, usr_id:Users #FK to(users), com_id:ArtComments #FK to(artcomments));
+
+checkans(serialversionuid:long, GeneratedName:CheckansPK);
+
+perquecontent(pqid:int, queid:int [PK], content:String);
+
+answers(content:byte, GeneratedName:Date, serialversionuid:long, anwid:Integer [PK], usrid:int, po:int, que_id:Questions #FK to(questions));
+
+personquestions(serialversionuid:long, pqid:Integer [PK], pqname:String, settime:Date, rank:int, usr_id:Users #FK to(users));
+
+users(birthday:Date, serialversionuid:long, usrid:Integer [PK], usrname:String, password:String, //@pattern(regexp:String, nickname:String, province:String, sex:String, experience:int, portrait:String, status:String);
+
+platforms(serialversionuid:long, plaid:Integer [PK], topic:String, content:byte, set:Date, last:Date, favnumber:int, clicknumber:int, commentnumber:int, status:String, usr_id:Users #FK to(users));
+
+articles(serialversionuid:long, artid:Integer [PK], category:String, topic:String, content:String, writetime:Date, monthlyscan:int, totalscan:int, collectnumber:int, status:String, usr_id:Users #FK to(users));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

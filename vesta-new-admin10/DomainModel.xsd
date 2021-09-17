@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="clickusersentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//点击量clicks" type="xs:anyType" />
+        <xs:element name="//点击人userid" type="xs:string" />
+        <xs:element name="//外键id(菜单统计id)foreignid" type="xs:string" />
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clicktimespageentity" >
+      <xs:sequence>
+        <xs:element name="/*首页模块*///公告property" type="xs:string" />
+        <xs:element name="//咨询consultation" type="xs:string" />
+        <xs:element name="//表扬praise" type="xs:string" />
+        <xs:element name="//投诉complaint" type="xs:string" />
+        <xs:element name="//报修repair" type="xs:string" />
+        <xs:element name="//评价evaluate" type="xs:string" />
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//项目小区project" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//公司idcompanyid" type="xs:string" />
+        <xs:element name="//区域idregionid" type="xs:string" />
+        <xs:element name="//公告property" type="xs:long" />
+        <xs:element name="//咨询consultation" type="xs:long" />
+        <xs:element name="//表扬praise" type="xs:long" />
+        <xs:element name="//投诉compla" type="xs:long" />
+        <xs:element name="//报修repair" type="xs:long" />
+        <xs:element name="//评价evaluate" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usertotalentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//普通用户commonuser" type="xs:anyType" />
+        <xs:element name="//业主用户owneruser" type="xs:anyType" />
+        <xs:element name="//安卓用户android" type="xs:anyType" />
+        <xs:element name="//ios用户ios" type="xs:anyType" />
+        <xs:element name="//微信用户wechat" type="xs:anyType" />
+        <xs:element name="//app用户app" type="xs:anyType" />
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="equipstatisticsentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//项目小区project" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//公司idcompanyid" type="xs:string" />
+        <xs:element name="//区域idregionid" type="xs:string" />
+        <xs:element name="//用户iduserid" type="xs:string" />
+        <xs:element name="//设备类型type" type="xs:string" />
+        <xs:element name="//个数counts" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menutotalentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//模块名称modulename" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clicktimesentity" >
+      <xs:sequence>
+        <xs:element name="/*模块*///邻里圈circle" type="xs:string" />
+        <xs:element name="//服务信息service" type="xs:string" />
+        <xs:element name="//周边periphery" type="xs:string" />
+        <xs:element name="//我的home" type="xs:string" />
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//项目小区project" type="xs:string" />
+        <xs:element name="//项目idprojectid" type="xs:string" />
+        <xs:element name="//公司idcompanyid" type="xs:string" />
+        <xs:element name="//区域idregionid" type="xs:string" />
+        <xs:element name="//邻里圈circle" type="xs:long" />
+        <xs:element name="//服务信息service" type="xs:long" />
+        <xs:element name="//周边periphery" type="xs:long" />
+        <xs:element name="//我的home" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invoicestotalentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="//城市city" type="xs:string" />
+        <xs:element name="//项目project" type="xs:string" />
+        <xs:element name="//创建时间create" type="xs:dateTime" />
+        <xs:element name="//报修数量repairnum" type="xs:anyType" />
+        <xs:element name="//反馈数量(不含项目)feedbacknum" type="xs:anyType" />
+        <xs:element name="//反馈数量(含项目)feedbacktotal" type="xs:anyType" />
+        <xs:element name="//访客数量visitornum" type="xs:anyType" />
+        <xs:element name="//缴费数量paymentnum" type="xs:anyType" />
+        <xs:element name="starttime" type="xs:string" />
+        <xs:element name="endtime" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

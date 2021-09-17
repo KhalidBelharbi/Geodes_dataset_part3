@@ -1,0 +1,69 @@
+
+
+inherita1(name1:String);
+
+inherita2a(name2a:String);
+
+inheritb1(name1:String);
+
+inheritc1(name1:String);
+
+inheritb(id:long [PK], name:String);
+
+inherita2(name2:String);
+
+inheritc2(name2:String);
+
+inherita(id:long [PK], name:String);
+
+inheritb2(id:long [PK],  name:String, name2:String);
+
+collectionholder1(id:long [PK], //elementcollectionwithdefinednamingscollbasic1:Collection<String>, //elementcollectionwithdefaultnamingscollbasic2:Collection<String>);
+
+collectionholder1element(id:long [PK], name:String);
+
+mapholder1value(id:long [PK], name:String);
+
+mapholder1(id:long [PK], properties:Map<String,String>, properties2:Map<String,String>);
+
+mapholder1key(id:long [PK], name:String);
+
+querytypeholder(id:long [PK], value:double, value:long, value:String);
+
+embeddedcollectionowner(id:long [PK], collembedded:Set<EmbeddedCollElement>, collembeddedoverride:Set<EmbeddedCollElement>);
+
+embeddedpcowner(id:long [PK], pcembedded:EmbeddedPC, pcembeddedoverride:EmbeddedPC);
+
+embeddedmapowner(id:long [PK], mapembeddedvalue:Map<String,EmbeddedMapValue>, mapembeddedvalueoverride:Map<String,EmbeddedMapValue>, mapembeddedkey:Map<EmbeddedMapKey,String>, mapembeddedkeyoverride:Map<EmbeddedMapKey,String>);
+
+loginaccount(id:long [PK], firstname:String, lastname:String, GeneratedName:Login #FK to(Login));
+
+login(id:long [PK], username:String, password:String);
+
+typeholder(//pkwhenusingappidid:long [PK], 1:String, 2:String, 1:char);
+
+dateholder(id:long [PK], datefield:java.util.Date, datefield2:java.util.Date);
+
+carrental(customerid:long [PK], GeneratedName:HireCar #FK to(hirecar), start:Date, end:Date);
+
+hirecar(registrationid:long [PK], make:String, model:String);
+
+account(serialversionuid:long, //pkifappidid:long [PK], username:String, enabled:boolean);
+
+person(serialversionuid:long, //partofpkwithappidpersonnum:long [PK], //partofpkwithappidglobalnum:String [PK], firstname:String, lastname:String, emailaddress:String, age:int, bestfriend:Person #FK to(person));
+
+phonenumber(//pkwhenusingappidid:long [PK], name:String, number:String);
+
+project(name:String [PK], budget:long);
+
+manager(serialversionuid:long);
+
+department(serialversionuid:long, primarykey:DepartmentPK, name:String, GeneratedName:Manager #FK to(manager));
+
+employee(serialversionuid:long, serialno:String, salary:float, salarycurrency:String, yearsincompany:Integer, GeneratedName:Manager #FK to(manager), GeneratedName:Account #FK to(account), /***usedforthequeryingoffields.*/firstname:String);
+
+inheritc(id:long [PK], name:String);
+
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

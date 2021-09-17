@@ -1,0 +1,16 @@
+ClassDiagram.Class>> GmailBean =>=>=> RelationalSchema.Table>> gmailbean;
+ClassDiagram.Class>> UserBean =>=>=> RelationalSchema.Table>> userbean;
+ClassDiagram.Attribut>> GmailBean.id:int =>=>=> RelationalSchema.Column>> gmailbean.id PRIMARY KEY;
+ClassDiagram.Attribut>> GmailBean.subject:String =>=>=> RelationalSchema.Column>> gmailbean.subject;
+ClassDiagram.Attribut>> GmailBean.message:String =>=>=> RelationalSchema.Column>> gmailbean.message;
+ClassDiagram.Attribut>> GmailBean.status:String =>=>=> RelationalSchema.Column>> gmailbean.status;
+ClassDiagram.Attribut>> UserBean.id:int =>=>=> RelationalSchema.Column>> userbean.id PRIMARY KEY;
+ClassDiagram.Attribut>> UserBean.name:String =>=>=> RelationalSchema.Column>> userbean.name;
+ClassDiagram.Attribut>> UserBean.email:String =>=>=> RelationalSchema.Column>> userbean.email;
+ClassDiagram.Attribut>> UserBean.password:String =>=>=> RelationalSchema.Column>> userbean.password;
+ClassDiagram.Attribut>> UserBean.question:String =>=>=> RelationalSchema.Column>> userbean.question;
+ClassDiagram.Attribut>> UserBean.ans:String =>=>=> RelationalSchema.Column>> userbean.ans;
+Many-To-One relationship from ClassDiagram.Class>>GmailBean  to ClassDiagram.Class>>userbean represented by ClassDiagram.Atrribute>>user;
+Many-To-One relationship from ClassDiagram.Class>>GmailBean  to ClassDiagram.Class>>userbean represented by ClassDiagram.Atrribute>>GeneratedName;
+One-To-Many relationship from ClassDiagram.Class>>UserBean  to ClassDiagram.Class>>List<GmailBean>;
+One-To-Many relationship from ClassDiagram.Class>>UserBean  to ClassDiagram.Class>>List<GmailBean>;

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="xbshopapplication" >
+      <xs:sequence>
+        <xs:element name="requestpath" type="xs:string" />
+        <xs:element name="dir" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="generateimagecodeservlet" >
+      <xs:complexContent>
+       <xs:extension base="httpservlet">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="ch" type="xs:anyType" />
+          <xs:element name="image_width" type="xs:long" />
+          <xs:element name="image_height" type="xs:long" />
+          <xs:element name="line_num" type="xs:long" />
+          <xs:element name="random_num" type="xs:long" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="goodsservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="goodsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="goodsmapper" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="usermapper" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="goodsdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<goods,long>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="goods" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="pic" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="browsecount" type="xs:long" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="publish" type="xs:dateTime" />
+        <xs:element name="publishrealname" type="xs:string" />
+        <xs:element name="userid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pageresult" >
+      <xs:sequence>
+        <xs:element name="//页大小page_size" type="xs:anyType" />
+        <xs:element name="//总页数totalpage" type="xs:anyType" />
+        <xs:element name="//当前页数据rows" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="qqopenid" type="xs:string" />
+        <xs:element name="wxopenid" type="xs:string" />
+        <xs:element name="realname" type="xs:string" />
+        <xs:element name="age" type="xs:long" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="gender" type="xs:string" />
+        <xs:element name="info" type="xs:string" />
+        <xs:element name="registertime" type="xs:dateTime" />
+        <xs:element name="logintime" type="xs:dateTime" />
+        <xs:element name="pic" type="xs:string" />
+        <xs:element name="look" type="xs:long" />
+        <xs:element name="issecret" type="xs:string" />
+        <xs:element name="shopid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="result" >
+      <xs:sequence>
+        <xs:element name="//请求是否成功flag" type="xs:anyType" />
+        <xs:element name="//响应给前端的消息message" type="xs:string" />
+        <xs:element name="//响应给前端的数据data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="favorite" >
+      <xs:sequence>
+        <xs:element name="uid" type="xs:long" />
+        <xs:element name="gid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="goodsmapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginuserutil" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="session" type="xs:anyType" />
+        <xs:element name="request" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="session" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="goodscontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="goodsservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap.min.css" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-theme.min.css" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap.css" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bootstrap-theme.css" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="glyphicons-halflings-regular" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="changepwd" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="goodsdetail" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery-scrolltofixed-min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="map.jquery.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.menu-aim" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jquery.throttle" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="easing" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="animate.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ionicons.min" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="home" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="xbshopapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

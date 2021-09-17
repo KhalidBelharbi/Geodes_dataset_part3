@@ -1,0 +1,17 @@
+ClassDiagram.Class>> Product =>=>=> RelationalSchema.Table>> product;
+ClassDiagram.Class>> Order =>=>=> RelationalSchema.Table>> order;
+ClassDiagram.Class>> OrderProduct =>=>=> RelationalSchema.Table>> orderproduct;
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Attribut>> Product.id:Long =>=>=> RelationalSchema.Column>> product.id PRIMARY KEY;
+ClassDiagram.Attribut>> Product.name:String =>=>=> RelationalSchema.Column>> product.name;
+ClassDiagram.Attribut>> Product.price:Double =>=>=> RelationalSchema.Column>> product.price;
+ClassDiagram.Attribut>> Product.pictureurl:String =>=>=> RelationalSchema.Column>> product.pictureurl;
+ClassDiagram.Attribut>> Order.id:Long =>=>=> RelationalSchema.Column>> order.id PRIMARY KEY;
+ClassDiagram.Attribut>> Order.datecreated:LocalDate =>=>=> RelationalSchema.Column>> order.datecreated;
+ClassDiagram.Attribut>> Order.status:String =>=>=> RelationalSchema.Column>> order.status;
+ClassDiagram.Attribut>> OrderProduct.pk:OrderProductPK =>=>=> RelationalSchema.Column>> orderproduct.pk;
+ClassDiagram.Attribut>> OrderProduct.quantity:Integer =>=>=> RelationalSchema.Column>> orderproduct.quantity;
+ClassDiagram.Attribut>> User.id:long =>=>=> RelationalSchema.Column>> user.id PRIMARY KEY;
+ClassDiagram.Attribut>> User.name:String =>=>=> RelationalSchema.Column>> user.name;
+ClassDiagram.Attribut>> User.email:String =>=>=> RelationalSchema.Column>> user.email;
+One-To-Many relationship from ClassDiagram.Class>>Order  to ClassDiagram.Class>>List<OrderProduct>;

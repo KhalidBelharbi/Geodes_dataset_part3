@@ -1,0 +1,9 @@
+ClassDiagram.Class>> Address =>=>=> RelationalSchema.Table>> address;
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Attribut>> Address.id:Long =>=>=> RelationalSchema.Column>> address.id PRIMARY KEY;
+ClassDiagram.Attribut>> Address.address:String =>=>=> RelationalSchema.Column>> address.address;
+ClassDiagram.Attribut>> Address.country:String =>=>=> RelationalSchema.Column>> address.country;
+ClassDiagram.Attribut>> User.id:Long =>=>=> RelationalSchema.Column>> user.id PRIMARY KEY;
+ClassDiagram.Attribut>> User.name:String =>=>=> RelationalSchema.Column>> user.name;
+One-To-One relationship between ClassDiagram.Class>>Address  to ClassDiagram.Class>>user represented by ClassDiagram.Atrribute>>GeneratedName;
+One-To-One relationship between ClassDiagram.Class>>User  to ClassDiagram.Class>>address represented by ClassDiagram.Atrribute>>GeneratedName;

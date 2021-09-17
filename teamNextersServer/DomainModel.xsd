@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="useractiveentity" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="gener" type="xs:long" />
+        <xs:element name="completeyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfovalueentity" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="userinfo" type="userinfoentity" nillable="true" minOccurs="0" />
+        <xs:element name="infovalue" type="xs:string" />
+        <xs:element name="infoopenyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="prodtype" type="xs:string" />
+        <xs:element name="prodtitle" type="xs:string" />
+        <xs:element name="proddesc" type="xs:string" />
+        <xs:element name="prodlink" type="xs:string" />
+        <xs:element name="prod" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userentity" >
+      <xs:sequence>
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="userid" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="userbirth" type="xs:long" />
+        <xs:element name="userauth" type="xs:string" />
+        <xs:element name="img" type="xs:string" />
+        <xs:element name="userinfovalues" type="userinfovalueentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="useractives" type="useractiveentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="userproducts" type="productattendentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinfoentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="infoname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productattendentity" >
+      <xs:sequence>
+        <xs:element name="prodid" type="xs:long" />
+        <xs:element name="productattend" type="productentity" nillable="true" minOccurs="0" />
+        <xs:element name="userno" type="xs:string" />
+        <xs:element name="role" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="archiveentity" >
+      <xs:sequence>
+        <xs:element name="no" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="desc" type="xs:string" />
+        <xs:element name="prizeyn" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="desc" type="xs:string" />
+        <xs:element name="memoryimgs" type="memoryimgentity" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memoryimgentity" >
+      <xs:sequence>
+        <xs:element name="memory" type="memoryentity" nillable="true" minOccurs="0" />
+        <xs:element name="seq" type="xs:long" />
+        <xs:element name="img" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

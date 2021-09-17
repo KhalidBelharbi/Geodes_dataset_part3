@@ -1,0 +1,11 @@
+ClassDiagram.Class>> Person =>=>=> RelationalSchema.Table>> person;
+ClassDiagram.Class>> Address =>=>=> RelationalSchema.Table>> address;
+ClassDiagram.Attribut>> Person.id:int =>=>=> RelationalSchema.Column>> person.id PRIMARY KEY;
+ClassDiagram.Attribut>> Person.name:String =>=>=> RelationalSchema.Column>> person.name;
+ClassDiagram.Attribut>> Address.id:int =>=>=> RelationalSchema.Column>> address.id PRIMARY KEY;
+ClassDiagram.Attribut>> Address.street:String =>=>=> RelationalSchema.Column>> address.street;
+ClassDiagram.Attribut>> Address.housenumber:int =>=>=> RelationalSchema.Column>> address.housenumber;
+ClassDiagram.Attribut>> Address.city:String =>=>=> RelationalSchema.Column>> address.city;
+ClassDiagram.Attribut>> Address.zipcode:int =>=>=> RelationalSchema.Column>> address.zipcode;
+One-To-Many relationship from ClassDiagram.Class>>Person  to ClassDiagram.Class>>List<Address>;
+Many-To-One relationship from ClassDiagram.Class>>Address  to ClassDiagram.Class>>person represented by ClassDiagram.Atrribute>>GeneratedName;

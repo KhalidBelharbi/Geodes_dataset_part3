@@ -1,0 +1,87 @@
+
+tgoodshelfgoodsrel(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], shelfid:Integer, goodid:Integer);
+
+tmember(//绑定邮箱session_center_user_bind_email_key:String, //绑定手机号session_center_user_bind_moblie_key:String, id:Long [PK], username:String, userpass:String, email:String, realname:String, terminalid:String, regtime:String, status:int, updatetime:String, vid:String, nickname:String, areacode:String, sex:Integer, birthday:String, opened:Integer, qq:String, remark:String, signature:String, regsource:Integer, userlevel:String, cartuuid:String, redmember:Integer, subregsource:Integer, avatar:String, odlpwd:String, userpassag:String);
+
+tchannelcatalogrcmdconf(/***serialversionuid*/serialversionuid:long, //fieldsid:Integer, groupid:Integer, channel:Integer, displayname:String, linkurl:String, orderindex:Integer, type:Integer, imagepath:String, regioncode:String);
+
+tactorderpayment(/***serialversionuid*/serialversionuid:long, channal:String, amount:String, currency:String, /***记录id*/id:long, order:TActOrder #FK to(tactorder));
+
+titemcommentreply(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], content:String, updatetime:String, nickname:String, userid:Integer, commentid:Integer);
+
+tchannelpicconf(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], picpath:String, picalt:String, picindex:Short, linkurl:String, postion:Short, channel:Short, updatetime:String, regioncode:String);
+
+tmemberfavorite(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], favoriteid:Integer, favoritetype:Integer, userid:Integer, updatetime:String);
+
+tstore(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], name:String, shortname:String, areacode:String, sort:Integer, shopagentflag:Integer, goodsagentflag:Integer, baseshopname:String, createtime:String, updatetime:String, address:String, sysuserid:Integer, updateuserid:Integer, isbsaccount:Integer, bsmanagername:String, bsmanagerphone:String, fcmanagername:String, fcmanagerphone:String, linkname:String, linkphone:String, linkfax:String, shopclass:Integer, status:Integer, isvalid:Integer, itemeditauditflag:Integer, itempublishauditflag:Integer, shopeditauditflag:Integer, syncgyflag:Integer, bsscope:String, servicephone:String, areaid:String, merchid:String);
+
+tshopcustomerservice(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], nickname:String, code:String, shopclass:Integer, shopid:Integer, status:Integer);
+
+tsupplierapply(id:Integer [PK], suppliername:String, businessscope:String, address:String, mobile:String, phone:String, contact:String, status:Integer, createtime:String, updateuser:String, updatetime:String);
+
+vactorderstatus(orderid:Long [PK], //待付款1,支付中6,已付款（待发货)2,待收货3,已完成4,已取消5,其他0actorderstatus:int, //1有退款0无退款hasrefund:int, //0部分退1全退款refundall:int, order:TActOrderNew #FK to(tactordernew));
+
+tshopsettings(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], shoppicurl:String, homepageword:String, shopclass:Integer, shopid:Integer, picname:String);
+
+tactordergoods(/***serialversionuid*/serialversionuid:long, /***商品数量*/count:int, /***折扣金额,单位分*/discount:int, /***结算单价，单位分*/feeprice:int, /***商品说明（备注）例如...红色、蓝色、长的、短的*/goodsdescription:String, /***商品id*/goodsid:long, /***商品标题*/goodssubject:String, /***记录id*/id:long, /***支付单价，单位分*/payprice:int, /***退款金额，单位分*/refundamount:int, /***退款数量*/refundcount:int, /***退款说明*/refunddescription:String, /***refundstatus*/refundstatus:int, /***refundtime*/refundtime:String, /***验证码序号，用于与验证中心记录对应*/verifycodeid:String, /***verifydescription*/verifydescription:String, /***verifystatus*/verifystatus:int, /***verifytime*/verifytime:String, order:TActOrder #FK to(tactorder), goodsversion:Long);
+
+tlotteryactiveconf(serialversionuid:long, id:Integer [PK], activeid:Integer, key:String, value:String);
+
+tsysad(//fields/***广告id*/id:Integer, /***广告名称*/adname:String, /***广告类型*/adtype:Integer, /***广告类别*/adflag:Integer, /***广告链接*/link:String, /***广告负责人*/linkman:String, /***广告内容*/content:String, /***广告状态*/status:Integer, /***开始时间*/starttime:String, /***有效期*/validtime:String, /***点击次数*/clickcnt:Integer, /***展现次数*/viewcnt:Integer, /***创建日期*/createtime:String, /***创建人*/createuser:Integer, /***广告清单*/position:TSysAdPosition);
+
+tactordernew(/***serialversionuid*/serialversionuid:long, /***业务类型*/acttype:int, /***closedescription*/closedescription:String, /***closestatus*/closestatus:int, /***删除状态，只针对个人用户的删除*/deletestatus:int, /***deletetime*/deletetime:String, /***closetime*/closetime:String, /***创建时间*/createtime:String, /***订单超时时间，直从下单(create_time)到支付完成时间的时间，（单位秒）*/expiretime:int, /***订单对应的商品信息清单*/goodsinfos:List<TActOrderGoods>, /***订单支付信息*/payments:List<TActOrderPayment>, /***订单对应的物流信息*/expressinfo:TActOrderExpress, /***业务订单号*/id:long, /***paydescription*/paydescription:String, /***paystatus*/paystatus:int, /***paytime*/paytime:String, /***商户id*/shopid:long, /***商户标题*/shopsubject:String, /***actordersubject*/subject:String, /***userid*/userid:long, payamount:String, status:int, remark:String, uuid:String, ordertype:Long, extinfo:String, isxuni:boolean, payondelivery:Integer, orderstatus:VActOrderStatus #FK to(vactorderstatus), /***用于代金券-个人业务查询页面0ornull(其他）:商城1：商盟2：联动*/source:String, /***用于代金券-个人业务查询页面商盟,联动*/goodsname:String);
+
+torderrefund(/***serialversionuid*/serialversionuid:long, //退款单状态/***状态－等待商户确认*/status_1:Integer, /***状态－等待审核*/status_2:Integer, /***状态－商户拒绝确认*/status_3:Integer, /***状态－等待系统退款*/status_4:Integer, /***状态－审核失败*/status_5:Integer, /***状态－退款成功*/status_6:Integer, /***状态－退款失败*/status_7:Integer, /***状态－退款已通知*/status_8:Integer, /***状态－系统退款中*/status_9:Integer, //退款币种currency_cash:String, currency_coin:String, currency_score:String, currency_balance:String, currency_redpack:String, //退款单类型//平台自己refund_type_1:Integer, //拉手refund_type_2:Integer, //永乐refund_type_3:Integer, //河南积分refund_type_4:Integer, /***退款来源*///管理后台refund_source_backstage:Integer, //前台-申请退款refund_source_mall_apply:Integer, //前台-取消refund_source_mall_cancel:Integer, //fieldsid:Long, orderid:Long, storeid:Integer, status:Integer, refundfee:Double, createtime:String, userid:Integer, reason:String, shopuserid:Integer, updatetime:String, shopremark:String, audituserid:Integer, audittime:String, auditremark:String, dealtime:String, //实际退款现金cashfee:Double, //实际退款商城币coinfee:Double, //虚拟退码数量totalcode:Long, successcode:Long, orderrecordcashid:Long, orderrecordcoinid:Long, orderrecordscoreid:Long, scorefee:Double, phonefee:Double, orderrecordphoneid:Long, refundtype:Integer, refundsource:Integer, redpackagefee:Double);
+
+cardgiftdetails(id:Long [PK], status:String, mobile:String, orderid:String, usemoney:BigDecimal, usetime:String, createtime:String, updatetime:String, cardlink:String, gift:CardGift #FK to(cardgift));
+
+tshophomepageshow(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], title:String, shelfid:Integer, goodnum:Short, status:Short, orderindex:Short, shopclass:Integer, shopid:Integer, shopuserid:Integer, updatetime:String);
+
+tmemberaddress(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], mid:Integer, remark:String, region:String, address:String, zipcode:String, name:String, mobile:String, phone:String, updatetime:String, createtime:String, lastusetime:String, defaultshipping:String, defaultpaytype:String);
+
+tlotteryprize(serialversionuid:long, id:Integer [PK], activeid:Integer, hitlevel:Integer, hitprobability:String, hitlimit:Integer, hitmsg:String, numbers:Integer, name:String, description:String, position:String, used:Integer);
+
+cardgift(id:Long [PK], cardno:String, cardname:String, carddesc:String, cardnum:int, cardmoney:BigDecimal, begintime:String, endtime:String, usescope:String, limitsum:String, totalamount:BigDecimal, createtime:String, updatetime:String, status:String, cardlink:String);
+
+shop(id:Long [PK]);
+
+codeinfo(serialversionuid:long, /***码编号，唯一标识*/orderid:String, /***订单商品id*/itemorderid:Long, /***订单id*/actorderid:Long, code:String, code2d:String, /***码状态，0：正常1：已撤销2：使用中3：已使用4：已过期*/codestatus:Long, transdate:String, validdate:String, expiredate:String, validtimes:Long, remaintimes:Long, terminalid:String, itemid:String, itemname:String, itemquantity:Long, totalprice:Long, /***founder：方正store：商户cplatform：宽连*/platformid:String, storeid:String, smscontent:String, statusmap:Map<Long,String>);
+
+torderrefundgoods(/***serialversionuid*/serialversionuid:long, /***序列**/id:Long, /***退货单编号**/refundid:Long, /***订单商品id**/ordergoodsid:Long, /***商品id**/goodsid:Long, /***退货数量**/backnumber:Long, /***现金**/cash:Double, /***商城币**/coin:Double, //查看的时候绑定购买数量number:int, //查看的时候绑定已经购买数量hasbuynunber:Long);
+
+vsearchgood(//fields//integergid//integergorgid/***serialversionuid*/serialversionuid:long, gname:String, gshortname:String, gstoreid:Integer, gstorename:String, gstoreshortname:String, gtypeid:Integer, gtypename:String, gbrand:String, gcreatetime:String, gupdatetime:String, gmarketcontent:String, gproperty:String, gclicknum:Integer, gsalenum:Integer, gtags:String, gwebpath:String, gmarketprice:String, gshopprice:String, gshoppricenumber:Double, gredprice:String, //gotherpricegremark:String, glogisticsfee:String, glogisticsfeetype:Integer, gpostflag:Integer, gitemmode:Integer, grank:Float, gstarttime:String, gstoptime:String, gisview:Integer, ggroupflag:Integer, giseckill:Integer, gsource:String, //fieldsid:VSearchGoodId);
+
+tuserexchangelog(/***serialversionuid*/serialversionuid:long, id:Integer [PK], terminalid:String, amount:Integer, userip:String, excpercent:Integer, excdate:String, rcode:Integer, rmsg:String);
+
+titemcomment(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], content:String, type:Integer, questiontype:Integer, updatetime:String, nickname:String, userid:Integer, status:Integer, saleid:Integer, audituser:Integer, audittime:String, rank:Integer, usefulnum:Integer, uselessnum:Integer, actorderid:Long, storeid:long);
+
+tactorder(/***serialversionuid*/serialversionuid:long, /***业务类型*/acttype:int, /***closedescription*/closedescription:String, /***closestatus*/closestatus:int, /***删除状态，只针对个人用户的删除*/deletestatus:int, /***deletetime*/deletetime:String, /***closetime*/closetime:String, /***创建时间*/createtime:String, /***订单超时时间，直从下单(create_time)到支付完成时间的时间，（单位秒）*/expiretime:int, /***订单对应的商品信息清单*/goodsinfos:List<TActOrderGoods>, /***订单支付信息*/payments:List<TActOrderPayment>, /***订单对应的物流信息*/expressinfo:TActOrderExpress, /***业务订单号*/id:long, /***paydescription*/paydescription:String, /***paystatus*/paystatus:int, /***paytime*/paytime:String, /***商户id*/shopid:long, /***商户标题*/shopsubject:String, /***actordersubject*/subject:String, /***userid*/userid:long, payamount:String, status:int, remark:String, uuid:String, ordertype:Long, extinfo:String, isxuni:boolean, payondelivery:Integer, /***用于代金券-个人业务查询页面*0ornull(其他）:商城*1：商盟*2：联动*/source:String, /***用于代金券-个人业务查询页面*商盟,联动*/goodsname:String);
+
+tactorderexpress(/***serialversionuid*/serialversionuid:long, /***业务订单id*/actorderid:long, /***收货地址*/address:String, /***收货手机*/cellphonenumber:String, /***物流公司id*/expresscompanyid:long, /***物流公司名称*/expresscompanyname:String, /***运费，展示用，单位分*/expresscost:int, /***快递货运单号*/expressno:String, /***记录id*/id:long, /***收货人名称*/receivername:String, /***收货时间（确认收货时间），14位时间*/receivetime:String, /***发送时间，14位时间*/sendtime:String, /***当前状态*/status:int, /***当前状态说*/statusdescription:String, /***状态变更时间*/statustime:String, /***收货电话*/telephonenumber:String, /***邮政编码*/zipcode:String, order:TActOrder #FK to(tactorder));
+
+tsystype(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], pid:Integer, name:String, type:Integer, isvalid:Integer);
+
+tsysadposition(/***id*/id:Integer, /***名称*/name:String, /***宽*/width:Integer, /***高*/height:Integer, /***模板位置*/position:String, /***模板代码*/code:String, /***模板类型*/type:Integer, /***广告清单*/adlist:List<TSysAd>);
+
+tchanneltype(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], typeid:Integer, displayname:String, regioncode:String, channel:Integer);
+
+torderweiboshare(id:Long [PK], orderid:Long, goodsname:String, goodstype:String, paytime:String, sharetime:String, status:int, discribe:String, operateid:Long, lastmodify:String, userid:Long, city:String, isleaguer:String, isdel:int, mobile:String);
+
+tgoodshelf(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], title:String, pid:Integer, levelflag:Integer, orderindex:Integer, shopclass:Integer, shopid:Integer, shopuserid:Integer, updatetime:String, imgurl:String);
+
+survey(id:Integer [PK], surveyid:Integer, questionid:Integer, answer:String, userid:Integer);
+
+tshop(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], acshopid:Integer, name:String, shortname:String, areacode:String, sort:Boolean, discountdetail:String, ischain:Boolean, isbaseshop:Boolean, baseshopname:String, createtime:String, updatetime:String, starttime:String, stoptime:String, address:String, phone:String, opentime:String, busline:String, area:String, parkplace:String, avgspend:Integer, roomnum:String, remark:String, maplong:String, mapdim:String, shopuserid:Integer, status:Integer, isvalid:Boolean, shopclass:Boolean);
+
+tchannelfloorconf(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], title:String, floorid:Integer, typeid:Integer, orderindex:Integer, channel:Integer, regioncode:String, updatetime:String);
+
+titemparam(serialversionuid:long, id:Long [PK], //分类编号typeid:Long, //商品编号itemid:Long, //规格参数paramid:Long, //规格参数名paramkey:String, //规格参数值paramvalue:String, //排序参数rank:Integer, //自定义面显示内容label:String);
+
+tchannelcatalogconf(//fields/***serialversionuid*/serialversionuid:long, id:Integer [PK], itemid:Integer, groupid:Short, updatetime:String, orderindex:Short, status:Short, channel:Short, regioncode:String);
+
+szmallorderhistory(orderid:String [PK], userid:Long, ordertime:String, storename:String, goodsname:String, totalcost:String, productcost:String, status:String);
+
+itemsale(id:Long, /***商品id和t_item_org匹配**/orgid:Long, /***支付体系价格id**/salepriceid:Long, /***码类型1--维码2--二维码**/verifycodetype:Long, /***发码方式0--不发码1--按照订单发码2--按照商品个数发码**/sendcodemode:Long, /***制码方0--平台自己1--方正码平台2--第三方应用**/sendcodechannel:Long, /***制码渠道如果制码方选择第三方应用，则该字段有用10--85度c11--鲜芋仙...**/sendcodesrc:Long, /***是否需要物流配送0-不需要物流配送1-需要物流配送**/postflag:Long, /***销售有效开始时间**/salestarttime:String, /***销售有效结束时间**/salestoptime:String, /***验证有效开始时间**/verifystarttime:String, /***验证有效结束时间**/verifystoptime:String, /***商品库存数量**/stocknum:Long, /***单个用户购买数量0不限制**/userperbuynum:Long, /***商品状态0--草稿1--待审核2--审核中3--审核通过4--审核驳回**/status:Long, /***商品是否有效0--无效1--有效**/isvalid:Long, /***是否同步高阳0--未成功同步1--成功同步**/syncgyflag:Long, /***"1--业务门店2--商户3--渠道商"**/shopclass:Long, /***结算商户id匹配表t_store**/storeid:Long, /***市场价**/marketprice:Float, /***商品类型0--实物1--虚拟物**/itemmode:Long, /***商品分类id**/typeid:Long, /***0-普通商品1-优惠套餐"**/groupflag:Long, /***是否虚拟商品0-否1-是*/virtualflag:Long, /***虚拟商品类型1-卡密2-直充*/virtualtype:Long, /***商品名称*/name:String, /***商品简称*/shortname:String, /***温馨提示*/warmprompt:String, /***商品介绍*/remark:String, /***商户用户id*/shopuserid:Long, /***更新时间*/updatetime:String, /***品牌*/brand:String, /***重量*/weight:Double, /***更新时间*/createtime:String, /***创建人*/createuserid:Long, /***更新人*/updateuserid:Long, /***营销语*/marketcontent:String, /***商城价*/shopprice:Double, /***封面图路径*/imgpath:String, /***结算价*/settleprice:Double, /***验证天数**/verifyday:Long, /***商品是否显示0，不现实；1显示**/isview:Long, allowcash:Long, allowcoin:Long, allowscore:Long, /***是否秒杀**/iseckill:Long, iseckillprice:BigDecimal, /***配送区域*/postarea:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

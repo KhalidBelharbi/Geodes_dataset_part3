@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="annotationbinder" >
+      <xs:complexContent>
+       <xs:extension base="annotation>">
+         <xs:sequence>
+          <xs:element name="log" type="logger" nillable="true" minOccurs="0" />
+          <xs:element name="default_cache_concurrency_strategy" type="cacheconcurrencystrategy" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entitybinder" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="annotatedclass" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="persistentclass" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="mappings" nillable="true" minOccurs="0" />
+        <xs:element name="log" type="logger" nillable="true" minOccurs="0" />
+        <xs:element name="discriminatorvalue" type="xs:string" />
+        <xs:element name="forcediscriminator" type="xs:anyType" />
+        <xs:element name="insertablediscriminator" type="xs:anyType" />
+        <xs:element name="dynamicinsert" type="xs:anyType" />
+        <xs:element name="dynamicupdate" type="xs:anyType" />
+        <xs:element name="explicithibernateentityannotation" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="optimisticlocktype" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="polymorphismtype" nillable="true" minOccurs="0" />
+        <xs:element name="selectbeforeupdate" type="xs:anyType" />
+        <xs:element name="batchsize" type="xs:long" />
+        <xs:element name="lazy" type="xs:anyType" />
+        <xs:element name="proxyclass" type="xs:anyType" />
+        <xs:element name="where" type="xs:string" />
+        <xs:element name="secondarytables" type="xs:anyType" />
+        <xs:element name="secondarytablejoins" type="xs:anyType" />
+        <xs:element name="cacheconcurrentstrategy" type="xs:string" />
+        <xs:element name="cacheregion" type="xs:string" />
+        <xs:element name="filters" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="inheritancestate" nillable="true" minOccurs="0" />
+        <xs:element name="ignoreidannotations" type="xs:anyType" />
+        <xs:element name="cachelazyproperty" type="xs:anyType" />
+        <xs:element name="property" type="accesstype" nillable="true" minOccurs="0" />
+        <xs:element name="wrapidsinembeddedcomponents" type="xs:anyType" />
+        <xs:element name="subselect" type="xs:string" />
+        <xs:element name="sec_tbl_ns_helper" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="resultsetmappingsecondpass" >
+      <xs:sequence>
+        <xs:element name="log" type="logger" nillable="true" minOccurs="0" />
+        <xs:element name="ann" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="mappings" nillable="true" minOccurs="0" />
+        <xs:element name="isdefault" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

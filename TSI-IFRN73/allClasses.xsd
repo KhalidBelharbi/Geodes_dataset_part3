@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="utils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="messages_en" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testemail" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityutilsunittest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="domainuserdetailsserviceit" >
+      <xs:sequence>
+        <xs:element name="user_one_login" type="xs:string" />
+        <xs:element name="user_one_email" type="xs:string" />
+        <xs:element name="user_two_login" type="xs:string" />
+        <xs:element name="user_two_email" type="xs:string" />
+        <xs:element name="user_three_login" type="xs:string" />
+        <xs:element name="user_three_email" type="xs:string" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="domain" type="xs:anyType" />
+        <xs:element name="one" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="two" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="three" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfigurertestcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfigurertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="webconfigurer" nillable="true" minOccurs="0" />
+        <xs:element name="servletcontext" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="props" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hibernatetimezoneit" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="datetimewrapperrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="datetimewrapper" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="timeformatter" type="xs:anyType" />
+        <xs:element name="dateformatter" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userserviceit" >
+      <xs:sequence>
+        <xs:element name="default_login" type="xs:string" />
+        <xs:element name="default_email" type="xs:string" />
+        <xs:element name="default_firstname" type="xs:string" />
+        <xs:element name="default_lastname" type="xs:string" />
+        <xs:element name="default_imageurl" type="xs:string" />
+        <xs:element name="default_langkey" type="xs:string" />
+        <xs:element name="GeneratedName" type="persistenttokenrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermapperit" >
+      <xs:sequence>
+        <xs:element name="default_login" type="xs:string" />
+        <xs:element name="default_id" type="xs:long" />
+        <xs:element name="GeneratedName" type="usermapper" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailserviceit" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="templateengine" type="xs:anyType" />
+        <xs:element name="javamailsender" type="xs:anyType" />
+        <xs:element name="messagecaptor" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="mailservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customauditeventrepositoryit" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="persistenceauditeventrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="auditeventconverter" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="customauditeventrepository" nillable="true" minOccurs="0" />
+        <xs:element name="testuserevent" type="persistentauditevent" nillable="true" minOccurs="0" />
+        <xs:element name="testotheruserevent" type="persistentauditevent" nillable="true" minOccurs="0" />
+        <xs:element name="testolduserevent" type="persistentauditevent" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datetimewrapperrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<datetimewrapper,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="datetimewrapper" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountresourceit" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="authorityrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="persistenttokenrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="httpmessageconverters" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="exceptiontranslator" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="mailservice" nillable="true" minOccurs="0" />
+        <xs:element name="restmvc" type="xs:anyType" />
+        <xs:element name="restuser" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testutil" >
+      <xs:complexContent>
+       <xs:extension base="typesafediagnosingmatcher<string>">
+         <xs:sequence>
+          <xs:element name="mapper" type="xs:anyType" />
+          <xs:element name="/***forjsonutf8*/application_json_utf8" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="exceptiontranslatorit" >
+      <xs:sequence>
+        <xs:element name="controller" type="exceptiontranslatortestcontroller" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="exceptiontranslator" nillable="true" minOccurs="0" />
+        <xs:element name="jacksonmessageconverter" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exceptiontranslatortestcontroller" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userresourceit" >
+      <xs:sequence>
+        <xs:element name="default_login" type="xs:string" />
+        <xs:element name="updated_login" type="xs:string" />
+        <xs:element name="default_id" type="xs:long" />
+        <xs:element name="default_password" type="xs:string" />
+        <xs:element name="updated_password" type="xs:string" />
+        <xs:element name="default_email" type="xs:string" />
+        <xs:element name="updated_email" type="xs:string" />
+        <xs:element name="default_firstname" type="xs:string" />
+        <xs:element name="updated_firstname" type="xs:string" />
+        <xs:element name="default_lastname" type="xs:string" />
+        <xs:element name="updated_lastname" type="xs:string" />
+        <xs:element name="default_imageurl" type="xs:string" />
+        <xs:element name="updated_imageurl" type="xs:string" />
+        <xs:element name="default_langkey" type="xs:string" />
+        <xs:element name="updated_langkey" type="xs:string" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="mailservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="usermapper" nillable="true" minOccurs="0" />
+        <xs:element name="jacksonmessageconverter" type="xs:anyType" />
+        <xs:element name="pageableargumentresolver" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="exceptiontranslator" nillable="true" minOccurs="0" />
+        <xs:element name="em" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="restuser" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="auditresourceit" >
+      <xs:sequence>
+        <xs:element name="sample_principal" type="xs:string" />
+        <xs:element name="sample_type" type="xs:string" />
+        <xs:element name="sample_timestamp" type="xs:anyType" />
+        <xs:element name="seconds_per_day" type="xs:long" />
+        <xs:element name="auditeventrepository" type="persistenceauditeventrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="auditeventconverter" nillable="true" minOccurs="0" />
+        <xs:element name="jacksonmessageconverter" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="pageableargumentresolver" type="xs:anyType" />
+        <xs:element name="auditevent" type="persistentauditevent" nillable="true" minOccurs="0" />
+        <xs:element name="restaudit" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientforwardcontrollerit" >
+      <xs:sequence>
+        <xs:element name="rest" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="login" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="imageurl" type="xs:string" />
+        <xs:element name="activated" type="xs:anyType" />
+        <xs:element name="langkey" type="xs:string" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="lastmodifiedby" type="xs:string" />
+        <xs:element name="lastmodifieddate" type="xs:anyType" />
+        <xs:element name="authorities" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="passwordchangedto" >
+      <xs:sequence>
+        <xs:element name="currentpassword" type="xs:string" />
+        <xs:element name="newpassword" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usermapper" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="user" type="xs:string" />
+        <xs:element name="base_url" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="templateengine" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="persistenttokenrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="authorityrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="auditeventservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="persistenceauditeventrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="auditeventconverter" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="randomutil" >
+      <xs:sequence>
+        <xs:element name="def_count" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicationwebxml" >
+      <xs:complexContent>
+       <xs:extension base="springbootservletinitializer">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authoritiesconstants" >
+      <xs:sequence>
+        <xs:element name="admin" type="xs:string" />
+        <xs:element name="user" type="xs:string" />
+        <xs:element name="anonymous" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="springsecurityauditoraware" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usernotactivatedexception" >
+      <xs:complexContent>
+       <xs:extension base="authenticationexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="domainuserdetailsservice" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistenttokenremembermeservices" >
+      <xs:complexContent>
+       <xs:extension base="">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="//tokenisvalidforonemonthtoken_validity_days" type="xs:long" />
+          <xs:element name="token_validity_seconds" type="xs:long" />
+          <xs:element name="upgraded_token_validity_millis" type="xs:long" />
+          <xs:element name="upgradedtokencache" type="xs:anyType" />
+          <xs:element name="" type="persistenttokenrepository" nillable="true" minOccurs="0" />
+          <xs:element name="" type="userrepository" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="bugtrackerjhipsterapp" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="customauditeventrepository" >
+      <xs:sequence>
+        <xs:element name="authorization_failure" type="xs:string" />
+        <xs:element name="/***shouldbethesameasinliquibasemigration.*/event_data_column_max_length" type="xs:long" />
+        <xs:element name="GeneratedName" type="persistenceauditeventrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="auditeventconverter" nillable="true" minOccurs="0" />
+        <xs:element name="log" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<user,">
+         <xs:sequence>
+          <xs:element name="users_by_login_cache" type="xs:string" />
+          <xs:element name="users_by_email_cache" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistenttokenrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<persistenttoken,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="authorityrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<authority,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistenceauditeventrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<persistentauditevent,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractauditingentity" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="createdby" type="xs:string" />
+        <xs:element name="createddate" type="xs:anyType" />
+        <xs:element name="lastmodifiedby" type="xs:string" />
+        <xs:element name="lastmodifieddate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:complexContent>
+       <xs:extension base="abstractauditingentity">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="login" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+          <xs:element name="firstname" type="xs:string" />
+          <xs:element name="lastname" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="activated" type="xs:anyType" />
+          <xs:element name="langkey" type="xs:string" />
+          <xs:element name="imageurl" type="xs:string" />
+          <xs:element name="activationkey" type="xs:string" />
+          <xs:element name="resetkey" type="xs:string" />
+          <xs:element name="resetdate" type="xs:anyType" />
+          <xs:element name="authorities" type="authority" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="persistenttokens" type="persistenttoken" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="persistentauditevent" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="principal" type="xs:string" />
+        <xs:element name="auditeventdate" type="xs:anyType" />
+        <xs:element name="auditeventtype" type="xs:string" />
+        <xs:element name="data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="persistenttoken" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="max_user_agent_len" type="xs:long" />
+        <xs:element name="series" type="xs:string" />
+        <xs:element name="tokenvalue" type="xs:string" />
+        <xs:element name="tokendate" type="xs:anyType" />
+        <xs:element name="//anipv6addressmaxlengthis39charactersipaddress" type="xs:string" />
+        <xs:element name="useragent" type="xs:string" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authority" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="auditresource" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="auditeventservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userresource" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="applicationname" type="xs:string" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="mailservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountresource" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="" type="userrepository" nillable="true" minOccurs="0" />
+          <xs:element name="" type="userservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="mailservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="persistenttokenrepository" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="errorconstants" >
+      <xs:sequence>
+        <xs:element name="err_concurrency_failure" type="xs:string" />
+        <xs:element name="err_validation" type="xs:string" />
+        <xs:element name="problem_base_url" type="xs:string" />
+        <xs:element name="default_type" type="xs:anyType" />
+        <xs:element name="constraint_violation_type" type="xs:anyType" />
+        <xs:element name="entity_not_found_type" type="xs:anyType" />
+        <xs:element name="invalid_password_type" type="xs:anyType" />
+        <xs:element name="email_already_used_type" type="xs:anyType" />
+        <xs:element name="login_already_used_type" type="xs:anyType" />
+        <xs:element name="email_not_found_type" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="invalidpasswordexception" >
+      <xs:complexContent>
+       <xs:extension base="abstractthrowableproblem">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="emailalreadyusedexception" >
+      <xs:complexContent>
+       <xs:extension base="badrequestalertexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="emailnotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="abstractthrowableproblem">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="badrequestalertexception" >
+      <xs:complexContent>
+       <xs:extension base="abstractthrowableproblem">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="entityname" type="xs:string" />
+          <xs:element name="errorkey" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fielderrorvm" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="objectname" type="xs:string" />
+        <xs:element name="field" type="xs:string" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="exceptiontranslator" >
+      <xs:sequence>
+        <xs:element name="field_errors_key" type="xs:string" />
+        <xs:element name="message_key" type="xs:string" />
+        <xs:element name="path_key" type="xs:string" />
+        <xs:element name="violations_key" type="xs:string" />
+        <xs:element name="applicationname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginalreadyusedexception" >
+      <xs:complexContent>
+       <xs:extension base="badrequestalertexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="keyandpasswordvm" >
+      <xs:sequence>
+        <xs:element name="key" type="xs:string" />
+        <xs:element name="newpassword" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manageduservm" >
+      <xs:complexContent>
+       <xs:extension base="userdto">
+         <xs:sequence>
+          <xs:element name="password_min_length" type="xs:long" />
+          <xs:element name="password_max_length" type="xs:long" />
+          <xs:element name="password" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientforwardcontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="databaseconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="asyncconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="problemsupport" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cacheconfiguration" >
+      <xs:sequence>
+        <xs:element name="jcacheconfiguration" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="auditeventconverter" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jacksonconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="contextawarebase">
+         <xs:sequence>
+          <xs:element name="console_appender_name" type="xs:string" />
+          <xs:element name="logstash_appender_name" type="xs:string" />
+          <xs:element name="async_logstash_appender_name" type="xs:string" />
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="context" type="xs:anyType" />
+          <xs:element name="appname" type="xs:string" />
+          <xs:element name="serverport" type="xs:string" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="liquibaseconfiguration" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfigurer" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loggingaspectconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="localeconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicationproperties" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="package-info" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="defaultprofileutil" >
+      <xs:sequence>
+        <xs:element name="spring_profile_default" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="constants" >
+      <xs:sequence>
+        <xs:element name="//regexforacceptableloginslogin_regex" type="xs:string" />
+        <xs:element name="system_account" type="xs:string" />
+        <xs:element name="default_language" type="xs:string" />
+        <xs:element name="anonymous_user" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datetimeformatconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clouddatabaseconfiguration" >
+      <xs:complexContent>
+       <xs:extension base="abstractcloudconfig">
+         <xs:sequence>
+          <xs:element name="log" type="xs:anyType" />
+          <xs:element name="cloud_configuration_hikari_prefix" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="loggingaspect" >
+      <xs:sequence>
+        <xs:element name="log" type="xs:anyType" />
+        <xs:element name="env" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jvm" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sonar" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manifest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activate" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settings" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessions" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reset" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="error" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="register" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="home" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="password" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metrics" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logs" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="audits" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user-management" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="global" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configuration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="health" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="web" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pagination.constants" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="footer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="_bootstrap-variables" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="logback-spring" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="creationemail" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="passwordresetemail" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="activationemail" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authority" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user_authority" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="master" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

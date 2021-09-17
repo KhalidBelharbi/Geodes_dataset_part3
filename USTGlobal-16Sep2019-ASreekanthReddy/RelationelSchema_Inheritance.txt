@@ -1,0 +1,7 @@
+
+mailbean(mid:int [PK], subject:String, message:String, status:String, user:UserBean #FK to(userbean), GeneratedName:UserBean #FK to(userbean));
+
+userbean(id:int [PK], user_name:String, email:String, password:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,21 @@
+
+exchangeratetran(procymd:String [PK], procseq:Integer [PK], currcode:String [PK], buyrate:Integer, sellrate:Integer, baserate:Integer);
+
+smstran(procymd:String [PK], acctno:String [PK], procseq:Integer [PK], tellno:String, msgcntt:String);
+
+maintransactiontran(dealymd:String [PK], acctno:String [PK], dealno:Integer [PK], cashamt:Double, cmsnamt:Double, exctamt:Double, currcode:String, bsnsrmrkcode:String, trnsbankcode:String, trnsbankacctno:String, trnsacctnm:String);
+
+accountamountmaster(acctno:String [PK], cashamt:Double);
+
+dealfeemaster(trnsbasecode:String [PK], sectionbaseamt:Integer [PK], currcode:String, feeamt:Integer);
+
+foreigntransactiontran(dealymd:String [PK], acctno:String [PK], dealno:Integer [PK], trnsbasecode:String, sendnm:String, recvnm:String, recvaddress:String, recvcity:String, recvnatncode:String, recvstatecode:String);
+
+accountmaster(acctno:String [PK], password:String, acctnm:String, acctmangbasecode:String, livingyn:String, stayyn:String, tellno:String);
+
+sendfeptran(procymd:String [PK], procseq:Integer [PK], trnsbasecode:String, fepcomcntt:String);
+
+deallimitmaster(trnsbasecode:String [PK], currcode:String [PK], excptyn:String [PK], trnslimamt:Double);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

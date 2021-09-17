@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="passwordresettoken" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="token" type="xs:string" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="expiry" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="articulopedido" >
+      <xs:sequence>
+        <xs:element name="idarticulopedido" type="xs:long" />
+        <xs:element name="cantidad" type="xs:long" />
+        <xs:element name="preciounitario" type="xs:double" />
+        <xs:element name="//foraneas" type="pedido" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="producto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrole" >
+      <xs:sequence>
+        <xs:element name="userroleid" type="xs:long" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="role" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="iduser" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="//@notempty(message" type="xs:string" />
+        <xs:element name="codigoverificacion" type="xs:string" />
+        <xs:element name="//indicasielusuarioestádisponibleverifyed" type="xs:long" />
+        <xs:element name="/*@column(name" type="userrole" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="userroles" type="userrole" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="categoria" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="descripcion" type="xs:string" />
+        <xs:element name="habilitado" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="departamento" nillable="true" minOccurs="0" />
+        <xs:element name="subcategorias" type="subcategoria" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="departamento" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="descripcion" type="xs:string" />
+        <xs:element name="habilitado" type="xs:anyType" />
+        <xs:element name="categoria" type="categoria" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="subcategoria" >
+      <xs:sequence>
+        <xs:element name="idsubcategoria" type="xs:long" />
+        <xs:element name="nombresubcategoria" type="xs:string" />
+        <xs:element name="descripcionsubcategoria" type="xs:string" />
+        <xs:element name="habilitado" type="xs:anyType" />
+        <xs:element name="//foranea" type="categoria" nillable="true" minOccurs="0" />
+        <xs:element name="productos" type="producto" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cargo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="titulocargo" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="estado" >
+      <xs:sequence>
+        <xs:element name="idestado" type="xs:long" />
+        <xs:element name="tituloestado" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pedido" >
+      <xs:sequence>
+        <xs:element name="idpedido" type="xs:long" />
+        <xs:element name="direcciondestino" type="xs:string" />
+        <xs:element name="fechapedido" type="xs:dateTime" />
+        <xs:element name="//llavesforaneas" type="pais" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="estado" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cliente" nillable="true" minOccurs="0" />
+        <xs:element name="listaarticulo" type="articulopedido" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="entradasalida" >
+      <xs:sequence>
+        <xs:element name="identradasalida" type="xs:long" />
+        <xs:element name="GeneratedName" type="kardex" nillable="true" minOccurs="0" />
+        <xs:element name="fecha" type="xs:dateTime" />
+        <xs:element name="isentradasalida" type="xs:anyType" />
+        <xs:element name="cantidad" type="xs:long" />
+        <xs:element name="precio" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="kardex" >
+      <xs:sequence>
+        <xs:element name="idkardex" type="xs:long" />
+        <xs:element name="GeneratedName" type="producto" nillable="true" minOccurs="0" />
+        <xs:element name="stockminimo" type="xs:long" />
+        <xs:element name="stockmaximo" type="xs:long" />
+        <xs:element name="costounitario" type="xs:double" />
+        <xs:element name="unidadesdisponibles" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="producto" >
+      <xs:sequence>
+        <xs:element name="//faltaelcampoparalallaveforaneadesubgategoriaidarticulo" type="xs:long" />
+        <xs:element name="imagen" type="xs:string" />
+        <xs:element name="marca" type="xs:string" />
+        <xs:element name="titulo" type="xs:string" />
+        <xs:element name="margenganancia" type="xs:double" />
+        <xs:element name="porcentajedescuento" type="xs:double" />
+        <xs:element name="descripcionarticulo" type="xs:string" />
+        <xs:element name="habilitado" type="xs:long" />
+        <xs:element name="GeneratedName" type="subcategoria" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="kardex" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pais" >
+      <xs:sequence>
+        <xs:element name="idpais" type="xs:long" />
+        <xs:element name="nombrepais" type="xs:string" />
+        <xs:element name="costoenvio" type="xs:double" />
+        <xs:element name="impuesto" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cliente" >
+      <xs:sequence>
+        <xs:element name="idcliente" type="xs:long" />
+        <xs:element name="nombrecliente" type="xs:string" />
+        <xs:element name="apellidocliente" type="xs:string" />
+        <xs:element name="direccion" type="xs:string" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="empleado" >
+      <xs:sequence>
+        <xs:element name="idempleado" type="xs:long" />
+        <xs:element name="nombreempleado" type="xs:string" />
+        <xs:element name="apellidoempleado" type="xs:string" />
+        <xs:element name="direccion" type="xs:string" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cargo" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cuenta" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="numerotarjeta" type="xs:string" />
+        <xs:element name="codigo" type="xs:long" />
+        <xs:element name="saldo" type="xs:double" />
+        <xs:element name="GeneratedName" type="cliente" nillable="true" minOccurs="0" />
+        <xs:element name="fechadevencimiento" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

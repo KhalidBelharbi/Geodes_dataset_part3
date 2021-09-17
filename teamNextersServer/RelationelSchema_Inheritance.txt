@@ -1,0 +1,21 @@
+
+useractiveentity(userno:String [PK], gener:int [PK], completeyn:String);
+
+userinfovalueentity(userno:String [PK], userinfo:UserInfoEntity [PK] #FK to(userinfoentity), infovalue:String, infoopenyn:String);
+
+productentity(id:int [PK], prodtype:String, prodtitle:String, proddesc:String, prodlink:String, prod:Date);
+
+userentity(userno:String [PK], userid:String, username:String, password:String, userbirth:int, userauth:String, img:String);
+
+userinfoentity(id:int [PK], infoname:String);
+
+productattendentity(prodid:int [PK], productattend:ProductEntity #FK to(productentity), userno:String [PK], role:int);
+
+archiveentity(no:int [PK], title:String, desc:String, prizeyn:String);
+
+memoryentity(id:int [PK], title:String, desc:String);
+
+memoryimgentity(memory:MemoryEntity [PK] #FK to(memoryentity), seq:int [PK], img:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

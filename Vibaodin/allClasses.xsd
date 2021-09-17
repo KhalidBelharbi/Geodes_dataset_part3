@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="runtime.a32113b387dc9f0254d3" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="3rdpartylicenses" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="welcome" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vinhlmpc01238asm1sof3021application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basketrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<basket,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="detailbillrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<detailbill,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productimagerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<productimage,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="basket" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idaccount" type="xs:anyType" />
+        <xs:element name="idproduct" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="account" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="push" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bill" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idbill" type="xs:anyType" />
+        <xs:element name="export" type="xs:dateTime" />
+        <xs:element name="idaccount" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="account" nillable="true" minOccurs="0" />
+        <xs:element name="detailbills" type="detailbill" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="account" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idaccount" type="xs:anyType" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="avatar" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="fullname" type="xs:string" />
+        <xs:element name="address" type="xs:string" />
+        <xs:element name="man" type="xs:anyType" />
+        <xs:element name="enable" type="xs:anyType" />
+        <xs:element name="admin" type="xs:anyType" />
+        <xs:element name="bills" type="bill" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="baskets" type="basket" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="product" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idproduct" type="xs:anyType" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="price" type="xs:double" />
+        <xs:element name="trademark" type="xs:string" />
+        <xs:element name="guaratee" type="xs:double" />
+        <xs:element name="deliveryaddress" type="xs:string" />
+        <xs:element name="detail" type="xs:string" />
+        <xs:element name="detailbills" type="detailbill" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="baskets" type="basket" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="productimages" type="productimage" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="producttypes" type="producttype" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="detailbillid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idbill" type="xs:anyType" />
+        <xs:element name="idproduct" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="detailbill" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idbill" type="xs:anyType" />
+        <xs:element name="idproduct" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="bill" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:anyType" />
+        <xs:element name="unitprice" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="producttype" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idtype" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="report" >
+      <xs:sequence>
+        <xs:element name="titleproduct" type="xs:string" />
+        <xs:element name="quantity" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productimage" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idimage" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="product" nillable="true" minOccurs="0" />
+        <xs:element name="nameimage" type="xs:string" />
+        <xs:element name="alternative" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basketid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="idaccount" type="xs:anyType" />
+        <xs:element name="idproduct" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<account,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="productrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<product,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="billrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<bill,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="producttyperepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<producttype,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="roleadmininterceptor" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="sessionservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globaldatainterceptor" >
+      <xs:sequence>
+        <xs:element name="producttypedao" type="producttyperepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roleuserinterceptor" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="sessionservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="servletinitializer" >
+      <xs:complexContent>
+       <xs:extension base="springbootservletinitializer">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="errormanagercontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="indexcontroller" >
+      <xs:sequence>
+        <xs:element name="productdao" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="request" type="xs:anyType" />
+        <xs:element name="response" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonwebtoken" >
+      <xs:sequence>
+        <xs:element name="jwt_secret" type="xs:string" />
+        <xs:element name="//30minutesjwt_expiration" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productapi" >
+      <xs:sequence>
+        <xs:element name="productdao" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="producttypedao" type="producttyperepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="signapi" >
+      <xs:sequence>
+        <xs:element name="token_json" type="xs:string" />
+        <xs:element name="request" type="xs:anyType" />
+        <xs:element name="accountdao" type="accountrepository" nillable="true" minOccurs="0" />
+        <xs:element name="jwtservice" type="jsonwebtoken" nillable="true" minOccurs="0" />
+        <xs:element name="welcomeservice" type="mailwelcomeservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="buyapi" >
+      <xs:sequence>
+        <xs:element name="basketdao" type="basketrepository" nillable="true" minOccurs="0" />
+        <xs:element name="accountdao" type="accountrepository" nillable="true" minOccurs="0" />
+        <xs:element name="productdao" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="billdao" type="billrepository" nillable="true" minOccurs="0" />
+        <xs:element name="detaildao" type="detailbillrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userapi" >
+      <xs:sequence>
+        <xs:element name="token_json" type="xs:string" />
+        <xs:element name="accountdao" type="accountrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="paramservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basketapi" >
+      <xs:sequence>
+        <xs:element name="basketdao" type="basketrepository" nillable="true" minOccurs="0" />
+        <xs:element name="accountdao" type="accountrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="globalapi" >
+      <xs:sequence>
+        <xs:element name="jwtservice" type="jsonwebtoken" nillable="true" minOccurs="0" />
+        <xs:element name="accountdao" type="accountrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productmanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="paramservice" nillable="true" minOccurs="0" />
+        <xs:element name="productdao" type="productrepository" nillable="true" minOccurs="0" />
+        <xs:element name="imagedao" type="productimagerepository" nillable="true" minOccurs="0" />
+        <xs:element name="typedao" type="producttyperepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountmanager" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="paramservice" nillable="true" minOccurs="0" />
+        <xs:element name="accountdao" type="accountrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailservice" >
+      <xs:sequence>
+        <xs:element name="sender" type="xs:anyType" />
+        <xs:element name="queuelist" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mailwelcomeservice" >
+      <xs:sequence>
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="GeneratedName" type="mailservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="fileservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paramservice" >
+      <xs:sequence>
+        <xs:element name="_request" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fileservice" >
+      <xs:sequence>
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="request" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sessionservice" >
+      <xs:sequence>
+        <xs:element name="_request" type="xs:anyType" />
+        <xs:element name="_response" type="xs:anyType" />
+        <xs:element name="_session" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="configapplication" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="roleadmininterceptor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="roleuserinterceptor" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="globaldatainterceptor" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vinhlmpc01238asm1sof3021applicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

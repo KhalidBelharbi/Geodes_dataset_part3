@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="sharingactivitiesrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="renovationrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="informationrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="renovationentity" >
+      <xs:sequence>
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sharingactivitiesentity" >
+      <xs:sequence>
+        <xs:element name="//活动分享idid" type="xs:string" />
+        <xs:element name="//发布人publishby" type="xs:string" />
+        <xs:element name="//发布时间publish" type="xs:dateTime" />
+        <xs:element name="//内容content" type="xs:string" />
+        <xs:element name="//图片idimgid" type="xs:string" />
+        <xs:element name="//序列sort" type="xs:long" />
+        <xs:element name="//活动分享标题title" type="xs:string" />
+        <xs:element name="//项目iditemid" type="xs:string" />
+        <xs:element name="//发布开始时间publishstart" type="xs:dateTime" />
+        <xs:element name="//发布结束时间publishend" type="xs:dateTime" />
+        <xs:element name="/*排序*///排序ad_sort" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertyentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="imgurl" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="sort" type="xs:long" />
+        <xs:element name="projectid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="informationentity" >
+      <xs:sequence>
+        <xs:element name="//服务电话phone" type="xs:string" />
+        <xs:element name="//服务名称servicename" type="xs:string" />
+        <xs:element name="propertyservice" type="xs:string" />
+        <xs:element name="publicservice" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="imgactivitiesentity" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="imgid" type="xs:string" />
+        <xs:element name="imgurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

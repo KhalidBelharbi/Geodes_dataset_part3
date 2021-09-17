@@ -1,0 +1,18 @@
+ClassDiagram.Class>> PersistentAuditEvent =>=>=> RelationalSchema.Table>> persistentauditevent;
+ClassDiagram.Class>> AbstractAuditingEntity =>=>=> RelationalSchema.Table>> abstractauditingentity;
+ClassDiagram.Class>> Car =>=>=> RelationalSchema.Table>> car;
+ClassDiagram.Attribut>> PersistentAuditEvent.id:Long =>=>=> RelationalSchema.Column>> persistentauditevent.id PRIMARY KEY;
+ClassDiagram.Attribut>> PersistentAuditEvent.principal:String =>=>=> RelationalSchema.Column>> persistentauditevent.principal;
+ClassDiagram.Attribut>> PersistentAuditEvent.auditeventdate:LocalDateTime =>=>=> RelationalSchema.Column>> persistentauditevent.auditeventdate;
+ClassDiagram.Attribut>> PersistentAuditEvent.auditeventtype:String =>=>=> RelationalSchema.Column>> persistentauditevent.auditeventtype;
+ClassDiagram.Attribut>> PersistentAuditEvent.data:Map<String,String> =>=>=> RelationalSchema.Column>> persistentauditevent.data;
+ClassDiagram.Attribut>> AbstractAuditingEntity.serialversionuid:long =>=>=> RelationalSchema.Column>> abstractauditingentity.serialversionuid;
+ClassDiagram.Attribut>> AbstractAuditingEntity.createdby:String =>=>=> RelationalSchema.Column>> abstractauditingentity.createdby;
+ClassDiagram.Attribut>> AbstractAuditingEntity.createddate:ZonedDateTime =>=>=> RelationalSchema.Column>> abstractauditingentity.createddate;
+ClassDiagram.Attribut>> AbstractAuditingEntity.lastmodifiedby:String =>=>=> RelationalSchema.Column>> abstractauditingentity.lastmodifiedby;
+ClassDiagram.Attribut>> AbstractAuditingEntity.lastmodifieddate:ZonedDateTime =>=>=> RelationalSchema.Column>> abstractauditingentity.lastmodifieddate;
+ClassDiagram.Attribut>> Car.serialversionuid:long =>=>=> RelationalSchema.Column>> car.serialversionuid;
+ClassDiagram.Attribut>> Car.id:Long =>=>=> RelationalSchema.Column>> car.id PRIMARY KEY;
+ClassDiagram.Attribut>> Car.make:String =>=>=> RelationalSchema.Column>> car.make;
+ClassDiagram.Attribut>> Car.brand:String =>=>=> RelationalSchema.Column>> car.brand;
+ClassDiagram.Attribut>> Car.price:Double =>=>=> RelationalSchema.Column>> car.price;

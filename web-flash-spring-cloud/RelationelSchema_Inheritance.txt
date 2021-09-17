@@ -1,0 +1,43 @@
+
+dept(num:Integer, pid:Long, ,[1],期中0为标识根组织(虚拟组织，实际并没有这个组织），1为父组织*/pids:String, simplename:String, fullname:String);
+
+cfg(cfgname:String, cfgvalue:String, cfgdesc:String);
+
+loginlog(id:Integer [PK], logname:String, userid:Integer, succeed:String, message:String, ip:String, createtime:Date);
+
+fileinfo(originalfilename:String, realfilename:String);
+
+dict(num:String, pid:Long, name:String, tips:String);
+
+user(avatar:String, account:String, password:String, salt:String, name:String, birthday:Date, sex:Integer, email:String, phone:String, roleid:String, deptid:Long, status:Integer, version:Integer, GeneratedName:Dept #FK to(dept));
+
+relation(id:Long [PK], menuid:Long, roleid:Long);
+
+operationlog(id:Long [PK], /***日志类型，*@seelogtype*/logtype:String, logname:String, userid:Integer, classname:String, method:String, createtime:Date, succeed:String, message:String);
+
+tasklog(exe_failure_result:int, exe_success_result:int, id:Long [PK], idtask:Long, name:String, execat:Date, execsuccess:int, jobexception:String);
+
+notice(title:String, type:Integer, content:String);
+
+menu(code:String, pcode:String, pcodes:String, name:String, icon:String, /***如果当前配置为非菜单（按钮）也需要配置链接，v-permission使用该配置，且不能与其他url重复*/url:String, num:Integer, levels:Integer, ismenu:Integer, tips:String, isopen:Integer, component:String, hidden:Boolean);
+
+role(num:Integer, pid:Long, name:String, tips:String, deptid:Long, version:Integer);
+
+task(name:String, jobgroup:String, jobclass:String, note:String, cron:String, concurrent:boolean, data:String, execat:Date, execresult:String, disabled:boolean);
+
+message(tplcode:String, content:String, receiver:String, type:Integer, state:Integer);
+
+messagesender(name:String, classname:String);
+
+messagetemplate(code:String, title:String, content:String, cond:String, idmessagesender:Long, type:Integer, id:MessageSender #FK to(messagesender), remotetplcode:String);
+
+channel(name:String, code:String);
+
+article(idchannel:Long, title:String, content:String, author:String, img:String);
+
+banner(url:String, title:String, type:String, idfile:Long);
+
+contacts(username:String, mobile:String, email:String, remark:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="hello" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginfailure" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="home" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="app.0367fff0.js" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="chunk-vendors.6c15985c.js" >
+      <xs:complexContent>
+       <xs:extension base="import">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="app.360c7657" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<article,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="skillsdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<skills,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="followdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<follow,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="notificationdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<notification,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="likesdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<likes,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pindao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<pin,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="interestdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<interest,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="keywordsdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<keywords,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="commentdao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<comment,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="articledao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<article,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customoauth2userservice" >
+      <xs:complexContent>
+       <xs:extension base="defaultoauth2userservice">
+         <xs:sequence>
+          <xs:element name="missing_user_info_uri_error_code" type="xs:string" />
+          <xs:element name="missing_user_name_attribute_error_code" type="xs:string" />
+          <xs:element name="invalid_user_info_response_error_code" type="xs:string" />
+          <xs:element name="parameterized_response_type" type="xs:anyType" />
+          <xs:element name="requestentityconverter" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="oauth2application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="securityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customoauth2provider" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="socialtype" >
+      <xs:sequence>
+        <xs:element name="role_prefix" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oauth2controller2" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="skills" >
+      <xs:sequence>
+        <xs:element name="sno" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="keywords" >
+      <xs:sequence>
+        <xs:element name="keywordid" type="xs:long" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="sno" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="comment" >
+      <xs:sequence>
+        <xs:element name="commentid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="img" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="score" type="xs:long" />
+        <xs:element name="updatedat" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="followmultiid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="followemail" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pin" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="pinid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="likes" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="likesid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="follow" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="followemail" type="xs:string" />
+        <xs:element name="followid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationmultiid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="other" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="likesmultiid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notification" >
+      <xs:sequence>
+        <xs:element name="notificationid" type="xs:long" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="other" type="xs:string" />
+        <xs:element name="othernickname" type="xs:string" />
+        <xs:element name="readn" type="xs:long" />
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="ready" type="xs:long" />
+        <xs:element name="createtime" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pinmultiid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="articleid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basicresponse" >
+      <xs:sequence>
+        <xs:element name="status" type="xs:anyType" />
+        <xs:element name="data" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="search" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="article" >
+      <xs:sequence>
+        <xs:element name="articleid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="imgurl" type="xs:string" />
+        <xs:element name="ispublic" type="xs:long" />
+        <xs:element name="preview" type="xs:string" />
+        <xs:element name="//@column(insertable" type="xs:anyType" />
+        <xs:element name="//@column(updatable" type="xs:anyType" />
+        <xs:element name="hits" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="multiid" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="sno" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="signuprequest" >
+      <xs:sequence>
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="info" type="xs:string" />
+        <xs:element name="github" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authenticationrequest" >
+      <xs:sequence>
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interest" >
+      <xs:sequence>
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="sno" type="xs:long" />
+        <xs:element name="erestid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="no" type="xs:long" />
+        <xs:element name="email" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="nickname" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="info" type="xs:string" />
+        <xs:element name="img" type="xs:string" />
+        <xs:element name="github" type="xs:string" />
+        <xs:element name="score" type="xs:long" />
+        <xs:element name="createdate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="jwtservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pindao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="followdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="likesdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="notificationdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountcontroller2" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="articledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="followdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pindao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="likesdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="notificationdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="interestdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="skillsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="jwtservice" nillable="true" minOccurs="0" />
+        <xs:element name="//이메일설정함수" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="googlelogincontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="jwtservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mypagecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="articledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="skillsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pindao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="likesdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="followdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="keywordsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="interestdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="commentdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="notificationdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="articlecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="articledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="skillsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="keywordsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="likesdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pindao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="commentdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="articlecontroller2" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="articledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="skillsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="keywordsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="likesdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pindao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="commentdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="interestcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="interestdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="skillsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="keywordsdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="commentcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="commentdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="articledao" nillable="true" minOccurs="0" />
+        <xs:element name="notidao" type="notificationdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pinlikefollowcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="followdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pindao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="likesdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="notificationdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="articledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="searchcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="searchdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="skillsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="keywordsdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="likesdao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pindao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="articledao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="commentdao" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webcurationapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="swaggerconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtdecoding" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtservice" >
+      <xs:sequence>
+        <xs:element name="expiremin" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtinterceptor" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webcurationapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,29 @@
+
+usergiftentity(//idusergiftid:String [PK], //礼物类型1积分2商品gifttype:String, //积分数量number:String, //商品idproductid:String);
+
+sellercollectentity(//收藏idcollectid:String, //用户iduserid:String, //商户idsellerid:String);
+
+sellerevaluateentity(//正常status_valid:String, //删除status_invalid:String, //鲜花好评circs_flower:String, //差评circs_negative:String, //点评idevaluateid:String, //评价情况evaluatecircs:String, //点评时间evaluatetime:Date, //点评状态evaluatestatus:String, //点评排序evaluatesort:String, //点评人iduserid:String, //商户idsellerid:String);
+
+mallproducttypeentity(//商品种类idproducttypeid:String, //商品种类名称producttypename:String, //商品类型状态(0,禁用1,启用)producttypestate:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+sellertypeentity(status_valid:String, status_invalid:String, //类型idtypeid:String, //类型名称typename:String, //创建时间createtime:Date, //修改时间modifytime:Date, //类型描述typedsc:String, //操作人operator:String, //状态status:String, //类型排序typesort:String);
+
+shopsellerentity(//禁用status_valid:String, //启用status_invalid:String, //商户idsellerid:String, //商户名称sellername:String, //商户状态sellerstatus:String, //商户简介sellerdsc:String, //商户星级sellerlevel:String, //商户电话sellertel:String, //商户地址selleraddress:String, //商户负责人sellerdirector:String, //商户负责人idsellerdirectorid:String, //商户负责人电话sellerdirectortel:String, //商户开始营业时间beginbussiness:Date, //商户营业结束时间endbussiness:Date, //商户创建时间sellercreate:Date, //商户到期时间sellerexpire:Date, //商户修改时间sellermodify:Date, //商户logosellerlogo:String, //商户类型sellertype:String, //商户推荐商品sellerrecommend:String, //商户标签sellerlabel:String, //商户品牌sellerbrand:String, //商户税号sellertariffline:String, //商户排序sellersort:Integer, //商户主营sellermainbussiness:String, //距离range:String, //项目idprojectid:String);
+
+mallproductcardentity(//idcardid:String [PK], //编码code:String, //密码pwd:String, //用户iduserid:String, //商品idmallid:String, //创建日期createon:Date);
+
+integralrulemodelentity(//idmodelid:String [PK], //名称modelname:String, //类型1/2/3/4/5modeltype:String);
+
+integralruleentity(//idintegralruleid:String [PK], //公众号idclientconfigid:Integer, //模块idintegralrulemodelid:String, //积分数量integralnumber:String, //创建人createby:String, //创建时间createon:Date);
+
+tradeentity(//idtradeid:String [PK], //订单号tradeno:String, //商品idproductid:String, //创建日期createon:Date, //数量number:String, //支付积分amount:String, //支付金额payment:String, //业主名称name:String, //手机号phone:String, //收货地址address:String, //备注message:String, //订单状态1已支付2已发货tradestatus:String, //用户信息userid:String, //微信号wechatappid:String);
+
+mallproductentity(//商品idproductid:String, //商品编码productnum:String, //商品名称productname:String, //商品类目idproducttypeid:String, //商品价格(商品应付)productprice:BigDecimal, //商品积分productintegral:Integer, //所属商家productbusiness:String, //商品规格productspec:String, //商品库存productstock:Integer, //商品导图productpicurl:String, //商品详情productdetails:String, //商品状态(0,已下架1,已上架)productstate:Integer, //是否为卡券(0,否1,是)iscardcoupons:Integer, //卡券密码cardcouponspassword:String, //有效期限cardcouponsterm:Date, //卡券二维码cardcouponsqrcode:String, //商品所属客户端idclientid:Integer, //创建人createby:String, //创建时间createon:Date, //修改人modifyby:String, //修改时间modifyon:Date);
+
+userintegralrulerecordentity(//iduserintegralrulerecordid:String [PK], //微信appidwechatappid:String, //项目idhouseprojectid:String, //地址useraddress:String, //用户iduserid:String, //模块类型modeltype:String, //积分数量number:String, //创建日期createon:Date, rname:String, rid:String);
+
+sellerpictureentity(status_valid:String, status_inalid:String, //图片idid:String, //商户idsellerid:String, //图片地址pictureurl:String, //图片状态picturestatus:String, //图片类型picturetype:String, //创建时间createtime:Date, //图片排序picturesort:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

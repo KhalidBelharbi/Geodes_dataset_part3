@@ -1,0 +1,19 @@
+
+property(id:Long [PK], tenantid:Long, name:String, parentid:Long, code:String, poster:String);
+
+template(serialversionuid:long, id:Long [PK], tenantid:Long, name:String, remark:String, code:String, enabled:Boolean);
+
+templatefield(serialversionuid:long, id:Long [PK], templateid:Long, name:String, code:String, type:FieldType, param:String, hint:String, remark:String, placeholder:String, enabled:Boolean, sort:Integer);
+
+commentupvote(serialversionuid:long, id:Long [PK], commentid:Long, upvoterid:Long, addtime:LocalDateTime);
+
+upvote(id:Long [PK], tenantid:Long, articleid:String, upvoterid:Long, issuetime:LocalDateTime);
+
+favorite(id:Long [PK], tenantid:Long, articleid:String, favoriterid:Long, addtime:LocalDateTime);
+
+comment(serialversionuid:long, id:Long [PK], tenantid:Long, articleid:String, articletitle:String, commentid:Long, replierid:Long, repliername:String, receiverid:Long, issuetime:LocalDateTime, content:String, upvotecount:Integer, issued:Boolean);
+
+column(id:Long [PK], tenantid:Long, name:String, parentid:Long, enabled:Boolean, templateid:Long, code:String, articlecount:Integer, remark:String, hidden:Boolean);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

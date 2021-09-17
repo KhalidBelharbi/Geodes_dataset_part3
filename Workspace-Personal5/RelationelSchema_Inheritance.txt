@@ -1,0 +1,7 @@
+
+persona(serialversionuid:long, idpersona:int [PK], apematerno:String, apepaterno:String, email:String, nombre:String, telefono:String);
+
+usuario(serialversionuid:long, idusuario:int [PK], username:String, password:String, //bi-directionalmany-to-oneassociationto:Persona #FK to(persona));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application-docker" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v1.0.5__add_notification_tokens" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v1.0.6__add_fk_cascade_and_firebaseid" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v1.0.3__wine_id_to_uuid" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v1.0.0__init" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cityrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<city,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userfavoritesrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<userfavorites,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="companyrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<company,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rolerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<role,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="notificationtokensrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<notificationtoken,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="itemrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<item,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="serviceapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservicenotableevents" >
+      <xs:sequence>
+        <xs:element name="template" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="testkafkacontroller" >
+      <xs:sequence>
+        <xs:element name="fake_user_id" type="xs:long" />
+        <xs:element name="updatepricemessagesender" type="xs:anyType" />
+        <xs:element name="userupdatedmessagesender" type="xs:anyType" />
+        <xs:element name="favoritesupdatedmessagesender" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apipageparams" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userinternalcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="tokensservice" type="notificationtokensservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="favoritesservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationtokenscontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="notificationtokensservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="favoritescontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="itemservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="favoritesservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="messagesender" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="favoritesservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="cityservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="messagesender" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authenticationcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="jwttokenprovider" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="cityservice" nillable="true" minOccurs="0" />
+        <xs:element name="messagesender" type="xs:anyType" />
+        <xs:element name="token_stub" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="birthdate" type="xs:anyType" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="city" type="citydto" nillable="true" minOccurs="0" />
+        <xs:element name="isactivated" type="xs:anyType" />
+        <xs:element name="role" type="roledto" nillable="true" minOccurs="0" />
+        <xs:element name="firebaseid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roledto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pageduserresponse" >
+      <xs:sequence>
+        <xs:element name="content" type="xs:anyType" />
+        <xs:element name="page" type="xs:anyType" />
+        <xs:element name="size" type="xs:anyType" />
+        <xs:element name="total" type="xs:long" />
+        <xs:element name="totalpages" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationtokendto" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="token" type="xs:string" />
+        <xs:element name="tokentype" type="notificationtokentype" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="catalogdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userfavoritesdto" >
+      <xs:sequence>
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="companydto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractdto" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="citydto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authenticationrequestdto" >
+      <xs:sequence>
+        <xs:element name="firebasetoken" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userregistrationdto" >
+      <xs:sequence>
+        <xs:element name="birthdate" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="cityid" type="xs:long" />
+        <xs:element name="firebaseid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updateuserinforequest" >
+      <xs:sequence>
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="cityid" type="xs:long" />
+        <xs:element name="birthday" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="registrationrequestdto" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="birthday" type="xs:anyType" />
+        <xs:element name="cityid" type="xs:long" />
+        <xs:element name="firebasetoken" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="catalogitemdto" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="catalog" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="item" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorresponse" >
+      <xs:sequence>
+        <xs:element name="message" type="xs:string" />
+        <xs:element name="status" type="xs:long" />
+        <xs:element name="timestamp" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userallfavoritesdto" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="favoriteids" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userfavoritedto" >
+      <xs:sequence>
+        <xs:element name="user" type="userdto" nillable="true" minOccurs="0" />
+        <xs:element name="item" type="itemdto" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="company" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationtoken" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="token" type="xs:string" />
+        <xs:element name="tokentype" type="notificationtokentype" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userfavorite" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="item" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="city" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userfavoritespk" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="itemid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="birthdate" type="xs:anyType" />
+        <xs:element name="phonenumber" type="xs:string" />
+        <xs:element name="GeneratedName" type="city" nillable="true" minOccurs="0" />
+        <xs:element name="isactivated" type="xs:anyType" />
+        <xs:element name="createdate" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="role" nillable="true" minOccurs="0" />
+        <xs:element name="firebaseid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="catalog" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="abstractentity" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="notificationtokentype" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usertokens" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="iostokens" type="xs:anyType" />
+        <xs:element name="fcmtokens" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="item" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userfavorites" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="itemid" type="xs:string" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="item" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="catalogitem" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="catalog" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="item" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="generalpurposesbeansconfig" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="swaggerconfig" >
+      <xs:complexContent>
+       <xs:extension base="webmvcconfigurationsupport">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="firebaseconfiguration" >
+      <xs:sequence>
+        <xs:element name="readstrategies" type="firebaseconfigreadstrategy" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="firebaseurl" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="firebaseconfigrawreadstrategy" >
+      <xs:sequence>
+        <xs:element name="path" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="firebaseconfigreadstrategy" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="firebaseconfigdecryptreadstrategy" >
+      <xs:sequence>
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="secretkey" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="webconfiguration" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="kafkaconfiguration" >
+      <xs:sequence>
+        <xs:element name="/***listofkafkaservers*/brokers" type="xs:string" />
+        <xs:element name="/***applicationconsumergroupid*/applicationconsumergroupid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mappingsconfiguration" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="companyservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractservice<long,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="notificationtokensservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractservice<string,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="roleservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractservice<long,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractservice<long,">
+         <xs:sequence>
+          <xs:element name="" type="roleservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="jwttokenprovider" nillable="true" minOccurs="0" />
+          <xs:element name="" type="cityservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="abstractservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractdto<i>,">
+         <xs:sequence>
+          <xs:element name="epositoy" type="xs:anyType" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="cityservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractservice<long,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="itemservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractservice<string,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="favoritesservice" >
+      <xs:complexContent>
+       <xs:extension base="abstractservice<string,">
+         <xs:sequence>
+          <xs:element name="" type="userservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="itemservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jwttokenprovider" >
+      <xs:sequence>
+        <xs:element name="secret" type="xs:string" />
+        <xs:element name="secretencoded" type="xs:string" />
+        <xs:element name="accessvalidityinmilliseconds" type="xs:long" />
+        <xs:element name="refreshvalidityinmilliseconds" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="winepriceupdatewithtokenshandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="favoritesupdateddeserializer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="favoritesupdatedserializer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="winepriceupdatedwithtokensdeserializer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userupdatedserializer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updatepriceserializer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updatepricedeserializer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userupdateddeserializer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="winepriceupdatedwithtokensserializer" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updatepricehandler" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="favoritesservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="notificationtokensservice" nillable="true" minOccurs="0" />
+        <xs:element name="winereviewedeventsender" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="restexceptionhandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="entityalreadyexistsexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="authenticationexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="entitynotfoundexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jwtauthenticationexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userservicemetricscollector" >
+      <xs:complexContent>
+       <xs:extension base="commonmetricscollector">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="authenticationcontrollerintegrationtest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="authenticationcontroller" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="jwttokenprovider" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v1.0.3__wine_id_to_uuid" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v1.0.0__init" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

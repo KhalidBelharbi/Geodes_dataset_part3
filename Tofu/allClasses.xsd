@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="primarykey" type="userkey" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="ipaddress" type="xs:string" />
+        <xs:element name="lastquestion" type="xs:dateTime" />
+        <xs:element name="roleid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pollkey" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="lectureid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maploggers" >
+      <xs:sequence>
+        <xs:element name="map" type="xs:anyType" />
+        <xs:element name="instance" type="maploggers" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="poll" >
+      <xs:sequence>
+        <xs:element name="primarykey" type="pollkey" nillable="true" minOccurs="0" />
+        <xs:element name="title" type="xs:string" />
+        <xs:element name="closed" type="xs:anyType" />
+        <xs:element name="optioncount" type="xs:anyType" />
+        <xs:element name="correctchoice" type="xs:string" />
+        <xs:element name="createdat" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturefeedbackkey" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userkey" nillable="true" minOccurs="0" />
+        <xs:element name="lecturefeedbackcodeas" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="question" >
+      <xs:sequence>
+        <xs:element name="primarykey" type="questionkey" nillable="true" minOccurs="0" />
+        <xs:element name="studentid" type="xs:anyType" />
+        <xs:element name="studentip" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="votecounter" type="xs:anyType" />
+        <xs:element name="answered" type="xs:anyType" />
+        <xs:element name="createdat" type="xs:dateTime" />
+        <xs:element name="answertext" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questionkey" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="lectureid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecture" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="lecturename" type="xs:string" />
+        <xs:element name="starttime" type="xs:dateTime" />
+        <xs:element name="studentjoinid" type="xs:string" />
+        <xs:element name="moderatorjoinid" type="xs:string" />
+        <xs:element name="lecturerjoinid" type="xs:string" />
+        <xs:element name="lectureongoing" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturefeedbackcode" >
+      <xs:sequence>
+        <xs:element name="value" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userkey" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="lectureid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answerkey" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="lectureid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="moderator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bankey" >
+      <xs:sequence>
+        <xs:element name="bannedip" type="xs:string" />
+        <xs:element name="lectureid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="vote" >
+      <xs:sequence>
+        <xs:element name="primarykey" type="votekey" nillable="true" minOccurs="0" />
+        <xs:element name="votevalue" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pollvote" >
+      <xs:sequence>
+        <xs:element name="primarykey" type="pollvotekey" nillable="true" minOccurs="0" />
+        <xs:element name="vote" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="role" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answer" >
+      <xs:sequence>
+        <xs:element name="primarykey" type="answerkey" nillable="true" minOccurs="0" />
+        <xs:element name="answertext" type="xs:string" />
+        <xs:element name="questionid" type="xs:anyType" />
+        <xs:element name="moderatorid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votekey" >
+      <xs:sequence>
+        <xs:element name="studentid" type="xs:anyType" />
+        <xs:element name="lectureid" type="xs:anyType" />
+        <xs:element name="questionid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pollvotekey" >
+      <xs:sequence>
+        <xs:element name="pollid" type="xs:anyType" />
+        <xs:element name="lectureid" type="xs:anyType" />
+        <xs:element name="userid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ban" >
+      <xs:sequence>
+        <xs:element name="primarykey" type="bankey" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturefeedback" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userkey" nillable="true" minOccurs="0" />
+        <xs:element name="lecturefeedbackcodeas" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="classroomapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="banserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="banrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="banservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mockbanserviceimpl" >
+      <xs:sequence>
+        <xs:element name="banmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bancontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="banservice" type="banserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="questionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="voterepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="lecturerepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="voteservice" type="voteserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mockvoteserviceimpl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paramresolver" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answerservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answerserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="answerrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="questionrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="answerservice" type="answerserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mockanswerserviceimpl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pollserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="pollrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="lecturerepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pollvoterepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pollservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pollcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="pollservice" type="pollserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mockmoderatorserviceimplementation" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="moderatorcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="moderatorservice" type="mockmoderatorserviceimplementation" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="moderatorservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="lectureservice" type="lectureserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lectureserviceimpl" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="lecturerepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="lecturefeedbackrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lectureservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mocklectureserviceimplementation" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questionserviceimplementation" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="questionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="lecturerepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="banrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questioncontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="questionservice" type="questionserviceimplementation" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questionservice" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mockquestionserviceimplementation" >
+      <xs:sequence>
+        <xs:element name="questionmap" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voterepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<vote,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rolerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<role,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pollvoterepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<pollvote,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="questionrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<question,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="moderatorrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturerepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<lecture,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="lecturefeedbackrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<lecturefeedback,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="pollrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<poll,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="banrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<ban,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="answerrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<answer,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="demoapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quotecontroller" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quote" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="quote" type="xs:string" />
+        <xs:element name="author" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="h2config" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quoterepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<quote,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application-dev" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="answer" nillable="true" minOccurs="0" />
+        <xs:element name="duplicate" type="answer" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="answer" nillable="true" minOccurs="0" />
+        <xs:element name="key" type="answerkey" nillable="true" minOccurs="0" />
+        <xs:element name="keyduplicate" type="answerkey" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="maploggerstest" >
+      <xs:sequence>
+        <xs:element name="map" type="maploggers" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questiontest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="duplicate" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="key" type="questionkey" nillable="true" minOccurs="0" />
+        <xs:element name="keyduplicate" type="questionkey" nillable="true" minOccurs="0" />
+        <xs:element name="key2" type="questionkey" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votetest" >
+      <xs:sequence>
+        <xs:element name="1" type="vote" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="vote" nillable="true" minOccurs="0" />
+        <xs:element name="3" type="vote" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pollvotetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturetest" >
+      <xs:sequence>
+        <xs:element name="1" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="3" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="4" type="lecture" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="polltest" >
+      <xs:sequence>
+        <xs:element name="key" type="pollkey" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="poll" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usertest" >
+      <xs:sequence>
+        <xs:element name="key" type="userkey" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+        <xs:element name="GeneratedName" type="user" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturefeedbacktest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="lecturefeedback" nillable="true" minOccurs="0" />
+        <xs:element name="duplicate" type="lecturefeedback" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="lecturefeedback" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecturefeedback" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="lecturefeedbackkey" nillable="true" minOccurs="0" />
+        <xs:element name="duplicate" type="lecturefeedbackkey" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="lecturefeedbackkey" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecturefeedbackkey" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userkey" nillable="true" minOccurs="0" />
+        <xs:element name="duplicate" type="userkey" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="userkey" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="lecturefeedbackcode" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecturefeedbackcode" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bantest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="ban" nillable="true" minOccurs="0" />
+        <xs:element name="duplicate" type="ban" nillable="true" minOccurs="0" />
+        <xs:element name="key" type="bankey" nillable="true" minOccurs="0" />
+        <xs:element name="emptykey" type="bankey" nillable="true" minOccurs="0" />
+        <xs:element name="empty" type="ban" nillable="true" minOccurs="0" />
+        <xs:element name="keyduplicate" type="bankey" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="ban" nillable="true" minOccurs="0" />
+        <xs:element name="key2" type="bankey" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="roletest" >
+      <xs:sequence>
+        <xs:element name="lec" type="role" nillable="true" minOccurs="0" />
+        <xs:element name="mod" type="role" nillable="true" minOccurs="0" />
+        <xs:element name="stud" type="role" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="quotetest" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="moderatortest" >
+      <xs:sequence>
+        <xs:element name="moderatorserviceimplementation" type="mockmoderatorserviceimplementation" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="moderatorcontroller" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="lectureservice" type="lectureserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="lecturecontroller" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bantest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="banserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="bancontroller" nillable="true" minOccurs="0" />
+        <xs:element name="status" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questioncontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="questionservice" type="questionserviceimplementation" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="questioncontroller" nillable="true" minOccurs="0" />
+        <xs:element name="status" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="votecontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="voteservice" type="voteserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="votecontroller" nillable="true" minOccurs="0" />
+        <xs:element name="status" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="polltest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="pollserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pollcontroller" nillable="true" minOccurs="0" />
+        <xs:element name="status" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answercontrollertest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="answerservice" type="answerserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="answercontroller" nillable="true" minOccurs="0" />
+        <xs:element name="status" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bantest" >
+      <xs:sequence>
+        <xs:element name="mock" type="banrepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="questionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="banservice" type="banserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="ban" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="ban" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="bankey" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="bankey" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="questiontest" >
+      <xs:sequence>
+        <xs:element name="mock" type="lecturerepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="questionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="banrepository" nillable="true" minOccurs="0" />
+        <xs:element name="questionservice" type="questionserviceimplementation" nillable="true" minOccurs="0" />
+        <xs:element name="lecture1id" type="xs:anyType" />
+        <xs:element name="lecture2id" type="xs:anyType" />
+        <xs:element name="lecturerid" type="xs:string" />
+        <xs:element name="student1id" type="xs:string" />
+        <xs:element name="student2id" type="xs:string" />
+        <xs:element name="lecturerip" type="xs:string" />
+        <xs:element name="student1ip" type="xs:string" />
+        <xs:element name="student2ip" type="xs:string" />
+        <xs:element name="questiontext" type="xs:string" />
+        <xs:element name="newquestiontext" type="xs:string" />
+        <xs:element name="1" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="lecturer" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="student1" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="student2" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="3" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="4" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="5" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="question1id" type="xs:anyType" />
+        <xs:element name="question2id" type="xs:anyType" />
+        <xs:element name="question3id" type="xs:anyType" />
+        <xs:element name="question4id" type="xs:anyType" />
+        <xs:element name="question5id" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="answertest" >
+      <xs:sequence>
+        <xs:element name="mock" type="answerrepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="questionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="answerservice" type="answerserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="question" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="voteservicetest" >
+      <xs:sequence>
+        <xs:element name="mock" type="lecturerepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="questionrepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="voterepository" nillable="true" minOccurs="0" />
+        <xs:element name="voteservice" type="voteserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="lectureservice" type="lectureserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="question" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="question" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pollservicetest" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+        <xs:element name="1" type="xs:dateTime" />
+        <xs:element name="1" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="student1" type="user" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="poll" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="poll" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pollkey" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pollrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="lecturerepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="pollvoterepository" nillable="true" minOccurs="0" />
+        <xs:element name="pollservice" type="pollserviceimpl" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lecturetest" >
+      <xs:sequence>
+        <xs:element name="mock" type="lecturerepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="mock" type="lecturefeedbackrepository" nillable="true" minOccurs="0" />
+        <xs:element name="lectureservice" type="lectureserviceimpl" nillable="true" minOccurs="0" />
+        <xs:element name="1" type="lecture" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="lecture" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

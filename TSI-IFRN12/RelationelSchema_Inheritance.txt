@@ -1,0 +1,13 @@
+
+role(id:Long [PK], role:String);
+
+post(id:Long [PK], title:String, body:String, create:Date, user_id:User #FK to(user));
+
+comment(id:Long [PK], body:String, create:Date, post_id:Post #FK to(post), user_id:User #FK to(user));
+
+user(id:Long [PK], email:String, password:String, username:String, name:String, lastname:String, active:int);
+
+user_role(user_id:User [PK] #FK to User,role_id:collection<role> [PK] #FK to collection<role>);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

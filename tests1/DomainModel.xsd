@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="validatedperson" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="forename" type="xs:string" />
+        <xs:element name="surname" type="xs:string" />
+        <xs:element name="login" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validatedowner" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="pet" type="validatedpet" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="validatedperson2" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="forename" type="xs:string" />
+        <xs:element name="surname" type="xs:string" />
+        <xs:element name="login" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mapconverterholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="map1" type="xs:anyType" />
+        <xs:element name="map2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="collectionconverterholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="set1" type="mytype1" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="set2" type="mytype1" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="typeholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="details" type="complicatedtype" nillable="true" minOccurs="0" />
+        <xs:element name="details2" type="complicatedtype2" nillable="true" minOccurs="0" />
+        <xs:element name="details3" type="complicatedtype" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jodasample5" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="xs:anyType" />
+        <xs:element name="2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jodasample1" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="xs:anyType" />
+        <xs:element name="2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jodasample4" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="xs:anyType" />
+        <xs:element name="2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jodasample2" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="xs:anyType" />
+        <xs:element name="2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jodasample3" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="xs:anyType" />
+        <xs:element name="2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rectangle" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="width" type="xs:double" />
+        <xs:element name="length" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="circle" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="radius" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="triangle" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="width" type="xs:double" />
+        <xs:element name="length" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="shapeholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="shape" nillable="true" minOccurs="0" />
+        <xs:element name="shapeset1" type="shape" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="square" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="width" type="xs:double" />
+        <xs:element name="length" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="javatimesample3" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="xs:anyType" />
+        <xs:element name="2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="javatimesample2" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="xs:anyType" />
+        <xs:element name="2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="javatimesample1" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="datetime1" type="xs:anyType" />
+        <xs:element name="datetime2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mydatastoreid" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dateholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="datefield" type="xs:anyType" />
+        <xs:element name="datefield2" type="xs:anyType" />
+        <xs:element name="datefield3" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="typeholder" >
+      <xs:sequence>
+        <xs:element name="//pkwhenusingappidid" type="xs:long" />
+        <xs:element name="1" type="xs:string" />
+        <xs:element name="2" type="xs:string" />
+        <xs:element name="1" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enumholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="1" type="colour" nillable="true" minOccurs="0" />
+        <xs:element name="2" type="colour" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="versionedemployee" >
+      <xs:complexContent>
+       <xs:extension base="versionedperson">
+         <xs:sequence>
+          <xs:element name="salary" type="xs:double" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="versionedperson" >
+      <xs:complexContent>
+       <xs:extension base="versionedsub">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="manyoneother" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manyoneowner" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="other" type="manyoneother" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="simpleclass" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mycdiholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="encryptedfield" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="concretesimplesub2" >
+      <xs:complexContent>
+       <xs:extension base="abstractsimplebase">
+         <xs:sequence>
+          <xs:element name="sub2field" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="concretesimplesub1" >
+      <xs:complexContent>
+       <xs:extension base="abstractsimplebase">
+         <xs:sequence>
+          <xs:element name="sub1field" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="arrayholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="array" type="xs:long" />
+        <xs:element name="array" type="xs:long" />
+        <xs:element name="s" type="permission" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bytearray" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="array1" type="xs:anyType" />
+        <xs:element name="array2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="permission" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dsidholder" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="superuser" >
+      <xs:complexContent>
+       <xs:extension base="user">
+         <xs:sequence>
+          <xs:element name="role" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="idclassprivatemodifier" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="name2" type="xs:long" />
+        <xs:element name="free" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="idclassaccessors" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="compoundpk" type="idclassaccessorspk" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="basic" type="xs:string" />
+        <xs:element name="free" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginaccount" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="GeneratedName" type="login" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="equipment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="make" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="boiler" >
+      <xs:complexContent>
+       <xs:extension base="equipment">
+         <xs:sequence>
+          <xs:element name="model" type="xs:string" />
+          <xs:element name="" type="timer" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="timer" >
+      <xs:complexContent>
+       <xs:extension base="equipment">
+         <xs:sequence>
+          <xs:element name="digital" type="xs:anyType" />
+          <xs:element name="" type="boiler" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="printer" >
+      <xs:sequence>
+        <xs:element name="//usedforapplicationidentityid" type="xs:long" />
+        <xs:element name="make" type="xs:string" />
+        <xs:element name="model" type="xs:string" />
+        <xs:element name="tonermodel" type="xs:string" />
+        <xs:element name="tonerlifetime" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usergroup" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="members" type="groupmember" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="groupmember" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="details" type="memberdetails" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="memberdetails" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="surname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="expertgroupmember" >
+      <xs:complexContent>
+       <xs:extension base="groupmember">
+         <xs:sequence>
+          <xs:element name="title" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="moderatedusergroup" >
+      <xs:complexContent>
+       <xs:extension base="usergroup">
+         <xs:sequence>
+          <xs:element name="title" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="mapholderwithkeyclass" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mapkeyclasstarget" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mapjoinkey" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mapjoinholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="map" type="xs:anyType" />
+        <xs:element name="map2" type="xs:anyType" />
+        <xs:element name="map3" type="xs:anyType" />
+        <xs:element name="map4" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="mapjoinvalue" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="house" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="number" type="xs:long" />
+        <xs:element name="street" type="xs:string" />
+        <xs:element name="windows" type="window" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="window" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="width" type="xs:long" />
+        <xs:element name="height" type="xs:long" />
+        <xs:element name="GeneratedName" type="house" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="animal" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="farm" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="farm" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="animals" type="animal" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="document" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="details" type="documentdetails" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contact" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="main" type="document" nillable="true" minOccurs="0" />
+        <xs:element name="documents" type="document" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pcfklistelement" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="listholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="//stringelements,withjointablenonpc1" type="xs:anyType" />
+        <xs:element name="//usingjointable,withpcelementsjoinlistpc" type="pcfklistelement" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="callbacksub1" >
+      <xs:complexContent>
+       <xs:extension base="callbackbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="callbacksub1sub1" >
+      <xs:complexContent>
+       <xs:extension base="callbacksub1">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="callbackbase" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="/***registerofcallbacksinvoked.*/transientinvoked" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="callbacksub2" >
+      <xs:complexContent>
+       <xs:extension base="callbackbase">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="callbacksub1sub2" >
+      <xs:complexContent>
+       <xs:extension base="callbacksub1">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="nondurableidholder" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="embeddedowner2" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="embeddedobject" type="embeddedobject2" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="embeddedowner3" >
+      <xs:sequence>
+        <xs:element name="id" type="embeddedowner3id" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="a" type="embeddedobject3a" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="computer" >
+      <xs:sequence>
+        <xs:element name="//usedbyapplicationidentityid" type="xs:long" />
+        <xs:element name="operatingsystem" type="xs:string" />
+        <xs:element name="graphicscard" type="computercard" nillable="true" minOccurs="0" />
+        <xs:element name="soundcard" type="computercard" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="processor" >
+      <xs:sequence>
+        <xs:element name="//usedbyapplicationidentityid" type="xs:long" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="jobs" type="job" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="genericidsub" >
+      <xs:complexContent>
+       <xs:extension base="genericidbase<long>">
+         <xs:sequence>
+          <xs:element name="description" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="genericidpropsub1" >
+      <xs:complexContent>
+       <xs:extension base="genericidpropbase<long>">
+         <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="genericoneonerelated2" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="relatedobjects" type="genericoneonesub2" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="age" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="genericoneonesub1" >
+      <xs:complexContent>
+       <xs:extension base="genericoneoneroot1<genericoneonerelated1>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="type" type="genericenumtype" nillable="true" minOccurs="0" />
+          <xs:element name="age" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="genericidpropsub2sub" >
+      <xs:complexContent>
+       <xs:extension base="genericidpropsub2">
+         <xs:sequence>
+          <xs:element name="version" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="genericoneonesub2" >
+      <xs:complexContent>
+       <xs:extension base="genericoneoneroot2<genericoneonerelated2>">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="type" type="genericenumtype" nillable="true" minOccurs="0" />
+          <xs:element name="age" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="genericoneonerelated1" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="relatedobjects" type="genericoneonesub1" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="age" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//partofpkwithappidpersonnum" type="xs:long" />
+        <xs:element name="//partofpkwithappidglobalnum" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="emailaddress" type="xs:string" />
+        <xs:element name="age" type="xs:long" />
+        <xs:element name="bestfriend" type="person" nillable="true" minOccurs="0" />
+        <xs:element name="phonenumbers" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manager" >
+      <xs:complexContent>
+       <xs:extension base="employee">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="subordinates" type="employee" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="departments" type="department" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="organisation" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="phonenumber" >
+      <xs:sequence>
+        <xs:element name="//pkwhenusingappidid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="number" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="budget" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="website" >
+      <xs:sequence>
+        <xs:element name="//pkforappidid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="primarykey" type="departmentpk" nillable="true" minOccurs="0" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="projects" type="project" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="manager" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="account" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//pkifappidid" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="enabled" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="qualification" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="person" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="organisation" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:complexContent>
+       <xs:extension base="person">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="serialno" type="xs:string" />
+          <xs:element name="salary" type="xs:double" />
+          <xs:element name="salarycurrency" type="xs:string" />
+          <xs:element name="yearsincompany" type="xs:anyType" />
+          <xs:element name="" type="manager" nillable="true" minOccurs="0" />
+          <xs:element name="" type="account" nillable="true" minOccurs="0" />
+          <xs:element name="/***usedforthequeryingoffields.*/firstname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customuuidholder" >
+      <xs:sequence>
+        <xs:element name="uid" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oneoffcustomer" >
+      <xs:complexContent>
+       <xs:extension base="petroleumcustomer">
+         <xs:sequence>
+          <xs:element name="address" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="petroleumcustomer" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="suppliers" type="petroleumsupplier" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="accountcustomer" >
+      <xs:complexContent>
+       <xs:extension base="petroleumcustomer">
+         <xs:sequence>
+          <xs:element name="accountnumber" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="petroleumsupplier" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="customers" type="petroleumcustomer" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oilsupplier" >
+      <xs:complexContent>
+       <xs:extension base="petroleumsupplier">
+         <xs:sequence>
+          <xs:element name="brandname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="gassupplier" >
+      <xs:complexContent>
+       <xs:extension base="petroleumsupplier">
+         <xs:sequence>
+          <xs:element name="type" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="graphrelatednext" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="graphbase" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="relation" type="graphrelated" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="graphrelated" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="nextrelation" type="graphrelatednext" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compoundholder" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="1" type="xs:anyType" />
+        <xs:element name="2" type="xs:anyType" />
+        <xs:element name="3" type="xs:anyType" />
+        <xs:element name="//1-nbiwithkeystoredinvalue1" type="xs:anyType" />
+        <xs:element name="//1-nbiwithvaluestoredinkey2" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="compoundsingletarget" >
+      <xs:sequence>
+        <xs:element name="//pkid" type="xs:long" />
+        <xs:element name="//pkholder" type="compoundholder" nillable="true" minOccurs="0" />
+        <xs:element name="value" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tenantedobject" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="petroleumcustomer" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="suppliers" type="petroleumsupplier" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="petroleumsupplier" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="customers" type="petroleumcustomer" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="employee" >
+      <xs:complexContent>
+       <xs:extension base="person">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="serialno" type="xs:string" />
+          <xs:element name="salary" type="xs:double" />
+          <xs:element name="salarycurrency" type="xs:string" />
+          <xs:element name="yearsincompany" type="xs:anyType" />
+          <xs:element name="" type="manager" nillable="true" minOccurs="0" />
+          <xs:element name="" type="account" nillable="true" minOccurs="0" />
+          <xs:element name="/***usedforthequeryingoffields.*/firstname" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="website" >
+      <xs:sequence>
+        <xs:element name="//pkforappidid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="person" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//partofpkwithappidpersonnum" type="xs:long" />
+        <xs:element name="//partofpkwithappidglobalnum" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="emailaddress" type="xs:string" />
+        <xs:element name="age" type="xs:long" />
+        <xs:element name="bestfriend" type="person" nillable="true" minOccurs="0" />
+        <xs:element name="phonenumbers" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="GeneratedName" type="manager" nillable="true" minOccurs="0" />
+        <xs:element name="projects" type="project" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="account" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="//pkifappidid" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="enabled" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="phonenumber" >
+      <xs:sequence>
+        <xs:element name="//pkwhenusingappidid" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="number" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="manager" >
+      <xs:complexContent>
+       <xs:extension base="employee">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="subordinates" type="xs:anyType" />
+          <xs:element name="departments" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="project" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="budget" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="timer" >
+      <xs:complexContent>
+       <xs:extension base="equipment">
+         <xs:sequence>
+          <xs:element name="digital" type="xs:anyType" />
+          <xs:element name="" type="boiler" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="boiler" >
+      <xs:complexContent>
+       <xs:extension base="equipment">
+         <xs:sequence>
+          <xs:element name="model" type="xs:string" />
+          <xs:element name="" type="timer" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="equipment" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="make" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="loginaccount" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="GeneratedName" type="login" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="login" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

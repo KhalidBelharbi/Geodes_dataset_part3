@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="wxmpservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="userservice" type="wxmpuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="messagemapper" type="wxmpsendmessagemapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="wxapifactory" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+          <xs:element name="modulename" type="xs:string" />
+          <xs:element name="key_setting" type="xs:string" />
+          <xs:element name="key_appstate" type="xs:string" />
+          <xs:element name="accesstokenkey" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wxmpuserservice" >
+      <xs:complexContent>
+       <xs:extension base="baseservice">
+         <xs:sequence>
+          <xs:element name="usermapper" type="wxmpusermapper" nillable="true" minOccurs="0" />
+          <xs:element name="" type="wxmpservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="wxapifactory" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sendsubscribeservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="wxmpservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="settingconfig" >
+      <xs:sequence>
+        <xs:element name="appid" type="xs:string" />
+        <xs:element name="appsecret" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wxmpdataitem" >
+      <xs:sequence>
+        <xs:element name="value" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wexinbinddto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="username" type="xs:string" />
+          <xs:element name="password" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wexinlogindto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="code" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="savesettingdto" >
+      <xs:complexContent>
+       <xs:extension base="basedto">
+         <xs:sequence>
+          <xs:element name="appid" type="xs:string" />
+          <xs:element name="appsecret" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="weixinappapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wxmpsendmessage" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="templateid" type="xs:string" />
+        <xs:element name="page" type="xs:string" />
+        <xs:element name="data" type="xs:string" />
+        <xs:element name="addtime" type="xs:anyType" />
+        <xs:element name="send" type="xs:anyType" />
+        <xs:element name="sendtime" type="xs:anyType" />
+        <xs:element name="message" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wxmpbinduser" >
+      <xs:sequence>
+        <xs:element name="serialversionuid" type="xs:long" />
+        <xs:element name="openid" type="xs:string" />
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wechattoken" >
+      <xs:complexContent>
+       <xs:extension base="usernamepasswordtoken">
+         <xs:sequence>
+          <xs:element name="tenantid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wechatrealm" >
+      <xs:complexContent>
+       <xs:extension base="authorizingrealm">
+         <xs:sequence>
+          <xs:element name="" type="wxmpuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wechatprincipal" >
+      <xs:sequence>
+        <xs:element name="tenantid" type="xs:long" />
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="weixinappcontroller" >
+      <xs:complexContent>
+       <xs:extension base="basecontroller">
+         <xs:sequence>
+          <xs:element name="" type="wxmpservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="wxmpuserservice" nillable="true" minOccurs="0" />
+          <xs:element name="" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wxmpsendmessagemapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<wxmpsendmessage>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wxmpusermapper" >
+      <xs:complexContent>
+       <xs:extension base="mymapper<wxmpbinduser>">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wxbaseresult" >
+      <xs:sequence>
+        <xs:element name="errcode" type="xs:long" />
+        <xs:element name="errmsg" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wxsessionresult" >
+      <xs:complexContent>
+       <xs:extension base="wxbaseresult">
+         <xs:sequence>
+          <xs:element name="openid" type="xs:string" />
+          <xs:element name="sessionkey" type="xs:string" />
+          <xs:element name="unionid" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wxtokenresult" >
+      <xs:complexContent>
+       <xs:extension base="wxbaseresult">
+         <xs:sequence>
+          <xs:element name="accesstoken" type="xs:string" />
+          <xs:element name="expiresin" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="wxapifactory" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="wxapi" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wxapi" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="wxsendsubscriberequest" >
+      <xs:sequence>
+        <xs:element name="openid" type="xs:string" />
+        <xs:element name="templateid" type="xs:string" />
+        <xs:element name="page" type="xs:string" />
+        <xs:element name="data" type="xs:anyType" />
+        <xs:element name="//developer为开发版；trial为体验版；formal为正式版state" type="xs:string" />
+        <xs:element name="//zh_cn(简体中文)、en_us(英文)、zh_hk(繁体中文)、zh_tw(繁体中文)lang" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="menu" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

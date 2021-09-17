@@ -1,0 +1,23 @@
+
+country(id:Integer [PK], name:String);
+
+student(id:long [PK], name:String, tags:List<String>);
+
+user(id:int [PK], name:String, email:String, age:int);
+
+possession(id:long [PK], name:String);
+
+product(id:int [PK], name:String, price:double);
+
+bar(serialversionuid:long, id:long [PK], name:String);
+
+foo(serialversionuid:long, id:long [PK], name:String, GeneratedName:Bar #FK to(bar));
+
+baz(id:long [PK], name:String);
+
+bar(id:long [PK], name:String);
+
+foo(id:long [PK], name:String, deleted:Integer, GeneratedName:Bar #FK to(bar));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

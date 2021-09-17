@@ -1,0 +1,87 @@
+
+task(title:String, description:String, GeneratedName:User);
+
+user(loginname:String, username:String, password:String);
+
+domain(/***/serialversionuid:long, id:Long [PK], parentid:Long, name:String, domain_id:Domain #FK to(domain), isplatform:Long);
+
+platform(/***/serialversionuid:long, id:Long [PK], platformid:Long, type:Integer, name:String, version:String, ip:String, port:Integer, loginname:String, loginpwd:String, isdns:Integer, remark:String, gbcode:String, isenable:Integer);
+
+serverinfo(/***@fieldsserialversionuid:todo*/serialversionuid:long, serverid:Long [PK], servertype:Integer, servername:String, serverversion:String, ip:String, port:Integer, loginname:String, loginpwd:String, isdns:Integer, status:Integer);
+
+loginlog(serialversionuid:long, result_success:int, id:Long [PK], logtime:String, username:String, ip:String, content:String, sourcetype:int, result:Short, errorreason:String);
+
+operatelog(serialversionuid:long, result_success:int, id:Long [PK], optime:String, opername:String, ip:String, content:String, sourcetype:int, result:Short, operaobjname:String, operaobjid:String, menuname:String, menucode:String, funname:String, funcode:String, errorreason:String);
+
+bizequipmentstatus(serialversionuid:long, id:BizEquipmentStatusId, propertyvalue:String, uptime:Date);
+
+bizalarm(/***@fieldsserialversionuid:todo*/serialversionuid:long, alarmid:Long [PK], equipmentid:Long, propertyname:String, begintime:String, endtime:String, alarmlevel:String, alarmdesc:String, alarmcount:Long, alarmtype:String, isfinish:Character);
+
+pscporganizepos(/***/serialversionuid:long, orgid:Integer [PK], orgx:String, orgy:String, areaname:String, linkman:String, linkphonenumber:String, warrantyman:String, warrantyphonenumber:String, arealevel:Integer, iconkey:Integer);
+
+bizalarmcondition(serialversionuid:long, conditionid:Long [PK], equipmenttypeid:Long, producer:String, modulename:String, propertyname:String, expression:String, alarmresult:String, alarmlevel:String, alarmdesc:String, iscamera:Integer, equipmentid:Long, missionid:String);
+
+uialarmevent(/***@fieldsserialversionuid:todo*/serialversionuid:long, dataid:Long [PK], alarmlevel:String, focusflag:String, begintime:Date, repairflag:String, equipmentname:String, equipmenttype:String, alarmtype:String, alarmdesc:String, lastprocesstime:Date, lastprocessresult:String, lastalarmdesc:String, lastprocessdesc:String, path:String, begintimestr:String, processtimestr:String, equipmentid:Long, propertyname:String, alarmcount:Long, ismask:String, organizename:String);
+
+uialarmeventexcel(/***/serialversionuid:long, dataid:Long [PK], alarmlevel:String, focusflag:String, begintime:Date, repairflag:String, equipmentname:String, equipmenttype:String, alarmtype:String, alarmdesc:String, lastprocesstime:Date, lastprocessresult:String, lastalarmdesc:String, lastprocessdesc:String, path:String, begintimestr:String, processtimestr:String, equipmentid:Long, propertyname:String, organizename:String, alarmcount:Long, ismask:String, orgid:Integer, producer:String, modulename:String, netaddress:String, linkman:String, linkphonenumber:String, warrantyman:String, warrantyphonenumber:String);
+
+alarmforwardrule(serialversionuid:long, id:Long [PK], alarmlevel:String, forwardtimetemplate:Long, delaytime:Integer, isenable:Integer);
+
+uidiagnosisstatus(dataid:Long [PK], pathname:String, path:String, focusflag:String, equipmentname:String, nosignal:Long, chnnname:String, //darkbright:Long, color:Long, snow:Long, roll:Long, freeze:Long, shake:Long, covered:Long, fuzzy:Long, contrast:Long, repairflag:String, ismask:String, producer:String, modulename:String, netaddress:String, move:String, chnncode:String, dvscode:String, dvsequipmentid:String, chnnequipmentid:String);
+
+bizalarmrecording(/***@fieldsserialversionuid:todo*/serialversionuid:long, alarmrecordingid:Long [PK], alarmresult:String, recordduration:Long);
+
+videochannelrecordintegrity(/***@fieldsserialversionuid:todo*/serialversionuid:long, //idid:Long, //channel_primary_id通道主键idchannelprimaryid:Long, //record_录像日期record:Date, //is_egrity是否完整0完整1.丢失2.失败isegrity:int, //ignore忽略此日期完整性0:否1:是ignore:int, losespan:String, //up_检测更新时间up:Date, //check_fail_descri检测失败描述faildecription:String, recorddate:String, dvscode:String, chnncode:String, recordtype:Integer);
+
+bizmask(serialversionuid:long, maskid:Long [PK], orgid:Long, equipmentid:Long, equipmentpropertyname:String, ismask:char, masktime:Long, finishmasktime:Date);
+
+videodignosemissionch(/***/serialversionuid:long, id:Long [PK], equipmentid:Long, dvs:String, channel:String, missionid:String);
+
+bizalarmextend(serialversionuid:long, alarmextendid:Long [PK], alarmid:Long, //focusflagprocessflag:char, processresult:String, processtime:Date, processdesc:String, processuser:String);
+
+sysequipmenttype(serialversionuid:long, equipmenttypeid:Long [PK], name:String, remark:String);
+
+sysequipment(/***@fieldsserialversionuid:todo*/serialversionuid:long, equipmentid:Long [PK], name:String, code:String, orgid:Long, equipmenttypeid:String, producer:String, modulename:String, netaddress:String, netport:String, fsuid:String, c3mdeviceid:String, equipment_type_id:SysEquipmentType #FK to(sysequipmenttype), equstatuslist:List<BizEquipmentStatus>, path:String, parentid:Long, aliasname:String, isdelete:Long, ismanualin:Long);
+
+devicesignaloperation(/***@fieldsserialversionuid:todo*/serialversionuid:long, operationid:Long [PK], deviceid:Long, //动环设备映射标识c3mdeviceid:String, userid:Long, signalid:String, operationstatus:String, operationtime:Date, setupvalue:String, orgid:Long, fsuip:String, fsuport:String, fsuid:String);
+
+videodignosemission(/***/serialversionuid:long, missionid:String [PK], missionname:String, begintime:String, endtime:String, isrun:Integer, isdelete:Integer, isprocess:Integer, cycle:String, nosignal:String, freeze:String, color:String, snow:String, covered:String, luminance:String, move:String, roll:String, fuzzy:String, contrast:String, shake:String);
+
+tbv2devauthorg(/***/serialversionuid:long, authid:Long [PK], timetemplateid:Long, authname:String, authtype:Long, remark:String, organizeid:Long);
+
+uisysdevstatus(/***@fieldsserialversionuid:todo*/serialversionuid:long, /***@fieldsserialversionuid:todo*/dataid:Long, equipmentid:Long, propertyname:String, propertyvalue:String, alarmeventviewid:String, alarmtype:String, orgid:String);
+
+uiequipmentnetworkstatus(/***@fieldsserialversionuid:todo*/serialversionuid:long, /***@fieldsserialversionuid:todo*/equipmentid:Long, pathname:String, path:String, equipmentname:String, equipmenttypename:String, producer:String, modulename:String, netaddress:String, netstatus:String, //stringalarmcount//stringlastprocesstimelastup:Date, lastupdatetime:String, //processresult//processdescfocusflag:String, orgid:String, repairflag:String, ismask:String, alarmcount:Integer);
+
+uidevauthinfo(/***@fieldsserialversionuid:todo*/serialversionuid:long, id:Long [PK], chnnequid:Long, dvsequid:Long, templateid:Long, devname:String, chnnname:String, orgname:String, netaddress:String);
+
+bizfocusrepair(serialversionuid:long, id:Long [PK], equipmentid:Long, propertyname:String, type:String, focusflag:String, repairflag:String);
+
+c3mfsuextend(serialversionuid:long, fsuid:String [PK], netaddress:String, netport:String);
+
+tbv2devauthchn(/***/serialversionuid:long, id:Long [PK], authid:Long, chnid:Long);
+
+uiequipmentstatus(/***@fieldsserialversionuid:todo*/serialversionuid:long, /***@fieldsserialversionuid:todo*/dataid:Long, equipmentid:Long, pathname:String, path:String, equipmentname:String, equipmenttypename:String, propertyname:String, producer:String, modulename:String, netaddress:String, netstatus:String, alarmcount:String, lastprocesstime:String, lastupdatetime:String, processresult:String, processdesc:String, cpu:String, physicalmemory:String, diskspaceleft:String, diskstatus:String, focusflag:String, orgid:String);
+
+videodignosemissiontree(/***/serialversionuid:long, equipmentid:Long [PK], name:String, missionid:String, code:String, dvs:String, parentid:Long, orgid:Long, path:String);
+
+uifsuinfo(/***/serialversionuid:long, fsuid:String [PK], fsucode:String, name:String, orgid:Long, moduletype:String, netaddress:String, netport:String, path:String, pathname:String, netstatus:String);
+
+uivideotree(/***@fieldsserialversionuid:todo*/serialversionuid:long, equipmentid:Long [PK], name:String, templateid:Long, parentid:Long, orgid:Long, path:String);
+
+viewdevicesignaloperation(serialversionuid:long, operationid:Long [PK], deviceid:Long, equipmentname:String, userid:Long, username:String, signalid:String, signalname:String, operationstatus:String, operationtime:Date, setupvalue:String, orgid:Long, areaname:String, fsuip:String, fsuname:String, fsuport:String, fsuid:String);
+
+timetemplateparam(/***@fieldsserialversionuid:todo*/serialversionuid:long, //按星期的时间模板weektype:Short, //按一次性的时间段oncetype:Short, //按月monthtype:Short, //按日daytype:Short, id:Long [PK], GeneratedName:TimeTemplate, type:Short, name:String, weekdate:Short, start:Date, end:Date, /***时间段列表*/listtimetemplateparamspan:List<TimeTemplateParamSpan>);
+
+timetemplateparamspan(/***@fieldsserialversionuid:todo*/serialversionuid:long, id:Long [PK], GeneratedName:TimeTemplateParam, start:Date, end:Date);
+
+multilooprename(serialversionuid:long, GeneratedName:MultiLoopReNameId, name:String);
+
+uiringstatus(/***@fieldsserialversionuid:todo*/serialversionuid:long, dataid:Long [PK], equipmentid:Long, fsuid:Long, pathname:String, path:String, equipmentname:String, equipmenttypename:String, propertyname:String, netaddress:String, netstatus:String, alarmcount:String, lastprocesstime:String, lastupdatetime:String, processresult:String, processdesc:String, //electriccity//ups//temperature//humidityfocusflag:String, orgid:String);
+
+c3mfsu(serialversionuid:long, fsuid:String [PK], fsucode:String, name:String, orgid:Long, moduletype:String);
+
+timetemplate(/***@fieldsserialversionuid:todo*/serialversionuid:long, id:Long [PK], name:String, begindate:String, enddate:String, savedays:String, ispublic:Long, //前台传过来的json字符串plans:String, isalarmrule:Integer);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

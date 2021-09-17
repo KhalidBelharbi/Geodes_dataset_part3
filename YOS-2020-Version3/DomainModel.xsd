@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="cart" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="productid" type="xs:string" />
+        <xs:element name="orderrdate" type="xs:anyType" />
+        <xs:element name="orderudate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:sequence>
+        <xs:element name="orderid" type="xs:string" />
+        <xs:element name="productid" type="xs:string" />
+        <xs:element name="senderid" type="xs:string" />
+        <xs:element name="sendername" type="xs:string" />
+        <xs:element name="receivername" type="xs:string" />
+        <xs:element name="phone" type="xs:string" />
+        <xs:element name="postcode" type="xs:string" />
+        <xs:element name="roadaddr" type="xs:string" />
+        <xs:element name="jibunaddr" type="xs:string" />
+        <xs:element name="extraaddr" type="xs:string" />
+        <xs:element name="detailaddr" type="xs:string" />
+        <xs:element name="isbuy" type="xs:anyType" />
+        <xs:element name="state" type="xs:long" />
+        <xs:element name="orderrdate" type="xs:anyType" />
+        <xs:element name="orderudate" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

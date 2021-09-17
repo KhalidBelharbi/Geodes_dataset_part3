@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="address" >
+      <xs:sequence>
+        <xs:element name="//主键idaddressid" type="xs:long" />
+        <xs:element name="//用户iduid" type="xs:long" />
+        <xs:element name="//收件人consignee" type="xs:string" />
+        <xs:element name="//所在地区address" type="xs:string" />
+        <xs:element name="//详细地址detaddress" type="xs:string" />
+        <xs:element name="//电话phone" type="xs:string" />
+        <xs:element name="//邮编postcode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="car" >
+      <xs:sequence>
+        <xs:element name="//主键iduid" type="xs:long" />
+        <xs:element name="gid" type="xs:long" />
+        <xs:element name="//商品数量gnum" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="goods" >
+      <xs:sequence>
+        <xs:element name="//主键idgoodsid" type="xs:long" />
+        <xs:element name="//商品价格price" type="xs:anyType" />
+        <xs:element name="//商品类型idtypeid" type="xs:anyType" />
+        <xs:element name="//商品图片goodsphotos" type="xs:string" />
+        <xs:element name="//商品发布时间publicshtime" type="xs:dateTime" />
+        <xs:element name="//商品库存inventorynum" type="xs:anyType" />
+        <xs:element name="//标题title" type="xs:string" />
+        <xs:element name="//内容content" type="xs:string" />
+        <xs:element name="//浏览量look" type="xs:anyType" />
+        <xs:element name="//卖出量bargainnum" type="xs:anyType" />
+        <xs:element name="gnum" type="xs:anyType" />
+        <xs:element name="orderid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="order" >
+      <xs:sequence>
+        <xs:element name="//order_idorderid" type="xs:long" />
+        <xs:element name="//主键iduid" type="xs:long" />
+        <xs:element name="gid" type="xs:long" />
+        <xs:element name="//商品数量gnum" type="xs:anyType" />
+        <xs:element name="//定单状态1：已支付2：待评价status" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="//主键iduserid" type="xs:long" />
+        <xs:element name="//用户名username" type="xs:string" />
+        <xs:element name="//用户真实姓名realname" type="xs:string" />
+        <xs:element name="//密码password" type="xs:string" />
+        <xs:element name="//qq_openidqqopenid" type="xs:string" />
+        <xs:element name="//wx_openidwxopenid" type="xs:string" />
+        <xs:element name="//邮箱email" type="xs:string" />
+        <xs:element name="//年龄age" type="xs:anyType" />
+        <xs:element name="//性别男：1女：0sex" type="xs:string" />
+        <xs:element name="//电话phone" type="xs:string" />
+        <xs:element name="//头像pic" type="xs:string" />
+        <xs:element name="//籍贯nativeplace" type="xs:string" />
+        <xs:element name="//职位position" type="xs:string" />
+        <xs:element name="//用户默认地址defaultaddressid" type="xs:long" />
+        <xs:element name="registertime" type="xs:dateTime" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productlist" >
+      <xs:sequence>
+        <xs:element name="//主键idlistid" type="xs:long" />
+        <xs:element name="//商品列表名称listname" type="xs:string" />
+        <xs:element name="//商品列表地址listurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="collect" >
+      <xs:sequence>
+        <xs:element name="//主键iduid" type="xs:long" />
+        <xs:element name="gid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

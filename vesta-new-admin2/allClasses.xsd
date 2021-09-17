@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="classifyuserrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="complainrepository" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="classifystaffrelationentity" >
+      <xs:sequence>
+        <xs:element name="//关系idrelationid" type="xs:string" />
+        <xs:element name="//人员idstaffid" type="xs:string" />
+        <xs:element name="//分类idclassifyid" type="xs:string" />
+        <xs:element name="//项目idprojectnum" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="complainclassifyentity" >
+      <xs:sequence>
+        <xs:element name="//分类idclassifyid" type="xs:string" />
+        <xs:element name="//分类名称classifyname" type="xs:string" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//修改时间modifyon" type="xs:dateTime" />
+        <xs:element name="//修改人modifyby" type="xs:string" />
+        <xs:element name="//状态state" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="complainentity" >
+      <xs:sequence>
+        <xs:element name="//投诉idcomplainid" type="xs:string" />
+        <xs:element name="//会员编号memberid" type="xs:string" />
+        <xs:element name="//投诉单号complainname" type="xs:string" />
+        <xs:element name="//单据完成时间completetime" type="xs:dateTime" />
+        <xs:element name="//单据状态100000000：已创建；100000001：处理中；100000002：已完成；100000003：已评价；100000004：强制关闭(物业)；100000005：已废弃documentsstate" type="xs:string" />
+        <xs:element name="//回访人姓名revisit" type="xs:string" />
+        <xs:element name="//回访意见visitopinion" type="xs:string" />
+        <xs:element name="//回访时间visit" type="xs:dateTime" />
+        <xs:element name="//回访满意度100000000：非常满意；100000001：满意；100000002：一般；100000003：不满意；100000004：非常不满意；100000005：无人接听；100000006：暂不回访；100000007：拒访；（地产只有：满意、不满意、暂不回访、拒访）visitsatisfaction" type="xs:string" />
+        <xs:element name="//城市编码city" type="xs:string" />
+        <xs:element name="//处理人账号disposal" type="xs:string" />
+        <xs:element name="//处理人头像disposalportrait" type="xs:string" />
+        <xs:element name="//处理方案treatmentplan" type="xs:string" />
+        <xs:element name="//处理结果processingresults" type="xs:string" />
+        <xs:element name="//房间编码housecode" type="xs:string" />
+        <xs:element name="//房间描述housedes" type="xs:string" />
+        <xs:element name="//投诉人idportalcomplaintpersonid" type="xs:string" />
+        <xs:element name="//投诉人姓名portalcomplaintpersonname" type="xs:string" />
+        <xs:element name="//投诉人情绪100000000：平和；100000001：激进；100000002：愤怒emotion" type="xs:string" />
+        <xs:element name="//投诉关联单号relatednumber" type="xs:string" />
+        <xs:element name="//投诉分类100000005：客户服务类；100000003：物业服务类；100000000：销售服务类；100000001：工程质量类；100000002：规划设计类；100000004：其他类classificationcomplaints" type="xs:string" />
+        <xs:element name="//投诉升级人名称upgrade" type="xs:string" />
+        <xs:element name="//投诉人电话complaintphone" type="xs:string" />
+        <xs:element name="//投诉描述complaintsdescribes" type="xs:string" />
+        <xs:element name="//投诉时间submittime" type="xs:dateTime" />
+        <xs:element name="//限时答复时间limitedreplytime" type="xs:dateTime" />
+        <xs:element name="//是否超期答复0：否；1：是timeout" type="xs:string" />
+        <xs:element name="//投诉渠道100000000：呼叫中心；100000001：项目前台；100000002：物业前台complaintsource" type="xs:string" />
+        <xs:element name="//投诉来源1:crm2:appcomplaincanal" type="xs:string" />
+        <xs:element name="//投诉级别100000000：一般投诉；100000001：热点投诉；100000002：重要投诉；100000003：重大投诉complaintlevel" type="xs:string" />
+        <xs:element name="//重大投诉原因majorcomplaintreason" type="xs:string" />
+        <xs:element name="//重要投诉原因importantcomplaintreason" type="xs:string" />
+        <xs:element name="//是否群诉0：否；1：是whetherswarmsues" type="xs:string" />
+        <xs:element name="//派单时间dispatchtime" type="xs:dateTime" />
+        <xs:element name="//物业投诉分类100000000：房屋管理类；100000001：设备管理类；100000002：安全管理类；100000003：环境管理类；100000004：综合服务类100000005：业户纠纷类；100000006：地产相关类；100000007：市政相关类complainttype" type="xs:string" />
+        <xs:element name="//答复时间replytime" type="xs:dateTime" />
+        <xs:element name="//项目编码projectnum" type="xs:string" />
+        <xs:element name="//驳回次数returntime" type="xs:string" />
+        <xs:element name="//最后驳回时间lastreturntime" type="xs:dateTime" />
+        <xs:element name="//业主原话ownerversion" type="xs:string" />
+        <xs:element name="//创建人createby" type="xs:string" />
+        <xs:element name="//创建时间createon" type="xs:dateTime" />
+        <xs:element name="//创建人姓名createbyname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,23 @@
+
+basicuser(id:Long [PK], username:String, permissions:Set<String>);
+
+passenger(id:Long [PK], firstname:String, lastname:String, seatnumber:Integer);
+
+possession(id:long [PK], name:String);
+
+customer(id:Long [PK], firstname:String, lastname:String);
+
+person(id:Long [PK], firstname:String, lastname:String);
+
+user(id:int [PK], name:String, creationdate:LocalDate, lastlogindate:LocalDate, active:boolean, age:int, email:String, status:Integer);
+
+product(id:int [PK], name:String, price:double);
+
+employee(id:Long [PK], name:String);
+
+school(id:long [PK], name:String);
+
+student(id:long [PK], name:String, GeneratedName:School #FK to(school));
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

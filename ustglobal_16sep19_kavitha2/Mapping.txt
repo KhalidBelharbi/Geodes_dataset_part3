@@ -1,0 +1,12 @@
+ClassDiagram.Class>> ProductBean =>=>=> RelationalSchema.Table>> productbean;
+ClassDiagram.Class>> OrderBean =>=>=> RelationalSchema.Table>> orderbean;
+ClassDiagram.Attribut>> ProductBean.pid:int =>=>=> RelationalSchema.Column>> productbean.pid PRIMARY KEY;
+ClassDiagram.Attribut>> ProductBean.name:String =>=>=> RelationalSchema.Column>> productbean.name;
+ClassDiagram.Attribut>> ProductBean.category:String =>=>=> RelationalSchema.Column>> productbean.category;
+ClassDiagram.Attribut>> ProductBean.company:String =>=>=> RelationalSchema.Column>> productbean.company;
+ClassDiagram.Attribut>> ProductBean.quantity:int =>=>=> RelationalSchema.Column>> productbean.quantity;
+ClassDiagram.Attribut>> ProductBean.price:double =>=>=> RelationalSchema.Column>> productbean.price;
+ClassDiagram.Attribut>> OrderBean.oid:int =>=>=> RelationalSchema.Column>> orderbean.oid PRIMARY KEY;
+ClassDiagram.Attribut>> OrderBean.total_price:double =>=>=> RelationalSchema.Column>> orderbean.total_price;
+ClassDiagram.Attribut>> OrderBean.total_price_with_gst:double =>=>=> RelationalSchema.Column>> orderbean.total_price_with_gst;
+Many-To-Many relationship between ClassDiagram.Class>>OrderBean  and ClassDiagram.Class>>list<productbean>: order_history_info(oid:OrderBean [PK] #FK to OrderBean,pid:list<productbean> [PK] #FK to list<productbean>);

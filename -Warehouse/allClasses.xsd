@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="database" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="type" type="xs:string" />
+        <xs:element name="dc" type="xs:string" />
+        <xs:element name="url" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="creator" type="xs:string" />
+        <xs:element name="creatorid" type="xs:anyType" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="deleted" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="oraapprover" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="approver" type="xs:string" />
+        <xs:element name="approveopinion" type="xs:string" />
+        <xs:element name="departmentid" type="xs:anyType" />
+        <xs:element name="itemid" type="xs:anyType" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="businesscode" type="xs:string" />
+        <xs:element name="lackmaterials" type="xs:string" />
+        <xs:element name="approvestate" type="xs:string" />
+        <xs:element name="enclosurename" type="xs:string" />
+        <xs:element name="enclosurecontent" type="xs:string" />
+        <xs:element name="status" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="statuscode" >
+      <xs:sequence>
+        <xs:element name="//成功状态码ok" type="xs:anyType" />
+        <xs:element name="//失败error" type="xs:anyType" />
+        <xs:element name="//用户名密码错误user_password_error" type="xs:anyType" />
+        <xs:element name="//权限不足access_error" type="xs:anyType" />
+        <xs:element name="//远程调用失败remote_error" type="xs:anyType" />
+        <xs:element name="//重复操作repeat_error" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="result" >
+      <xs:sequence>
+        <xs:element name="//响应的状态码code" type="xs:anyType" />
+        <xs:element name="//响应是否成功flag" type="xs:anyType" />
+        <xs:element name="//响应的信息message" type="xs:string" />
+        <xs:element name="//响应给前端的数据data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="page" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***表单名*/pgname" type="xs:string" />
+        <xs:element name="/***表单*/pginfo" type="xs:string" />
+        <xs:element name="/***表单英文名*///stringtablename/***主题id*/matterid" type="xs:long" />
+        <xs:element name="itemid" type="xs:string" />
+        <xs:element name="patype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userbean" >
+      <xs:sequence>
+        <xs:element name="//省统一账户唯iduseridcode" type="xs:string" />
+        <xs:element name="//用户名cn" type="xs:string" />
+        <xs:element name="//证件类型idcardtype" type="xs:string" />
+        <xs:element name="//证件号码idcardnumber" type="xs:string" />
+        <xs:element name="//电话telephonenumber" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="msg" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="agent" >
+      <xs:sequence>
+        <xs:element name="//经办人idid" type="xs:anyType" />
+        <xs:element name="//经办人姓名aname" type="xs:string" />
+        <xs:element name="//经办人编号anumber" type="xs:string" />
+        <xs:element name="//证件类型anumbertype" type="xs:string" />
+        <xs:element name="//经办人电话amobile" type="xs:string" />
+        <xs:element name="//经办人邮箱aemail" type="xs:string" />
+        <xs:element name="//业务编号businesscode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basebean" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="filevo" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="names" type="xs:string" />
+        <xs:element name="nameex" type="xs:string" />
+        <xs:element name="path" type="xs:string" />
+        <xs:element name="sizes" type="xs:string" />
+        <xs:element name="businesscode" type="xs:string" />
+        <xs:element name="itemid" type="xs:long" />
+        <xs:element name="fileid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tops" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="businesscode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="department" >
+      <xs:sequence>
+        <xs:element name="//部门idid" type="xs:anyType" />
+        <xs:element name="//部门名称departmentname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="inspection" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="incontent" type="xs:string" />
+        <xs:element name="businesscode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approver" >
+      <xs:sequence>
+        <xs:element name="//idid" type="xs:anyType" />
+        <xs:element name="//审批人approver" type="xs:string" />
+        <xs:element name="//审批意见approveopinion" type="xs:string" />
+        <xs:element name="//审批人所在部门iddepartmentid" type="xs:anyType" />
+        <xs:element name="//事项iditemid" type="xs:anyType" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//业务流水号businesscode" type="xs:string" />
+        <xs:element name="//需要重新上传的材料id数组lackmaterials" type="xs:string" />
+        <xs:element name="//附件idenclosureid" type="xs:anyType" />
+        <xs:element name="approvestate" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:complexContent>
+       <xs:extension base="ids">
+         <xs:sequence>
+          <xs:element name="/***/serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="//账号account" type="xs:string" />
+          <xs:element name="//应用名称name" type="xs:string" />
+          <xs:element name="//申请时间apply" type="xs:dateTime" />
+          <xs:element name="//密码password" type="xs:string" />
+          <xs:element name="//访问接口时携带tokentoken" type="xs:string" />
+          <xs:element name="//联系电话phone" type="xs:string" />
+          <xs:element name="//类型type" type="xs:string" />
+          <xs:element name="//申请人applicant" type="xs:string" />
+          <xs:element name="businesslicense" type="xs:anyType" />
+          <xs:element name="businesslicensebase64" type="xs:string" />
+          <xs:element name="applicationicon" type="xs:anyType" />
+          <xs:element name="applicationiconbase64" type="xs:string" />
+          <xs:element name="//状态status" type="xs:anyType" />
+          <xs:element name="//是否启用isenable" type="xs:anyType" />
+          <xs:element name="//是否开启印章审核issealaudit" type="xs:anyType" />
+          <xs:element name="//是否开启调用接口传签名值isneedsignval" type="xs:anyType" />
+          <xs:element name="//公钥publickey" type="xs:string" />
+          <xs:element name="//私钥key" type="xs:string" />
+          <xs:element name="//角色ids(设置角色用)rids" type="xs:string" />
+          <xs:element name="//服务接口授权用到isauthorize" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="rouser" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="account" type="xs:string" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="usertel" type="xs:string" />
+        <xs:element name="userorg" type="xs:string" />
+        <xs:element name="userrole" type="xs:string" />
+        <xs:element name="dtid" type="xs:string" />
+        <xs:element name="dtname" type="xs:string" />
+        <xs:element name="ckid" type="xs:string" />
+        <xs:element name="ckname" type="xs:string" />
+        <xs:element name="creator" type="xs:string" />
+        <xs:element name="creatorid" type="xs:anyType" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="deleted" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ids" >
+      <xs:complexContent>
+       <xs:extension base="basemodel{">
+         <xs:sequence>
+          <xs:element name="/***/serialversionuid" type="xs:long" />
+          <xs:element name="id" type="xs:anyType" />
+          <xs:element name="//通用idsids" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="idynamictablename" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="workflow" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="//部门iddepartmentid" type="xs:anyType" />
+        <xs:element name="//工作流顺序workfloworder" type="xs:anyType" />
+        <xs:element name="//主题外键matterid" type="xs:anyType" />
+        <xs:element name="actname" type="xs:string" />
+        <xs:element name="approvestep" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="applicat" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="apname" type="xs:string" />
+        <xs:element name="apnumbertype" type="xs:string" />
+        <xs:element name="apnumber" type="xs:string" />
+        <xs:element name="businesscode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="model" >
+      <xs:complexContent>
+       <xs:extension base="ids">
+         <xs:sequence>
+          <xs:element name="//@javax.persistence.id//@id//protectedobjectidname" type="xs:string" />
+          <xs:element name="sex" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="task" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="procinstid" type="xs:string" />
+        <xs:element name="assignee" type="xs:string" />
+        <xs:element name="suspensionstate" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="files" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="filename" type="xs:string" />
+        <xs:element name="originalfilename" type="xs:string" />
+        <xs:element name="nameex" type="xs:string" />
+        <xs:element name="fileurl" type="xs:string" />
+        <xs:element name="businesscode" type="xs:string" />
+        <xs:element name="itemid" type="xs:anyType" />
+        <xs:element name="filecode" type="xs:string" />
+        <xs:element name="fileagain" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="constans" >
+      <xs:sequence>
+        <xs:element name="/***人脸识别语音验证码sessionid*/voicecode_sessionid" type="xs:string" />
+        <xs:element name="/***密码服务*/password_service" type="xs:string" />
+        <xs:element name="/***文档转换*/document_conversion" type="xs:string" />
+        <xs:element name="/***签名生成*/signature_generation" type="xs:string" />
+        <xs:element name="/***印章生成*/seal_generation" type="xs:string" />
+        <xs:element name="/***盖章*/seal" type="xs:string" />
+        <xs:element name="valid" type="xs:string" />
+        <xs:element name="/***数据库名前缀*/dbname_prefix" type="xs:string" />
+        <xs:element name="/***默认超级管理员手机号码*/admin" type="xs:string" />
+        <xs:element name="/***匿名客户*/anonymity" type="xs:string" />
+        <xs:element name="/***系统用户*/system" type="xs:string" />
+        <xs:element name="/***会话中websocket用户名*/websocket_username" type="xs:string" />
+        <xs:element name="/***会话中用户名*/session_username" type="xs:string" />
+        <xs:element name="/***密码*/pw_default" type="xs:string" />
+        <xs:element name="/***消息key*/msg" type="xs:string" />
+        <xs:element name="/***逗号*/comma" type="xs:string" />
+        <xs:element name="/***分号*/semicolon" type="xs:string" />
+        <xs:element name="/***下划线*/underline" type="xs:string" />
+        <xs:element name="/***中横线*/hyphen" type="xs:string" />
+        <xs:element name="login_validate_code" type="xs:string" />
+        <xs:element name="/***是否需要启用验证码*/is_vali_code" type="xs:anyType" />
+        <xs:element name="/***数据库字符窜最大长度*/db_string_length_max" type="xs:long" />
+        <xs:element name="/***登录类型key*/login_type" type="xs:string" />
+        <xs:element name="/***手机验证码登录*/login_type_phone_code" type="xs:string" />
+        <xs:element name="/***session中的key,手机验证码*/session_phone_code_key" type="xs:string" />
+        <xs:element name="/***session中的key,微信小程序手机验证码*/wx_session_phone_code_key" type="xs:string" />
+        <xs:element name="/***session中的key,获取key手机验证码*/session_getkey_code_key" type="xs:string" />
+        <xs:element name="/***session中的key,微信网页授权，获取用户openid用*/session_weixin_sign" type="xs:string" />
+        <xs:element name="/***用户数据*/session_user" type="xs:string" />
+        <xs:element name="/***用户未找到(未绑定微信号)*/security_not_fond_user" type="xs:string" />
+        <xs:element name="/***必须填写用户名和密码*/security_must_username_and_pw" type="xs:string" />
+        <xs:element name="/***默认当前页码*/default_current_page" type="xs:long" />
+        <xs:element name="/***默认分页大小*/default_page_size" type="xs:long" />
+        <xs:element name="/***最大分页大小100*/default_max_page_size" type="xs:long" />
+        <xs:element name="/***商户系统管理员角色id*/role_sh_system_manager_id" type="xs:string" />
+        <xs:element name="/***商户系统普通用户角色id*/role_sh__averageuser_id" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="materials" >
+      <xs:sequence>
+        <xs:element name="//序列号id" type="xs:anyType" />
+        <xs:element name="//业务信息businesscode" type="xs:string" />
+        <xs:element name="//材料id，多个以,隔开material" type="xs:string" />
+        <xs:element name="//材料对应的事项id信息materialinitem" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="matter" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="target" type="xs:string" />
+        <xs:element name="accept" type="xs:string" />
+        <xs:element name="isdo" type="xs:string" />
+        <xs:element name="mattercode" type="xs:string" />
+        <xs:element name="iszx" type="xs:string" />
+        <xs:element name="creator" type="xs:string" />
+        <xs:element name="creatorid" type="xs:anyType" />
+        <xs:element name="create" type="xs:dateTime" />
+        <xs:element name="deleted" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="items" >
+      <xs:sequence>
+        <xs:element name="//编号id" type="xs:anyType" />
+        <xs:element name="//事项名称itemname" type="xs:string" />
+        <xs:element name="//主管部门departmentid" type="xs:anyType" />
+        <xs:element name="//事项编号itemcode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datum" >
+      <xs:sequence>
+        <xs:element name="//idid" type="xs:anyType" />
+        <xs:element name="//申请材料表及信息content" type="xs:string" />
+        <xs:element name="//状态:0:成功,1审核中,2失败(总状态)state" type="xs:string" />
+        <xs:element name="//创建时间createat" type="xs:dateTime" />
+        <xs:element name="//业务编码businesscode" type="xs:string" />
+        <xs:element name="//事项iditemsid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="datums" >
+      <xs:sequence>
+        <xs:element name="//idid" type="xs:anyType" />
+        <xs:element name="//申请材料表及信息content" type="xs:string" />
+        <xs:element name="//状态:0:成功,1审核中,2失败(总状态)state" type="xs:string" />
+        <xs:element name="//创建时间createat" type="xs:dateTime" />
+        <xs:element name="//业务编码businesscode" type="xs:string" />
+        <xs:element name="//事项iditemsid" type="xs:anyType" />
+        <xs:element name="itemname" type="xs:string" />
+        <xs:element name="departmentid" type="xs:anyType" />
+        <xs:element name="departmentname" type="xs:string" />
+        <xs:element name="approveid" type="xs:anyType" />
+        <xs:element name="approvename" type="xs:string" />
+        <xs:element name="approvenumber" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="enclosure" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="enclosurename" type="xs:string" />
+        <xs:element name="enclosureurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="receipt" >
+      <xs:sequence>
+        <xs:element name="/***id*/id" type="xs:long" />
+        <xs:element name="/***收件人姓名*/rname" type="xs:string" />
+        <xs:element name="/***收件方式*/rway" type="xs:string" />
+        <xs:element name="/***联系方式*/rmobile" type="xs:string" />
+        <xs:element name="/***所属区域*/rarea" type="xs:string" />
+        <xs:element name="/***详细地址*/raddress" type="xs:string" />
+        <xs:element name="/***取件大厅*/rhall" type="xs:string" />
+        <xs:element name="/***业务编号*/businesscode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="situation" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="/***情形姓名*/siname" type="xs:string" />
+        <xs:element name="/***情形内容*/sicontent" type="xs:string" />
+        <xs:element name="/***业务编号*/businesscode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dtoapprovefile" >
+      <xs:sequence>
+        <xs:element name="//材料名称filename" type="xs:string" />
+        <xs:element name="//材料下载地址fileurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dtoworkflow" >
+      <xs:sequence>
+        <xs:element name="departmentname" type="xs:string" />
+        <xs:element name="//流程名称actname" type="xs:string" />
+        <xs:element name="order" type="xs:anyType" />
+        <xs:element name="departmentid" type="xs:anyType" />
+        <xs:element name="approvestep" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="updatestatusdata" >
+      <xs:sequence>
+        <xs:element name="//要更新事项iditemid" type="xs:string" />
+        <xs:element name="//更新事项的信息msg" type="xs:string" />
+        <xs:element name="code" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="itemstatusdata" >
+      <xs:sequence>
+        <xs:element name="//处理的部门名称departmentname" type="xs:string" />
+        <xs:element name="//处理的部门的iddepartmentid" type="xs:string" />
+        <xs:element name="//部门处理人departapprover" type="xs:string" />
+        <xs:element name="//事项处理时间,默认为空串itemdealtime" type="xs:string" />
+        <xs:element name="//事项的处理结果默认为空串itemresult" type="xs:string" />
+        <xs:element name="//事项的审批意见approveopinion" type="xs:string" />
+        <xs:element name="//事项的提交的材料materials" type="dtoapprovefile" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="correction" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="correctioninfo" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pageonedata" >
+      <xs:sequence>
+        <xs:element name="//业务流水号businesscode" type="xs:string" />
+        <xs:element name="//事项所属的主题码matterid" type="xs:string" />
+        <xs:element name="//事项的id用于在部门处理室完成之后修改事项的状态itemid" type="xs:string" />
+        <xs:element name="//部门iddepartmentid" type="xs:string" />
+        <xs:element name="//申请人姓名和信息applicant" type="dtoapplication" nillable="true" minOccurs="0" />
+        <xs:element name="//经办对象信息" type="agent" nillable="true" minOccurs="0" />
+        <xs:element name="//事项申请人提交的材料的数组对象materials" type="dtofile" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="//申请人表单数据" type="formdata" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dtodatums" >
+      <xs:sequence>
+        <xs:element name="//申请人姓名applicationname" type="xs:string" />
+        <xs:element name="//事项名称itemname" type="xs:string" />
+        <xs:element name="//创建时间createtime" type="xs:dateTime" />
+        <xs:element name="//业务流水号businesscode" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="workflowdata" >
+      <xs:sequence>
+        <xs:element name="//业务编号businesscode" type="xs:string" />
+        <xs:element name="//工作流的部门信息（departmentid,departmentname,部门的工作流的顺序）workflows" type="dtoworkflow" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dtoapplication" >
+      <xs:sequence>
+        <xs:element name="//申请人姓名applicationname" type="xs:string" />
+        <xs:element name="//申请人身份证号(在页面中字段名称为number)applicationnummber" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="encryptionpageresult" >
+      <xs:sequence>
+        <xs:element name="//1(成功)/0(失败)code" type="xs:long" />
+        <xs:element name="//返回调用方的数据data" type="xs:string" />
+        <xs:element name="//调用成功或失败的提示信息msg" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="material" >
+      <xs:sequence>
+        <xs:element name="//材料名称materialname" type="xs:string" />
+        <xs:element name="//材料下载地址materialcontent" type="xs:string" />
+        <xs:element name="//材料的idmatterid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pageresult" >
+      <xs:sequence>
+        <xs:element name="//1(成功)/0(失败)code" type="xs:long" />
+        <xs:element name="//返回调用方的数据daa" type="xs:anyType" />
+        <xs:element name="//调用成功或失败的提示信息msg" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="formdata" >
+      <xs:sequence>
+        <xs:element name="content" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dtofile" >
+      <xs:sequence>
+        <xs:element name="fileid" type="xs:string" />
+        <xs:element name="filename" type="xs:string" />
+        <xs:element name="fileurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="onedate" >
+      <xs:sequence>
+        <xs:element name="businesscode" type="xs:string" />
+        <xs:element name="content" type="xs:string" />
+        <xs:element name="itemsid" type="xs:anyType" />
+        <xs:element name="departmentid" type="xs:anyType" />
+        <xs:element name="apname" type="xs:string" />
+        <xs:element name="apnumber" type="xs:string" />
+        <xs:element name="//经办人idid" type="xs:anyType" />
+        <xs:element name="aname" type="xs:string" />
+        <xs:element name="anumber" type="xs:string" />
+        <xs:element name="anumbertype" type="xs:string" />
+        <xs:element name="amobile" type="xs:string" />
+        <xs:element name="aemail" type="xs:string" />
+        <xs:element name="matterid" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="approvedata" >
+      <xs:sequence>
+        <xs:element name="approver" type="xs:string" />
+        <xs:element name="approveopinion" type="xs:string" />
+        <xs:element name="createtime" type="xs:dateTime" />
+        <xs:element name="departmentid" type="xs:anyType" />
+        <xs:element name="departmentname" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="enclosureid" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="basemodel" >
+      <xs:complexContent>
+       <xs:extension base="basebean{">
+         <xs:sequence>
+          <xs:element name="/***/serialversionuid" type="xs:long" />
+          <xs:element name="creator" type="xs:string" />
+          <xs:element name="creatorid" type="xs:anyType" />
+          <xs:element name="create" type="xs:dateTime" />
+          <xs:element name="deleted" type="xs:anyType" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="sitereceipt" >
+      <xs:sequence>
+        <xs:element name="//序列号id" type="xs:anyType" />
+        <xs:element name="//业务信息businesscode" type="xs:string" />
+        <xs:element name="//材料对应的事项id信息itemid" type="xs:string" />
+        <xs:element name="//材料名称materialname" type="xs:string" />
+        <xs:element name="//材料id信息materialid" type="xs:string" />
+        <xs:element name="//收件份数num" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="business" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:anyType" />
+        <xs:element name="useridcode" type="xs:string" />
+        <xs:element name="businessname" type="xs:string" />
+        <xs:element name="businesscode" type="xs:string" />
+        <xs:element name="createat" type="xs:dateTime" />
+        <xs:element name="matterid" type="xs:anyType" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="businesstag" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tabledata" >
+      <xs:sequence>
+        <xs:element name="msg" type="xs:string" />
+        <xs:element name="code" type="xs:string" />
+        <xs:element name="count" type="xs:long" />
+        <xs:element name="data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="message" >
+      <xs:sequence>
+        <xs:element name="/***/serialversionuid" type="xs:long" />
+        <xs:element name="errmsg" type="xs:string" />
+        <xs:element name="errcode" type="xs:string" />
+        <xs:element name="flag" type="xs:anyType" />
+        <xs:element name="data" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="codeandval" >
+      <xs:complexContent>
+       <xs:extension base="basebean">
+         <xs:sequence>
+          <xs:element name="/***/serialversionuid" type="xs:long" />
+          <xs:element name="/***编码*/code" type="xs:string" />
+          <xs:element name="//显示文本text" type="xs:string" />
+          <xs:element name="//值val" type="xs:anyType" />
+          <xs:element name="//范围(0:表示通用，1：平台用，2:表示商户用)scope" type="xs:string" />
+          <xs:element name="time" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="existexception" >
+      <xs:complexContent>
+       <xs:extension base="baseexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="msg" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="baseexception" >
+      <xs:complexContent>
+       <xs:extension base="runtimeexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="" type="user" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="paramexception" >
+      <xs:complexContent>
+       <xs:extension base="baseexception{">
+         <xs:sequence>
+          <xs:element name="/***参数错误*/code" type="xs:string" />
+          <xs:element name="serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customexception" >
+      <xs:complexContent>
+       <xs:extension base="baseexception{">
+         <xs:sequence>
+          <xs:element name="/***/serialversionuid" type="xs:long" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unknownexception" >
+      <xs:complexContent>
+       <xs:extension base="baseexception">
+         <xs:sequence>
+          <xs:element name="serialversionuid" type="xs:long" />
+          <xs:element name="code" type="xs:string" />
+          <xs:element name="msg" type="xs:string" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="customermultipartfile" >
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="originalfilename" type="xs:string" />
+        <xs:element name="contenttype" type="xs:string" />
+        <xs:element name="content" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userapi" >
+      <xs:sequence>
+        <xs:element name="baseurl" type="xs:string" />
+        <xs:element name="policyname" type="xs:string" />
+        <xs:element name="policypwd" type="xs:string" />
+        <xs:element name="time" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="httpclientutil" >
+      <xs:sequence>
+        <xs:element name="//baseurl" type="xs:string" />
+        <xs:element name="//publicstringbaseurl" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="max_timeout" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="md5" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonutils" >
+      <xs:sequence>
+        <xs:element name="mapper" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="idworker" >
+      <xs:sequence>
+        <xs:element name="//时间起始标记点，作为基准，一般取系统的最近时间（一旦确定不能变动）twepoch" type="xs:long" />
+        <xs:element name="//机器标识位数workeridbits" type="xs:long" />
+        <xs:element name="//数据中心标识位数datacenteridbits" type="xs:long" />
+        <xs:element name="//机器id最大值maxworkerid" type="xs:long" />
+        <xs:element name="//数据中心id最大值maxdatacenterid" type="xs:long" />
+        <xs:element name="//毫秒内自增位sequencebits" type="xs:long" />
+        <xs:element name="//机器id偏左移12位workeridshift" type="xs:long" />
+        <xs:element name="//数据中心id左移17位datacenteridshift" type="xs:long" />
+        <xs:element name="//时间毫秒左移22位timestampleftshift" type="xs:long" />
+        <xs:element name="sequencemask" type="xs:long" />
+        <xs:element name="/*上次生产id时间戳*/lasttimestamp" type="xs:long" />
+        <xs:element name="//0，并发控制sequence" type="xs:long" />
+        <xs:element name="workerid" type="xs:long" />
+        <xs:element name="//数据标识id部分datacenterid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jsonkit" >
+      <xs:sequence>
+        <xs:element name="mapper" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tools" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businessnumber" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dateutil" >
+      <xs:sequence>
+        <xs:element name="ymd" type="xs:string" />
+        <xs:element name="y_m" type="xs:string" />
+        <xs:element name="y_m_d" type="xs:string" />
+        <xs:element name="h_m_s" type="xs:string" />
+        <xs:element name="y_m_d_h_m" type="xs:string" />
+        <xs:element name="y_m_d_h_m_s" type="xs:string" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="/***精确到毫秒*/ymdhmssss" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="api" >
+      <xs:sequence>
+        <xs:element name="policyname" type="xs:string" />
+        <xs:element name="policypwd" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="desutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="fastjsonutil" >
+      <xs:sequence>
+        <xs:element name="emptyfilters" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userhttpclientutil" >
+      <xs:sequence>
+        <xs:element name="/*publicstringbaseurl" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="max_timeout" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dase64util" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="filebase64convertuitl" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="apiaccess" >
+      <xs:sequence>
+        <xs:element name="policypwd" type="xs:string" />
+        <xs:element name="token" type="xs:string" />
+        <xs:element name="params" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="httprequestutil" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bulidutils" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paramname" >
+      <xs:sequence>
+        <xs:element name="/***用于统一命名数据源id参数名称*/datasource_id" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="test" >
+      <xs:sequence>
+        <xs:element name="//接入商名称policyname" type="xs:string" />
+        <xs:element name="//接入商密码policypwd" type="xs:string" />
+        <xs:element name="client_id" type="xs:string" />
+        <xs:element name="client_secret" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

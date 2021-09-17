@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="webspajzapplicationtests" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v2__create_user_tables" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="v1__create_recipe_tables" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="local" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="application" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtrequestfilter" >
+      <xs:complexContent>
+       <xs:extension base="onceperrequestfilter">
+         <xs:sequence>
+          <xs:element name="" type="jwttokenutil" nillable="true" minOccurs="0" />
+          <xs:element name="" type="jwtuserdetailsservice" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="jwtauthenticationentrypoint" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwttokenutil" >
+      <xs:sequence>
+        <xs:element name="jwt_token_validity" type="xs:long" />
+        <xs:element name="secret" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="websecurityconfig" >
+      <xs:complexContent>
+       <xs:extension base="websecurityconfigureradapter">
+         <xs:sequence>
+          <xs:element name="" type="jwtrequestfilter" nillable="true" minOccurs="0" />
+          <xs:element name="jwt" type="xs:anyType" />
+          <xs:element name="" type="jwtauthenticationentrypoint" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="databaserunner" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="recipeservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="reciperepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ingredientrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<ingredient,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="recipeingredientrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<recipeingredient,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<user,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="reciperepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<recipe,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="useringredientrepository" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<useringredient,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="webspajzapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useralreadyexistexception" >
+      <xs:complexContent>
+       <xs:extension base="exception">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="userauthenticationservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="jwttokenutil" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="jwtuserdetailsservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recipeservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="reciperepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="ingredientrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="recipeingredientrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="completenesscalculator" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="propertiesloader" nillable="true" minOccurs="0" />
+        <xs:element name="apidecoder" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="completenesscalculator" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="ingredientrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userauthenticationservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtuserdetailsservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useringredientservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="useringredientrepository" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userauthenticationservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="presentedrecipecomparator" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="propertiesloader" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtauthenticationcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userauthenticationservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useringredientcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="useringredientservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userauthenticationservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="usercontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="userservice" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="userauthenticationservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recipecontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="recipeservice" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="presentedrecipedto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="iconimageurl" type="xs:string" />
+        <xs:element name="GeneratedName" type="completeness" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useringredientresponsedto" >
+      <xs:sequence>
+        <xs:element name="ingredientid" type="xs:long" />
+        <xs:element name="ingredientname" type="xs:string" />
+        <xs:element name="quantity" type="xs:double" />
+        <xs:element name="unit" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userdto" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useringredientrequestdto" >
+      <xs:sequence>
+        <xs:element name="ingredientid" type="xs:long" />
+        <xs:element name="quantity" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="completeness" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recipeingredient" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="quantity" type="xs:double" />
+        <xs:element name="unit" type="xs:string" />
+        <xs:element name="GeneratedName" type="ingredient" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="recipe" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="description" >
+      <xs:sequence>
+        <xs:element name="descriptiontext" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="unit" >
+      <xs:sequence>
+        <xs:element name="abbreviation" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="metric" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="unit" nillable="true" minOccurs="0" />
+        <xs:element name="quantity" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ingredientlines" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="amount" nillable="true" minOccurs="0" />
+        <xs:element name="ingredient" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="amount" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="metric" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="technique" >
+      <xs:sequence>
+        <xs:element name="techniquetype" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="tags" >
+      <xs:sequence>
+        <xs:element name="difficultylist" type="difficulty" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="nutritionlist" type="nutrition" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="techniquelist" type="technique" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="nutrition" >
+      <xs:sequence>
+        <xs:element name="nutritiondata" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="difficulty" >
+      <xs:sequence>
+        <xs:element name="difficultylevel" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="reviews" >
+      <xs:sequence>
+        <xs:element name="totalreviewcount" type="xs:long" />
+        <xs:element name="averagerating" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recipecontent" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="description" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="tags" nillable="true" minOccurs="0" />
+        <xs:element name="preparationsteps" type="xs:anyType" />
+        <xs:element name="GeneratedName" type="details" nillable="true" minOccurs="0" />
+        <xs:element name="ingredientlineslist" type="ingredientlines" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="GeneratedName" type="reviews" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="feed" >
+      <xs:sequence>
+        <xs:element name="feed" type="recipejson" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="images" >
+      <xs:sequence>
+        <xs:element name="hostedlargeurl" type="xs:string" />
+        <xs:element name="resizableimageurl" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="details" >
+      <xs:sequence>
+        <xs:element name="totaltime" type="xs:string" />
+        <xs:element name="images" type="images" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="recipeid" type="xs:string" />
+        <xs:element name="numberofservings" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recipejson" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="recipecontent" nillable="true" minOccurs="0" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useringredientpk" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="ingredientid" type="xs:long" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="recipe" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="yumid" type="xs:string" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="description" type="xs:string" />
+        <xs:element name="numberofservings" type="xs:long" />
+        <xs:element name="iconimageurl" type="xs:string" />
+        <xs:element name="resizableimageurl" type="xs:string" />
+        <xs:element name="totalreviewcount" type="xs:long" />
+        <xs:element name="averagerating" type="xs:double" />
+        <xs:element name="difficultylevel" type="xs:string" />
+        <xs:element name="nutritionlist" type="xs:anyType" />
+        <xs:element name="techniquelist" type="xs:anyType" />
+        <xs:element name="preparationsteps" type="xs:anyType" />
+        <xs:element name="recipeingredientlist" type="recipeingredient" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="useringredient" >
+      <xs:sequence>
+        <xs:element name="userid" type="xs:long" />
+        <xs:element name="ingredientid" type="xs:long" />
+        <xs:element name="quantity" type="xs:double" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="user" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+        <xs:element name="firstname" type="xs:string" />
+        <xs:element name="lastname" type="xs:string" />
+        <xs:element name="email" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ingredient" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:long" />
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="unit" type="xs:string" />
+        <xs:element name="recipeingredientlist" type="recipeingredient" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtresponse" >
+      <xs:sequence>
+        <xs:element name="token" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtrequest" >
+      <xs:sequence>
+        <xs:element name="username" type="xs:string" />
+        <xs:element name="password" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="jwtuserdetails" >
+      <xs:complexContent>
+       <xs:extension base="grantedauthority>">
+         <xs:sequence>
+          <xs:element name="" type="user" nillable="true" minOccurs="0" />
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="unitquantity" >
+      <xs:sequence>
+        <xs:element name="recipeid" type="xs:long" />
+        <xs:element name="recipeingredientquantity" type="xs:double" />
+        <xs:element name="recipeingredientunit" type="xs:string" />
+        <xs:element name="useringredientquantity" type="xs:double" />
+        <xs:element name="ingredientunit" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

@@ -1,0 +1,9 @@
+
+admin(id:Long [PK], firstname:String, lastname:String, email:String, password:String);
+
+users_roles(admin_id:Admin [PK] #FK to Admin,role_id:collection<role> [PK] #FK to collection<role>);
+
+role(id:Long [PK], name:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

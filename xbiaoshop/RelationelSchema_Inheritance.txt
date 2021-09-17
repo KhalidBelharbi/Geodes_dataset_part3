@@ -1,0 +1,17 @@
+
+address(//主键idaddressid:Long [PK], //用户iduid:Long, //收件人consignee:String, //所在地区address:String, //详细地址detaddress:String, //电话phone:String, //邮编postcode:String);
+
+car(//主键iduid:Long [PK], gid:Long [PK], //商品数量gnum:Integer);
+
+goods(//主键idgoodsid:Long [PK], //商品价格price:Integer, //商品类型idtypeid:Integer, //商品图片goodsphotos:String, //商品发布时间publicshtime:Date, //商品库存inventorynum:Integer, //标题title:String, //内容content:String, //浏览量look:Integer, //卖出量bargainnum:Integer);
+
+order(//order_idorderid:Long [PK], //主键iduid:Long, gid:Long, //商品数量gnum:Integer, //定单状态1：已支付2：待评价status:Integer);
+
+user(//主键iduserid:Long [PK], //用户名username:String, //用户真实姓名realname:String, //密码password:String, //qq_openidqqopenid:String, //wx_openidwxopenid:String, //邮箱email:String, //年龄age:Integer, //性别男：1女：0sex:String, //电话phone:String, //头像pic:String, //籍贯nativeplace:String, //职位position:String, //用户默认地址defaultaddressid:Long, registertime:Date);
+
+productlist(//主键idlistid:Long [PK], //商品列表名称listname:String, //商品列表地址listurl:String);
+
+collect(//主键iduid:Long [PK], gid:Long [PK]);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

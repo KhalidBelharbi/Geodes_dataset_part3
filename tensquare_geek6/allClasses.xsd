@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="labelcontroller" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="labelservice" nillable="true" minOccurs="0" />
+        <xs:element name="ip" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="baseexceptionhandler" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="labeldao" >
+      <xs:complexContent>
+       <xs:extension base="jparepository<label,">
+         <xs:sequence>
+         </xs:sequence>
+       </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="baseapplication" >
+      <xs:sequence>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="labelservice" >
+      <xs:sequence>
+        <xs:element name="GeneratedName" type="labeldao" nillable="true" minOccurs="0" />
+        <xs:element name="GeneratedName" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="label" >
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" />
+        <xs:element name="labelname" type="xs:string" />
+        <xs:element name="state" type="xs:string" />
+        <xs:element name="count" type="xs:anyType" />
+        <xs:element name="recommend" type="xs:string" />
+        <xs:element name="fans" type="xs:anyType" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema> 

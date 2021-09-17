@@ -1,0 +1,31 @@
+
+bar(id:long [PK], name:String);
+
+foo(id:long [PK], name:String, deleted:Integer, GeneratedName:Bar #FK to(Bar));
+
+baz(id:long [PK], name:String);
+
+foo(id:long [PK], name:String);
+
+product(id:int [PK], productname:String, description:String, memory:int);
+
+eventgeneratedid(id:Long [PK], name:String, description:String);
+
+event(id:Long [PK], title:String, guestlist:Set<String>);
+
+employee(employeeid:Long [PK], firstname:String, lastname:String);
+
+employee_project(employee_id:Employee [PK] #FK to Employee,project_id:set<project> [PK] #FK to set<project>);
+
+project(projectid:Long [PK], title:String);
+
+testentity(id:int [PK], description:String);
+
+account(id:int [PK], name:String, type:String, active:boolean);
+
+foo(serialversionuid:long, id:Long [PK], name:String, GeneratedName:Bar #FK to(Bar));
+
+bar(serialversionuid:long, id:long [PK], name:String);
+
+
+** PROGRAM TYPE: JPA+Hibernate(Hybrid)

@@ -1,0 +1,24 @@
+
+dcrole(serialversionuid:long, status_using:int, status_block:int, id:Long [PK], rolename:String, remark:String, status:int, /***角色拥有的菜单权限*/menus:List<String>, /***记录该角色是否存在*/flag:Boolean);
+
+dcmenu(serialversionuid:long, menucode:String [PK], menuname:String, parentcode:String, menuurl:String, leafyn:boolean);
+
+dcpaytypeentity(id:Long [PK], code:String, name:String);
+
+dcjfbbywsr(id:Long [PK], sdate:String, areacode:String, areaname:String, cnt1:String, cnt2:String, cnt3:String, cnt4:String, cnt5:String, cnt6:String);
+
+tradedict(serialversionuid:long, id:Long [PK], pid:Long, name:String, sortlevel:Long);
+
+dcuser(serialversionuid:long, /***用户状态－正常*/status_valid:int, /***用户状态－暂停*/status_pause:int, /***用户状态－删除*/status_del:int, /***用户类型－超级管理员*/type_admin:int, /***用户类型-单位管理员*/type_company_admin:int, /***用户类型－普通用户*/type_company_user:int, id:Long [PK], code:String, name:String, pwd:String, terminalid:String, email:String, status:int, area:String, /***修改密码*/oldpass:String, /***角色*/roleid:List<Long>);
+
+dcrolemenu(serialversionuid:long, id:Long [PK], roleid:Long, menucode:String);
+
+dcarea(serialversionuid:long, id:Long [PK], areacode:String, areaname:String, provinceid:Long, provincename:String);
+
+dcloginlog(serialversionuid:long, id:Long [PK], username:String, userid:Long, ip:String, logintime:String, usercode:String);
+
+dcuserrole(serialversionuid:long, id:Long [PK], userid:Long, roleid:Long);
+
+monitorinfo(serialversionuid:long, //seq序列号seqid:Long, //平台名称1:方正，2:高阳3:宽连platname:String, platmap:Map<String,String>, //告警级别1，2，3，4，5monitorlevel:String, //告警类型，1:数据库，2:系统monitortype:Long, //告警内容monitor_content:String, //告警是否展示1:是2:否show:String, //告警是否工单1:是2:否work_order:String, //告警是否短信1:是2:否send_sms:String, //指定处理人appoint_deal_name:String, //告警时间monitor_time:String, //入库时间collect_time:String, //告警提交人员monitor_create_name:Long, //是否已经处理1:未处理2:已处理status:String, //告警内容处理deal_content:String, //告警处理时间deal_time:String, //告警处理人员deal_name:Long, //展示的平台plat:Long, //辅助文本，不入库txt:String, //辅助名称，不入库temp_name:String);
+
+dcoplog(serialversionuid:long, id:Long [PK], userid:String, optime:String, optype:Long, module:String, username:String, opobject:String);

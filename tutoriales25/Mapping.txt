@@ -1,0 +1,9 @@
+ClassDiagram.Class>> User =>=>=> RelationalSchema.Table>> user;
+ClassDiagram.Class>> UserOptional =>=>=> RelationalSchema.Table>> useroptional;
+ClassDiagram.Class>> UserOptionalField =>=>=> RelationalSchema.Table>> useroptionalfield;
+ClassDiagram.Attribut>> User.userid:long =>=>=> RelationalSchema.Column>> user.userid PRIMARY KEY;
+ClassDiagram.Attribut>> User.firstname:String =>=>=> RelationalSchema.Column>> user.firstname;
+ClassDiagram.Attribut>> UserOptional.userid:long =>=>=> RelationalSchema.Column>> useroptional.userid PRIMARY KEY;
+ClassDiagram.Attribut>> UserOptional.firstname:String =>=>=> RelationalSchema.Column>> useroptional.firstname;
+ClassDiagram.Attribut>> UserOptionalField.userid:long =>=>=> RelationalSchema.Column>> useroptionalfield.userid PRIMARY KEY;
+ClassDiagram.Attribut>> UserOptionalField.firstname:Optional<String> =>=>=> RelationalSchema.Column>> useroptionalfield.firstname;
